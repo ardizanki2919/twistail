@@ -1,7 +1,7 @@
 import type { Decorator } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
-// import { Toaster } from '#/components/base-ui'
+// import { Toaster } from '@twistail/ui-react/components'
 // import ThemeProvider from '#/context/providers/theme-provider'
 
 function setTheme(theme: 'light' | 'dark') {

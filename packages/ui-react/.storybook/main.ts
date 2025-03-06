@@ -4,7 +4,12 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
   stories: ['./stories/**/*.@(mdx|stories.@(ts|tsx))'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-links', '@storybook/addon-a11y'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    '@storybook/addon-interactions',
+  ],
   framework: { name: '@storybook/react-vite', options: { strictMode: true } },
   core: {
     disableTelemetry: true, // 👈 Disables telemetry

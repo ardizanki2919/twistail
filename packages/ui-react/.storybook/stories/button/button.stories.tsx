@@ -1,19 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { Button, type ButtonProps, type ButtonVariants } from '@twistail/ui-react/components'
-
-// Create array of options for variant
-const variantOptions: NonNullable<ButtonVariants['variant']>[] = [
-  'default',
-  'destructive',
-  'outline',
-  'secondary',
-  'ghost',
-  'link',
-]
-
-// Create array of options for size
-const sizeOptions: NonNullable<ButtonVariants['size']>[] = ['sm', 'default', 'lg', 'icon']
+import { Button, type ButtonProps, buttonStyles } from '@twistail/ui-react/components'
+import { clx } from '@twistail/ui-react/utils'
 
 const meta: Meta<ButtonProps> = {
   component: Button,
@@ -28,19 +16,19 @@ const meta: Meta<ButtonProps> = {
     },
     variant: {
       control: { type: 'radio' },
-      options: variantOptions,
+      options: [...Object.keys(buttonStyles.variants.variant)],
       table: {
         defaultValue: { summary: 'default' },
-        type: { summary: 'ButtonVariants["variant"]' },
+        type: { summary: 'ButtonStyles["variant"]' },
       },
     },
-    size: {
-      control: { type: 'inline-radio' },
-      options: sizeOptions,
-      table: {
-        type: { summary: 'ButtonVariants["size"]' },
-      },
-    },
+    // size: {
+    //   control: { type: 'inline-radio' },
+    //   options: sizeOptions,
+    //   table: {
+    //     type: { summary: 'ButtonStyles["size"]' },
+    //   },
+    // },
     isLoading: {
       control: 'boolean',
     },
@@ -51,45 +39,86 @@ const meta: Meta<ButtonProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-// Individual Stories for Controls
-export const Default: Story = {
+export const Primary: Story = {
   parameters: {
     controls: { exclude: ['asChild'] },
   },
   args: { children: 'Button' },
 }
 
-// // Showcases with Focused Controls
-// export const VariantShowcase: Story = {
-//   parameters: {
-//     controls: { exclude: ['variant', 'children', 'asChild'] },
-//   },
-//   args: {
-//     size: 'default',
-//     isLoading: false,
-//     disabled: false,
-//   },
-//   render: (args) => (
-//     <div className="flex flex-wrap items-center gap-4">
-//       <Button {...args}>Default</Button>
-//       <Button {...args} variant="secondary">
-//         Secondary
-//       </Button>
-//       <Button {...args} variant="destructive">
-//         Destructive
-//       </Button>
-//       <Button {...args} variant="outline">
-//         Outline
-//       </Button>
-//       <Button {...args} variant="ghost">
-//         Ghost
-//       </Button>
-//       <Button {...args} variant="link">
-//         Link
-//       </Button>
-//     </div>
-//   ),
-// }
+export const VariantShowcase: Story = {
+  parameters: {
+    controls: { exclude: ['variant', 'children', 'asChild'] },
+  },
+  args: {
+    // size: 'default',
+    isLoading: false,
+    disabled: false,
+  },
+  render: (args) => (
+    <div className="flex flex-wrap items-center gap-4">
+      <Button {...args}>Primary</Button>
+      <Button {...args} variant="secondary">
+        Secondary
+      </Button>
+      <Button {...args} variant="light">
+        Destructive
+      </Button>
+      <Button {...args} variant="ghost">
+        Outline
+      </Button>
+      <Button {...args} variant="destructive">
+        Ghost
+      </Button>
+    </div>
+  ),
+}
+
+export const WithDisabled: Story = {
+  args: {
+    children: 'Disabled',
+    disabled: true,
+  },
+}
+
+export const IsLoading: Story = {
+  args: {
+    isLoading: true,
+  },
+}
+
+export const IsLoadingWithChildren: Story = {
+  args: {
+    isLoading: true,
+    children: 'Add item',
+  },
+}
+
+export const IsLoadingWithLoadingText: Story = {
+  args: {
+    loadingText: 'Custom loading text',
+    isLoading: true,
+  },
+}
+
+export const AsChildAnchor: Story = {
+  render: () => (
+    <Button asChild>
+      <a href="#api-reference-button">API Reference</a>
+    </Button>
+  ),
+}
+
+export const AnchorWithVariantStyle: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-4">
+      {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+      <a href="#" className={clx(buttonStyles({ variant: 'secondary' }))}>
+        Anchor element
+      </a>
+    </div>
+  ),
+}
 
 // export const SizeShowcase: Story = {
 //   parameters: {

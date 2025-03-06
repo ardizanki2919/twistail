@@ -1,72 +1,89 @@
+import { focusRing } from '@twistail/ui-react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 export const buttonStyles = tv({
-  slots: {
-    base: [
-      'inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm transition-colors',
-      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-      '[&[data-loading=true]_svg:not(:first-child)]:hidden [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
-    ],
-  },
+  base: [
+    // base
+    'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
+    // disabled
+    'disabled:pointer-events-none disabled:shadow-none',
+    // focus
+    focusRing,
+  ],
   variants: {
     variant: {
-      default: 'bg-gray-900 text-white shadow-sm hover:bg-gray-900/90',
-      primary: 'bg-primary text-white shadow-sm hover:bg-primary/90',
-      secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-      destructive: 'bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90',
-      outline:
-        'border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
-      ghost: 'hover:bg-accent hover:text-accent-foreground',
-      link: 'text-primary underline-offset-4 hover:underline',
-    },
-    size: {
-      default: 'h-9 px-4 py-2',
-      sm: 'h-8 rounded-md px-3 text-xs',
-      lg: 'h-10 rounded-md px-8',
-      icon: 'size-9',
-    },
-    isLoading: {
-      true: 'pointer-events-none relative cursor-wait',
-      false: '',
+      primary: [
+        // border
+        'border-transparent',
+        // text color
+        'text-white dark:text-white',
+        // background color
+        'bg-blue-500 dark:bg-blue-500',
+        // hover color
+        'hover:bg-blue-600 dark:hover:bg-blue-600',
+        // disabled
+        'disabled:bg-blue-300 disabled:text-white',
+        'disabled:dark:bg-blue-800 disabled:dark:text-blue-400',
+      ],
+      secondary: [
+        // border
+        'border-gray-300 dark:border-gray-800',
+        // text color
+        'text-gray-900 dark:text-gray-50',
+        // background color
+        'bg-white dark:bg-gray-950',
+        //hover color
+        'hover:bg-gray-50 dark:hover:bg-gray-900/60',
+        // disabled
+        'disabled:text-gray-400',
+        'disabled:dark:text-gray-600',
+      ],
+      light: [
+        // base
+        'shadow-none',
+        // border
+        'border-transparent',
+        // text color
+        'text-gray-900 dark:text-gray-50',
+        // background color
+        'bg-gray-200 dark:bg-gray-900',
+        // hover color
+        'hover:bg-gray-300/70 dark:hover:bg-gray-800/80',
+        // disabled
+        'disabled:bg-gray-100 disabled:text-gray-400',
+        'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
+      ],
+      ghost: [
+        // base
+        'shadow-none',
+        // border
+        'border-transparent',
+        // text color
+        'text-gray-900 dark:text-gray-50',
+        // hover color
+        'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800/80',
+        // disabled
+        'disabled:text-gray-400',
+        'disabled:dark:text-gray-600',
+      ],
+      destructive: [
+        // text color
+        'text-white',
+        // border
+        'border-transparent',
+        // background color
+        'bg-red-600 dark:bg-red-700',
+        // hover color
+        'hover:bg-red-700 dark:hover:bg-red-600',
+        // disabled
+        'disabled:bg-red-300 disabled:text-white',
+        'disabled:dark:bg-red-950 disabled:dark:text-red-400',
+      ],
     },
   },
-  compoundVariants: [
-    {
-      isLoading: true,
-      className:
-        '[&>svg]:-ml-1 [&>svg]:motion-preset-spin [&>svg]:motion-duration-1000 [&>svg]:size-4',
-    },
-    {
-      variant: ['default', 'primary', 'secondary', 'outline', 'destructive', 'ghost', 'link'],
-      isLoading: true,
-      className: 'text-white/70',
-    },
-    {
-      size: ['icon'],
-      isLoading: true,
-      className: '[&>svg]:ml-0',
-    },
-    {
-      variant: 'outline',
-      size: ['icon', 'sm'],
-      className: 'border',
-    },
-    {
-      variant: ['ghost', 'link'],
-      size: ['lg'],
-      className: 'font-semibold tracking-wide',
-    },
-    {
-      variant: ['default', 'primary', 'secondary', 'outline', 'destructive', 'ghost', 'link'],
-      size: ['lg'],
-      className: 'shadow-md',
-    },
-  ],
   defaultVariants: {
-    variant: 'default',
-    size: 'default',
-    isLoading: false,
+    variant: 'primary',
   },
 })
 
-export type ButtonVariants = VariantProps<typeof buttonStyles>
+export type ButtonStyles = VariantProps<typeof buttonStyles>

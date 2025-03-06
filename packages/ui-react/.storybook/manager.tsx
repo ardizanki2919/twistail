@@ -11,6 +11,7 @@ addons.setConfig({
   showPanel: true,
   showToolbar: true,
   panelPosition: 'bottom',
+  initialActive: 'canvas',
   sidebar: {
     filters: {
       patterns: (item) => {

@@ -1,43 +1,53 @@
-import { Slot } from '@radix-ui/react-slot'
-import * as Lucide from 'lucide-react'
-import * as React from 'react'
-import { type ButtonVariants, buttonStyles } from './button.css'
+// Tremor Button [v0.2.0]
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
+import { Slot } from '@radix-ui/react-slot'
+import { RiLoader2Fill } from '@remixicon/react'
+import React from 'react'
+import { type ButtonStyles, buttonStyles } from './button.css'
+
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>, ButtonStyles {
   asChild?: boolean
   isLoading?: boolean
+  loadingText?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, className, isLoading, disabled, children, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-    const isDisabled = disabled || isLoading
-    const styles = buttonStyles({ variant, size, isLoading })
-
-    // Wrap children in fragment when loading to ensure single child
-    const content = isLoading ? (
-      <>
-        <Lucide.Loader2 strokeWidth={2} />
-        {children}
-      </>
-    ) : (
-      children
-    )
-
+  (
+    {
+      asChild,
+      isLoading = false,
+      loadingText,
+      className,
+      disabled,
+      variant,
+      children,
+      ...props
+    }: ButtonProps,
+    forwardedRef
+  ) => {
+    const Component = asChild ? Slot : 'button'
     return (
-      <Comp
-        ref={ref}
-        className={styles.base({ className })}
-        data-loading={isLoading}
-        disabled={isDisabled}
+      <Component
+        ref={forwardedRef}
+        className={buttonStyles({ variant, className })}
+        disabled={disabled || isLoading}
+        tremor-id="tremor-raw"
         {...props}
       >
-        {content}
-      </Comp>
+        {isLoading ? (
+          <span className="pointer-events-none flex shrink-0 items-center justify-center gap-1.5">
+            <RiLoader2Fill className="size-4 shrink-0 animate-spin" aria-hidden="true" />
+            <span className="sr-only">{loadingText ? loadingText : 'Loading'}</span>
+            {loadingText ? loadingText : children}
+          </span>
+        ) : (
+          children
+        )}
+      </Component>
     )
   }
 )
 
 Button.displayName = 'Button'
 
-export { Button }
+export { Button, type ButtonProps }
