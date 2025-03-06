@@ -1,0 +1,27 @@
+{
+    "name": "twistail",
+    "private": true,
+    "scripts": {
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "start": "turbo start",
+        "storybook": "turbo storybook --filter=@twistail/ui-react",
+        "cleanup": "turbo cleanup && pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "postinstall": "pnpm approve-builds",
+        "filter": "pnpm --silent --filter",
+        "format": "biome format . --write",
+        "lint": "turbo lint",
+        "check": "turbo check",
+        "typecheck": "turbo typecheck"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "catalog:",
+        "npm-check-updates": "^17.1.15",
+        "turbo": "^2.4.4"
+    },
+    "packageManager": "pnpm@10.6.0",
+    "pnpm": {
+        "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild"]
+    }
+}

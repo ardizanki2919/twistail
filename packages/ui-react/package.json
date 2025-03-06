@@ -1,0 +1,66 @@
+{
+    "name": "@twistail/ui-react",
+    "version": "0.0.0",
+    "private": true,
+    "sideEffects": ["**/*.css"],
+    "files": ["dist"],
+    "scripts": {
+        "start": "pnpm dlx serve storybook-static -l 6006 -n -C",
+        "build": "pnpm -s build:css && pnpm -s build:storybook",
+        "storybook": "VITE_CJS_IGNORE_WARNING=true storybook dev -p 6006 --no-open",
+        "build:storybook": "VITE_CJS_IGNORE_WARNING=true storybook build -o storybook-static",
+        "build:css": "tailwindcss -i ./src/assets/global.css -o ./dist/global.css --minify",
+        "start:storybook": "pnpm dlx serve output/storybook -l 6006 -n -C",
+        "dev": "tailwindcss -i ./src/assets/global.css -o ./dist/global.css --watch",
+        "cleanup": "pnpm dlx rimraf dist node_modules storybook-static",
+        "lint": "biome lint . --write",
+        "check": "biome check . --write",
+        "typecheck": "tsc --noEmit"
+    },
+    "exports": {
+        "./global.css": "./src/assets/global.css",
+        "./components": "./src/components/index.ts",
+        "./utils": "./src/utils/index.ts"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-router": "^7.1.5"
+    },
+    "dependencies": {
+        "@radix-ui/react-slot": "^1.1.2",
+        "lucide-react": "^0.477.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "catalog:",
+        "@repo/config-typescript": "workspace:*",
+        "@storybook/addon-a11y": "^8.6.4",
+        "@storybook/addon-essentials": "^8.6.4",
+        "@storybook/addon-links": "^8.6.4",
+        "@storybook/blocks": "^8.6.4",
+        "@storybook/core-events": "^8.6.4",
+        "@storybook/manager-api": "^8.6.4",
+        "@storybook/react-vite": "^8.6.4",
+        "@storybook/react": "^8.6.4",
+        "@storybook/test": "^8.6.4",
+        "@storybook/theming": "^8.6.4",
+        "@tailwindcss/cli": "4.0.11",
+        "@tailwindcss/postcss": "^4.0.11",
+        "@types/react": "^19.0.10",
+        "clsx": "^2.1.1",
+        "pathe": "^2.0.3",
+        "postcss": "^8.5.3",
+        "react-router": "^7.3.0",
+        "storybook": "^8.6.4",
+        "tailwind-merge": "^3.0.2",
+        "tailwind-variants": "^0.3.1",
+        "tailwindcss-motion": "^1.1.0",
+        "tailwindcss": "^4.0.11",
+        "typescript": "catalog:",
+        "vite": "^6.2.0",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
