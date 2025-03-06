@@ -18,9 +18,11 @@
         "typecheck": "tsc --noEmit"
     },
     "exports": {
+        "./components": "./src/components/base-ui/index.ts",
+        "./charts": "./src/components/chart-ui/index.ts",
+        "./utils": "./src/utils/index.ts",
         "./global.css": "./src/assets/global.css",
-        "./components": "./src/components/index.ts",
-        "./utils": "./src/utils/index.ts"
+        "./theme.css": "./src/assets/theme.css"
     },
     "peerDependencies": {
         "react": "^19.0.0",

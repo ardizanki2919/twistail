@@ -19,7 +19,17 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     return mergeConfig(config, {
       plugins: [tsconfigPaths()],
-      build: { chunkSizeWarningLimit: 1024 * 4 },
+      build: {
+        chunkSizeWarningLimit: 1024 * 4,
+        rollupOptions: {
+          onwarn(warning: any, warn: any) {
+            if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+              return
+            }
+            warn(warning)
+          },
+        },
+      },
     })
   },
 }
