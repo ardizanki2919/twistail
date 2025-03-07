@@ -1,7 +1,6 @@
 import type { Decorator } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
-// import ThemeProvider from '#/context/providers/theme-provider'
 
 function setTheme(theme: 'light' | 'dark') {
   document.documentElement.dataset.theme = theme
