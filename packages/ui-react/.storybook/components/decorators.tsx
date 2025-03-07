@@ -1,8 +1,6 @@
 import type { Decorator } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
-// import { Toaster } from '#/components/base-ui'
-// import ThemeProvider from '#/context/providers/theme-provider'
 
 function setTheme(theme: 'light' | 'dark') {
   document.documentElement.dataset.theme = theme
@@ -37,13 +35,4 @@ export const withThemeProvider: Decorator = (Story, context) => {
       <Story />
     </MemoryRouter>
   )
-
-  // return (
-  //   <ThemeProvider>
-  //     <MemoryRouter>
-  //       <Story />
-  //       <Toaster />
-  //     </MemoryRouter>
-  //   </ThemeProvider>
-  // )
 }

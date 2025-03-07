@@ -1,0 +1,91 @@
+import { focusRing } from '@twistail/react/utils'
+import { type VariantProps, tv } from 'tailwind-variants'
+
+const buttonStyles = tv({
+  base: [
+    // base
+    'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
+    // disabled
+    'disabled:pointer-events-none disabled:shadow-none',
+    // focus
+    focusRing,
+  ],
+  variants: {
+    variant: {
+      primary: [
+        // border
+        'border-transparent',
+        // text color
+        'text-white dark:text-white',
+        // background color
+        'bg-blue-500 dark:bg-blue-500',
+        // hover color
+        'hover:bg-blue-600 dark:hover:bg-blue-600',
+        // disabled
+        'disabled:bg-blue-300 disabled:text-white',
+        'disabled:dark:bg-blue-800 disabled:dark:text-blue-400',
+      ],
+      secondary: [
+        // border
+        'border-slate-300 dark:border-slate-800',
+        // text color
+        'text-slate-900 dark:text-slate-50',
+        // background color
+        'bg-white dark:bg-slate-950',
+        //hover color
+        'hover:bg-slate-50 dark:hover:bg-slate-900/60',
+        // disabled
+        'disabled:text-slate-400',
+        'disabled:dark:text-slate-600',
+      ],
+      light: [
+        // base
+        'shadow-none',
+        // border
+        'border-transparent',
+        // text color
+        'text-slate-900 dark:text-slate-50',
+        // background color
+        'bg-slate-200 dark:bg-slate-900',
+        // hover color
+        'hover:bg-slate-300/70 dark:hover:bg-slate-800/80',
+        // disabled
+        'disabled:bg-slate-100 disabled:text-slate-400',
+        'disabled:dark:bg-slate-800 disabled:dark:text-slate-600',
+      ],
+      ghost: [
+        // base
+        'shadow-none',
+        // border
+        'border-transparent',
+        // text color
+        'text-slate-900 dark:text-slate-50',
+        // hover color
+        'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800/80',
+        // disabled
+        'disabled:text-slate-400',
+        'disabled:dark:text-slate-600',
+      ],
+      destructive: [
+        // text color
+        'text-white',
+        // border
+        'border-transparent',
+        // background color
+        'bg-red-600 dark:bg-red-700',
+        // hover color
+        'hover:bg-red-700 dark:hover:bg-red-600',
+        // disabled
+        'disabled:bg-red-300 disabled:text-white',
+        'disabled:dark:bg-red-950 disabled:dark:text-red-400',
+      ],
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+  },
+})
+
+type ButtonStyles = VariantProps<typeof buttonStyles>
+
+export { buttonStyles, type ButtonStyles }

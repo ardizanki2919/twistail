@@ -1,4 +1,4 @@
-import { Button } from '@twistail/ui-react/components'
+import { Button, Card } from '@twistail/react/components'
 import * as React from 'react'
 import PageShell from '#/layouts/page-shell'
 
@@ -36,7 +36,7 @@ export default function Page() {
               React Application
             </h1>
 
-            <div className="mx-auto mb-8 max-w-xl rounded-xl bg-slate-800/50 p-8 shadow-lg">
+            <Card className="mx-auto mb-8 flex max-w-xl flex-col items-center justify-center">
               <Button type="button" variant="primary" onClick={handleClick}>
                 Count is {count}
               </Button>
@@ -48,7 +48,7 @@ export default function Page() {
                 </code>{' '}
                 and save to test HMR
               </p>
-            </div>
+            </Card>
 
             <div className="space-y-2 text-slate-400">
               <p>Click on the Vite and React logos to learn more</p>

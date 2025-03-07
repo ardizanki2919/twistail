@@ -1,19 +1,19 @@
 {
-    "name": "react-vite",
+    "name": "example-react-vite",
     "version": "0.0.0",
     "type": "module",
     "private": true,
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "start": "pnpm dlx serve dist -l 3000 -s -n -C",
+        "start": "pnpm dlx serve dist -l 4100 -s -n -C",
         "cleanup": "pnpm dlx rimraf dist node_modules",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "@twistail/ui-react": "workspace:*",
+        "@twistail/react": "workspace:*",
         "consola": "^3.4.0",
         "pathe": "^2.0.3",
         "react": "^19.0.0",
@@ -24,15 +24,17 @@
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
-        "@tailwindcss/vite": "^4.0.11",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/vite": "^4.0.12",
         "@types/node": "^22.13.9",
-        "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
+        "@types/react": "^19.0.10",
         "@vitejs/plugin-react": "^4.3.4",
         "tailwind-variants": "^0.3.1",
-        "tailwindcss": "^4.0.11",
+        "tailwindcss-motion": "^1.1.0",
+        "tailwindcss": "^4.0.12",
         "typescript": "catalog:",
-        "vite": "^6.2.0",
+        "vite": "^6.2.1",
         "vite-tsconfig-paths": "^5.1.4"
     }
 }

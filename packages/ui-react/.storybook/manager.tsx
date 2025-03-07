@@ -2,63 +2,16 @@
 
 import { addons } from '@storybook/manager-api'
 import * as React from 'react'
-import type { CSSProperties } from 'react'
+import badges, { type BadgeConfig } from './badges'
 import { type Theme, dark, light } from './themes'
 import { listenToColorScheme } from './utils'
-
-type BadgeConfig = {
-  style: CSSProperties
-  label: string
-}
-
-const badges = {
-  'status:new-item': {
-    label: 'New Item',
-    style: {
-      color: '#ffffff',
-      backgroundColor: '#3b82f6',
-      borderColor: '#60a5fa',
-    },
-  },
-  'status:experimental': {
-    label: 'Experimental',
-    style: {
-      color: '#ffffff',
-      backgroundColor: '#f97316',
-      borderColor: '#fb923c',
-    },
-  },
-  'status:under-review': {
-    label: 'Under Review',
-    style: {
-      color: '#f0fdf5',
-      backgroundColor: '#16a34a',
-      borderColor: '#22c55e',
-    },
-  },
-  'status:legacy': {
-    label: 'Legacy',
-    style: {
-      color: '#fdf6fc',
-      backgroundColor: '#9a317f',
-      borderColor: '#c149a4',
-    },
-  },
-  'status:deprecated': {
-    label: 'Deprecated',
-    style: {
-      color: '#ffffff',
-      backgroundColor: '#dc2626',
-      borderColor: '#ef4444',
-    },
-  },
-} satisfies Record<string, BadgeConfig>
 
 addons.setConfig({
   isFullscreen: false,
   showPanel: true,
   showToolbar: true,
   panelPosition: 'bottom',
+  initialActive: 'canvas',
   sidebar: {
     filters: {
       patterns: (item) => {

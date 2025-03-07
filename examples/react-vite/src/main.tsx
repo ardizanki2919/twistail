@@ -1,5 +1,6 @@
 // Import global CSS stylesheet
-import '@twistail/ui-react/global.css'
+import '@twistail/react/global.css'
+import './styles.css'
 
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
