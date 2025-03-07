@@ -8,7 +8,7 @@ export default function Page() {
 
   return (
     <PageShell title="React Application">
-      <div className="flex min-h-screen items-center bg-gradient-to-br from-teal-700 to-slate-800 text-white">
+      <div className="flex min-h-screen items-center bg-gradient-to-br from-teal-700 to-gray-800 text-white">
         <div className="container mx-auto px-4 py-16">
           {/* Logo Section */}
           <div className="mb-12 flex justify-center space-x-8">
@@ -41,16 +41,16 @@ export default function Page() {
                 Count is {count}
               </Button>
 
-              <p className="mt-4 text-slate-300">
+              <p className="mt-4 text-gray-300">
                 Edit{' '}
-                <code className="rounded bg-slate-700 px-2 py-1 text-sm">
+                <code className="rounded bg-gray-700 px-2 py-1 text-sm">
                   examples/react-vite/src/app.tsx
                 </code>{' '}
                 and save to test HMR
               </p>
             </Card>
 
-            <div className="space-y-2 text-slate-400">
+            <div className="space-y-2 text-gray-400">
               <p>Click on the Vite and React logos to learn more</p>
             </div>
           </div>

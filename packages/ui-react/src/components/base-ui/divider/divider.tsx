@@ -13,7 +13,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
         // base
         'mx-auto my-6 flex w-full items-center justify-between gap-3 text-sm',
         // text color
-        'text-slate-500 dark:text-slate-500',
+        'text-gray-500 dark:text-gray-500',
         className
       )}
       tremor-id="tremor-raw"
@@ -26,7 +26,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
               // base
               'h-[1px] w-full',
               // background color
-              'bg-slate-200 dark:bg-slate-800'
+              'bg-gray-200 dark:bg-gray-800'
             )}
           />
           <div className="whitespace-nowrap text-inherit">{children}</div>
@@ -35,7 +35,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
               // base
               'h-[1px] w-full',
               // background color
-              'bg-slate-200 dark:bg-slate-800'
+              'bg-gray-200 dark:bg-gray-800'
             )}
           />
         </>
@@ -45,7 +45,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
             // base
             'h-[1px] w-full',
             // background color
-            'bg-slate-200 dark:bg-slate-800'
+            'bg-gray-200 dark:bg-gray-800'
           )}
         />
       )}

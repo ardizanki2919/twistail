@@ -6,19 +6,19 @@ const selectNativeStyles = tv({
     // base
     'peer w-full cursor-pointer appearance-none truncate rounded-md border py-2 pl-3 pr-7 shadow-sm outline-none transition-all sm:text-sm',
     // background color
-    'bg-white dark:bg-slate-950',
+    'bg-white dark:bg-gray-950',
     // border color
-    'border-slate-300 dark:border-slate-800',
+    'border-gray-300 dark:border-gray-800',
     // text color
-    'text-slate-900 dark:text-slate-50',
+    'text-gray-900 dark:text-gray-50',
     // placeholder color
-    'placeholder-slate-400 dark:placeholder-slate-500',
+    'placeholder-gray-400 dark:placeholder-gray-500',
     // hover
-    'hover:bg-slate-50 hover:dark:bg-slate-950/50',
+    'hover:bg-gray-50 hover:dark:bg-gray-950/50',
     // disabled
     'disabled:pointer-events-none',
-    'disabled:bg-slate-100 disabled:text-slate-400',
-    'disabled:dark:border-slate-700 disabled:dark:bg-slate-800 disabled:dark:text-slate-500',
+    'disabled:bg-gray-100 disabled:text-gray-400',
+    'disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
     // focus
     focusInput,
     // invalid (optional)

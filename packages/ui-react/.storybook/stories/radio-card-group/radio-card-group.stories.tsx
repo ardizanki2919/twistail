@@ -170,7 +170,7 @@ export const Controlled: Story = {
                   <div className="flex items-start gap-3">
                     <RadioCardIndicator className="mt-1" />
                     <div>
-                      <p className="mt-1 text-slate-500 text-xs">1/8 vCPU, 1 GB RAM</p>
+                      <p className="mt-1 text-gray-500 text-xs">1/8 vCPU, 1 GB RAM</p>
                     </div>
                   </div>
                 </RadioCardItem>
@@ -186,7 +186,7 @@ export const Controlled: Story = {
             Reset
           </Button>
         </form>
-        <pre className="mt-6 w-fit rounded-md bg-slate-100 p-2 font-mono text-slate-700 text-sm dark:bg-slate-800 dark:text-slate-200">
+        <pre className="mt-6 w-fit rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
           Selected Opt: {selectedOption ? selectedOption : 'Nothing selected!'}
         </pre>
       </div>

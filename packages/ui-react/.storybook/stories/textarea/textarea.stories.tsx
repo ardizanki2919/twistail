@@ -33,10 +33,10 @@ export const HasError: Story = {
 export const WithCard: Story = {
   render: () => (
     <Card className="sm:w-96">
-      <h3 className="font-medium text-slate-900 dark:text-slate-50">Submit details</h3>
-      <p className="mt-4 text-slate-500 text-sm">Insert some text</p>
+      <h3 className="font-medium text-gray-900 dark:text-gray-50">Submit details</h3>
+      <p className="mt-4 text-gray-500 text-sm">Insert some text</p>
       <Textarea id="textarea" name="textarea" className="mt-2" />
-      <p className="mt-4 text-slate-500 text-sm">This is disabled</p>
+      <p className="mt-4 text-gray-500 text-sm">This is disabled</p>
       <Textarea id="textarea" name="textarea" className="mt-2" disabled />
     </Card>
   ),

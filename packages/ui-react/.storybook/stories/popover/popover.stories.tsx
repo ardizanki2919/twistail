@@ -63,7 +63,7 @@ export const Close: Story = {
             <Label htmlFor="name">Name</Label>
             <Input id="name" name="name" type="text" placeholder="Emma" />
           </div>
-          <div className="flex items-center gap-2 border-slate-200 border-t p-2 dark:border-slate-800">
+          <div className="flex items-center gap-2 border-gray-200 border-t p-2 dark:border-gray-800">
             <PopoverClose asChild>
               <Button className="w-full" variant="secondary">
                 Clear
@@ -106,7 +106,7 @@ export const PopoverInDialog: Story = {
                       <Label htmlFor="name">Name</Label>
                       <Input id="name" name="name" type="text" placeholder="Emma" />
                     </div>
-                    <div className="flex items-center gap-2 border-slate-200 border-t p-2 dark:border-slate-800">
+                    <div className="flex items-center gap-2 border-gray-200 border-t p-2 dark:border-gray-800">
                       <PopoverClose asChild>
                         <Button className="w-full" variant="secondary">
                           Clear

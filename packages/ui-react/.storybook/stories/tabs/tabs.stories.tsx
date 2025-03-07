@@ -22,7 +22,7 @@ export const VariantLine: Story = {
       <div className="mt-4 ml-2">
         <TabsContent
           value="tab1"
-          className="space-y-2 text-slate-600 text-sm leading-7 dark:text-slate-500"
+          className="space-y-2 text-gray-600 text-sm leading-7 dark:text-gray-500"
         >
           <p>
             You have 60 days from the time we've shipped your order to return any part of it to us
@@ -37,7 +37,7 @@ export const VariantLine: Story = {
         </TabsContent>
         <TabsContent
           value="tab2"
-          className="space-y-2 text-slate-600 text-sm leading-7 dark:text-slate-500"
+          className="space-y-2 text-gray-600 text-sm leading-7 dark:text-gray-500"
         >
           <p>
             We ship worldwide via UPS Expedited. We offer flat rate shipping to customers in Canada
@@ -66,7 +66,7 @@ export const VariantSolid: Story = {
       <div className="mt-4 ml-2">
         <TabsContent
           value="tab1"
-          className="space-y-2 text-slate-600 text-sm leading-7 dark:text-slate-500"
+          className="space-y-2 text-gray-600 text-sm leading-7 dark:text-gray-500"
         >
           <p>
             You have 60 days from the time we've shipped your order to return any part of it to us
@@ -81,7 +81,7 @@ export const VariantSolid: Story = {
         </TabsContent>
         <TabsContent
           value="tab2"
-          className="space-y-2 text-slate-600 text-sm leading-7 dark:text-slate-500"
+          className="space-y-2 text-gray-600 text-sm leading-7 dark:text-gray-500"
         >
           <p>
             We ship worldwide via UPS Expedited. We offer flat rate shipping to customers in Canada
@@ -115,10 +115,10 @@ export const VariantLineWithIcons: Story = {
       </TabsList>
       <div className="mt-4">
         <TabsContent value="tab1">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
         </TabsContent>
         <TabsContent value="tab2">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
         </TabsContent>
       </div>
     </Tabs>
@@ -140,10 +140,10 @@ export const VariantSolidWithIcons: Story = {
       </TabsList>
 
       <TabsContent value="tab1">
-        <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+        <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
       </TabsContent>
       <TabsContent value="tab2">
-        <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+        <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
       </TabsContent>
     </Tabs>
   ),
@@ -161,13 +161,13 @@ export const VariantLineDisabled: Story = {
       </TabsList>
       <div className="mt-4">
         <TabsContent value="tab1">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
         </TabsContent>
         <TabsContent value="tab2">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
         </TabsContent>
         <TabsContent value="tab3">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 3 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
         </TabsContent>
       </div>
     </Tabs>
@@ -186,13 +186,13 @@ export const VariantSolidDisabled: Story = {
       </TabsList>
       <div className="mt-4">
         <TabsContent value="tab1">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
         </TabsContent>
         <TabsContent value="tab2">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
         </TabsContent>
         <TabsContent value="tab3">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 3 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
         </TabsContent>
       </div>
     </Tabs>
@@ -209,13 +209,13 @@ export const VariantLineStrechWidth: Story = {
       </TabsList>
       <div className="mt-4">
         <TabsContent value="tab1">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
         </TabsContent>
         <TabsContent value="tab2">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
         </TabsContent>
         <TabsContent value="tab3">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 3 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
         </TabsContent>
       </div>
     </Tabs>
@@ -232,13 +232,13 @@ export const VariantSolidStrechWidth: Story = {
       </TabsList>
       <div className="mt-4">
         <TabsContent value="tab1">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
         </TabsContent>
         <TabsContent value="tab2">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
         </TabsContent>
         <TabsContent value="tab3">
-          <p className="text-slate-500 text-sm sm:text-slate-500">Tab 3 content</p>
+          <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
         </TabsContent>
       </div>
     </Tabs>

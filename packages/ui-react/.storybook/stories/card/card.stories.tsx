@@ -53,10 +53,10 @@ const data1 = [
 export const WithText: Story = {
   render: () => (
     <Card className="max-w-lg">
-      <h3 className="font-semibold text-slate-900 dark:text-slate-50">
+      <h3 className="font-semibold text-gray-900 dark:text-gray-50">
         Perseverance Rover's Latest Mars Discovery
       </h3>
-      <p className="mt-2 text-slate-900 text-sm leading-7 dark:text-slate-50">
+      <p className="mt-2 text-gray-900 text-sm leading-7 dark:text-gray-50">
         NASA's Perseverance Rover has made an exciting discovery on Mars, finding evidence of
         ancient microbial life in rock samples. This marks a significant step forward in our
         understanding of the Red Planet's history and the search for extraterrestrial life.
@@ -68,10 +68,10 @@ export const WithText: Story = {
 export const WithFullDivider: Story = {
   render: () => (
     <Card className="max-w-lg p-0">
-      <h3 className="p-4 font-semibold text-slate-900 dark:text-slate-50">
+      <h3 className="p-4 font-semibold text-gray-900 dark:text-gray-50">
         Perseverance Rover's Latest Mars Discovery
       </h3>
-      <p className="border-t p-4 text-slate-900 text-sm leading-7 dark:border-slate-900 dark:text-slate-50">
+      <p className="border-t p-4 text-gray-900 text-sm leading-7 dark:border-gray-900 dark:text-gray-50">
         NASA's Perseverance Rover has made an exciting discovery on Mars, finding evidence of
         ancient microbial life in rock samples. This marks a significant step forward in our
         understanding of the Red Planet's history and the search for extraterrestrial life.
@@ -84,12 +84,12 @@ export const AsChildList: Story = {
   render: () => (
     <ol className="flex list-none flex-col gap-4">
       <Card asChild>
-        <li className="text-slate-900 dark:text-slate-50">
+        <li className="text-gray-900 dark:text-gray-50">
           This card will be turned into a {`<li>`} element{' '}
         </li>
       </Card>
       <Card asChild>
-        <li className="text-slate-900 dark:text-slate-50">
+        <li className="text-gray-900 dark:text-gray-50">
           This card will also be turned into a {`<li>`} element{' '}
         </li>
       </Card>
@@ -112,13 +112,13 @@ export const WithInputs: Story = {
             </TabsList>
             <div className="mt-4">
               <TabsContent value="tab1">
-                <p className="text-slate-500 text-sm sm:text-slate-500">Tab 1 content</p>
+                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
               </TabsContent>
               <TabsContent value="tab2">
-                <p className="text-slate-500 text-sm sm:text-slate-500">Tab 2 content</p>
+                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
               </TabsContent>
               <TabsContent value="tab3">
-                <p className="text-slate-500 text-sm sm:text-slate-500">Tab 3 content</p>
+                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
               </TabsContent>
             </div>
           </Tabs>
@@ -187,7 +187,7 @@ export const WithInputs: Story = {
         </div>
 
         <Divider />
-        <div className="flex w-full gap-2 *:w-full dark:border-slate-800">
+        <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
           <Button variant="light">Clear</Button>
           <Button variant="secondary">Clear</Button>
           <Tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor.">

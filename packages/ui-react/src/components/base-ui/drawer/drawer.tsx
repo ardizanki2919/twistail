@@ -71,7 +71,7 @@ const DrawerContent = React.forwardRef<
             // base
             'fixed inset-y-2 z-50 mx-auto flex w-[95vw] flex-1 flex-col overflow-y-auto rounded-md border p-4 shadow-lg focus:outline-none max-sm:inset-x-2 sm:inset-y-2 sm:right-2 sm:max-w-lg sm:p-6',
             // border color
-            'border-slate-200 dark:border-slate-900',
+            'border-gray-200 dark:border-gray-900',
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
@@ -93,14 +93,14 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
     return (
       <div
         ref={ref}
-        className="flex items-start justify-between gap-x-4 border-slate-200 border-b pb-4 dark:border-slate-900"
+        className="flex items-start justify-between gap-x-4 border-gray-200 border-b pb-4 dark:border-gray-900"
         {...props}
       >
         <div className={clx('mt-1 flex flex-col gap-y-1', className)}>{children}</div>
         <DrawerPrimitives.Close asChild>
           <Button
             variant="ghost"
-            className="aspect-square p-1 hover:bg-slate-100 hover:dark:bg-slate-400/10"
+            className="aspect-square p-1 hover:bg-gray-100 hover:dark:bg-gray-400/10"
           >
             <RiCloseLine className="size-6" aria-hidden="true" />
           </Button>
@@ -122,7 +122,7 @@ const DrawerTitle = React.forwardRef<
       // base
       'font-semibold text-base',
       // text color
-      'text-slate-900 dark:text-slate-50',
+      'text-gray-900 dark:text-gray-50',
       className
     )}
     {...props}
@@ -145,7 +145,7 @@ const DrawerDescription = React.forwardRef<
   return (
     <DrawerPrimitives.Description
       ref={forwardedRef}
-      className={clx('text-slate-500 dark:text-slate-500', className)}
+      className={clx('text-gray-500 dark:text-gray-500', className)}
       {...props}
     />
   )
@@ -157,7 +157,7 @@ const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   return (
     <div
       className={clx(
-        'flex flex-col-reverse border-slate-200 border-t pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-slate-900',
+        'flex flex-col-reverse border-gray-200 border-t pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900',
         className
       )}
       {...props}

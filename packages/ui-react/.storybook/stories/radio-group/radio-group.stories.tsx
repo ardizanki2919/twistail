@@ -49,7 +49,7 @@ export const WithLegend: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-slate-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
         <RadioGroup>
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_21" />
@@ -82,7 +82,7 @@ export const WithLabelAndDescription: Story = {
           >
             Privacy Mode
           </Label>
-          <p className="text-slate-500 text-sm" id="radio_11-description">
+          <p className="text-gray-500 text-sm" id="radio_11-description">
             Enhance your security by enabling Privacy Mode, which anonymizes all outgoing links to
             protect your data.
           </p>
@@ -98,7 +98,7 @@ export const WithLabelAndDescription: Story = {
           >
             Performance Mode
           </Label>
-          <p className="text-slate-500 text-sm" id="radio_22-description">
+          <p className="text-gray-500 text-sm" id="radio_22-description">
             Optimize your site's speed by activating Performance Mode, ensuring faster load times
             and a smoother user experience.
           </p>
@@ -114,7 +114,7 @@ export const WithLabelAndDescription: Story = {
           >
             Compatibility Mode
           </Label>
-          <p className="text-slate-500 text-sm" id="radio_33-description">
+          <p className="text-gray-500 text-sm" id="radio_33-description">
             Ensure maximum compatibility with legacy systems by selecting Compatibility Mode, ideal
             for broad audience reach.
           </p>
@@ -128,7 +128,7 @@ export const Disabled: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-slate-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
         <RadioGroup>
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_41" />
@@ -154,7 +154,7 @@ export const DefaultChecked: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-slate-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
         <RadioGroup defaultValue="1">
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_31" />
@@ -182,7 +182,7 @@ export const Controlled: Story = {
       <div className="flex flex-col items-center justify-start">
         <form>
           <fieldset className="space-y-3">
-            <legend className="font-medium text-slate-900 text-sm dark:text-slate-50">
+            <legend className="font-medium text-gray-900 text-sm dark:text-gray-50">
               Choose your preferred interior option:
             </legend>
             <RadioGroup
@@ -214,7 +214,7 @@ export const Controlled: Story = {
             Reset
           </Button>
         </form>
-        <pre className="mt-6 w-fit rounded-md bg-slate-100 p-2 font-mono text-slate-700 text-sm dark:bg-slate-800 dark:text-slate-200">
+        <pre className="mt-6 w-fit rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
           Selected Opt: {selectedOption ? selectedOption : 'Nothing selected!'}
         </pre>
       </div>

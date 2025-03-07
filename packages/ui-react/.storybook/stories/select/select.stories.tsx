@@ -426,7 +426,7 @@ export const Controlled: Story = {
             Reset selection
           </Button>
         </div>
-        <p className="mt-2 text-slate-500 text-sm">Selected key: {value}</p>
+        <p className="mt-2 text-gray-500 text-sm">Selected key: {value}</p>
       </>
     )
   },

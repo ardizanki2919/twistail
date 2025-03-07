@@ -261,19 +261,19 @@ export const WithIcons: Story = {
           <DropdownMenuGroup>
             <DropdownMenuItem shortcut="⌘W">
               <div className="flex items-center space-x-2">
-                <RiStackLine className="size-4 text-slate-500" />
+                <RiStackLine className="size-4 text-gray-500" />
                 <span>Workspaces</span>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem shortcut="⌘M">
               <div className="flex items-center space-x-2">
-                <RiFolder5Line className="size-4 text-slate-500" />
+                <RiFolder5Line className="size-4 text-gray-500" />
                 <span>Metrics catalogue (with long edge case)</span>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem shortcut="⌘S">
               <div className="flex items-center space-x-2">
-                <RiSettings2Line className="size-4 text-slate-500" />
+                <RiSettings2Line className="size-4 text-gray-500" />
                 <span>Settings</span>
               </div>
             </DropdownMenuItem>

@@ -57,7 +57,7 @@ const DialogContent = React.forwardRef<
             // base
             '-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-[95vw] max-w-lg overflow-y-auto rounded-md border p-6 shadow-lg',
             // border color
-            'border-slate-200 dark:border-slate-900',
+            'border-gray-200 dark:border-gray-900',
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
@@ -91,7 +91,7 @@ const DialogTitle = React.forwardRef<
       // base
       'font-semibold text-lg',
       // text color
-      'text-slate-900 dark:text-slate-50',
+      'text-gray-900 dark:text-gray-50',
       className
     )}
     {...props}
@@ -107,7 +107,7 @@ const DialogDescription = React.forwardRef<
   return (
     <DialogPrimitives.Description
       ref={forwardedRef}
-      className={clx('text-slate-500 dark:text-slate-500', className)}
+      className={clx('text-gray-500 dark:text-gray-500', className)}
       {...props}
     />
   )

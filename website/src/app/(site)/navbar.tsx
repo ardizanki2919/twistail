@@ -27,14 +27,14 @@ export const NavBar = () => {
             <nav className="flex gap-10">
               <Link
                 href="/docs/components"
-                className="font-medium text-slate-600 transition duration-100 hover:text-blue-500 active:text-blue-700"
+                className="font-medium text-gray-600 transition duration-100 hover:text-blue-500 active:text-blue-700"
               >
                 Components
               </Link>
               <Link
                 href="/docs/getting-started"
                 className={clx(
-                  pathname === '/docs' ? 'text-blue-500' : 'text-slate-600',
+                  pathname === '/docs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
                 )}
               >
@@ -43,19 +43,19 @@ export const NavBar = () => {
               <Link
                 href="/faqs"
                 className={clx(
-                  pathname === '/faqs' ? 'text-blue-500' : 'text-slate-600',
+                  pathname === '/faqs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
                 )}
               >
                 FAQs
               </Link>
             </nav>
-            <div className="h-px w-12 bg-slate-200" />
+            <div className="h-px w-12 bg-gray-200" />
             <div className="flex gap-6">
               <Link
                 href="https://github.com/riipandi/twistail"
                 target="_blank"
-                className="text-slate-400 transition duration-100 hover:text-slate-500 active:text-slate-600"
+                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
               >
                 <GitHubIcon className="size-5" />
               </Link>
@@ -65,7 +65,7 @@ export const NavBar = () => {
 
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-lg bg-slate-200 px-2.5 py-2 font-semibold text-slate-500 text-sm ring-blue-300 hover:bg-slate-300 focus-visible:ring active:text-slate-700 md:text-base lg:hidden"
+          className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 font-semibold text-gray-500 text-sm ring-blue-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

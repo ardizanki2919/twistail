@@ -41,9 +41,9 @@ const ControlledSlider = (args: any) => {
         </div>
       </form>
       <Divider />
-      <p className="mt-2 text-slate-500 text-sm">
+      <p className="mt-2 text-gray-500 text-sm">
         Slider value:
-        <span className="ml-1 font-semibold text-slate-900 dark:text-slate-50">
+        <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
           {value[0]}, {value[1]}
         </span>
       </p>

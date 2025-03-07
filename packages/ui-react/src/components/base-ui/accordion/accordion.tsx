@@ -20,9 +20,9 @@ const AccordionTrigger = React.forwardRef<
         // base
         'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-sm leading-none',
         // text color
-        'text-slate-900 dark:text-slate-50',
+        'text-gray-900 dark:text-gray-50',
         // disabled
-        'data-[disabled]:cursor-default data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600',
+        'data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600',
         //focus
         'focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset',
         className
@@ -36,9 +36,9 @@ const AccordionTrigger = React.forwardRef<
           // base
           'group-data-[state=open]:-rotate-45 size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
           // text color
-          'text-slate-400 dark:text-slate-600',
+          'text-gray-400 dark:text-gray-600',
           // disabled
-          'group-data-[disabled]:text-slate-300 group-data-[disabled]:dark:text-slate-700'
+          'group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700'
         )}
         aria-hidden="true"
         focusable="false"
@@ -65,7 +65,7 @@ const AccordionContent = React.forwardRef<
         // base
         'overflow-hidden pb-4 text-sm',
         // text color
-        'text-slate-700 dark:text-slate-200',
+        'text-gray-700 dark:text-gray-200',
         className
       )}
     >
@@ -86,7 +86,7 @@ const AccordionItem = React.forwardRef<
       // base
       'overflow-hidden border-b first:mt-0',
       // border color
-      'border-slate-200 dark:border-slate-800',
+      'border-gray-200 dark:border-gray-800',
       className
     )}
     tremor-id="tremor-raw"
