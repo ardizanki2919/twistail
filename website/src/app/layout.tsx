@@ -1,7 +1,8 @@
-/* Import the CSS files */
-import { clx } from '@twistail/react/utils'
+// Import global CSS stylesheet
+import '@twistail/react/global.css'
 import '../styles/global.css'
 
+import { clx } from '@twistail/react/utils'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 

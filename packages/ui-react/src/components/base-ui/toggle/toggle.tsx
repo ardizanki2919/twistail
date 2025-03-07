@@ -8,16 +8,16 @@ import React from 'react'
 const toggleStyles = [
   // base
   'group inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md border px-2 text-sm font-medium shadow-sm transition-all duration-100 ease-in-out',
-  'border-gray-300 dark:border-gray-800',
+  'border-slate-300 dark:border-slate-800',
   // text color
-  'text-gray-700 dark:text-gray-300',
+  'text-slate-700 dark:text-slate-300',
   // background color
-  'bg-white dark:bg-gray-950',
+  'bg-white dark:bg-slate-950',
   //hover color
-  'hover:bg-gray-50 dark:hover:bg-gray-900/60',
+  'hover:bg-slate-50 dark:hover:bg-slate-900/60',
   // disabled
-  'disabled:pointer-events-none disabled:text-gray-400 disabled:dark:text-gray-600',
-  'data-[state=on]:bg-gray-100 data-[state=on]:text-gray-900 dark:data-[state=on]:bg-gray-800 dark:data-[state=on]:text-gray-50',
+  'disabled:pointer-events-none disabled:text-slate-400 disabled:dark:text-slate-600',
+  'data-[state=on]:bg-slate-100 data-[state=on]:text-slate-900 dark:data-[state=on]:bg-slate-800 dark:data-[state=on]:text-slate-50',
   focusRing,
 ]
 

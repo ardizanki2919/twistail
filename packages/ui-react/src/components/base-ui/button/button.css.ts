@@ -27,16 +27,16 @@ const buttonStyles = tv({
       ],
       secondary: [
         // border
-        'border-gray-300 dark:border-gray-800',
+        'border-slate-300 dark:border-slate-800',
         // text color
-        'text-gray-900 dark:text-gray-50',
+        'text-slate-900 dark:text-slate-50',
         // background color
-        'bg-white dark:bg-gray-950',
+        'bg-white dark:bg-slate-950',
         //hover color
-        'hover:bg-gray-50 dark:hover:bg-gray-900/60',
+        'hover:bg-slate-50 dark:hover:bg-slate-900/60',
         // disabled
-        'disabled:text-gray-400',
-        'disabled:dark:text-gray-600',
+        'disabled:text-slate-400',
+        'disabled:dark:text-slate-600',
       ],
       light: [
         // base
@@ -44,14 +44,14 @@ const buttonStyles = tv({
         // border
         'border-transparent',
         // text color
-        'text-gray-900 dark:text-gray-50',
+        'text-slate-900 dark:text-slate-50',
         // background color
-        'bg-gray-200 dark:bg-gray-900',
+        'bg-slate-200 dark:bg-slate-900',
         // hover color
-        'hover:bg-gray-300/70 dark:hover:bg-gray-800/80',
+        'hover:bg-slate-300/70 dark:hover:bg-slate-800/80',
         // disabled
-        'disabled:bg-gray-100 disabled:text-gray-400',
-        'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
+        'disabled:bg-slate-100 disabled:text-slate-400',
+        'disabled:dark:bg-slate-800 disabled:dark:text-slate-600',
       ],
       ghost: [
         // base
@@ -59,12 +59,12 @@ const buttonStyles = tv({
         // border
         'border-transparent',
         // text color
-        'text-gray-900 dark:text-gray-50',
+        'text-slate-900 dark:text-slate-50',
         // hover color
-        'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800/80',
+        'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800/80',
         // disabled
-        'disabled:text-gray-400',
-        'disabled:dark:text-gray-600',
+        'disabled:text-slate-400',
+        'disabled:dark:text-slate-600',
       ],
       destructive: [
         // text color

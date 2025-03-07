@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
 
-/* Uncomment this line to enable dark mode via a data-theme attribute */
 /* @variant dark (&:where([data-theme="dark"] *)); */
+/* @source "../../node_modules/@twistail/react"; */
 
 @theme inline {
     /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */

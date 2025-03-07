@@ -37,12 +37,12 @@ export const Default: Story = {
         <AccordionContent>
           <ol className="flex flex-col gap-2">
             <li>
-              <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span> Tap the
-              Inbox icon and then tap Add receipts.
+              <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span> Tap
+              the Inbox icon and then tap Add receipts.
             </li>
             <li>
-              <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span> Tap the
-              + symbol to attach a photo or PDF of the receipt for our system to match.
+              <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span> Tap
+              the + symbol to attach a photo or PDF of the receipt for our system to match.
             </li>
           </ol>
         </AccordionContent>
@@ -52,12 +52,12 @@ export const Default: Story = {
         <AccordionContent>
           <ol className="flex flex-col gap-2">
             <li>
-              <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span>{' '}
+              <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span>{' '}
               <span className="underline">Download</span> the browser extension for Chrome or
               Safari. (Firefox support is coming soon.)
             </li>
             <li>
-              <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span> Click
+              <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span> Click
               the extension icon at the top of your browser. Under the Receipts tab, upload an image
               or click Screenshot current tab to automatically attach the receipt to the expense.
             </li>
@@ -77,7 +77,7 @@ export const Default: Story = {
 export const WithIcons: Story = {
   render: () => (
     <div className="mx-auto max-w-lg">
-      <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
+      <h1 className="font-semibold text-md text-slate-900 dark:text-slate-50">
         Managing Your Booking Online
       </h1>
       <Accordion type="multiple" className="mt-3">
@@ -105,19 +105,19 @@ export const WithIcons: Story = {
           <AccordionContent>
             <ol className="flex flex-col gap-2">
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span>{' '}
                 Within your booking details, select "Change Flights."
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span>{' '}
                 Follow the prompts to select new flight options and confirm the changes.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 3:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 3:</span>{' '}
                 Review your new flight details and any fare differences.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 4:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 4:</span>{' '}
                 Complete the change and receive your updated itinerary via email.
               </li>
             </ol>
@@ -148,11 +148,11 @@ export const WithIcons: Story = {
           <AccordionContent>
             <ol className="flex flex-col gap-2">
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span>{' '}
                 Starting 48 hours before your flight, access the "Check-In" option.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span>{' '}
                 Confirm your details and select your seats to complete the online check-in process.
               </li>
             </ol>
@@ -177,7 +177,7 @@ export const OneItem: Story = {
 export const DefaultValueAndCollapsibleDisabled: Story = {
   render: () => (
     <div className="mx-auto max-w-lg">
-      <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
+      <h1 className="font-semibold text-md text-slate-900 dark:text-slate-50">
         Managing Your Booking Online
       </h1>
       <Accordion type="single" defaultValue="item-1" className="mt-3" collapsible>
@@ -205,19 +205,19 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
           <AccordionContent>
             <ol className="flex flex-col gap-2">
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span>{' '}
                 Within your booking details, select "Change Flights."
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span>{' '}
                 Follow the prompts to select new flight options and confirm the changes.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 3:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 3:</span>{' '}
                 Review your new flight details and any fare differences.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 4:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 4:</span>{' '}
                 Complete the change and receive your updated itinerary via email.
               </li>
             </ol>
@@ -248,11 +248,11 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
           <AccordionContent>
             <ol className="flex flex-col gap-2">
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 1:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 1:</span>{' '}
                 Starting 48 hours before your flight, access the "Check-In" option.
               </li>
               <li>
-                <span className="font-semibold text-gray-900 dark:text-gray-50">Step 2:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-slate-50">Step 2:</span>{' '}
                 Confirm your details and select your seats to complete the online check-in process.
               </li>
             </ol>
@@ -379,11 +379,11 @@ export const Controlled: Story = {
             <AccordionContent>
               <ol className="flex flex-col gap-2">
                 <li>
-                  <span className="font-semibold text-gray-800">Step 1:</span>
+                  <span className="font-semibold text-slate-800">Step 1:</span>
                   Tap the Inbox icon and then tap Add receipts.
                 </li>
                 <li>
-                  <span className="font-semibold text-gray-800">Step 2:</span>
+                  <span className="font-semibold text-slate-800">Step 2:</span>
                   Tap the + symbol to attach a photo or PDF of the receipt for our system to match.
                 </li>
               </ol>
@@ -395,12 +395,12 @@ export const Controlled: Story = {
             <AccordionContent>
               <ol className="flex flex-col gap-2">
                 <li>
-                  <span className="font-semibold text-gray-800">Step 1:</span>
+                  <span className="font-semibold text-slate-800">Step 1:</span>
                   <span className="underline">Download</span> the browser extension for Chrome or
                   Safari. (Firefox support is coming soon.)
                 </li>
                 <li>
-                  <span className="font-semibold text-gray-800">Step 2:</span>
+                  <span className="font-semibold text-slate-800">Step 2:</span>
                   Click the extension icon at the top of your browser. Under the Receipts tab,
                   upload an image or click Screenshot current tab to automatically attach the
                   receipt to the expense.

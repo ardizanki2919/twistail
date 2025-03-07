@@ -59,7 +59,7 @@ export const WithIcon: Story = {
 
 export const WithIconElement: Story = {
   args: {
-    icon: <RiInformation2Fill className="mr-1.5 h-5 w-5 shrink-0" />,
+    icon: <RiInformation2Fill className="mr-1.5 size-5 shrink-0" />,
     title: 'Information',
     children: 'Visit your account dashboard for details.',
   },

@@ -32,7 +32,7 @@ const Table = React.forwardRef<HTMLTableElement, React.TableHTMLAttributes<HTMLT
         // base
         'w-full caption-bottom border-b',
         // border color
-        'border-gray-200 dark:border-gray-800',
+        'border-slate-200 dark:border-slate-800',
         className
       )}
       {...props}
@@ -61,9 +61,9 @@ const TableHeaderCell = React.forwardRef<
       // base
       'border-b px-4 py-3.5 text-left font-semibold text-sm',
       // text color
-      'text-gray-900 dark:text-gray-50',
+      'text-slate-900 dark:text-slate-50',
       // border color
-      'border-gray-200 dark:border-gray-800',
+      'border-slate-200 dark:border-slate-800',
       className
     )}
     {...props}
@@ -82,7 +82,7 @@ const TableBody = React.forwardRef<
       // base
       'divide-y',
       // divide color
-      'divide-gray-200 dark:divide-gray-800',
+      'divide-slate-200 dark:divide-slate-800',
       className
     )}
     {...props}
@@ -117,7 +117,7 @@ const TableCell = React.forwardRef<
       // base
       'p-4 text-sm',
       // text color
-      'text-gray-600 dark:text-gray-400',
+      'text-slate-600 dark:text-slate-400',
       className
     )}
     {...props}
@@ -137,9 +137,9 @@ const TableFoot = React.forwardRef<
         // base
         'border-t text-left font-medium',
         // text color
-        'text-gray-900 dark:text-gray-50',
+        'text-slate-900 dark:text-slate-50',
         // border color
-        'border-gray-200 dark:border-gray-800',
+        'border-slate-200 dark:border-slate-800',
         className
       )}
       {...props}
@@ -159,7 +159,7 @@ const TableCaption = React.forwardRef<
       // base
       'mt-3 px-3 text-center text-sm',
       // text color
-      'text-gray-500 dark:text-gray-500',
+      'text-slate-500 dark:text-slate-500',
       className
     )}
     {...props}

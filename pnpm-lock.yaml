@@ -57,6 +57,9 @@ importers:
       '@repo/config-typescript':
         specifier: workspace:*
         version: link:../../packages/config-typescript
+      '@tailwindcss/forms':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@4.0.12)
       '@tailwindcss/vite':
         specifier: ^4.0.12
         version: 4.0.12(vite@6.2.1(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.16.9)(yaml@2.7.0))
@@ -78,6 +81,9 @@ importers:
       tailwindcss:
         specifier: ^4.0.12
         version: 4.0.12
+      tailwindcss-motion:
+        specifier: ^1.1.0
+        version: 1.1.0(tailwindcss@4.0.12)
       typescript:
         specifier: 'catalog:'
         version: 5.8.2
@@ -273,6 +279,9 @@ importers:
       '@twistail/react':
         specifier: workspace:*
         version: link:../packages/ui-react
+      atropos:
+        specifier: ^2.0.2
+        version: 2.0.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -288,6 +297,9 @@ importers:
       react:
         specifier: ^19.0.0
         version: 19.0.0
+      react-country-flag:
+        specifier: ^3.1.0
+        version: 3.1.0(react@19.0.0)
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
@@ -300,6 +312,9 @@ importers:
       tailwind-variants:
         specifier: ^0.3.1
         version: 0.3.1(tailwindcss@4.0.12)
+      urlcat:
+        specifier: ^3.1.0
+        version: 3.1.0
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -307,6 +322,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.0
         version: 3.3.0
+      '@tailwindcss/forms':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@4.0.12)
       '@tailwindcss/postcss':
         specifier: ^4.0.12
         version: 4.0.12
@@ -2517,6 +2535,10 @@ packages:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
     engines: {node: '>= 0.4'}
 
+  atropos@2.0.2:
+    resolution: {integrity: sha512-8f0u0hEOlBTWTSvzY17TcHuQjxUIpkTBq70/I4+UF5B43ORtOoRjm8TPBYEgLM8Ba9AWf6PDtkagbYoybdjaKg==}
+    engines: {node: '>= 12.0.0'}
+
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
@@ -3759,8 +3781,18 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  qs@6.14.0:
+    resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
+    engines: {node: '>=0.6'}
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  react-country-flag@3.1.0:
+    resolution: {integrity: sha512-JWQFw1efdv9sTC+TGQvTKXQg1NKbDU2mBiAiRWcKM9F1sK+/zjhP2yGmm8YDddWyZdXVkR8Md47rPMJmo4YO5g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
 
   react-day-picker@8.10.1:
     resolution: {integrity: sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA==}
@@ -4278,6 +4310,9 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  urlcat@3.1.0:
+    resolution: {integrity: sha512-qY6b94/aGMIHh70EEQ/4hfR2LUGZ+fPQNp64cf7yRX9kAp4XG2tx7LgYUU1Qkh17bFylME0u4n3lOezonougPw==}
 
   use-callback-ref@1.3.3:
     resolution: {integrity: sha512-jQL3lRnocaFtu3V00JToYz/4QkNWswxijDaCVNZRiRTO3HQDLsdu1ZtmIUvV4yPp+rvWm5j0y0TG/S61cuijTg==}
@@ -6610,6 +6645,8 @@ snapshots:
 
   async-function@1.0.0: {}
 
+  atropos@2.0.2: {}
+
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.1.0
@@ -7966,7 +8003,15 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  qs@6.14.0:
+    dependencies:
+      side-channel: 1.1.0
+
   queue-microtask@1.2.3: {}
+
+  react-country-flag@3.1.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   react-day-picker@8.10.1(date-fns@3.6.0)(react@19.0.0):
     dependencies:
@@ -8587,6 +8632,10 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  urlcat@3.1.0:
+    dependencies:
+      qs: 6.14.0
 
   use-callback-ref@1.3.3(@types/react@19.0.10)(react@19.0.0):
     dependencies:

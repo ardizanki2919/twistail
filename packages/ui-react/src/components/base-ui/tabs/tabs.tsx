@@ -25,13 +25,13 @@ const variantStyles: Record<TabsListVariant, string> = {
     // base
     'flex items-center justify-start border-b',
     // border color
-    'border-gray-200 dark:border-gray-800'
+    'border-slate-200 dark:border-slate-800'
   ),
   solid: clx(
     // base
     'inline-flex items-center justify-center rounded-md p-1',
     // background color
-    'bg-gray-100 dark:bg-gray-900'
+    'bg-slate-100 dark:bg-slate-900'
   ),
 }
 
@@ -56,33 +56,33 @@ function getVariantStyles(tabVariant: TabsListVariant) {
         // base
         '-mb-px items-center justify-center whitespace-nowrap border-transparent border-b-2 px-3 pb-2 font-medium text-sm transition-all',
         // text color
-        'text-gray-500 dark:text-gray-500',
+        'text-slate-500 dark:text-slate-500',
         // hover
-        'hover:text-gray-700 hover:dark:text-gray-400',
+        'hover:text-slate-700 hover:dark:text-slate-400',
         // border hover
-        'hover:border-gray-300 hover:dark:border-gray-400',
+        'hover:border-slate-300 hover:dark:border-slate-400',
         // selected
         'data-[state=active]:border-blue-500 data-[state=active]:text-blue-500',
         'data-[state=active]:dark:border-blue-500 data-[state=active]:dark:text-blue-500',
         // disabled
         'data-[disabled]:pointer-events-none',
-        'data-[disabled]:text-gray-300 data-[disabled]:dark:text-gray-700'
+        'data-[disabled]:text-slate-300 data-[disabled]:dark:text-slate-700'
       )
     case 'solid':
       return clx(
         // base
         'inline-flex items-center justify-center whitespace-nowrap rounded px-3 py-1 font-medium text-sm ring-1 ring-inset transition-all',
         // text color
-        'text-gray-500 dark:text-gray-400',
+        'text-slate-500 dark:text-slate-400',
         // hover
-        'hover:text-gray-700 hover:dark:text-gray-200',
+        'hover:text-slate-700 hover:dark:text-slate-200',
         // ring
         'ring-transparent',
         // selected
-        'data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow',
-        'data-[state=active]:dark:bg-gray-950 data-[state=active]:dark:text-gray-50',
+        'data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow',
+        'data-[state=active]:dark:bg-slate-950 data-[state=active]:dark:text-slate-50',
         // disabled
-        'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:opacity-50 data-[disabled]:dark:text-gray-600'
+        'data-[disabled]:pointer-events-none data-[disabled]:text-slate-400 data-[disabled]:opacity-50 data-[disabled]:dark:text-slate-600'
       )
   }
 }

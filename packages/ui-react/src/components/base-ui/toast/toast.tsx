@@ -82,7 +82,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
       case 'loading':
         Icon = (
           <RiLoader2Fill
-            className="size-5 shrink-0 animate-spin text-gray-600 dark:text-gray-500"
+            className="size-5 shrink-0 animate-spin text-slate-600 dark:text-slate-500"
             aria-hidden="true"
           />
         )
@@ -106,7 +106,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
           // background color
           'bg-white dark:bg-[#090E1A]',
           // border color
-          'border-gray-200 dark:border-gray-800',
+          'border-slate-200 dark:border-slate-800',
           // swipe
           'data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none',
           // transition
@@ -122,18 +122,18 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
             // base
             'flex flex-1 items-start gap-3 p-4',
             // border
-            !disableDismiss || action ? 'border-gray-200 border-r dark:border-gray-800' : ''
+            !disableDismiss || action ? 'border-slate-200 border-r dark:border-slate-800' : ''
           )}
         >
           {Icon}
           <div className="flex flex-col gap-1">
             {title && (
-              <ToastPrimitives.Title className="font-semibold text-gray-900 text-sm dark:text-gray-50">
+              <ToastPrimitives.Title className="font-semibold text-slate-900 text-sm dark:text-slate-50">
                 {title}
               </ToastPrimitives.Title>
             )}
             {description && (
-              <ToastPrimitives.Description className="text-gray-600 text-sm dark:text-gray-400">
+              <ToastPrimitives.Description className="text-slate-600 text-sm dark:text-slate-400">
                 {description}
               </ToastPrimitives.Description>
             )}
@@ -148,11 +148,11 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
                   // base
                   'flex flex-1 items-center justify-center px-6 font-semibold text-sm transition-colors',
                   // hover
-                  'hover:bg-gray-50 hover:dark:bg-gray-900/30',
+                  'hover:bg-slate-50 hover:dark:bg-slate-900/30',
                   // text color
-                  'text-gray-800 dark:text-gray-100',
+                  'text-slate-800 dark:text-slate-100',
                   // active
-                  'active:bg-gray-100 active:dark:bg-gray-800',
+                  'active:bg-slate-100 active:dark:bg-slate-800',
                   {
                     'text-red-600 dark:text-red-500': variant === 'error',
                   }
@@ -165,7 +165,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
               >
                 {action.label}
               </ToastPrimitives.Action>
-              <div className="h-px w-full bg-gray-200 dark:bg-gray-800" />
+              <div className="h-px w-full bg-slate-200 dark:bg-slate-800" />
             </>
           )}
           {!disableDismiss && (
@@ -174,11 +174,11 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
                 // base
                 'flex flex-1 items-center justify-center px-6 text-sm transition-colors',
                 // text color
-                'text-gray-600 dark:text-gray-400',
+                'text-slate-600 dark:text-slate-400',
                 // hover
-                'hover:bg-gray-50 hover:dark:bg-gray-900/30',
+                'hover:bg-slate-50 hover:dark:bg-slate-900/30',
                 // active
-                'active:bg-gray-100',
+                'active:bg-slate-100',
                 action ? 'h-1/2' : 'h-full'
               )}
               aria-label="Close"

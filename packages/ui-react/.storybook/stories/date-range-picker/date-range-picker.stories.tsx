@@ -170,7 +170,7 @@ const ControlledRangeDemo = () => {
 
   return (
     <>
-      <p className="mb-6 text-gray-500">
+      <p className="mb-6 text-slate-500">
         {value ? `${value.from?.toDateString()} – ${value.to?.toDateString()}` : 'Select a date'}
       </p>
       <div className="flex w-80 gap-2">
@@ -212,7 +212,7 @@ const ControlledTimeRangeDemo = () => {
 
   return (
     <>
-      <p className="mb-6 text-gray-500">
+      <p className="mb-6 text-slate-500">
         {value ? `${value.from?.toString()} – ${value.to?.toString()}` : 'Select a date'}
       </p>
       <div className="flex w-80 gap-2">

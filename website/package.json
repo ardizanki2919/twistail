@@ -18,19 +18,23 @@
     },
     "dependencies": {
         "@twistail/react": "workspace:*",
+        "atropos": "^2.0.2",
         "clsx": "^2.1.1",
         "consola": "^3.4.0",
         "lucide-react": "^0.479.0",
         "next": "15.2.1",
         "react": "^19.0.0",
+        "react-country-flag": "^3.1.0",
         "react-dom": "^19.0.0",
         "std-env": "^3.8.1",
         "tailwind-merge": "^3.0.2",
-        "tailwind-variants": "^0.3.1"
+        "tailwind-variants": "^0.3.1",
+        "urlcat": "^3.1.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@eslint/eslintrc": "^3.3.0",
+        "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/postcss": "^4.0.12",
         "@types/node": "22.13.9",
         "@types/react": "^19.0.10",

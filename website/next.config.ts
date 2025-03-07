@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+    unoptimized: true,
+  },
   eslint: {
     ignoreDuringBuilds: true /* disable eslint on build */,
   },

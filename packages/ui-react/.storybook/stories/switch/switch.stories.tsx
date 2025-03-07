@@ -47,9 +47,9 @@ const SimpleIdSwitch = (args: any) => {
         </form>
       </Card>
 
-      <p className="text-gray-500 text-sm">
+      <p className="text-slate-500 text-sm">
         Switch is:
-        <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
+        <span className="ml-1 font-semibold text-slate-900 dark:text-slate-50">
           {checked ? 'On' : 'Off'}
         </span>
       </p>

@@ -34,9 +34,9 @@ const calloutVariants = tv({
       ],
       neutral: [
         // text color
-        'text-gray-900 dark:text-gray-400',
+        'text-slate-900 dark:text-slate-400',
         // background color
-        'bg-gray-100 dark:bg-gray-800/70',
+        'bg-slate-100 dark:bg-slate-800/70',
       ],
     },
   },
@@ -63,7 +63,7 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
       >
         <div className={clx('flex items-start')}>
           {Icon && typeof Icon === 'function' ? (
-            <Icon className={clx('mr-1.5 h-5 w-5 shrink-0')} aria-hidden="true" />
+            <Icon className={clx('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
           ) : (
             Icon
           )}

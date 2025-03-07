@@ -40,7 +40,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               // base
               'pointer-events-none absolute bottom-0 left-2 flex h-full items-center justify-center',
               // text color
-              'text-gray-400 dark:text-gray-600'
+              'text-slate-400 dark:text-slate-600'
             )}
           >
             <RiSearchLine className="size-[1.125rem] shrink-0" aria-hidden="true" />
@@ -58,9 +58,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 // base
                 'h-fit w-fit rounded-sm outline-none transition-all',
                 // text
-                'text-gray-400 dark:text-gray-600',
+                'text-slate-400 dark:text-slate-600',
                 // hover
-                'hover:text-gray-500 hover:dark:text-gray-500',
+                'hover:text-slate-500 hover:dark:text-slate-500',
                 focusRing
               )}
               type="button"

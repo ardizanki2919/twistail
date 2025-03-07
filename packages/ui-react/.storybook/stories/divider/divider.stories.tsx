@@ -20,7 +20,7 @@ export const WithChildren: Story = {
     <div className="w-96">
       <Divider />
       <Divider>
-        <RiCalendar2Line className="h-5 w-5" />
+        <RiCalendar2Line className="size-5" />
       </Divider>
       <Divider>Standard</Divider>
       <Divider>
@@ -33,10 +33,10 @@ export const WithChildren: Story = {
 export const MoreText: Story = {
   render: () => (
     <>
-      <p className="text-gray-500 text-sm dark:text-gray-500">Tickets Sold</p>
-      <p className="font-semibold text-3xl text-gray-900 dark:text-gray-50">1,587</p>
+      <p className="text-slate-500 text-sm dark:text-slate-500">Tickets Sold</p>
+      <p className="font-semibold text-3xl text-slate-900 dark:text-slate-50">1,587</p>
       <Divider>Details</Divider>
-      <p className="mt-2 text-gray-500 text-sm leading-7 dark:text-gray-500">
+      <p className="mt-2 text-slate-500 text-sm leading-7 dark:text-slate-500">
         Ticket sales peaked in March, largely due to the "March Mountain Madness" event on March
         12th, drawing significant tourist interest. Operational efficiencies and local hotel
         partnerships further boosted sales. Additionally, targeted social media promotions ahead of
