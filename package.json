@@ -1,11 +1,11 @@
 {
-    "name": "twistail",
+    "name": "repo",
     "private": true,
     "scripts": {
         "build": "turbo build",
         "start": "turbo start",
         "dev": "turbo dev --filter=!example-*",
-        "storybook": "turbo storybook --filter=@twistail/react",
+        "storybook": "turbo storybook --filter=twistail-react",
         "cleanup": "turbo cleanup && pnpm dlx rimraf pnpm-lock.yaml node_modules",
         "update-deps": "npm-check-updates --configFileName .ncurc.json",
         "filter": "pnpm --silent --filter",

@@ -8,7 +8,7 @@ import { urls } from '#/constants'
 import 'atropos/css'
 
 export default function LandingPage() {
-  const installCommand = `npm install @twistail/react`
+  const installCommand = `npm install twistail-react`
   const handleCopy = () => navigator.clipboard.writeText(installCommand)
 
   return (
@@ -48,7 +48,7 @@ export default function LandingPage() {
                   </span>
                 </div>
                 <Link
-                  href="https://npmjs.com/package/@twistail/react"
+                  href="https://npmjs.com/package/twistail-react"
                   className="inline-flex items-center space-x-2 font-medium text-slate-600 text-sm leading-6"
                   newTab
                 >

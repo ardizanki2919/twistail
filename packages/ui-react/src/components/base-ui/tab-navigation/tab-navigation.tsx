@@ -1,8 +1,8 @@
 // Tremor TabNavigation [v0.1.0]
 
 import * as NavigationMenuPrimitives from '@radix-ui/react-navigation-menu'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 
 function getSubtree(
   options: { asChild: boolean | undefined; children: React.ReactNode },

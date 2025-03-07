@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@twistail/react/components'
-import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from '@twistail/react/components'
 import React from 'react'
+import { Button } from 'twistail-react/components'
+import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from 'twistail-react/components'
 
 const meta: Meta<typeof RadioCardGroup> = {
   component: RadioCardGroup,

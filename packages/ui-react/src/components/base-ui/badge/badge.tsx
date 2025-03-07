@@ -1,8 +1,8 @@
 // Tremor Badge [v0.0.1]
 
-import { clx } from '@twistail/react/utils'
 import React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
+import { clx } from 'twistail-react/utils'
 
 const badgeVariants = tv({
   base: clx(

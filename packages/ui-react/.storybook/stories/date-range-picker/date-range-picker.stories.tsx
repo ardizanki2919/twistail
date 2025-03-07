@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, DateRange, DateRangePicker } from '@twistail/react/components'
 import { fr } from 'date-fns/locale'
 import * as React from 'react'
+import { Button, DateRange, DateRangePicker } from 'twistail-react/components'
 
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,

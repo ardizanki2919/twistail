@@ -29,9 +29,6 @@ importers:
 
   examples/react-vite:
     dependencies:
-      '@twistail/react':
-        specifier: workspace:*
-        version: link:../../packages/ui-react
       consola:
         specifier: ^3.4.0
         version: 3.4.0
@@ -50,6 +47,9 @@ importers:
       std-env:
         specifier: ^3.8.1
         version: 3.8.1
+      twistail-react:
+        specifier: workspace:*
+        version: link:../../packages/ui-react
     devDependencies:
       '@biomejs/biome':
         specifier: 'catalog:'
@@ -276,9 +276,6 @@ importers:
 
   website:
     dependencies:
-      '@twistail/react':
-        specifier: workspace:*
-        version: link:../packages/ui-react
       atropos:
         specifier: ^2.0.2
         version: 2.0.2
@@ -312,6 +309,9 @@ importers:
       tailwind-variants:
         specifier: ^0.3.1
         version: 0.3.1(tailwindcss@4.0.12)
+      twistail-react:
+        specifier: workspace:*
+        version: link:../packages/ui-react
       urlcat:
         specifier: ^3.1.0
         version: 3.1.0

@@ -1,9 +1,9 @@
 // Tremor Switch [v0.0.1]
 
 import * as SwitchPrimitives from '@radix-ui/react-switch'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
+import { clx, focusRing } from 'twistail-react/utils'
 
 const switchVariants = tv({
   slots: {

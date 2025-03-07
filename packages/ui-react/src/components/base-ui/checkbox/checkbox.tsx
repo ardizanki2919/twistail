@@ -1,8 +1,8 @@
 // Tremor Checkbox [v0.0.3]
 
 import * as CheckboxPrimitives from '@radix-ui/react-checkbox'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 
 const Checkbox = React.forwardRef<
   React.ComponentRef<typeof CheckboxPrimitives.Root>,

@@ -1,8 +1,8 @@
 // Tremor Popover [v0.0.3]
 
 import * as PopoverPrimitives from '@radix-ui/react-popover'
-import { clx } from '@twistail/react/utils'
 import React from 'react'
+import { clx } from 'twistail-react/utils'
 
 const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
   return <PopoverPrimitives.Root {...props} />

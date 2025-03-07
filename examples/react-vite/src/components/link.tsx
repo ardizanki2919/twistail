@@ -14,9 +14,9 @@
  * ```
  */
 
-import { clx } from '@twistail/react/utils'
 import * as React from 'react'
 import { Link as RouterLink, type LinkProps as RouterLinkProps } from 'react-router'
+import { clx } from 'twistail-react/utils'
 
 interface LinkProps extends Omit<RouterLinkProps, 'to'> {
   href: string

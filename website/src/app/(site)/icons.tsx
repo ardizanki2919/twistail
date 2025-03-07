@@ -1,7 +1,7 @@
 'use client'
 
-import { clx } from '@twistail/react/utils'
 import type { FC } from 'react'
+import { clx } from 'twistail-react/utils'
 
 export const TwitterIcon: FC<{ className?: string }> = ({ className }) => {
   return (

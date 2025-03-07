@@ -1,8 +1,8 @@
 // Tremor Callout [v0.0.1]
 
-import { clx } from '@twistail/react/utils'
 import React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
+import { clx } from 'twistail-react/utils'
 
 const calloutVariants = tv({
   base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',

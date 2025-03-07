@@ -1,5 +1,5 @@
 {
-    "name": "@twistail/react",
+    "name": "twistail-react",
     "version": "0.0.0",
     "private": true,
     "sideEffects": ["**/*.css"],

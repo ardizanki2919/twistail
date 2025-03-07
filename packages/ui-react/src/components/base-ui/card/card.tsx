@@ -1,8 +1,8 @@
 // Tremor Card [v0.0.2]
 
 import { Slot } from '@radix-ui/react-slot'
-import { clx } from '@twistail/react/utils'
 import React from 'react'
+import { clx } from 'twistail-react/utils'
 
 interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
   asChild?: boolean

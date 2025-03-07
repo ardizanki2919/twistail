@@ -1,7 +1,7 @@
 // Tremor Textarea [v0.0.2]
 
-import { clx, focusInput, hasErrorInput } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusInput, hasErrorInput } from 'twistail-react/utils'
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   hasError?: boolean

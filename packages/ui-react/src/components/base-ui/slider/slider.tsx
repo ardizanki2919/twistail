@@ -1,8 +1,8 @@
 // Tremor Slider [v0.1.0]
 
 import * as SliderPrimitive from '@radix-ui/react-slider'
-import { clx, focusRing } from '@twistail/react/utils'
 import * as React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   ariaLabelThumb?: string

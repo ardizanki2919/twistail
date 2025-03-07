@@ -3,8 +3,8 @@
 import * as DropdownMenuPrimitives from '@radix-ui/react-dropdown-menu'
 import { RiArrowRightSLine, RiRadioButtonFill } from '@remixicon/react'
 import { RiCheckLine, RiCheckboxBlankCircleLine } from '@remixicon/react'
-import { clx } from '@twistail/react/utils'
 import * as React from 'react'
+import { clx } from 'twistail-react/utils'
 
 const DropdownMenu = DropdownMenuPrimitives.Root
 DropdownMenu.displayName = 'DropdownMenu'

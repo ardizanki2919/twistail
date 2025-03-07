@@ -1,10 +1,10 @@
 // Import global CSS stylesheet
-import '@twistail/react/global.css'
+import 'twistail-react/global.css'
 import '../styles/global.css'
 
-import { clx } from '@twistail/react/utils'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { clx } from 'twistail-react/utils'
 
 const fontSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const fontMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })

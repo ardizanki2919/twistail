@@ -1,5 +1,5 @@
-import { focusRing } from '@twistail/react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
+import { focusRing } from 'twistail-react/utils'
 
 const buttonStyles = tv({
   base: [

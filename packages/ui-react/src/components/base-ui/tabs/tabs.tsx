@@ -1,8 +1,8 @@
 // Tremor Tabs [v0.1.0]
 
 import * as TabsPrimitives from '@radix-ui/react-tabs'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 
 const Tabs = (
   props: Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitives.Root>, 'orientation'>

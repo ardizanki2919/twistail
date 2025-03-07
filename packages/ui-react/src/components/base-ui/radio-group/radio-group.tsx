@@ -1,8 +1,8 @@
 // Tremor RadioGroup [v0.0.2]
 
 import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 
 const RadioGroup = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Root>,

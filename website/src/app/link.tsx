@@ -14,10 +14,10 @@
  * ```
  */
 
-import { clx } from '@twistail/react/utils'
 import { default as RouterLink } from 'next/link'
 import type { LinkProps as RouterLinkProps } from 'next/link'
 import * as React from 'react'
+import { clx } from 'twistail-react/utils'
 
 interface LinkProps extends Omit<RouterLinkProps, 'to'> {
   newTab?: boolean

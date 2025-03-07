@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Input } from '@twistail/react/components'
-import { Label } from '@twistail/react/components'
 import React from 'react'
+import { Button, Input } from 'twistail-react/components'
+import { Label } from 'twistail-react/components'
 
 const meta: Meta<typeof Input> = {
   component: Input,

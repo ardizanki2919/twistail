@@ -1,7 +1,7 @@
 'use client'
 
-import { clx } from '@twistail/react/utils'
 import { usePathname } from 'next/navigation'
+import { clx } from 'twistail-react/utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 

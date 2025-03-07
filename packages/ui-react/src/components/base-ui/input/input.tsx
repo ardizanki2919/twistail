@@ -1,8 +1,8 @@
 // Tremor Input [v1.0.5]
 
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from '@remixicon/react'
-import { clx, focusRing } from '@twistail/react/utils'
 import React from 'react'
+import { clx, focusRing } from 'twistail-react/utils'
 import { type InputStyles, inputStyles } from './input.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, InputStyles {

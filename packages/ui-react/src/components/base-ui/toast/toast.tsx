@@ -3,8 +3,8 @@
 import * as ToastPrimitives from '@radix-ui/react-toast'
 import { RiCheckboxCircleFill, RiLoader2Fill } from '@remixicon/react'
 import { RiCloseCircleFill, RiErrorWarningFill, RiInformationFill } from '@remixicon/react'
-import { clx } from '@twistail/react/utils'
 import React from 'react'
+import { clx } from 'twistail-react/utils'
 
 const ToastProvider = ToastPrimitives.Provider
 ToastProvider.displayName = 'ToastProvider'

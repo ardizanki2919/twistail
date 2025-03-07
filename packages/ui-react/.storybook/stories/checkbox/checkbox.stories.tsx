@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Checkbox, Label } from '@twistail/react/components'
 import React from 'react'
+import { Button, Checkbox, Label } from 'twistail-react/components'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,

@@ -19,7 +19,7 @@ This Turborepo includes the following packages and apps:
 
 - `examples/react-vite`: Example application built with [Vite][vite] and [React][reactjs]
 - `@repo/config-typescript`: Shared TypeScript configurations and [Storybook][storybook]
-- `@twistail/react`: Reusable React components and utilities
+- `twistail-react`: Reusable React components and utilities
 
 Each package and app is 100% [TypeScript][typescript].
 

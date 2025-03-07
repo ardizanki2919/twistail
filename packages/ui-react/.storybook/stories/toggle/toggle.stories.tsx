@@ -1,6 +1,6 @@
 import { RiBold, RiItalic, RiStarFill, RiUnderline } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Toggle, ToggleGroup, ToggleGroupItem } from '@twistail/react/components'
+import { Toggle, ToggleGroup, ToggleGroupItem } from 'twistail-react/components'
 
 const meta: Meta<typeof Toggle> = {
   component: Toggle,

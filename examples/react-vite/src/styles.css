@@ -3,4 +3,4 @@
 @plugin "tailwindcss-motion";
 
 @variant dark (&:where([data-theme="dark"] *));
-/* @source "../node_modules/@twistail/react"; */
+/* @source "../node_modules/twistail-react"; */

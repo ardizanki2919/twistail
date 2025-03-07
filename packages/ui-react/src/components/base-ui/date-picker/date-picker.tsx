@@ -10,9 +10,9 @@ import { enUS } from 'date-fns/locale'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 
-import { Button } from '@twistail/react/components'
-import { Calendar as CalendarPrimitive, type Matcher } from '@twistail/react/components'
-import { clx, focusInput, focusRing, hasErrorInput } from '@twistail/react/utils'
+import { Button } from 'twistail-react/components'
+import { Calendar as CalendarPrimitive, type Matcher } from 'twistail-react/components'
+import { clx, focusInput, focusRing, hasErrorInput } from 'twistail-react/utils'
 
 //#region TimeInput
 // ============================================================================

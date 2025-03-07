@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Calendar } from '@twistail/react/components'
 import { fr } from 'date-fns/locale'
 import * as React from 'react'
 import { DateRange } from 'react-day-picker'
+import { Calendar } from 'twistail-react/components'
 
 const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
   const [date, setDate] = React.useState<Date | undefined>(undefined)
