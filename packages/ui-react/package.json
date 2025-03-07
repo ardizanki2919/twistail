@@ -55,7 +55,7 @@
         "@remixicon/react": "^4.6.0",
         "date-fns": "3.6.0",
         "lucide-react": "^0.477.0",
-        "react-day-picker": "8.10.1 ",
+        "react-day-picker": "8.10.1",
         "recharts": "^2.15.1"
     },
     "devDependencies": {
