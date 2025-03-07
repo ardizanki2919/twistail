@@ -114,7 +114,7 @@ const SelectContent = React.forwardRef<
           // widths
           'min-w-[calc(var(--radix-select-trigger-width)-2px)] max-w-[95vw]',
           // heights
-          'max-h-[--radix-select-content-available-height]',
+          'max-h-(--radix-select-content-available-height)',
           // background color
           'bg-white dark:bg-gray-950',
           // text color

@@ -1,4 +1,4 @@
-import { focusRing } from '@twistail/react/utils'
+// import { focusRing } from '@twistail/react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const tooltipStyles = tv({
