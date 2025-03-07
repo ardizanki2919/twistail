@@ -9,7 +9,7 @@ import React from 'react'
 const meta: Meta = {
   component: Accordion,
   title: 'Basic Components/Accordion',
-  tags: ['status:new-item'],
+  tags: ['status:wip'],
   argTypes: {
     type: {
       control: 'radio',

@@ -1,13 +1,8 @@
 // Tremor Toast [v0.0.4]
 
 import * as ToastPrimitives from '@radix-ui/react-toast'
-import {
-  RiCheckboxCircleFill,
-  RiCloseCircleFill,
-  RiErrorWarningFill,
-  RiInformationFill,
-  RiLoader2Fill,
-} from '@remixicon/react'
+import { RiCheckboxCircleFill, RiLoader2Fill } from '@remixicon/react'
+import { RiCloseCircleFill, RiErrorWarningFill, RiInformationFill } from '@remixicon/react'
 import { clx } from '@twistail/ui-react/utils'
 import React from 'react'
 

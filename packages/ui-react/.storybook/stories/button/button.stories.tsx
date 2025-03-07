@@ -6,7 +6,7 @@ import { clx } from '@twistail/ui-react/utils'
 const meta: Meta<ButtonProps> = {
   component: Button,
   title: 'Basic Components/Button',
-  tags: ['status:new-item'],
+  tags: ['status:wip'],
   argTypes: {
     children: {
       control: 'text',

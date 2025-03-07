@@ -20,6 +20,7 @@
     "exports": {
         "./components": "./src/components/base-ui/index.ts",
         "./charts": "./src/components/chart-ui/index.ts",
+        "./hooks": "./src/hooks/index.ts",
         "./utils": "./src/utils/index.ts",
         "./global.css": "./src/assets/global.css",
         "./theme.css": "./src/assets/theme.css"

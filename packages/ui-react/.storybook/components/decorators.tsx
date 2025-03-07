@@ -1,7 +1,6 @@
 import type { Decorator } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
-// import { Toaster } from '@twistail/ui-react/components'
 // import ThemeProvider from '#/context/providers/theme-provider'
 
 function setTheme(theme: 'light' | 'dark') {
@@ -37,13 +36,4 @@ export const withThemeProvider: Decorator = (Story, context) => {
       <Story />
     </MemoryRouter>
   )
-
-  // return (
-  //   <ThemeProvider>
-  //     <MemoryRouter>
-  //       <Story />
-  //       <Toaster />
-  //     </MemoryRouter>
-  //   </ThemeProvider>
-  // )
 }
