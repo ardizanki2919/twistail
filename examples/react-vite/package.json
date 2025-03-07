@@ -1,12 +1,12 @@
 {
-    "name": "react-vite",
+    "name": "example-react-vite",
     "version": "0.0.0",
     "type": "module",
     "private": true,
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "start": "pnpm dlx serve dist -l 3000 -s -n -C",
+        "start": "pnpm dlx serve dist -l 4100 -s -n -C",
         "cleanup": "pnpm dlx rimraf dist node_modules",
         "lint": "biome lint . --write",
         "check": "biome check . --write",

@@ -1,6 +1,7 @@
 packages:
   - 'examples/*'
-  - "packages/*"
+  - 'packages/*'
+  - 'website'
 
 catalog:
   '@biomejs/biome': ^1.9.4

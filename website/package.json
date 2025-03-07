@@ -1,0 +1,53 @@
+{
+    "name": "website",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "preview": "wrangler dev",
+        "deploy": "wrangler deploy",
+        "start": "pnpm dlx serve out -l 3000 -s -n -C",
+        "cleanup": "pnpm dlx del-cli .{next,open-next,wrangler} out",
+        "serve": "pnpm dlx serve out -l 3000 -s -n -C",
+        "update-deps": "npm-check-updates",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "next lint --fix",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "@twistail/react": "workspace:*",
+        "clsx": "^2.1.1",
+        "consola": "^3.4.0",
+        "lucide-react": "^0.479.0",
+        "next": "15.2.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "std-env": "^3.8.1",
+        "tailwind-merge": "^3.0.2",
+        "tailwind-variants": "^0.3.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@eslint/eslintrc": "^3.3.0",
+        "@tailwindcss/postcss": "^4.0.12",
+        "@types/node": "22.13.9",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "eslint": "^9.21.0",
+        "eslint-config-next": "15.2.1",
+        "npm-check-updates": "^17.1.15",
+        "postcss": "^8.5.3",
+        "postcss-load-config": "^6.0.1",
+        "tailwindcss": "^4.0.12",
+        "tailwindcss-motion": "^1.1.0",
+        "typescript": "5.8.2",
+        "wrangler": "^3.114.0"
+    },
+    "packageManager": "pnpm@10.6.1",
+    "pnpm": {
+        "onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp"]
+    }
+}
