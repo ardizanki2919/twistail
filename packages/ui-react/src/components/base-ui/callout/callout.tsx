@@ -1,6 +1,6 @@
 // Tremor Callout [v0.0.1]
 
-import { clx } from '@twistail/ui-react/utils'
+import { clx } from '@twistail/react/utils'
 import React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
 

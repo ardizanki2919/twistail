@@ -1,10 +1,10 @@
 import { RiErrorWarningFill, RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Callout, calloutVariants } from '@twistail/ui-react/components'
+import { Callout, calloutVariants } from '@twistail/react/components'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,
-  title: 'Basic Components/Callout',
+  title: 'Base Components/Callout',
   tags: ['status:wip'],
   args: {
     title: 'Sales Performance',

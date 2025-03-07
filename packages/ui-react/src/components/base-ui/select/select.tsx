@@ -2,7 +2,7 @@
 
 import * as SelectPrimitives from '@radix-ui/react-select'
 import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from '@remixicon/react'
-import { clx, focusInput, hasErrorInput } from '@twistail/ui-react/utils'
+import { clx, focusInput, hasErrorInput } from '@twistail/react/utils'
 import React from 'react'
 
 const Select = SelectPrimitives.Root

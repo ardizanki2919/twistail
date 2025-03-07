@@ -1,11 +1,11 @@
 import { RiBankCard2Line, RiHome2Line } from '@remixicon/react'
 import { RiCustomerService2Fill, RiExchange2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { TabNavigation, TabNavigationLink } from '@twistail/ui-react/components'
+import { TabNavigation, TabNavigationLink } from '@twistail/react/components'
 
 const meta: Meta<typeof TabNavigation> = {
   component: TabNavigation,
-  title: 'Basic Components/TabNavigation',
+  title: 'Base Components/TabNavigation',
   tags: ['status:wip'],
   parameters: {},
 }

@@ -1,7 +1,7 @@
 // Tremor Tooltip [v0.1.0]
 
 import * as TooltipPrimitives from '@radix-ui/react-tooltip'
-import { clx } from '@twistail/ui-react/utils'
+import { clx } from '@twistail/react/utils'
 import React from 'react'
 
 interface TooltipProps

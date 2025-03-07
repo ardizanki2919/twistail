@@ -1,6 +1,6 @@
 // Tremor Table [v0.0.3]
 
-import { clx } from '@twistail/ui-react/utils'
+import { clx } from '@twistail/react/utils'
 import React from 'react'
 
 const TableRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(

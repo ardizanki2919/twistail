@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Divider } from '@twistail/ui-react/components'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@twistail/ui-react/components'
-import { Tooltip } from '@twistail/ui-react/components'
-import { Card } from '@twistail/ui-react/components'
-import { Input } from '@twistail/ui-react/components'
-import { Label } from '@twistail/ui-react/components'
-import { Checkbox } from '@twistail/ui-react/components'
-import { RadioGroup, RadioGroupItem } from '@twistail/ui-react/components'
-import { Select, SelectTrigger } from '@twistail/ui-react/components'
-import { SelectContent, SelectItem, SelectValue } from '@twistail/ui-react/components'
-import { SelectNative } from '@twistail/ui-react/components'
-import { Switch } from '@twistail/ui-react/components'
-import { Textarea } from '@twistail/ui-react/components'
+import { Button, Divider } from '@twistail/react/components'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@twistail/react/components'
+import { Tooltip } from '@twistail/react/components'
+import { Card } from '@twistail/react/components'
+import { Input } from '@twistail/react/components'
+import { Label } from '@twistail/react/components'
+import { Checkbox } from '@twistail/react/components'
+import { RadioGroup, RadioGroupItem } from '@twistail/react/components'
+import { Select, SelectTrigger } from '@twistail/react/components'
+import { SelectContent, SelectItem, SelectValue } from '@twistail/react/components'
+import { SelectNative } from '@twistail/react/components'
+import { Switch } from '@twistail/react/components'
+import { Textarea } from '@twistail/react/components'
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  title: 'Basic Components/Card',
+  title: 'Base Components/Card',
   tags: ['status:wip'],
 }
 

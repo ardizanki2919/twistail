@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@twistail/ui-react/components'
-import { Drawer, DrawerBody, DrawerClose, DrawerTrigger } from '@twistail/ui-react/components'
-import { DrawerFooter, DrawerHeader, DrawerTitle } from '@twistail/ui-react/components'
-import { DrawerContent, DrawerDescription } from '@twistail/ui-react/components'
+import { Button } from '@twistail/react/components'
+import { Drawer, DrawerBody, DrawerClose, DrawerTrigger } from '@twistail/react/components'
+import { DrawerFooter, DrawerHeader, DrawerTitle } from '@twistail/react/components'
+import { DrawerContent, DrawerDescription } from '@twistail/react/components'
 import React from 'react'
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
-  title: 'Basic Components/Drawer',
+  title: 'Base Components/Drawer',
   tags: ['status:wip'],
   parameters: {
     layout: 'centered',

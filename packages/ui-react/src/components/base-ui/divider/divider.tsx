@@ -1,6 +1,6 @@
 // Tremor Divider [v0.0.2]
 
-import { clx } from '@twistail/ui-react/utils'
+import { clx } from '@twistail/react/utils'
 import React from 'react'
 
 type DividerProps = React.ComponentPropsWithoutRef<'div'>

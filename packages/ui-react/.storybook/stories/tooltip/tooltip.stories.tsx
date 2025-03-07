@@ -1,10 +1,10 @@
 import { RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Tooltip } from '@twistail/ui-react/components'
+import { Button, Tooltip } from '@twistail/react/components'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  title: 'Basic Components/Tooltip',
+  title: 'Base Components/Tooltip',
   tags: ['status:wip'],
   argTypes: {
     side: {

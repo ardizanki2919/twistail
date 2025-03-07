@@ -1,17 +1,17 @@
 import { Label } from '@radix-ui/react-label'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Divider } from '@twistail/ui-react/components'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@twistail/ui-react/components'
-import { DialogFooter, DialogHeader, DialogTitle } from '@twistail/ui-react/components'
-import { DialogDescription } from '@twistail/ui-react/components'
-import { Popover, PopoverTrigger } from '@twistail/ui-react/components'
-import { Input } from '@twistail/ui-react/components'
-import { PopoverClose, PopoverContent } from '@twistail/ui-react/components'
+import { Button, Divider } from '@twistail/react/components'
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@twistail/react/components'
+import { DialogFooter, DialogHeader, DialogTitle } from '@twistail/react/components'
+import { DialogDescription } from '@twistail/react/components'
+import { Popover, PopoverTrigger } from '@twistail/react/components'
+import { Input } from '@twistail/react/components'
+import { PopoverClose, PopoverContent } from '@twistail/react/components'
 import React from 'react'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
-  title: 'Basic Components/Popover',
+  title: 'Base Components/Popover',
   tags: ['status:wip'],
 }
 

@@ -1,13 +1,13 @@
 import { RiLoader3Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Badge, badgeVariants } from '@twistail/ui-react/components'
-import { Table, TableCaption, TableRoot, TableRow } from '@twistail/ui-react/components'
-import { TableBody, TableCell, TableFoot } from '@twistail/ui-react/components'
-import { TableHead, TableHeaderCell } from '@twistail/ui-react/components'
+import { Badge, badgeVariants } from '@twistail/react/components'
+import { Table, TableCaption, TableRoot, TableRow } from '@twistail/react/components'
+import { TableBody, TableCell, TableFoot } from '@twistail/react/components'
+import { TableHead, TableHeaderCell } from '@twistail/react/components'
 
 const meta: Meta<typeof Table> = {
   component: Table,
-  title: 'Basic Components/Table',
+  title: 'Base Components/Table',
   tags: ['status:wip'],
 }
 

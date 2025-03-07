@@ -53,7 +53,7 @@ const preview: Preview = {
           'Introduction',
           'Getting Started',
           'Changelog',
-          'Basic Components',
+          'Base Components',
           'Layout Components',
           'Visualizations',
           '*',

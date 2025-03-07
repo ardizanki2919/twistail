@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { Button, type ButtonProps, buttonStyles } from '@twistail/ui-react/components'
-import { clx } from '@twistail/ui-react/utils'
+import { Button, type ButtonProps, buttonStyles } from '@twistail/react/components'
+import { clx } from '@twistail/react/utils'
 
 const meta: Meta<ButtonProps> = {
   component: Button,
-  title: 'Basic Components/Button',
+  title: 'Base Components/Button',
   tags: ['status:wip'],
   argTypes: {
     children: {

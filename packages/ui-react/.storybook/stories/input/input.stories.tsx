@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Input } from '@twistail/ui-react/components'
-import { Label } from '@twistail/ui-react/components'
+import { Button, Input } from '@twistail/react/components'
+import { Label } from '@twistail/react/components'
 import React from 'react'
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  title: 'Basic Components/Input',
+  title: 'Base Components/Input',
   tags: ['status:wip'],
 }
 

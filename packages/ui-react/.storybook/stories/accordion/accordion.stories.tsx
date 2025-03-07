@@ -1,14 +1,14 @@
 import * as Ri from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { Accordion, AccordionTrigger } from '@twistail/ui-react/components'
-import { AccordionContent, AccordionItem } from '@twistail/ui-react/components'
-import { Badge, Button } from '@twistail/ui-react/components'
+import { Accordion, AccordionTrigger } from '@twistail/react/components'
+import { AccordionContent, AccordionItem } from '@twistail/react/components'
+import { Badge, Button } from '@twistail/react/components'
 import React from 'react'
 
 const meta: Meta = {
   component: Accordion,
-  title: 'Basic Components/Accordion',
+  title: 'Base Components/Accordion',
   tags: ['status:wip'],
   argTypes: {
     type: {

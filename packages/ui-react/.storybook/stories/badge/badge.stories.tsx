@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Badge, badgeVariants } from '@twistail/ui-react/components'
-import { clx } from '@twistail/ui-react/utils'
+import { Badge, badgeVariants } from '@twistail/react/components'
+import { clx } from '@twistail/react/utils'
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  title: 'Basic Components/Badge',
+  title: 'Base Components/Badge',
   tags: ['status:wip'],
   args: {
     children: 'Badge',

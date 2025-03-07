@@ -1,4 +1,4 @@
-import { focusInput, hasErrorInput } from '@twistail/ui-react/utils'
+import { focusInput, hasErrorInput } from '@twistail/react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 export const inputStyles = tv({

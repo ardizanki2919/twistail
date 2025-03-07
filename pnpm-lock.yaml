@@ -29,7 +29,7 @@ importers:
 
   examples/react-vite:
     dependencies:
-      '@twistail/ui-react':
+      '@twistail/react':
         specifier: workspace:*
         version: link:../../packages/ui-react
       consola:

@@ -12,7 +12,7 @@ export default defineConfig({
   publicDir: resolve('public'),
   optimizeDeps: {
     // Do not optimize internal workspace dependencies.
-    exclude: ['@twistail/ui-react'],
+    exclude: ['@twistail/react'],
   },
   build: {
     emptyOutDir: true,

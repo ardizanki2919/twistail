@@ -1,10 +1,10 @@
 import { RiCalculatorLine, RiMapPin2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@twistail/ui-react/components'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@twistail/react/components'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
-  title: 'Basic Components/Tabs',
+  title: 'Base Components/Tabs',
   tags: ['status:wip'],
   parameters: {},
 }

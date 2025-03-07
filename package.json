@@ -5,7 +5,7 @@
         "dev": "turbo dev",
         "build": "turbo build",
         "start": "turbo start",
-        "storybook": "turbo storybook --filter=@twistail/ui-react",
+        "storybook": "turbo storybook --filter=@twistail/react",
         "cleanup": "turbo cleanup && pnpm dlx rimraf pnpm-lock.yaml node_modules",
         "update-deps": "npm-check-updates --configFileName .ncurc.json",
         "postinstall": "pnpm approve-builds",

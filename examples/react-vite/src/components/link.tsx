@@ -14,7 +14,7 @@
  * ```
  */
 
-import { clx } from '@twistail/ui-react/utils'
+import { clx } from '@twistail/react/utils'
 import * as React from 'react'
 import { Link as RouterLink, type LinkProps as RouterLinkProps } from 'react-router'
 

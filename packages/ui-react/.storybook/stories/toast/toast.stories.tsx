@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@twistail/ui-react/components'
-import { Toaster } from '@twistail/ui-react/components'
-import { Toast, ToastProvider, ToastViewport } from '@twistail/ui-react/components'
-import { toast } from '@twistail/ui-react/hooks'
+import { Button } from '@twistail/react/components'
+import { Toaster } from '@twistail/react/components'
+import { Toast, ToastProvider, ToastViewport } from '@twistail/react/components'
+import { toast } from '@twistail/react/hooks'
 
 const meta: Meta<typeof Toast> = {
   component: Toast,
-  title: 'Basic Components/Toast',
+  title: 'Base Components/Toast',
   tags: ['status:wip'],
   parameters: {
     layout: 'centered',

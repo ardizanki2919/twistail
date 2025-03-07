@@ -1,10 +1,10 @@
 import { RiCalendar2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Divider } from '@twistail/ui-react/components'
+import { Button, Divider } from '@twistail/react/components'
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
-  title: 'Basic Components/Divider',
+  title: 'Base Components/Divider',
   tags: ['status:wip'],
 }
 
