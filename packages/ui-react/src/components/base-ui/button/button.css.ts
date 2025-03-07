@@ -1,7 +1,7 @@
 import { focusRing } from '@twistail/react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export const buttonStyles = tv({
+const buttonStyles = tv({
   base: [
     // base
     'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
@@ -86,4 +86,6 @@ export const buttonStyles = tv({
   },
 })
 
-export type ButtonStyles = VariantProps<typeof buttonStyles>
+type ButtonStyles = VariantProps<typeof buttonStyles>
+
+export { buttonStyles, type ButtonStyles }

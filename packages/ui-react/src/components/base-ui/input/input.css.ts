@@ -1,7 +1,7 @@
 import { focusInput, hasErrorInput } from '@twistail/react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export const inputStyles = tv({
+const inputStyles = tv({
   base: [
     // base
     'relative block w-full appearance-none rounded-md border px-2.5 py-2 shadow-sm outline-none transition sm:text-sm',
@@ -42,4 +42,6 @@ export const inputStyles = tv({
   },
 })
 
-export type InputStyles = VariantProps<typeof inputStyles>
+type InputStyles = VariantProps<typeof inputStyles>
+
+export { inputStyles, type InputStyles }
