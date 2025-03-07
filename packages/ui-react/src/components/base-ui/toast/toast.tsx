@@ -15,7 +15,7 @@ const ToastProvider = ToastPrimitives.Provider
 ToastProvider.displayName = 'ToastProvider'
 
 const ToastViewport = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Viewport>,
+  React.ComponentRef<typeof ToastPrimitives.Viewport>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
 >(({ className, ...props }, forwardedRef) => (
   <ToastPrimitives.Viewport
@@ -44,7 +44,7 @@ interface ToastProps extends React.ComponentPropsWithoutRef<typeof ToastPrimitiv
   disableDismiss?: boolean
 }
 
-const Toast = React.forwardRef<React.ElementRef<typeof ToastPrimitives.Root>, ToastProps>(
+const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, ToastProps>(
   (
     {
       className,

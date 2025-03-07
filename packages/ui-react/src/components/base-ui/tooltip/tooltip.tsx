@@ -16,7 +16,10 @@ interface TooltipProps
   showArrow?: boolean
 }
 
-const Tooltip = React.forwardRef<React.ElementRef<typeof TooltipPrimitives.Content>, TooltipProps>(
+const Tooltip = React.forwardRef<
+  React.ComponentRef<typeof TooltipPrimitives.Content>,
+  TooltipProps
+>(
   (
     {
       children,

@@ -11,7 +11,7 @@ const Accordion = AccordionPrimitives.Root
 Accordion.displayName = 'AccordionItem'
 
 const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitives.Trigger>,
+  React.ComponentRef<typeof AccordionPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Trigger>
 >(({ className, children, ...props }, forwardedRef) => (
   <AccordionPrimitives.Header className="flex">
@@ -50,7 +50,7 @@ const AccordionTrigger = React.forwardRef<
 AccordionTrigger.displayName = 'AccordionTrigger'
 
 const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitives.Content>,
+  React.ComponentRef<typeof AccordionPrimitives.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Content>
 >(({ className, children, ...props }, forwardedRef) => (
   <AccordionPrimitives.Content
@@ -77,7 +77,7 @@ const AccordionContent = React.forwardRef<
 AccordionContent.displayName = 'AccordionContent'
 
 const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitives.Item>,
+  React.ComponentRef<typeof AccordionPrimitives.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Item>
 >(({ className, ...props }, forwardedRef) => (
   <AccordionPrimitives.Item
