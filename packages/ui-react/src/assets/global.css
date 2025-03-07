@@ -76,11 +76,10 @@
     --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
         "DejaVu Sans Mono", monospace;
 
-    /* Animation */
-    --animate-accordion-down: accordion-down 0.2s ease-out;
-    --animate-accordion-up: accordion-up 0.2s ease-out;
-
-    @keyframes accordion-down {
+    /* ------------------- Animation for accordion -------------------  */
+    --animate-accordion-open: accordion-open 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+    --animate-accordion-close: accordion-close 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+    @keyframes accordion-open {
         from {
             height: 0;
         }
@@ -88,8 +87,7 @@
             height: var(--radix-accordion-content-height);
         }
     }
-
-    @keyframes accordion-up {
+    @keyframes accordion-close {
         from {
             height: var(--radix-accordion-content-height);
         }
@@ -97,6 +95,7 @@
             height: 0;
         }
     }
+    /* ------------------- Animation for accordion -------------------  */
 }
 
 @layer base {
