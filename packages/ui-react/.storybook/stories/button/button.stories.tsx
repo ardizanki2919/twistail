@@ -62,13 +62,13 @@ export const VariantShowcase: Story = {
         Secondary
       </Button>
       <Button {...args} variant="light">
-        Destructive
+        Light
       </Button>
       <Button {...args} variant="ghost">
-        Outline
+        Ghost
       </Button>
       <Button {...args} variant="destructive">
-        Ghost
+        Destructive
       </Button>
     </div>
   ),
