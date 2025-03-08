@@ -20,7 +20,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={cn(fontSans.variable, fontMono.variable, 'font-sans antialiased')}>
+      <body
+        className={cn(
+          fontSans.variable,
+          fontMono.variable,
+          'font-sans antialiased dark:bg-gray-900'
+        )}
+      >
         {children}
       </body>
     </html>

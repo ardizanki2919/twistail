@@ -11,7 +11,7 @@ export const NavBar = () => {
   const pathname = usePathname()
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-8 dark:bg-gray-900">
       <header className="flex items-center justify-between py-4 md:py-8">
         <Link
           href="/"
@@ -27,7 +27,7 @@ export const NavBar = () => {
             <nav className="flex gap-10">
               <Link
                 href="/docs/components"
-                className="font-medium text-gray-600 transition duration-100 hover:text-blue-500 active:text-blue-700"
+                className="font-medium text-gray-600 transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300"
               >
                 Components
               </Link>
@@ -35,7 +35,7 @@ export const NavBar = () => {
                 href="/docs/getting-started"
                 className={cn(
                   pathname === '/docs' ? 'text-blue-500' : 'text-gray-600',
-                  'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
+                  'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
                 )}
               >
                 Documentation
@@ -44,7 +44,7 @@ export const NavBar = () => {
                 href="/faqs"
                 className={cn(
                   pathname === '/faqs' ? 'text-blue-500' : 'text-gray-600',
-                  'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
+                  'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
                 )}
               >
                 FAQs
@@ -55,7 +55,7 @@ export const NavBar = () => {
               <Link
                 href="https://github.com/riipandi/twistail"
                 target="_blank"
-                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 dark:text-gray-300"
               >
                 <GitHubIcon className="size-5" />
               </Link>
