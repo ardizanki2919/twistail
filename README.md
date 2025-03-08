@@ -44,6 +44,21 @@ pnpm turbo publish:dry --filter=twistail-utils
 pnpm --filter=twistail-utils publish
 ```
 
+## Acknowledgements
+
+Twistail is a thoughtful blend of design philosophies from two exceptional UI libraries, combining the best of both worlds:
+
+- [Tremor](https://tremor.so/): Many of Twistail's foundational components draw heavy inspiration from Tremor's well-crafted designs. Twistail reimagines these components with its own architectural approach. Tremor is licensed under [Apache 2.0](https://github.com/tremorlabs/tremor/blob/main/LICENSE).
+
+- [shadcn/ui](https://ui.shadcn.com/): Twistail incorporates design patterns and component structures from these projects, adapting them to fit seamlessly with the Twistail ecosystem. shadcn/ui is licensed under [MIT](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md).
+
+Key differences from Tremor and shadcn/ui include:
+- Twistail separates style files for each component, improving organization and customization.
+- Twistail uses [Lucide icons](https://lucide.dev/) instead of Remix Icons which are used by Tremor.
+- A carefully curated integration of design elements from Tremor and shadcn/ui.
+
+We're grateful to these projects for their contributions to the React and Tailwind ecosystem, and for providing the foundation upon which Twistail builds its unique identity.
+
 ## License
 
 Licensed under either of [Apache License 2.0][license-apache] or [MIT license][license-mit] at your option.
