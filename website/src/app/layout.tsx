@@ -17,6 +17,8 @@ const ogImageUrl = 'https://twistail.com/images/twistail-og.png'
 export const metadata: Metadata = {
   title: { default: metaTitle, template: '%s - Twistail' },
   description: metaDescription,
+  keywords: `Open Source,Responsive,UI Components,React,Tailwind CSS v4,Radix UI,TypeScript,Next.js,Server Components`,
+  creator: '@riipandi',
 }
 
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
@@ -31,6 +33,7 @@ export default function RootLayout({ children }: Readonly<React.PropsWithChildre
         <meta property="og:image" content={ogImageUrl} />
 
         {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:creator" content="@riipandi" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="twistail.com" />
         <meta property="twitter:url" content="https://twistail.com" />
