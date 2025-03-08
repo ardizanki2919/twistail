@@ -1,9 +1,13 @@
 @import "tailwindcss";
+@import "fumadocs-ui/css/ocean.css";
+@import "fumadocs-ui/css/preset.css";
+
 @plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
 
 /* @variant dark (&:where([data-theme="dark"] *)); */
 /* @source "../../node_modules/twistail-react"; */
+@source '../../node_modules/fumadocs-ui/dist/**/*.js';
 
 @theme inline {
     /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */

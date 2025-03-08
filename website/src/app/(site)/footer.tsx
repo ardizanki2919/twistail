@@ -5,31 +5,31 @@ import Link from '#/app/link'
 
 export default function Footer() {
   return (
-    <div className="bg-white pt-4 sm:pt-10 lg:pt-12">
+    <div className="bg-white pt-4 sm:pt-10 lg:pt-12 dark:bg-gray-900">
       <footer className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="flex flex-col items-center justify-between gap-4 border-gray-200 border-y py-6 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-gray-200 border-y py-6 md:flex-row dark:border-gray-800">
           <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
             <Link
               href="#"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               About
             </Link>
             <Link
               href="#"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               Changelog
             </Link>
             <Link
               href="#"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               Contributors
             </Link>
             <Link
               href="#"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               FAQs
             </Link>
@@ -38,13 +38,13 @@ export default function Footer() {
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               Privacy Policy
             </Link>
             <Link
               href="/imprint"
-              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600"
+              className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
             >
               Imprint
             </Link>
