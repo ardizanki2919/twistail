@@ -5,7 +5,7 @@ import '../styles/global.css'
 import { RootProvider } from 'fumadocs-ui/provider'
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Mona_Sans } from 'next/font/google'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const fontSans = Mona_Sans({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })

@@ -1,7 +1,7 @@
 // Tremor SelectNative [v0.0.1]
 
 import * as React from 'react'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 import { type SelectNativeStyles, selectNativeStyles } from './select-native.css'
 
 interface SelectNativeProps

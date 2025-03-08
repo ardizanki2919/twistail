@@ -2,7 +2,8 @@
 
 import * as NavigationMenuPrimitives from '@radix-ui/react-navigation-menu'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 function getSubtree(
   options: { asChild: boolean | undefined; children: React.ReactNode },

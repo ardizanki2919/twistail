@@ -3,7 +3,7 @@
 import * as AccordionPrimitives from '@radix-ui/react-accordion'
 import { RiAddLine } from '@remixicon/react'
 import * as React from 'react'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Accordion = AccordionPrimitives.Root
 

@@ -1,7 +1,7 @@
 // Tremor Table [v0.0.3]
 
 import * as React from 'react'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const TableRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, forwardedRef) => (

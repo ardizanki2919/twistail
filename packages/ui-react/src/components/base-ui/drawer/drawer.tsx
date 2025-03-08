@@ -4,7 +4,8 @@ import * as DrawerPrimitives from '@radix-ui/react-dialog'
 import { RiCloseLine } from '@remixicon/react'
 import * as React from 'react'
 import { Button } from 'twistail-react/components'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>) => {
   return <DrawerPrimitives.Root tremor-id="tremor-raw" {...props} />

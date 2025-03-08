@@ -3,7 +3,8 @@
 import * as SelectPrimitives from '@radix-ui/react-select'
 import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from '@remixicon/react'
 import * as React from 'react'
-import { cn, focusInput, hasErrorInput } from 'twistail-react/utils'
+import { focusInput, hasErrorInput } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Select = SelectPrimitives.Root
 Select.displayName = 'Select'

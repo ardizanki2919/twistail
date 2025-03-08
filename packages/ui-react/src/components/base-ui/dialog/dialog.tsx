@@ -2,7 +2,8 @@
 
 import * as DialogPrimitives from '@radix-ui/react-dialog'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitives.Root>) => {
   return <DialogPrimitives.Root {...props} />

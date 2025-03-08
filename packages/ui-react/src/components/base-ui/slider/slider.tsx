@@ -2,7 +2,8 @@
 
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   ariaLabelThumb?: string

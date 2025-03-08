@@ -3,7 +3,8 @@
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const switchVariants = tv({
   slots: {

@@ -2,7 +2,7 @@
 
 import * as LabelPrimitives from '@radix-ui/react-label'
 import * as React from 'react'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitives.Root> {
   disabled?: boolean
