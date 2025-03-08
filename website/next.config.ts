@@ -1,4 +1,7 @@
+import { createMDX } from 'fumadocs-mdx/next'
 import type { NextConfig } from 'next'
+
+const withMDX = createMDX()
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -9,9 +12,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
     unoptimized: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true /* disable eslint on build */,
-  },
+  eslint: { ignoreDuringBuilds: true /* disable eslint on build */ },
+  devIndicators: { position: 'bottom-right' },
 }
 
-export default nextConfig
+export default withMDX(nextConfig)

@@ -1,0 +1,21 @@
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+
+/**
+ * Shared layout configurations
+ *
+ * you can customise layouts individually from:
+ * Home Layout: app/(site)/layout.tsx
+ * Docs Layout: app/docs/layout.tsx
+ */
+export const baseOptions: BaseLayoutProps = {
+  nav: {
+    title: (
+      <div className="flex w-full flex-1 items-center gap-2 py-1.5">
+        <img src="/images/brand-svg/brand-icon-dark.svg" className="h-5 w-auto" alt="Twistail" />
+        Twistail Docs
+      </div>
+    ),
+  },
+  githubUrl: 'https://github.com/riipandi/twistail',
+  links: [{ text: 'Documentation', url: '/docs', active: 'nested-url' }],
+}

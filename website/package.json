@@ -8,6 +8,7 @@
         "build": "next build",
         "preview": "wrangler dev",
         "deploy": "wrangler deploy",
+        "postinstall": "fumadocs-mdx",
         "start": "pnpm dlx serve out -l 3000 -n -C",
         "cleanup": "pnpm dlx del-cli .{next,wrangler} out",
         "update-deps": "npm-check-updates",
@@ -17,19 +18,21 @@
         "typecheck": "tsc -b"
     },
     "dependencies": {
-        "twistail-react": "workspace:*",
         "atropos": "^2.0.2",
         "clsx": "^2.1.1",
         "consola": "^3.4.0",
+        "fumadocs-core": "15.0.9",
+        "fumadocs-mdx": "11.5.6",
+        "fumadocs-ui": "15.0.9",
         "lucide-react": "^0.479.0",
         "next": "15.2.1",
-        "react": "^19.0.0",
         "react-country-flag": "^3.1.0",
         "react-dom": "^19.0.0",
+        "react": "^19.0.0",
         "std-env": "^3.8.1",
         "tailwind-merge": "^3.0.2",
         "tailwind-variants": "^0.3.1",
-        "urlcat": "^3.1.0"
+        "twistail-react": "workspace:*"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",

@@ -32,7 +32,7 @@ export const NavBar = () => {
                 Components
               </Link>
               <Link
-                href="/docs/getting-started"
+                href="/docs"
                 className={cn(
                   pathname === '/docs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
