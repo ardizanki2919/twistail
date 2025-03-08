@@ -17,5 +17,12 @@ export const baseOptions: BaseLayoutProps = {
     ),
   },
   githubUrl: 'https://github.com/riipandi/twistail',
-  links: [{ text: 'Documentation', url: '/docs', active: 'nested-url' }],
+  // links: [
+  //   {
+  //     text: 'Storybook',
+  //     url: 'https://twistail-storybook.netlify.app/',
+  //     external: true,
+  //     active: 'url',
+  //   },
+  // ],
 }

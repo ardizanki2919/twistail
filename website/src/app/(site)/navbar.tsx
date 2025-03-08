@@ -41,9 +41,9 @@ export const NavBar = () => {
                 Documentation
               </Link>{' '}
               <Link
-                href="/faqs"
+                href="/docs/faqs"
                 className={cn(
-                  pathname === '/faqs' ? 'text-blue-500' : 'text-gray-600',
+                  pathname === '/docs/faqs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
                 )}
               >
