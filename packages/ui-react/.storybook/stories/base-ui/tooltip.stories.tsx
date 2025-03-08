@@ -1,6 +1,6 @@
 import { RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Tooltip } from 'twistail-react/components'
+import { Button, Tooltip } from 'twistail-react'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

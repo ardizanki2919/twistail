@@ -3,7 +3,7 @@
 import * as DrawerPrimitives from '@radix-ui/react-dialog'
 import { RiCloseLine } from '@remixicon/react'
 import * as React from 'react'
-import { Button } from 'twistail-react/components'
+import { Button } from 'twistail-react'
 import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 

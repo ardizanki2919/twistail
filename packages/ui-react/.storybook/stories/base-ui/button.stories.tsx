@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { Button, type ButtonProps, buttonStyles } from 'twistail-react/components'
+import { Button, type ButtonProps, buttonStyles } from 'twistail-react'
 import { cn } from 'twistail-utils'
 
 const meta: Meta<ButtonProps> = {

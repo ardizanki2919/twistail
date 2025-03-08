@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { ToastActionElement, ToastProps } from 'twistail-react/components'
+import type { ToastActionElement, ToastProps } from 'twistail-react'
 
 const TOAST_LIMIT = 4
 const TOAST_REMOVE_DELAY = 1000000

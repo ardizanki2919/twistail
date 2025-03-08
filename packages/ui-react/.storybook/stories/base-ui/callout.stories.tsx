@@ -1,6 +1,6 @@
 import { RiErrorWarningFill, RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Callout, calloutVariants } from 'twistail-react/components'
+import { Callout, calloutVariants } from 'twistail-react'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,

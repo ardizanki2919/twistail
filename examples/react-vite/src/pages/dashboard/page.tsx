@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Card } from 'twistail-react/components'
+import { Button, Card } from 'twistail-react'
 import PageShell from '#/layouts/page-shell'
 
 export default function Page() {

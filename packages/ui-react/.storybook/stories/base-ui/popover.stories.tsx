@@ -1,13 +1,13 @@
 import { Label } from '@radix-ui/react-label'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Divider } from 'twistail-react/components'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from 'twistail-react/components'
-import { DialogFooter, DialogHeader, DialogTitle } from 'twistail-react/components'
-import { DialogDescription } from 'twistail-react/components'
-import { Popover, PopoverTrigger } from 'twistail-react/components'
-import { Input } from 'twistail-react/components'
-import { PopoverClose, PopoverContent } from 'twistail-react/components'
+import { Button, Divider } from 'twistail-react'
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from 'twistail-react'
+import { DialogFooter, DialogHeader, DialogTitle } from 'twistail-react'
+import { DialogDescription } from 'twistail-react'
+import { Popover, PopoverTrigger } from 'twistail-react'
+import { Input } from 'twistail-react'
+import { PopoverClose, PopoverContent } from 'twistail-react'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,

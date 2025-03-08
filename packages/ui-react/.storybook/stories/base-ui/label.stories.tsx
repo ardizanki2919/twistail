@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Checkbox, Input, Label } from 'twistail-react/components'
+import { Checkbox, Input, Label } from 'twistail-react'
 
 const meta: Meta<typeof Label> = {
   component: Label,

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from 'twistail-react/components'
-import { Card } from 'twistail-react/components'
-import { Divider } from 'twistail-react/components'
-import { Slider } from 'twistail-react/components'
+import { Button } from 'twistail-react'
+import { Card } from 'twistail-react'
+import { Divider } from 'twistail-react'
+import { Slider } from 'twistail-react'
 
 const meta: Meta<typeof Slider> = {
   component: Slider,

@@ -21,7 +21,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 
-import { Button } from 'twistail-react/components'
+import { Button } from 'twistail-react'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -37,7 +37,7 @@ import {
   DropdownMenuSubMenuContent,
   DropdownMenuSubMenuTrigger,
   DropdownMenuTrigger,
-} from 'twistail-react/components'
+} from 'twistail-react'
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,

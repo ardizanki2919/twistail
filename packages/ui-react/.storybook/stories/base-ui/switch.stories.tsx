@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from 'twistail-react/components'
-import { Card } from 'twistail-react/components'
-import { Divider } from 'twistail-react/components'
-import { Label } from 'twistail-react/components'
-import { Switch } from 'twistail-react/components'
+import { Button } from 'twistail-react'
+import { Card } from 'twistail-react'
+import { Divider } from 'twistail-react'
+import { Label } from 'twistail-react'
+import { Switch } from 'twistail-react'
 
 const meta: Meta<typeof Switch> = {
   component: Switch,

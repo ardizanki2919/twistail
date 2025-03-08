@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card, Textarea } from 'twistail-react/components'
+import { Card, Textarea } from 'twistail-react'
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,

@@ -1,6 +1,6 @@
 // Tremor Toaster [v0.0.0]
 
-import { useToast } from 'twistail-react/components'
+import { useToast } from 'twistail-react'
 import { Toast, ToastProvider, ToastViewport } from './toast'
 
 const Toaster = () => {

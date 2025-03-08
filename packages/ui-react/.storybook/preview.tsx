@@ -5,8 +5,8 @@ import { Link } from './components/link'
 import { light } from './themes'
 
 // Import the stylesheet (Tailwind CSS)
-import '../src/assets/global.css'
-import '../src/assets/theme.css'
+import '../src/styles/global.css'
+import '../src/styles/theme.css'
 
 const preview: Preview = {
   // Optional parameter to center the component in the Canvas.

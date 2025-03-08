@@ -2,9 +2,9 @@ import * as Ri from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import * as React from 'react'
-import { Accordion, AccordionTrigger } from 'twistail-react/components'
-import { AccordionContent, AccordionItem } from 'twistail-react/components'
-import { Badge, Button } from 'twistail-react/components'
+import { Accordion, AccordionTrigger } from 'twistail-react'
+import { AccordionContent, AccordionItem } from 'twistail-react'
+import { Badge, Button } from 'twistail-react'
 
 const meta: Meta = {
   component: Accordion,

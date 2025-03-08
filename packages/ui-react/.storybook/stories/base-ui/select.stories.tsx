@@ -1,7 +1,7 @@
 import { RiShirtLine, RiTShirt2Line, RiTShirtAirFill, RiTShirtLine } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from 'twistail-react/components'
+import { Button } from 'twistail-react'
 import {
   Dialog,
   DialogClose,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from 'twistail-react/components'
+} from 'twistail-react'
 import {
   Select,
   SelectContent,
@@ -20,7 +20,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from 'twistail-react/components'
+} from 'twistail-react'
 
 const meta: Meta<typeof Select> = {
   component: Select,
