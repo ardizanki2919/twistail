@@ -15,6 +15,7 @@ export default defineCommand({
     },
   },
   subCommands: {
+    create: () => import('./commands/create').then((r) => r.default),
     version: () => import('./commands/version').then((r) => r.default),
   },
   async run({ args, cmd }) {
