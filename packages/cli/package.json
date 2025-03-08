@@ -1,6 +1,6 @@
 {
     "name": "twistail",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "module",
     "license": "MIT",
     "description": "A CLI for managing UI components in your project.",
@@ -28,8 +28,6 @@
     "scripts": {
         "build": "unbuild",
         "build:stub": "unbuild --stub",
-        "dev:prepare": "unbuild --stub",
-        "dev": "pnpm build &>/dev/null && pnpm -s twistail",
         "prepack": "pnpm --silent run build",
         "prepublishOnly": "pnpm run build",
         "publish:dry": "pnpm publish --dry-run --no-git-checks",
