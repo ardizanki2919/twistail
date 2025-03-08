@@ -13,6 +13,7 @@
         "format": "biome format . --write",
         "lint": "turbo lint",
         "check": "turbo check",
+        "twistail": "node packages/cli/bin/twistail.mjs",
         "typecheck": "turbo typecheck"
     },
     "devDependencies": {

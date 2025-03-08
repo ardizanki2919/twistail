@@ -1,9 +1,9 @@
 {
-    "name": "twistail-utils",
-    "version": "0.0.3",
+    "name": "twistail",
+    "version": "0.0.0",
     "type": "module",
     "license": "MIT",
-    "description": "Twistail core library",
+    "description": "A CLI for managing UI components in your project.",
     "author": "Aris Ripandi <aris@duck.com>",
     "homepage": "https://twistail.com",
     "repository": {
@@ -13,21 +13,10 @@
     "bugs": {
         "url": "https://github.com/riipandi/twistail/issues"
     },
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/lib/index.d.mts",
-                "default": "./dist/lib/index.mjs"
-            }
-        },
-        "./hooks": {
-            "import": {
-                "types": "./dist/hooks/index.d.mts",
-                "default": "./dist/hooks/index.mjs"
-            }
-        }
-    },
+    "bin": "./bin/twistail.mjs",
+    "exports": "./dist/index.mjs",
     "files": [
+        "bin/**/*",
         "dist/**/*",
         "!tests/**/*",
         "!dist/**/*.*.map",
@@ -37,9 +26,11 @@
         "LICENSE"
     ],
     "scripts": {
-        "dev": "unbuild",
         "build": "unbuild",
-        "prepack": "pnpm run build",
+        "build:stub": "unbuild --stub",
+        "dev:prepare": "unbuild --stub",
+        "dev": "pnpm build &>/dev/null && pnpm -s twistail",
+        "prepack": "pnpm --silent run build",
         "prepublishOnly": "pnpm run build",
         "publish:dry": "pnpm publish --dry-run --no-git-checks",
         "cleanup": "pnpm dlx rimraf dist node_modules",
@@ -47,25 +38,28 @@
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
     },
-    "peerDependencies": {
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0"
-    },
     "dependencies": {
-        "clsx": "^2.1.1",
-        "tailwind-merge": "^3.0.2",
-        "tailwind-variants": "^1.0.0"
+        "citty": "^0.1.6",
+        "consola": "^3.4.0",
+        "giget": "^2.0.0",
+        "make-dir": "^5.0.0",
+        "node-jq": "^6.0.1",
+        "pathe": "^2.0.3",
+        "std-env": "^3.8.1"
     },
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
+        "@types/node": "^22.13.10",
         "@types/react": "^19.0.10",
-        "pathe": "^2.0.3",
+        "rollup": "^4.35.0",
         "typescript": "catalog:",
-        "unbuild": "^3.5.0"
+        "unbuild": "^3.5.0",
+        "unplugin-purge-polyfills": "^0.0.7"
     },
     "publishConfig": {
+        "executableFiles": ["./bin/twistail.mjs"],
         "access": "public"
     },
-    "keywords": ["react", "ui", "tailwindcss", "radix-ui", "shadcn"]
+    "keywords": ["react", "ui", "tailwindcss", "radix-ui", "shadcn", "cli", "command-line"]
 }
