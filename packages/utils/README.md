@@ -25,7 +25,7 @@ yarn add twistail-utils
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license][mit-license].
+This package is open-sourced software licensed under the [MIT license][mit-license].
 
 Copyrights in this project are retained by their [contributors][contributors].
 

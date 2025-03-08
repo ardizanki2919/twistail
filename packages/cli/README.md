@@ -10,21 +10,21 @@ Visit the [documentation][twistail-docs] page for more detailed information.
 
 ## Usage
 
-### Use with `npx`
+**Use with `npx`:**
 
 ```sh
-npx twistail
+npx twistail@latest
 ```
 
-### Use with `pnpm dlx`
+**Use with `pnpm dlx`:**
 
 ```sh
-pnpm dlx twistail
+pnpm dlx twistail@latest
 ```
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license][mit-license].
+This package is open-sourced software licensed under the [MIT license][mit-license].
 
 Copyrights in this project are retained by their [contributors][contributors].
 
