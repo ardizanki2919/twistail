@@ -8,6 +8,8 @@ Twistail utils is a collection of utilities used by [Twistail](https://twistail.
 
 Visit the [documentation][twistail-docs] page for more detailed information.
 
+**Compatibility**: ESM only.
+
 ## Installation
 
 ```sh
