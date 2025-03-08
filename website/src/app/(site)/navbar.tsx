@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 
@@ -33,7 +33,7 @@ export const NavBar = () => {
               </Link>
               <Link
                 href="/docs/getting-started"
-                className={clx(
+                className={cn(
                   pathname === '/docs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
                 )}
@@ -42,7 +42,7 @@ export const NavBar = () => {
               </Link>{' '}
               <Link
                 href="/faqs"
-                className={clx(
+                className={cn(
                   pathname === '/faqs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700'
                 )}

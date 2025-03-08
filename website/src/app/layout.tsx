@@ -4,7 +4,7 @@ import '../styles/global.css'
 
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 
 const fontSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const fontMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={clx(fontSans.variable, fontMono.variable, 'font-sans antialiased')}>
+      <body className={cn(fontSans.variable, fontMono.variable, 'font-sans antialiased')}>
         {children}
       </body>
     </html>

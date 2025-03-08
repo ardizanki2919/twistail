@@ -1,8 +1,8 @@
 // Tremor Popover [v0.0.3]
 
 import * as PopoverPrimitives from '@radix-ui/react-popover'
-import React from 'react'
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
   return <PopoverPrimitives.Root {...props} />
@@ -64,7 +64,7 @@ const PopoverContent = React.forwardRef<
           align={align}
           collisionPadding={collisionPadding}
           avoidCollisions={avoidCollisions}
-          className={clx(
+          className={cn(
             // base
             'max-h-[var(--radix-popper-available-height)] min-w-60 overflow-hidden rounded-md border p-2.5 text-sm shadow-md',
             // border color

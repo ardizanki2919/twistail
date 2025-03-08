@@ -2,8 +2,8 @@
 
 import * as SelectPrimitives from '@radix-ui/react-select'
 import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from '@remixicon/react'
-import React from 'react'
-import { clx, focusInput, hasErrorInput } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusInput, hasErrorInput } from 'twistail-react/utils'
 
 const Select = SelectPrimitives.Root
 Select.displayName = 'Select'
@@ -15,7 +15,7 @@ const SelectValue = SelectPrimitives.Value
 SelectValue.displayName = 'SelectValue'
 
 const selectTriggerStyles = [
-  clx(
+  cn(
     // base
     'group/trigger flex w-full select-none items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-sm outline-none transition sm:text-sm',
     // border color
@@ -46,14 +46,14 @@ const SelectTrigger = React.forwardRef<
   return (
     <SelectPrimitives.Trigger
       ref={forwardedRef}
-      className={clx(selectTriggerStyles, hasError ? hasErrorInput : '', className)}
+      className={cn(selectTriggerStyles, hasError ? hasErrorInput : '', className)}
       tremor-id="tremor-raw"
       {...props}
     >
       <span className="truncate">{children}</span>
       <SelectPrimitives.Icon asChild>
         <RiExpandUpDownLine
-          className={clx(
+          className={cn(
             // base
             'size-4 shrink-0',
             // text color
@@ -75,7 +75,7 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.ScrollUpButton
     ref={forwardedRef}
-    className={clx('flex cursor-default items-center justify-center py-1', className)}
+    className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
     <RiArrowUpSLine className="size-3 shrink-0" aria-hidden="true" />
@@ -89,7 +89,7 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.ScrollDownButton
     ref={forwardedRef}
-    className={clx('flex cursor-default items-center justify-center py-1', className)}
+    className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
     <RiArrowDownSLine className="size-3 shrink-0" aria-hidden="true" />
@@ -108,7 +108,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitives.Portal>
       <SelectPrimitives.Content
         ref={forwardedRef}
-        className={clx(
+        className={cn(
           // base
           'relative z-50 overflow-hidden rounded-md border shadow-black/[2.5%] shadow-xl',
           // widths
@@ -135,7 +135,7 @@ const SelectContent = React.forwardRef<
       >
         <SelectScrollUpButton />
         <SelectPrimitives.Viewport
-          className={clx(
+          className={cn(
             'p-1',
             position === 'popper' &&
               'h-[var(--radix-select-trigger-height)] w-full min-w-[calc(var(--radix-select-trigger-width))]'
@@ -157,7 +157,7 @@ const SelectGroupLabel = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.Label
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       // base
       'px-3 py-2 font-medium text-xs tracking-wide',
       // text color
@@ -177,7 +177,7 @@ const SelectItem = React.forwardRef<
   return (
     <SelectPrimitives.Item
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         // base
         'grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded px-3 py-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
         // text color
@@ -211,7 +211,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.Separator
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       // base
       '-mx-1 my-1 h-px',
       // background color

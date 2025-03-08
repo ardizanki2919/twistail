@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import * as React from 'react'
 import { Button } from 'twistail-react/components'
 import { Drawer, DrawerBody, DrawerClose, DrawerTrigger } from 'twistail-react/components'
 import { DrawerFooter, DrawerHeader, DrawerTitle } from 'twistail-react/components'

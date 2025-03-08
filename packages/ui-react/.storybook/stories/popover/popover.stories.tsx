@@ -1,6 +1,6 @@
 import { Label } from '@radix-ui/react-label'
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import * as React from 'react'
 import { Button, Divider } from 'twistail-react/components'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from 'twistail-react/components'
 import { DialogFooter, DialogHeader, DialogTitle } from 'twistail-react/components'

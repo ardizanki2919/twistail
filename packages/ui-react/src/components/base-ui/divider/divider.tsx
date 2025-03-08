@@ -1,7 +1,7 @@
 // Tremor Divider [v0.0.2]
 
-import React from 'react'
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 type DividerProps = React.ComponentPropsWithoutRef<'div'>
 
@@ -9,7 +9,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
   ({ className, children, ...props }, forwardedRef) => (
     <div
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         // base
         'mx-auto my-6 flex w-full items-center justify-between gap-3 text-sm',
         // text color
@@ -22,7 +22,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
       {children ? (
         <>
           <div
-            className={clx(
+            className={cn(
               // base
               'h-[1px] w-full',
               // background color
@@ -31,7 +31,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
           />
           <div className="whitespace-nowrap text-inherit">{children}</div>
           <div
-            className={clx(
+            className={cn(
               // base
               'h-[1px] w-full',
               // background color
@@ -41,7 +41,7 @@ const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
         </>
       ) : (
         <div
-          className={clx(
+          className={cn(
             // base
             'h-[1px] w-full',
             // background color

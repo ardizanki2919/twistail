@@ -3,8 +3,8 @@
 import * as ToastPrimitives from '@radix-ui/react-toast'
 import { RiCheckboxCircleFill, RiLoader2Fill } from '@remixicon/react'
 import { RiCloseCircleFill, RiErrorWarningFill, RiInformationFill } from '@remixicon/react'
-import React from 'react'
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 const ToastProvider = ToastPrimitives.Provider
 ToastProvider.displayName = 'ToastProvider'
@@ -15,7 +15,7 @@ const ToastViewport = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <ToastPrimitives.Viewport
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       '(--viewport-padding:_15px) fixed top-0 right-0 z-[9999] m-0 flex w-full max-w-[100vw] list-none flex-col gap-2 p-[var(--viewport-padding)] sm:max-w-md sm:gap-4',
       className
     )}
@@ -100,7 +100,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
     return (
       <ToastPrimitives.Root
         ref={forwardedRef}
-        className={clx(
+        className={cn(
           // base
           'flex h-fit min-h-16 w-full overflow-hidden rounded-md border shadow-black/5 shadow-lg',
           // background color
@@ -118,7 +118,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
         {...props}
       >
         <div
-          className={clx(
+          className={cn(
             // base
             'flex flex-1 items-start gap-3 p-4',
             // border
@@ -144,7 +144,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
             <>
               <ToastPrimitives.Action
                 altText={action.altText}
-                className={clx(
+                className={cn(
                   // base
                   'flex flex-1 items-center justify-center px-6 font-semibold text-sm transition-colors',
                   // hover
@@ -170,7 +170,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
           )}
           {!disableDismiss && (
             <ToastPrimitives.Close
-              className={clx(
+              className={cn(
                 // base
                 'flex flex-1 items-center justify-center px-6 text-sm transition-colors',
                 // text color

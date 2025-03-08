@@ -1,8 +1,8 @@
 // Tremor Input [v1.0.5]
 
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from '@remixicon/react'
-import React from 'react'
-import { clx, focusRing } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusRing } from 'twistail-react/utils'
 import { type InputStyles, inputStyles } from './input.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, InputStyles {
@@ -20,11 +20,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const isSearch = type === 'search'
 
     return (
-      <div className={clx('relative w-full', className)} tremor-id="tremor-raw">
+      <div className={cn('relative w-full', className)} tremor-id="tremor-raw">
         <input
           ref={forwardedRef}
           type={isPassword ? typeState : type}
-          className={clx(
+          className={cn(
             inputStyles({ hasError, enableStepper }),
             {
               'pl-8': isSearch,
@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
         {isSearch && (
           <div
-            className={clx(
+            className={cn(
               // base
               'pointer-events-none absolute bottom-0 left-2 flex h-full items-center justify-center',
               // text color
@@ -48,13 +48,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         {isPassword && (
           <div
-            className={clx(
-              'absolute right-0 bottom-0 flex h-full items-center justify-center px-3'
-            )}
+            className={cn('absolute right-0 bottom-0 flex h-full items-center justify-center px-3')}
           >
             <button
               aria-label="Change password visibility"
-              className={clx(
+              className={cn(
                 // base
                 'h-fit w-fit rounded-sm outline-none transition-all',
                 // text

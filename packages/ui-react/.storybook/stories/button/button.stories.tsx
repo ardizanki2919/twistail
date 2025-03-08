@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Button, type ButtonProps, buttonStyles } from 'twistail-react/components'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 
 const meta: Meta<ButtonProps> = {
   component: Button,
@@ -113,7 +113,7 @@ export const AnchorWithVariantStyle: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
       {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-      <a href="#" className={clx(buttonStyles({ variant: 'secondary' }))}>
+      <a href="#" className={cn(buttonStyles({ variant: 'secondary' }))}>
         Anchor element
       </a>
     </div>

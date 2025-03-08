@@ -1,8 +1,8 @@
 // Tremor Radio Card [v0.0.3]
 
 import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
-import React from 'react'
-import { clx, focusInput, focusRing } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusInput, focusRing } from 'twistail-react/utils'
 
 const RadioCardGroup = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Root>,
@@ -11,7 +11,7 @@ const RadioCardGroup = React.forwardRef<
   return (
     <RadioGroupPrimitives.Root
       ref={forwardedRef}
-      className={clx('grid gap-2', className)}
+      className={cn('grid gap-2', className)}
       tremor-id="tremor-raw"
       {...props}
     />
@@ -27,7 +27,7 @@ const RadioCardItem = React.forwardRef<
   return (
     <RadioGroupPrimitives.Item
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         // base
         'group relative w-full rounded-md border p-4 text-left shadow-sm transition focus:outline-none',
         // background color
@@ -57,7 +57,7 @@ const RadioCardIndicator = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => {
   return (
     <div
-      className={clx(
+      className={cn(
         // base
         'relative flex size-4 shrink-0 appearance-none items-center justify-center rounded-full border shadow-sm outline-none',
         // border color
@@ -76,11 +76,11 @@ const RadioCardIndicator = React.forwardRef<
     >
       <RadioGroupPrimitives.Indicator
         ref={forwardedRef}
-        className={clx('flex items-center justify-center')}
+        className={cn('flex items-center justify-center')}
         {...props}
       >
         <div
-          className={clx(
+          className={cn(
             // base
             'size size-1.5 shrink-0 rounded-full',
             // indicator

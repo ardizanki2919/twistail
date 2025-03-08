@@ -1,8 +1,8 @@
 // Tremor RadioGroup [v0.0.2]
 
 import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
-import React from 'react'
-import { clx, focusRing } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusRing } from 'twistail-react/utils'
 
 const RadioGroup = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Root>,
@@ -11,7 +11,7 @@ const RadioGroup = React.forwardRef<
   return (
     <RadioGroupPrimitives.Root
       ref={forwardedRef}
-      className={clx('grid gap-2', className)}
+      className={cn('grid gap-2', className)}
       tremor-id="tremor-raw"
       {...props}
     />
@@ -27,11 +27,11 @@ const RadioGroupIndicator = React.forwardRef<
   return (
     <RadioGroupPrimitives.Indicator
       ref={forwardedRef}
-      className={clx('flex items-center justify-center', className)}
+      className={cn('flex items-center justify-center', className)}
       {...props}
     >
       <div
-        className={clx(
+        className={cn(
           // base
           'size-1.5 shrink-0 rounded-full',
           // indicator
@@ -53,14 +53,14 @@ const RadioGroupItem = React.forwardRef<
   return (
     <RadioGroupPrimitives.Item
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         'group relative flex size-4 appearance-none items-center justify-center outline-none',
         className
       )}
       {...props}
     >
       <div
-        className={clx(
+        className={cn(
           // base
           'flex size-4 shrink-0 items-center justify-center rounded-full border shadow-sm',
           // border color

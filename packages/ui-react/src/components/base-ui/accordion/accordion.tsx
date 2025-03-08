@@ -2,9 +2,8 @@
 
 import * as AccordionPrimitives from '@radix-ui/react-accordion'
 import { RiAddLine } from '@remixicon/react'
-import React from 'react'
-
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 const Accordion = AccordionPrimitives.Root
 
@@ -16,7 +15,7 @@ const AccordionTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <AccordionPrimitives.Header className="flex">
     <AccordionPrimitives.Trigger
-      className={clx(
+      className={cn(
         // base
         'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-sm leading-none',
         // text color
@@ -32,7 +31,7 @@ const AccordionTrigger = React.forwardRef<
     >
       {children}
       <RiAddLine
-        className={clx(
+        className={cn(
           // base
           'group-data-[state=open]:-rotate-45 size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
           // text color
@@ -55,13 +54,13 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <AccordionPrimitives.Content
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open'
     )}
     {...props}
   >
     <div
-      className={clx(
+      className={cn(
         // base
         'overflow-hidden pb-4 text-sm',
         // text color
@@ -82,7 +81,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <AccordionPrimitives.Item
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       // base
       'overflow-hidden border-b first:mt-0',
       // border color

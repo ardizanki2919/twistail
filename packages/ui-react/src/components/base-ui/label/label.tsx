@@ -1,8 +1,8 @@
 // Tremor Label [v0.0.2]
 
 import * as LabelPrimitives from '@radix-ui/react-label'
-import React from 'react'
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitives.Root> {
   disabled?: boolean
@@ -12,7 +12,7 @@ const Label = React.forwardRef<React.ComponentRef<typeof LabelPrimitives.Root>, 
   ({ className, disabled, ...props }, forwardedRef) => (
     <LabelPrimitives.Root
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         // base
         'text-sm leading-none',
         // text color

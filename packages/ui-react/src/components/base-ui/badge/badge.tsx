@@ -1,11 +1,11 @@
 // Tremor Badge [v0.0.1]
 
-import React from 'react'
+import * as React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 
 const badgeVariants = tv({
-  base: clx(
+  base: cn(
     'inline-flex items-center gap-x-1 whitespace-nowrap rounded-md px-2 py-1 font-medium text-xs ring-1 ring-inset'
   ),
   variants: {
@@ -46,7 +46,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     return (
       <span
         ref={forwardedRef}
-        className={clx(badgeVariants({ variant }), className)}
+        className={cn(badgeVariants({ variant }), className)}
         tremor-id="tremor-raw"
         {...props}
       />

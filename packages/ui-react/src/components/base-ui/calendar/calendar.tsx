@@ -6,7 +6,7 @@ import { addYears, format, isSameMonth } from 'date-fns'
 import * as React from 'react'
 import { DayPicker, useDayPicker, useDayRender, useNavigation } from 'react-day-picker'
 import type { DayPickerRangeProps, DayPickerSingleProps, DayProps, Matcher } from 'react-day-picker'
-import { clx, focusRing } from 'twistail-react/utils'
+import { cn, focusRing } from 'twistail-react/utils'
 
 interface NavigationButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   onClick: () => void
@@ -22,7 +22,7 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, NavigationButtonPro
         ref={forwardedRef}
         type="button"
         disabled={disabled}
-        className={clx(
+        className={cn(
           'flex size-8 shrink-0 select-none items-center justify-center rounded border p-1 outline-none transition sm:size-[30px]',
           // text color
           'text-gray-600 hover:text-gray-800',
@@ -87,7 +87,7 @@ const Calendar = ({
       numberOfMonths={numberOfMonths}
       locale={locale}
       showOutsideDays={numberOfMonths === 1}
-      className={clx(className)}
+      className={cn(className)}
       classNames={{
         months: 'flex space-y-0',
         month: 'space-y-4 p-3',
@@ -96,18 +96,18 @@ const Calendar = ({
         head_cell:
           'w-9 font-medium text-sm sm:text-xs text-center text-gray-400 dark:text-gray-600 pb-2',
         row: 'w-full mt-0.5',
-        cell: clx(
+        cell: cn(
           'relative p-0 text-center focus-within:relative',
           'text-gray-900 dark:text-gray-50'
         ),
-        day: clx(
+        day: cn(
           'size-9 rounded text-sm focus:z-10',
           'text-gray-900 dark:text-gray-50',
           'hover:bg-gray-200 hover:dark:bg-gray-700',
           focusRing
         ),
         day_today: 'font-semibold',
-        day_selected: clx(
+        day_selected: cn(
           'rounded',
           'aria-selected:bg-blue-500 aria-selected:text-white',
           'dark:aria-selected:bg-blue-500 dark:aria-selected:text-white'
@@ -115,7 +115,7 @@ const Calendar = ({
         day_disabled:
           '!text-gray-300 dark:!text-gray-700 line-through disabled:hover:bg-transparent',
         day_outside: 'text-gray-400 dark:text-gray-600',
-        day_range_middle: clx(
+        day_range_middle: cn(
           '!rounded-none',
           'aria-selected:!bg-gray-100 aria-selected:!text-gray-900',
           'dark:aria-selected:!bg-gray-900 dark:aria-selected:!text-gray-50'
@@ -232,7 +232,7 @@ const Calendar = ({
             return (
               <div
                 {...divProps}
-                className={clx('flex items-center justify-center', divProps.className)}
+                className={cn('flex items-center justify-center', divProps.className)}
               />
             )
           }
@@ -248,12 +248,12 @@ const Calendar = ({
               ref={buttonRef}
               {...buttonPropsRest}
               type="button"
-              className={clx('relative', buttonClassName)}
+              className={cn('relative', buttonClassName)}
             >
               {buttonChildren}
               {today && (
                 <span
-                  className={clx(
+                  className={cn(
                     '-translate-x-1/2 absolute inset-x-1/2 bottom-1.5 h-0.5 w-4 rounded-[2px]',
                     {
                       'bg-blue-500 dark:bg-blue-500': !selected,

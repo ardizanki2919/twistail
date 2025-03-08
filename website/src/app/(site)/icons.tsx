@@ -1,12 +1,12 @@
 'use client'
 
 import type { FC } from 'react'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 
 export const TwitterIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
-      className={clx(className)}
+      className={cn(className)}
       width={24}
       height={24}
       viewBox="0 0 24 24"
@@ -21,7 +21,7 @@ export const TwitterIcon: FC<{ className?: string }> = ({ className }) => {
 export const BlueskyIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
-      className={clx(className)}
+      className={cn(className)}
       width={24}
       height={24}
       viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ export const BlueskyIcon: FC<{ className?: string }> = ({ className }) => {
 export const GitHubIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
-      className={clx(className)}
+      className={cn(className)}
       width={24}
       height={24}
       viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export const GitHubIcon: FC<{ className?: string }> = ({ className }) => {
 export const LinkedInIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
-      className={clx(className)}
+      className={cn(className)}
       width={24}
       height={24}
       viewBox="0 0 24 24"

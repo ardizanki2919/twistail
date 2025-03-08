@@ -1,8 +1,8 @@
 // Tremor Dialog [v0.0.1]
 
 import * as DialogPrimitives from '@radix-ui/react-dialog'
-import React from 'react'
-import { clx, focusRing } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusRing } from 'twistail-react/utils'
 
 const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitives.Root>) => {
   return <DialogPrimitives.Root {...props} />
@@ -28,7 +28,7 @@ const DialogOverlay = React.forwardRef<
   return (
     <DialogPrimitives.Overlay
       ref={forwardedRef}
-      className={clx(
+      className={cn(
         // base
         'fixed inset-0 z-50 overflow-y-auto',
         // background color
@@ -53,7 +53,7 @@ const DialogContent = React.forwardRef<
       <DialogOverlay>
         <DialogPrimitives.Content
           ref={forwardedRef}
-          className={clx(
+          className={cn(
             // base
             '-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-[95vw] max-w-lg overflow-y-auto rounded-md border p-6 shadow-lg',
             // border color
@@ -76,7 +76,7 @@ const DialogContent = React.forwardRef<
 DialogContent.displayName = 'DialogContent'
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={clx('flex flex-col gap-y-1', className)} {...props} />
+  return <div className={cn('flex flex-col gap-y-1', className)} {...props} />
 }
 
 DialogHeader.displayName = 'DialogHeader'
@@ -87,7 +87,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <DialogPrimitives.Title
     ref={forwardedRef}
-    className={clx(
+    className={cn(
       // base
       'font-semibold text-lg',
       // text color
@@ -107,7 +107,7 @@ const DialogDescription = React.forwardRef<
   return (
     <DialogPrimitives.Description
       ref={forwardedRef}
-      className={clx('text-gray-500 dark:text-gray-500', className)}
+      className={cn('text-gray-500 dark:text-gray-500', className)}
       {...props}
     />
   )
@@ -118,7 +118,7 @@ DialogDescription.displayName = 'DialogDescription'
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={clx('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
+      className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
       {...props}
     />
   )

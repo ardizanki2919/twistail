@@ -1,8 +1,8 @@
 // Tremor Tooltip [v0.1.0]
 
 import * as TooltipPrimitives from '@radix-ui/react-tooltip'
-import React from 'react'
-import { clx } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn } from 'twistail-react/utils'
 
 interface TooltipProps
   extends Omit<TooltipPrimitives.TooltipContentProps, 'content' | 'onClick'>,
@@ -56,7 +56,7 @@ const Tooltip = React.forwardRef<
               side={side}
               sideOffset={sideOffset}
               align="center"
-              className={clx(
+              className={cn(
                 // base
                 'max-w-60 select-none rounded-md px-2.5 py-1.5 text-sm leading-5 shadow-md',
                 // text color

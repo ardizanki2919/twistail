@@ -1,8 +1,8 @@
 // Tremor Callout [v0.0.1]
 
-import React from 'react'
+import * as React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
-import { clx } from 'twistail-react/utils'
+import { cn } from 'twistail-react/utils'
 
 const calloutVariants = tv({
   base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',
@@ -57,19 +57,19 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
     return (
       <div
         ref={forwardedRef}
-        className={clx(calloutVariants({ variant }), className)}
+        className={cn(calloutVariants({ variant }), className)}
         tremor-id="tremor-raw"
         {...props}
       >
-        <div className={clx('flex items-start')}>
+        <div className={cn('flex items-start')}>
           {Icon && typeof Icon === 'function' ? (
-            <Icon className={clx('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
+            <Icon className={cn('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
           ) : (
             Icon
           )}
-          <span className={clx('font-semibold')}>{title}</span>
+          <span className={cn('font-semibold')}>{title}</span>
         </div>
-        <div className={clx('overflow-y-auto', children ? 'mt-2' : '')}>{children}</div>
+        <div className={cn('overflow-y-auto', children ? 'mt-2' : '')}>{children}</div>
       </div>
     )
   }

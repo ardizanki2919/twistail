@@ -1,8 +1,8 @@
 // Tremor TabNavigation [v0.1.0]
 
 import * as NavigationMenuPrimitives from '@radix-ui/react-navigation-menu'
-import React from 'react'
-import { clx, focusRing } from 'twistail-react/utils'
+import * as React from 'react'
+import { cn, focusRing } from 'twistail-react/utils'
 
 function getSubtree(
   options: { asChild: boolean | undefined; children: React.ReactNode },
@@ -33,7 +33,7 @@ const TabNavigation = React.forwardRef<
     asChild={false}
   >
     <NavigationMenuPrimitives.List
-      className={clx(
+      className={cn(
         // base
         'flex items-center justify-start whitespace-nowrap border-b [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
         // border color
@@ -57,7 +57,7 @@ const TabNavigationLink = React.forwardRef<
   <NavigationMenuPrimitives.Item className="flex" aria-disabled={disabled}>
     <NavigationMenuPrimitives.Link
       aria-disabled={disabled}
-      className={clx(
+      className={cn(
         'group relative flex shrink-0 select-none items-center justify-center',
         disabled ? 'pointer-events-none' : ''
       )}
@@ -68,7 +68,7 @@ const TabNavigationLink = React.forwardRef<
     >
       {getSubtree({ asChild, children }, (children) => (
         <span
-          className={clx(
+          className={cn(
             // base
             '-mb-px flex items-center justify-center whitespace-nowrap border-transparent border-b-2 px-3 pb-2 font-medium text-sm transition-all',
             // text color

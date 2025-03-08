@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import * as React from 'react'
 import { Button, Label } from 'twistail-react/components'
 import { RadioGroup, RadioGroupItem } from 'twistail-react/components'
 
