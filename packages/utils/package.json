@@ -1,6 +1,6 @@
 {
     "name": "twistail-utils",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "type": "module",
     "license": "MIT",
     "description": "Twistail core library",
@@ -20,7 +20,7 @@
                 "default": "./dist/lib/index.mjs"
             }
         },
-        "./hooks/*": {
+        "./hooks": {
             "import": {
                 "types": "./dist/hooks/index.d.mts",
                 "default": "./dist/hooks/index.mjs"
