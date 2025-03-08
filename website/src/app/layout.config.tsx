@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+import Image from 'next/image'
 
 /**
  * Shared layout configurations
@@ -11,7 +12,12 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <div className="flex w-full flex-1 items-center gap-2 py-1.5">
-        <img src="/images/brand-svg/brand-icon-dark.svg" className="h-5 w-auto" alt="Twistail" />
+        <Image
+          src="/images/brand-svg/brand-icon-dark.svg"
+          className="h-5 w-auto"
+          alt="Twistail"
+          unoptimized
+        />
         Twistail Docs
       </div>
     ),

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from 'twistail-utils'
 import Link from '#/app/link'
@@ -18,7 +19,12 @@ export const NavBar = () => {
           className="inline-flex items-center gap-2.5 font-bold text-2xl text-black md:text-3xl"
           aria-label="logo"
         >
-          <img src="/images/brand-svg/brand-icon-dark.svg" className="h-8 w-auto" alt="Twistail" />
+          <Image
+            src="/images/brand-svg/brand-icon-dark.svg"
+            className="h-8 w-auto"
+            alt="Twistail"
+            unoptimized
+          />
           <span className="sr-only">Twistail</span>
         </Link>
 
