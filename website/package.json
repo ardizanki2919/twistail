@@ -31,7 +31,7 @@
         "react": "^19.0.0",
         "std-env": "^3.8.1",
         "tailwind-merge": "^3.0.2",
-        "tailwind-variants": "^0.3.1",
+        "tailwind-variants": "^1.0.0",
         "twistail-react": "workspace:*",
         "twistail-utils": "workspace:*"
     },

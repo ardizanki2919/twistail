@@ -8,6 +8,7 @@
         "storybook": "turbo storybook --filter=twistail-react",
         "cleanup": "turbo cleanup && pnpm dlx rimraf pnpm-lock.yaml node_modules",
         "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "publish:dry": "turbo publish:dry --filter=!example-*",
         "filter": "pnpm --silent --filter",
         "format": "biome format . --write",
         "lint": "turbo lint",

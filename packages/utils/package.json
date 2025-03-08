@@ -2,36 +2,66 @@
     "name": "twistail-utils",
     "version": "0.0.0",
     "type": "module",
-    "licenses": [{ "type": "Apache-2.0" }, { "type": "MIT" }],
-    "files": ["dist"],
+    "license": "MIT",
+    "description": "Twistail core library",
+    "author": "Aris Ripandi <aris@duck.com>",
+    "homepage": "https://twistail.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/riipandi/twistail"
+    },
+    "bugs": {
+        "url": "https://github.com/riipandi/twistail/issues"
+    },
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/lib/index.d.mts",
+                "default": "./dist/lib/index.mjs"
+            }
+        },
+        "./hooks/*": {
+            "import": {
+                "types": "./dist/hooks/index.d.mts",
+                "default": "./dist/hooks/index.mjs"
+            }
+        }
+    },
+    "files": [
+        "dist/**/*",
+        "!tests/**/*",
+        "!dist/**/*.*.map",
+        "!tests/**/*.*.map",
+        "package.json",
+        "README.md",
+        "LICENSE"
+    ],
     "scripts": {
-        "dev": "echo 'no dev script'",
-        "build": "echo 'no build script'",
+        "dev": "unbuild",
+        "build": "unbuild",
+        "prepublishOnly": "pnpm run build",
+        "publish:dry": "pnpm publish --dry-run --no-git-checks",
         "cleanup": "pnpm dlx rimraf dist node_modules",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
     },
-    "exports": {
-        ".": "./lib/index.ts",
-        "./hooks": "./hooks/index.ts"
-    },
     "peerDependencies": {
         "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-router": "^7.1.5"
+        "react-dom": "^19.0.0"
     },
     "dependencies": {
         "clsx": "^2.1.1",
         "tailwind-merge": "^3.0.2",
-        "tailwind-variants": "^0.3.1"
+        "tailwind-variants": "^1.0.0"
     },
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
         "@types/react": "^19.0.10",
         "pathe": "^2.0.3",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "unbuild": "^3.5.0"
     },
     "publishConfig": {
         "access": "public"
