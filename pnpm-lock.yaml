@@ -56,7 +56,7 @@ importers:
         version: 1.9.4
       '@repo/config-typescript':
         specifier: workspace:*
-        version: link:../../packages/config-typescript
+        version: link:../../internal/config-typescript
       '@tailwindcss/forms':
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@4.0.12)
@@ -94,7 +94,7 @@ importers:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
 
-  packages/config-typescript: {}
+  internal/config-typescript: {}
 
   packages/ui-react:
     dependencies:
@@ -188,7 +188,7 @@ importers:
         version: 1.9.4
       '@repo/config-typescript':
         specifier: workspace:*
-        version: link:../config-typescript
+        version: link:../../internal/config-typescript
       '@storybook/addon-a11y':
         specifier: ^8.6.4
         version: 8.6.4(storybook@8.6.4)
