@@ -5,7 +5,15 @@
 [![Turborepo](https://img.shields.io/badge/Built%20With-Turborepo-blueviolet)][turborepo]
 [![Contribution](https://img.shields.io/badge/Contributions-welcome-gray.svg)][contribution]
 
-Extensible React UI components library powered by Radix UI, Tailwind CSS, and TypeScript.
+Modular and extensible React UI components library powered by Radix UI, Tailwind CSS, and TypeScript.
+
+> [!CAUTION]
+> 🚨🚨🚨
+>
+> Twistail is in a _very_ early development preview - expect some bugs and changes along the way.
+> <br/>Please do not use it in production yet, use in production at your own discretion!
+>
+> 🚨🚨🚨
 
 ## Quick Start
 
