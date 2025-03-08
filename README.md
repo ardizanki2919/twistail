@@ -26,6 +26,8 @@ Each package and app is 100% [TypeScript][typescript].
 ## License
 
 Licensed under either of [Apache License 2.0][license-apache] or [MIT license][license-mit] at your option.
+To understand the key differences between these two popular open-source licenses, please refer to the 
+[Apache License 2.0][tldr-apache] and the [MIT License][tldr-mit] on tldrlegal.com.
 
 > Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project by you,
 > as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
@@ -49,3 +51,5 @@ See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) file
 [turborepo]: https://turbo.build/repo/docs
 [typescript]: https://www.typescriptlang.org/
 [vite]: https://vite.dev
+[tldr-mit]: https://www.tldrlegal.com/license/mit-license
+[tldr-apache]: https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0
