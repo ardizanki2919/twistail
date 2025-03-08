@@ -21,6 +21,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <meta property="og:image" content="/images/twistail-og.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Twistail" />
+        <meta name="twitter:image" content="/images/twistail-og.png" />
+        <meta name="twitter:image:type" content="image/png" />
+        <meta name="twitter:image:width" content="1200" />
+        <meta name="twitter:image:height" content="630" />
+        <meta property="twitter:image:alt" content="Twistail" />
+      </head>
       <body
         className={cn(
           fontSans.variable,
