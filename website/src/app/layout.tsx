@@ -12,7 +12,7 @@ const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })
 
 const metaDescription = `Modular and extensible UI components library powered by Radix UI, Tailwind CSS, and TypeScript.`
 const metaTitle = 'Twistail — React UI components library'
-const ogImageUrl = 'https://twistail.com/images/twistail-og.png'
+const ogImageUrl = 'https://twistail.com/images/banner.png'
 
 export const metadata: Metadata = {
   title: { default: metaTitle, template: '%s - Twistail' },
