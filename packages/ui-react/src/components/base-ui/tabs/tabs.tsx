@@ -2,7 +2,8 @@
 
 import * as TabsPrimitives from '@radix-ui/react-tabs'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Tabs = (
   props: Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitives.Root>, 'orientation'>

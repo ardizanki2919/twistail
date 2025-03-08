@@ -2,7 +2,8 @@
 
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from '@remixicon/react'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 import { type InputStyles, inputStyles } from './input.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, InputStyles {

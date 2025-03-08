@@ -2,7 +2,7 @@
 
 import * as PopoverPrimitives from '@radix-ui/react-popover'
 import * as React from 'react'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
   return <PopoverPrimitives.Root {...props} />

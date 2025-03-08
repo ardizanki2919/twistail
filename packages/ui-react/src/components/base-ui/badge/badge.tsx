@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const badgeVariants = tv({
   base: cn(

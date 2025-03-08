@@ -2,7 +2,8 @@
 
 import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
 import * as React from 'react'
-import { cn, focusInput, focusRing } from 'twistail-react/utils'
+import { focusInput, focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const RadioCardGroup = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Root>,

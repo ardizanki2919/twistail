@@ -13,13 +13,14 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "twistail-react": "workspace:*",
         "consola": "^3.4.0",
         "pathe": "^2.0.3",
-        "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router": "^7.3.0",
-        "std-env": "^3.8.1"
+        "react": "^19.0.0",
+        "std-env": "^3.8.1",
+        "twistail-react": "workspace:*",
+        "twistail-utils": "workspace:*"
     },
     "devDependencies": {
         "@biomejs/biome": "catalog:",

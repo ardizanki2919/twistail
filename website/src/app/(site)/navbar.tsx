@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 

@@ -3,7 +3,8 @@
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 import * as React from 'react'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const toggleStyles = [
   // base

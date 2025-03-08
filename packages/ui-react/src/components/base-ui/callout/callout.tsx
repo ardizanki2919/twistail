@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
-import { cn } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 const calloutVariants = tv({
   base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',

@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import type { ToastActionElement, ToastProps } from 'twistail-react/components'
 
 const TOAST_LIMIT = 4

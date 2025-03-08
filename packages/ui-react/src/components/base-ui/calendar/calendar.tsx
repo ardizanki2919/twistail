@@ -6,7 +6,8 @@ import { addYears, format, isSameMonth } from 'date-fns'
 import * as React from 'react'
 import { DayPicker, useDayPicker, useDayRender, useNavigation } from 'react-day-picker'
 import type { DayPickerRangeProps, DayPickerSingleProps, DayProps, Matcher } from 'react-day-picker'
-import { cn, focusRing } from 'twistail-react/utils'
+import { focusRing } from 'twistail-react/utils'
+import { cn } from 'twistail-utils'
 
 interface NavigationButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   onClick: () => void

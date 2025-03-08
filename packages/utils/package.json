@@ -1,0 +1,39 @@
+{
+    "name": "twistail-utils",
+    "version": "0.0.0",
+    "type": "module",
+    "licenses": [{ "type": "Apache-2.0" }, { "type": "MIT" }],
+    "files": ["dist"],
+    "scripts": {
+        "dev": "echo 'no dev script'",
+        "build": "echo 'no build script'",
+        "cleanup": "pnpm dlx rimraf dist node_modules",
+        "lint": "biome lint . --write",
+        "check": "biome check . --write",
+        "typecheck": "tsc --noEmit"
+    },
+    "exports": {
+        ".": "./lib/index.ts",
+        "./hooks": "./hooks/index.ts"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-router": "^7.1.5"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^3.0.2",
+        "tailwind-variants": "^0.3.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "catalog:",
+        "@repo/config-typescript": "workspace:*",
+        "@types/react": "^19.0.10",
+        "pathe": "^2.0.3",
+        "typescript": "catalog:"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
