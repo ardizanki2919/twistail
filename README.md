@@ -23,6 +23,19 @@ This Turborepo includes the following packages and apps:
 
 Each package and app is 100% [TypeScript][typescript].
 
+### Publishing Packages
+
+#### Run in dry-run mode
+
+```sh
+pnpm turbo publish:dry --filter=twistail-utils
+```
+
+#### Publish specific packages
+```sh
+pnpm --filter=twistail-utils publish
+```
+
 ## License
 
 Licensed under either of [Apache License 2.0][license-apache] or [MIT license][license-mit] at your option.
