@@ -1,26 +1,25 @@
-# Twistail Utils
+# Twistail CLI
 
-[![npm version](https://img.shields.io/npm/v/twistail-utils)](https://www.npmjs.com/package/twistail-utils)
-[![npm downloads](https://img.shields.io/npm/dm/twistail-utils)](https://www.npmjs.com/package/twistail-utils)
+[![npm version](https://img.shields.io/npm/v/twistail)](https://www.npmjs.com/package/twistail)
+[![npm downloads](https://img.shields.io/npm/dm/twistail)](https://www.npmjs.com/package/twistail)
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)][mit-license]
 
-Twistail utils is a collection of utilities used by [Twistail](https://twistail.com).
+A CLI for managing UI components in your project.
 
 Visit the [documentation][twistail-docs] page for more detailed information.
 
-**Compatibility**: ESM only.
+## Usage
 
-## Installation
+**Use with `npx`:**
 
 ```sh
-# Install with npm
-npm install twistail-utils
+npx twistail@latest
+```
 
-# Install with pnpm
-pnpm add twistail-utils
+**Use with `pnpm dlx`:**
 
-# Install with yarn
-yarn add twistail-utils
+```sh
+pnpm dlx twistail@latest
 ```
 
 ## License

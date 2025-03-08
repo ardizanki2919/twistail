@@ -13,6 +13,7 @@
         "format": "biome format . --write",
         "lint": "turbo lint",
         "check": "turbo check",
+        "twistail": "node packages/cli/bin/twistail.mjs",
         "typecheck": "turbo typecheck"
     },
     "devDependencies": {
@@ -22,6 +23,6 @@
     },
     "packageManager": "pnpm@10.6.1",
     "pnpm": {
-        "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild"]
+        "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild", "sharp"]
     }
 }
