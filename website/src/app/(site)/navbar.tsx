@@ -23,6 +23,8 @@ export const NavBar = () => {
             src="/images/brand-svg/brand-icon-dark.svg"
             className="h-8 w-auto"
             alt="Twistail"
+            width={600}
+            height={250}
             unoptimized
           />
           <span className="sr-only">Twistail</span>

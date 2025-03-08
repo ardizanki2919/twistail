@@ -16,6 +16,8 @@ export const baseOptions: BaseLayoutProps = {
           src="/images/brand-svg/brand-icon-dark.svg"
           className="h-5 w-auto"
           alt="Twistail"
+          width={600}
+          height={250}
           unoptimized
         />
         Twistail Docs
