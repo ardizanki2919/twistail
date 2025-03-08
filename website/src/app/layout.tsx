@@ -10,28 +10,33 @@ import { cn } from 'twistail-utils'
 const fontSans = Mona_Sans({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })
 
+const metaDescription = `Modular and extensible UI components library powered by Radix UI, Tailwind CSS, and TypeScript.`
+const metaTitle = 'Twistail — React UI components library'
+const ogImageUrl = 'https://twistail.com/images/twistail-og.png'
+
 export const metadata: Metadata = {
-  title: {
-    default: 'Twistail',
-    template: '%s - Twistail',
-  },
-  description: `Modular and extensible UI components library powered by Radix UI, Tailwind CSS, and TypeScript.`,
+  title: { default: metaTitle, template: '%s - Twistail' },
+  description: metaDescription,
 }
 
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
-        <meta property="og:image" content="/images/twistail-og.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Twistail" />
-        <meta name="twitter:image" content="/images/twistail-og.png" />
-        <meta name="twitter:image:type" content="image/png" />
-        <meta name="twitter:image:width" content="1200" />
-        <meta name="twitter:image:height" content="630" />
-        <meta property="twitter:image:alt" content="Twistail" />
+        {/* <!-- Open Graph Meta Tags --> */}
+        <meta property="og:url" content="https://twistail.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={ogImageUrl} />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="twistail.com" />
+        <meta property="twitter:url" content="https://twistail.com" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={ogImageUrl} />
       </head>
       <body
         className={cn(
