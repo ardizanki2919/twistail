@@ -19,7 +19,6 @@
     },
     "dependencies": {
         "atropos": "^2.0.2",
-        "clsx": "^2.1.1",
         "consola": "^3.4.0",
         "fumadocs-core": "15.0.15",
         "fumadocs-mdx": "11.5.6",
@@ -30,7 +29,6 @@
         "react-dom": "^19.0.0",
         "react": "^19.0.0",
         "std-env": "^3.8.1",
-        "tailwind-merge": "^3.0.2",
         "tailwind-variants": "^1.0.0",
         "twistail-react": "workspace:*",
         "twistail-utils": "workspace:*"
