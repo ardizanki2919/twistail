@@ -19,10 +19,17 @@ export default async function Page(props: {
 
   const MDX = page.data.body
 
+  // Hide title and description for pages that don't need them
+  const pageWithoutTitle = ['code-of-conduct']
+
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+    <DocsPage toc={page.data.toc} full={page.data.full} footer={{ enabled: false }}>
+      {pageWithoutTitle.includes(page.url.replace('/docs/ui/', '')) ? null : (
+        <>
+          <DocsTitle>{page.data.title}</DocsTitle>
+          <DocsDescription>{page.data.description}</DocsDescription>
+        </>
+      )}
       <DocsBody>
         <MDX components={{ ...defaultMdxComponents }} />
       </DocsBody>

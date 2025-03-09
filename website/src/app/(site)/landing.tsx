@@ -11,10 +11,10 @@ export default function LandingPage() {
   const handleCopy = () => navigator.clipboard.writeText(installCommand)
 
   return (
-    <div className="my-8 md:mt-12 xl:my-14 dark:bg-gray-900">
+    <div className="my-8 md:mt-12 xl:my-14">
       <div className="bg-transparent pb-6 sm:pb-8 lg:pb-12">
         <svg
-          className="-z-10 absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+          className="-z-10 absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800"
           aria-hidden="true"
         >
           <defs>

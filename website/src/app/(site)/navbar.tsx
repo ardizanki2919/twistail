@@ -12,7 +12,7 @@ export const NavBar = () => {
   const pathname = usePathname()
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-6 dark:bg-gray-900">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-6">
       <header className="flex items-center justify-between py-4 md:py-8">
         <Link
           href="/"
@@ -32,7 +32,7 @@ export const NavBar = () => {
 
         <div className="hidden items-center gap-12 lg:flex">
           <div className="flex items-center justify-center gap-8 lg:justify-start">
-            <nav className="flex gap-10">
+            <nav className="flex gap-6">
               <Link
                 href="/docs/ui/components"
                 className="font-medium text-gray-600 transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300"

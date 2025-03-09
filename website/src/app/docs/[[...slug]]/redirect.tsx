@@ -40,7 +40,7 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
     <div
       className={cn(
         isRedirecting ? 'opacity-100' : 'opacity-0',
-        'fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-950',
+        'fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950',
         'transition-opacity duration-300'
       )}
     >
@@ -49,8 +49,8 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
           {/* Simple loading spinner */}
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
         </div>
-        <h1 className="mb-2 font-bold text-2xl text-gray-900 dark:text-white">Redirecting...</h1>
-        <p className="text-gray-600 dark:text-gray-300">
+        <h1 className="mb-2 font-bold text-2xl text-neutral-900 dark:text-white">Redirecting...</h1>
+        <p className="text-neutral-600 dark:text-neutral-300">
           If you are not redirected automatically, please{' '}
           <Link href={targetUrl} className="text-blue-500 hover:underline">
             click here
@@ -58,7 +58,7 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
         </p>
       </div>
       <noscript>
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-950">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950">
           <p className="p-4 text-center text-red-500">
             JavaScript is required for redirection. Please{' '}
             <a href={targetUrl} className="font-bold underline">

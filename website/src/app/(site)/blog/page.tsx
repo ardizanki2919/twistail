@@ -20,23 +20,21 @@ export default function Page() {
   const remainingPosts = posts.slice(1)
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
-        <div className="mb-16 space-y-4 text-center">
-          <h1 className="font-bold text-4xl text-gray-900 tracking-tight md:text-5xl dark:text-white">
-            Twistail Blog
-          </h1>
-          <p className="mx-auto max-w-2xl text-gray-600 text-lg dark:text-gray-300">
-            News, guidelines, and perspectives from the Twistail team.
-          </p>
-        </div>
-
-        {/* Featured Post */}
-        {featuredPost && <FeaturedPost post={featuredPost} />}
-
-        {/* Remaining Posts Grid */}
-        <BlogGrid posts={remainingPosts} />
+    <div className="mx-auto max-w-screen-xl px-4 py-16 md:px-6 md:py-24">
+      <div className="mb-16 space-y-4 text-center">
+        <h1 className="font-bold text-4xl text-gray-900 tracking-tight md:text-5xl dark:text-white">
+          Twistail Blog
+        </h1>
+        <p className="mx-auto max-w-2xl text-gray-600 text-lg dark:text-gray-300">
+          News, guidelines, and perspectives from the Twistail team.
+        </p>
       </div>
+
+      {/* Featured Post */}
+      {featuredPost && <FeaturedPost post={featuredPost} />}
+
+      {/* Remaining Posts Grid */}
+      <BlogGrid posts={remainingPosts} />
     </div>
   )
 }

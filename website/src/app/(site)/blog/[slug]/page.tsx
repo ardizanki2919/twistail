@@ -47,7 +47,7 @@ export default async function Page(props: {
   const nextPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : null
 
   return (
-    <article className="bg-white dark:bg-gray-900">
+    <article>
       {/* Header Section */}
       <header className="bg-gray-50 dark:bg-gray-800">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

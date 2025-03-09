@@ -8,8 +8,9 @@
         },
         "lint": {},
         "check": {},
-        "typecheck": {},
-        "publish:dry": {},
+        "typecheck": {
+            "dependsOn": ["twistail-utils#build"]
+        },
         "cleanup": {
             "cache": false
         },
@@ -17,12 +18,14 @@
             "cache": false
         },
         "dev": {
-            "cache": false,
-            "persistent": true
+            "dependsOn": ["twistail-utils#build"],
+            "persistent": true,
+            "cache": false
         },
         "storybook": {
-            "cache": false,
-            "persistent": true
-        }
+            "persistent": true,
+            "cache": false
+        },
+        "publish:dry": {}
     }
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import * as Lucide from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { errorStyles } from '#/styles/error.css'
 
@@ -36,7 +37,16 @@ export default function NotFound() {
             </p>
             <div className={styles.actions()}>
               <button type="button" onClick={handleBack} className={styles.primaryButton()}>
-                Take me back to home
+                <Lucide.CornerUpLeft className="-mr-0.5 mr-1 size-4" strokeWidth={2.4} />
+                <span>Go back</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => router.push('/')}
+                className={styles.secondaryButton()}
+              >
+                <Lucide.Home className="-mr-0.5 mr-1 size-4" strokeWidth={2.4} />
+                <span>Take me back to home</span>
               </button>
             </div>
           </div>

@@ -43,7 +43,17 @@ export default function RootLayout({ children }: Readonly<React.PropsWithChildre
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={cn(fontSans.variable, fontMono.variable)}>
-        <RootProvider search={{ enabled: false, options: { type: 'static' } }}>
+        <RootProvider
+          search={{
+            enabled: true,
+            options: { type: 'static' },
+            links: [
+              ['Homepage', '/'],
+              ['Documentation', '/docs/ui'],
+              ['Changelog', '/docs/ui/changelog'],
+            ],
+          }}
+        >
           {children}
         </RootProvider>
       </body>
