@@ -97,7 +97,7 @@ export default function LandingPage() {
               <div className="-mt-2">
                 <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                   <Link
-                    href="/docs/installation"
+                    href="/docs/ui/installation"
                     className="inline-block rounded-lg bg-blue-500 px-8 py-3 text-center font-medium text-sm text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base dark:text-white"
                   >
                     Get started

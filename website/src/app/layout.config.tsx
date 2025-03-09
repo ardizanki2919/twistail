@@ -20,7 +20,7 @@ export const baseOptions: BaseLayoutProps = {
           height={250}
           unoptimized
         />
-        Twistail Docs
+        <span>Twistail Docs</span>
       </div>
     ),
   },
