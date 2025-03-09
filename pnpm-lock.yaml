@@ -404,6 +404,9 @@ importers:
       twistail-utils:
         specifier: workspace:*
         version: link:../packages/utils
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
