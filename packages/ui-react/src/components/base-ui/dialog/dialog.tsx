@@ -2,7 +2,6 @@
 
 import * as DialogPrimitives from '@radix-ui/react-dialog'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitives.Root>) => {
@@ -63,7 +62,7 @@ const DialogContent = React.forwardRef<
             'bg-white dark:bg-[#090E1A]',
             // transition
             'data-[state=open]:animate-dialogContentShow',
-            focusRing,
+            'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
           )}
           tremor-id="tremor-raw"

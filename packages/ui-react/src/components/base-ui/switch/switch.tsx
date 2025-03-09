@@ -3,7 +3,6 @@
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const switchVariants = tv({
@@ -30,7 +29,7 @@ const switchVariants = tv({
       // disabled unchecked dark
       'data-[disabled]:data-[state=unchecked]:dark:ring-gray-700',
       'data-[disabled]:data-[state=unchecked]:dark:bg-gray-800',
-      focusRing,
+      'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
     ],
     thumb: [
       // base

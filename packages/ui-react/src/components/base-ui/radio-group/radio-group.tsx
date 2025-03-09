@@ -2,7 +2,6 @@
 
 import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const RadioGroup = React.forwardRef<
@@ -75,7 +74,7 @@ const RadioGroupItem = React.forwardRef<
           'group-data-[disabled]:border-gray-300 group-data-[disabled]:bg-gray-100 group-data-[disabled]:text-gray-400',
           'group-data-[disabled]:dark:border-gray-700 group-data-[disabled]:dark:bg-gray-800',
           // focus
-          focusRing
+          'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */
         )}
       >
         <RadioGroupIndicator />

@@ -2,7 +2,6 @@
 
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from '@remixicon/react'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 import { type InputStyles, inputStyles } from './input.css'
 
@@ -60,7 +59,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 'text-gray-400 dark:text-gray-600',
                 // hover
                 'hover:text-gray-500 hover:dark:text-gray-500',
-                focusRing
+                'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */
               )}
               type="button"
               onClick={() => {

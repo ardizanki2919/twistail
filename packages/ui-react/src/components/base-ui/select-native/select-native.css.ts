@@ -1,5 +1,4 @@
 import { type VariantProps, tv } from 'tailwind-variants'
-import { focusInput, hasErrorInput } from 'twistail-react/utils'
 
 const selectNativeStyles = tv({
   base: [
@@ -20,13 +19,13 @@ const selectNativeStyles = tv({
     'disabled:bg-gray-100 disabled:text-gray-400',
     'disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
     // focus
-    focusInput,
+    'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
     // invalid (optional)
     // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
   ],
   variants: {
     hasError: {
-      true: hasErrorInput,
+      true: 'ring-2 border-red-500 dark:border-red-700 ring-red-200 dark:ring-red-700/30' /* hasErrorInput */,
     },
   },
 })

@@ -2,7 +2,6 @@
 
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
@@ -62,7 +61,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
               'bg-white',
               // disabled
               'data-[disabled]:pointer-events-none data-[disabled]:bg-gray-200 dark:data-[disabled]:border-gray-800 dark:data-[disabled]:bg-gray-600',
-              focusRing,
+              'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
               'outline-offset-0'
             )}
             aria-label={ariaLabelThumb}

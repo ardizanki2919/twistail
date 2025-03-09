@@ -6,7 +6,6 @@ import { addYears, format, isSameMonth } from 'date-fns'
 import * as React from 'react'
 import { DayPicker, useDayPicker, useDayRender, useNavigation } from 'react-day-picker'
 import type { DayPickerRangeProps, DayPickerSingleProps, DayProps, Matcher } from 'react-day-picker'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 interface NavigationButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
@@ -37,7 +36,7 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, NavigationButtonPro
           'disabled:pointer-events-none',
           'disabled:border-gray-200 disabled:dark:border-gray-800',
           'disabled:text-gray-400 disabled:dark:text-gray-600',
-          focusRing
+          'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */
         )}
         onClick={onClick}
         {...props}
@@ -105,7 +104,7 @@ const Calendar = ({
           'size-9 rounded text-sm focus:z-10',
           'text-gray-900 dark:text-gray-50',
           'hover:bg-gray-200 hover:dark:bg-gray-700',
-          focusRing
+          'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */
         ),
         day_today: 'font-semibold',
         day_selected: cn(

@@ -3,7 +3,6 @@
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const toggleStyles = [
@@ -19,7 +18,7 @@ const toggleStyles = [
   // disabled
   'disabled:pointer-events-none disabled:text-gray-400 disabled:dark:text-gray-600',
   'data-[state=on]:bg-gray-100 data-[state=on]:text-gray-900 dark:data-[state=on]:bg-gray-800 dark:data-[state=on]:text-gray-50',
-  focusRing,
+  'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
 ]
 
 const Toggle = React.forwardRef<

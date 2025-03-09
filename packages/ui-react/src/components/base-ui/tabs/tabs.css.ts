@@ -1,4 +1,3 @@
-// import { focusRing } from 'twistail-react/utils'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const tabsStyles = tv({
