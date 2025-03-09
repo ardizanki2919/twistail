@@ -2,7 +2,6 @@
 
 import * as CheckboxPrimitives from '@radix-ui/react-checkbox'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const Checkbox = React.forwardRef<
@@ -31,7 +30,7 @@ const Checkbox = React.forwardRef<
         // indeterminate
         'enabled:data-[state=indeterminate]:bg-blue-500 enabled:data-[state=indeterminate]:ring-0 enabled:data-[state=indeterminate]:ring-transparent',
         // focus
-        focusRing,
+        'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
         className
       )}
       tremor-id="tremor-raw"

@@ -1,5 +1,4 @@
 import { type VariantProps, tv } from 'tailwind-variants'
-import { focusRing } from 'twistail-react/utils'
 
 const buttonStyles = tv({
   base: [
@@ -8,7 +7,7 @@ const buttonStyles = tv({
     // disabled
     'disabled:pointer-events-none disabled:shadow-none',
     // focus
-    focusRing,
+    'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
   ],
   variants: {
     variant: {

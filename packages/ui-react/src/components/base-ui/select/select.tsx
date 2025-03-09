@@ -3,7 +3,6 @@
 import * as SelectPrimitives from '@radix-ui/react-select'
 import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from '@remixicon/react'
 import * as React from 'react'
-import { focusInput, hasErrorInput } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const Select = SelectPrimitives.Root
@@ -32,7 +31,7 @@ const selectTriggerStyles = [
     // disabled
     'data-[disabled]:bg-gray-100 data-[disabled]:text-gray-400',
     'data-[disabled]:dark:border-gray-700 data-[disabled]:dark:bg-gray-800 data-[disabled]:dark:text-gray-500',
-    focusInput
+    'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */
     // invalid (optional)
     // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
   ),
@@ -47,7 +46,13 @@ const SelectTrigger = React.forwardRef<
   return (
     <SelectPrimitives.Trigger
       ref={forwardedRef}
-      className={cn(selectTriggerStyles, hasError ? hasErrorInput : '', className)}
+      className={cn(
+        selectTriggerStyles,
+        hasError
+          ? 'border-red-500 ring-2 ring-red-200 dark:border-red-700 dark:ring-red-700/30' /* hasErrorInput */
+          : '',
+        className
+      )}
       tremor-id="tremor-raw"
       {...props}
     >

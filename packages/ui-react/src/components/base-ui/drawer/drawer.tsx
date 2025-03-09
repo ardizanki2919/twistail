@@ -4,7 +4,6 @@ import * as DrawerPrimitives from '@radix-ui/react-dialog'
 import { RiCloseLine } from '@remixicon/react'
 import * as React from 'react'
 import { Button } from 'twistail-react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>) => {
@@ -77,7 +76,7 @@ const DrawerContent = React.forwardRef<
             'bg-white dark:bg-[#090E1A]',
             // transition
             'data-[state=closed]:animate-drawerSlideRightAndFade data-[state=open]:animate-drawerSlideLeftAndFade',
-            focusRing,
+            'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
           )}
           {...props}

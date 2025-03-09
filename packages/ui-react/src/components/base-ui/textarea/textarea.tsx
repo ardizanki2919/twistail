@@ -1,7 +1,6 @@
 // Tremor Textarea [v0.0.2]
 
 import * as React from 'react'
-import { focusInput, hasErrorInput } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -28,9 +27,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           'disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-300',
           'disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
           // focus
-          focusInput,
+          'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
           // error
-          hasError ? hasErrorInput : '',
+          hasError
+            ? 'border-red-500 ring-2 ring-red-200 dark:border-red-700 dark:ring-red-700/30' /* hasErrorInput */
+            : '',
           // invalid (optional)
           // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
           className

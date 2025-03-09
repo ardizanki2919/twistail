@@ -2,7 +2,6 @@
 
 import * as TabsPrimitives from '@radix-ui/react-tabs'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 const Tabs = (
@@ -96,7 +95,11 @@ const TabsTrigger = React.forwardRef<
   return (
     <TabsPrimitives.Trigger
       ref={forwardedRef}
-      className={cn(getVariantStyles(variant), focusRing, className)}
+      className={cn(
+        getVariantStyles(variant),
+        'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
+        className
+      )}
       {...props}
     >
       {children}
@@ -112,7 +115,11 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <TabsPrimitives.Content
     ref={forwardedRef}
-    className={cn('outline-none', focusRing, className)}
+    className={cn(
+      'outline-none',
+      'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
+      className
+    )}
     {...props}
   />
 ))

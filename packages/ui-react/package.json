@@ -19,9 +19,9 @@
     },
     "exports": {
         ".": "./src/components/index.ts",
+        "./chart-utils": "./src/utils/chart-utils.ts",
         "./global.css": "./src/styles/global.css",
-        "./theme.css": "./src/styles/theme.css",
-        "./utils": "./src/utils/index.ts"
+        "./theme.css": "./src/styles/theme.css"
     },
     "peerDependencies": {
         "react": "^19.0.0",

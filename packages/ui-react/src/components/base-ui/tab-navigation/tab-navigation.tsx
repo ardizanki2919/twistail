@@ -2,7 +2,6 @@
 
 import * as NavigationMenuPrimitives from '@radix-ui/react-navigation-menu'
 import * as React from 'react'
-import { focusRing } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 function getSubtree(
@@ -83,7 +82,7 @@ const TabNavigationLink = React.forwardRef<
             'group-data-[active]:dark:border-blue-500 group-data-[active]:dark:text-blue-500',
             // disabled
             disabled ? 'pointer-events-none text-gray-300 dark:text-gray-700' : '',
-            focusRing,
+            'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
           )}
         >

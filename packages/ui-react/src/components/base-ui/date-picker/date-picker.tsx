@@ -11,7 +11,6 @@ import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 import { Button } from 'twistail-react'
 import { Calendar as CalendarPrimitive, type Matcher } from 'twistail-react'
-import { focusInput, focusRing, hasErrorInput } from 'twistail-react/utils'
 import { cn } from 'twistail-utils'
 
 //#region TimeInput
@@ -56,7 +55,7 @@ const TimeSegment = ({ segment, state }: TimeSegmentProps) => {
         // background color
         'bg-white dark:bg-gray-950',
         // focus
-        focusInput,
+        'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
         // invalid (optional)
         'invalid:border-red-500 invalid:ring-2 invalid:ring-red-200 group-aria-[invalid=true]/time-input:border-red-500 group-aria-[invalid=true]/time-input:ring-2 group-aria-[invalid=true]/time-input:ring-red-200 group-aria-[invalid=true]/time-input:dark:ring-red-400/20',
         {
@@ -150,13 +149,13 @@ const triggerStyles = tv({
     'disabled:bg-gray-100 disabled:text-gray-400',
     'disabled:dark:border-gray-800 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
     // focus
-    focusInput,
+    'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
     // invalid (optional)
     // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
   ],
   variants: {
     hasError: {
-      true: hasErrorInput,
+      true: 'ring-2 border-red-500 dark:border-red-700 ring-red-200 dark:ring-red-700/30' /* hasErrorInput */,
     },
   },
 })
@@ -353,7 +352,7 @@ const PresetContainer = <TPreset extends Preset, TValue>({
                 // border color
                 'border-gray-200 dark:border-gray-800',
                 // focus
-                focusRing,
+                'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
                 // background color
                 'focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900',
                 'hover:bg-gray-100 hover:dark:bg-gray-900',
