@@ -1,0 +1,22 @@
+{
+    "root": true,
+    "title": "Twistail UI",
+    "description": "The Twistail UI library",
+    "icon": "SwatchBook",
+    "pages": [
+        "---Getting Started---",
+        "index",
+        "installation",
+        "theming",
+        "changelog",
+        "faqs",
+        "---Components---",
+        "components/base",
+        "components/charts",
+        "components/layouts",
+        "---Contributing---",
+        "contributing-guidelines",
+        "code-of-conduct",
+        "contributors"
+    ]
+}

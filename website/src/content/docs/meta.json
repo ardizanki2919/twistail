@@ -1,22 +1,3 @@
 {
-    "title": "Twistail UI",
-    "description": "Twistail documentation",
-    "icon": "Library",
-    "root": true,
-    "pages": [
-        "---Getting Started---",
-        "index",
-        "installation",
-        "theming",
-        "changelog",
-        "faqs",
-        "---Components---",
-        "components/base",
-        "components/charts",
-        "components/layouts",
-        "---Contributing---",
-        "contributing-guidelines",
-        "code-of-conduct",
-        "contributors"
-    ]
+    "pages": ["ui", "cli"]
 }

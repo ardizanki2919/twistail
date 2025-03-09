@@ -34,22 +34,19 @@ export const NavBar = () => {
           <div className="flex items-center justify-center gap-8 lg:justify-start">
             <nav className="flex gap-10">
               <Link
-                href="/docs/components"
+                href="/docs/ui/components"
                 className="font-medium text-gray-600 transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300"
               >
                 Components
               </Link>
               <Link
                 href="/docs"
-                className={cn(
-                  pathname === '/docs' ? 'text-blue-500' : 'text-gray-600',
-                  'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
-                )}
+                className="font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300"
               >
                 Documentation
               </Link>{' '}
               <Link
-                href="/docs/faqs"
+                href="/docs/ui/faqs"
                 className={cn(
                   pathname === '/docs/faqs' ? 'text-blue-500' : 'text-gray-600',
                   'font-medium transition duration-100 hover:text-blue-500 active:text-blue-700 dark:text-gray-300'
