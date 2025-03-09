@@ -30,14 +30,14 @@ export default function NotFound() {
         </div>
         <div className={styles.content()}>
           <div className={styles.container()}>
-            <p className={styles.errorCode()}>404</p>
+            <p className={styles.errorCode({ class: 'sr-only' })}>404</p>
             <h1 className={styles.title()}>Page not found</h1>
             <p className={styles.description()}>
               Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
             <div className={styles.actions()}>
               <button type="button" onClick={handleBack} className={styles.primaryButton()}>
-                <Lucide.CornerUpLeft className="-mr-0.5 mr-1 size-4" strokeWidth={2.4} />
+                <Lucide.CornerUpLeft className="-ml-0.5 mr-1 size-4" strokeWidth={2.4} />
                 <span>Go back</span>
               </button>
               <button
@@ -45,7 +45,7 @@ export default function NotFound() {
                 onClick={() => router.push('/')}
                 className={styles.secondaryButton()}
               >
-                <Lucide.Home className="-mr-0.5 mr-1 size-4" strokeWidth={2.4} />
+                <Lucide.Home className="-ml-0.5 mr-1 size-4" strokeWidth={2.4} />
                 <span>Take me back to home</span>
               </button>
             </div>

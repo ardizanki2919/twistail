@@ -26,7 +26,7 @@ export const errorStyles = tv({
     container: 'relative z-20 text-center',
     errorCode: 'font-bold text-2xl text-red-500 dark:text-red-400',
     title: 'mt-4 font-bold text-3xl text-neutral-900 tracking-tight sm:text-5xl dark:text-white',
-    description: 'mt-6 font-medium text-base text-neutral-600 leading-7 dark:text-neutral-400',
+    description: 'mt-6 font-medium text-lg text-neutral-600 leading-7 dark:text-neutral-400',
     pre: [
       'w-full overflow-x-auto rounded-lg bg-neutral-50 p-4 dark:bg-neutral-900',
       'border border-neutral-200 dark:border-neutral-800',
@@ -44,7 +44,7 @@ export const errorStyles = tv({
       'hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20',
       'dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:shadow-blue-400/20',
       'focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2',
-      'focus:ring-offset-white dark:focus:ring-offset-neutral-950',
+      'focus:ring-offset-white dark:focus:ring-offset-neutral-900',
       'border border-blue-600 dark:border-blue-500',
       'transition-all duration-200',
     ],
@@ -57,7 +57,7 @@ export const errorStyles = tv({
       'dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100',
       'dark:hover:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:shadow-neutral-900/30',
       'focus:outline-none focus:ring-2 focus:ring-neutral-200/50 focus:ring-offset-2',
-      'focus:ring-offset-white dark:focus:ring-offset-neutral-950',
+      'focus:ring-offset-white dark:focus:ring-offset-neutral-900',
     ],
   },
 })

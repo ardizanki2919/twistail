@@ -40,7 +40,7 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
     <div
       className={cn(
         isRedirecting ? 'opacity-100' : 'opacity-0',
-        'fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950',
+        'fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-900',
         'transition-opacity duration-300'
       )}
     >
@@ -58,7 +58,7 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
         </p>
       </div>
       <noscript>
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-900">
           <p className="p-4 text-center text-red-500">
             JavaScript is required for redirection. Please{' '}
             <a href={targetUrl} className="font-bold underline">
