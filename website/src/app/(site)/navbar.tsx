@@ -12,7 +12,7 @@ export const NavBar = () => {
   const pathname = usePathname()
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-8 dark:bg-gray-900">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-6 dark:bg-gray-900">
       <header className="flex items-center justify-between py-4 md:py-8">
         <Link
           href="/"

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-6">
       <div className="container mx-auto max-w-screen-xl py-12">
         {/* Header */}
         <div className="mb-16 space-y-4">
