@@ -6,18 +6,18 @@
 [![license-mit](https://img.shields.io/badge/License-MIT-blue.svg)][license-mit]
 
 Twistail is an Open Source React UI component library that leverages [Tailwind CSS][tailwindcss]
-and [Tailwind Variants][tailwind-variants] for a powerful variant API. It enables advanced 
-component composition and responsive variants while managing style conflicts efficiently. 
-Built on [Radix UI Primitives][radix-ui] and implemented with [TypeScript][typescript], 
+and [Tailwind Variants][tailwind-variants] for a powerful variant API. It enables advanced
+component composition and responsive variants while managing style conflicts efficiently.
+Built on [Radix UI Primitives][radix-ui] and implemented with [TypeScript][typescript],
 Twistail provides a suite of UI elements, including charts and data visualization components.
 
-Perfect for developers seeking a **customizable design** system that prioritizes accessibility 
-and performance, Twistail streamlines implementation with a **copy-paste** approach and 
+Perfect for developers seeking a **customizable design** system that prioritizes accessibility
+and performance, Twistail streamlines implementation with a **copy-paste** approach and
 deep customization options.
 
 Visit the [documentation][twistail-docs] page for more detailed information.
 
-**Compatibility**: ESM only.
+**Compatibility**: ESM-only.
 
 ## Installation
 
@@ -35,7 +35,7 @@ yarn add twistail-react
 ## License
 
 Licensed under either of [Apache License 2.0][license-apache] or [MIT license][license-mit] at your option.
-To understand the key differences between these two popular open-source licenses, please refer to the 
+To understand the key differences between these two popular open-source licenses, please refer to the
 [Apache License 2.0][tldr-apache] and the [MIT License][tldr-mit] on tldrlegal.com.
 
 Copyrights in this project are retained by their contributors.
