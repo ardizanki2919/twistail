@@ -17,9 +17,10 @@ Twistail provides a suite of UI elements, including charts and data visualizatio
 
 Perfect for developers seeking a **customizable design** system that prioritizes accessibility 
 and performance, Twistail streamlines implementation with a **copy-paste** approach and 
-deep customization options. Each component features separated style files, allowing easy 
-adaptation to your brand's visual identity while maintaining a cohesive look across your 
-web application.
+deep customization options.
+
+Each component features separated style files, allowing easy adaptation to your brand's visual
+identity while maintaining a cohesive look across your web application.
 
 > [!CAUTION]
 > 🚨🚨🚨
