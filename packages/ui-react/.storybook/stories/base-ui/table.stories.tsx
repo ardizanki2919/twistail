@@ -1,5 +1,5 @@
-import { RiLoader3Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { Badge, badgeVariants } from 'twistail-react'
 import { Table, TableCaption, TableRoot, TableRow } from 'twistail-react'
 import { TableBody, TableCell, TableFoot } from 'twistail-react'
@@ -183,7 +183,7 @@ export const Default: Story = {
               <TableCell className="text-right">
                 <Badge variant={item.databaseStatus} className="max-w-36">
                   {item.databaseStatus === 'default' && (
-                    <RiLoader3Line className="size-4 shrink-0 animate-spin" />
+                    <Lucide.Loader className="size-4 shrink-0 animate-spin" />
                   )}
                   <span className="truncate">
                     {item.databaseStatus === 'default' ? 'Calculation Pending' : null}

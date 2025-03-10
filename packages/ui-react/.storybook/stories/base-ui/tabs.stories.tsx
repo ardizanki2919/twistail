@@ -1,5 +1,5 @@
-import { RiCalculatorLine, RiMapPin2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'twistail-react'
 
 const meta: Meta<typeof Tabs> = {
@@ -105,11 +105,11 @@ export const VariantLineWithIcons: Story = {
     <Tabs defaultValue="tab1">
       <TabsList variant="line">
         <TabsTrigger value="tab1" className="inline-flex gap-2">
-          <RiMapPin2Line className="-ml-1 size-4" aria-hidden="true" />
+          <Lucide.MapPin className="-ml-1 size-4" aria-hidden="true" />
           Location
         </TabsTrigger>
         <TabsTrigger value="tab2" className="inline-flex gap-2">
-          <RiCalculatorLine className="-ml-1 size-4" aria-hidden="true" />
+          <Lucide.Calculator className="-ml-1 size-4" aria-hidden="true" />
           Calculation
         </TabsTrigger>
       </TabsList>
@@ -130,11 +130,11 @@ export const VariantSolidWithIcons: Story = {
     <Tabs defaultValue="tab1">
       <TabsList variant="solid">
         <TabsTrigger value="tab1" className="gap-1.5">
-          <RiMapPin2Line className="-ml-1 size-4" aria-hidden="true" />
+          <Lucide.MapPin className="-ml-1 size-4" aria-hidden="true" />
           Location
         </TabsTrigger>
         <TabsTrigger value="tab2" className="gap-1.5">
-          <RiCalculatorLine className="-ml-1 size-4" aria-hidden="true" />
+          <Lucide.Calculator className="-ml-1 size-4" aria-hidden="true" />
           Calculation
         </TabsTrigger>
       </TabsList>

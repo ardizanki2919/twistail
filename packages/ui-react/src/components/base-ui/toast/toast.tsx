@@ -1,8 +1,7 @@
 // Tremor Toast [v0.0.4]
 
 import * as ToastPrimitives from '@radix-ui/react-toast'
-import { RiCheckboxCircleFill, RiLoader2Fill } from '@remixicon/react'
-import { RiCloseCircleFill, RiErrorWarningFill, RiInformationFill } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 
@@ -57,7 +56,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
     switch (variant) {
       case 'success':
         Icon = (
-          <RiCheckboxCircleFill
+          <Lucide.CircleCheck
             className="size-5 shrink-0 text-emerald-600 dark:text-emerald-500"
             aria-hidden="true"
           />
@@ -65,7 +64,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
         break
       case 'warning':
         Icon = (
-          <RiErrorWarningFill
+          <Lucide.OctagonAlert
             className="size-5 shrink-0 text-amber-500 dark:text-amber-500"
             aria-hidden="true"
           />
@@ -73,7 +72,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
         break
       case 'error':
         Icon = (
-          <RiCloseCircleFill
+          <Lucide.CircleX
             className="size-5 shrink-0 text-red-600 dark:text-red-500"
             aria-hidden="true"
           />
@@ -81,7 +80,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
         break
       case 'loading':
         Icon = (
-          <RiLoader2Fill
+          <Lucide.LoaderCircle
             className="size-5 shrink-0 animate-spin text-gray-600 dark:text-gray-500"
             aria-hidden="true"
           />
@@ -89,7 +88,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
         break
       default:
         Icon = (
-          <RiInformationFill
+          <Lucide.Info
             className="size-5 shrink-0 text-blue-500 dark:text-blue-500"
             aria-hidden="true"
           />

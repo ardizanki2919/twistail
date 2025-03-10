@@ -1,5 +1,5 @@
-import { RiErrorWarningFill, RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { Callout, calloutVariants } from 'twistail-react'
 
 const meta: Meta<typeof Callout> = {
@@ -50,7 +50,7 @@ export const Neutral: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: RiErrorWarningFill,
+    icon: Lucide.OctagonAlert,
     title: 'AWS Credit Alert',
     children:
       'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
@@ -59,7 +59,7 @@ export const WithIcon: Story = {
 
 export const WithIconElement: Story = {
   args: {
-    icon: <RiInformation2Fill className="mr-1.5 size-5 shrink-0" />,
+    icon: <Lucide.Info className="mr-1.5 size-5 shrink-0" />,
     title: 'Information',
     children: 'Visit your account dashboard for details.',
   },

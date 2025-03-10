@@ -1,7 +1,7 @@
 // Tremor Select [v0.0.3]
 
 import * as SelectPrimitives from '@radix-ui/react-select'
-import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 
@@ -58,7 +58,7 @@ const SelectTrigger = React.forwardRef<
     >
       <span className="truncate">{children}</span>
       <SelectPrimitives.Icon asChild>
-        <RiExpandUpDownLine
+        <Lucide.ChevronsUpDown
           className={cn(
             // base
             'size-4 shrink-0',
@@ -84,7 +84,7 @@ const SelectScrollUpButton = React.forwardRef<
     className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
-    <RiArrowUpSLine className="size-3 shrink-0" aria-hidden="true" />
+    <Lucide.ChevronUp className="size-3 shrink-0" aria-hidden="true" />
   </SelectPrimitives.ScrollUpButton>
 ))
 SelectScrollUpButton.displayName = SelectPrimitives.ScrollUpButton.displayName
@@ -98,7 +98,7 @@ const SelectScrollDownButton = React.forwardRef<
     className={cn('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
-    <RiArrowDownSLine className="size-3 shrink-0" aria-hidden="true" />
+    <Lucide.ChevronDown className="size-3 shrink-0" aria-hidden="true" />
   </SelectPrimitives.ScrollDownButton>
 ))
 SelectScrollDownButton.displayName = SelectPrimitives.ScrollDownButton.displayName
@@ -200,7 +200,7 @@ const SelectItem = React.forwardRef<
     >
       <SelectPrimitives.ItemText className="flex-1 truncate">{children}</SelectPrimitives.ItemText>
       <SelectPrimitives.ItemIndicator>
-        <RiCheckLine
+        <Lucide.Check
           className="size-5 shrink-0 text-gray-800 dark:text-gray-200"
           aria-hidden="true"
         />

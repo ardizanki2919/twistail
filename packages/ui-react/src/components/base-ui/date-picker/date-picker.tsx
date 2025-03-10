@@ -4,9 +4,9 @@ import { Time } from '@internationalized/date'
 import * as PopoverPrimitives from '@radix-ui/react-popover'
 import { AriaTimeFieldProps, TimeValue, useDateSegment, useTimeField } from '@react-aria/datepicker'
 import { type DateFieldState, type DateSegment, useTimeFieldState } from '@react-stately/datepicker'
-import { RiCalendar2Fill, RiSubtractFill } from '@remixicon/react'
 import { type Locale, format } from 'date-fns'
 import { enUS } from 'date-fns/locale'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 import { Button } from 'twistail-react'
@@ -173,7 +173,7 @@ const Trigger = React.forwardRef<HTMLButtonElement, TriggerProps>(
           className={cn(triggerStyles({ hasError }), className)}
           {...props}
         >
-          <RiCalendar2Fill className="size-5 shrink-0 text-gray-400 dark:text-gray-600" />
+          <Lucide.CalendarFold className="size-5 shrink-0 text-gray-400 dark:text-gray-600" />
           <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left text-gray-900 dark:text-gray-50">
             {children ? (
               children
@@ -921,7 +921,7 @@ const RangeDatePicker = ({
                       isRequired={props.required}
                     />
                   </div>
-                  <RiSubtractFill className="size-4 shrink-0 text-gray-400" />
+                  <Lucide.Minus className="size-4 shrink-0 text-gray-400" />
                   <div className="flex flex-1 items-center gap-x-2">
                     <span className="text-gray-700 dark:text-gray-30">
                       {translations?.end ?? 'End'}:

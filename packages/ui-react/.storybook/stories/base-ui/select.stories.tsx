@@ -1,5 +1,5 @@
-import { RiShirtLine, RiTShirt2Line, RiTShirtAirFill, RiTShirtLine } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { Button } from 'twistail-react'
 import {
@@ -63,22 +63,22 @@ const data2 = [
   {
     value: 'striped-dress-shirt',
     label: 'Striped Dress Shirt',
-    icon: RiShirtLine,
+    icon: Lucide.Shirt,
   },
   {
     value: 'relaxed-fit-shirt',
     label: 'Relaxed Fit Shirt Classic',
-    icon: RiTShirtLine,
+    icon: Lucide.Shirt,
   },
   {
     value: 'relaxed-fit-shirt-vneck',
     label: 'Relaxed Fit Shirt V-Neck',
-    icon: RiTShirt2Line,
+    icon: Lucide.Shirt,
   },
   {
     value: 'sport-active-solid',
     label: 'Sport Active Shirt',
-    icon: RiTShirtAirFill,
+    icon: Lucide.Shirt,
   },
 ]
 

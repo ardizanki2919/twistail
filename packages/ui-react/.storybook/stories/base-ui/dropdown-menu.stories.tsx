@@ -1,24 +1,6 @@
 import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu'
-import {
-  RiAddCircleLine,
-  RiAddLine,
-  RiArrowUpCircleLine,
-  RiDiscordLine,
-  RiFolder5Line,
-  RiHeartPulseLine,
-  RiIdCardLine,
-  RiLogoutBoxLine,
-  RiMailAddLine,
-  RiMessageLine,
-  RiSettings2Line,
-  RiSlackLine,
-  RiStackLine,
-  RiTelegramLine,
-  RiUserAddLine,
-  RiUserSmileLine,
-  RiWhatsappLine,
-} from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 
 import { Button } from 'twistail-react'
@@ -68,14 +50,14 @@ export const Default: Story = {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <span className="flex items-center gap-x-2">
-                <RiArrowUpCircleLine className="size-4 text-blue-500" />
+                <Lucide.CircleArrowUp className="size-4 text-blue-500" />
                 <span className="text-blue-500">Upgrade</span>
               </span>
             </DropdownMenuItem>
             <DropdownMenuItem disabled shortcut="⌘B">
               <span className="flex items-center gap-x-2">
                 <DropdownMenuIconWrapper>
-                  <RiIdCardLine className="size-4 text-inherit" />
+                  <Lucide.CreditCard className="size-4 text-inherit" />
                 </DropdownMenuIconWrapper>
                 <span>Billing</span>
               </span>
@@ -83,7 +65,7 @@ export const Default: Story = {
             <DropdownMenuItem shortcut="⌘S">
               <span className="flex items-center gap-x-2">
                 <DropdownMenuIconWrapper>
-                  <RiSettings2Line className="size-4 text-inherit" />
+                  <Lucide.Settings className="size-4 text-inherit" />
                 </DropdownMenuIconWrapper>
                 <span>Account Settings</span>
               </span>
@@ -95,7 +77,7 @@ export const Default: Story = {
           <DropdownMenuGroup>
             <DropdownMenuItem hint="Pro">
               <span className="flex items-center gap-x-2">
-                <RiUserSmileLine className="size-4 text-inherit" />
+                <Lucide.Smile className="size-4 text-inherit" />
                 <span>Manage workspace</span>
               </span>
             </DropdownMenuItem>
@@ -103,14 +85,14 @@ export const Default: Story = {
             <DropdownMenuSubMenu>
               <DropdownMenuSubMenuTrigger>
                 <span className="flex items-center gap-x-2">
-                  <RiAddCircleLine className="size-4 text-inherit" />
+                  <Lucide.CirclePlus className="size-4 text-inherit" />
                   <span>Invite users</span>
                 </span>
               </DropdownMenuSubMenuTrigger>
               <DropdownMenuSubMenuContent>
                 <DropdownMenuItem>
                   <span className="flex items-center gap-x-2">
-                    <RiMailAddLine className="size-4 text-inherit" />
+                    <Lucide.MailPlus className="size-4 text-inherit" />
                     <span>Email</span>
                   </span>
                 </DropdownMenuItem>
@@ -118,32 +100,32 @@ export const Default: Story = {
                 <DropdownMenuSubMenu>
                   <DropdownMenuSubMenuTrigger>
                     <span className="flex items-center gap-x-2">
-                      <RiMessageLine className="size-4 text-inherit" />
+                      <Lucide.MessageSquare className="size-4 text-inherit" />
                       <span>Message</span>
                     </span>
                   </DropdownMenuSubMenuTrigger>
                   <DropdownMenuSubMenuContent>
                     <DropdownMenuItem>
                       <span className="flex items-center gap-x-2">
-                        <RiWhatsappLine className="size-4 text-inherit" />
+                        <Lucide.MessageCircle className="size-4 text-inherit" />
                         <span>Whatsapp</span>
                       </span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <span className="flex items-center gap-x-2">
-                        <RiTelegramLine className="size-4 text-inherit" />
+                        <Lucide.Send className="size-4 text-inherit" />
                         <span>Telegram</span>
                       </span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <span className="flex items-center gap-x-2">
-                        <RiDiscordLine className="size-4 text-inherit" />
+                        <Lucide.MessagesSquare className="size-4 text-inherit" />
                         <span>Discord</span>
                       </span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <span className="flex items-center gap-x-2">
-                        <RiSlackLine className="size-4 text-inherit" />
+                        <Lucide.Slack className="size-4 text-inherit" />
                         <span>Slack</span>
                       </span>
                     </DropdownMenuItem>
@@ -152,7 +134,7 @@ export const Default: Story = {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <span className="flex items-center gap-x-2">
-                    <RiAddCircleLine className="size-4 text-inherit" />
+                    <Lucide.CirclePlus className="size-4 text-inherit" />
                     <span>More...</span>
                   </span>
                 </DropdownMenuItem>
@@ -160,7 +142,7 @@ export const Default: Story = {
             </DropdownMenuSubMenu>
             <DropdownMenuItem shortcut="⌘T">
               <span className="flex items-center gap-x-2">
-                <RiAddLine className="size-4 text-inherit" />
+                <Lucide.Plus className="size-4 text-inherit" />
                 <span>New Workspace</span>
               </span>
             </DropdownMenuItem>
@@ -194,13 +176,13 @@ export const Default: Story = {
 
           <DropdownMenuItem>
             <span className="flex items-center gap-x-2">
-              <RiHeartPulseLine className="size-4 text-inherit" />
+              <Lucide.Activity className="size-4 text-inherit" />
               <span>Support</span>
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem shortcut="⇧⌘Q">
             <span className="flex items-center gap-x-2">
-              <RiLogoutBoxLine className="size-4 text-inherit" />
+              <Lucide.LogOut className="size-4 text-inherit" />
               <span>Sign out</span>
             </span>
           </DropdownMenuItem>
@@ -261,26 +243,26 @@ export const WithIcons: Story = {
           <DropdownMenuGroup>
             <DropdownMenuItem shortcut="⌘W">
               <div className="flex items-center space-x-2">
-                <RiStackLine className="size-4 text-gray-500" />
+                <Lucide.Layers2 className="size-4 text-gray-500" />
                 <span>Workspaces</span>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem shortcut="⌘M">
               <div className="flex items-center space-x-2">
-                <RiFolder5Line className="size-4 text-gray-500" />
+                <Lucide.FolderKanban className="size-4 text-gray-500" />
                 <span>Metrics catalogue (with long edge case)</span>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem shortcut="⌘S">
               <div className="flex items-center space-x-2">
-                <RiSettings2Line className="size-4 text-gray-500" />
+                <Lucide.Settings className="size-4 text-gray-500" />
                 <span>Settings</span>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem disabled shortcut="⌘U">
               <div className="flex items-center space-x-2">
                 <DropdownMenuIconWrapper>
-                  <RiUserAddLine className="size-4 text-inherit" />
+                  <Lucide.Plus className="size-4 text-inherit" />
                 </DropdownMenuIconWrapper>
                 <span>Invite users</span>
               </div>

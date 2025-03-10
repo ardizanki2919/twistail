@@ -1,7 +1,7 @@
 // Tremor Drawer [v0.0.2]
 
 import * as DrawerPrimitives from '@radix-ui/react-dialog'
-import { RiCloseLine } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { Button } from 'twistail-react'
 import { cn } from 'twistail-utils'
@@ -102,7 +102,7 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
             variant="ghost"
             className="aspect-square p-1 hover:bg-gray-100 hover:dark:bg-gray-400/10"
           >
-            <RiCloseLine className="size-6" aria-hidden="true" />
+            <Lucide.X className="size-6" aria-hidden="true" />
           </Button>
         </DrawerPrimitives.Close>
       </div>
