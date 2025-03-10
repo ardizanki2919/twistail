@@ -35,7 +35,7 @@ const DialogOverlay = React.forwardRef<
         'bg-black/70',
         // transition
         'data-[state=open]:motion-safe:motion-preset-fade data-[state=open]:motion-safe:motion-duration-300',
-        'data-[state=closed]:motion-safe:motion-opacity-out-0 motion-duration-[0.35s]/opacity',
+        'data-[state=closed]:motion-safe:motion-opacity-out-0 motion-duration-[0.25s]/opacity',
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ const DialogContent = React.forwardRef<
             'data-[state=open]:motion-safe:motion-blur-in-[5px] data-[state=open]:motion-safe:motion-duration-[0.00s]',
             'data-[state=closed]:motion-safe:motion-scale-out-[0.5] data-[state=closed]:motion-safe:motion-opacity-out-0',
             'data-[state=closed]:motion-safe:motion-blur-out-[5px] data-[state=closed]:motion-safe:motion-duration-[0.00s]',
-            'motion-duration-[0.39s]/scale motion-duration-[0.35s]/opacity motion-duration-[0.35s]/blur',
+            'motion-duration-[0.29s]/scale motion-duration-[0.25s]/opacity motion-duration-[0.25s]/blur',
             // focus ring
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className

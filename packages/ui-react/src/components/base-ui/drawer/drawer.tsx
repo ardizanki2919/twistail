@@ -45,7 +45,7 @@ const DrawerOverlay = React.forwardRef<
         'bg-black/30',
         // transition
         'data-[state=open]:motion-safe:motion-preset-fade data-[state=open]:motion-safe:motion-duration-300',
-        'data-[state=closed]:motion-safe:motion-opacity-out-0 motion-duration-[0.35s]/opacity',
+        'data-[state=closed]:motion-safe:motion-opacity-out-0 motion-duration-[0.25s]/opacity',
         className
       )}
       {...props}
