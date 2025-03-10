@@ -1,5 +1,11 @@
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion'
+import { Pre } from 'fumadocs-ui/components/codeblock'
+import { File, Files, Folder } from 'fumadocs-ui/components/files'
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
+
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { cn } from 'twistail-utils'
@@ -35,7 +41,7 @@ export default async function Page(props: {
   const page = blog.getPage([params.slug])
 
   if (!page) notFound()
-  const Mdx = page.data.body
+  const MDX = page.data.body
 
   // Get the previous and next post
   const allPosts = blog.getPages().sort((a, b) => {
@@ -108,7 +114,27 @@ export default async function Page(props: {
                 'prose-h1:first-of-type:hidden' // Hide the first h1 element since the title is already displayed in the header
               )}
             >
-              <Mdx components={defaultMdxComponents} />
+              <MDX
+                components={{
+                  ...defaultMdxComponents,
+                  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+                    <Link
+                      className={cn('font-medium underline underline-offset-4', className)}
+                      {...props}
+                    />
+                  ),
+                  Step,
+                  Steps,
+                  File,
+                  Folder,
+                  Files,
+                  Tab,
+                  Tabs,
+                  Pre,
+                  Accordion,
+                  Accordions,
+                }}
+              />
             </div>
 
             {/* Post navigation */}

@@ -1,3 +1,4 @@
+import { remarkInstall } from 'fumadocs-docgen'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { defineCollections, frontmatterSchema } from 'fumadocs-mdx/config'
 import { z } from 'zod'
@@ -17,6 +18,6 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    // MDX options
+    remarkPlugins: [[remarkInstall, { persist: { id: 'persist-install' } }]],
   },
 })
