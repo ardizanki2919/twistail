@@ -34,8 +34,7 @@ const DialogOverlay = React.forwardRef<
         // background color
         'bg-black/70',
         // transition
-        'data-[state=open]:motion-safe:motion-preset-fade data-[state=open]:motion-safe:motion-duration-300',
-        'data-[state=closed]:motion-safe:motion-opacity-out-0 motion-duration-[0.25s]/opacity',
+        'data-[state=open]:animate-dialog-overlay-show',
         className
       )}
       {...props}
@@ -62,11 +61,7 @@ const DialogContent = React.forwardRef<
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
-            'data-[state=open]:motion-safe:motion-scale-in-[0.5] data-[state=open]:motion-safe:motion-opacity-in-[0%]',
-            'data-[state=open]:motion-safe:motion-blur-in-[5px] data-[state=open]:motion-safe:motion-duration-[0.00s]',
-            'data-[state=closed]:motion-safe:motion-scale-out-[0.5] data-[state=closed]:motion-safe:motion-opacity-out-0',
-            'data-[state=closed]:motion-safe:motion-blur-out-[5px] data-[state=closed]:motion-safe:motion-duration-[0.00s]',
-            'motion-duration-[0.29s]/scale motion-duration-[0.25s]/opacity motion-duration-[0.25s]/blur',
+            'data-[state=open]:animate-dialog-content-show',
             // focus ring
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
