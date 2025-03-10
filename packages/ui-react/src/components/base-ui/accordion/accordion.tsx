@@ -4,95 +4,67 @@ import * as AccordionPrimitives from '@radix-ui/react-accordion'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
+import { accordionStyles } from './accordion.css'
 
 const Accordion = AccordionPrimitives.Root
-
-Accordion.displayName = 'AccordionItem'
 
 const AccordionTrigger = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Trigger>
->(({ className, children, ...props }, forwardedRef) => (
-  <AccordionPrimitives.Header className="flex">
-    <AccordionPrimitives.Trigger
-      className={cn(
-        // base
-        'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-sm leading-none',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // disabled
-        'data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600',
-        //focus
-        'focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset',
-        className
-      )}
-      {...props}
-      ref={forwardedRef}
-    >
-      {children}
-      <Lucide.Plus
-        className={cn(
-          // base
-          'group-data-[state=open]:-rotate-45 size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
-          // text color
-          'text-gray-400 dark:text-gray-600',
-          // disabled
-          'group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700'
-        )}
-        aria-hidden="true"
-        focusable="false"
-      />
-    </AccordionPrimitives.Trigger>
-  </AccordionPrimitives.Header>
-))
-
-AccordionTrigger.displayName = 'AccordionTrigger'
+>(({ className, children, ...props }, forwardedRef) => {
+  const styles = accordionStyles()
+  return (
+    <AccordionPrimitives.Header className={styles.accordionHeader()}>
+      <AccordionPrimitives.Trigger
+        className={cn(styles.accordionTriger(), className)}
+        ref={forwardedRef}
+        {...props}
+      >
+        {children}
+        <Lucide.Plus
+          className={styles.accordionTrigerIcon()}
+          aria-hidden="true"
+          focusable="false"
+        />
+      </AccordionPrimitives.Trigger>
+    </AccordionPrimitives.Header>
+  )
+})
 
 const AccordionContent = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitives.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Content>
->(({ className, children, ...props }, forwardedRef) => (
-  <AccordionPrimitives.Content
-    ref={forwardedRef}
-    className={cn(
-      'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open'
-    )}
-    {...props}
-  >
-    <div
-      className={cn(
-        // base
-        'overflow-hidden pb-4 text-sm',
-        // text color
-        'text-gray-700 dark:text-gray-200',
-        className
-      )}
+>(({ className, children, ...props }, forwardedRef) => {
+  const styles = accordionStyles()
+  return (
+    <AccordionPrimitives.Content
+      className={styles.accordionContent()}
+      ref={forwardedRef}
+      {...props}
     >
-      {children}
-    </div>
-  </AccordionPrimitives.Content>
-))
-
-AccordionContent.displayName = 'AccordionContent'
+      <div className={cn(styles.accordionContentDiv, className)}>{children}</div>
+    </AccordionPrimitives.Content>
+  )
+})
 
 const AccordionItem = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitives.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Item>
->(({ className, ...props }, forwardedRef) => (
-  <AccordionPrimitives.Item
-    ref={forwardedRef}
-    className={cn(
-      // base
-      'overflow-hidden border-b first:mt-0',
-      // border color
-      'border-gray-200 dark:border-gray-800',
-      className
-    )}
-    tremor-id="tremor-raw"
-    {...props}
-  />
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = accordionStyles()
+  return (
+    <AccordionPrimitives.Item
+      className={cn(styles.accordionItem(), className)}
+      tremor-id="tremor-raw"
+      ref={forwardedRef}
+      {...props}
+    />
+  )
+})
 
+Accordion.displayName = 'AccordionItem'
+AccordionTrigger.displayName = 'AccordionTrigger'
+AccordionContent.displayName = 'AccordionContent'
 AccordionItem.displayName = 'AccordionItem'
 
 export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }
