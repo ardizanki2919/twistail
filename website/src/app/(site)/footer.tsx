@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-8 text-center text-gray-400 text-sm">
+        <div className="py-8 text-center font-medium text-gray-500 text-sm dark:text-gray-400">
           &copy; {new Date().getFullYear()} - Made by{' '}
           <Link
             href="https://ripandis.com/?ref=twistail.com"
