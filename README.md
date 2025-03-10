@@ -9,16 +9,20 @@
 
 ## Introduction
 
-Twistail is an open-source React UI component library meticulously crafted for building modern
-web applications and interactive dashboards. Built on the accessible foundation of [Radix UI][radix-ui],
-styled with the versatility of [Tailwind CSS][tailwindcss], and implemented with [TypeScript][typescript],
-Twistail delivers a comprehensive suite of UI elements, including charts and data visualization components.
+Twistail is a meticulously crafted React UI component library that leverages the power of 
+[Tailwind CSS][tailwindcss] and its extensive set of [Tailwind Variants][tailwind-variants]
+to deliver a first-class variant API. This enables advanced component composition and 
+responsive variants, while efficiently handling style conflicts across your application.
+Built on the solid foundation of [Radix UI Primitives][radix-ui] and implemented with 
+[TypeScript][typescript], Twistail provides a comprehensive suite of UI elements, including 
+charts and data visualization components.
 
-Perfect for developers seeking a **customizable design** system that doesn't compromise on accessibility
-or performance, Twistail offers a **copy-paste** approach that streamlines implementation while allowing
-for deep customization. Each component is thoughtfully designed with separated style files, making 
-it easy to adapt to your brand's visual language while maintaining a cohesive look across your 
-entire web application.
+Twistail is the perfect choice for developers seeking a **customizable design** system that
+doesn't compromise on accessibility or performance. With its **copy-paste** approach, Twistail
+streamlines implementation while allowing for deep customization. Each component is thoughtfully
+designed with separated style files, making it easy to adapt to your brand's visual language 
+while maintaining a cohesive look across your entire web application. Experience the power 
+of Twistail and take your web development to the next level.
 
 > [!CAUTION]
 > 🚨🚨🚨
@@ -85,6 +89,7 @@ See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) file
 [reactjs]: https://react.dev
 [storybook]: https://storybook.js.org
 [tailwindcss]: https://tailwindcss.com
+[tailwind-variants]: https://www.tailwind-variants.org
 [tldr-apache]: https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0
 [tldr-mit]: https://www.tldrlegal.com/license/mit-license
 [turborepo]: https://turbo.build/repo/docs
