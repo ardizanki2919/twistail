@@ -14,17 +14,17 @@ export default function Page() {
           <div className="mb-12 flex justify-center space-x-8">
             <a
               href="https://vite.dev"
+              className="transition-opacity hover:opacity-80"
               target="_blank"
               rel="noreferrer"
-              className="transition-opacity hover:opacity-80"
             >
               <img src="/vite.svg" className="h-16 w-16" alt="Vite logo" />
             </a>
             <a
               href="https://react.dev"
+              className="transition-opacity hover:opacity-80"
               target="_blank"
               rel="noreferrer"
-              className="transition-opacity hover:opacity-80"
             >
               <img src="/react.svg" className="h-16 w-16" alt="React logo" />
             </a>

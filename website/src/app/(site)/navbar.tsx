@@ -1,5 +1,6 @@
 'use client'
 
+import { ThemeToggle } from 'fumadocs-ui/components/layout/theme-toggle'
 import * as Lucide from 'lucide-react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -93,15 +94,16 @@ export const NavBar = () => {
               ))}
             </nav>
             <div className="h-px w-12 bg-neutral-200 dark:bg-neutral-700" />
-            <div className="flex gap-6">
+            <div className="flex items-center gap-6">
               <Link
                 href="https://github.com/riipandi/twistail"
-                target="_blank"
                 className="text-neutral-500 transition-all duration-200 hover:scale-110 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
                 aria-label="GitHub repository"
+                newTab
               >
-                <GitHubIcon className="size-5" />
+                <GitHubIcon className="size-6" />
               </Link>
+              <ThemeToggle />
             </div>
           </div>
         </div>
@@ -218,8 +220,8 @@ export const NavBar = () => {
             <div className="mt-auto border-t p-6 dark:border-neutral-800">
               <Link
                 href="https://github.com/riipandi/twistail"
-                target="_blank"
                 className="flex w-full items-center justify-center gap-3 rounded-lg bg-neutral-100 px-4 py-3 font-medium text-neutral-800 transition-all duration-200 hover:bg-neutral-200 hover:shadow-md dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                newTab
               >
                 <GitHubIcon className="size-5" />
                 <span>View on GitHub</span>
