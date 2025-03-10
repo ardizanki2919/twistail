@@ -100,12 +100,13 @@
     /* ------------------- Animation for dialog & drawer -------------------  */
     --animate-dialog-overlay-show: dialog-overlay-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     --animate-dialog-content-show: dialog-content-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-drawer-slide-left-and-fade: drawer-slide-left-and-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-left-and-fade: drawer-slide-left-and-fade 0.25s
+        cubic-bezier(0.16, 1, 0.3, 1);
     --animate-drawer-slide-right-and-fade: drawer-slide-right-and-fade 0.25s ease-in;
 
     @keyframes dialog-overlay-show {
         from {
-          opacity: 0;
+            opacity: 0;
         }
         to {
             opacity: 1;
