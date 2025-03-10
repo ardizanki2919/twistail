@@ -23,12 +23,11 @@
         "url": "https://github.com/riipandi/twistail/issues"
     },
     "scripts": {
-        "start": "pnpm dlx serve storybook-static -l 6006 -n -C",
         "build": "pnpm -s build:css && pnpm -s build:storybook",
+        "start": "pnpm dlx serve storybook-static -l 6006 -n -C",
         "storybook": "VITE_CJS_IGNORE_WARNING=true storybook dev -p 6006 --no-open",
         "build:storybook": "VITE_CJS_IGNORE_WARNING=true storybook build -o storybook-static",
         "build:css": "tailwindcss -i ./src/styles/global.css -o ./dist/global.css --minify",
-        "start:storybook": "pnpm dlx serve output/storybook -l 6006 -n -C",
         "dev": "tailwindcss -i ./src/styles/global.css -o ./dist/global.css --watch",
         "cleanup": "pnpm dlx rimraf dist node_modules storybook-static",
         "publish:dry": "pnpm publish --dry-run --no-git-checks",

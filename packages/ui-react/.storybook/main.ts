@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
-  stories: ['./stories/**/*.@(mdx|stories.@(ts|tsx))'],
+  stories: ['../src/stories/**/*.@(mdx|stories.@(ts|tsx))'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',

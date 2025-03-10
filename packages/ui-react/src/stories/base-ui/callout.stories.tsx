@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Callout, calloutVariants } from 'twistail-react'
+import { Callout, calloutVariants } from '#/components'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,

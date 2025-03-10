@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 
-import { Button } from 'twistail-react'
+import { Button } from '#/components'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -19,7 +19,7 @@ import {
   DropdownMenuSubMenuContent,
   DropdownMenuSubMenuTrigger,
   DropdownMenuTrigger,
-} from 'twistail-react'
+} from '#/components'
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from 'twistail-react'
-import { Toaster } from 'twistail-react'
-import { Toast, ToastProvider, ToastViewport } from 'twistail-react'
-import { toast } from 'twistail-react'
+import { Button } from '#/components'
+import { Toaster } from '#/components'
+import { Toast, ToastProvider, ToastViewport } from '#/components'
+import { toast } from '#/components'
 
 const meta: Meta<typeof Toast> = {
   component: Toast,

@@ -10,9 +10,9 @@ interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, asChild, ...props }, forwardedRef) => {
-    const Component = asChild ? Slot : 'div'
+    const Comp = asChild ? Slot : 'div'
     return (
-      <Component
+      <Comp
         ref={forwardedRef}
         className={cn(
           // base

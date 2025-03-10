@@ -1,6 +1,38 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
+
+@source "../stories/base-ui";
+@source "../components/base-ui/accordion";
+@source "../components/base-ui/badge";
+@source "../components/base-ui/button";
+@source "../components/base-ui/calendar";
+@source "../components/base-ui/callout";
+@source "../components/base-ui/card";
+@source "../components/base-ui/checkbox";
+@source "../components/base-ui/date-picker";
+@source "../components/base-ui/date-range-picker";
+@source "../components/base-ui/dialog";
+@source "../components/base-ui/divider";
+@source "../components/base-ui/drawer";
+@source "../components/base-ui/dropdown-menu";
+/* FIXME: Causing storybook crash */
+/* @source "../components/base-ui/input"; */
+@source "../components/base-ui/label";
+@source "../components/base-ui/popover";
+@source "../components/base-ui/radio-card-group";
+@source "../components/base-ui/radio-group";
+@source "../components/base-ui/select-native";
+@source "../components/base-ui/select";
+@source "../components/base-ui/slider";
+@source "../components/base-ui/switch";
+@source "../components/base-ui/tab-navigation";
+@source "../components/base-ui/table";
+@source "../components/base-ui/tabs";
+@source "../components/base-ui/textarea";
+@source "../components/base-ui/toast";
+@source "../components/base-ui/toggle";
+@source "../components/base-ui/tooltip";
 
 @variant dark (&:where([data-theme="dark"] *));
 
