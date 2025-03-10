@@ -1,9 +1,27 @@
 {
     "name": "twistail-react",
     "version": "0.0.0",
-    "private": true,
     "type": "module",
-    "files": ["dist"],
+    "description": "Twistail UI Components",
+    "author": "Aris Ripandi <aris@duck.com>",
+    "licenses": [
+        {
+            "type": "Apache-2.0",
+            "url": "https://github.com/riipandi/twistail/blob/main/LICENSE-APACHE"
+        },
+        {
+            "type": "MIT",
+            "url": "https://github.com/riipandi/twistail/blob/main/LICENSE-MIT"
+        }
+    ],
+    "homepage": "https://twistail.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/riipandi/twistail"
+    },
+    "bugs": {
+        "url": "https://github.com/riipandi/twistail/issues"
+    },
     "scripts": {
         "start": "pnpm dlx serve storybook-static -l 6006 -n -C",
         "build": "pnpm -s build:css && pnpm -s build:storybook",
@@ -13,6 +31,8 @@
         "start:storybook": "pnpm dlx serve output/storybook -l 6006 -n -C",
         "dev": "tailwindcss -i ./src/styles/global.css -o ./dist/global.css --watch",
         "cleanup": "pnpm dlx rimraf dist node_modules storybook-static",
+        "publish:dry": "pnpm publish --dry-run --no-git-checks",
+        "prepublishOnly": "pnpm -s build:css",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
@@ -23,6 +43,16 @@
         "./global.css": "./src/styles/global.css",
         "./theme.css": "./src/styles/theme.css"
     },
+    "files": [
+        "dist/**/*",
+        "!tests/**/*",
+        "!dist/**/*.*.map",
+        "!tests/**/*.*.map",
+        "package.json",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "README.md"
+    ],
     "peerDependencies": {
         "react": "^19.0.0",
         "react-dom": "^19.0.0",

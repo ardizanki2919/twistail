@@ -3,7 +3,7 @@
     "version": "0.0.5",
     "type": "module",
     "license": "MIT",
-    "description": "Twistail core library",
+    "description": "A set of utility functions used by Twistail",
     "author": "Aris Ripandi <aris@duck.com>",
     "homepage": "https://twistail.com",
     "repository": {
