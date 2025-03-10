@@ -1,5 +1,5 @@
-import { RiCalendar2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { Button, Divider } from 'twistail-react'
 
 const meta: Meta<typeof Divider> = {
@@ -20,7 +20,7 @@ export const WithChildren: Story = {
     <div className="w-96">
       <Divider />
       <Divider>
-        <RiCalendar2Line className="size-5" />
+        <Lucide.CalendarDays className="size-5" />
       </Divider>
       <Divider>Standard</Divider>
       <Divider>

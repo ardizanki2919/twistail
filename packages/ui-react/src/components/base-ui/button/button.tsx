@@ -1,7 +1,7 @@
 // Tremor Button [v0.2.0]
 
 import { Slot } from '@radix-ui/react-slot'
-import { RiLoader2Fill } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { type ButtonStyles, buttonStyles } from './button.css'
 
@@ -36,7 +36,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isLoading ? (
           <span className="pointer-events-none flex shrink-0 items-center justify-center gap-1.5">
-            <RiLoader2Fill className="size-4 shrink-0 animate-spin" aria-hidden="true" />
+            <Lucide.LoaderCircle className="size-4 shrink-0 animate-spin" aria-hidden="true" />
             <span className="sr-only">{loadingText ? loadingText : 'Loading'}</span>
             {loadingText ? loadingText : children}
           </span>

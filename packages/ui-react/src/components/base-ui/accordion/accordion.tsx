@@ -1,7 +1,7 @@
 // Tremor Accordion [v0.0.1]
 
 import * as AccordionPrimitives from '@radix-ui/react-accordion'
-import { RiAddLine } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 
@@ -30,7 +30,7 @@ const AccordionTrigger = React.forwardRef<
       ref={forwardedRef}
     >
       {children}
-      <RiAddLine
+      <Lucide.Plus
         className={cn(
           // base
           'group-data-[state=open]:-rotate-45 size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',

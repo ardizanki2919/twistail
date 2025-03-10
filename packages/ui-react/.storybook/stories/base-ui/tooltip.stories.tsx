@@ -1,5 +1,5 @@
-import { RiInformation2Fill } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { Button, Tooltip } from 'twistail-react'
 
 const meta: Meta<typeof Tooltip> = {
@@ -67,7 +67,7 @@ export const WithoutArrow: Story = {
 export const Icon: Story = {
   render: () => (
     <Tooltip side="top" content="The quick brown fox jumps over the lazy dog.">
-      <RiInformation2Fill className="size-5 text-gray-700 dark:text-gray-700" />
+      <Lucide.Info className="size-5 text-gray-700 dark:text-gray-700" />
     </Tooltip>
   ),
 }
@@ -75,7 +75,7 @@ export const Icon: Story = {
 export const DefaultOpen: Story = {
   render: () => (
     <Tooltip side="left" defaultOpen content="The quick brown fox jumps over the lazy dog.">
-      <RiInformation2Fill className="size-5 text-gray-700" />
+      <Lucide.Info className="size-5 text-gray-700" />
     </Tooltip>
   ),
 }

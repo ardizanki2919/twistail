@@ -1,6 +1,5 @@
-import { RiBankCard2Line, RiHome2Line } from '@remixicon/react'
-import { RiCustomerService2Fill, RiExchange2Line } from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import { TabNavigation, TabNavigationLink } from 'twistail-react'
 
 const meta: Meta<typeof TabNavigation> = {
@@ -32,19 +31,19 @@ export const Icons: Story = {
   render: () => (
     <TabNavigation>
       <TabNavigationLink href="#" active className="inline-flex gap-2">
-        <RiHome2Line className="size-4" aria-hidden="true" />
+        <Lucide.Home className="size-4" aria-hidden="true" />
         Home
       </TabNavigationLink>
       <TabNavigationLink href="#" className="inline-flex gap-2">
-        <RiBankCard2Line className="-ml-1 size-4" aria-hidden="true" />
+        <Lucide.CreditCard className="-ml-1 size-4" aria-hidden="true" />
         Balances
       </TabNavigationLink>
       <TabNavigationLink href="#" className="inline-flex gap-2">
-        <RiExchange2Line className="-ml-1 size-4" aria-hidden="true" />
+        <Lucide.ReceiptText className="-ml-1 size-4" aria-hidden="true" />
         Transactions
       </TabNavigationLink>
       <TabNavigationLink href="#" className="inline-flex gap-2">
-        <RiCustomerService2Fill className="-ml-1 size-4" aria-hidden="true" />
+        <Lucide.UsersRound className="-ml-1 size-4" aria-hidden="true" />
         Customers
       </TabNavigationLink>
     </TabNavigation>

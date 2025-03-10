@@ -1,6 +1,6 @@
 // Tremor Input [v1.0.5]
 
-import { RiEyeFill, RiEyeOffFill, RiSearchLine } from '@remixicon/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 import { type InputStyles, inputStyles } from './input.css'
@@ -43,7 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               'text-gray-400 dark:text-gray-600'
             )}
           >
-            <RiSearchLine className="size-[1.125rem] shrink-0" aria-hidden="true" />
+            <Lucide.Search className="size-[1.125rem] shrink-0" aria-hidden="true" />
           </div>
         )}
         {isPassword && (
@@ -70,9 +70,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 {typeState === 'password' ? 'Show password' : 'Hide password'}
               </span>
               {typeState === 'password' ? (
-                <RiEyeFill aria-hidden="true" className="size-5 shrink-0" />
+                <Lucide.Eye aria-hidden="true" className="size-5 shrink-0" />
               ) : (
-                <RiEyeOffFill aria-hidden="true" className="size-5 shrink-0" />
+                <Lucide.EyeOff aria-hidden="true" className="size-5 shrink-0" />
               )}
             </button>
           </div>

@@ -1,6 +1,6 @@
-import * as Ri from '@remixicon/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { Accordion, AccordionTrigger } from 'twistail-react'
 import { AccordionContent, AccordionItem } from 'twistail-react'
@@ -84,7 +84,7 @@ export const WithIcons: Story = {
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiCoupon3Fill className="size-4 text-blue-500" />
+              <Lucide.TicketPercent className="size-4 text-blue-500" />
               Access Your Booking
             </span>
           </AccordionTrigger>
@@ -98,7 +98,7 @@ export const WithIcons: Story = {
         <AccordionItem value="item-2">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiArrowLeftRightLine className="size-4 text-blue-500" />
+              <Lucide.Plane className="size-4 text-blue-500" />
               Change Flights
             </span>
           </AccordionTrigger>
@@ -126,7 +126,7 @@ export const WithIcons: Story = {
         <AccordionItem value="item-3">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiAddCircleFill className="size-4 text-blue-500" />
+              <Lucide.CirclePlus className="size-4 text-blue-500" />
               Add Special Requests
             </span>
           </AccordionTrigger>
@@ -141,7 +141,7 @@ export const WithIcons: Story = {
         <AccordionItem value="item-4">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiCheckboxMultipleFill className="size-4 text-blue-500" />
+              <Lucide.CheckCheck className="size-4 text-blue-500" />
               Check-In Online
             </span>
           </AccordionTrigger>
@@ -184,7 +184,7 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiCoupon3Fill className="group-data-[disabled]:texdark:t-blue-200 group-data-[disabled]:t8xt-blue-200 size-4 text-blue-500" />
+              <Lucide.TicketPercent className="group-data-[disabled]:texdark:t-blue-200 group-data-[disabled]:t8xt-blue-200 size-4 text-blue-500" />
               Access Your Booking
             </span>
           </AccordionTrigger>
@@ -198,7 +198,7 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
         <AccordionItem value="item-2">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiArrowLeftRightLine className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
+              <Lucide.Plane className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
               Change Flights
             </span>
           </AccordionTrigger>
@@ -226,7 +226,7 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
         <AccordionItem value="item-3" disabled>
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiAddCircleFill className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
+              <Lucide.CirclePlus className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
               Add Special Requests
             </span>
           </AccordionTrigger>
@@ -241,7 +241,7 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
         <AccordionItem value="item-4">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
-              <Ri.RiCheckboxMultipleFill className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
+              <Lucide.CheckCheck className="size-4 text-blue-500 group-data-[disabled]:text-blue-200 dark:group-data-[disabled]:text-blue-900" />
               Check-In Online
             </span>
           </AccordionTrigger>
