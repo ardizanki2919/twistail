@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fr } from 'date-fns/locale'
+import { id } from 'date-fns/locale'
 import * as React from 'react'
 import { DateRange } from 'react-day-picker'
 import { Calendar } from '#/components'
@@ -102,7 +102,7 @@ export const RangeTwoMonth: Story = {
 export const Locale: Story = {
   args: {
     mode: 'single',
-    locale: fr,
+    locale: id,
   },
 }
 

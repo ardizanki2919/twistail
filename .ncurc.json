@@ -8,5 +8,5 @@
     "silent": false,
     "install": "always",
     "packageManager": "pnpm",
-    "reject": ["react-day-picker", "date-fns"]
+    "reject": ["react-day-picker"]
 }
