@@ -67,9 +67,6 @@ Licensed under either of [Apache License 2.0][license-apache] or [MIT license][l
 To understand the key differences between these two popular open-source licenses, please refer to the 
 [Apache License 2.0][tldr-apache] and the [MIT License][tldr-mit] on tldrlegal.com.
 
-> Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project by you,
-> as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
-
 Copyrights in this project are retained by their contributors.
 
 See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) files for more information.
