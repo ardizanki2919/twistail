@@ -109,7 +109,7 @@ const Toast = React.forwardRef<React.ComponentRef<typeof ToastPrimitives.Root>, 
           // swipe
           'data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none',
           // transition
-          'data-[state=open]:animate-slideLeftAndFade',
+          'data-[state=open]:animate-slide-left-and-fade',
           'data-[state=closed]:animate-hide',
           className
         )}

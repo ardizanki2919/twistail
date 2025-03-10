@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Label } from 'twistail-react'
-import { SelectNative } from 'twistail-react'
+import { Label } from '#/components'
+import { SelectNative } from '#/components'
 
 const meta: Meta<typeof SelectNative> = {
   component: SelectNative,

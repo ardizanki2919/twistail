@@ -1,18 +1,21 @@
 import { Label } from '@radix-ui/react-label'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Divider } from 'twistail-react'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from 'twistail-react'
-import { DialogFooter, DialogHeader, DialogTitle } from 'twistail-react'
-import { DialogDescription } from 'twistail-react'
-import { Popover, PopoverTrigger } from 'twistail-react'
-import { Input } from 'twistail-react'
-import { PopoverClose, PopoverContent } from 'twistail-react'
+import { Button, Divider } from '#/components'
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from '#/components'
+import { DialogFooter, DialogHeader, DialogTitle } from '#/components'
+import { DialogDescription } from '#/components'
+import { Popover, PopoverTrigger } from '#/components'
+import { Input } from '#/components'
+import { PopoverClose, PopoverContent } from '#/components'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
   title: 'Base Components/Popover',
   tags: ['status:wip'],
+  parameters: {
+    layout: 'centered',
+  },
 }
 
 export default meta
@@ -45,9 +48,6 @@ export const WithSeperator: Story = {
 }
 
 export const Close: Story = {
-  parameters: {
-    layout: 'centered',
-  },
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
@@ -119,23 +119,6 @@ export const PopoverInDialog: Story = {
                   </form>
                 </PopoverContent>
               </Popover>
-              {/* <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent>
-                  {data3.map((group) => (
-                    <SelectGroup key={group.label}>
-                      <SelectGroupLabel>{group.label}</SelectGroupLabel>
-                      {group.items.map((item) => (
-                        <SelectItem key={item.value} value={item.value}>
-                          {item.label}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  ))}
-                </SelectContent>
-              </Select> */}
             </DialogHeader>
             <DialogFooter className="mt-6">
               <DialogClose asChild>

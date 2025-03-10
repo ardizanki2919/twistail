@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Badge, badgeVariants } from 'twistail-react'
-import { Table, TableCaption, TableRoot, TableRow } from 'twistail-react'
-import { TableBody, TableCell, TableFoot } from 'twistail-react'
-import { TableHead, TableHeaderCell } from 'twistail-react'
+import { Badge, badgeStyles } from '#/components'
+import { Table, TableCaption, TableRoot, TableRow } from '#/components'
+import { TableBody, TableCell, TableFoot } from '#/components'
+import { TableHead, TableHeaderCell } from '#/components'
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -22,7 +22,7 @@ const data: Array<{
   status: string
   deltaType: string
   hours: number
-  databaseStatus: keyof typeof badgeVariants.variants.variant
+  databaseStatus: keyof typeof badgeStyles.variants.variant
 }> = [
   {
     id: 1,

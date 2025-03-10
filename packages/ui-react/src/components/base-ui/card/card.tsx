@@ -1,6 +1,6 @@
 // Tremor Card [v0.0.2]
 
-import { Slot } from '@radix-ui/react-slot'
+import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 
@@ -10,9 +10,9 @@ interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, asChild, ...props }, forwardedRef) => {
-    const Component = asChild ? Slot : 'div'
+    const Comp = asChild ? Slot.Root : 'div'
     return (
-      <Component
+      <Comp
         ref={forwardedRef}
         className={cn(
           // base

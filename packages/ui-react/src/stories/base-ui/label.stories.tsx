@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Checkbox, Input, Label } from 'twistail-react'
+import { Checkbox, Input, Label } from '#/components'
 
 const meta: Meta<typeof Label> = {
   component: Label,
@@ -24,6 +24,7 @@ export const LabelWithInput: Story = {
     </form>
   ),
 }
+
 export const LabelWithCheckbox: Story = {
   render: () => (
     <form className="flex gap-2">

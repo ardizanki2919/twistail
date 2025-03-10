@@ -1,14 +1,18 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const buttonStyles = tv({
-  base: [
-    // base
-    'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
-    // disabled
-    'disabled:pointer-events-none disabled:shadow-none',
-    // focus
-    'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
-  ],
+  slots: {
+    base: [
+      // base
+      'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
+      // disabled
+      'disabled:pointer-events-none disabled:shadow-none',
+      // focus
+      'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
+    ],
+    span: 'pointer-events-none flex shrink-0 items-center justify-center gap-1.5',
+    icon: 'size-4 shrink-0 animate-spin',
+  },
   variants: {
     variant: {
       primary: [
@@ -23,7 +27,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-blue-300 disabled:text-white',
         'disabled:dark:bg-blue-800 disabled:dark:text-blue-400',
-      ],
+      ].join(' '),
       secondary: [
         // border
         'border-gray-300 dark:border-gray-800',
@@ -36,7 +40,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       light: [
         // base
         'shadow-none',
@@ -51,7 +55,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-gray-100 disabled:text-gray-400',
         'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       ghost: [
         // base
         'shadow-none',
@@ -64,7 +68,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       destructive: [
         // text color
         'text-white',
@@ -77,11 +81,17 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-red-300 disabled:text-white',
         'disabled:dark:bg-red-950 disabled:dark:text-red-400',
-      ],
+      ].join(' '),
+    },
+    isLoading: {
+      true: 'pointer-events-none relative cursor-wait',
+      false: '',
     },
   },
+  compoundVariants: [],
   defaultVariants: {
     variant: 'primary',
+    isLoading: false,
   },
 })
 

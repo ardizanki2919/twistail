@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Accordion, AccordionTrigger } from 'twistail-react'
-import { AccordionContent, AccordionItem } from 'twistail-react'
-import { Badge, Button } from 'twistail-react'
+import { AccordionContent, AccordionItem } from '#/components'
+import { Badge, Button } from '#/components'
+import { Accordion, AccordionTrigger } from '#/components'
 
 const meta: Meta = {
   component: Accordion,
   title: 'Base Components/Accordion',
-  tags: ['status:wip'],
+  tags: ['status:new'],
   argTypes: {
     type: {
       control: 'radio',

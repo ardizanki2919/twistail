@@ -44,7 +44,7 @@ const DrawerOverlay = React.forwardRef<
         // background color
         'bg-black/30',
         // transition
-        'data-[state=closed]:animate-hide data-[state=open]:animate-dialogOverlayShow',
+        'data-[state=closed]:animate-hide data-[state=open]:animate-dialog-overlay-show',
         className
       )}
       {...props}
@@ -75,7 +75,8 @@ const DrawerContent = React.forwardRef<
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
-            'data-[state=closed]:animate-drawerSlideRightAndFade data-[state=open]:animate-drawerSlideLeftAndFade',
+            'data-[state=closed]:animate-drawer-slide-right-and-fade data-[state=open]:animate-drawer-slide-left-and-fade',
+            // focus ring
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
           )}

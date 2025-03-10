@@ -2,7 +2,8 @@
 @plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
 
-@variant dark (&:where([data-theme="dark"] *));
+/* FIXME: https://github.com/tailwindlabs/tailwindcss/issues/16582 */
+/* @variant dark (&:where([data-theme="dark"] *)); */
 
 @theme {
     /* Base Colors */
@@ -75,8 +76,9 @@
     --font-mono: ui-monospace, "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
     /* ------------------- Animation for accordion -------------------  */
-    --animate-accordion-open: accordion-open 0.2s cubic-bezier(0.87, 0, 0.13, 1);
-    --animate-accordion-close: accordion-close 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+    --animate-accordion-open: accordion-open 0.25s cubic-bezier(0.87, 0, 0.13, 1);
+    --animate-accordion-close: accordion-close 0.25s cubic-bezier(0.87, 0, 0.13, 1);
+
     @keyframes accordion-open {
         from {
             height: 0;
@@ -94,6 +96,113 @@
         }
     }
     /* ------------------- Animation for accordion -------------------  */
+
+    /* ------------------- Animation for dialog & drawer -------------------  */
+    --animate-dialog-overlay-show: dialog-overlay-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-dialog-content-show: dialog-content-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-left-and-fade: drawer-slide-left-and-fade 0.25s
+        cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-right-and-fade: drawer-slide-right-and-fade 0.25s ease-in;
+
+    @keyframes dialog-overlay-show {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes dialog-content-show {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -45%);
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            transform: scale(1);
+        }
+    }
+
+    @keyframes drawer-slide-left-and-fade {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes drawer-slide-right-and-fade {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+    /* ------------------- Animation for drawer -------------------  */
+
+    /* ------------------- Animation for popover -------------------  */
+    --animate-hide: hide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-down-and-fade: slide-down-and-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-left-and-fade: slide-left-and-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-up-and-fade: slide-up-and-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-right-and-fade: slide-right-and-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @keyframes hide {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    @keyframes slide-down-and-fade {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-left-and-fade {
+        from {
+            opacity: 0;
+            transform: translateX(6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slide-up-and-fade {
+        from {
+            opacity: 0;
+            transform: translateY(6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide-right-and-fade {
+        from {
+            opacity: 0;
+            transform: translateX(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    /* ------------------- Animation for popover -------------------  */
 }
 
 @layer base {

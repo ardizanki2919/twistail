@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Tooltip } from 'twistail-react'
+import { Button, Tooltip } from '#/components'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: 'Base Components/Tooltip',
   tags: ['status:wip'],
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     side: {
       options: ['top', 'bottom', 'left', 'right'],
@@ -27,9 +30,6 @@ export const Default: Story = {
 }
 
 export const TooltipSides: Story = {
-  parameters: {
-    layout: 'centered',
-  },
   render: () => (
     <div className="flex flex-wrap justify-center gap-6">
       <Tooltip side="top" content="Tooltip">

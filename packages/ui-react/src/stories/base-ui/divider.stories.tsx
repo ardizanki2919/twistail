@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Divider } from 'twistail-react'
+import { Button, Divider } from '#/components'
 
 const meta: Meta<typeof Divider> = {
   component: Divider,

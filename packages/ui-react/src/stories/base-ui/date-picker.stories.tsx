@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fr } from 'date-fns/locale'
 import * as React from 'react'
-import { Button, Divider } from 'twistail-react'
-import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from 'twistail-react'
-import { DatePicker } from 'twistail-react'
+import { Button, Divider } from '#/components'
+import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/components'
+import { DatePicker } from '#/components'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,

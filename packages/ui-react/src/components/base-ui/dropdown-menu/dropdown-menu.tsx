@@ -71,9 +71,9 @@ const DropdownMenuSubMenuContent = React.forwardRef<
         'border-gray-200 dark:border-gray-800',
         // transition
         'will-change-[transform,opacity]',
-        // "data-[state=open]:animate-slideDownAndFade",
+        // "data-[state=open]:animate-slide-down-and-fade",
         'data-[state=closed]:animate-hide',
-        'data-[side=bottom]:animate-slideDownAndFade data-[side=left]:animate-slideLeftAndFade data-[side=right]:animate-slideRightAndFade data-[side=top]:animate-slideUpAndFade',
+        'data-[side=bottom]:animate-slide-down-and-fade data-[side=left]:animate-slide-left-and-fade data-[side=right]:animate-slide-right-and-fade data-[side=top]:animate-slide-up-and-fade',
         className
       )}
       {...props}
@@ -109,7 +109,7 @@ const DropdownMenuContent = React.forwardRef<
           // transition
           'will-change-[transform,opacity]',
           'data-[state=closed]:animate-hide',
-          'data-[side=bottom]:animate-slideDownAndFade data-[side=left]:animate-slideLeftAndFade data-[side=right]:animate-slideRightAndFade data-[side=top]:animate-slideUpAndFade',
+          'data-[side=bottom]:animate-slide-down-and-fade data-[side=left]:animate-slide-left-and-fade data-[side=right]:animate-slide-right-and-fade data-[side=top]:animate-slide-up-and-fade',
           className
         )}
         sideOffset={sideOffset}

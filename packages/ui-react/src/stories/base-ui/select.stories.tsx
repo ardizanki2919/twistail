@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Button } from 'twistail-react'
+import { Button } from '#/components'
 import {
   Dialog,
   DialogClose,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from 'twistail-react'
+} from '#/components'
 import {
   Select,
   SelectContent,
@@ -20,7 +20,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from 'twistail-react'
+} from '#/components'
 
 const meta: Meta<typeof Select> = {
   component: Select,

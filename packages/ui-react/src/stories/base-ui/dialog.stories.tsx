@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from 'twistail-react'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from 'twistail-react'
-import { DialogFooter, DialogHeader, DialogTitle } from 'twistail-react'
-import { DialogDescription } from 'twistail-react'
+import { Button } from '#/components'
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from '#/components'
+import { DialogFooter, DialogHeader, DialogTitle } from '#/components'
+import { DialogDescription } from '#/components'
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,
