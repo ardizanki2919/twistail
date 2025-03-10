@@ -1,6 +1,6 @@
 {
     "name": "twistail-react",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "module",
     "description": "Twistail UI Components",
     "author": "Aris Ripandi <aris@duck.com>",
@@ -118,5 +118,6 @@
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "keywords": ["react", "ui", "tailwindcss", "radix-ui", "shadcn"]
 }
