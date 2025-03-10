@@ -78,6 +78,7 @@
     /* ------------------- Animation for accordion -------------------  */
     --animate-accordion-open: accordion-open 0.2s cubic-bezier(0.87, 0, 0.13, 1);
     --animate-accordion-close: accordion-close 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+
     @keyframes accordion-open {
         from {
             height: 0;
