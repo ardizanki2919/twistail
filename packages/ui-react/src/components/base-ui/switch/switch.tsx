@@ -1,6 +1,6 @@
 // Tremor Switch [v0.0.1]
 
-import * as SwitchPrimitives from '@radix-ui/react-switch'
+import { Switch as SwitchPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 import { cn } from 'twistail-utils'

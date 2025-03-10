@@ -1,6 +1,6 @@
 // Tremor Popover [v0.0.3]
 
-import * as PopoverPrimitives from '@radix-ui/react-popover'
+import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

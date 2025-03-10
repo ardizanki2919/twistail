@@ -1,6 +1,6 @@
 // Tremor TabNavigation [v0.1.0]
 
-import * as NavigationMenuPrimitives from '@radix-ui/react-navigation-menu'
+import { NavigationMenu as NavigationMenuPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

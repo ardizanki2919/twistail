@@ -1,6 +1,6 @@
 // Tremor Tabs [v0.1.0]
 
-import * as TabsPrimitives from '@radix-ui/react-tabs'
+import { Tabs as TabsPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

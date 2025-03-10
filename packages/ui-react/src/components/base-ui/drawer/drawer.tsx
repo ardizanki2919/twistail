@@ -1,7 +1,7 @@
 // Tremor Drawer [v0.0.2]
 
-import * as DrawerPrimitives from '@radix-ui/react-dialog'
 import * as Lucide from 'lucide-react'
+import { Dialog as DrawerPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { Button } from 'twistail-react'
 import { cn } from 'twistail-utils'

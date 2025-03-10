@@ -1,4 +1,3 @@
-import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
@@ -25,19 +24,22 @@ const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   title: 'Base Components/DropdownMenu',
   tags: ['status:wip'],
+  parameters: {
+    layout: 'padded',
+  },
 }
 
 export default meta
 type Story = StoryObj<typeof DropdownMenu>
 
-type Checked = DropdownMenuCheckboxItemProps['checked']
+// type Checked = DropdownMenuCheckboxItemProps['checked']
 
 export const Default: Story = {
   render: () => {
     const [position, setPosition] = React.useState('bottom')
-    const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-    const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-    const [showPanel, setShowPanel] = React.useState<Checked>(false)
+    const [showStatusBar, setShowStatusBar] = React.useState<boolean>(true)
+    const [showActivityBar, setShowActivityBar] = React.useState<boolean>(false)
+    const [showPanel, setShowPanel] = React.useState<boolean>(false)
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -314,9 +316,9 @@ export const WithRadioItem: Story = {
 
 export const WithCheckboxItem: Story = {
   render: () => {
-    const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-    const [showActivityBar, setShowActivityBar] = React.useState<Checked>(true)
-    const [showPanel, setShowPanel] = React.useState<Checked>(false)
+    const [showStatusBar, setShowStatusBar] = React.useState<boolean>(true)
+    const [showActivityBar, setShowActivityBar] = React.useState<boolean>(true)
+    const [showPanel, setShowPanel] = React.useState<boolean>(false)
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

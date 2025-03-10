@@ -1,12 +1,12 @@
 // Tremor Date Picker [v1.0.5]
 
 import { Time } from '@internationalized/date'
-import * as PopoverPrimitives from '@radix-ui/react-popover'
 import { AriaTimeFieldProps, TimeValue, useDateSegment, useTimeField } from '@react-aria/datepicker'
 import { type DateFieldState, type DateSegment, useTimeFieldState } from '@react-stately/datepicker'
 import { type Locale, format } from 'date-fns'
 import { enUS } from 'date-fns/locale'
 import * as Lucide from 'lucide-react'
+import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 import { Button } from 'twistail-react'
