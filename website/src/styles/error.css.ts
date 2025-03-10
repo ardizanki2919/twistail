@@ -28,7 +28,7 @@ export const errorStyles = tv({
     title: 'mt-4 font-bold text-3xl text-neutral-900 tracking-tight sm:text-5xl dark:text-white',
     description: 'mt-6 font-medium text-lg text-neutral-600 leading-7 dark:text-neutral-400',
     pre: [
-      'w-full overflow-x-auto rounded-lg bg-neutral-50 p-4 dark:bg-neutral-900',
+      'w-full overflow-x-auto rounded-lg bg-neutral-50 p-4 dark:bg-neutral-950/50',
       'border border-neutral-200 dark:border-neutral-800',
       'mt-6 shadow-sm dark:shadow-neutral-900/50',
     ],

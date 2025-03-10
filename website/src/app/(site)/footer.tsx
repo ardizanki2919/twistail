@@ -6,14 +6,14 @@ import Link from '#/app/link'
 export default function Footer() {
   const navLinks = [
     { href: '/docs', label: 'About' },
-    { href: '/docs/changelog', label: 'Changelog' },
+    { href: '/blog', label: 'Blog' },
     { href: '/docs/contributors', label: 'Contributors' },
     { href: '/docs/faqs', label: 'FAQs' },
   ]
 
   const secondaryLinks = [
-    { href: '/privacy', label: 'Privacy Policy' },
     { href: '/imprint', label: 'Imprint' },
+    { href: '/privacy', label: 'Privacy Policy' },
   ]
 
   return (
@@ -25,7 +25,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
+                className="font-semibold text-gray-500 text-sm transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
               >
                 {link.label}
               </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-500 transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
+                className="font-semibold text-gray-500 text-sm transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
               >
                 {link.label}
               </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} - Made by{' '}
           <Link
             href="https://ripandis.com/?ref=twistail.com"
-            className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-medium text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
+            className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-semibold text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
             newTab
           >
             Aris Ripandi

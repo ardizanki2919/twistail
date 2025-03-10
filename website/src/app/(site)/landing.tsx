@@ -14,7 +14,7 @@ export default function LandingPage() {
     <div className="my-8 md:mt-12 xl:my-14">
       <div className="bg-transparent pb-6 sm:pb-8 lg:pb-12">
         <svg
-          className="-z-10 absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800"
+          className="-z-10 absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800/50"
           aria-hidden="true"
         >
           <defs>
@@ -60,8 +60,8 @@ export default function LandingPage() {
                 </Link>
               </div>
 
-              <div className="mx-auto max-w-2xl">
-                <h1 className="max-w-4xl font-bold text-5xl text-gray-900 tracking-tight md:text-6xl dark:text-white">
+              <div className="mx-auto flex max-w-2xl flex-col items-center lg:items-start">
+                <h1 className="max-w-4xl font-bold text-4xl text-gray-900 tracking-tight md:text-6xl dark:text-white">
                   <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
                     Twistail
                   </span>{' '}
@@ -71,7 +71,7 @@ export default function LandingPage() {
                   </span>
                 </h1>
 
-                <p className="mt-12 mb-8 text-center text-gray-500 leading-relaxed md:mb-12 lg:text-left xl:text-lg dark:text-gray-400">
+                <p className="mt-10 mb-8 text-center text-gray-500 leading-relaxed md:mt-12 md:mb-12 lg:text-left xl:text-lg dark:text-gray-400">
                   Speed up building your website and dashboard by using modular and extensible UI
                   components built on top of
                   <br className="hidden lg:inline-block" />{' '}

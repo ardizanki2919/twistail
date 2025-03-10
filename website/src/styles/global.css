@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/black.css";
 @import "fumadocs-ui/css/preset.css";
 
-/* @plugin "@tailwindcss/forms"; */
+@plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
 
 /* @variant dark (&:where([data-theme="dark"] *)); */
@@ -21,7 +21,7 @@
         @apply antialiased min-h-screen scroll-smooth;
     }
     body {
-        @apply font-sans antialiased;
+        @apply font-sans antialiased bg-white dark:bg-neutral-950/50;
     }
     pre,
     code {

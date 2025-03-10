@@ -49,7 +49,7 @@ export default async function Page(props: {
   return (
     <article>
       {/* Header Section */}
-      <header className="bg-gray-50 dark:bg-gray-800">
+      <header className="bg-neutral-50 dark:bg-neutral-900">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           {/* Back Button */}
           <Link
@@ -62,12 +62,12 @@ export default async function Page(props: {
 
           <div className="max-w-4xl">
             {/* Title */}
-            <h1 className="font-bold text-3xl text-gray-900 leading-14 tracking-tight sm:text-4xl md:text-5xl dark:text-white">
+            <h1 className="font-bold text-3xl text-neutral-900 leading-14 tracking-tight sm:text-4xl md:text-5xl dark:text-white">
               {page.data.title}
             </h1>
 
             {/* Meta information */}
-            <div className="mt-6 flex items-center space-x-4 text-gray-600 dark:text-gray-400">
+            <div className="mt-6 flex items-center space-x-4 text-neutral-600 dark:text-neutral-400">
               <div className="flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
                 <time dateTime={new Date(page.data.date).toISOString()}>
@@ -81,7 +81,7 @@ export default async function Page(props: {
             </div>
 
             {/* Description */}
-            <p className="mt-6 text-gray-600 text-lg leading-8 dark:text-gray-300">
+            <p className="mt-6 text-lg text-neutral-600 leading-8 dark:text-neutral-300">
               {page.data.description}
             </p>
           </div>
@@ -94,8 +94,8 @@ export default async function Page(props: {
           {/* Main content */}
           <div className="mx-auto w-full max-w-4xl">
             {/* TOC for mobile */}
-            <div className="mb-8 rounded-lg bg-gray-50 p-4 lg:hidden dark:bg-gray-800">
-              <h3 className="mb-2 font-medium text-base text-gray-900 dark:text-white">
+            <div className="mb-8 rounded-lg bg-neutral-50 p-4 lg:hidden dark:bg-neutral-800">
+              <h3 className="mb-2 font-medium text-base text-neutral-900 dark:text-white">
                 On this page
               </h3>
               <InlineTOC items={page.data.toc} />
@@ -112,17 +112,17 @@ export default async function Page(props: {
             </div>
 
             {/* Post navigation */}
-            <nav className="mt-10 border-gray-200 border-t pt-8 dark:border-gray-700">
+            <nav className="mt-10 border-neutral-200 border-t pt-8 dark:border-neutral-700">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {prevPost ? (
                   <Link
                     href={prevPost.url}
-                    className="group relative rounded-lg border border-gray-200 p-4 transition-all hover:shadow-md dark:border-gray-700 dark:hover:border-gray-600"
+                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-md dark:border-neutral-700 dark:hover:border-neutral-600"
                   >
                     <span className="block font-medium text-sm text-teal-600 dark:text-teal-400">
                       Previous Post
                     </span>
-                    <span className="mt-2 block font-semibold text-base text-gray-900 transition-colors group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
+                    <span className="mt-2 block font-semibold text-base text-neutral-900 transition-colors group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
                       {prevPost.data.title}
                     </span>
                   </Link>
@@ -133,12 +133,12 @@ export default async function Page(props: {
                 {nextPost ? (
                   <Link
                     href={nextPost.url}
-                    className="group relative rounded-lg border border-gray-200 p-4 transition-all hover:shadow-md sm:text-right dark:border-gray-700 dark:hover:border-gray-600"
+                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-md sm:text-right dark:border-neutral-700 dark:hover:border-neutral-600"
                   >
                     <span className="block font-medium text-sm text-teal-600 dark:text-teal-400">
                       Next Post
                     </span>
-                    <span className="mt-2 block font-semibold text-base text-gray-900 transition-colors group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
+                    <span className="mt-2 block font-semibold text-base text-neutral-900 transition-colors group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
                       {nextPost.data.title}
                     </span>
                   </Link>

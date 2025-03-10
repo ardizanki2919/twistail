@@ -11,9 +11,9 @@ export function BlogCard({ post }: BlogCardProps) {
   return (
     <Link
       href={post.url}
-      className="group overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:bg-gray-800"
+      className="group overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:bg-neutral-800"
     >
-      <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
+      <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         {post.data.coverImage && (
           <Image
             src={post.data.coverImage}
@@ -27,11 +27,13 @@ export function BlogCard({ post }: BlogCardProps) {
         </div>
       </div>
       <div className="p-5">
-        <h2 className="mb-2 font-semibold text-gray-900 text-xl tracking-tight transition-colors duration-300 group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
+        <h2 className="mb-2 font-semibold text-neutral-900 text-xl tracking-tight transition-colors duration-300 group-hover:text-teal-600 dark:text-white dark:group-hover:text-teal-400">
           {post.data.title}
         </h2>
-        <p className="mb-4 text-gray-600 text-sm dark:text-gray-300">{post.data.description}</p>
-        <div className="flex items-center text-gray-500 text-sm dark:text-gray-400">
+        <p className="mb-4 text-neutral-600 text-sm dark:text-neutral-300">
+          {post.data.description}
+        </p>
+        <div className="flex items-center text-neutral-500 text-sm dark:text-neutral-400">
           <span>Oleh {post.data.author}</span>
         </div>
       </div>
