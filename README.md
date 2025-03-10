@@ -15,34 +15,21 @@ Modular and extensible React UI components library powered by Radix UI, Tailwind
 >
 > 🚨🚨🚨
 
-## Quick Start
+## Getting Started
 
-TODO!
+You can find our documentation at: [twistail.com][twistail-docs]
 
-## What's inside?
+## Bugs and Feature Requests
 
-This Turborepo includes the following packages and apps:
+If you have a bug or feature request, feel free to open an [issue][twistail-issue],
+or [join our discussion][twistail-discussion].
 
-### Apps and Packages
+## Community and Contribution
 
-- `examples/react-vite`: Example application built with [Vite][vite] and [React][reactjs]
-- `@repo/config-typescript`: Shared TypeScript configurations and [Storybook][storybook]
-- `twistail-react`: Reusable React components and utilities
+Contributions are welcome! Please open a pull requests for your changes and tickets in case you would like
+to discuss something or have a question. Please read our Contributor License Agreement [here][twistail-cla].
 
-Each package and app is 100% [TypeScript][typescript].
-
-### Publishing Packages
-
-#### Run in dry-run mode
-
-```sh
-pnpm turbo publish:dry --filter=twistail-utils
-```
-
-#### Publish specific packages
-```sh
-pnpm --filter=twistail-utils publish
-```
+Read the [Contributing Guidelines](https://twistail.com/docs/ui/contributing-guidelines) for detailed documentation.
 
 ## Acknowledgements
 
@@ -79,13 +66,17 @@ See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) file
 <!-- link reference definition -->
 [biome]: https://biomejs.dev
 [contribution]: https://github.com/riipandi/twistail/pulse
-[license-apache]: https://choosealicense.com/licenses/apache-2.0/
-[license-mit]: https://choosealicense.com/licenses/mit/
+[license-apache]: https://choosealicense.com/licenses/apache-2.0
+[license-mit]: https://choosealicense.com/licenses/mit
 [reactjs]: https://react.dev
 [storybook]: https://storybook.js.org
 [tailwind]: https://tailwindcss.com
-[turborepo]: https://turbo.build/repo/docs
-[typescript]: https://www.typescriptlang.org/
-[vite]: https://vite.dev
-[tldr-mit]: https://www.tldrlegal.com/license/mit-license
 [tldr-apache]: https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0
+[tldr-mit]: https://www.tldrlegal.com/license/mit-license
+[turborepo]: https://turbo.build/repo/docs
+[twistail-cla]: https://twistail.com/docs/ui/contributors
+[twistail-discussion]: https://github.com/riipandi/twistail/discussions
+[twistail-docs]: https://twistail.com/docs/ui
+[twistail-issue]: https://github.com/riipandi/twistail/issues/new
+[typescript]: https://www.typescriptlang.org
+[vite]: https://vite.dev
