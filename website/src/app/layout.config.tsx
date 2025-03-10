@@ -28,6 +28,7 @@ export const baseOptions: BaseLayoutProps = {
   githubUrl: 'https://github.com/riipandi/twistail',
   links: [
     { text: 'Home', url: '/' },
+    { text: 'Blog', url: '/blog' },
     {
       text: 'Storybook',
       url: 'https://twistail-storybook.netlify.app/',
