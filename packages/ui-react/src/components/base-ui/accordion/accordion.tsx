@@ -1,7 +1,7 @@
 // Tremor Accordion [v0.0.1]
 
-import * as AccordionPrimitives from '@radix-ui/react-accordion'
 import * as Lucide from 'lucide-react'
+import { Accordion as AccordionPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 import { accordionStyles } from './accordion.css'

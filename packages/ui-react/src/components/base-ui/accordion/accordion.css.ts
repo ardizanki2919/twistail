@@ -40,9 +40,6 @@ const accordionStyles = tv({
       'border-gray-200 dark:border-gray-800',
     ],
   },
-  variants: {},
-  compoundVariants: [],
-  defaultVariants: {},
 })
 
 type AccordionStyles = VariantProps<typeof accordionStyles>
