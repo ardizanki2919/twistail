@@ -29,6 +29,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot.Root : 'button'
     const styles = buttonStyles({ variant, isLoading })
 
+    // TODO: move styles to `button.css.ts`
     const withLoading = (
       <span className={styles.span()}>
         <Lucide.LoaderCircle className={styles.icon()} aria-hidden="true" />
@@ -40,7 +41,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={forwardedRef}
-        className={cn(styles.base(), className)}
+        className={styles.base({ className })}
         disabled={disabled || isLoading}
         tremor-id="tremor-raw"
         {...props}
