@@ -98,7 +98,8 @@
     /* ------------------- Animation for accordion -------------------  */
 
     /* ------------------- Animation for drawer -------------------  */
-    --animate-drawer-slide-left-and-fade: drawer-slide-left-and-fade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-left-and-fade: drawer-slide-left-and-fade 0.2s
+        cubic-bezier(0.16, 1, 0.3, 1);
     --animate-drawer-slide-right-and-fade: drawer-slide-right-and-fade 0.2s ease-in;
 
     @keyframes drawer-slide-left-and-fade {
@@ -122,6 +123,63 @@
         }
     }
     /* ------------------- Animation for drawer -------------------  */
+
+    /* ------------------- Animation for popover -------------------  */
+    --animate-hide: hide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slideDownAndFade: slideDownAndFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slideLeftAndFade: slideLeftAndFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slideUpAndFade: slideUpAndFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slideRightAndFade: slideRightAndFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @keyframes hide {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    @keyframes slideDownAndFade {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slideLeftAndFade {
+        from {
+            opacity: 0;
+            transform: translateX(6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slideUpAndFade {
+        from {
+            opacity: 0;
+            transform: translateY(6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slideRightAndFade {
+        from {
+            opacity: 0;
+            transform: translateX(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    /* ------------------- Animation for popover -------------------  */
 }
 
 @layer base {
