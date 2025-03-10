@@ -1,3 +1,5 @@
+![Twistail Banner](./website/public/images/banner.png)
+
 # 🌀 Twistail
 
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE-MIT)
@@ -5,7 +7,18 @@
 [![Turborepo](https://img.shields.io/badge/Built%20With-Turborepo-blueviolet)][turborepo]
 [![Contribution](https://img.shields.io/badge/Contributions-welcome-gray.svg)][contribution]
 
-Modular and extensible React UI components library powered by Radix UI, Tailwind CSS, and TypeScript.
+## Introduction
+
+Twistail is an open-source React UI component library meticulously crafted for building modern
+web applications and interactive dashboards. Built on the accessible foundation of [Radix UI][radix-ui],
+styled with the versatility of [Tailwind CSS][tailwindcss], and implemented with [TypeScript][typescript],
+Twistail delivers a comprehensive suite of UI elements, including charts and data visualization components.
+
+Perfect for developers seeking a **customizable design** system that doesn't compromise on accessibility
+or performance, Twistail offers a **copy-paste** approach that streamlines implementation while allowing
+for deep customization. Each component is thoughtfully designed with separated style files, making 
+it easy to adapt to your brand's visual language while maintaining a cohesive look across your 
+entire web application.
 
 > [!CAUTION]
 > 🚨🚨🚨
@@ -68,9 +81,10 @@ See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) file
 [contribution]: https://github.com/riipandi/twistail/pulse
 [license-apache]: https://choosealicense.com/licenses/apache-2.0
 [license-mit]: https://choosealicense.com/licenses/mit
+[radix-ui]: https://www.radix-ui.com/primitives
 [reactjs]: https://react.dev
 [storybook]: https://storybook.js.org
-[tailwind]: https://tailwindcss.com
+[tailwindcss]: https://tailwindcss.com
 [tldr-apache]: https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0
 [tldr-mit]: https://www.tldrlegal.com/license/mit-license
 [turborepo]: https://turbo.build/repo/docs
