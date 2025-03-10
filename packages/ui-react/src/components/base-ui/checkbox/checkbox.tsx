@@ -1,6 +1,6 @@
 // Tremor Checkbox [v0.0.3]
 
-import * as CheckboxPrimitives from '@radix-ui/react-checkbox'
+import { Checkbox as CheckboxPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

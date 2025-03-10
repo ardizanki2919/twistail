@@ -1,7 +1,7 @@
 // Tremor Select [v0.0.3]
 
-import * as SelectPrimitives from '@radix-ui/react-select'
 import * as Lucide from 'lucide-react'
+import { Select as SelectPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

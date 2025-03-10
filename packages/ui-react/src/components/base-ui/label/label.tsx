@@ -1,6 +1,6 @@
 // Tremor Label [v0.0.2]
 
-import * as LabelPrimitives from '@radix-ui/react-label'
+import { Label as LabelPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

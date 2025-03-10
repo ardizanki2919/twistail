@@ -1,6 +1,6 @@
 // Tremor Dialog [v0.0.1]
 
-import * as DialogPrimitives from '@radix-ui/react-dialog'
+import { Dialog as DialogPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

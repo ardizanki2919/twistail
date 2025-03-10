@@ -1,6 +1,6 @@
 // Tremor Radio Card [v0.0.3]
 
-import * as RadioGroupPrimitives from '@radix-ui/react-radio-group'
+import { RadioGroup as RadioGroupPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

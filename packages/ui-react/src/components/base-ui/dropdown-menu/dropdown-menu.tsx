@@ -1,7 +1,7 @@
 // Tremor Dropdown Menu [v0.0.2]
 
-import * as DropdownMenuPrimitives from '@radix-ui/react-dropdown-menu'
 import * as Lucide from 'lucide-react'
+import { DropdownMenu as DropdownMenuPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

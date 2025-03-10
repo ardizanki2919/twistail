@@ -1,7 +1,6 @@
-import { Label } from '@radix-ui/react-label'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Divider } from '#/components'
+import { Button, Divider, Label } from '#/components'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '#/components'
 import { DialogFooter, DialogHeader, DialogTitle } from '#/components'
 import { DialogDescription } from '#/components'

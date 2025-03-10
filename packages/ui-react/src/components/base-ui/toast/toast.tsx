@@ -1,7 +1,7 @@
 // Tremor Toast [v0.0.4]
 
-import * as ToastPrimitives from '@radix-ui/react-toast'
 import * as Lucide from 'lucide-react'
+import { Toast as ToastPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 

@@ -1,7 +1,7 @@
 // Tremor Toggle [v0.0.0]
 
-import * as TogglePrimitive from '@radix-ui/react-toggle'
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
+import { ToggleGroup as ToggleGroupPrimitive } from 'radix-ui'
+import { Toggle as TogglePrimitive } from 'radix-ui'
 import * as React from 'react'
 import { cn } from 'twistail-utils'
 
