@@ -2,7 +2,6 @@
 import 'twistail-react/global.css'
 import '../styles/global.css'
 
-import { RootProvider } from 'fumadocs-ui/provider'
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Mona_Sans } from 'next/font/google'
 import { env } from 'std-env'
@@ -42,21 +41,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={cn(fontSans.variable, fontMono.variable)}>
-        <RootProvider
-          search={{
-            enabled: true,
-            options: { type: 'static' },
-            links: [
-              ['Homepage', '/'],
-              ['Documentation', '/docs/ui'],
-              ['Changelog', '/docs/ui/changelog'],
-            ],
-          }}
-        >
-          {children}
-        </RootProvider>
-      </body>
+      <body className={cn(fontSans.variable, fontMono.variable)}>{children}</body>
     </html>
   )
 }
