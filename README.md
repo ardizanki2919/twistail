@@ -9,20 +9,17 @@
 
 ## Introduction
 
-Twistail is a meticulously crafted React UI component library that leverages the power of 
-[Tailwind CSS][tailwindcss] and its extensive set of [Tailwind Variants][tailwind-variants]
-to deliver a first-class variant API. This enables advanced component composition and 
-responsive variants, while efficiently handling style conflicts across your application.
-Built on the solid foundation of [Radix UI Primitives][radix-ui] and implemented with 
-[TypeScript][typescript], Twistail provides a comprehensive suite of UI elements, including 
-charts and data visualization components.
+Twistail is an Open Source React UI component library that leverages [Tailwind CSS][tailwindcss]
+and [Tailwind Variants][tailwind-variants] for a powerful variant API. It enables advanced 
+component composition and responsive variants while managing style conflicts efficiently. 
+Built on [Radix UI Primitives][radix-ui] and implemented with [TypeScript][typescript], 
+Twistail provides a suite of UI elements, including charts and data visualization components.
 
-Twistail is the perfect choice for developers seeking a **customizable design** system that
-doesn't compromise on accessibility or performance. With its **copy-paste** approach, Twistail
-streamlines implementation while allowing for deep customization. Each component is thoughtfully
-designed with separated style files, making it easy to adapt to your brand's visual language 
-while maintaining a cohesive look across your entire web application. Experience the power 
-of Twistail and take your web development to the next level.
+Perfect for developers seeking a **customizable design** system that prioritizes accessibility 
+and performance, Twistail streamlines implementation with a **copy-paste** approach and 
+deep customization options. Each component features separated style files, allowing easy 
+adaptation to your brand's visual identity while maintaining a cohesive look across your 
+web application.
 
 > [!CAUTION]
 > 🚨🚨🚨
