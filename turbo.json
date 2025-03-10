@@ -4,8 +4,7 @@
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["$TURBO_DEFAULT$", ".env*"],
-            "outputs": [".next/**", "dist/**", "out/**"],
-            "cache": false
+            "outputs": [".next/**", "dist/**", "out/**"]
         },
         "lint": {},
         "check": {},
