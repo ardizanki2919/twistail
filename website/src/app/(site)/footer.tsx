@@ -7,8 +7,8 @@ export default function Footer() {
   const navLinks = [
     { href: '/docs', label: 'About' },
     { href: '/blog', label: 'Blog' },
-    { href: '/docs/contributors', label: 'Contributors' },
-    { href: '/docs/faqs', label: 'FAQs' },
+    { href: '/docs/ui/contributors', label: 'Contributors' },
+    { href: '/docs/ui/faqs', label: 'FAQs' },
   ]
 
   const secondaryLinks = [
