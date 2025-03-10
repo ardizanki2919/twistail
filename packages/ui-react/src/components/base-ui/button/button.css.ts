@@ -27,7 +27,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-blue-300 disabled:text-white',
         'disabled:dark:bg-blue-800 disabled:dark:text-blue-400',
-      ],
+      ].join(' '),
       secondary: [
         // border
         'border-gray-300 dark:border-gray-800',
@@ -40,7 +40,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       light: [
         // base
         'shadow-none',
@@ -55,7 +55,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-gray-100 disabled:text-gray-400',
         'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       ghost: [
         // base
         'shadow-none',
@@ -68,7 +68,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
-      ],
+      ].join(' '),
       destructive: [
         // text color
         'text-white',
@@ -81,7 +81,7 @@ const buttonStyles = tv({
         // disabled
         'disabled:bg-red-300 disabled:text-white',
         'disabled:dark:bg-red-950 disabled:dark:text-red-400',
-      ],
+      ].join(' '),
     },
     isLoading: {
       true: 'pointer-events-none relative cursor-wait',

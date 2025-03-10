@@ -10,7 +10,7 @@ addons.setConfig({
   isFullscreen: false,
   showPanel: true,
   showToolbar: true,
-  panelPosition: 'right',
+  panelPosition: 'bottom',
   initialActive: 'canvas',
   sidebar: {
     filters: {
