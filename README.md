@@ -1,11 +1,11 @@
-![Twistail Banner](./website/public/images/banner.png)
-
 # 🌀 Twistail
 
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE-MIT)
 [![License Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE-APACHE)
 [![Turborepo](https://img.shields.io/badge/Built%20With-Turborepo-blueviolet)][turborepo]
 [![Contribution](https://img.shields.io/badge/Contributions-welcome-gray.svg)][contribution]
+
+![Twistail Banner](./website/public/images/twistail-banner-lowres.png)
 
 ## Introduction
 
