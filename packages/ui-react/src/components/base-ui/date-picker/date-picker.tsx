@@ -8,9 +8,10 @@ import { enUS } from 'date-fns/locale'
 import * as Lucide from 'lucide-react'
 import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
+import type { Matcher } from 'react-day-picker'
 import { VariantProps, tv } from 'tailwind-variants'
 import { Button } from 'twistail-react'
-import { Calendar as CalendarPrimitive, type Matcher } from 'twistail-react'
+import { Calendar as CalendarPrimitive } from 'twistail-react'
 import { cn } from 'twistail-utils'
 
 //#region TimeInput

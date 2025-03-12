@@ -82,6 +82,20 @@ const buttonStyles = tv({
         'disabled:bg-red-300 disabled:text-white',
         'disabled:dark:bg-red-950 disabled:dark:text-red-400',
       ].join(' '),
+      // TODO: add outline variant
+      outline: [
+        // text color
+        'text-white',
+        // border
+        'border-transparent',
+        // background color
+        'bg-indigo-600 dark:bg-indigo-700',
+        // hover color
+        'hover:bg-indigo-700 dark:hover:bg-indigo-600',
+        // disabled
+        'disabled:bg-indigo-300 disabled:text-white',
+        'disabled:dark:bg-indigo-950 disabled:dark:text-indigo-400',
+      ].join(' '),
     },
     isLoading: {
       true: 'pointer-events-none relative cursor-wait',

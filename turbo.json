@@ -23,6 +23,7 @@
             "cache": false
         },
         "storybook": {
+            "dependsOn": ["twistail-utils#build"],
             "persistent": true,
             "cache": false
         },

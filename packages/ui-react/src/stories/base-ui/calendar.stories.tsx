@@ -52,6 +52,18 @@ export const Single: Story = {
   },
 }
 
+export const DropdownMonths: Story = {
+  args: {
+    captionLayout: 'dropdown-months',
+  },
+}
+
+export const DropdownYears: Story = {
+  args: {
+    captionLayout: 'dropdown-years',
+  },
+}
+
 export const SingleWithYearNavigation: Story = {
   args: {
     mode: 'single',
