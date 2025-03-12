@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fr } from 'date-fns/locale'
+import { id } from 'date-fns/locale'
 import * as React from 'react'
 import { Button, Divider } from '#/components'
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/components'
@@ -71,7 +71,7 @@ export const ShowTimePicker: Story = {
 export const Localized: Story = {
   args: {
     placeholder: 'Choisissez une date',
-    locale: fr,
+    locale: id,
     translations: { cancel: 'Annuler', apply: 'Applicer' },
     presets: [
       {

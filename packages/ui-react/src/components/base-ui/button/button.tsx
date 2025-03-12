@@ -3,7 +3,6 @@
 import * as Lucide from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
 import { type ButtonStyles, buttonStyles } from './button.css'
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>, ButtonStyles {
