@@ -42,7 +42,7 @@ const AccordionContent = React.forwardRef<
       ref={forwardedRef}
       {...props}
     >
-      <div className={clx(styles.accordionContentDiv, className)}>{children}</div>
+      <div className={clx(styles.accordionContentDiv(), className)}>{children}</div>
     </AccordionPrimitives.Content>
   )
 })
