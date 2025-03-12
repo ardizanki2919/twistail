@@ -22,23 +22,10 @@ const accordionStyles = tv({
       // disabled
       'group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700',
     ],
-    // AccordionContent
-    accordionContent: [
+    accordionContent:
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open',
-    ],
-    accordionContentDiv: [
-      // base
-      'overflow-hidden pb-4 text-sm',
-      // text color
-      'text-gray-700 dark:text-gray-200',
-    ],
-    // AccordionItem
-    accordionItem: [
-      // base
-      'overflow-hidden border-b first:mt-0',
-      // border color
-      'border-gray-200 dark:border-gray-800',
-    ],
+    accordionContentDiv: 'overflow-hidden pb-4 text-sm text-gray-700 dark:text-gray-200',
+    accordionItem: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
   },
 })
 

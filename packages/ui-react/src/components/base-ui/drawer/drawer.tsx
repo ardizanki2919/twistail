@@ -75,7 +75,7 @@ const DrawerContent = React.forwardRef<
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
-            'data-[state=closed]:animate-drawer-slide-right-and-fade data-[state=open]:animate-drawer-slide-left-and-fade',
+            'data-[state=closed]:animate-drawer-slide-right-fade data-[state=open]:animate-drawer-slide-left-fade',
             // focus ring
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className

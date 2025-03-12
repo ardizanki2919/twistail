@@ -65,7 +65,7 @@ const Tooltip = React.forwardRef<
                 'bg-gray-900 dark:bg-gray-50',
                 // transition
                 'will-change-[transform,opacity]',
-                'data-[side=bottom]:animate-slide-down-and-fade data-[side=left]:animate-slide-left-and-fade data-[side=right]:animate-slide-right-and-fade data-[side=top]:animate-slide-up-and-fade data-[state=closed]:animate-hide',
+                'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade data-[state=closed]:animate-hide',
                 className
               )}
               {...props}

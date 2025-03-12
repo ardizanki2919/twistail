@@ -76,8 +76,10 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
           'dark:aria-selected:!bg-gray-900 dark:aria-selected:!text-gray-50'
         ),
         [DayFlag.today]: 'bg-accent text-accent-foreground font-semibold',
-        [DayFlag.outside]: `day-outside text-gray-400 dark:text-gray-600 opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30`,
-        [DayFlag.disabled]: `!text-gray-300 dark:!text-gray-700 line-through disabled:hover:bg-transparent`,
+        [DayFlag.outside]:
+          'day-outside text-gray-400 dark:text-gray-600 opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30',
+        [DayFlag.disabled]:
+          '!text-gray-300 dark:!text-gray-700 line-through disabled:hover:bg-transparent',
         [DayFlag.hidden]: 'invisible',
         ...classNames,
       }}

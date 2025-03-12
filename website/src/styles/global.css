@@ -2,7 +2,6 @@
 @import "fumadocs-ui/css/black.css";
 @import "fumadocs-ui/css/preset.css";
 
-@plugin "@tailwindcss/forms";
 @plugin "tailwindcss-motion";
 
 /* @variant dark (&:where([data-theme="dark"] *)); */
