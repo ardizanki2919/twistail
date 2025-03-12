@@ -2,7 +2,7 @@
 
 import { Tooltip as TooltipPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 interface TooltipProps
   extends Omit<TooltipPrimitives.TooltipContentProps, 'content' | 'onClick'>,
@@ -56,7 +56,7 @@ const Tooltip = React.forwardRef<
               side={side}
               sideOffset={sideOffset}
               align="center"
-              className={cn(
+              className={clx(
                 // base
                 'max-w-60 select-none rounded-md px-2.5 py-1.5 text-sm leading-5 shadow-md',
                 // text color
@@ -65,7 +65,7 @@ const Tooltip = React.forwardRef<
                 'bg-gray-900 dark:bg-gray-50',
                 // transition
                 'will-change-[transform,opacity]',
-                'data-[side=bottom]:animate-slide-down-and-fade data-[side=left]:animate-slide-left-and-fade data-[side=right]:animate-slide-right-and-fade data-[side=top]:animate-slide-up-and-fade data-[state=closed]:animate-hide',
+                'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade data-[state=closed]:animate-hide',
                 className
               )}
               {...props}

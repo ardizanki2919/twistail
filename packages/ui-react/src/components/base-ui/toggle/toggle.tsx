@@ -3,7 +3,7 @@
 import { ToggleGroup as ToggleGroupPrimitive } from 'radix-ui'
 import { Toggle as TogglePrimitive } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const toggleStyles = [
   // base
@@ -25,7 +25,7 @@ const Toggle = React.forwardRef<
   React.ComponentRef<typeof TogglePrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>
 >(({ className, ...props }, ref) => (
-  <TogglePrimitive.Root ref={ref} className={cn(toggleStyles, className)} {...props} />
+  <TogglePrimitive.Root ref={ref} className={clx(toggleStyles, className)} {...props} />
 ))
 
 Toggle.displayName = TogglePrimitive.Root.displayName
@@ -38,7 +38,7 @@ const ToggleGroup = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <ToggleGroupPrimitive.Root
     ref={ref}
-    className={cn('flex flex-nowrap items-center justify-center gap-1', className)}
+    className={clx('flex flex-nowrap items-center justify-center gap-1', className)}
     {...props}
   >
     {children}
@@ -51,7 +51,7 @@ const ToggleGroupItem = React.forwardRef<
   React.ComponentRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
-  <ToggleGroupPrimitive.Item ref={ref} className={cn(toggleStyles, className)} {...props}>
+  <ToggleGroupPrimitive.Item ref={ref} className={clx(toggleStyles, className)} {...props}>
     {children}
   </ToggleGroupPrimitive.Item>
 ))

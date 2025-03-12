@@ -2,7 +2,7 @@
 
 import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
   return <PopoverPrimitives.Root {...props} />
@@ -64,7 +64,7 @@ const PopoverContent = React.forwardRef<
           align={align}
           collisionPadding={collisionPadding}
           avoidCollisions={avoidCollisions}
-          className={cn(
+          className={clx(
             // base
             'max-h-[var(--radix-popper-available-height)] min-w-60 overflow-hidden rounded-md border p-2.5 text-sm shadow-md',
             // border color
@@ -76,7 +76,7 @@ const PopoverContent = React.forwardRef<
             // transition
             'will-change-[transform,opacity]',
             'data-[state=closed]:animate-hide',
-            'data-[state=open]:data-[side=bottom]:animate-slide-down-and-fade data-[state=open]:data-[side=left]:animate-slide-left-and-fade data-[state=open]:data-[side=right]:animate-slide-right-and-fade data-[state=open]:data-[side=top]:animate-slide-up-and-fade',
+            'data-[state=open]:data-[side=bottom]:animate-slide-down-fade data-[state=open]:data-[side=left]:animate-slide-down-fade data-[state=open]:data-[side=right]:animate-slide-right-fade data-[state=open]:data-[side=top]:animate-slide-up-fade',
 
             className
           )}

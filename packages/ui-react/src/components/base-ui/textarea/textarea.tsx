@@ -1,7 +1,7 @@
 // Tremor Textarea [v0.0.2]
 
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   hasError?: boolean
@@ -12,7 +12,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={forwardedRef}
-        className={cn(
+        className={clx(
           // base
           'flex min-h-[4rem] w-full rounded-md border px-3 py-1.5 shadow-sm outline-none transition-colors sm:text-sm',
           // text color

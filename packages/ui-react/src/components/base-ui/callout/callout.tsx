@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const calloutVariants = tv({
   base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',
@@ -57,19 +57,19 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
     return (
       <div
         ref={forwardedRef}
-        className={cn(calloutVariants({ variant }), className)}
+        className={clx(calloutVariants({ variant }), className)}
         tremor-id="tremor-raw"
         {...props}
       >
-        <div className={cn('flex items-start')}>
+        <div className={clx('flex items-start')}>
           {Icon && typeof Icon === 'function' ? (
-            <Icon className={cn('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
+            <Icon className={clx('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
           ) : (
             Icon
           )}
-          <span className={cn('font-semibold')}>{title}</span>
+          <span className={clx('font-semibold')}>{title}</span>
         </div>
-        <div className={cn('overflow-y-auto', children ? 'mt-2' : '')}>{children}</div>
+        <div className={clx('overflow-y-auto', children ? 'mt-2' : '')}>{children}</div>
       </div>
     )
   }

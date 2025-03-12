@@ -7,7 +7,7 @@ import defaultMdxComponents from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
 
 import { notFound } from 'next/navigation'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 import { source } from '#/lib/source'
 import Redirect from './redirect'
@@ -44,7 +44,7 @@ export default async function Page(props: {
             ...defaultMdxComponents,
             Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
               <Link
-                className={cn('font-medium underline underline-offset-4', className)}
+                className={clx('font-medium underline underline-offset-4', className)}
                 {...props}
               />
             ),

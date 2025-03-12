@@ -1,7 +1,7 @@
 // Tremor SelectNative [v0.0.1]
 
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { type SelectNativeStyles, selectNativeStyles } from './select-native.css'
 
 interface SelectNativeProps
@@ -13,7 +13,7 @@ const SelectNative = React.forwardRef<HTMLSelectElement, SelectNativeProps>(
     return (
       <select
         ref={forwardedRef}
-        className={cn(selectNativeStyles({ hasError }), className)}
+        className={clx(selectNativeStyles({ hasError }), className)}
         tremor-id="tremor-raw"
         {...props}
       />

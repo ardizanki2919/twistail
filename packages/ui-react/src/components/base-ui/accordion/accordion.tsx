@@ -3,7 +3,7 @@
 import * as Lucide from 'lucide-react'
 import { Accordion as AccordionPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { accordionStyles } from './accordion.css'
 
 const Accordion = AccordionPrimitives.Root
@@ -16,7 +16,7 @@ const AccordionTrigger = React.forwardRef<
   return (
     <AccordionPrimitives.Header className={styles.accordionHeader()}>
       <AccordionPrimitives.Trigger
-        className={cn(styles.accordionTriger(), className)}
+        className={clx(styles.accordionTriger(), className)}
         ref={forwardedRef}
         {...props}
       >
@@ -42,7 +42,7 @@ const AccordionContent = React.forwardRef<
       ref={forwardedRef}
       {...props}
     >
-      <div className={cn(styles.accordionContentDiv, className)}>{children}</div>
+      <div className={clx(styles.accordionContentDiv, className)}>{children}</div>
     </AccordionPrimitives.Content>
   )
 })
@@ -54,7 +54,7 @@ const AccordionItem = React.forwardRef<
   const styles = accordionStyles()
   return (
     <AccordionPrimitives.Item
-      className={cn(styles.accordionItem(), className)}
+      className={clx(styles.accordionItem(), className)}
       tremor-id="tremor-raw"
       ref={forwardedRef}
       {...props}

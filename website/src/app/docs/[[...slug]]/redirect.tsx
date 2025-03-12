@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 
 export default function RedirectComponent({ targetUrl }: { targetUrl: string }) {
@@ -38,7 +38,7 @@ export default function RedirectComponent({ targetUrl }: { targetUrl: string }) 
 
   return (
     <div
-      className={cn(
+      className={clx(
         isRedirecting ? 'opacity-100' : 'opacity-0',
         'fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950/50',
         'transition-opacity duration-300'

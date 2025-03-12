@@ -5,7 +5,7 @@ import * as Lucide from 'lucide-react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 
@@ -67,7 +67,7 @@ export const NavBar = () => {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={cn(
+                  className={clx(
                     'group relative py-1 font-medium text-sm transition-all duration-200',
                     (item.matchPath && pathname === item.matchPath) || pathname === item.href
                       ? 'text-indigo-600 dark:text-indigo-400'
@@ -83,7 +83,7 @@ export const NavBar = () => {
 
                   {/* Hover animated underline */}
                   <span
-                    className={cn(
+                    className={clx(
                       '-bottom-0.5 absolute left-0 h-0.5 rounded-full bg-indigo-600 transition-all duration-300 ease-out dark:bg-indigo-400',
                       (item.matchPath && pathname === item.matchPath) || pathname === item.href
                         ? 'w-full'
@@ -111,7 +111,7 @@ export const NavBar = () => {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className={cn(
+          className={clx(
             isMenuOpen ? 'hidden' : 'inline-flex',
             'relative z-50 items-center gap-2 rounded-lg bg-neutral-100 px-2.5 py-2 font-medium text-neutral-700 text-sm shadow-sm ring-blue-300 hover:bg-neutral-200 focus-visible:ring lg:hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
           )}
@@ -121,13 +121,13 @@ export const NavBar = () => {
         >
           <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
           <Lucide.Menu
-            className={cn(
+            className={clx(
               'size-5 transition-all duration-300',
               isMenuOpen && 'rotate-90 scale-0 opacity-0'
             )}
           />
           <Lucide.X
-            className={cn(
+            className={clx(
               'absolute size-5 transition-all duration-300',
               !isMenuOpen && '-rotate-90 scale-0 opacity-0'
             )}
@@ -138,7 +138,7 @@ export const NavBar = () => {
       {/* Mobile Navigation Menu */}
       <div
         id="mobile-menu"
-        className={cn(
+        className={clx(
           'fixed inset-0 z-40 transform bg-white/80 backdrop-blur-sm transition-all duration-300 ease-in-out lg:hidden dark:bg-neutral-950/80',
           isMenuOpen
             ? 'translate-x-0 opacity-100'
@@ -187,7 +187,7 @@ export const NavBar = () => {
                   >
                     <Link
                       href={item.href}
-                      className={cn(
+                      className={clx(
                         'group -mx-3 relative flex items-center overflow-hidden rounded-lg px-3 py-2 font-medium text-base transition-all duration-200',
                         (item.matchPath && pathname === item.matchPath) || pathname === item.href
                           ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400'
@@ -198,7 +198,7 @@ export const NavBar = () => {
 
                       {/* Hover background effect */}
                       <span
-                        className={cn(
+                        className={clx(
                           'absolute inset-0 origin-left transform bg-blue-50 transition-transform duration-300 ease-out dark:bg-blue-900/20',
                           (item.matchPath && pathname === item.matchPath) || pathname === item.href
                             ? 'scale-x-100'

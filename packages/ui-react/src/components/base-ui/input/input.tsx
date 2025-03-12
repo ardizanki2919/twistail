@@ -2,7 +2,7 @@
 
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { type InputStyles, inputStyles } from './input.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, InputStyles {
@@ -20,11 +20,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const isSearch = type === 'search'
 
     return (
-      <div className={cn('relative w-full', className)} tremor-id="tremor-raw">
+      <div className={clx('relative w-full', className)} tremor-id="tremor-raw">
         <input
           ref={forwardedRef}
           type={isPassword ? typeState : type}
-          className={cn(
+          className={clx(
             inputStyles({ hasError, enableStepper }),
             {
               'pl-8': isSearch,
@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
         {isSearch && (
           <div
-            className={cn(
+            className={clx(
               // base
               'pointer-events-none absolute bottom-0 left-2 flex h-full items-center justify-center',
               // text color
@@ -48,11 +48,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         {isPassword && (
           <div
-            className={cn('absolute right-0 bottom-0 flex h-full items-center justify-center px-3')}
+            className={clx(
+              'absolute right-0 bottom-0 flex h-full items-center justify-center px-3'
+            )}
           >
             <button
               aria-label="Change password visibility"
-              className={cn(
+              className={clx(
                 // base
                 'h-fit w-fit rounded-sm outline-none transition-all',
                 // text

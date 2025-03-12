@@ -4,7 +4,7 @@ import * as Lucide from 'lucide-react'
 import { Dialog as DrawerPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { Button } from 'twistail-react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>) => {
   return <DrawerPrimitives.Root tremor-id="tremor-raw" {...props} />
@@ -15,7 +15,7 @@ const DrawerTrigger = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Trigger>
 >(({ className, ...props }, ref) => {
-  return <DrawerPrimitives.Trigger ref={ref} className={cn(className)} {...props} />
+  return <DrawerPrimitives.Trigger ref={ref} className={clx(className)} {...props} />
 })
 DrawerTrigger.displayName = 'Drawer.Trigger'
 
@@ -23,7 +23,7 @@ const DrawerClose = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitives.Close>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Close>
 >(({ className, ...props }, ref) => {
-  return <DrawerPrimitives.Close ref={ref} className={cn(className)} {...props} />
+  return <DrawerPrimitives.Close ref={ref} className={clx(className)} {...props} />
 })
 DrawerClose.displayName = 'Drawer.Close'
 
@@ -38,7 +38,7 @@ const DrawerOverlay = React.forwardRef<
   return (
     <DrawerPrimitives.Overlay
       ref={forwardedRef}
-      className={cn(
+      className={clx(
         // base
         'fixed inset-0 z-50 overflow-y-auto',
         // background color
@@ -67,7 +67,7 @@ const DrawerContent = React.forwardRef<
       <DrawerOverlay>
         <DrawerPrimitives.Content
           ref={forwardedRef}
-          className={cn(
+          className={clx(
             // base
             'fixed inset-y-2 z-50 mx-auto flex w-[95vw] flex-1 flex-col overflow-y-auto rounded-md border p-4 shadow-lg focus:outline-none max-sm:inset-x-2 sm:inset-y-2 sm:right-2 sm:max-w-lg sm:p-6',
             // border color
@@ -75,7 +75,7 @@ const DrawerContent = React.forwardRef<
             // background color
             'bg-white dark:bg-[#090E1A]',
             // transition
-            'data-[state=closed]:animate-drawer-slide-right-and-fade data-[state=open]:animate-drawer-slide-left-and-fade',
+            'data-[state=closed]:animate-drawer-slide-right-fade data-[state=open]:animate-drawer-slide-left-fade',
             // focus ring
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
@@ -97,7 +97,7 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
         className="flex items-start justify-between gap-x-4 border-gray-200 border-b pb-4 dark:border-gray-900"
         {...props}
       >
-        <div className={cn('mt-1 flex flex-col gap-y-1', className)}>{children}</div>
+        <div className={clx('mt-1 flex flex-col gap-y-1', className)}>{children}</div>
         <DrawerPrimitives.Close asChild>
           <Button
             variant="ghost"
@@ -119,7 +119,7 @@ const DrawerTitle = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <DrawerPrimitives.Title
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'font-semibold text-base',
       // text color
@@ -134,7 +134,7 @@ DrawerTitle.displayName = 'DrawerTitle'
 
 const DrawerBody = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<'div'>>(
   ({ className, ...props }, ref) => {
-    return <div ref={ref} className={cn('flex-1 py-4', className)} {...props} />
+    return <div ref={ref} className={clx('flex-1 py-4', className)} {...props} />
   }
 )
 DrawerBody.displayName = 'Drawer.Body'
@@ -146,7 +146,7 @@ const DrawerDescription = React.forwardRef<
   return (
     <DrawerPrimitives.Description
       ref={forwardedRef}
-      className={cn('text-gray-500 dark:text-gray-500', className)}
+      className={clx('text-gray-500 dark:text-gray-500', className)}
       {...props}
     />
   )
@@ -157,7 +157,7 @@ DrawerDescription.displayName = 'DrawerDescription'
 const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={cn(
+      className={clx(
         'flex flex-col-reverse border-gray-200 border-t pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900',
         className
       )}

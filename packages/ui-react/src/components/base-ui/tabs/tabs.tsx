@@ -2,7 +2,7 @@
 
 import { Tabs as TabsPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const Tabs = (
   props: Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitives.Root>, 'orientation'>
@@ -21,13 +21,13 @@ interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimit
 }
 
 const variantStyles: Record<TabsListVariant, string> = {
-  line: cn(
+  line: clx(
     // base
     'flex items-center justify-start border-b',
     // border color
     'border-gray-200 dark:border-gray-800'
   ),
-  solid: cn(
+  solid: clx(
     // base
     'inline-flex items-center justify-center rounded-md p-1',
     // background color
@@ -39,7 +39,7 @@ const TabsList = React.forwardRef<React.ComponentRef<typeof TabsPrimitives.List>
   ({ className, variant = 'line', children, ...props }, forwardedRef) => (
     <TabsPrimitives.List
       ref={forwardedRef}
-      className={cn(variantStyles[variant], className)}
+      className={clx(variantStyles[variant], className)}
       {...props}
     >
       <TabsListVariantContext.Provider value={variant}>{children}</TabsListVariantContext.Provider>
@@ -52,7 +52,7 @@ TabsList.displayName = 'TabsList'
 function getVariantStyles(tabVariant: TabsListVariant) {
   switch (tabVariant) {
     case 'line':
-      return cn(
+      return clx(
         // base
         '-mb-px items-center justify-center whitespace-nowrap border-transparent border-b-2 px-3 pb-2 font-medium text-sm transition-all',
         // text color
@@ -69,7 +69,7 @@ function getVariantStyles(tabVariant: TabsListVariant) {
         'data-[disabled]:text-gray-300 data-[disabled]:dark:text-gray-700'
       )
     case 'solid':
-      return cn(
+      return clx(
         // base
         'inline-flex items-center justify-center whitespace-nowrap rounded px-3 py-1 font-medium text-sm ring-1 ring-inset transition-all',
         // text color
@@ -95,7 +95,7 @@ const TabsTrigger = React.forwardRef<
   return (
     <TabsPrimitives.Trigger
       ref={forwardedRef}
-      className={cn(
+      className={clx(
         getVariantStyles(variant),
         'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
         className
@@ -115,7 +115,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <TabsPrimitives.Content
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       'outline-none',
       'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
       className

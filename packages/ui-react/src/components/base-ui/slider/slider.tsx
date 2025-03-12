@@ -2,7 +2,7 @@
 
 import { Slider as SliderPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   ariaLabelThumb?: string
@@ -14,7 +14,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
     return (
       <SliderPrimitive.Root
         ref={forwardedRef}
-        className={cn(
+        className={clx(
           // base
           'relative flex cursor-pointer touch-none select-none',
           // orientation
@@ -28,7 +28,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
         {...props}
       >
         <SliderPrimitive.Track
-          className={cn(
+          className={clx(
             // base
             'relative grow overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800',
             // orientation
@@ -37,7 +37,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
           )}
         >
           <SliderPrimitive.Range
-            className={cn(
+            className={clx(
               // base
               'absolute rounded-full bg-blue-500 dark:bg-blue-500',
               // orientation
@@ -52,7 +52,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
           <SliderPrimitive.Thumb
             // biome-ignore lint/suspicious/noArrayIndexKey: TODO: fix this later
             key={index}
-            className={cn(
+            className={clx(
               // base
               'block size-[17px] shrink-0 rounded-full border shadow transition-all',
               // boder color

@@ -16,7 +16,7 @@
 
 import * as React from 'react'
 import { Link as RouterLink, type LinkProps as RouterLinkProps } from 'react-router'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 interface LinkProps extends Omit<RouterLinkProps, 'to'> {
   href: string
@@ -35,7 +35,7 @@ const Link = React.forwardRef(function Component(
   return (
     <RouterLink
       to={props.href}
-      className={cn(className)}
+      className={clx(className)}
       rel={newTab ? NEW_TAB_REL : undefined}
       target={newTab ? NEW_TAB_TARGET : DEFAULT_TARGET}
       ref={ref}

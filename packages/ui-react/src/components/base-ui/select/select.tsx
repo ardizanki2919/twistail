@@ -3,7 +3,7 @@
 import * as Lucide from 'lucide-react'
 import { Select as SelectPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const Select = SelectPrimitives.Root
 Select.displayName = 'Select'
@@ -15,7 +15,7 @@ const SelectValue = SelectPrimitives.Value
 SelectValue.displayName = 'SelectValue'
 
 const selectTriggerStyles = [
-  cn(
+  clx(
     // base
     'group/trigger flex w-full select-none items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-sm outline-none transition sm:text-sm',
     // border color
@@ -46,7 +46,7 @@ const SelectTrigger = React.forwardRef<
   return (
     <SelectPrimitives.Trigger
       ref={forwardedRef}
-      className={cn(
+      className={clx(
         selectTriggerStyles,
         hasError
           ? 'border-red-500 ring-2 ring-red-200 dark:border-red-700 dark:ring-red-700/30' /* hasErrorInput */
@@ -59,7 +59,7 @@ const SelectTrigger = React.forwardRef<
       <span className="truncate">{children}</span>
       <SelectPrimitives.Icon asChild>
         <Lucide.ChevronsUpDown
-          className={cn(
+          className={clx(
             // base
             'size-4 shrink-0',
             // text color
@@ -81,7 +81,7 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.ScrollUpButton
     ref={forwardedRef}
-    className={cn('flex cursor-default items-center justify-center py-1', className)}
+    className={clx('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
     <Lucide.ChevronUp className="size-3 shrink-0" aria-hidden="true" />
@@ -95,7 +95,7 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.ScrollDownButton
     ref={forwardedRef}
-    className={cn('flex cursor-default items-center justify-center py-1', className)}
+    className={clx('flex cursor-default items-center justify-center py-1', className)}
     {...props}
   >
     <Lucide.ChevronDown className="size-3 shrink-0" aria-hidden="true" />
@@ -114,7 +114,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitives.Portal>
       <SelectPrimitives.Content
         ref={forwardedRef}
-        className={cn(
+        className={clx(
           // base
           'relative z-50 overflow-hidden rounded-md border shadow-black/[2.5%] shadow-xl',
           // widths
@@ -129,9 +129,9 @@ const SelectContent = React.forwardRef<
           'border-gray-200 dark:border-gray-800',
           // transition
           'will-change-[transform,opacity]',
-          // "data-[state=open]:animate-slide-down-and-fade",
+          // "data-[state=open]:animate-slide-down-fade",
           'data-[state=closed]:animate-hide',
-          'data-[side=bottom]:animate-slide-down-and-fade data-[side=left]:animate-slide-left-and-fade data-[side=right]:animate-slide-right-and-fade data-[side=top]:animate-slide-up-and-fade',
+          'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
           className
         )}
         sideOffset={sideOffset}
@@ -141,7 +141,7 @@ const SelectContent = React.forwardRef<
       >
         <SelectScrollUpButton />
         <SelectPrimitives.Viewport
-          className={cn(
+          className={clx(
             'p-1',
             position === 'popper' &&
               'h-[var(--radix-select-trigger-height)] w-full min-w-[calc(var(--radix-select-trigger-width))]'
@@ -163,7 +163,7 @@ const SelectGroupLabel = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.Label
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'px-3 py-2 font-medium text-xs tracking-wide',
       // text color
@@ -183,7 +183,7 @@ const SelectItem = React.forwardRef<
   return (
     <SelectPrimitives.Item
       ref={forwardedRef}
-      className={cn(
+      className={clx(
         // base
         'grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded px-3 py-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
         // text color
@@ -217,7 +217,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <SelectPrimitives.Separator
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       '-mx-1 my-1 h-px',
       // background color
