@@ -39,7 +39,7 @@
                     "fix": "safe",
                     "options": {
                         "attributes": ["classList"],
-                        "functions": ["cn", "cx", "clsx", "cva", "tw"]
+                        "functions": ["cn", "clx", "clsx", "cva", "tw"]
                     }
                 }
             },

@@ -8,7 +8,7 @@ import defaultMdxComponents from 'fumadocs-ui/mdx'
 
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 import { blog } from '#/lib/source'
 import { formatDate } from '#/lib/utils'
@@ -109,7 +109,7 @@ export default async function Page(props: {
 
             {/* Article content */}
             <div
-              className={cn(
+              className={clx(
                 'prose prose-teal dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-teal-600 dark:prose-a:text-teal-400',
                 'prose-h1:first-of-type:hidden' // Hide the first h1 element since the title is already displayed in the header
               )}
@@ -119,7 +119,7 @@ export default async function Page(props: {
                   ...defaultMdxComponents,
                   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
                     <Link
-                      className={cn('font-medium underline underline-offset-4', className)}
+                      className={clx('font-medium underline underline-offset-4', className)}
                       {...props}
                     />
                   ),

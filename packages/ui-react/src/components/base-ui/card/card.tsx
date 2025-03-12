@@ -2,7 +2,7 @@
 
 import { Slot } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
   asChild?: boolean
@@ -14,7 +14,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     return (
       <Comp
         ref={forwardedRef}
-        className={cn(
+        className={clx(
           // base
           'relative w-full rounded-lg border p-6 text-left shadow-sm',
           // background color

@@ -2,7 +2,7 @@
 
 import { Slot } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { type BadgeStyles, badgeStyles } from './badge.css'
 
 interface BadgeProps extends React.ComponentPropsWithoutRef<'span'>, BadgeStyles {
@@ -15,7 +15,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     return (
       <Comp
         ref={forwardedRef}
-        className={cn(badgeStyles({ variant }), className)}
+        className={clx(badgeStyles({ variant }), className)}
         tremor-id="tremor-raw"
         {...props}
       />

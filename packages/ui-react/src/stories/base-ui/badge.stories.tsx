@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { Badge, badgeStyles } from '#/components'
 
 const meta: Meta<typeof Badge> = {
@@ -38,7 +38,7 @@ export const AnchorWithBadgeVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
       {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-      <a href="#" className={cn(badgeStyles({ variant: 'success' }), 'cursor-pointer')}>
+      <a href="#" className={clx(badgeStyles({ variant: 'success' }), 'cursor-pointer')}>
         Anchor element
       </a>
     </div>

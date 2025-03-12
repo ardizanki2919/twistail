@@ -3,7 +3,7 @@
 import * as Lucide from 'lucide-react'
 import { DropdownMenu as DropdownMenuPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const DropdownMenu = DropdownMenuPrimitives.Root
 DropdownMenu.displayName = 'DropdownMenu'
@@ -26,7 +26,7 @@ const DropdownMenuSubMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.SubTrigger
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'relative flex cursor-default select-none items-center rounded py-1.5 pr-1 pl-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
@@ -56,7 +56,7 @@ const DropdownMenuSubMenuContent = React.forwardRef<
     <DropdownMenuPrimitives.SubContent
       ref={forwardedRef}
       collisionPadding={collisionPadding}
-      className={cn(
+      className={clx(
         // base
         'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-xl',
         // widths
@@ -93,7 +93,7 @@ const DropdownMenuContent = React.forwardRef<
     <DropdownMenuPrimitives.Portal>
       <DropdownMenuPrimitives.Content
         ref={forwardedRef}
-        className={cn(
+        className={clx(
           // base
           'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-xl',
           // widths
@@ -132,7 +132,7 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, shortcut, hint, children, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.Item
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'group/DropdownMenuItem relative flex cursor-pointer select-none items-center rounded py-1.5 pr-1 pl-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
@@ -150,10 +150,10 @@ const DropdownMenuItem = React.forwardRef<
   >
     {children}
     {hint && (
-      <span className={cn('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>{hint}</span>
+      <span className={clx('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>{hint}</span>
     )}
     {shortcut && (
-      <span className={cn('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>
+      <span className={clx('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>
         {shortcut}
       </span>
     )}
@@ -170,7 +170,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
 >(({ className, hint, shortcut, children, checked, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.CheckboxItem
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pr-1 pl-8 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
@@ -196,13 +196,13 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     </span>
     {children}
     {hint && (
-      <span className={cn('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
+      <span className={clx('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
         {hint}
       </span>
     )}
     {shortcut && (
       <span
-        className={cn(
+        className={clx(
           'ml-auto font-normal text-gray-400 text-sm tracking-widest dark:border-gray-800 dark:text-gray-600'
         )}
       >
@@ -222,7 +222,7 @@ const DropdownMenuRadioItem = React.forwardRef<
 >(({ className, hint, shortcut, children, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.RadioItem
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'group/DropdownMenuRadioItem relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pr-1 pl-8 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
@@ -249,13 +249,13 @@ const DropdownMenuRadioItem = React.forwardRef<
     </span>
     {children}
     {hint && (
-      <span className={cn('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
+      <span className={clx('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
         {hint}
       </span>
     )}
     {shortcut && (
       <span
-        className={cn(
+        className={clx(
           'ml-auto font-normal text-gray-400 text-sm tracking-widest dark:border-gray-800 dark:text-gray-600'
         )}
       >
@@ -272,7 +272,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.Label
     ref={forwardedRef}
-    className={cn(
+    className={clx(
       // base
       'px-2 py-2 font-medium text-xs tracking-wide',
       // text color
@@ -290,7 +290,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <DropdownMenuPrimitives.Separator
     ref={forwardedRef}
-    className={cn('-mx-1 my-1 h-px border-gray-200 border-t dark:border-gray-800', className)}
+    className={clx('-mx-1 my-1 h-px border-gray-200 border-t dark:border-gray-800', className)}
     {...props}
   />
 ))
@@ -302,7 +302,7 @@ const DropdownMenuIconWrapper = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <div
-      className={cn(
+      className={clx(
         // text color
         'text-gray-600 dark:text-gray-400',
         // disabled

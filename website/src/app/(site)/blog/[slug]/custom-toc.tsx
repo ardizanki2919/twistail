@@ -2,7 +2,7 @@
 
 import type { TOCItemType } from 'fumadocs-core/server'
 import { useEffect, useRef } from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 
 export default function CustomTOC({ items }: { items: TOCItemType[] }) {
@@ -134,11 +134,11 @@ function CustomTOCClient({ items }: { items: TOCItemType[] }) {
               })()
 
               return (
-                <li key={id || item.url} className={cn(indentClass, '-mx-2.5')}>
+                <li key={id || item.url} className={clx(indentClass, '-mx-2.5')}>
                   <Link
                     href={item.url}
                     onClick={(e) => scrollToElement(e, id)}
-                    className={cn(
+                    className={clx(
                       'border-transparent text-gray-600 hover:text-teal-600 dark:text-gray-400 dark:hover:text-teal-400',
                       '-ml-[8px] block border-l-2 py-1 pl-4 text-sm transition-colors'
                     )}

@@ -2,7 +2,7 @@
 
 import { Checkbox as CheckboxPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const Checkbox = React.forwardRef<
   React.ComponentRef<typeof CheckboxPrimitives.Root>,
@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef<
       ref={forwardedRef}
       {...props}
       checked={checked}
-      className={cn(
+      className={clx(
         // base
         'relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded shadow-sm outline-none ring-1 ring-inset transition duration-100 enabled:cursor-pointer',
         // text color

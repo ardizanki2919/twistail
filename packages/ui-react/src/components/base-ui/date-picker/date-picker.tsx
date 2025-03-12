@@ -12,7 +12,7 @@ import type { Matcher } from 'react-day-picker'
 import { VariantProps, tv } from 'tailwind-variants'
 import { Button } from 'twistail-react'
 import { Calendar as CalendarPrimitive } from 'twistail-react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 //#region TimeInput
 // ============================================================================
@@ -46,7 +46,7 @@ const TimeSegment = ({ segment, state }: TimeSegmentProps) => {
     <div
       {...segmentProps}
       ref={ref}
-      className={cn(
+      className={clx(
         // base
         'relative block w-full appearance-none rounded-md border px-2.5 py-1.5 text-left uppercase tabular-nums shadow-sm outline-none transition sm:text-sm',
         // border color
@@ -70,7 +70,7 @@ const TimeSegment = ({ segment, state }: TimeSegmentProps) => {
     >
       <span
         aria-hidden="true"
-        className={cn('pointer-events-none block w-full text-left text-gray-700 sm:text-sm', {
+        className={clx('pointer-events-none block w-full text-left text-gray-700 sm:text-sm', {
           hidden: !segment.isPlaceholder,
           'h-0': !segment.isPlaceholder,
         })}
@@ -171,7 +171,7 @@ const Trigger = React.forwardRef<HTMLButtonElement, TriggerProps>(
       <PopoverPrimitives.Trigger asChild>
         <button
           ref={forwardedRef}
-          className={cn(triggerStyles({ hasError }), className)}
+          className={clx(triggerStyles({ hasError }), className)}
           {...props}
         >
           <Lucide.CalendarFold className="size-5 shrink-0 text-gray-400 dark:text-gray-600" />
@@ -206,7 +206,7 @@ const CalendarPopover = React.forwardRef<
         align={align}
         avoidCollisions
         onOpenAutoFocus={(e) => e.preventDefault()}
-        className={cn(
+        className={clx(
           // base
           'relative z-50 w-fit rounded-md border text-sm shadow-black/[2.5%] shadow-xl',
           // widths
@@ -345,7 +345,7 @@ const PresetContainer = <TPreset extends Preset, TValue>({
             <button
               type="button"
               title={preset.label}
-              className={cn(
+              className={clx(
                 // base
                 'relative w-full overflow-hidden text-ellipsis whitespace-nowrap rounded border px-2.5 py-1.5 text-left text-base shadow-sm outline-none transition-all sm:border-none sm:py-2 sm:text-sm sm:shadow-none',
                 // text color
@@ -591,7 +591,7 @@ const SingleDatePicker = ({
           <div className="flex flex-col sm:flex-row sm:items-start">
             {presets && presets.length > 0 && (
               <div
-                className={cn(
+                className={clx(
                   'relative flex h-14 w-full items-center sm:h-full sm:w-40',
                   'border-gray-200 border-b sm:border-r sm:border-b-0 dark:border-gray-800',
                   'overflow-auto'
@@ -874,7 +874,7 @@ const RangeDatePicker = ({
           <div className="flex flex-col overflow-x-auto sm:flex-row sm:items-start">
             {presets && presets.length > 0 && (
               <div
-                className={cn(
+                className={clx(
                   'relative flex h-16 w-full items-center sm:h-full sm:w-40',
                   'border-gray-200 border-b sm:border-r sm:border-b-0 dark:border-gray-800',
                   'overflow-auto'

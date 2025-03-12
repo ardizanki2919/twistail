@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { Divider, ScrollArea } from '#/components'
 
 const meta: Meta<typeof ScrollArea> = {
@@ -24,7 +24,7 @@ export const Default: Story = {
         {tags.map((tag, index) => (
           <div key={tag}>
             <div className="text-sm">{tag}</div>
-            <Divider className={cn(index < tags.length - 1 ? 'block' : 'hidden', 'my-2')} />
+            <Divider className={clx(index < tags.length - 1 ? 'block' : 'hidden', 'my-2')} />
           </div>
         ))}
       </div>

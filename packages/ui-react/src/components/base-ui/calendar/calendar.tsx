@@ -4,7 +4,7 @@ import { DayFlag, DayPicker, SelectionState, UI } from 'react-day-picker'
 import type { ChevronProps, DropdownProps } from 'react-day-picker'
 // import type { DayProps, MonthCaptionProps } from 'react-day-picker'
 import { tv } from 'tailwind-variants'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 import { ScrollArea } from '../scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../select'
 
@@ -34,7 +34,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn('p-3', className)}
+      className={clx('p-3', className)}
       classNames={{
         [UI.Months]: 'relative flex space-y-0',
         [UI.Month]: 'space-y-4 ml-0 p-0',
@@ -48,15 +48,15 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         }),
         [UI.MonthGrid]: 'w-full border-collapse space-y-1',
         [UI.Weekdays]: 'flex',
-        [UI.Weekday]: cn(
+        [UI.Weekday]: clx(
           'w-9 pb-2 text-center font-medium text-gray-400 text-sm sm:text-xs dark:text-gray-600'
         ),
         [UI.Week]: 'flex w-full mt-1.5',
-        [UI.Day]: cn(
+        [UI.Day]: clx(
           'relative size-9 rounded-md p-0 text-center text-gray-900 text-sm dark:text-gray-50',
           'focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md'
         ),
-        [UI.DayButton]: cn(
+        [UI.DayButton]: clx(
           'size-9 rounded text-sm focus:z-10',
           'text-gray-900 dark:text-gray-50',
           'hover:bg-gray-200 hover:dark:bg-gray-700',
@@ -65,12 +65,12 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         [UI.Dropdowns]: 'flex items-center gap-1',
         [SelectionState.range_start]: 'rounded-r-none !rounded-l',
         [SelectionState.range_end]: 'rounded-l-none !rounded-r',
-        [SelectionState.selected]: cn(
+        [SelectionState.selected]: clx(
           'rounded',
           'aria-selected:bg-blue-500 aria-selected:text-white',
           'dark:aria-selected:bg-blue-500 dark:aria-selected:text-white'
         ),
-        [SelectionState.range_middle]: cn(
+        [SelectionState.range_middle]: clx(
           '!rounded-none',
           'aria-selected:!bg-gray-100 aria-selected:!text-gray-900',
           'dark:aria-selected:!bg-gray-900 dark:aria-selected:!text-gray-50'

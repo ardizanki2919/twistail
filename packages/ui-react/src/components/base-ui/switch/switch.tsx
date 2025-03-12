@@ -3,7 +3,7 @@
 import { Switch as SwitchPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
-import { cn } from 'twistail-utils'
+import { clx } from 'twistail-utils'
 
 const switchVariants = tv({
   slots: {
@@ -68,11 +68,11 @@ const Switch = React.forwardRef<React.ComponentRef<typeof SwitchPrimitives.Root>
     return (
       <SwitchPrimitives.Root
         ref={forwardedRef}
-        className={cn(root(), className)}
+        className={clx(root(), className)}
         tremor-id="tremor-raw"
         {...props}
       >
-        <SwitchPrimitives.Thumb className={cn(thumb())} />
+        <SwitchPrimitives.Thumb className={clx(thumb())} />
       </SwitchPrimitives.Root>
     )
   }
