@@ -1,136 +1,85 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '#/components'
-import { Toaster } from '#/components'
-import { Toast, ToastProvider, ToastViewport } from '#/components'
-import { toast } from '#/components'
+import { Button, Toaster, toast } from '#/components'
 
-const meta: Meta<typeof Toast> = {
-  component: Toast,
+const meta: Meta = {
+  component: Toaster,
   title: 'Base Components/Toast',
-  tags: ['status:wip'],
+  tags: ['status:new'],
   parameters: {
     layout: 'centered',
   },
-  render: (args) => {
-    return (
-      <ToastProvider>
-        <ToastViewport>
-          <Toast {...args} />
-        </ToastViewport>
-      </ToastProvider>
-    )
-  },
+  decorators: [
+    (Story) => (
+      <>
+        <Story />
+        <Toaster richColors />
+      </>
+    ),
+  ],
 }
 
 export default meta
+type Story = StoryObj<typeof meta>
 
-type Story = StoryObj<typeof Toast>
-
-export const Minimal: Story = {
-  args: {
-    title: 'Information',
-    description:
-      'Your account has been successfully created. Check your email for further instructions.',
-    open: true,
-    disableDismiss: true,
-  },
-}
-
-export const Information: Story = {
-  args: {
-    title: 'Information',
-    description:
-      'Your account has been successfully created. Check your email for further instructions.',
-    open: true,
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    title: 'Warning',
-    description:
-      'Your trial period will expire in 3 days. Upgrade now to continue using our services.',
-    variant: 'warning',
-    open: true,
-  },
-}
-
-export const ErrorState: Story = {
-  args: {
-    title: 'Error',
-    description:
-      'Failed to connect to the server. Please check your internet connection and try again.',
-    variant: 'error',
-    open: true,
-  },
-}
-
-export const ErrorWithAction: Story = {
-  args: {
-    title: 'Error',
-    description:
-      'Failed to connect to the server. Please check your internet connection and try again.',
-    variant: 'error',
-    open: true,
-    action: {
-      altText: 'Delete',
-      onClick: () => {},
-      label: 'Delete',
-    },
-  },
-}
-
-export const Success: Story = {
-  args: {
-    title: 'Success',
-    description: 'Your payment has been processed. Thank you for your purchase!',
-    variant: 'success',
-    open: true,
-  },
-}
-
-export const Loading: Story = {
-  args: {
-    title: 'Loading',
-    description: 'Fetching the latest data from the server. Please wait...',
-    variant: 'loading',
-    open: true,
-  },
-}
-
-export const ButtonTrigger: Story = {
+export const Default: Story = {
   render: () => (
-    <>
-      <Toaster />
-      <Button
-        onClick={() =>
-          toast({
-            title: 'Info',
-            description: 'The quick brown fox jumps over the lazy dog.',
-          })
-        }
-      >
-        Show
-      </Button>
-    </>
+    <Button
+      onClick={() => {
+        toast('Event has been created', {
+          description: 'Sunday, December 03, 2023 at 9:00 AM',
+          position: 'top-right',
+        })
+      }}
+    >
+      Show Toast
+    </Button>
   ),
-  args: {
-    title: 'Loading',
-    description: 'Fetching the latest data from the server. Please wait...',
-    variant: 'loading',
-  },
 }
 
-export const WithAction: Story = {
-  args: {
-    title: 'Deployment Successful',
-    description: 'Your project has been successfully deployed to production.',
-    variant: 'success',
-    open: true,
-    action: {
-      altText: 'Revert the deployment',
-      onClick: () => {},
-      label: 'Revert',
-    },
-  },
+export const ToastShowcase: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        onClick={() => {
+          toast.success('Successfully saved!', {
+            description: 'Your changes have been saved.',
+            action: {
+              label: 'Undo',
+              onClick: () => console.log('Undo'),
+            },
+          })
+        }}
+      >
+        Success Toast
+      </Button>
+
+      <Button
+        variant="destructive"
+        onClick={() => {
+          toast.error('Error occurred', {
+            description: 'There was a problem with your request.',
+            action: {
+              label: 'Retry',
+              onClick: () => console.debug('Retry'),
+            },
+          })
+        }}
+      >
+        Error Toast
+      </Button>
+
+      <Button
+        variant="secondary"
+        onClick={() => {
+          toast.promise(new Promise((resolve) => setTimeout(resolve, 2000)), {
+            loading: 'Loading...',
+            success: 'Successfully loaded',
+            error: 'Error loading data',
+          })
+        }}
+      >
+        Promise Toast
+      </Button>
+    </div>
+  ),
 }

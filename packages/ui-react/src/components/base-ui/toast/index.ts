@@ -1,4 +1,2 @@
 export * from './toast'
-export * from './toaster'
 export * from './toast.css'
-export * from './use-toast'
