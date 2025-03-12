@@ -54,7 +54,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
             key={index}
             className={clx(
               // base
-              'block size-[17px] shrink-0 rounded-full border shadow transition-all',
+              'block size-[17px] shrink-0 rounded-full border shadow-xs transition-all',
               // boder color
               'border-gray-400 dark:border-gray-500',
               // background color

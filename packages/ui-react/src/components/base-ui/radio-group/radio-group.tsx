@@ -54,7 +54,7 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitives.Item
       ref={forwardedRef}
       className={clx(
-        'group relative flex size-4 appearance-none items-center justify-center outline-none',
+        'group relative flex size-4 appearance-none items-center justify-center outline-hidden',
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ const RadioGroupItem = React.forwardRef<
       <div
         className={clx(
           // base
-          'flex size-4 shrink-0 items-center justify-center rounded-full border shadow-sm',
+          'flex size-4 shrink-0 items-center justify-center rounded-full border shadow-xs',
           // border color
           'border-gray-300 dark:border-gray-800',
           // background color

@@ -56,7 +56,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               aria-label="Change password visibility"
               className={clx(
                 // base
-                'h-fit w-fit rounded-sm outline-none transition-all',
+                'h-fit w-fit rounded-xs outline-hidden transition-all',
                 // text
                 'text-gray-400 dark:text-gray-600',
                 // hover

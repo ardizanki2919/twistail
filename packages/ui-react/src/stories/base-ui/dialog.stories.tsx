@@ -28,7 +28,7 @@ export const Default: Story = {
           <DialogContent className="sm:max-w-lg">
             <DialogHeader>
               <DialogTitle>Account Created Successfully</DialogTitle>
-              <DialogDescription className="mt-1 text-sm/7">
+              <DialogDescription className="mt-1 text-sm/6">
                 Your account has been created successfully. You can now login to your account. For
                 more information, please contact us.
               </DialogDescription>
@@ -62,7 +62,7 @@ export const Controlled: Story = {
           <DialogContent className="sm:max-w-lg">
             <DialogHeader>
               <DialogTitle>Account Created Successfully</DialogTitle>
-              <DialogDescription className="mt-1 text-sm/7">
+              <DialogDescription className="mt-1 text-sm/6">
                 Your account has been created successfully. You can now login to your account. For
                 more information, please contact us.
               </DialogDescription>

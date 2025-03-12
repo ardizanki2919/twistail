@@ -23,7 +23,7 @@ export const errorStyles = tv({
     description: 'mt-6 text-base text-gray-600 dark:text-gray-400 leading-7',
     pre: [
       'w-full overflow-x-auto rounded-lg bg-gray-50 dark:bg-gray-800/50 p-6 my-6',
-      'ring-1 ring-gray-200 dark:ring-gray-800 backdrop-blur supports-[backdrop-filter]:bg-gray-50/50',
+      'ring-1 ring-gray-200 dark:ring-gray-800 backdrop-blur-sm supports-[backdrop-filter]:bg-gray-50/50',
       'dark:supports-[backdrop-filter]:bg-gray-800/50',
     ],
     code: [
@@ -33,18 +33,18 @@ export const errorStyles = tv({
     ],
     actions: 'mt-8 flex items-center justify-center gap-x-4',
     primaryButton: [
-      'min-w-[140px] cursor-pointer rounded-md bg-blue-600 px-4 py-2.5 font-semibold text-sm text-white',
-      'transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-200/20 hover:shadow-lg dark:hover:shadow-blue-900/20',
-      'focus:outline-none focus:ring-2 focus:ring-blue-600/50 focus:ring-offset-2',
+      'min-w-[140px] rounded-md bg-blue-600 px-4 py-2.5 font-semibold text-sm text-white',
+      'transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-200/20 hover:shadow-md dark:hover:shadow-blue-900/20',
+      'focus:outline-hidden focus:ring-2 focus:ring-blue-600/50 focus:ring-offset-2',
       'focus:ring-offset-white dark:focus:ring-offset-gray-900',
       'border border-gray-200 dark:border-gray-800',
     ],
     secondaryButton: [
       'min-w-[140px] rounded-md border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 px-4 py-2.5',
-      'cursor-pointer font-semibold text-gray-900 dark:text-white text-sm',
+      'font-semibold text-gray-900 dark:text-white text-sm',
       'transition-all duration-200 hover:border-gray-300 dark:hover:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800',
-      'hover:text-gray-900 dark:hover:text-white hover:shadow-gray-200/10 dark:hover:shadow-gray-800/10 hover:shadow-lg',
-      'focus:outline-none focus:ring-2 focus:ring-gray-400/50 focus:ring-offset-2',
+      'hover:text-gray-900 dark:hover:text-white hover:shadow-gray-200/10 dark:hover:shadow-gray-800/10 hover:shadow-md',
+      'focus:outline-hidden focus:ring-2 focus:ring-gray-400/50 focus:ring-offset-2',
       'focus:ring-offset-white dark:focus:ring-offset-gray-900',
     ],
   },

@@ -14,7 +14,7 @@ type CalendarProps = React.ComponentProps<typeof DayPicker> & {
 
 const buttonNavigation = tv({
   base: [
-    'flex size-8 shrink-0 select-none items-center justify-center rounded border p-1 outline-none transition sm:size-[30px]',
+    'flex size-8 shrink-0 select-none items-center justify-center rounded-sm border p-1 outline-hidden transition sm:size-[30px]',
     // text color
     'text-gray-600 hover:text-gray-800 dark:text-gray-400 hover:dark:text-gray-200',
     // border color
@@ -57,7 +57,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
           'focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md'
         ),
         [UI.DayButton]: clx(
-          'size-9 rounded text-sm focus:z-10',
+          'size-9 rounded-sm text-sm focus:z-10',
           'text-gray-900 dark:text-gray-50',
           'hover:bg-gray-200 hover:dark:bg-gray-700',
           'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */

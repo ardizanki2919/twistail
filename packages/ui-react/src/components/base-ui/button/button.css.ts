@@ -4,54 +4,45 @@ const buttonStyles = tv({
   slots: {
     base: [
       // base
-      'relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-3 py-2 text-center font-medium text-sm shadow-sm transition-all duration-100 ease-in-out',
+      'relative inline-flex items-center justify-center whitespace-nowrap rounded-md',
+      'border px-4 py-2 text-center font-medium text-sm shadow-xs transition-all duration-100 ease-in-out',
       // disabled
       'disabled:pointer-events-none disabled:shadow-none',
       // focus
-      'outline-0 outline-offset-2 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500' /* focusRing */,
+      'outline-0 outline-offset-2 focus-visible:outline-2' /* focusRing */,
     ],
     span: 'pointer-events-none flex shrink-0 items-center justify-center gap-1.5',
-    icon: 'size-4 shrink-0 animate-spin',
+    icon: 'size-4 shrink-0 animate-spin -ml-0.5',
   },
   variants: {
     variant: {
       primary: [
         // border
         'border-transparent',
-        // text color
-        'text-white dark:text-white',
-        // background color
-        'bg-blue-500 dark:bg-blue-500',
-        // hover color
-        'hover:bg-blue-600 dark:hover:bg-blue-600',
+        // colors
+        'bg-primary text-primary-foreground hover:bg-primary/90',
         // disabled
         'disabled:bg-blue-300 disabled:text-white',
         'disabled:dark:bg-blue-800 disabled:dark:text-blue-400',
+        // focus
+        'outline-primary',
       ].join(' '),
       secondary: [
-        // border
-        'border-gray-300 dark:border-gray-800',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // background color
-        'bg-white dark:bg-gray-950',
-        //hover color
-        'hover:bg-gray-50 dark:hover:bg-gray-900/60',
+        // colors
+        'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
+        // focus
+        'outline-secondary',
       ].join(' '),
-      light: [
+      outline: [
         // base
         'shadow-none',
         // border
         'border-transparent',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // background color
-        'bg-gray-200 dark:bg-gray-900',
-        // hover color
-        'hover:bg-gray-300/70 dark:hover:bg-gray-800/80',
+        // colors
+        'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         // disabled
         'disabled:bg-gray-100 disabled:text-gray-400',
         'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
@@ -61,40 +52,37 @@ const buttonStyles = tv({
         'shadow-none',
         // border
         'border-transparent',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // hover color
-        'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800/80',
+        // colors
+        'hover:bg-accent hover:text-accent-foreground',
         // disabled
         'disabled:text-gray-400',
         'disabled:dark:text-gray-600',
+        // focus
+        'outline-accent',
       ].join(' '),
       destructive: [
-        // text color
-        'text-white',
         // border
         'border-transparent',
-        // background color
-        'bg-red-600 dark:bg-red-700',
-        // hover color
-        'hover:bg-red-700 dark:hover:bg-red-600',
+        // colors
+        'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         // disabled
         'disabled:bg-red-300 disabled:text-white',
         'disabled:dark:bg-red-950 disabled:dark:text-red-400',
+        // focus
+        'outline-destructive',
       ].join(' '),
-      // TODO: add outline variant
-      outline: [
-        // text color
-        'text-white',
+      link: [
+        // base
+        'shadow-none',
         // border
         'border-transparent',
-        // background color
-        'bg-indigo-600 dark:bg-indigo-700',
-        // hover color
-        'hover:bg-indigo-700 dark:hover:bg-indigo-600',
+        // colors
+        'text-primary underline-offset-4 hover:underline',
         // disabled
-        'disabled:bg-indigo-300 disabled:text-white',
-        'disabled:dark:bg-indigo-950 disabled:dark:text-indigo-400',
+        'disabled:text-gray-400',
+        'disabled:dark:text-gray-600',
+        // focus
+        'outline-accent',
       ].join(' '),
     },
     isLoading: {

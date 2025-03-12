@@ -11,7 +11,7 @@ export function BlogCard({ post }: BlogCardProps) {
   return (
     <Link
       href={post.url}
-      className="group overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:bg-neutral-800"
+      className="group overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:bg-neutral-800"
     >
       <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         {post.data.coverImage && (

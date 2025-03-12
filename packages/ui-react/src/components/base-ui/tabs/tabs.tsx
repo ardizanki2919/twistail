@@ -71,7 +71,7 @@ function getVariantStyles(tabVariant: TabsListVariant) {
     case 'solid':
       return clx(
         // base
-        'inline-flex items-center justify-center whitespace-nowrap rounded px-3 py-1 font-medium text-sm ring-1 ring-inset transition-all',
+        'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1 font-medium text-sm ring-1 ring-inset transition-all',
         // text color
         'text-gray-500 dark:text-gray-400',
         // hover
@@ -116,7 +116,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitives.Content
     ref={forwardedRef}
     className={clx(
-      'outline-none',
+      'outline-hidden',
       'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
       className
     )}

@@ -15,7 +15,7 @@ const Checkbox = React.forwardRef<
       checked={checked}
       className={clx(
         // base
-        'relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded shadow-sm outline-none ring-1 ring-inset transition duration-100 enabled:cursor-pointer',
+        'relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded-sm shadow-xs outline-hidden ring-1 ring-inset transition duration-100 enabled:cursor-pointer',
         // text color
         'text-white dark:text-gray-50',
         // background color

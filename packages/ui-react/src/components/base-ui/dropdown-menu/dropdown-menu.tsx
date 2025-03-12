@@ -28,7 +28,7 @@ const DropdownMenuSubMenuTrigger = React.forwardRef<
     ref={forwardedRef}
     className={clx(
       // base
-      'relative flex cursor-default select-none items-center rounded py-1.5 pr-1 pl-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pr-1 pl-2 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
       'text-gray-900 dark:text-gray-50',
       // disabled
@@ -58,7 +58,7 @@ const DropdownMenuSubMenuContent = React.forwardRef<
       collisionPadding={collisionPadding}
       className={clx(
         // base
-        'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-xl',
+        'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-lg',
         // widths
         'min-w-32',
         // heights
@@ -95,7 +95,7 @@ const DropdownMenuContent = React.forwardRef<
         ref={forwardedRef}
         className={clx(
           // base
-          'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-xl',
+          'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-lg',
           // widths
           'min-w-48',
           // heights
@@ -134,7 +134,7 @@ const DropdownMenuItem = React.forwardRef<
     ref={forwardedRef}
     className={clx(
       // base
-      'group/DropdownMenuItem relative flex cursor-pointer select-none items-center rounded py-1.5 pr-1 pl-2 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
+      'group/DropdownMenuItem relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pr-1 pl-2 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
       'text-gray-900 dark:text-gray-50',
       // disabled
@@ -172,7 +172,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     ref={forwardedRef}
     className={clx(
       // base
-      'relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pr-1 pl-8 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
+      'relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm py-1.5 pr-1 pl-8 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
       'text-gray-900 dark:text-gray-50',
       // disabled
@@ -224,7 +224,7 @@ const DropdownMenuRadioItem = React.forwardRef<
     ref={forwardedRef}
     className={clx(
       // base
-      'group/DropdownMenuRadioItem relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pr-1 pl-8 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm',
+      'group/DropdownMenuRadioItem relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm py-1.5 pr-1 pl-8 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
       // text color
       'text-gray-900 dark:text-gray-50',
       // disabled

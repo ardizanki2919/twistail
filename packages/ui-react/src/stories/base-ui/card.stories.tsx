@@ -188,8 +188,8 @@ export const WithInputs: Story = {
 
         <Divider />
         <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
-          <Button variant="light">Clear</Button>
-          <Button variant="secondary">Clear</Button>
+          <Button variant="outline">Clear</Button>
+          <Button variant="destructive">Remove</Button>
           <Tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor.">
             <Button className="w-full" type="submit">
               Apply

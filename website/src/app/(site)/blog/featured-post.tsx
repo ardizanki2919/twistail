@@ -12,7 +12,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
     <div className="mb-14">
       <Link
         href={post.url}
-        className="group relative block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
+        className="group relative block overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-lg"
       >
         <div className="relative aspect-video max-h-[480px] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
           {post.data.coverImage && (
