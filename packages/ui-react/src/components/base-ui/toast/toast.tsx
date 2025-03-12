@@ -2,18 +2,19 @@
 import * as Lucide from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Toaster as Sonner, toast } from 'sonner'
+import { cn } from 'twistail-utils'
 import { toastStyles } from './toast.css'
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
-const Toaster = ({ ...props }: ToasterProps) => {
+const Toaster = ({ className, ...props }: ToasterProps) => {
   const { theme = 'system' } = useTheme()
   const styles = toastStyles()
 
   return (
     <Sonner
       theme={theme as ToasterProps['theme']}
-      className="toaster group"
+      className={cn('toaster group', className)}
       toastOptions={{
         classNames: {
           toast: styles.toast(),
