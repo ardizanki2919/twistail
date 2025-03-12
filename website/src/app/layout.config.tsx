@@ -24,10 +24,9 @@ const TitleComponent = () => (
 )
 
 export const baseOptions: BaseLayoutProps = {
-  nav: { url: '', title: <TitleComponent />, transparentMode: 'always' },
+  nav: { url: '/', title: <TitleComponent />, transparentMode: 'always' },
   githubUrl: 'https://github.com/riipandi/twistail',
   links: [
-    { text: 'Home', url: '/' },
     { text: 'Blog', url: '/blog' },
     {
       text: 'Storybook',
