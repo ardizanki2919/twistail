@@ -30,12 +30,12 @@ export default {
       borderColor: '#22c55e',
     },
   },
-  'status:under-review': {
-    label: 'Under Review',
+  'status:preview': {
+    label: 'Preview',
     style: {
-      color: '#ffffff',
-      backgroundColor: '#3b82f6',
-      borderColor: '#60a5fa',
+      color: '#3b82f6',
+      backgroundColor: 'transparent',
+      borderColor: '#3b82f6',
     },
   },
   'status:updated': {
