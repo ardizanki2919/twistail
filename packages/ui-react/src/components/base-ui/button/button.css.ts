@@ -5,7 +5,7 @@ const buttonStyles = tv({
   slots: {
     base: [
       'relative inline-flex items-center justify-center whitespace-nowrap',
-      'text-center font-medium text-sm shadow-xs transition-all duration-100 ease-in-out',
+      'text-center font-medium text-sm shadow-xs transition-all duration-150 ease-in-out',
       'disabled:pointer-events-none disabled:shadow-none',
       'outline-0 outline-offset-2 focus-visible:outline-2',
     ],

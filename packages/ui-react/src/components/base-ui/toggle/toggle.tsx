@@ -7,7 +7,7 @@ import { clx } from 'twistail-utils'
 
 const toggleStyles = [
   // base
-  'group inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md border px-2 text-sm font-medium shadow-xs transition-all duration-100 ease-in-out',
+  'group inline-flex h-9 min-w-9 items-center justify-center gap-2 rounded-md border px-2 text-sm font-medium shadow-xs transition-all duration-150 ease-in-out',
   'border-gray-300 dark:border-gray-800',
   // text color
   'text-gray-700 dark:text-gray-300',

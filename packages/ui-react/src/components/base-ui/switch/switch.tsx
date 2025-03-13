@@ -5,7 +5,7 @@ import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 import { clx } from 'twistail-utils'
 
-const switchVariants = tv({
+const switchStyles = tv({
   slots: {
     root: [
       // base
@@ -60,11 +60,11 @@ const switchVariants = tv({
 
 interface SwitchProps
   extends Omit<React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>, 'asChild'>,
-    VariantProps<typeof switchVariants> {}
+    VariantProps<typeof switchStyles> {}
 
 const Switch = React.forwardRef<React.ComponentRef<typeof SwitchPrimitives.Root>, SwitchProps>(
   ({ className, size, ...props }: SwitchProps, forwardedRef) => {
-    const { root, thumb } = switchVariants({ size })
+    const { root, thumb } = switchStyles({ size })
     return (
       <SwitchPrimitives.Root ref={forwardedRef} className={clx(root(), className)} {...props}>
         <SwitchPrimitives.Thumb className={clx(thumb())} />

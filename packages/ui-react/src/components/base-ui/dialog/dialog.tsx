@@ -2,70 +2,41 @@
 
 import { Dialog as DialogPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { dialogStyles } from './dialog.css'
 
 const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitives.Root>) => {
   return <DialogPrimitives.Root {...props} />
 }
-Dialog.displayName = 'Dialog'
 
 const DialogTrigger = DialogPrimitives.Trigger
-
-DialogTrigger.displayName = 'DialogTrigger'
-
 const DialogClose = DialogPrimitives.Close
-
-DialogClose.displayName = 'DialogClose'
-
 const DialogPortal = DialogPrimitives.Portal
-
-DialogPortal.displayName = 'DialogPortal'
 
 const DialogOverlay = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitives.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitives.Overlay>
 >(({ className, ...props }, forwardedRef) => {
+  const styles = dialogStyles()
   return (
     <DialogPrimitives.Overlay
       ref={forwardedRef}
-      className={clx(
-        // base
-        'fixed inset-0 z-50 overflow-y-auto',
-        // background color
-        'bg-black/70',
-        // transition
-        'data-[state=open]:animate-dialog-overlay-show',
-        className
-      )}
+      className={styles.overlay({ className })}
       {...props}
     />
   )
 })
 
-DialogOverlay.displayName = 'DialogOverlay'
-
 const DialogContent = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitives.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitives.Content>
 >(({ className, ...props }, forwardedRef) => {
+  const styles = dialogStyles()
   return (
     <DialogPortal>
       <DialogOverlay>
         <DialogPrimitives.Content
           ref={forwardedRef}
-          className={clx(
-            // base
-            '-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-[95vw] max-w-lg overflow-y-auto rounded-md border p-6 shadow-md',
-            // border color
-            'border-gray-200 dark:border-gray-900',
-            // background color
-            'bg-white dark:bg-gray-950',
-            // transition
-            'data-[state=open]:animate-dialog-content-show',
-            // focus ring
-            'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-            className
-          )}
+          className={styles.content({ className })}
           {...props}
         />
       </DialogOverlay>
@@ -73,57 +44,49 @@ const DialogContent = React.forwardRef<
   )
 })
 
-DialogContent.displayName = 'DialogContent'
-
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={clx('flex flex-col gap-y-1', className)} {...props} />
+  const styles = dialogStyles()
+  return <div className={styles.header({ className })} {...props} />
 }
-
-DialogHeader.displayName = 'DialogHeader'
 
 const DialogTitle = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitives.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitives.Title>
->(({ className, ...props }, forwardedRef) => (
-  <DialogPrimitives.Title
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'font-semibold text-lg',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      className
-    )}
-    {...props}
-  />
-))
-
-DialogTitle.displayName = 'DialogTitle'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = dialogStyles()
+  return (
+    <DialogPrimitives.Title ref={forwardedRef} className={styles.title({ className })} {...props} />
+  )
+})
 
 const DialogDescription = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitives.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitives.Description>
 >(({ className, ...props }, forwardedRef) => {
+  const styles = dialogStyles()
   return (
     <DialogPrimitives.Description
       ref={forwardedRef}
-      className={clx('text-gray-500 dark:text-gray-400', className)}
+      className={styles.description({ className })}
       {...props}
     />
   )
 })
 
-DialogDescription.displayName = 'DialogDescription'
-
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  return (
-    <div
-      className={clx('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
-      {...props}
-    />
-  )
+  const styles = dialogStyles()
+  return <div className={styles.footer({ className })} {...props} />
 }
 
+Dialog.displayName = 'Dialog'
+DialogTrigger.displayName = 'DialogTrigger'
+DialogClose.displayName = 'DialogClose'
+DialogPortal.displayName = 'DialogPortal'
+DialogOverlay.displayName = 'DialogOverlay'
+DialogContent.displayName = 'DialogContent'
+DialogHeader.displayName = 'DialogHeader'
+DialogTitle.displayName = 'DialogTitle'
+DialogDescription.displayName = 'DialogDescription'
 DialogFooter.displayName = 'DialogFooter'
 
 export {

@@ -25,7 +25,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-semibold text-gray-500 text-sm transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
+                className="font-semibold text-gray-500 text-sm transition duration-150 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
               >
                 {link.label}
               </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-semibold text-gray-500 text-sm transition duration-100 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
+                className="font-semibold text-gray-500 text-sm transition duration-150 hover:text-blue-500 active:text-blue-600 dark:text-gray-300"
               >
                 {link.label}
               </Link>
