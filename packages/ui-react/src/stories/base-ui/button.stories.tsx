@@ -6,7 +6,7 @@ import { Button, type ButtonProps, buttonStyles } from '#/components'
 const meta: Meta<ButtonProps> = {
   component: Button,
   title: 'Base Components/Button',
-  tags: ['status:new'],
+  tags: ['status:done'],
   argTypes: {
     children: {
       control: 'text',

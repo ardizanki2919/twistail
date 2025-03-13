@@ -22,8 +22,8 @@ export default {
       borderColor: '#fb923c',
     },
   },
-  'status:new': {
-    label: 'New',
+  'status:done': {
+    label: 'Done',
     style: {
       color: '#f0fdf5',
       backgroundColor: '#16a34a',

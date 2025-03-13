@@ -5,7 +5,7 @@ import { Button, Divider } from '#/components'
 const meta: Meta<typeof Divider> = {
   component: Divider,
   title: 'Base Components/Divider',
-  tags: ['status:new'],
+  tags: ['status:done'],
 }
 
 export default meta
