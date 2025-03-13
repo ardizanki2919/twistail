@@ -15,7 +15,7 @@ const preview: Preview = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     previewTabs: { 'storybook/docs/panel': { index: -1 } },
     controls: {
-      expanded: true,
+      expanded: false,
       hideNoControlsWarning: true,
       sort: 'requiredFirst',
       matchers: {

@@ -66,7 +66,7 @@ export default {
     label: 'Experimental',
     style: {
       color: '#ffffff',
-      backgroundColor: '#9f1239', // Merah marun
+      backgroundColor: '#9f1239',
       borderColor: '#be123c',
     },
   },

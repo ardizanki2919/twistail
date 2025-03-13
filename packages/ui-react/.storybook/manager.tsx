@@ -12,7 +12,11 @@ addons.setConfig({
   showToolbar: true,
   panelPosition: 'bottom',
   initialActive: 'canvas',
+  toolbar: {
+    copy: { hidden: true },
+  },
   sidebar: {
+    showRoots: false,
     filters: {
       patterns: (item) => {
         return !item.tags?.includes('hidden')
