@@ -20,7 +20,7 @@ export const WithChildren: Story = {
     <div className="w-96">
       <Divider />
       <Divider>
-        <Lucide.CalendarDays className="size-5" />
+        <Lucide.CalendarDays className="size-5" strokeWidth={1.5} />
       </Divider>
       <Divider>Standard</Divider>
       <Divider>
