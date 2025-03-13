@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Callout, calloutVariants } from '#/components'
+import { Callout, calloutStyles } from '#/components'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,
@@ -14,7 +14,7 @@ const meta: Meta<typeof Callout> = {
   argTypes: {
     variant: {
       control: 'radio',
-      options: [...Object.keys(calloutVariants.variants.variant)],
+      options: [...Object.keys(calloutStyles.variants.variant)],
     },
   },
 }
