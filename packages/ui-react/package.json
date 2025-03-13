@@ -24,7 +24,7 @@
     },
     "scripts": {
         "build": "pnpm -s build:css && pnpm -s build:storybook",
-        "start": "pnpm dlx serve storybook-static -l 6006 -n -C",
+        "start": "pnpm dlx local-web-server -p 6006 -d storybook-static",
         "storybook": "VITE_CJS_IGNORE_WARNING=true storybook dev -p 6006 --no-open",
         "build:storybook": "VITE_CJS_IGNORE_WARNING=true storybook build -o storybook-static",
         "build:css": "tailwindcss -i ./src/styles/global.css -o ./dist/global.css --minify",

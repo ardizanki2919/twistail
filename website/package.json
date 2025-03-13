@@ -9,7 +9,7 @@
         "preview": "wrangler dev",
         "deploy": "wrangler deploy",
         "postinstall": "fumadocs-mdx",
-        "start": "pnpm dlx serve out -l 3000 -n -C",
+        "start": "pnpm dlx local-web-server -p 3000 -d out",
         "cleanup": "pnpm dlx del-cli .{next,source,wrangler} out",
         "update-deps": "npm-check-updates",
         "check": "biome check . --write",

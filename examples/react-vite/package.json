@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "start": "pnpm dlx serve dist -l 4100 -s -n -C",
+        "start": "pnpm dlx local-web-server -p 4100 -d dist --spa index.html",
         "cleanup": "pnpm dlx rimraf dist node_modules",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
