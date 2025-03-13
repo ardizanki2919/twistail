@@ -45,7 +45,6 @@ const Tooltip = React.forwardRef<
           defaultOpen={defaultOpen}
           onOpenChange={onOpenChange}
           delayDuration={delayDuration}
-          tremor-id="tremor-raw"
         >
           <TooltipPrimitives.Trigger onClick={onClick} asChild={asChild}>
             {children}

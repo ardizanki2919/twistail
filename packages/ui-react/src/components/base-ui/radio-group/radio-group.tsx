@@ -12,7 +12,6 @@ const RadioGroup = React.forwardRef<
     <RadioGroupPrimitives.Root
       ref={forwardedRef}
       className={clx('grid gap-2', className)}
-      tremor-id="tremor-raw"
       {...props}
     />
   )

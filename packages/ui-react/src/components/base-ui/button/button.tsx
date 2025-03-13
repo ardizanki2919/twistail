@@ -42,7 +42,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={forwardedRef}
         className={styles.base({ className })}
         disabled={disabled || isLoading}
-        tremor-id="tremor-raw"
         {...props}
       >
         {isLoading ? withLoading : children}

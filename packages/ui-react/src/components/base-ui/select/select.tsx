@@ -53,7 +53,6 @@ const SelectTrigger = React.forwardRef<
           : '',
         className
       )}
-      tremor-id="tremor-raw"
       {...props}
     >
       <span className="truncate">{children}</span>

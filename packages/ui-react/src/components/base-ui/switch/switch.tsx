@@ -66,12 +66,7 @@ const Switch = React.forwardRef<React.ComponentRef<typeof SwitchPrimitives.Root>
   ({ className, size, ...props }: SwitchProps, forwardedRef) => {
     const { root, thumb } = switchVariants({ size })
     return (
-      <SwitchPrimitives.Root
-        ref={forwardedRef}
-        className={clx(root(), className)}
-        tremor-id="tremor-raw"
-        {...props}
-      >
+      <SwitchPrimitives.Root ref={forwardedRef} className={clx(root(), className)} {...props}>
         <SwitchPrimitives.Thumb className={clx(thumb())} />
       </SwitchPrimitives.Root>
     )

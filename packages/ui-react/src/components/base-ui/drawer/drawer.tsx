@@ -7,7 +7,7 @@ import { Button } from 'twistail-react'
 import { clx } from 'twistail-utils'
 
 const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>) => {
-  return <DrawerPrimitives.Root tremor-id="tremor-raw" {...props} />
+  return <DrawerPrimitives.Root {...props} />
 }
 Drawer.displayName = 'Drawer'
 

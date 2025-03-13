@@ -20,7 +20,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const isSearch = type === 'search'
 
     return (
-      <div className={clx('relative w-full', className)} tremor-id="tremor-raw">
+      <div className={clx('relative w-full', className)}>
         <input
           ref={forwardedRef}
           type={isPassword ? typeState : type}

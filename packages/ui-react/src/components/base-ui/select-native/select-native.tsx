@@ -14,7 +14,6 @@ const SelectNative = React.forwardRef<HTMLSelectElement, SelectNativeProps>(
       <select
         ref={forwardedRef}
         className={clx(selectNativeStyles({ hasError }), className)}
-        tremor-id="tremor-raw"
         {...props}
       />
     )

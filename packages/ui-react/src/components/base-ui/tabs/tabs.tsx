@@ -7,7 +7,7 @@ import { clx } from 'twistail-utils'
 const Tabs = (
   props: Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitives.Root>, 'orientation'>
 ) => {
-  return <TabsPrimitives.Root tremor-id="tremor-raw" {...props} />
+  return <TabsPrimitives.Root {...props} />
 }
 
 Tabs.displayName = 'Tabs'

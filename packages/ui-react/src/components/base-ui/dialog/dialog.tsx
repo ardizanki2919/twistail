@@ -66,7 +66,6 @@ const DialogContent = React.forwardRef<
             'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
             className
           )}
-          tremor-id="tremor-raw"
           {...props}
         />
       </DialogOverlay>

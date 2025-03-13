@@ -24,7 +24,6 @@ const Label = React.forwardRef<React.ComponentRef<typeof LabelPrimitives.Root>, 
         className
       )}
       aria-disabled={disabled}
-      tremor-id="tremor-raw"
       {...props}
     />
   )

@@ -13,12 +13,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant, asChild = false, ...props }: BadgeProps, forwardedRef) => {
     const Comp = asChild ? Slot.Root : 'span'
     return (
-      <Comp
-        ref={forwardedRef}
-        className={clx(badgeStyles({ variant }), className)}
-        tremor-id="tremor-raw"
-        {...props}
-      />
+      <Comp ref={forwardedRef} className={clx(badgeStyles({ variant }), className)} {...props} />
     )
   }
 )

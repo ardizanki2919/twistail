@@ -55,12 +55,7 @@ interface CalloutProps
 const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
   ({ title, icon: Icon, className, variant, children, ...props }: CalloutProps, forwardedRef) => {
     return (
-      <div
-        ref={forwardedRef}
-        className={clx(calloutVariants({ variant }), className)}
-        tremor-id="tremor-raw"
-        {...props}
-      >
+      <div ref={forwardedRef} className={clx(calloutVariants({ variant }), className)} {...props}>
         <div className={clx('flex items-start')}>
           {Icon && typeof Icon === 'function' ? (
             <Icon className={clx('mr-1.5 size-5 shrink-0')} aria-hidden="true" />

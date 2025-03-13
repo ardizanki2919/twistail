@@ -27,7 +27,6 @@ const Table = React.forwardRef<HTMLTableElement, React.TableHTMLAttributes<HTMLT
   ({ className, ...props }, forwardedRef) => (
     <table
       ref={forwardedRef}
-      tremor-id="tremor-raw"
       className={clx(
         // base
         'w-full caption-bottom border-b',

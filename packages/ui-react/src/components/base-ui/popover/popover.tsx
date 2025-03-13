@@ -80,7 +80,6 @@ const PopoverContent = React.forwardRef<
 
             className
           )}
-          tremor-id="tremor-raw"
           // https://github.com/radix-ui/primitives/issues/1159
           onWheel={(event) => {
             event.stopPropagation()

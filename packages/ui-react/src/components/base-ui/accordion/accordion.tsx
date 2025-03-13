@@ -55,7 +55,6 @@ const AccordionItem = React.forwardRef<
   return (
     <AccordionPrimitives.Item
       className={clx(styles.accordionItem(), className)}
-      tremor-id="tremor-raw"
       ref={forwardedRef}
       {...props}
     />

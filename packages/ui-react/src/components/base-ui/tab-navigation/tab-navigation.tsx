@@ -26,12 +26,7 @@ const TabNavigation = React.forwardRef<
     'orientation' | 'defaultValue' | 'dir'
   >
 >(({ className, children, ...props }, forwardedRef) => (
-  <NavigationMenuPrimitives.Root
-    ref={forwardedRef}
-    {...props}
-    tremor-id="tremor-raw"
-    asChild={false}
-  >
+  <NavigationMenuPrimitives.Root ref={forwardedRef} {...props} asChild={false}>
     <NavigationMenuPrimitives.List
       className={clx(
         // base
