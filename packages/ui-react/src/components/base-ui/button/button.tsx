@@ -20,13 +20,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled,
       variant,
+      size,
       children,
       ...props
     }: ButtonProps,
     forwardedRef
   ) => {
     const Comp = asChild ? Slot.Root : 'button'
-    const styles = buttonStyles({ variant, isLoading })
+    const styles = buttonStyles({ variant, size, isLoading })
 
     const withLoading = (
       <span className={styles.span()}>

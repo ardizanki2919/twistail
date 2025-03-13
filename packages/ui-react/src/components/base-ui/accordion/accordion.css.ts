@@ -24,7 +24,7 @@ const accordionStyles = tv({
     ],
     accordionContent:
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open',
-    accordionContentDiv: 'overflow-hidden pb-4 text-sm text-accent-foreground',
+    accordionContentContainer: 'overflow-hidden pb-4 text-sm text-accent-foreground',
     accordionItem: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
   },
 })

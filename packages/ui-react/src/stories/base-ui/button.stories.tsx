@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
+import * as Lucide from 'lucide-react'
+import { clx } from 'twistail-utils'
 import { Button, type ButtonProps, buttonStyles } from '#/components'
 
 const meta: Meta<ButtonProps> = {
@@ -21,13 +23,13 @@ const meta: Meta<ButtonProps> = {
         type: { summary: 'ButtonStyles["variant"]' },
       },
     },
-    // size: {
-    //   control: { type: 'inline-radio' },
-    //   options: sizeOptions,
-    //   table: {
-    //     type: { summary: 'ButtonStyles["size"]' },
-    //   },
-    // },
+    size: {
+      control: { type: 'inline-radio' },
+      options: [...Object.keys(buttonStyles.variants.size)],
+      table: {
+        type: { summary: 'ButtonStyles["size"]' },
+      },
+    },
     isLoading: {
       control: 'boolean',
     },
@@ -38,7 +40,7 @@ const meta: Meta<ButtonProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const Default: Story = {
   parameters: {
     controls: { exclude: ['asChild'] },
   },
@@ -50,7 +52,6 @@ export const VariantShowcase: Story = {
     controls: { exclude: ['variant', 'children', 'asChild'] },
   },
   args: {
-    // size: 'default',
     isLoading: false,
     disabled: false,
   },
@@ -76,6 +77,65 @@ export const VariantShowcase: Story = {
   ),
 }
 
+export const SizeShowcase: Story = {
+  parameters: {
+    controls: { exclude: ['size', 'children', 'asChild'] },
+  },
+  args: {
+    variant: 'primary',
+  },
+  render: (args) => (
+    <div className="flex flex-wrap items-end gap-4">
+      <Button {...args} size="xs">
+        Extra Small
+      </Button>
+      <Button {...args} size="sm">
+        Small
+      </Button>
+      <Button {...args} size="md">
+        Medium
+      </Button>
+      <Button {...args} size="lg">
+        Large
+      </Button>
+      <Button {...args} size="xl">
+        Extra Large
+      </Button>
+      <Button {...args} size="icon">
+        <Lucide.Plus strokeWidth={2.5} />
+      </Button>
+    </div>
+  ),
+}
+
+export const StateShowcase: Story = {
+  parameters: {
+    controls: { exclude: ['children', 'asChild'] },
+  },
+  args: {
+    variant: 'primary',
+  },
+  render: (args) => (
+    <div className="flex flex-wrap items-center gap-4">
+      <Button {...args} isLoading>
+        Loading
+      </Button>
+      <Button {...args} disabled>
+        Disabled
+      </Button>
+      <Button {...args} variant="outline" disabled>
+        Disabled Outline
+      </Button>
+      <Button {...args} variant="ghost" disabled>
+        Disabled Ghost
+      </Button>
+      <Button {...args} variant="link" disabled>
+        Disabled Link
+      </Button>
+    </div>
+  ),
+}
+
 export const WithDisabled: Story = {
   args: {
     children: 'Disabled',
@@ -83,7 +143,7 @@ export const WithDisabled: Story = {
   },
 }
 
-export const IsLoading: Story = {
+export const IsLoadingIcon: Story = {
   args: {
     isLoading: true,
   },
@@ -122,37 +182,12 @@ export const AnchorWithVariant: Story = {
   ),
 }
 
-// export const SizeShowcase: Story = {
-//   parameters: {
-//     controls: { exclude: ['size', 'children', 'asChild'] },
-//   },
-//   args: {
-//     variant: 'default',
-//     isLoading: false,
-//     disabled: false,
-//   },
-//   render: (args) => (
-//     <div className="flex flex-wrap items-end gap-4">
-//       <Button {...args} size="sm">
-//         Small
-//       </Button>
-//       <Button {...args}>Default</Button>
-//       <Button {...args} size="lg">
-//         Large
-//       </Button>
-//       <Button {...args} size="icon">
-//         <Lucide.Plus />
-//       </Button>
-//     </div>
-//   ),
-// }
-
 // export const IconShowcase: Story = {
 //   parameters: {
 //     controls: { exclude: ['children', 'asChild', 'variant'] },
 //   },
 //   args: {
-//     size: 'default',
+//     size: 'md',
 //     isLoading: false,
 //     disabled: false,
 //   },
@@ -172,29 +207,6 @@ export const AnchorWithVariant: Story = {
 //       </Button>
 //       <Button {...args} size="icon" variant="ghost">
 //         <Lucide.Bell className="-ml-0.5" />
-//       </Button>
-//     </div>
-//   ),
-// }
-
-// export const StateShowcase: Story = {
-//   parameters: {
-//     controls: { exclude: ['children', 'asChild'] },
-//   },
-//   args: {
-//     variant: 'default',
-//     size: 'default',
-//   },
-//   render: (args) => (
-//     <div className="flex flex-wrap items-center gap-4">
-//       <Button {...args} isLoading>
-//         Loading
-//       </Button>
-//       <Button {...args} disabled>
-//         Disabled
-//       </Button>
-//       <Button {...args} variant="outline" disabled>
-//         Disabled Outline
 //       </Button>
 //     </div>
 //   ),
