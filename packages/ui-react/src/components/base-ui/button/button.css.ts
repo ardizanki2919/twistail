@@ -40,7 +40,7 @@ const buttonStyles = tv({
         'outline-destructive'
       ),
       link: clx(
-        'border-transparent bg-transparent text-primary underline-offset-4 shadow-none hover:underline',
+        'cursor-pointer border-transparent bg-transparent text-primary underline-offset-4 shadow-none hover:underline',
         'disabled:text-muted-foreground',
         'outline-primary'
       ),
@@ -55,7 +55,6 @@ const buttonStyles = tv({
     },
     isLoading: {
       true: 'pointer-events-none relative cursor-wait',
-      false: '',
     },
   },
   compoundVariants: [

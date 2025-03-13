@@ -1,11 +1,33 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const textareaStyles = tv({
-  base: [],
-  slots: {},
-  variants: {},
-  compoundVariants: [],
-  defaultVariants: {},
+  base: [
+    // base
+    'flex min-h-[4rem] w-full rounded-md border px-3 py-1.5 shadow-xs outline-hidden transition-colors sm:text-sm',
+    // text color
+    'text-gray-900 dark:text-gray-50',
+    // border color
+    'border-gray-300 dark:border-gray-800',
+    // background color
+    'bg-white dark:bg-gray-950',
+    // placeholder color
+    'placeholder-gray-400 dark:placeholder-gray-500',
+    // disabled
+    'disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-300',
+    'disabled:dark:border-gray-800 disabled:dark:bg-gray-900 disabled:dark:text-gray-500',
+    // focus
+    'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
+    // invalid (optional)
+    // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
+  ],
+  variants: {
+    hasError: {
+      true: 'border-red-500 ring-2 ring-red-200 dark:border-red-700 dark:ring-red-700/30' /* hasErrorInput */,
+    },
+  },
+  defaultVariants: {
+    hasError: false,
+  },
 })
 
 type TextareaStyles = VariantProps<typeof textareaStyles>

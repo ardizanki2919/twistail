@@ -17,11 +17,11 @@ const selectStyles = tv({
     // disabled
     'disabled:pointer-events-none',
     'disabled:bg-gray-100 disabled:text-gray-400',
-    'disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
+    'disabled:dark:border-gray-800 disabled:dark:bg-gray-900 disabled:dark:text-gray-500',
     // focus
     'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
     // invalid (optional)
-    // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
+    // 'aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500',
   ],
   variants: {
     hasError: {

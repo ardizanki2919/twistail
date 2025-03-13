@@ -1,12 +1,10 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const badgeStyles = tv({
-  base: [
-    'inline-flex items-center gap-x-1 whitespace-nowrap rounded-md px-2 py-1 font-medium text-xs ring-1 ring-inset',
-  ],
+  base: 'inline-flex items-center gap-x-1 whitespace-nowrap rounded-md px-2 py-1 font-medium text-xs ring-1 ring-inset',
   variants: {
     variant: {
-      default: [
+      primary: [
         'bg-blue-50 text-blue-900 ring-blue-500/30',
         'dark:bg-blue-400/10 dark:text-blue-400 dark:ring-blue-400/30',
       ],
@@ -28,9 +26,8 @@ const badgeStyles = tv({
       ],
     },
   },
-  compoundVariants: [],
   defaultVariants: {
-    variant: 'default',
+    variant: 'primary',
   },
 })
 

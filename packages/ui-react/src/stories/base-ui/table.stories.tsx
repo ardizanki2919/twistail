@@ -142,7 +142,7 @@ const data: Array<{
     status: 'overperforming',
     deltaType: 'moderateIncrease',
     hours: 116,
-    databaseStatus: 'default',
+    databaseStatus: 'primary',
   },
   {
     id: 13,
@@ -152,7 +152,7 @@ const data: Array<{
     status: 'underperforming',
     deltaType: 'moderateDecrease',
     hours: 119,
-    databaseStatus: 'default',
+    databaseStatus: 'primary',
   },
 ]
 
@@ -182,11 +182,11 @@ export const Default: Story = {
               <TableCell className="text-right">{item.hours}</TableCell>
               <TableCell className="text-right">
                 <Badge variant={item.databaseStatus} className="max-w-36">
-                  {item.databaseStatus === 'default' && (
+                  {item.databaseStatus === 'primary' && (
                     <Lucide.Loader className="size-4 shrink-0 animate-spin" />
                   )}
                   <span className="truncate">
-                    {item.databaseStatus === 'default' ? 'Calculation Pending' : null}
+                    {item.databaseStatus === 'primary' ? 'Calculation Pending' : null}
                     {item.databaseStatus === 'warning' ? 'Not validated' : null}
                     {item.databaseStatus === 'error' ? 'Failed' : null}
                     {item.databaseStatus === 'success' ? 'Completed' : null}

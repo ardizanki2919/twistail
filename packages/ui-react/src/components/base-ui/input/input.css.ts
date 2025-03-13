@@ -14,13 +14,13 @@ const inputStyles = tv({
     'bg-white dark:bg-gray-950',
     // disabled
     'disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-400',
-    'disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
+    'disabled:dark:border-gray-800 disabled:dark:bg-gray-900 disabled:dark:text-gray-500',
     // file
     [
       'file:-my-2 file:-ml-2.5 file:cursor-pointer file:rounded-l-[5px] file:rounded-r-none file:border-0 file:px-3 file:py-2 file:outline-hidden focus:outline-hidden disabled:pointer-events-none file:disabled:pointer-events-none',
-      'file:border-solid file:border-gray-300 file:bg-gray-50 file:text-gray-500 file:hover:bg-gray-100 file:dark:border-gray-800 file:dark:bg-gray-950 file:hover:dark:bg-gray-900/20 file:disabled:dark:border-gray-700',
+      'file:border-solid file:border-gray-300 file:bg-gray-50 file:text-gray-500 file:hover:bg-gray-100 file:dark:border-gray-800 file:dark:bg-gray-950 file:hover:dark:bg-gray-900/20 file:disabled:dark:border-gray-800',
       'file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem]',
-      'file:disabled:bg-gray-100 file:disabled:text-gray-500 file:disabled:dark:bg-gray-800',
+      'file:disabled:bg-gray-100 file:disabled:text-gray-500 file:disabled:dark:bg-gray-900',
     ],
     // focus
     'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,

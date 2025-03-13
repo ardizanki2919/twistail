@@ -5,7 +5,7 @@ import { Select } from '#/components'
 const meta: Meta<typeof Select> = {
   component: Select,
   title: 'Base Components/Select',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta

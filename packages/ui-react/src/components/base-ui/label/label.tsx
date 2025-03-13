@@ -2,7 +2,7 @@
 
 import { Label as LabelPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { labelStyles } from './label.css'
 
 interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitives.Root> {
   disabled?: boolean
@@ -12,17 +12,7 @@ const Label = React.forwardRef<React.ComponentRef<typeof LabelPrimitives.Root>, 
   ({ className, disabled, ...props }, forwardedRef) => (
     <LabelPrimitives.Root
       ref={forwardedRef}
-      className={clx(
-        // base
-        'text-sm leading-none',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // disabled
-        {
-          'text-gray-400 dark:text-gray-600': disabled,
-        },
-        className
-      )}
+      className={labelStyles({ disabled, className })}
       aria-disabled={disabled}
       {...props}
     />

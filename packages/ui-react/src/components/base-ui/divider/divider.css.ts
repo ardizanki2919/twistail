@@ -6,9 +6,6 @@ const dividerStyles = tv({
     line: 'h-[1px] w-full bg-border',
     content: 'whitespace-nowrap text-inherit',
   },
-  variants: {},
-  compoundVariants: [],
-  defaultVariants: {},
 })
 
 type DividerStyles = VariantProps<typeof dividerStyles>
