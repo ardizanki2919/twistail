@@ -47,17 +47,9 @@ const preview: Preview = {
     options: {
       // https://storybook.js.org/docs/writing-stories/naming-components-and-hierarchy
       storySort: {
-        method: 'alphabetical',
         includeName: true,
-        order: [
-          'Introduction',
-          'Getting Started',
-          'Changelog',
-          'Base Components',
-          'Layout Components',
-          'Visualizations',
-          '*',
-        ],
+        method: 'alphabetical',
+        order: ['Introduction', 'Base Components', 'Layout Components', 'Visualizations', '*'],
       },
     },
     backgrounds: { disable: true },

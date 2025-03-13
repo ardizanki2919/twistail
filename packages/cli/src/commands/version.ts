@@ -1,6 +1,7 @@
 import { defineCommand } from 'citty'
-import consola from 'consola'
-import pkg from '../../package.json' assert { type: 'json' }
+import { consola } from 'consola'
+import { consola as _console_ } from 'consola/basic'
+import pkg from '../../package.json' with { type: 'json' }
 
 export default defineCommand({
   meta: {
@@ -23,10 +24,10 @@ export default defineCommand({
   async run({ args }) {
     try {
       if (args.short) {
-        consola.log(pkg.version)
+        _console_.log(pkg.version)
         return
       }
-      consola.log(`twistail v${pkg.version}`)
+      _console_.log(`twistail v${pkg.version}`)
     } catch (error) {
       consola.error('Failed to run command:', error)
       process.exit(1)

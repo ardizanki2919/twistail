@@ -5,8 +5,8 @@ import type { ChevronProps, DropdownProps } from 'react-day-picker'
 // import type { DayProps, MonthCaptionProps } from 'react-day-picker'
 import { tv } from 'tailwind-variants'
 import { clx } from 'twistail-utils'
+import { Listbox, ListboxContent, ListboxItem, ListboxTrigger, ListboxValue } from '../listbox'
 import { ScrollArea } from '../scroll-area'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../select'
 
 type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   enableYearNavigation?: boolean
@@ -115,20 +115,20 @@ const Dropdown = ({ value, onChange, ...props }: DropdownProps) => {
   }
 
   return (
-    <Select value={value?.toString()} onValueChange={handleChange}>
-      <SelectTrigger className="pr-1.5 focus:ring-0">
-        <SelectValue>{selected?.label}</SelectValue>
-      </SelectTrigger>
-      <SelectContent position="popper">
+    <Listbox value={value?.toString()} onValueChange={handleChange}>
+      <ListboxTrigger className="pr-1.5 focus:ring-0">
+        <ListboxValue>{selected?.label}</ListboxValue>
+      </ListboxTrigger>
+      <ListboxContent position="popper">
         <ScrollArea className="h-80">
           {props.options?.map((option, id: number) => (
-            <SelectItem key={`${option.value}-${id}`} value={option.value?.toString() ?? ''}>
+            <ListboxItem key={`${option.value}-${id}`} value={option.value?.toString() ?? ''}>
               {option.label}
-            </SelectItem>
+            </ListboxItem>
           ))}
         </ScrollArea>
-      </SelectContent>
-    </Select>
+      </ListboxContent>
+    </Listbox>
   )
 }
 
