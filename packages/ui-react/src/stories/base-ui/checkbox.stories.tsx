@@ -5,7 +5,7 @@ import { Button, Checkbox, Label } from '#/components'
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   title: 'Base Components/Checkbox',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
