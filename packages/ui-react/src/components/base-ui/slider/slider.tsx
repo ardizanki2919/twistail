@@ -2,7 +2,7 @@
 
 import { Slider as SliderPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { sliderStyles } from './slider.css'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
   ariaLabelThumb?: string
@@ -11,58 +11,16 @@ interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimit
 const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(
   ({ className, ariaLabelThumb, ...props }, forwardedRef) => {
     const value = props.value || props.defaultValue
+    const styles = sliderStyles()
     return (
-      <SliderPrimitive.Root
-        ref={forwardedRef}
-        className={clx(
-          // base
-          'relative flex cursor-pointer touch-none select-none',
-          // orientation
-          "data-[orientation='horizontal']:w-full data-[orientation='horizontal']:items-center",
-          "data-[orientation='vertical']:h-full data-[orientation='vertical']:w-fit data-[orientation='vertical']:justify-center",
-          // disabled
-          'data-[disabled]:pointer-events-none',
-          className
-        )}
-        {...props}
-      >
-        <SliderPrimitive.Track
-          className={clx(
-            // base
-            'relative grow overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800',
-            // orientation
-            "data-[orientation='horizontal']:h-1.5 data-[orientation='horizontal']:w-full",
-            "data-[orientation='vertical']:h-full data-[orientation='vertical']:w-1.5"
-          )}
-        >
-          <SliderPrimitive.Range
-            className={clx(
-              // base
-              'absolute rounded-full bg-blue-500 dark:bg-blue-500',
-              // orientation
-              "data-[orientation='horizontal']:h-full",
-              "data-[orientation='vertical']:w-full",
-              // disabled
-              'data-[disabled]:bg-gray-300 dark:data-[disabled]:bg-gray-700'
-            )}
-          />
+      <SliderPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
+        <SliderPrimitive.Track className={styles.track()}>
+          <SliderPrimitive.Range className={styles.range()} />
         </SliderPrimitive.Track>
-        {value?.map((_, index) => (
+        {value?.map((val) => (
           <SliderPrimitive.Thumb
-            // biome-ignore lint/suspicious/noArrayIndexKey: TODO: fix this later
-            key={index}
-            className={clx(
-              // base
-              'block size-[17px] shrink-0 rounded-full border shadow-xs transition-all',
-              // boder color
-              'border-gray-400 dark:border-gray-500',
-              // background color
-              'bg-white',
-              // disabled
-              'data-[disabled]:pointer-events-none data-[disabled]:bg-gray-200 dark:data-[disabled]:border-gray-800 dark:data-[disabled]:bg-gray-600',
-              'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-              'outline-offset-0'
-            )}
+            key={val.toString()}
+            className={styles.thumb()}
             aria-label={ariaLabelThumb}
           />
         ))}

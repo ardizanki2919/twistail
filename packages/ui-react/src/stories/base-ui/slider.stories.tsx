@@ -8,48 +8,11 @@ import { Slider } from '#/components'
 const meta: Meta<typeof Slider> = {
   component: Slider,
   title: 'Base Components/Slider',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
 type Story = StoryObj<typeof Slider>
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ControlledSlider = (args: any) => {
-  const [value, setValue] = React.useState([55, 75])
-
-  return (
-    <Card className="w-96">
-      <form
-        onSubmit={(event) => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-          event.preventDefault()
-          alert(`Submitted: ${value[0]}, ${value[1]}`)
-        }}
-        onReset={() => setValue([55, 75])}
-      >
-        <Slider id="a" value={value} onValueChange={setValue} {...args} />
-        <Divider />
-        <div className="flex gap-4">
-          <Button type="submit" className="mt-2 w-fit">
-            Submit
-          </Button>
-
-          <Button type="reset" variant="secondary" className="mt-2 w-fit">
-            Reset Input
-          </Button>
-        </div>
-      </form>
-      <Divider />
-      <p className="mt-2 text-gray-500 text-sm">
-        Slider value:
-        <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
-          {value[0]}, {value[1]}
-        </span>
-      </p>
-    </Card>
-  )
-}
 
 export const Default: Story = {
   render: () => <Slider defaultValue={[55]} />,
@@ -80,5 +43,36 @@ export const StepSize: Story = {
 }
 
 export const ControlledForm: Story = {
-  render: ControlledSlider,
+  render: (args) => {
+    const [value, setValue] = React.useState([55, 75])
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      alert(`Submitted: ${value[0]}, ${value[1]}`)
+    }
+
+    return (
+      <Card className="w-96">
+        <form onSubmit={handleSubmit} onReset={() => setValue([55, 75])}>
+          <Slider id="a" value={value} onValueChange={setValue} {...args} />
+          <Divider />
+          <div className="flex gap-4">
+            <Button type="submit" className="w-full">
+              Submit
+            </Button>
+            <Button type="reset" variant="secondary" className="w-full">
+              Reset Input
+            </Button>
+          </div>
+        </form>
+        <Divider />
+        <p className="mt-2 text-gray-500 text-sm">
+          Slider value:
+          <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
+            {value[0]}, {value[1]}
+          </span>
+        </p>
+      </Card>
+    )
+  },
 }
