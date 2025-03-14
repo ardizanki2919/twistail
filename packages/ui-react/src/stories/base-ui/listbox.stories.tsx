@@ -147,7 +147,7 @@ export const Default: Story = {
   render: () => {
     return (
       <Listbox>
-        <ListboxTrigger className="w-96">
+        <ListboxTrigger className="w-64">
           <ListboxValue placeholder="Listbox" />
         </ListboxTrigger>
         <ListboxContent>
@@ -409,9 +409,9 @@ export const Controlled: Story = {
 
     return (
       <>
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <Listbox value={value} onValueChange={setValue}>
-            <ListboxTrigger className="mx-auto">
+            <ListboxTrigger className="mx-auto min-w-44">
               <ListboxValue placeholder="Listbox" aria-label={value} />
             </ListboxTrigger>
             <ListboxContent>

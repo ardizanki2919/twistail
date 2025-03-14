@@ -4,15 +4,11 @@ import * as Lucide from 'lucide-react'
 import { Select as ListboxPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { clx } from 'twistail-utils'
+import { type ListboxStyles, listboxStyles } from './listbox.css'
 
 const Listbox = ListboxPrimitives.Root
-Listbox.displayName = 'Listbox'
-
 const ListboxGroup = ListboxPrimitives.Group
-ListboxGroup.displayName = 'ListboxGroup'
-
 const ListboxValue = ListboxPrimitives.Value
-ListboxValue.displayName = 'ListboxValue'
 
 const selectTriggerStyles = [
   clx(
@@ -72,8 +68,6 @@ const ListboxTrigger = React.forwardRef<
   )
 })
 
-ListboxTrigger.displayName = 'ListboxTrigger'
-
 const ListboxScrollUpButton = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.ScrollUpButton>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.ScrollUpButton>
@@ -86,7 +80,6 @@ const ListboxScrollUpButton = React.forwardRef<
     <Lucide.ChevronUp className="size-3 shrink-0" aria-hidden="true" />
   </ListboxPrimitives.ScrollUpButton>
 ))
-ListboxScrollUpButton.displayName = ListboxPrimitives.ScrollUpButton.displayName
 
 const ListboxScrollDownButton = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.ScrollDownButton>,
@@ -100,7 +93,6 @@ const ListboxScrollDownButton = React.forwardRef<
     <Lucide.ChevronDown className="size-3 shrink-0" aria-hidden="true" />
   </ListboxPrimitives.ScrollDownButton>
 ))
-ListboxScrollDownButton.displayName = ListboxPrimitives.ScrollDownButton.displayName
 
 const ListboxContent = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Content>,
@@ -154,8 +146,6 @@ const ListboxContent = React.forwardRef<
   )
 )
 
-ListboxContent.displayName = 'ListboxContent'
-
 const ListboxGroupLabel = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Label>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Label>
@@ -172,8 +162,6 @@ const ListboxGroupLabel = React.forwardRef<
     {...props}
   />
 ))
-
-ListboxGroupLabel.displayName = 'ListboxGroupLabel'
 
 const ListboxItem = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Item>,
@@ -210,8 +198,6 @@ const ListboxItem = React.forwardRef<
   )
 })
 
-ListboxItem.displayName = 'ListboxItem'
-
 const ListboxSeparator = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Separator>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Separator>
@@ -229,6 +215,15 @@ const ListboxSeparator = React.forwardRef<
   />
 ))
 
+Listbox.displayName = 'Listbox'
+ListboxGroup.displayName = 'ListboxGroup'
+ListboxValue.displayName = 'ListboxValue'
+ListboxTrigger.displayName = 'ListboxTrigger'
+ListboxScrollUpButton.displayName = ListboxPrimitives.ScrollUpButton.displayName
+ListboxScrollDownButton.displayName = ListboxPrimitives.ScrollDownButton.displayName
+ListboxContent.displayName = 'ListboxContent'
+ListboxGroupLabel.displayName = 'ListboxGroupLabel'
+ListboxItem.displayName = 'ListboxItem'
 ListboxSeparator.displayName = 'ListboxSeparator'
 
 export {

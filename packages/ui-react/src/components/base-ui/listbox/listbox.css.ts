@@ -1,8 +1,17 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const listboxStyles = tv({
-  base: [],
-  slots: {},
+  slots: {
+    group: [],
+    value: [],
+    trigger: [],
+    scrollupbutton: [],
+    scrolldownbutton: [],
+    content: [],
+    grouplabel: [],
+    item: [],
+    separator: [],
+  },
   variants: {},
   compoundVariants: [],
   defaultVariants: {},
