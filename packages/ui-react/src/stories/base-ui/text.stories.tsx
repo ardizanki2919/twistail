@@ -17,21 +17,21 @@ const meta: Meta<typeof Text> = {
       control: { type: 'radio' },
       options: [...Object.keys(textStyles.variants.size)],
       table: {
-        type: { summary: 'TextVariants["size"]' },
+        type: { summary: 'TextStyles["size"]' },
       },
     },
     weight: {
       control: { type: 'radio' },
       options: [...Object.keys(textStyles.variants.weight)],
       table: {
-        type: { summary: 'TextVariants["weight"]' },
+        type: { summary: 'TextStyles["weight"]' },
       },
     },
     align: {
       control: { type: 'radio' },
       options: [...Object.keys(textStyles.variants.align)],
       table: {
-        type: { summary: 'TextVariants["align"]' },
+        type: { summary: 'TextStyles["align"]' },
       },
     },
   },
