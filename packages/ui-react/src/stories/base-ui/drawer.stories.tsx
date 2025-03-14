@@ -8,7 +8,7 @@ import { DrawerContent, DrawerDescription } from '#/components'
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
   title: 'Base Components/Drawer',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'centered',
   },
@@ -47,6 +47,44 @@ export const Default: Story = {
           </DrawerContent>
         </Drawer>
       </>
+    )
+  },
+}
+
+const DRAWER_SIDES = ['top', 'right', 'bottom', 'left'] as const
+
+export const Positions: Story = {
+  render: () => {
+    return (
+      <div className="grid grid-cols-2 gap-2">
+        {DRAWER_SIDES.map((side) => (
+          <Drawer key={side}>
+            <DrawerTrigger asChild>
+              <Button variant="secondary">{side}</Button>
+            </DrawerTrigger>
+            <DrawerContent className="sm:max-w-lg" side={side}>
+              <DrawerHeader>
+                <DrawerTitle>Account Created Successfully</DrawerTitle>
+                <DrawerDescription className="mt-1 text-sm">
+                  Your account has been created successfully. You can now login to your account. For
+                  more information, please contact us.
+                </DrawerDescription>
+              </DrawerHeader>
+              <DrawerBody>This is they body of the drawer, content goes here.</DrawerBody>
+              <DrawerFooter className="mt-6">
+                <DrawerClose asChild>
+                  <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="secondary">
+                    Go back
+                  </Button>
+                </DrawerClose>
+                <DrawerClose asChild>
+                  <Button className="w-full sm:w-fit">Ok, got it!</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        ))}
+      </div>
     )
   },
 }

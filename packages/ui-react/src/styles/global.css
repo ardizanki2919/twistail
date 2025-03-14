@@ -90,11 +90,9 @@
         }
     }
 
-    /* ------------------- Animation for dialog & drawer -------------------  */
+    /* ------------------- Animation for dialog -------------------  */
     --animate-dialog-overlay-show: dialog-overlay-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     --animate-dialog-content-show: dialog-content-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-drawer-slide-left-fade: drawer-slide-left-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-drawer-slide-right-fade: drawer-slide-right-fade 0.25s ease-in;
 
     @keyframes dialog-overlay-show {
         from {
@@ -117,7 +115,18 @@
         }
     }
 
-    @keyframes drawer-slide-left-fade {
+    /* ------------------- Animation for drawer -------------------  */
+    --animate-drawer-slide-left-in: drawer-slide-left-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-left-out: drawer-slide-left-out 0.25s ease-in;
+    --animate-drawer-slide-right-in: drawer-slide-right-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-right-out: drawer-slide-right-out 0.25s ease-in;
+    --animate-drawer-slide-top-in: drawer-slide-top-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-top-out: drawer-slide-top-out 0.25s ease-in;
+    --animate-drawer-slide-bottom-in: drawer-slide-bottom-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-drawer-slide-bottom-out: drawer-slide-bottom-out 0.25s ease-in;
+
+    /* Drawer sliding from right to left (entering) */
+    @keyframes drawer-slide-right-in {
         from {
             opacity: 0;
             transform: translateX(100%);
@@ -127,7 +136,9 @@
             transform: translateX(0);
         }
     }
-    @keyframes drawer-slide-right-fade {
+
+    /* Drawer sliding from left to right (exiting) */
+    @keyframes drawer-slide-right-out {
         from {
             opacity: 1;
             transform: translateX(0);
@@ -138,12 +149,84 @@
         }
     }
 
+    /* Drawer sliding from left to right (entering) */
+    @keyframes drawer-slide-left-in {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Drawer sliding from right to left (exiting) */
+    @keyframes drawer-slide-left-out {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Drawer sliding from bottom to top (entering) */
+    @keyframes drawer-slide-bottom-in {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Drawer sliding from top to bottom (exiting) */
+    @keyframes drawer-slide-bottom-out {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+    }
+
+    /* Drawer sliding from top to bottom (entering) */
+    @keyframes drawer-slide-top-in {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Drawer sliding from bottom to top (exiting) */
+    @keyframes drawer-slide-top-out {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+    }
+
     /* ------------------- Animation for popover -------------------  */
     --animate-hide: hide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     --animate-slide-down-fade: slide-down-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-slide-down-fade: slide-down-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     --animate-slide-up-fade: slide-up-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     --animate-slide-right-fade: slide-right-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-left-fade: slide-left-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
     @keyframes hide {
         from {
@@ -163,16 +246,6 @@
             transform: translateY(0);
         }
     }
-    @keyframes slide-down-fade {
-        from {
-            opacity: 0;
-            transform: translateX(6px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
     @keyframes slide-up-fade {
         from {
             opacity: 0;
@@ -187,6 +260,16 @@
         from {
             opacity: 0;
             transform: translateX(-6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slide-left-fade {
+        from {
+            opacity: 0;
+            transform: translateX(6px);
         }
         to {
             opacity: 1;

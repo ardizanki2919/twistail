@@ -8,7 +8,7 @@ import { TableHead, TableHeaderCell } from '#/components'
 const meta: Meta<typeof Table> = {
   component: Table,
   title: 'Base Components/Table',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
