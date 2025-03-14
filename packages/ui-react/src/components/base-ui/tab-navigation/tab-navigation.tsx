@@ -11,12 +11,15 @@ function getSubtree(
   const { asChild, children } = options
   if (!asChild) return typeof content === 'function' ? content(children) : content
 
-  const firstChild = React.Children.only(children) as React.ReactElement
-  return React.cloneElement(firstChild, {
-    // FIXME: This is a workaround to make the `asChild` prop work.
-    // @ts-ignore
-    children: typeof content === 'function' ? content(firstChild.props.children) : content,
-  })
+  const firstChild = React.Children.only(children) as React.ReactElement<{
+    children?: React.ReactNode
+  }>
+
+  return React.cloneElement(
+    firstChild,
+    undefined,
+    typeof content === 'function' ? content(firstChild.props.children) : content
+  )
 }
 
 const TabNavigation = React.forwardRef<
@@ -40,8 +43,6 @@ const TabNavigation = React.forwardRef<
     </NavigationMenuPrimitives.List>
   </NavigationMenuPrimitives.Root>
 ))
-
-TabNavigation.displayName = 'TabNavigation'
 
 const TabNavigationLink = React.forwardRef<
   React.ComponentRef<typeof NavigationMenuPrimitives.Link>,
@@ -88,6 +89,7 @@ const TabNavigationLink = React.forwardRef<
   </NavigationMenuPrimitives.Item>
 ))
 
+TabNavigation.displayName = 'TabNavigation'
 TabNavigationLink.displayName = 'TabNavigationLink'
 
 export { TabNavigation, TabNavigationLink }

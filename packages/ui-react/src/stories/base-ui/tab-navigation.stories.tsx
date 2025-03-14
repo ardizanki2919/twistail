@@ -27,7 +27,7 @@ export const Default: Story = {
   ),
 }
 
-export const Icons: Story = {
+export const WithIcons: Story = {
   render: () => (
     <TabNavigation>
       <TabNavigationLink href="#" active className="inline-flex gap-2">
