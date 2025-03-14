@@ -16,7 +16,7 @@ import { Textarea } from '#/components'
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Base Components/Card',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
@@ -128,16 +128,10 @@ export const WithInputs: Story = {
           <Input id="name" name="name" type="text" placeholder="Emma" />
         </div>
         <div className="mt-4 flex gap-3">
-          <Checkbox checked id="r1" />
+          <Checkbox id="r1" />
           <Label htmlFor="r1">
             I'd like to be notified by SMS when my order is ready for collection.
           </Label>
-        </div>
-        <div className="mt-4 flex gap-3">
-          <div className="flex items-center space-x-4">
-            <Switch checked id="r1" />
-            <Label htmlFor="r1">Click this Label check the Switch</Label>
-          </div>
         </div>
         <div className="mt-4 flex gap-3">
           <Textarea id="textarea" name="textarea" className="mt-2" />
@@ -190,7 +184,10 @@ export const WithInputs: Story = {
         <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
           <Button variant="outline">Clear</Button>
           <Button variant="destructive">Remove</Button>
-          <Tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor.">
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor."
+            asChild
+          >
             <Button className="w-full" type="submit">
               Apply
             </Button>
