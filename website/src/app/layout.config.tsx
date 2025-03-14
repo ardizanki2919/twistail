@@ -30,7 +30,7 @@ export const baseOptions: BaseLayoutProps = {
     { text: 'Blog', url: '/blog' },
     {
       text: 'Storybook',
-      url: 'https://twistail-storybook.netlify.app/',
+      url: 'https://storybook.twistail.com',
       external: true,
       active: 'url',
     },

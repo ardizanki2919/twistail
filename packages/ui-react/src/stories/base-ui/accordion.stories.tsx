@@ -163,7 +163,7 @@ export const WithIcons: Story = {
   ),
 }
 
-export const OneItem: Story = {
+export const SingleItem: Story = {
   render: () => (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
@@ -174,7 +174,69 @@ export const OneItem: Story = {
   ),
 }
 
-export const DefaultValueAndCollapsibleDisabled: Story = {
+export const TypeMultiple: Story = {
+  render: () => (
+    <Accordion type="multiple">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Does NASA provide public access to space data?</AccordionTrigger>
+        <AccordionContent>
+          Absolutely. NASA offers open access to a wealth of space data, including satellite images,
+          mission information, and scientific discoveries through various platforms and APIs,
+          encouraging public engagement and educational use.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-2">
+        <AccordionTrigger>
+          Are NASA's educational materials available for all age groups?
+        </AccordionTrigger>
+        <AccordionContent>
+          Yes. NASA provides a wide range of educational materials tailored for different age
+          groups, from K-12 to higher education. These resources include lesson plans, interactive
+          activities, and full courses, all designed to inspire and educate the next generation of
+          explorers.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Can the public participate in NASA missions?</AccordionTrigger>
+        <AccordionContent>
+          Yes! Through various citizen science projects and initiatives, the public can contribute
+          to NASA missions and scientific research. These opportunities allow individuals to analyze
+          data, contribute to problem-solving, and even participate in the discovery process.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
+}
+
+export const DisabledAccordion: Story = {
+  render: () => (
+    <Accordion type="single" collapsible disabled>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>
+          Did FutureTravel Corp. offer eco-friendly travel options?
+        </AccordionTrigger>
+        <AccordionContent>
+          Yes. FutureTravel Corp. was dedicated to sustainable travel, offering a range of
+          eco-friendly travel solutions including solar-powered flights and zero-emission
+          accommodations, setting a benchmark for responsible tourism.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Was FutureTravel Corp. technology-driven?</AccordionTrigger>
+        <AccordionContent>
+          Absolutely. The company was at the forefront of travel technology, leveraging AI and
+          machine learning to personalize travel experiences, optimize routes, and ensure the
+          highest levels of efficiency and customer satisfaction.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
+}
+
+export const DisableWithDefaultValue: Story = {
   render: () => (
     <div className="mx-auto max-w-lg">
       <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
@@ -263,68 +325,6 @@ export const DefaultValueAndCollapsibleDisabled: Story = {
   ),
 }
 
-export const TypeMultiple: Story = {
-  render: () => (
-    <Accordion type="multiple">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Does NASA provide public access to space data?</AccordionTrigger>
-        <AccordionContent>
-          Absolutely. NASA offers open access to a wealth of space data, including satellite images,
-          mission information, and scientific discoveries through various platforms and APIs,
-          encouraging public engagement and educational use.
-        </AccordionContent>
-      </AccordionItem>
-
-      <AccordionItem value="item-2">
-        <AccordionTrigger>
-          Are NASA's educational materials available for all age groups?
-        </AccordionTrigger>
-        <AccordionContent>
-          Yes. NASA provides a wide range of educational materials tailored for different age
-          groups, from K-12 to higher education. These resources include lesson plans, interactive
-          activities, and full courses, all designed to inspire and educate the next generation of
-          explorers.
-        </AccordionContent>
-      </AccordionItem>
-
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Can the public participate in NASA missions?</AccordionTrigger>
-        <AccordionContent>
-          Yes! Through various citizen science projects and initiatives, the public can contribute
-          to NASA missions and scientific research. These opportunities allow individuals to analyze
-          data, contribute to problem-solving, and even participate in the discovery process.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
-  ),
-}
-
-export const DisabledAccordion: Story = {
-  render: () => (
-    <Accordion type="single" collapsible disabled>
-      <AccordionItem value="item-1">
-        <AccordionTrigger>
-          Did FutureTravel Corp. offer eco-friendly travel options?
-        </AccordionTrigger>
-        <AccordionContent>
-          Yes. FutureTravel Corp. was dedicated to sustainable travel, offering a range of
-          eco-friendly travel solutions including solar-powered flights and zero-emission
-          accommodations, setting a benchmark for responsible tourism.
-        </AccordionContent>
-      </AccordionItem>
-
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Was FutureTravel Corp. technology-driven?</AccordionTrigger>
-        <AccordionContent>
-          Absolutely. The company was at the forefront of travel technology, leveraging AI and
-          machine learning to personalize travel experiences, optimize routes, and ensure the
-          highest levels of efficiency and customer satisfaction.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
-  ),
-}
-
 export const DisabledAccordionItem: Story = {
   render: () => (
     <Accordion type="single" collapsible>
@@ -348,7 +348,9 @@ export const DisabledAccordionItem: Story = {
         <AccordionTrigger>
           <span>
             Is off-piste skiing available?
-            <Badge variant="warning">Currently paused</Badge>
+            <Badge variant="warning" className="ml-1.5">
+              Currently paused
+            </Badge>
           </span>
         </AccordionTrigger>
         <AccordionContent>

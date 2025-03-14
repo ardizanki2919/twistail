@@ -2,7 +2,7 @@
 
 import { Tooltip as TooltipPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { tooltipStyles } from './tooltip.css'
 
 interface TooltipProps
   extends Omit<TooltipPrimitives.TooltipContentProps, 'content' | 'onClick'>,
@@ -38,6 +38,7 @@ const Tooltip = React.forwardRef<
     }: TooltipProps,
     forwardedRef
   ) => {
+    const styles = tooltipStyles()
     return (
       <TooltipPrimitives.Provider delayDuration={150}>
         <TooltipPrimitives.Root
@@ -52,30 +53,19 @@ const Tooltip = React.forwardRef<
           <TooltipPrimitives.Portal>
             <TooltipPrimitives.Content
               ref={forwardedRef}
-              side={side}
               sideOffset={sideOffset}
+              className={styles.content({ className })}
               align="center"
-              className={clx(
-                // base
-                'max-w-60 select-none rounded-md px-2.5 py-1.5 text-sm leading-5 shadow-sm',
-                // text color
-                'text-gray-50 dark:text-gray-900',
-                // background color
-                'bg-gray-900 dark:bg-gray-50',
-                // transition
-                'will-change-[transform,opacity]',
-                'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade data-[state=closed]:animate-hide',
-                className
-              )}
+              side={side}
               {...props}
             >
               {content}
               {showArrow ? (
                 <TooltipPrimitives.Arrow
-                  className="border-none fill-gray-900 dark:fill-gray-50"
+                  className={styles.arrow()}
+                  aria-hidden="true"
                   width={12}
                   height={7}
-                  aria-hidden="true"
                 />
               ) : null}
             </TooltipPrimitives.Content>

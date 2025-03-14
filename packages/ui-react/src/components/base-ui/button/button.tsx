@@ -5,9 +5,10 @@ import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { type ButtonStyles, buttonStyles } from './button.css'
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>, ButtonStyles {
+interface ButtonProps
+  extends Omit<React.ComponentPropsWithoutRef<'button'>, 'color'>,
+    ButtonStyles {
   asChild?: boolean
-  isLoading?: boolean
   loadingText?: string
 }
 
