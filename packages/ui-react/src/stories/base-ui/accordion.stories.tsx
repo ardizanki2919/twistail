@@ -76,7 +76,7 @@ export const Default: Story = {
 
 export const WithIcons: Story = {
   render: () => (
-    <div className="mx-auto max-w-lg">
+    <div className="mx-auto max-w-xl">
       <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
         Managing Your Booking Online
       </h1>

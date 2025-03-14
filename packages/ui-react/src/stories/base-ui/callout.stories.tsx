@@ -5,7 +5,7 @@ import { Callout, calloutStyles } from '#/components'
 const meta: Meta<typeof Callout> = {
   component: Callout,
   title: 'Base Components/Callout',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   args: {
     title: 'Sales Performance',
     children:
