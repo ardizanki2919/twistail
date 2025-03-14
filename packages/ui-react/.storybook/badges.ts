@@ -58,16 +58,16 @@ export default {
     label: 'Deprecated',
     style: {
       color: '#ffffff',
-      backgroundColor: '#dc2626',
-      borderColor: '#ef4444',
+      backgroundColor: '#9f1239',
+      borderColor: '#be123c',
     },
   },
   'status:experimental': {
     label: 'Experimental',
     style: {
       color: '#ffffff',
-      backgroundColor: '#9f1239',
-      borderColor: '#be123c',
+      backgroundColor: '#000000',
+      borderColor: '#000000',
     },
   },
 } satisfies Record<string, BadgeConfig>

@@ -48,14 +48,15 @@ export const Neutral: Story = {
   },
 }
 
-export const WithIcon: Story = {
-  args: {
-    icon: Lucide.OctagonAlert,
-    title: 'AWS Credit Alert',
-    children:
-      'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
-  },
-}
+// FIXME: Objects are not valid as a React child
+// export const WithLucideIcon: Story = {
+//   args: {
+//     icon: Lucide.OctagonAlert,
+//     title: 'AWS Credit Alert',
+//     children:
+//       'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
+//   },
+// }
 
 export const WithIconElement: Story = {
   args: {
