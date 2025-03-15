@@ -23,7 +23,7 @@ import {
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   title: 'Base Components/DropdownMenu',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'padded',
   },

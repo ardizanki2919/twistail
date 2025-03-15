@@ -3,84 +3,48 @@
 import * as Lucide from 'lucide-react'
 import { DropdownMenu as DropdownMenuPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { dropdownMenuStyles } from './dropdown-menu.css'
 
 const DropdownMenu = DropdownMenuPrimitives.Root
-DropdownMenu.displayName = 'DropdownMenu'
-
 const DropdownMenuTrigger = DropdownMenuPrimitives.Trigger
-DropdownMenuTrigger.displayName = 'DropdownMenuTrigger'
-
 const DropdownMenuGroup = DropdownMenuPrimitives.Group
-DropdownMenuGroup.displayName = 'DropdownMenuGroup'
-
 const DropdownMenuSubMenu = DropdownMenuPrimitives.Sub
-DropdownMenuSubMenu.displayName = 'DropdownMenuSubMenu'
-
 const DropdownMenuRadioGroup = DropdownMenuPrimitives.RadioGroup
-DropdownMenuRadioGroup.displayName = 'DropdownMenuRadioGroup'
+const DropdownMenuPortal = DropdownMenuPrimitives.Portal
 
 const DropdownMenuSubMenuTrigger = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.SubTrigger>,
   Omit<React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.SubTrigger>, 'asChild'>
->(({ className, children, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.SubTrigger
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pr-1 pl-2 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      // disabled
-      'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600',
-      // focus
-      'focus-visible:bg-gray-100 data-[state=open]:bg-gray-100 data-[state=open]:dark:bg-gray-900 focus-visible:dark:bg-gray-900',
-      // hover
-      'hover:bg-gray-100 hover:dark:bg-gray-900',
-      //
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <Lucide.ChevronRight className="ml-auto size-4 shrink-0" aria-hidden="true" />
-  </DropdownMenuPrimitives.SubTrigger>
-))
-DropdownMenuSubMenuTrigger.displayName = 'DropdownMenuSubMenuTrigger'
+>(({ className, children, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.SubTrigger
+      ref={forwardedRef}
+      className={styles.subMenuTrigger({ className })}
+      {...props}
+    >
+      {children}
+      <Lucide.ChevronRight className={styles.subMenuTriggerIcon()} aria-hidden="true" />
+    </DropdownMenuPrimitives.SubTrigger>
+  )
+})
 
 const DropdownMenuSubMenuContent = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.SubContent>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.SubContent>
->(({ className, collisionPadding = 8, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.Portal>
-    <DropdownMenuPrimitives.SubContent
-      ref={forwardedRef}
-      collisionPadding={collisionPadding}
-      className={clx(
-        // base
-        'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-lg',
-        // widths
-        'min-w-32',
-        // heights
-        'max-h-[var(--radix-popper-available-height)]',
-        // background color
-        'bg-white dark:bg-gray-950',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // border color
-        'border-gray-200 dark:border-gray-800',
-        // transition
-        'will-change-[transform,opacity]',
-        // "data-[state=open]:animate-slide-down-fade",
-        'data-[state=closed]:animate-hide',
-        'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
-        className
-      )}
-      {...props}
-    />
-  </DropdownMenuPrimitives.Portal>
-))
-DropdownMenuSubMenuContent.displayName = 'DropdownMenuSubMenuContent'
+>(({ className, collisionPadding = 8, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPortal>
+      <DropdownMenuPrimitives.SubContent
+        ref={forwardedRef}
+        collisionPadding={collisionPadding}
+        className={styles.content({ className })}
+        {...props}
+      />
+    </DropdownMenuPortal>
+  )
+})
 
 const DropdownMenuContent = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.Content>,
@@ -89,39 +53,23 @@ const DropdownMenuContent = React.forwardRef<
   (
     { className, sideOffset = 8, collisionPadding = 8, align = 'center', loop = true, ...props },
     forwardedRef
-  ) => (
-    <DropdownMenuPrimitives.Portal>
-      <DropdownMenuPrimitives.Content
-        ref={forwardedRef}
-        className={clx(
-          // base
-          'relative z-50 overflow-hidden rounded-md border p-1 shadow-black/[2.5%] shadow-lg',
-          // widths
-          'min-w-48',
-          // heights
-          'max-h-[var(--radix-popper-available-height)]',
-          // background color
-          'bg-white dark:bg-gray-950',
-          // text color
-          'text-gray-900 dark:text-gray-50',
-          // border color
-          'border-gray-200 dark:border-gray-800',
-          // transition
-          'will-change-[transform,opacity]',
-          'data-[state=closed]:animate-hide',
-          'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
-          className
-        )}
-        sideOffset={sideOffset}
-        align={align}
-        collisionPadding={collisionPadding}
-        loop={loop}
-        {...props}
-      />
-    </DropdownMenuPrimitives.Portal>
-  )
+  ) => {
+    const styles = dropdownMenuStyles()
+    return (
+      <DropdownMenuPortal>
+        <DropdownMenuPrimitives.Content
+          ref={forwardedRef}
+          className={styles.content({ className })}
+          collisionPadding={collisionPadding}
+          sideOffset={sideOffset}
+          align={align}
+          loop={loop}
+          {...props}
+        />
+      </DropdownMenuPortal>
+    )
+  }
 )
-DropdownMenuContent.displayName = 'DropdownMenuContent'
 
 const DropdownMenuItem = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.Item>,
@@ -129,36 +77,20 @@ const DropdownMenuItem = React.forwardRef<
     shortcut?: string
     hint?: string
   }
->(({ className, shortcut, hint, children, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.Item
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'group/DropdownMenuItem relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pr-1 pl-2 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      // disabled
-      'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600',
-      // focus
-      'focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900',
-      // hover
-      'hover:bg-gray-100 hover:dark:bg-gray-900',
-      className
-    )}
-    {...props}
-  >
-    {children}
-    {hint && (
-      <span className={clx('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>{hint}</span>
-    )}
-    {shortcut && (
-      <span className={clx('ml-auto pl-2 text-gray-400 text-sm dark:text-gray-600')}>
-        {shortcut}
-      </span>
-    )}
-  </DropdownMenuPrimitives.Item>
-))
-DropdownMenuItem.displayName = 'DropdownMenuItem'
+>(({ className, shortcut, hint, children, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.Item
+      ref={forwardedRef}
+      className={styles.item({ className })}
+      {...props}
+    >
+      {children}
+      {hint && <span className={styles.itemHint()}>{hint}</span>}
+      {shortcut && <span className={styles.itemHint()}>{shortcut}</span>}
+    </DropdownMenuPrimitives.Item>
+  )
+})
 
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.CheckboxItem>,
@@ -166,51 +98,26 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     shortcut?: string
     hint?: string
   }
->(({ className, hint, shortcut, children, checked, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.CheckboxItem
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm py-1.5 pr-1 pl-8 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      // disabled
-      'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600',
-      // focus
-      'focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900',
-      // hover
-      'hover:bg-gray-100 hover:dark:bg-gray-900',
-      className
-    )}
-    checked={checked}
-    {...props}
-  >
-    <span className="absolute left-2 flex size-4 items-center justify-center">
-      <DropdownMenuPrimitives.ItemIndicator>
-        <Lucide.Check
-          aria-hidden="true"
-          className="size-full shrink-0 text-gray-800 dark:text-gray-200"
-        />
-      </DropdownMenuPrimitives.ItemIndicator>
-    </span>
-    {children}
-    {hint && (
-      <span className={clx('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
-        {hint}
+>(({ className, hint, shortcut, children, checked, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.CheckboxItem
+      ref={forwardedRef}
+      className={styles.checkboxItem({ className })}
+      checked={checked}
+      {...props}
+    >
+      <span className={styles.checkboxItemIndicator()}>
+        <DropdownMenuPrimitives.ItemIndicator>
+          <Lucide.Check className={styles.checkboxItemIndicatorIcon()} aria-hidden="true" />
+        </DropdownMenuPrimitives.ItemIndicator>
       </span>
-    )}
-    {shortcut && (
-      <span
-        className={clx(
-          'ml-auto font-normal text-gray-400 text-sm tracking-widest dark:border-gray-800 dark:text-gray-600'
-        )}
-      >
-        {shortcut}
-      </span>
-    )}
-  </DropdownMenuPrimitives.CheckboxItem>
-))
-DropdownMenuCheckboxItem.displayName = 'DropdownMenuCheckboxItem'
+      {children}
+      {hint && <span className={styles.checkboxItemHint()}>{hint}</span>}
+      {shortcut && <span className={styles.checkboxItemShortcut()}>{shortcut}</span>}
+    </DropdownMenuPrimitives.CheckboxItem>
+  )
+})
 
 const DropdownMenuRadioItem = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.RadioItem>,
@@ -218,100 +125,74 @@ const DropdownMenuRadioItem = React.forwardRef<
     shortcut?: string
     hint?: string
   }
->(({ className, hint, shortcut, children, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.RadioItem
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'group/DropdownMenuRadioItem relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm py-1.5 pr-1 pl-8 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      // disabled
-      'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600',
-      // focus
-      'focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900',
-      // hover
-      'hover:bg-gray-100 hover:dark:bg-gray-900',
-      className
-    )}
-    {...props}
-  >
-    <span className="absolute left-2 flex size-4 items-center justify-center">
-      <Lucide.Check
-        aria-hidden="true"
-        className="size-full shrink-0 text-blue-500 group-data-[state=checked]/DropdownMenuRadioItem:flex group-data-[state=unchecked]/DropdownMenuRadioItem:hidden dark:text-blue-500"
-      />
-      <Lucide.Circle
-        aria-hidden="true"
-        className="size-full shrink-0 text-gray-300 group-data-[state=unchecked]/DropdownMenuRadioItem:flex group-data-[state=checked]/DropdownMenuRadioItem:hidden dark:text-gray-700"
-      />
-    </span>
-    {children}
-    {hint && (
-      <span className={clx('ml-auto font-normal text-gray-400 text-sm dark:text-gray-600')}>
-        {hint}
+>(({ className, hint, shortcut, children, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.RadioItem
+      ref={forwardedRef}
+      className={styles.radioItem({ className })}
+      {...props}
+    >
+      <span className={styles.radioItemIndicator()}>
+        <Lucide.Check className={styles.radioItemIndicatorIconCheck()} aria-hidden="true" />
+        <Lucide.Circle className={styles.radioItemIndicatorIconCircle()} aria-hidden="true" />
       </span>
-    )}
-    {shortcut && (
-      <span
-        className={clx(
-          'ml-auto font-normal text-gray-400 text-sm tracking-widest dark:border-gray-800 dark:text-gray-600'
-        )}
-      >
-        {shortcut}
-      </span>
-    )}
-  </DropdownMenuPrimitives.RadioItem>
-))
-DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem'
+      {children}
+      {hint && <span className={styles.radioItemHint()}>{hint}</span>}
+      {shortcut && <span className={styles.radioItemShortcut()}>{shortcut}</span>}
+    </DropdownMenuPrimitives.RadioItem>
+  )
+})
 
 const DropdownMenuLabel = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.Label>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.Label>
->(({ className, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.Label
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'px-2 py-2 font-medium text-xs tracking-wide',
-      // text color
-      'text-gray-500 dark:text-gray-500',
-      className
-    )}
-    {...props}
-  />
-))
-DropdownMenuLabel.displayName = 'DropdownMenuLabel'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.Label
+      ref={forwardedRef}
+      className={styles.label({ className })}
+      {...props}
+    />
+  )
+})
 
 const DropdownMenuSeparator = React.forwardRef<
   React.ComponentRef<typeof DropdownMenuPrimitives.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.Separator>
->(({ className, ...props }, forwardedRef) => (
-  <DropdownMenuPrimitives.Separator
-    ref={forwardedRef}
-    className={clx('-mx-1 my-1 h-px border-gray-200 border-t dark:border-gray-800', className)}
-    {...props}
-  />
-))
-DropdownMenuSeparator.displayName = 'DropdownMenuSeparator'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = dropdownMenuStyles()
+  return (
+    <DropdownMenuPrimitives.Separator
+      ref={forwardedRef}
+      className={styles.separator({ className })}
+      {...props}
+    />
+  )
+})
 
 const DropdownMenuIconWrapper = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <div
-      className={clx(
-        // text color
-        'text-gray-600 dark:text-gray-400',
-        // disabled
-        'group-data-[disabled]/DropdownMenuItem:text-gray-400 group-data-[disabled]/DropdownMenuItem:dark:text-gray-700',
-        className
-      )}
-      {...props}
-    />
-  )
+  const styles = dropdownMenuStyles()
+  return <div className={styles.iconWrapper({ className })} {...props} />
 }
+
+DropdownMenu.displayName = 'DropdownMenu'
+DropdownMenuTrigger.displayName = 'DropdownMenuTrigger'
+DropdownMenuGroup.displayName = 'DropdownMenuGroup'
+DropdownMenuSubMenu.displayName = 'DropdownMenuSubMenu'
+DropdownMenuRadioGroup.displayName = 'DropdownMenuRadioGroup'
+DropdownMenuSubMenuTrigger.displayName = 'DropdownMenuSubMenuTrigger'
+DropdownMenuSubMenuContent.displayName = 'DropdownMenuSubMenuContent'
+DropdownMenuContent.displayName = 'DropdownMenuContent'
+DropdownMenuItem.displayName = 'DropdownMenuItem'
+DropdownMenuCheckboxItem.displayName = 'DropdownMenuCheckboxItem'
+DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem'
+DropdownMenuLabel.displayName = 'DropdownMenuLabel'
+DropdownMenuSeparator.displayName = 'DropdownMenuSeparator'
 DropdownMenuIconWrapper.displayName = 'DropdownMenuIconWrapper'
 
 export {
@@ -329,4 +210,5 @@ export {
   DropdownMenuIconWrapper,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuPortal,
 }
