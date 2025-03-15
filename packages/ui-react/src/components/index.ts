@@ -2,6 +2,7 @@
 export * from './base-ui/accordion'
 export * from './base-ui/avatar'
 export * from './base-ui/badge'
+export * from './base-ui/breadcrumb'
 export * from './base-ui/button'
 export * from './base-ui/calendar'
 export * from './base-ui/callout'
