@@ -6,25 +6,39 @@ import { toggleStyles } from './toggle.css'
 const Toggle = React.forwardRef<
   React.ComponentRef<typeof TogglePrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = toggleStyles()
-  return <TogglePrimitive.Root ref={ref} className={styles.base({ className })} {...props} />
+  return (
+    <TogglePrimitive.Root ref={forwardedRef} className={styles.base({ className })} {...props} />
+  )
 })
 
 const ToggleGroup = React.forwardRef<
   React.ComponentRef<typeof ToggleGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = toggleStyles()
-  return <ToggleGroupPrimitive.Root ref={ref} className={styles.group({ className })} {...props} />
+  return (
+    <ToggleGroupPrimitive.Root
+      ref={forwardedRef}
+      className={styles.group({ className })}
+      {...props}
+    />
+  )
 })
 
 const ToggleGroupItem = React.forwardRef<
   React.ComponentRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = toggleStyles()
-  return <ToggleGroupPrimitive.Item ref={ref} className={styles.base({ className })} {...props} />
+  return (
+    <ToggleGroupPrimitive.Item
+      ref={forwardedRef}
+      className={styles.base({ className })}
+      {...props}
+    />
+  )
 })
 
 Toggle.displayName = TogglePrimitive.Root.displayName

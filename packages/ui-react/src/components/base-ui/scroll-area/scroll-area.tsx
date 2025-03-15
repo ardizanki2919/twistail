@@ -5,10 +5,10 @@ import { type ScrollAreaStyles, scrollAreaStyles } from './scroll-area.css'
 const ScrollArea = React.forwardRef<
   React.ComponentRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
->(({ className, children, ...props }, ref) => {
+>(({ className, children, ...props }, forwardedRef) => {
   const styles = scrollAreaStyles()
   return (
-    <ScrollAreaPrimitive.Root ref={ref} className={styles.root({ className })} {...props}>
+    <ScrollAreaPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
       <ScrollAreaPrimitive.Viewport className={styles.viewport()}>
         {children}
       </ScrollAreaPrimitive.Viewport>
@@ -25,11 +25,11 @@ interface ScrollBarProps
 const ScrollBar = React.forwardRef<
   React.ComponentRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
   ScrollBarProps
->(({ className, orientation = 'vertical', ...props }, ref) => {
+>(({ className, orientation = 'vertical', ...props }, forwardedRef) => {
   const styles = scrollAreaStyles({ orientation })
   return (
     <ScrollAreaPrimitive.ScrollAreaScrollbar
-      ref={ref}
+      ref={forwardedRef}
       orientation={orientation}
       className={styles.scrollbar({ className })}
       {...props}

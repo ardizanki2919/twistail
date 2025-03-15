@@ -7,10 +7,14 @@ interface HeadingProps extends React.ComponentPropsWithoutRef<'h2'>, HeadingStyl
 }
 
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ className, level = 'h2', weight, align, asChild = false, ...props }, ref) => {
+  ({ className, level = 'h2', weight, align, asChild = false, ...props }, forwardedRef) => {
     const Comp = asChild ? Slot.Root : level
     return (
-      <Comp ref={ref} className={headingStyles({ level, weight, align, className })} {...props} />
+      <Comp
+        ref={forwardedRef}
+        className={headingStyles({ level, weight, align, className })}
+        {...props}
+      />
     )
   }
 )

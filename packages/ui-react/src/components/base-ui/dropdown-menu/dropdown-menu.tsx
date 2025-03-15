@@ -37,7 +37,7 @@ const DropdownMenuSubMenuContent = React.forwardRef<
       <DropdownMenuPrimitives.SubContent
         ref={forwardedRef}
         collisionPadding={collisionPadding}
-        className={styles.content({ className })}
+        className={styles.subMenuContent({ className })}
         {...props}
       />
     </DropdownMenuPortal>

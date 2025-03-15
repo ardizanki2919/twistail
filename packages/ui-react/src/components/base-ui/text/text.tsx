@@ -7,11 +7,11 @@ interface TextProps extends React.ComponentPropsWithoutRef<'p'>, TextStyles {
 }
 
 const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
-  ({ className, size, weight, align, variant, asChild = false, ...props }, ref) => {
+  ({ className, size, weight, align, variant, asChild = false, ...props }, forwardedRef) => {
     const Comp = asChild ? Slot.Root : 'p'
     return (
       <Comp
-        ref={ref}
+        ref={forwardedRef}
         className={textStyles({ size, weight, align, variant, className })}
         {...props}
       />
