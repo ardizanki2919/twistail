@@ -1,4 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants'
+import { ButtonProps, buttonStyles } from '#/components'
 
 const paginationStyles = tv({
   slots: {
@@ -8,8 +9,8 @@ const paginationStyles = tv({
     link: [],
     previous: 'gap-1 pl-2.5',
     next: 'gap-1 pr-2.5',
-    previousIcon: 'size-4 -ml-1.5 mr-1',
-    nextIcon: 'size-4 -mr-1.5 ml-1',
+    previousIcon: 'size-4 -ml-1 mr-1',
+    nextIcon: 'size-4 -mr-1 ml-1',
     ellipsis: 'flex h-9 w-9 items-center justify-center',
     ellipsisIcon: 'size-4',
   },

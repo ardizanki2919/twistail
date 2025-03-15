@@ -40,7 +40,13 @@ const PaginationLink = ({
 }: PaginationLinkProps) => {
   const Comp = asChild ? Slot.Root : 'a'
   const styles = buttonStyles({ variant: isActive ? 'outline' : 'ghost' })
-  return <Comp aria-current={isActive ? 'page' : undefined} className={styles.base()} {...props} />
+  return (
+    <Comp
+      aria-current={isActive ? 'page' : undefined}
+      className={styles.base({ className })}
+      {...props}
+    />
+  )
 }
 
 const PaginationPrevious = ({
