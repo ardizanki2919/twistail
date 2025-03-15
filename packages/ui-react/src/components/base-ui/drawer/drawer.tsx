@@ -11,17 +11,25 @@ const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Ro
 const DrawerTrigger = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Trigger>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
-  return <DrawerPrimitives.Trigger ref={ref} className={styles.trigger({ className })} {...props} />
+  return (
+    <DrawerPrimitives.Trigger
+      ref={forwardedRef}
+      className={styles.trigger({ className })}
+      {...props}
+    />
+  )
 })
 
 const DrawerClose = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitives.Close>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Close>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
-  return <DrawerPrimitives.Close ref={ref} className={styles.close({ className })} {...props} />
+  return (
+    <DrawerPrimitives.Close ref={forwardedRef} className={styles.close({ className })} {...props} />
+  )
 })
 
 const DrawerPortal = DrawerPrimitives.Portal
@@ -63,10 +71,10 @@ const DrawerContent = React.forwardRef<
 })
 
 const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<'div'>>(
-  ({ children, className, ...props }, ref) => {
+  ({ children, className, ...props }, forwardedRef) => {
     const styles = drawerStyles()
     return (
-      <div ref={ref} className={styles.headerRoot()} {...props}>
+      <div ref={forwardedRef} className={styles.headerRoot()} {...props}>
         <div className={styles.header({ className })}>{children}</div>
         <DrawerPrimitives.Close asChild>
           <Button variant="ghost" className={styles.headerCloseButton()} size="sm">
@@ -89,9 +97,9 @@ const DrawerTitle = React.forwardRef<
 })
 
 const DrawerBody = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<'div'>>(
-  ({ className, ...props }, ref) => {
+  ({ className, ...props }, forwardedRef) => {
     const styles = drawerStyles()
-    return <div ref={ref} className={styles.body({ className })} {...props} />
+    return <div ref={forwardedRef} className={styles.body({ className })} {...props} />
   }
 )
 

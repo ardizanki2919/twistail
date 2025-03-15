@@ -5,26 +5,34 @@ import { type AvatarStyles, avatarStyles } from './avatar.css'
 const Avatar = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
-  return <AvatarPrimitives.Root ref={ref} className={styles.root({ className })} {...props} />
+  return (
+    <AvatarPrimitives.Root ref={forwardedRef} className={styles.root({ className })} {...props} />
+  )
 })
 
 const AvatarImage = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitives.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Image>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
-  return <AvatarPrimitives.Image ref={ref} className={styles.image({ className })} {...props} />
+  return (
+    <AvatarPrimitives.Image ref={forwardedRef} className={styles.image({ className })} {...props} />
+  )
 })
 
 const AvatarFallback = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitives.Fallback>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Fallback>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
   return (
-    <AvatarPrimitives.Fallback ref={ref} className={styles.fallback({ className })} {...props} />
+    <AvatarPrimitives.Fallback
+      ref={forwardedRef}
+      className={styles.fallback({ className })}
+      {...props}
+    />
   )
 })
 
@@ -35,7 +43,7 @@ interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement>, AvatarS
 }
 
 const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ className, children, max, showCount = true, overlap = true, ...props }, ref) => {
+  ({ className, children, max, showCount = true, overlap = true, ...props }, forwardedRef) => {
     const styles = avatarStyles()
     const childrenArray = React.Children.toArray(children)
     const totalAvatars = childrenArray.length
@@ -43,7 +51,7 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
     const remainingCount = max && totalAvatars > max ? totalAvatars - max : 0
 
     return (
-      <div ref={ref} className={styles.group({ className, overlap })} {...props}>
+      <div ref={forwardedRef} className={styles.group({ className, overlap })} {...props}>
         {displayAvatars}
         {showCount && remainingCount > 0 && (
           <Avatar className={styles.groupItem()}>

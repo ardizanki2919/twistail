@@ -211,9 +211,7 @@ export const Simple: Story = {
             <DropdownMenuItem shortcut="⌘S">Settings</DropdownMenuItem>
             <DropdownMenuItem shortcut="⌘K">Shortcuts</DropdownMenuItem>
           </DropdownMenuGroup>
-
           <DropdownMenuSeparator />
-
           <DropdownMenuGroup>
             <DropdownMenuItem hint="Pro">Team</DropdownMenuItem>
             <DropdownMenuSubMenu>
@@ -292,9 +290,7 @@ export const WithRadioItem: Story = {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>Sorting</DropdownMenuLabel>
-
           <DropdownMenuSeparator />
-
           <DropdownMenuGroup>
             <DropdownMenuRadioGroup value={sort} onValueChange={setSort}>
               <DropdownMenuRadioItem value="alpha" hint="A–Z">

@@ -25,7 +25,7 @@ interface LinkProps extends Omit<RouterLinkProps, 'to'> {
 
 const Link = React.forwardRef(function Component(
   props: LinkProps & React.ComponentPropsWithoutRef<'a'>,
-  ref: React.ForwardedRef<HTMLAnchorElement>
+  forwardedRef: React.ForwardedRef<HTMLAnchorElement>
 ) {
   const { className, newTab, ...rest } = props
   const NEW_TAB_REL = 'noopener noreferrer'
@@ -38,7 +38,7 @@ const Link = React.forwardRef(function Component(
       className={clx(className)}
       rel={newTab ? NEW_TAB_REL : undefined}
       target={newTab ? NEW_TAB_TARGET : DEFAULT_TARGET}
-      ref={ref}
+      ref={forwardedRef}
       {...rest}
     />
   )

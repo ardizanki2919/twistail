@@ -31,19 +31,16 @@ type TimeSegmentProps = {
 }
 
 const TimeSegment = ({ segment, state }: TimeSegmentProps) => {
-  const ref = React.useRef<HTMLDivElement>(null)
-
-  const { segmentProps } = useDateSegment(segment, state, ref)
-
+  const forwardedRef = React.useRef<HTMLDivElement>(null)
+  const { segmentProps } = useDateSegment(segment, state, forwardedRef)
   const isColon = segment.type === 'literal' && segment.text === ':'
   const isSpace = segment.type === 'literal' && segment.text === ' '
-
   const isDecorator = isColon || isSpace
 
   return (
     <div
       {...segmentProps}
-      ref={ref}
+      ref={forwardedRef}
       className={clx(
         // base
         'relative block w-full appearance-none rounded-md border px-2.5 py-1.5 text-left uppercase tabular-nums shadow-xs outline-hidden transition sm:text-sm',

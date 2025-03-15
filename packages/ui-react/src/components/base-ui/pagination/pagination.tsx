@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'
-import { ButtonProps, buttonStyles } from '#/components'
+import { ButtonProps, buttonStyles } from '../button'
 import { type PaginationStyles, paginationStyles } from './pagination.css'
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => {
@@ -19,9 +19,9 @@ const PaginationContent = React.forwardRef<HTMLUListElement, PaginationContentPr
 )
 
 const PaginationItem = React.forwardRef<HTMLLIElement, React.ComponentProps<'li'>>(
-  ({ className, ...props }, ref) => {
+  ({ className, ...props }, forwardedRef) => {
     const styles = paginationStyles()
-    return <li ref={ref} className={styles.item({ className })} {...props} />
+    return <li ref={forwardedRef} className={styles.item({ className })} {...props} />
   }
 )
 
@@ -56,7 +56,6 @@ const PaginationPrevious = ({
   const styles = paginationStyles()
   return (
     <PaginationLink
-      size="md"
       className={styles.previous({ className })}
       aria-label="Go to previous page"
       {...props}
@@ -70,12 +69,7 @@ const PaginationPrevious = ({
 const PaginationNext = ({ className, ...props }: React.ComponentProps<typeof PaginationLink>) => {
   const styles = paginationStyles()
   return (
-    <PaginationLink
-      size="md"
-      className={styles.next({ className })}
-      aria-label="Go to next page"
-      {...props}
-    >
+    <PaginationLink className={styles.next({ className })} aria-label="Go to next page" {...props}>
       <span>Next</span>
       <ChevronRight className={styles.nextIcon()} />
     </PaginationLink>
