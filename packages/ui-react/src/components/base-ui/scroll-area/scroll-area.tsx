@@ -1,45 +1,45 @@
-import { ScrollArea as ScrollAreaPrimitive } from 'radix-ui'
+import { ScrollArea as ScrollAreaPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { type ScrollAreaStyles, scrollAreaStyles } from './scroll-area.css'
 
 const ScrollArea = React.forwardRef<
-  React.ComponentRef<typeof ScrollAreaPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
+  React.ComponentRef<typeof ScrollAreaPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitives.Root>
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = scrollAreaStyles()
   return (
-    <ScrollAreaPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
-      <ScrollAreaPrimitive.Viewport className={styles.viewport()}>
+    <ScrollAreaPrimitives.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
+      <ScrollAreaPrimitives.Viewport className={styles.viewport()}>
         {children}
-      </ScrollAreaPrimitive.Viewport>
+      </ScrollAreaPrimitives.Viewport>
       <ScrollBar />
-      <ScrollAreaPrimitive.Corner className={styles.corner()} />
-    </ScrollAreaPrimitive.Root>
+      <ScrollAreaPrimitives.Corner className={styles.corner()} />
+    </ScrollAreaPrimitives.Root>
   )
 })
 
 interface ScrollBarProps
-  extends React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
+  extends React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitives.ScrollAreaScrollbar>,
     ScrollAreaStyles {}
 
 const ScrollBar = React.forwardRef<
-  React.ComponentRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
+  React.ComponentRef<typeof ScrollAreaPrimitives.ScrollAreaScrollbar>,
   ScrollBarProps
 >(({ className, orientation = 'vertical', ...props }, forwardedRef) => {
   const styles = scrollAreaStyles({ orientation })
   return (
-    <ScrollAreaPrimitive.ScrollAreaScrollbar
+    <ScrollAreaPrimitives.ScrollAreaScrollbar
       ref={forwardedRef}
       orientation={orientation}
       className={styles.scrollbar({ className })}
       {...props}
     >
-      <ScrollAreaPrimitive.ScrollAreaThumb className={styles.thumb()} />
-    </ScrollAreaPrimitive.ScrollAreaScrollbar>
+      <ScrollAreaPrimitives.ScrollAreaThumb className={styles.thumb()} />
+    </ScrollAreaPrimitives.ScrollAreaScrollbar>
   )
 })
 
-ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
-ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
+ScrollArea.displayName = ScrollAreaPrimitives.Root.displayName
+ScrollBar.displayName = ScrollAreaPrimitives.ScrollAreaScrollbar.displayName
 
 export { ScrollArea, ScrollBar }

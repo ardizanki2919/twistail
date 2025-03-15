@@ -1,32 +1,32 @@
-import { Slider as SliderPrimitive } from 'radix-ui'
+import { Slider as SliderPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { sliderStyles } from './slider.css'
 
-interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
+interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitives.Root> {
   ariaLabelThumb?: string
 }
 
-const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(
+const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitives.Root>, SliderProps>(
   ({ className, ariaLabelThumb, ...props }, forwardedRef) => {
     const value = props.value || props.defaultValue
     const styles = sliderStyles()
     return (
-      <SliderPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
-        <SliderPrimitive.Track className={styles.track()}>
-          <SliderPrimitive.Range className={styles.range()} />
-        </SliderPrimitive.Track>
+      <SliderPrimitives.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
+        <SliderPrimitives.Track className={styles.track()}>
+          <SliderPrimitives.Range className={styles.range()} />
+        </SliderPrimitives.Track>
         {value?.map((val) => (
-          <SliderPrimitive.Thumb
+          <SliderPrimitives.Thumb
             key={val.toString()}
             className={styles.thumb()}
             aria-label={ariaLabelThumb}
           />
         ))}
-      </SliderPrimitive.Root>
+      </SliderPrimitives.Root>
     )
   }
 )
 
-Slider.displayName = SliderPrimitive.Root.displayName
+Slider.displayName = SliderPrimitives.Root.displayName
 
 export { Slider }
