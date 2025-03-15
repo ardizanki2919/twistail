@@ -2,7 +2,6 @@
 import * as Lucide from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Toaster as Sonner, toast } from 'sonner'
-import { clx } from 'twistail-utils'
 import { toastStyles } from './toast.css'
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
@@ -10,17 +9,27 @@ type ToasterProps = React.ComponentProps<typeof Sonner>
 const Toaster = ({ className, ...props }: ToasterProps) => {
   const { theme = 'system' } = useTheme()
   const styles = toastStyles()
-
   return (
     <Sonner
       theme={theme as ToasterProps['theme']}
-      className={clx('toaster group', className)}
+      className={styles.root({ className })}
       toastOptions={{
         classNames: {
           toast: styles.toast(),
+          title: styles.title(),
           description: styles.description(),
-          actionButton: styles.actionButton(),
+          loader: styles.loader(),
+          closeButton: styles.closeButton(),
           cancelButton: styles.cancelButton(),
+          actionButton: styles.actionButton(),
+          success: styles.success(),
+          error: styles.error(),
+          info: styles.info(),
+          warning: styles.warning(),
+          loading: styles.loading(),
+          default: styles.default(),
+          content: styles.content(),
+          icon: styles.icon(),
         },
       }}
       icons={{
