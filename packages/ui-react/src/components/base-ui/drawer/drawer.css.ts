@@ -29,7 +29,7 @@ const drawerStyles = tv({
     body: 'flex-1 py-4',
     description: 'text-gray-500 dark:text-gray-500',
     footer: [
-      'flex flex-col-reverse border-gray-200 border-t pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900',
+      'flex flex-col-reverse border-gray-200 border-t pt-4 sm:pt-5 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900',
     ],
   },
   variants: {

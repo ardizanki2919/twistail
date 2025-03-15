@@ -92,7 +92,9 @@
 
     /* ------------------- Animation for dialog -------------------  */
     --animate-dialog-overlay-show: dialog-overlay-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-dialog-content-show: dialog-content-show 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-dialog-overlay-hide: dialog-overlay-hide 0.15s ease-out;
+    --animate-dialog-content-show: dialog-content-show 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-dialog-content-hide: dialog-content-hide 0.15s ease-out;
 
     @keyframes dialog-overlay-show {
         from {
@@ -102,16 +104,43 @@
             opacity: 1;
         }
     }
+
+    @keyframes dialog-overlay-hide {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
     @keyframes dialog-content-show {
         from {
             opacity: 0;
-            transform: translate(-50%, -45%);
-            transform: scale(0.95);
+            transform: translate(-50%, -48%);
+            transform: scale(0.96);
+            filter: blur(4px);
         }
         to {
             opacity: 1;
             transform: translate(-50%, -50%);
             transform: scale(1);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes dialog-content-hide {
+        from {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            transform: scale(1);
+            filter: blur(0);
+        }
+        to {
+            opacity: 0;
+            transform: translate(-50%, -48%);
+            transform: scale(0.96);
+            filter: blur(4px);
         }
     }
 

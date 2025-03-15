@@ -8,7 +8,7 @@ const dialogStyles = tv({
       // background color
       'bg-black/70',
       // transition
-      'data-[state=open]:animate-dialog-overlay-show',
+      'data-[state=open]:animate-dialog-overlay-show data-[state=closed]:animate-dialog-overlay-hide',
     ],
     content: [
       // base
@@ -18,7 +18,7 @@ const dialogStyles = tv({
       // background color
       'bg-white dark:bg-gray-950',
       // transition
-      'data-[state=open]:animate-dialog-content-show',
+      'data-[state=open]:animate-dialog-content-show data-[state=closed]:animate-dialog-content-hide',
       // focus ring
       'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
     ],
