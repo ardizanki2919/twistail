@@ -12,7 +12,7 @@ const accordionStyles = tv({
       // disabled
       'data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600',
       //focus
-      'focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset',
+      'focus-visible:z-10 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset',
     ],
     accordionTrigerIcon: [
       // base
@@ -24,7 +24,7 @@ const accordionStyles = tv({
     ],
     accordionContent:
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open',
-    accordionContentDiv: 'overflow-hidden pb-4 text-sm text-gray-700 dark:text-gray-200',
+    accordionContentContainer: 'overflow-hidden pb-4 text-sm text-accent-foreground',
     accordionItem: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
   },
 })

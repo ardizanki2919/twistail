@@ -6,7 +6,7 @@ import { Label } from '#/components'
 const meta: Meta<typeof Input> = {
   component: Input,
   title: 'Base Components/Input',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
@@ -33,11 +33,20 @@ export const TypePassword: Story = {
   ),
 }
 
+export const TypeSearch: Story = {
+  render: () => (
+    <div className="flex flex-col gap-2">
+      <Label htmlFor="search">Search</Label>
+      <Input placeholder="Enter search" id="search" name="search" type="search" />
+    </div>
+  ),
+}
+
 export const TypeSearchDisabled: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <Label htmlFor="search">Search</Label>
-      <Input disabled placeholder="Enter search" id="search" name="search" type="search" />{' '}
+      <Input disabled placeholder="Enter search" id="search" name="search" type="search" />
     </div>
   ),
 }
@@ -85,14 +94,7 @@ export const HasError: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <Label htmlFor="email">Email</Label>
-      <Input
-        hasError
-        placeholder="Enter full name"
-        id="full_name"
-        name="full_name"
-        type="text"
-        enableStepper
-      />
+      <Input hasError placeholder="Enter full name" id="full_name" name="full_name" type="text" />
     </div>
   ),
 }

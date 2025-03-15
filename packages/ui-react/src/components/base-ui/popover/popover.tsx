@@ -1,14 +1,10 @@
-// Tremor Popover [v0.0.3]
-
 import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { popoverStyles } from './popover.css'
 
 const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
   return <PopoverPrimitives.Root {...props} />
 }
-
-Popover.displayName = 'Popover'
 
 const PopoverTrigger = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitives.Trigger>,
@@ -17,8 +13,6 @@ const PopoverTrigger = React.forwardRef<
   return <PopoverPrimitives.Trigger ref={forwardedRef} {...props} />
 })
 
-PopoverTrigger.displayName = 'PopoverTrigger'
-
 const PopoverAnchor = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitives.Anchor>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Anchor>
@@ -26,16 +20,12 @@ const PopoverAnchor = React.forwardRef<
   return <PopoverPrimitives.Anchor ref={forwardedRef} {...props} />
 })
 
-PopoverAnchor.displayName = 'PopoverAnchor'
-
 const PopoverClose = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitives.Close>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Close>
 >((props, forwardedRef) => {
   return <PopoverPrimitives.Close ref={forwardedRef} {...props} />
 })
-
-PopoverClose.displayName = 'PopoverClose'
 
 type ContentProps = React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Content>
 
@@ -64,23 +54,7 @@ const PopoverContent = React.forwardRef<
           align={align}
           collisionPadding={collisionPadding}
           avoidCollisions={avoidCollisions}
-          className={clx(
-            // base
-            'max-h-[var(--radix-popper-available-height)] min-w-60 overflow-hidden rounded-md border p-2.5 text-sm shadow-md',
-            // border color
-            'border-gray-200 dark:border-gray-800',
-            // text color
-            'text-gray-900 dark:text-gray-50',
-            // background color
-            'bg-white dark:bg-gray-950',
-            // transition
-            'will-change-[transform,opacity]',
-            'data-[state=closed]:animate-hide',
-            'data-[state=open]:data-[side=bottom]:animate-slide-down-fade data-[state=open]:data-[side=left]:animate-slide-down-fade data-[state=open]:data-[side=right]:animate-slide-right-fade data-[state=open]:data-[side=top]:animate-slide-up-fade',
-
-            className
-          )}
-          tremor-id="tremor-raw"
+          className={popoverStyles({ className })}
           // https://github.com/radix-ui/primitives/issues/1159
           onWheel={(event) => {
             event.stopPropagation()
@@ -97,6 +71,11 @@ const PopoverContent = React.forwardRef<
     )
   }
 )
+
+Popover.displayName = 'Popover'
+PopoverTrigger.displayName = 'PopoverTrigger'
+PopoverAnchor.displayName = 'PopoverAnchor'
+PopoverClose.displayName = 'PopoverClose'
 PopoverContent.displayName = 'PopoverContent'
 
 export { Popover, PopoverAnchor, PopoverClose, PopoverContent, PopoverTrigger }

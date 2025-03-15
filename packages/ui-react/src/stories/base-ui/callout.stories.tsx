@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Callout, calloutVariants } from '#/components'
+import { Callout, calloutStyles } from '#/components'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,
   title: 'Base Components/Callout',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   args: {
     title: 'Sales Performance',
     children:
@@ -14,7 +14,7 @@ const meta: Meta<typeof Callout> = {
   argTypes: {
     variant: {
       control: 'radio',
-      options: [...Object.keys(calloutVariants.variants.variant)],
+      options: [...Object.keys(calloutStyles.variants.variant)],
     },
   },
 }
@@ -48,14 +48,15 @@ export const Neutral: Story = {
   },
 }
 
-export const WithIcon: Story = {
-  args: {
-    icon: Lucide.OctagonAlert,
-    title: 'AWS Credit Alert',
-    children:
-      'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
-  },
-}
+// FIXME: Objects are not valid as a React child
+// export const WithLucideIcon: Story = {
+//   args: {
+//     icon: Lucide.OctagonAlert,
+//     title: 'AWS Credit Alert',
+//     children:
+//       'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
+//   },
+// }
 
 export const WithIconElement: Story = {
   args: {

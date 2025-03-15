@@ -22,20 +22,20 @@ export default {
       borderColor: '#fb923c',
     },
   },
-  'status:new': {
-    label: 'New',
+  'status:done': {
+    label: 'Done',
     style: {
       color: '#f0fdf5',
       backgroundColor: '#16a34a',
       borderColor: '#22c55e',
     },
   },
-  'status:under-review': {
-    label: 'Under Review',
+  'status:preview': {
+    label: 'Preview',
     style: {
-      color: '#ffffff',
-      backgroundColor: '#3b82f6',
-      borderColor: '#60a5fa',
+      color: '#3b82f6',
+      backgroundColor: 'transparent',
+      borderColor: '#3b82f6',
     },
   },
   'status:updated': {
@@ -58,16 +58,16 @@ export default {
     label: 'Deprecated',
     style: {
       color: '#ffffff',
-      backgroundColor: '#dc2626',
-      borderColor: '#ef4444',
+      backgroundColor: '#9f1239',
+      borderColor: '#be123c',
     },
   },
   'status:experimental': {
     label: 'Experimental',
     style: {
       color: '#ffffff',
-      backgroundColor: '#9f1239', // Merah marun
-      borderColor: '#be123c',
+      backgroundColor: '#000000',
+      borderColor: '#000000',
     },
   },
 } satisfies Record<string, BadgeConfig>

@@ -98,12 +98,12 @@ export default function LandingPage() {
                 <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                   <Link
                     href="/docs/ui/installation"
-                    className="inline-block rounded-lg bg-blue-500 px-8 py-3 text-center font-medium text-sm text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base dark:text-white"
+                    className="inline-block rounded-lg bg-blue-500 px-8 py-3 text-center font-medium text-sm text-white outline-hidden ring-blue-300 transition duration-150 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base dark:text-white"
                   >
                     Get started
                   </Link>
 
-                  <div className="group inline-flex items-center justify-center gap-2.5 rounded-lg border border-gray-200 bg-gray-100 px-4 py-3 text-center font-medium text-gray-600 text-sm outline-none ring-gray-300 md:text-base">
+                  <div className="group inline-flex items-center justify-center gap-2.5 rounded-lg border border-gray-200 bg-gray-100 px-4 py-3 text-center font-medium text-gray-600 text-sm outline-hidden ring-gray-300 md:text-base">
                     <span className="font-medium font-mono text-sm tracking-tight group-hover:text-blue-500">
                       {installCommand}
                     </span>
@@ -121,7 +121,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="mt-4 flex h-[18rem] overflow-hidden rounded-lg bg-gray-100 shadow-lg md:mt-0 md:h-auto xl:w-1/2">
+            <div className="mt-4 flex h-[18rem] overflow-hidden rounded-lg bg-gray-100 shadow-md md:mt-0 md:h-auto xl:w-1/2">
               <Atropos
                 activeOffset={40}
                 shadowScale={1.05}

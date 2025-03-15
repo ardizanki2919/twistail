@@ -1,13 +1,12 @@
-// Tremor Button [v0.2.0]
-
 import * as Lucide from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { type ButtonStyles, buttonStyles } from './button.css'
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>, ButtonStyles {
+interface ButtonProps
+  extends Omit<React.ComponentPropsWithoutRef<'button'>, 'color'>,
+    ButtonStyles {
   asChild?: boolean
-  isLoading?: boolean
   loadingText?: string
 }
 
@@ -20,15 +19,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled,
       variant,
+      size,
       children,
       ...props
     }: ButtonProps,
     forwardedRef
   ) => {
     const Comp = asChild ? Slot.Root : 'button'
-    const styles = buttonStyles({ variant, isLoading })
+    const styles = buttonStyles({ variant, size, isLoading })
 
-    // TODO: move styles to `button.css.ts`
     const withLoading = (
       <span className={styles.span()}>
         <Lucide.LoaderCircle className={styles.icon()} aria-hidden="true" />
@@ -42,7 +41,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={forwardedRef}
         className={styles.base({ className })}
         disabled={disabled || isLoading}
-        tremor-id="tremor-raw"
         {...props}
       >
         {isLoading ? withLoading : children}

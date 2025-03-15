@@ -1,18 +1,12 @@
-// Tremor Tabs [v0.1.0]
-
 import { Tabs as TabsPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { type TabsStyles, tabsStyles } from './tabs.css'
 
 const Tabs = (
   props: Omit<React.ComponentPropsWithoutRef<typeof TabsPrimitives.Root>, 'orientation'>
-) => {
-  return <TabsPrimitives.Root tremor-id="tremor-raw" {...props} />
-}
+) => <TabsPrimitives.Root {...props} />
 
-Tabs.displayName = 'Tabs'
-
-type TabsListVariant = 'line' | 'solid'
+type TabsListVariant = NonNullable<TabsStyles['variant']>
 
 const TabsListVariantContext = React.createContext<TabsListVariant>('line')
 
@@ -20,110 +14,51 @@ interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimit
   variant?: TabsListVariant
 }
 
-const variantStyles: Record<TabsListVariant, string> = {
-  line: clx(
-    // base
-    'flex items-center justify-start border-b',
-    // border color
-    'border-gray-200 dark:border-gray-800'
-  ),
-  solid: clx(
-    // base
-    'inline-flex items-center justify-center rounded-md p-1',
-    // background color
-    'bg-gray-100 dark:bg-gray-900'
-  ),
-}
-
 const TabsList = React.forwardRef<React.ComponentRef<typeof TabsPrimitives.List>, TabsListProps>(
-  ({ className, variant = 'line', children, ...props }, forwardedRef) => (
-    <TabsPrimitives.List
-      ref={forwardedRef}
-      className={clx(variantStyles[variant], className)}
-      {...props}
-    >
-      <TabsListVariantContext.Provider value={variant}>{children}</TabsListVariantContext.Provider>
-    </TabsPrimitives.List>
-  )
-)
-
-TabsList.displayName = 'TabsList'
-
-function getVariantStyles(tabVariant: TabsListVariant) {
-  switch (tabVariant) {
-    case 'line':
-      return clx(
-        // base
-        '-mb-px items-center justify-center whitespace-nowrap border-transparent border-b-2 px-3 pb-2 font-medium text-sm transition-all',
-        // text color
-        'text-gray-500 dark:text-gray-500',
-        // hover
-        'hover:text-gray-700 hover:dark:text-gray-400',
-        // border hover
-        'hover:border-gray-300 hover:dark:border-gray-400',
-        // selected
-        'data-[state=active]:border-blue-500 data-[state=active]:text-blue-500',
-        'data-[state=active]:dark:border-blue-500 data-[state=active]:dark:text-blue-500',
-        // disabled
-        'data-[disabled]:pointer-events-none',
-        'data-[disabled]:text-gray-300 data-[disabled]:dark:text-gray-700'
-      )
-    case 'solid':
-      return clx(
-        // base
-        'inline-flex items-center justify-center whitespace-nowrap rounded px-3 py-1 font-medium text-sm ring-1 ring-inset transition-all',
-        // text color
-        'text-gray-500 dark:text-gray-400',
-        // hover
-        'hover:text-gray-700 hover:dark:text-gray-200',
-        // ring
-        'ring-transparent',
-        // selected
-        'data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow',
-        'data-[state=active]:dark:bg-gray-950 data-[state=active]:dark:text-gray-50',
-        // disabled
-        'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:opacity-50 data-[disabled]:dark:text-gray-600'
-      )
+  ({ className, variant = 'line', children, ...props }, forwardedRef) => {
+    const styles = tabsStyles({ variant })
+    return (
+      <TabsPrimitives.List ref={forwardedRef} className={styles.list({ className })} {...props}>
+        <TabsListVariantContext.Provider value={variant}>
+          {children}
+        </TabsListVariantContext.Provider>
+      </TabsPrimitives.List>
+    )
   }
-}
+)
 
 const TabsTrigger = React.forwardRef<
   React.ComponentRef<typeof TabsPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitives.Trigger>
->(({ className, children, ...props }, forwardedRef) => {
+>(({ className, ...props }, forwardedRef) => {
   const variant = React.useContext(TabsListVariantContext)
+  const styles = tabsStyles({ variant })
   return (
     <TabsPrimitives.Trigger
       ref={forwardedRef}
-      className={clx(
-        getVariantStyles(variant),
-        'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-        className
-      )}
+      className={styles.trigger({ className })}
       {...props}
-    >
-      {children}
-    </TabsPrimitives.Trigger>
+    />
   )
 })
-
-TabsTrigger.displayName = 'TabsTrigger'
 
 const TabsContent = React.forwardRef<
   React.ComponentRef<typeof TabsPrimitives.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitives.Content>
->(({ className, ...props }, forwardedRef) => (
-  <TabsPrimitives.Content
-    ref={forwardedRef}
-    className={clx(
-      'outline-none',
-      'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tabsStyles()
+  return (
+    <TabsPrimitives.Content
+      ref={forwardedRef}
+      className={styles.content({ className })}
+      {...props}
+    />
+  )
+})
 
+Tabs.displayName = 'Tabs'
+TabsList.displayName = 'TabsList'
+TabsTrigger.displayName = 'TabsTrigger'
 TabsContent.displayName = 'TabsContent'
 
 export { Tabs, TabsContent, TabsList, TabsTrigger }

@@ -7,16 +7,16 @@ import { Input } from '#/components'
 import { Label } from '#/components'
 import { Checkbox } from '#/components'
 import { RadioGroup, RadioGroupItem } from '#/components'
-import { Select, SelectTrigger } from '#/components'
-import { SelectContent, SelectItem, SelectValue } from '#/components'
-import { SelectNative } from '#/components'
+import { Listbox, ListboxTrigger } from '#/components'
+import { ListboxContent, ListboxItem, ListboxValue } from '#/components'
+import { Select } from '#/components'
 import { Switch } from '#/components'
 import { Textarea } from '#/components'
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Base Components/Card',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
@@ -128,16 +128,10 @@ export const WithInputs: Story = {
           <Input id="name" name="name" type="text" placeholder="Emma" />
         </div>
         <div className="mt-4 flex gap-3">
-          <Checkbox checked id="r1" />
+          <Checkbox id="r1" />
           <Label htmlFor="r1">
             I'd like to be notified by SMS when my order is ready for collection.
           </Label>
-        </div>
-        <div className="mt-4 flex gap-3">
-          <div className="flex items-center space-x-4">
-            <Switch checked id="r1" />
-            <Label htmlFor="r1">Click this Label check the Switch</Label>
-          </div>
         </div>
         <div className="mt-4 flex gap-3">
           <Textarea id="textarea" name="textarea" className="mt-2" />
@@ -161,26 +155,26 @@ export const WithInputs: Story = {
           </div>
         </div>
         <div className="mt-4 flex gap-3">
-          <SelectNative>
+          <Select>
             <option value="0-18">18 and under</option>
             <option value="19-39">19 to 39</option>
             <option value="40-64">40 to 64</option>
             <option value="65-infinity">65 and over</option>
-          </SelectNative>
+          </Select>
         </div>
         <div className="mt-4 flex gap-3">
-          <Select>
-            <SelectTrigger>
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent>
+          <Listbox>
+            <ListboxTrigger>
+              <ListboxValue placeholder="Listbox" />
+            </ListboxTrigger>
+            <ListboxContent>
               {data1.map((item) => (
-                <SelectItem key={item.value} value={item.value}>
+                <ListboxItem key={item.value} value={item.value}>
                   {item.label}
-                </SelectItem>
+                </ListboxItem>
               ))}
-            </SelectContent>
-          </Select>
+            </ListboxContent>
+          </Listbox>
         </div>
         <div className="mt-4 flex gap-3">
           <Input type="file" />
@@ -188,9 +182,12 @@ export const WithInputs: Story = {
 
         <Divider />
         <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
-          <Button variant="light">Clear</Button>
-          <Button variant="secondary">Clear</Button>
-          <Tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor.">
+          <Button variant="outline">Clear</Button>
+          <Button variant="destructive">Remove</Button>
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor."
+            asChild
+          >
             <Button className="w-full" type="submit">
               Apply
             </Button>

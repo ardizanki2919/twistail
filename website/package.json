@@ -9,7 +9,7 @@
         "preview": "wrangler dev",
         "deploy": "wrangler deploy",
         "postinstall": "fumadocs-mdx",
-        "start": "pnpm dlx serve out -l 3000 -n -C",
+        "start": "pnpm dlx local-web-server -p 3000 -d out",
         "cleanup": "pnpm dlx del-cli .{next,source,wrangler} out",
         "update-deps": "npm-check-updates",
         "check": "biome check . --write",
@@ -20,11 +20,11 @@
     "dependencies": {
         "atropos": "^2.0.2",
         "consola": "^3.4.0",
-        "fumadocs-core": "15.0.16",
+        "fumadocs-core": "15.0.18",
         "fumadocs-docgen": "^2.0.0",
         "fumadocs-mdx": "11.5.6",
-        "fumadocs-ui": "15.0.16",
-        "lucide-react": "^0.479.0",
+        "fumadocs-ui": "15.0.18",
+        "lucide-react": "^0.482.0",
         "next": "15.2.2",
         "react": "^19.0.0",
         "react-country-flag": "^3.1.0",
@@ -38,7 +38,7 @@
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@eslint/eslintrc": "^3.3.0",
-        "@tailwindcss/postcss": "^4.0.13",
+        "@tailwindcss/postcss": "^4.0.14",
         "@types/node": "22.13.10",
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
@@ -47,8 +47,8 @@
         "npm-check-updates": "^17.1.15",
         "postcss": "^8.5.3",
         "postcss-load-config": "^6.0.1",
-        "tailwindcss": "^4.0.13",
+        "tailwindcss": "^4.0.14",
         "typescript": "5.8.2",
-        "wrangler": "^3.114.1"
+        "wrangler": "^4.0.0"
     }
 }

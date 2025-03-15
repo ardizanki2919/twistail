@@ -1,111 +1,88 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from '#/components'
-import { Card } from '#/components'
-import { Divider } from '#/components'
-import { Label } from '#/components'
-import { Switch } from '#/components'
+import { Button, Card, Divider, Label, Switch } from '#/components'
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
   title: 'Base Components/Switch',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
 type Story = StoryObj<typeof Switch>
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SimpleIdSwitch = (args: any) => {
-  const [checked, setChecked] = React.useState<boolean>(false)
-
-  return (
-    <div className="space-y-4">
-      <Card className="w-96">
-        <form
-          onSubmit={(event) => {
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            event.preventDefault()
-            alert('Submitted')
-          }}
-          onReset={() => setChecked(false)}
-        >
-          <div className="flex items-center gap-3">
-            <Label htmlFor="a">Click the Label</Label>
-            <Switch id="a" checked={checked} onCheckedChange={setChecked} {...args} />
-          </div>
-          <Divider />
-          <div className="flex gap-4">
-            <Button type="submit" className="mt-2 w-fit">
-              Submit
-            </Button>
-
-            <Button type="reset" variant="secondary" className="mt-2 w-fit">
-              Reset Input
-            </Button>
-          </div>
-        </form>
-      </Card>
-
-      <p className="text-gray-500 text-sm">
-        Switch is:
-        <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
-          {checked ? 'On' : 'Off'}
-        </span>
-      </p>
-    </div>
-  )
-}
-
 export const Default: Story = {}
 
-export const SizeDefault: Story = {
-  args: { size: 'default' },
-}
-
-export const SizeSmall: Story = {
-  args: { size: 'small' },
+export const SizeShowcase: Story = {
+  render: () => (
+    <div className="flex flex-col items-start gap-4">
+      <Switch size="md" />
+      <Switch size="sm" />
+    </div>
+  ),
 }
 
 export const DefaultChecked: Story = {
-  render: () => (
-    <>
-      <Switch id="label" defaultChecked />
-    </>
-  ),
+  render: () => <Switch id="label" defaultChecked />,
 }
 
 export const Disabled: Story = {
-  render: () => (
-    <>
-      <Switch id="label" disabled />
-    </>
-  ),
+  render: () => <Switch id="label" disabled />,
 }
 
 export const CheckedDisabled: Story = {
-  render: () => (
-    <>
-      <Switch id="label" defaultChecked disabled />
-    </>
-  ),
+  render: () => <Switch id="label" defaultChecked disabled />,
 }
 
 export const WithLabel: Story = {
   render: () => (
-    <>
-      <div className="flex items-center space-x-4">
-        <Label htmlFor="r1">Click this Label check the Switch</Label>
-        <Switch id="r1" />
-      </div>
-    </>
+    <div className="flex items-center space-x-2.5">
+      <Switch id="r1" />
+      <Label htmlFor="r1">Click this Label check the Switch</Label>
+    </div>
   ),
-  args: { size: 'small' },
+  args: { size: 'sm' },
 }
 
 export const ControlledForm: Story = {
-  render: SimpleIdSwitch,
-  args: {
-    required: true,
+  args: { required: true },
+  render: (args) => {
+    const [checked, setChecked] = React.useState<boolean>(false)
+    return (
+      <div className="space-y-4">
+        <Card className="w-96">
+          <form
+            onSubmit={(event) => {
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+              event.preventDefault()
+              alert('Submitted')
+            }}
+            onReset={() => setChecked(false)}
+          >
+            <div className="flex items-center gap-3">
+              <Label htmlFor="a">Click the Label</Label>
+              <Switch id="a" checked={checked} onCheckedChange={setChecked} {...args} />
+            </div>
+            <Divider />
+            <div className="flex gap-4">
+              <Button type="submit" className="mt-2 w-fit">
+                Submit
+              </Button>
+
+              <Button type="reset" variant="secondary" className="mt-2 w-fit">
+                Reset Input
+              </Button>
+            </div>
+          </form>
+        </Card>
+
+        <p className="text-gray-500 text-sm">
+          Switch is:
+          <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
+            {checked ? 'On' : 'Off'}
+          </span>
+        </p>
+      </div>
+    )
   },
 }

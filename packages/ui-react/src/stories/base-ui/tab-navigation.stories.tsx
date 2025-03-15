@@ -5,7 +5,7 @@ import { TabNavigation, TabNavigationLink } from '#/components'
 const meta: Meta<typeof TabNavigation> = {
   component: TabNavigation,
   title: 'Base Components/TabNavigation',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {},
 }
 
@@ -27,7 +27,7 @@ export const Default: Story = {
   ),
 }
 
-export const Icons: Story = {
+export const WithIcons: Story = {
   render: () => (
     <TabNavigation>
       <TabNavigationLink href="#" active className="inline-flex gap-2">

@@ -1,171 +1,90 @@
-// Tremor Table [v0.0.3]
-
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { tableStyles } from './table.css'
 
 const TableRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, children, ...props }, forwardedRef) => (
-    <div
-      ref={forwardedRef}
-      // Activate if table is used in a float environment
-      // className="flow-root"
-    >
-      <div
-        // make table scrollable on mobile
-        className={clx('w-full overflow-auto whitespace-nowrap', className)}
-        {...props}
-      >
-        {children}
+  ({ className, children, ...props }, forwardedRef) => {
+    const styles = tableStyles()
+    return (
+      <div ref={forwardedRef}>
+        {/* make table scrollable on mobile */}
+        <div className={styles.root({ className })} {...props}>
+          {children}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 )
-
-TableRoot.displayName = 'TableRoot'
 
 const Table = React.forwardRef<HTMLTableElement, React.TableHTMLAttributes<HTMLTableElement>>(
-  ({ className, ...props }, forwardedRef) => (
-    <table
-      ref={forwardedRef}
-      tremor-id="tremor-raw"
-      className={clx(
-        // base
-        'w-full caption-bottom border-b',
-        // border color
-        'border-gray-200 dark:border-gray-800',
-        className
-      )}
-      {...props}
-    />
-  )
+  ({ className, ...props }, forwardedRef) => {
+    const styles = tableStyles()
+    return <table ref={forwardedRef} className={styles.table({ className })} {...props} />
+  }
 )
-
-Table.displayName = 'Table'
 
 const TableHead = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, forwardedRef) => (
-  <thead ref={forwardedRef} className={clx(className)} {...props} />
-))
-
-TableHead.displayName = 'TableHead'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tableStyles()
+  return <thead ref={forwardedRef} className={styles.head({ className })} {...props} />
+})
 
 const TableHeaderCell = React.forwardRef<
   HTMLTableCellElement,
   React.ThHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, forwardedRef) => (
-  <th
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'border-b px-4 py-3.5 text-left font-semibold text-sm',
-      // text color
-      'text-gray-900 dark:text-gray-50',
-      // border color
-      'border-gray-200 dark:border-gray-800',
-      className
-    )}
-    {...props}
-  />
-))
-
-TableHeaderCell.displayName = 'TableHeaderCell'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tableStyles()
+  return <th ref={forwardedRef} className={styles.headerCell({ className })} {...props} />
+})
 
 const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, forwardedRef) => (
-  <tbody
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'divide-y',
-      // divide color
-      'divide-gray-200 dark:divide-gray-800',
-      className
-    )}
-    {...props}
-  />
-))
-
-TableBody.displayName = 'TableBody'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tableStyles()
+  return <tbody ref={forwardedRef} className={styles.body({ className })} {...props} />
+})
 
 const TableRow = React.forwardRef<HTMLTableRowElement, React.HTMLAttributes<HTMLTableRowElement>>(
-  ({ className, ...props }, forwardedRef) => (
-    <tr
-      ref={forwardedRef}
-      className={clx(
-        '[&_td:last-child]:pr-4 [&_th:last-child]:pr-4',
-        '[&_td:first-child]:pl-4 [&_th:first-child]:pl-4',
-        className
-      )}
-      {...props}
-    />
-  )
+  ({ className, ...props }, forwardedRef) => {
+    const styles = tableStyles()
+    return <tr ref={forwardedRef} className={styles.row({ className })} {...props} />
+  }
 )
-
-TableRow.displayName = 'TableRow'
 
 const TableCell = React.forwardRef<
   HTMLTableCellElement,
   React.TdHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, forwardedRef) => (
-  <td
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'p-4 text-sm',
-      // text color
-      'text-gray-600 dark:text-gray-400',
-      className
-    )}
-    {...props}
-  />
-))
-
-TableCell.displayName = 'TableCell'
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tableStyles()
+  return <td ref={forwardedRef} className={styles.cell({ className })} {...props} />
+})
 
 const TableFoot = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, forwardedRef) => {
-  return (
-    <tfoot
-      ref={forwardedRef}
-      className={clx(
-        // base
-        'border-t text-left font-medium',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // border color
-        'border-gray-200 dark:border-gray-800',
-        className
-      )}
-      {...props}
-    />
-  )
+  const styles = tableStyles()
+  return <tfoot ref={forwardedRef} className={styles.foot({ className })} {...props} />
 })
-
-TableFoot.displayName = 'TableFoot'
 
 const TableCaption = React.forwardRef<
   HTMLTableCaptionElement,
   React.HTMLAttributes<HTMLTableCaptionElement>
->(({ className, ...props }, forwardedRef) => (
-  <caption
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'mt-3 px-3 text-center text-sm',
-      // text color
-      'text-gray-500 dark:text-gray-500',
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = tableStyles()
+  return <caption ref={forwardedRef} className={styles.caption({ className })} {...props} />
+})
 
+TableRoot.displayName = 'TableRoot'
+Table.displayName = 'Table'
+TableHead.displayName = 'TableHead'
+TableHeaderCell.displayName = 'TableHeaderCell'
+TableBody.displayName = 'TableBody'
+TableRow.displayName = 'TableRow'
+TableCell.displayName = 'TableCell'
+TableFoot.displayName = 'TableFoot'
 TableCaption.displayName = 'TableCaption'
 
 export {

@@ -113,7 +113,7 @@ export const NavBar = () => {
           type="button"
           className={clx(
             isMenuOpen ? 'hidden' : 'inline-flex',
-            'relative z-50 items-center gap-2 rounded-lg bg-neutral-100 px-2.5 py-2 font-medium text-neutral-700 text-sm shadow-sm ring-blue-300 hover:bg-neutral-200 focus-visible:ring lg:hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
+            'relative z-50 items-center gap-2 rounded-lg bg-neutral-100 px-2.5 py-2 font-medium text-neutral-700 text-sm shadow-xs ring-blue-300 hover:bg-neutral-200 focus-visible:ring lg:hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
           )}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-expanded={isMenuOpen}
@@ -139,7 +139,7 @@ export const NavBar = () => {
       <div
         id="mobile-menu"
         className={clx(
-          'fixed inset-0 z-40 transform bg-white/80 backdrop-blur-sm transition-all duration-300 ease-in-out lg:hidden dark:bg-neutral-950/80',
+          'fixed inset-0 z-40 transform bg-white/80 backdrop-blur-xs transition-all duration-300 ease-in-out lg:hidden dark:bg-neutral-950/80',
           isMenuOpen
             ? 'translate-x-0 opacity-100'
             : 'pointer-events-none translate-x-full opacity-0'
@@ -147,7 +147,7 @@ export const NavBar = () => {
         aria-hidden={!isMenuOpen}
       >
         <div
-          className="absolute right-0 flex h-full w-full max-w-sm transform flex-col bg-white shadow-xl transition-transform duration-500 ease-in-out dark:bg-neutral-900"
+          className="absolute right-0 flex h-full w-full max-w-sm transform flex-col bg-white shadow-lg transition-transform duration-500 ease-in-out dark:bg-neutral-900"
           style={{
             transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
             transitionDelay: isMenuOpen ? '150ms' : '0ms',
@@ -166,7 +166,7 @@ export const NavBar = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(false)}
-                className="relative z-50 items-center gap-2 rounded-lg bg-neutral-100 px-2.5 py-2 font-medium text-neutral-700 text-sm shadow-sm ring-blue-300 hover:bg-neutral-200 focus-visible:ring lg:hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                className="relative z-50 items-center gap-2 rounded-lg bg-neutral-100 px-2.5 py-2 font-medium text-neutral-700 text-sm shadow-xs ring-blue-300 hover:bg-neutral-200 focus-visible:ring lg:hidden dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
               >
                 <Lucide.X className="size-5" />
                 <span className="sr-only">Close menu</span>
@@ -220,7 +220,7 @@ export const NavBar = () => {
             <div className="mt-auto border-t p-6 dark:border-neutral-800">
               <Link
                 href="https://github.com/riipandi/twistail"
-                className="flex w-full items-center justify-center gap-3 rounded-lg bg-neutral-100 px-4 py-3 font-medium text-neutral-800 transition-all duration-200 hover:bg-neutral-200 hover:shadow-md dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                className="flex w-full items-center justify-center gap-3 rounded-lg bg-neutral-100 px-4 py-3 font-medium text-neutral-800 transition-all duration-200 hover:bg-neutral-200 hover:shadow-sm dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
                 newTab
               >
                 <GitHubIcon className="size-5" />

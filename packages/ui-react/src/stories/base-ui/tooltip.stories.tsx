@@ -5,7 +5,7 @@ import { Button, Tooltip } from '#/components'
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: 'Base Components/Tooltip',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'centered',
   },
@@ -64,7 +64,7 @@ export const WithoutArrow: Story = {
   ),
 }
 
-export const Icon: Story = {
+export const IconTrigger: Story = {
   render: () => (
     <Tooltip side="top" content="The quick brown fox jumps over the lazy dog.">
       <Lucide.Info className="size-5 text-gray-700 dark:text-gray-700" />

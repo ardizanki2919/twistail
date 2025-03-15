@@ -1,75 +1,30 @@
-// Tremor Callout [v0.0.1]
-
 import * as React from 'react'
-import { type VariantProps, tv } from 'tailwind-variants'
-import { clx } from 'twistail-utils'
+import { type CalloutStyles, calloutStyles } from './callout.css'
 
-const calloutVariants = tv({
-  base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',
-  variants: {
-    variant: {
-      default: [
-        // text color
-        'text-blue-900 dark:text-blue-400',
-        // background color
-        'bg-blue-50 dark:bg-blue-950/70',
-      ],
-      success: [
-        // text color
-        'text-emerald-900 dark:text-emerald-500',
-        // background color
-        'bg-emerald-50 dark:bg-emerald-950/70',
-      ],
-      error: [
-        // text color
-        'text-red-900 dark:text-red-500',
-        // background color
-        'bg-red-50 dark:bg-red-950/70',
-      ],
-      warning: [
-        // text color
-        'text-yellow-900 dark:text-yellow-500',
-        // background color
-        'bg-yellow-50 dark:bg-yellow-950/70',
-      ],
-      neutral: [
-        // text color
-        'text-gray-900 dark:text-gray-400',
-        // background color
-        'bg-gray-100 dark:bg-gray-800/70',
-      ],
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-})
-
-interface CalloutProps
-  extends React.ComponentPropsWithoutRef<'div'>,
-    VariantProps<typeof calloutVariants> {
+interface CalloutProps extends React.ComponentPropsWithoutRef<'div'>, CalloutStyles {
   title: string
   icon?: React.ElementType | React.ReactElement
 }
 
 const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
   ({ title, icon: Icon, className, variant, children, ...props }: CalloutProps, forwardedRef) => {
+    const styles = calloutStyles({ variant })
+
     return (
-      <div
-        ref={forwardedRef}
-        className={clx(calloutVariants({ variant }), className)}
-        tremor-id="tremor-raw"
-        {...props}
-      >
-        <div className={clx('flex items-start')}>
+      <div ref={forwardedRef} className={styles.base({ className })} {...props}>
+        <div className={styles.header()}>
           {Icon && typeof Icon === 'function' ? (
-            <Icon className={clx('mr-1.5 size-5 shrink-0')} aria-hidden="true" />
+            <Icon className={styles.icon()} aria-hidden="true" />
           ) : (
             Icon
           )}
-          <span className={clx('font-semibold')}>{title}</span>
+          <span className={styles.title()}>{title}</span>
         </div>
-        <div className={clx('overflow-y-auto', children ? 'mt-2' : '')}>{children}</div>
+        <div
+          className={styles.content({ className: children ? styles.contentWithChildren() : '' })}
+        >
+          {children}
+        </div>
       </div>
     )
   }
@@ -77,4 +32,4 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
 
 Callout.displayName = 'Callout'
 
-export { Callout, calloutVariants, type CalloutProps }
+export { Callout, type CalloutProps }

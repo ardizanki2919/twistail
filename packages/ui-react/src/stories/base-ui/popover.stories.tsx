@@ -11,7 +11,7 @@ import { PopoverClose, PopoverContent } from '#/components'
 const meta: Meta<typeof Popover> = {
   component: Popover,
   title: 'Base Components/Popover',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'centered',
   },
@@ -50,7 +50,7 @@ export const Close: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button>Open</Button>
+        <Button>Open Form</Button>
       </PopoverTrigger>
       <PopoverContent className="p-0">
         <form>
@@ -64,11 +64,11 @@ export const Close: Story = {
           </div>
           <div className="flex items-center gap-2 border-gray-200 border-t p-2 dark:border-gray-800">
             <PopoverClose asChild>
-              <Button className="w-full" variant="secondary">
+              <Button className="w-full" variant="secondary" size="sm">
                 Clear
               </Button>
             </PopoverClose>
-            <Button className="mx-auto w-full" type="submit">
+            <Button className="mx-auto w-full" type="submit" size="sm">
               Apply
             </Button>
           </div>

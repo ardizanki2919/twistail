@@ -24,13 +24,13 @@ const TitleComponent = () => (
 )
 
 export const baseOptions: BaseLayoutProps = {
-  nav: { url: '/', title: <TitleComponent />, transparentMode: 'always' },
+  nav: { url: '/', title: <TitleComponent />, transparentMode: 'top' },
   githubUrl: 'https://github.com/riipandi/twistail',
   links: [
     { text: 'Blog', url: '/blog' },
     {
       text: 'Storybook',
-      url: 'https://twistail-storybook.netlify.app/',
+      url: 'https://storybook.twistail.com',
       external: true,
       active: 'url',
     },

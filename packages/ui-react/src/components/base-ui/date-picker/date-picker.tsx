@@ -1,5 +1,3 @@
-// Tremor Date Picker [v1.0.5]
-
 import { Time } from '@internationalized/date'
 import { AriaTimeFieldProps, TimeValue, useDateSegment, useTimeField } from '@react-aria/datepicker'
 import { type DateFieldState, type DateSegment, useTimeFieldState } from '@react-stately/datepicker'
@@ -48,7 +46,7 @@ const TimeSegment = ({ segment, state }: TimeSegmentProps) => {
       ref={ref}
       className={clx(
         // base
-        'relative block w-full appearance-none rounded-md border px-2.5 py-1.5 text-left uppercase tabular-nums shadow-sm outline-none transition sm:text-sm',
+        'relative block w-full appearance-none rounded-md border px-2.5 py-1.5 text-left uppercase tabular-nums shadow-xs outline-hidden transition sm:text-sm',
         // border color
         'border-gray-300 dark:border-gray-800',
         // text color
@@ -134,7 +132,7 @@ TimeInput.displayName = 'TimeInput'
 const triggerStyles = tv({
   base: [
     // base
-    'peer flex w-full cursor-pointer appearance-none items-center gap-x-2 truncate rounded-md border px-3 py-2 shadow-sm outline-none transition-all sm:text-sm',
+    'peer flex w-full cursor-pointer appearance-none items-center gap-x-2 truncate rounded-md border px-3 py-2 shadow-xs outline-hidden transition-all sm:text-sm',
     // background color
     'bg-white dark:bg-gray-950',
     // border color
@@ -148,7 +146,7 @@ const triggerStyles = tv({
     // disabled
     'disabled:pointer-events-none',
     'disabled:bg-gray-100 disabled:text-gray-400',
-    'disabled:dark:border-gray-800 disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
+    'disabled:dark:border-gray-800 disabled:dark:bg-gray-900 disabled:dark:text-gray-500',
     // focus
     'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
     // invalid (optional)
@@ -208,7 +206,7 @@ const CalendarPopover = React.forwardRef<
         onOpenAutoFocus={(e) => e.preventDefault()}
         className={clx(
           // base
-          'relative z-50 w-fit rounded-md border text-sm shadow-black/[2.5%] shadow-xl',
+          'relative z-50 w-fit rounded-md border text-sm shadow-black/[2.5%] shadow-lg',
           // widths
           'min-w-[calc(var(--radix-select-trigger-width)-2px)] max-w-[95vw]',
           // border color
@@ -347,7 +345,7 @@ const PresetContainer = <TPreset extends Preset, TValue>({
               title={preset.label}
               className={clx(
                 // base
-                'relative w-full overflow-hidden text-ellipsis whitespace-nowrap rounded border px-2.5 py-1.5 text-left text-base shadow-sm outline-none transition-all sm:border-none sm:py-2 sm:text-sm sm:shadow-none',
+                'relative w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-sm border px-2.5 py-1.5 text-left text-base shadow-xs outline-hidden transition-all sm:border-none sm:py-2 sm:text-sm sm:shadow-none',
                 // text color
                 'text-gray-700 dark:text-gray-300',
                 // border color
@@ -573,7 +571,7 @@ const SingleDatePicker = ({
   }, [value, defaultValue])
 
   return (
-    <PopoverPrimitives.Root tremor-id="tremor-raw" open={open} onOpenChange={onOpenChange}>
+    <PopoverPrimitives.Root open={open} onOpenChange={onOpenChange}>
       <Trigger
         placeholder={placeholder}
         disabled={disabled}
@@ -856,7 +854,7 @@ const RangeDatePicker = ({
   }
 
   return (
-    <PopoverPrimitives.Root tremor-id="tremor-raw" open={open} onOpenChange={onOpenChange}>
+    <PopoverPrimitives.Root open={open} onOpenChange={onOpenChange}>
       <Trigger
         placeholder={placeholder}
         disabled={disabled}

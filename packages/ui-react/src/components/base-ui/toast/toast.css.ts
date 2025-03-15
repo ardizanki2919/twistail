@@ -2,11 +2,24 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const toastStyles = tv({
   slots: {
-    toast:
-      'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
+    root: 'toaster group',
+    toast: [
+      'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground',
+      'group-[.toaster]:border-border group-[.toaster]:shadow-md',
+    ],
+    title: '',
     description: 'group-[.toast]:text-muted-foreground',
-    actionButton: 'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
+    loader: '',
+    closeButton: '',
     cancelButton: 'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
+    actionButton: 'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
+    success: '',
+    error: '',
+    info: '',
+    warning: '',
+    loading: '',
+    default: '',
+    content: '',
     icon: 'size-4',
   },
 })

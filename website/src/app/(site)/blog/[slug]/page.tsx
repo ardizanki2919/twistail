@@ -143,7 +143,7 @@ export default async function Page(props: {
                 {prevPost ? (
                   <Link
                     href={prevPost.url}
-                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-md dark:border-neutral-700 dark:hover:border-neutral-600"
+                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-sm dark:border-neutral-700 dark:hover:border-neutral-600"
                   >
                     <span className="block font-medium text-sm text-teal-600 dark:text-teal-400">
                       Previous Post
@@ -159,7 +159,7 @@ export default async function Page(props: {
                 {nextPost ? (
                   <Link
                     href={nextPost.url}
-                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-md sm:text-right dark:border-neutral-700 dark:hover:border-neutral-600"
+                    className="group relative rounded-lg border border-neutral-200 p-4 transition-all hover:shadow-sm sm:text-right dark:border-neutral-700 dark:hover:border-neutral-600"
                   >
                     <span className="block font-medium text-sm text-teal-600 dark:text-teal-400">
                       Next Post

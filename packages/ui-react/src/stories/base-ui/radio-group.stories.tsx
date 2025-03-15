@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from '#/components'
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
   title: 'Base Components/RadioGroup',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta

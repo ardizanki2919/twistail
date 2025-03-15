@@ -5,7 +5,7 @@ import { Button, Checkbox, Label } from '#/components'
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   title: 'Base Components/Checkbox',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
 }
 
 export default meta
@@ -47,7 +47,7 @@ export const Disabled: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center gap-2.5">
       <Checkbox id="r1" />
       <Label htmlFor="r1">
         I'd like to be notified by SMS when my order is ready for collection.
@@ -59,7 +59,6 @@ export const WithLabel: Story = {
 export const Controlled: Story = {
   render: () => {
     const [checked, setChecked] = React.useState(true)
-
     return (
       <div className="flex flex-col items-center gap-4">
         <Checkbox checked={checked} onCheckedChange={() => setChecked(!checked)} />

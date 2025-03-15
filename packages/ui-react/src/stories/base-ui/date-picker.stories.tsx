@@ -8,7 +8,7 @@ import { DatePicker } from '#/components'
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   title: 'Base Components/DatePicker',
-  tags: ['status:wip'],
+  tags: ['status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">
