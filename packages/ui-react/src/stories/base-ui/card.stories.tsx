@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Divider } from '#/components'
+import { Button, Divider, TooltipContent, TooltipTrigger } from '#/components'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components'
 import { Tooltip } from '#/components'
 import { Card } from '#/components'
@@ -184,13 +184,13 @@ export const WithInputs: Story = {
         <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
           <Button variant="outline">Clear</Button>
           <Button variant="destructive">Remove</Button>
-          <Tooltip
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lorem non est congue blandit. Praesent non lorem sodales, suscipit est sed, hendrerit dolor."
-            asChild
-          >
-            <Button className="w-full" type="submit">
-              Apply
-            </Button>
+          <Tooltip delayDuration={10}>
+            <TooltipTrigger asChild>
+              <Button className="w-full" type="submit">
+                Apply
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent content="Once you submitted this request, there is no way back." />
           </Tooltip>
         </div>
       </form>
