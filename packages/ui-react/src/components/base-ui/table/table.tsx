@@ -1,5 +1,3 @@
-// Tremor Table [v0.0.3]
-
 import * as React from 'react'
 import { tableStyles } from './table.css'
 

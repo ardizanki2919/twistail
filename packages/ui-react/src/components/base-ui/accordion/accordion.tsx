@@ -1,5 +1,3 @@
-// Tremor Accordion [v0.0.1]
-
 import * as Lucide from 'lucide-react'
 import { Accordion as AccordionPrimitives } from 'radix-ui'
 import * as React from 'react'

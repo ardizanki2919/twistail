@@ -1,5 +1,3 @@
-// Tremor Badge [v0.0.1]
-
 import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { type BadgeStyles, badgeStyles } from './badge.css'

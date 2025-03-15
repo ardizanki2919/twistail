@@ -1,5 +1,3 @@
-// Tremor Date Picker [v1.0.5]
-
 import { Time } from '@internationalized/date'
 import { AriaTimeFieldProps, TimeValue, useDateSegment, useTimeField } from '@react-aria/datepicker'
 import { type DateFieldState, type DateSegment, useTimeFieldState } from '@react-stately/datepicker'

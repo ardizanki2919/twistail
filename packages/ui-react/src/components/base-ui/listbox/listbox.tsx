@@ -1,5 +1,3 @@
-// Tremor Select [v0.0.3]
-
 import * as Lucide from 'lucide-react'
 import { Select as ListboxPrimitives } from 'radix-ui'
 import * as React from 'react'

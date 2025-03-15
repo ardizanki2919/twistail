@@ -1,5 +1,3 @@
-// Tremor Switch [v0.0.1]
-
 import { Switch as SwitchPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { type SwitchStyles, switchStyles } from './switch.css'

@@ -1,5 +1,3 @@
-// Tremor RadioGroup [v0.0.2]
-
 import { RadioGroup as RadioGroupPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { radioGroupStyles } from './radio-group.css'

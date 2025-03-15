@@ -1,5 +1,3 @@
-// Tremor Select [v0.0.1]
-
 import * as React from 'react'
 import { type SelectStyles, selectStyles } from './select.css'
 

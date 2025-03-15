@@ -1,5 +1,3 @@
-// Tremor Popover [v0.0.3]
-
 import { Popover as PopoverPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { popoverStyles } from './popover.css'

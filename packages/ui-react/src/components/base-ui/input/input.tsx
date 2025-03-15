@@ -1,5 +1,3 @@
-// Tremor Input [v1.0.5]
-
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { type InputStyles, inputStyles } from './input.css'

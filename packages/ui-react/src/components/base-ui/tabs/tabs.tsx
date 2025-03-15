@@ -1,5 +1,3 @@
-// Tremor Tabs [v0.1.0]
-
 import { Tabs as TabsPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { type TabsStyles, tabsStyles } from './tabs.css'

@@ -1,5 +1,3 @@
-// Tremor Divider [v0.0.2]
-
 import * as React from 'react'
 import { type DividerStyles, dividerStyles } from './divider.css'
 

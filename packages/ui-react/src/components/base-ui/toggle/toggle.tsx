@@ -1,5 +1,3 @@
-// Tremor Toggle [v0.0.0]
-
 import { ToggleGroup as ToggleGroupPrimitive } from 'radix-ui'
 import { Toggle as TogglePrimitive } from 'radix-ui'
 import * as React from 'react'

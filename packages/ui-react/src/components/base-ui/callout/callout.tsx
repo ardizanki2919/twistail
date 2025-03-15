@@ -1,5 +1,3 @@
-// Tremor Callout [v0.0.1]
-
 import * as React from 'react'
 import { type CalloutStyles, calloutStyles } from './callout.css'
 

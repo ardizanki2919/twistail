@@ -1,5 +1,3 @@
-// Tremor Drawer [v0.0.2]
-
 import * as Lucide from 'lucide-react'
 import { Dialog as DrawerPrimitives } from 'radix-ui'
 import * as React from 'react'

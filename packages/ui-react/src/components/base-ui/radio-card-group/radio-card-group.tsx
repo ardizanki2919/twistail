@@ -1,5 +1,3 @@
-// Tremor Radio Card [v0.0.3]
-
 import { RadioGroup as RadioGroupPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { radioCardGroupStyles } from './radio-card-group.css'

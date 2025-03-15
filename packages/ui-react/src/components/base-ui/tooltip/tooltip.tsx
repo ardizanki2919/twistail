@@ -1,5 +1,3 @@
-// Tremor Tooltip [v0.1.0]
-
 import { Tooltip as TooltipPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { tooltipStyles } from './tooltip.css'

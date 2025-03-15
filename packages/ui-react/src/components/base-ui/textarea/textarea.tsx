@@ -1,5 +1,3 @@
-// Tremor Textarea [v0.0.2]
-
 import * as React from 'react'
 import { textareaStyles } from './textarea.css'
 

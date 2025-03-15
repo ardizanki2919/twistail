@@ -1,5 +1,3 @@
-// Tremor Slider [v0.1.0]
-
 import { Slider as SliderPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { sliderStyles } from './slider.css'

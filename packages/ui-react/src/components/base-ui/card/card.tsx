@@ -1,5 +1,3 @@
-// Tremor Card [v0.0.2]
-
 import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { cardStyles } from './card.css'

@@ -1,5 +1,3 @@
-// Tremor TabNavigation [v0.1.0]
-
 import { NavigationMenu as NavigationMenuPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { tabNavigationStyles } from './tab-navigation.css'

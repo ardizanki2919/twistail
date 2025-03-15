@@ -1,5 +1,3 @@
-// Tremor Button [v0.2.0]
-
 import * as Lucide from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'

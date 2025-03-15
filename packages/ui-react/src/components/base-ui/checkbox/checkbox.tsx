@@ -1,5 +1,3 @@
-// Tremor Checkbox [v0.0.3]
-
 import { Checkbox as CheckboxPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { checkboxStyles } from './checkbox.css'

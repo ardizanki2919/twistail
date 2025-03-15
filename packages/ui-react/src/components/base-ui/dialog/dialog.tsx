@@ -1,5 +1,3 @@
-// Tremor Dialog [v0.0.1]
-
 import { Dialog as DialogPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { dialogStyles } from './dialog.css'

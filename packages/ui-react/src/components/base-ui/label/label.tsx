@@ -1,5 +1,3 @@
-// Tremor Label [v0.0.2]
-
 import { Label as LabelPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { labelStyles } from './label.css'
