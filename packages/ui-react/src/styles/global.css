@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "tailwindcss-motion";
 
 /* FIXME: https://github.com/tailwindlabs/tailwindcss/issues/16582 */
 /* @variant dark (&:where([data-theme="dark"] *)); */
@@ -81,6 +80,7 @@
             height: var(--radix-accordion-content-height);
         }
     }
+
     @keyframes accordion-close {
         from {
             height: var(--radix-accordion-content-height);
@@ -265,6 +265,7 @@
             opacity: 0;
         }
     }
+
     @keyframes slide-down-fade {
         from {
             opacity: 0;
@@ -275,6 +276,7 @@
             transform: translateY(0);
         }
     }
+
     @keyframes slide-up-fade {
         from {
             opacity: 0;
@@ -285,6 +287,7 @@
             transform: translateY(0);
         }
     }
+
     @keyframes slide-right-fade {
         from {
             opacity: 0;
@@ -295,6 +298,7 @@
             transform: translateX(0);
         }
     }
+
     @keyframes slide-left-fade {
         from {
             opacity: 0;
