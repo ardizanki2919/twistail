@@ -5,7 +5,7 @@ import { TabNavigation, TabNavigationLink } from '#/components'
 const meta: Meta<typeof TabNavigation> = {
   component: TabNavigation,
   title: 'Base Components/TabNavigation',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {},
 }
 
