@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 import { clx, getInitials } from 'twistail-utils'
-import { Avatar, AvatarFallback, AvatarImage, TooltipContent, TooltipTrigger } from '#/components'
-import { Tooltip } from '#/components'
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '#/components'
+import { Tooltip, TooltipContent, TooltipTrigger } from '#/components'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
@@ -28,7 +28,7 @@ export const Default: Story = {
   ),
 }
 
-export const Sizes: Story = {
+export const SizeShowcase: Story = {
   render: () => (
     <div className="flex items-center gap-4">
       <Avatar className="h-8 w-8">
@@ -47,7 +47,25 @@ export const Sizes: Story = {
   ),
 }
 
-export const Rounded: Story = {
+export const ImageShowcase: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Avatar>
+        <AvatarImage src="https://avatars.githubusercontent.com/u/921834?v=4" alt="@riipandi" />
+        <AvatarFallback>{getInitials('Aris Ripandi')}</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarImage src="https://github.com/riipandi.png" alt="@riipandi" />
+        <AvatarFallback>{getInitials('Aris Ripandi')}</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarFallback>{getInitials('John Doe')}</AvatarFallback>
+      </Avatar>
+    </div>
+  ),
+}
+
+export const RoundedShowcase: Story = {
   render: () => (
     <div className="flex items-center gap-4">
       <Avatar className="rounded-sm">
@@ -61,24 +79,6 @@ export const Rounded: Story = {
       <Avatar className="rounded-full">
         <AvatarImage src="https://github.com/riipandi.png" alt="@riipandi" />
         <AvatarFallback>{getInitials('Aris Ripandi')}</AvatarFallback>
-      </Avatar>
-    </div>
-  ),
-}
-
-export const AvatarShowcase: Story = {
-  render: () => (
-    <div className="flex items-center gap-4">
-      <Avatar>
-        <AvatarImage src="https://avatars.githubusercontent.com/u/921834?v=4" alt="@riipandi" />
-        <AvatarFallback>{getInitials('Aris Ripandi')}</AvatarFallback>
-      </Avatar>
-      <Avatar>
-        <AvatarImage src="https://github.com/riipandi.png" alt="@riipandi" />
-        <AvatarFallback>{getInitials('Aris Ripandi')}</AvatarFallback>
-      </Avatar>
-      <Avatar>
-        <AvatarFallback>{getInitials('John Doe')}</AvatarFallback>
       </Avatar>
     </div>
   ),
@@ -106,6 +106,19 @@ const users = [
   },
 ]
 
+export const GroupExample: Story = {
+  render: () => (
+    <AvatarGroup>
+      {users.map((user) => (
+        <Avatar key={user.name}>
+          <AvatarImage src={user.image} alt={user.name} />
+          <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+        </Avatar>
+      ))}
+    </AvatarGroup>
+  ),
+}
+
 export const GroupCentered: Story = {
   render: () => (
     <div className="-space-x-2 z-0 flex items-center *:ring-3 *:ring-background">
@@ -128,10 +141,35 @@ export const GroupCentered: Story = {
   ),
 }
 
+export const GroupWithMax: Story = {
+  render: () => (
+    <AvatarGroup max={3}>
+      {users.map((user) => (
+        <Avatar key={user.name}>
+          <AvatarImage src={user.image} alt={user.name} />
+          <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+        </Avatar>
+      ))}
+    </AvatarGroup>
+  ),
+}
+
+export const GroupNoOverlap: Story = {
+  render: () => (
+    <AvatarGroup overlap={false}>
+      {users.map((user) => (
+        <Avatar key={user.name}>
+          <AvatarImage src={user.image} alt={user.name} />
+          <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+        </Avatar>
+      ))}
+    </AvatarGroup>
+  ),
+}
+
 export const GroupWithTooltip: Story = {
   render: () => {
     const [activeIndex, setActiveIndex] = React.useState<number | null>(null)
-
     return (
       <div className="-space-x-2 flex *:ring-3 *:ring-background">
         {users.map((user, index) => (
@@ -150,10 +188,8 @@ export const GroupWithTooltip: Story = {
               </Avatar>
             </TooltipTrigger>
             <TooltipContent>
-              <div>
-                <p className="font-semibold">{user.name}</p>
-                <p className="text-sm">{user.role}</p>
-              </div>
+              <p className="font-semibold">{user.name}</p>
+              <p className="text-sm">{user.role}</p>
             </TooltipContent>
           </Tooltip>
         ))}

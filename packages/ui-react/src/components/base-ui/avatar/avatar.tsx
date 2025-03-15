@@ -1,6 +1,6 @@
 import { Avatar as AvatarPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { avatarStyles } from './avatar.css'
+import { type AvatarStyles, avatarStyles } from './avatar.css'
 
 const Avatar = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitives.Root>,
@@ -28,8 +28,36 @@ const AvatarFallback = React.forwardRef<
   )
 })
 
+interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement>, AvatarStyles {
+  max?: number
+  showCount?: boolean
+  overlap?: boolean
+}
+
+const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
+  ({ className, children, max, showCount = true, overlap = true, ...props }, ref) => {
+    const styles = avatarStyles()
+    const childrenArray = React.Children.toArray(children)
+    const totalAvatars = childrenArray.length
+    const displayAvatars = max ? childrenArray.slice(0, max) : childrenArray
+    const remainingCount = max && totalAvatars > max ? totalAvatars - max : 0
+
+    return (
+      <div ref={ref} className={styles.group({ className, overlap })} {...props}>
+        {displayAvatars}
+        {showCount && remainingCount > 0 && (
+          <Avatar className={styles.groupItem()}>
+            <AvatarFallback>+{remainingCount}</AvatarFallback>
+          </Avatar>
+        )}
+      </div>
+    )
+  }
+)
+
 Avatar.displayName = AvatarPrimitives.Root.displayName
 AvatarImage.displayName = AvatarPrimitives.Image.displayName
 AvatarFallback.displayName = AvatarPrimitives.Fallback.displayName
+AvatarGroup.displayName = 'AvatarGroup'
 
-export { Avatar, AvatarImage, AvatarFallback }
+export { Avatar, AvatarImage, AvatarFallback, AvatarGroup }
