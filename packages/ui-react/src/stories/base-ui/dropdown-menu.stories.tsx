@@ -32,14 +32,13 @@ const meta: Meta<typeof DropdownMenu> = {
 export default meta
 type Story = StoryObj<typeof DropdownMenu>
 
-// type Checked = DropdownMenuCheckboxItemProps['checked']
-
 export const Default: Story = {
   render: () => {
     const [position, setPosition] = React.useState('bottom')
     const [showStatusBar, setShowStatusBar] = React.useState<boolean>(true)
     const [showActivityBar, setShowActivityBar] = React.useState<boolean>(false)
     const [showPanel, setShowPanel] = React.useState<boolean>(false)
+
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -195,89 +194,85 @@ export const Default: Story = {
 }
 
 export const Simple: Story = {
-  render: () => {
-    return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary">Open</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuGroup>
-            <DropdownMenuItem shortcut="⇧⌘P">Profile</DropdownMenuItem>
-            <DropdownMenuItem disabled shortcut="⌘B">
-              Billing
-            </DropdownMenuItem>
-            <DropdownMenuItem shortcut="⌘S">Settings</DropdownMenuItem>
-            <DropdownMenuItem shortcut="⌘K">Shortcuts</DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem hint="Pro">Team</DropdownMenuItem>
-            <DropdownMenuSubMenu>
-              <DropdownMenuSubMenuTrigger>Invite users</DropdownMenuSubMenuTrigger>
-              <DropdownMenuSubMenuContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>More...</DropdownMenuItem>
-              </DropdownMenuSubMenuContent>
-            </DropdownMenuSubMenu>
-            <DropdownMenuItem shortcut="⌘+T">New Team</DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    )
-  },
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="secondary">Open</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuItem shortcut="⇧⌘P">Profile</DropdownMenuItem>
+          <DropdownMenuItem disabled shortcut="⌘B">
+            Billing
+          </DropdownMenuItem>
+          <DropdownMenuItem shortcut="⌘S">Settings</DropdownMenuItem>
+          <DropdownMenuItem shortcut="⌘K">Shortcuts</DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem hint="Pro">Team</DropdownMenuItem>
+          <DropdownMenuSubMenu>
+            <DropdownMenuSubMenuTrigger>Invite users</DropdownMenuSubMenuTrigger>
+            <DropdownMenuSubMenuContent>
+              <DropdownMenuItem>Email</DropdownMenuItem>
+              <DropdownMenuItem>Message</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>More...</DropdownMenuItem>
+            </DropdownMenuSubMenuContent>
+          </DropdownMenuSubMenu>
+          <DropdownMenuItem shortcut="⌘+T">New Team</DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
 }
 
 export const WithIcons: Story = {
-  render: () => {
-    return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary">Open</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuGroup>
-            <DropdownMenuItem shortcut="⌘W">
-              <div className="flex items-center space-x-2">
-                <Lucide.Layers2 className="size-4 text-gray-500" />
-                <span>Workspaces</span>
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuItem shortcut="⌘M">
-              <div className="flex items-center space-x-2">
-                <Lucide.FolderKanban className="size-4 text-gray-500" />
-                <span>Metrics catalogue (with long edge case)</span>
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuItem shortcut="⌘S">
-              <div className="flex items-center space-x-2">
-                <Lucide.Settings className="size-4 text-gray-500" />
-                <span>Settings</span>
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuItem disabled shortcut="⌘U">
-              <div className="flex items-center space-x-2">
-                <DropdownMenuIconWrapper>
-                  <Lucide.Plus className="size-4 text-inherit" />
-                </DropdownMenuIconWrapper>
-                <span>Invite users</span>
-              </div>
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="secondary">Open</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuItem shortcut="⌘W">
+            <div className="flex items-center space-x-2">
+              <Lucide.Layers2 className="size-4 text-gray-500" />
+              <span>Workspaces</span>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem shortcut="⌘M">
+            <div className="flex items-center space-x-2">
+              <Lucide.FolderKanban className="size-4 text-gray-500" />
+              <span>Metrics catalogue (with long edge case)</span>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem shortcut="⌘S">
+            <div className="flex items-center space-x-2">
+              <Lucide.Settings className="size-4 text-gray-500" />
+              <span>Settings</span>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem disabled shortcut="⌘U">
+            <div className="flex items-center space-x-2">
+              <DropdownMenuIconWrapper>
+                <Lucide.Plus className="size-4 text-inherit" />
+              </DropdownMenuIconWrapper>
+              <span>Invite users</span>
+            </div>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
 
-          <DropdownMenuSeparator />
+        <DropdownMenuSeparator />
 
-          <DropdownMenuGroup>
-            <DropdownMenuItem>Log out all</DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    )
-  },
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Log out all</DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
 }
 
 export const WithRadioItem: Story = {
@@ -315,6 +310,7 @@ export const WithCheckboxItem: Story = {
     const [showStatusBar, setShowStatusBar] = React.useState<boolean>(true)
     const [showActivityBar, setShowActivityBar] = React.useState<boolean>(true)
     const [showPanel, setShowPanel] = React.useState<boolean>(false)
+
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
