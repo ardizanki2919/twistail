@@ -3,66 +3,30 @@
 import * as Lucide from 'lucide-react'
 import { Select as ListboxPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
 import { type ListboxStyles, listboxStyles } from './listbox.css'
 
 const Listbox = ListboxPrimitives.Root
 const ListboxGroup = ListboxPrimitives.Group
 const ListboxValue = ListboxPrimitives.Value
 
-const selectTriggerStyles = [
-  clx(
-    // base
-    'group/trigger flex w-full select-none items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-xs outline-hidden transition sm:text-sm',
-    // border color
-    'border-gray-300 dark:border-gray-800',
-    // text color
-    'text-gray-900 dark:text-gray-50',
-    // placeholder
-    'data-[placeholder]:text-gray-500 data-[placeholder]:dark:text-gray-500',
-    // background color
-    'bg-white dark:bg-gray-950',
-    // hover
-    'hover:bg-gray-50 hover:dark:bg-gray-950/50',
-    // disabled
-    'data-[disabled]:bg-gray-100 data-[disabled]:text-gray-400',
-    'data-[disabled]:dark:border-gray-700 data-[disabled]:dark:bg-gray-800 data-[disabled]:dark:text-gray-500',
-    'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */
-    // invalid (optional)
-    // "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500"
-  ),
-]
+interface ListboxTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Trigger>,
+    ListboxStyles {}
 
 const ListboxTrigger = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Trigger> & {
-    hasError?: boolean
-  }
+  ListboxTriggerProps
 >(({ className, hasError, children, ...props }, forwardedRef) => {
+  const styles = listboxStyles({ hasError })
   return (
     <ListboxPrimitives.Trigger
       ref={forwardedRef}
-      className={clx(
-        selectTriggerStyles,
-        hasError
-          ? 'border-red-500 ring-2 ring-red-200 dark:border-red-700 dark:ring-red-700/30' /* hasErrorInput */
-          : '',
-        className
-      )}
+      className={styles.trigger({ className })}
       {...props}
     >
-      <span className="truncate">{children}</span>
+      <span className={styles.triggerSpan()}>{children}</span>
       <ListboxPrimitives.Icon asChild>
-        <Lucide.ChevronsUpDown
-          className={clx(
-            // base
-            'size-4 shrink-0',
-            // text color
-            'text-gray-400 dark:text-gray-600',
-            // disabled
-            'group-data-[disabled]/trigger:text-gray-300 group-data-[disabled]/trigger:dark:text-gray-600'
-          )}
-        />
+        <Lucide.ChevronsUpDown className={styles.triggerChevrons()} />
       </ListboxPrimitives.Icon>
     </ListboxPrimitives.Trigger>
   )
@@ -71,128 +35,95 @@ const ListboxTrigger = React.forwardRef<
 const ListboxScrollUpButton = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.ScrollUpButton>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.ScrollUpButton>
->(({ className, ...props }, forwardedRef) => (
-  <ListboxPrimitives.ScrollUpButton
-    ref={forwardedRef}
-    className={clx('flex cursor-default items-center justify-center py-1', className)}
-    {...props}
-  >
-    <Lucide.ChevronUp className="size-3 shrink-0" aria-hidden="true" />
-  </ListboxPrimitives.ScrollUpButton>
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = listboxStyles()
+  return (
+    <ListboxPrimitives.ScrollUpButton
+      ref={forwardedRef}
+      className={styles.scrollUpButton({ className })}
+      {...props}
+    >
+      <Lucide.ChevronUp className={styles.scrollUpButtonIcon()} aria-hidden="true" />
+    </ListboxPrimitives.ScrollUpButton>
+  )
+})
 
 const ListboxScrollDownButton = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.ScrollDownButton>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.ScrollDownButton>
->(({ className, ...props }, forwardedRef) => (
-  <ListboxPrimitives.ScrollDownButton
-    ref={forwardedRef}
-    className={clx('flex cursor-default items-center justify-center py-1', className)}
-    {...props}
-  >
-    <Lucide.ChevronDown className="size-3 shrink-0" aria-hidden="true" />
-  </ListboxPrimitives.ScrollDownButton>
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = listboxStyles()
+  return (
+    <ListboxPrimitives.ScrollDownButton
+      ref={forwardedRef}
+      className={styles.scrollDownButton({ className })}
+      {...props}
+    >
+      <Lucide.ChevronDown className={styles.scrollDownButtonIcon()} aria-hidden="true" />
+    </ListboxPrimitives.ScrollDownButton>
+  )
+})
+
+interface ListboxContentProps
+  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Content>,
+    ListboxStyles {}
 
 const ListboxContent = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Content>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Content>
+  ListboxContentProps
 >(
   (
     { className, position = 'popper', children, sideOffset = 8, collisionPadding = 10, ...props },
     forwardedRef
-  ) => (
-    <ListboxPrimitives.Portal>
-      <ListboxPrimitives.Content
-        ref={forwardedRef}
-        className={clx(
-          // base
-          'relative z-50 overflow-hidden rounded-md border shadow-black/[2.5%] shadow-lg',
-          // widths
-          'min-w-[calc(var(--radix-select-trigger-width)-2px)] max-w-[95vw]',
-          // heights
-          'max-h-(--radix-select-content-available-height)',
-          // background color
-          'bg-white dark:bg-gray-950',
-          // text color
-          'text-gray-900 dark:text-gray-50',
-          // border color
-          'border-gray-200 dark:border-gray-800',
-          // transition
-          'will-change-[transform,opacity]',
-          // "data-[state=open]:animate-slide-down-fade",
-          'data-[state=closed]:animate-hide',
-          'data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
-          className
-        )}
-        sideOffset={sideOffset}
-        position={position}
-        collisionPadding={collisionPadding}
-        {...props}
-      >
-        <ListboxScrollUpButton />
-        <ListboxPrimitives.Viewport
-          className={clx(
-            'p-1',
-            position === 'popper' &&
-              'h-[var(--radix-select-trigger-height)] w-full min-w-[calc(var(--radix-select-trigger-width))]'
-          )}
+  ) => {
+    const styles = listboxStyles({ position })
+    return (
+      <ListboxPrimitives.Portal>
+        <ListboxPrimitives.Content
+          ref={forwardedRef}
+          className={styles.content({ className })}
+          collisionPadding={collisionPadding}
+          sideOffset={sideOffset}
+          position={position}
+          {...props}
         >
-          {children}
-        </ListboxPrimitives.Viewport>
-        <ListboxScrollDownButton />
-      </ListboxPrimitives.Content>
-    </ListboxPrimitives.Portal>
-  )
+          <ListboxScrollUpButton />
+          <ListboxPrimitives.Viewport className={styles.contentViewport()}>
+            {children}
+          </ListboxPrimitives.Viewport>
+          <ListboxScrollDownButton />
+        </ListboxPrimitives.Content>
+      </ListboxPrimitives.Portal>
+    )
+  }
 )
 
 const ListboxGroupLabel = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Label>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Label>
->(({ className, ...props }, forwardedRef) => (
-  <ListboxPrimitives.Label
-    ref={forwardedRef}
-    className={clx(
-      // base
-      'px-3 py-2 font-medium text-xs tracking-wide',
-      // text color
-      'text-gray-500 dark:text-gray-500',
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = listboxStyles()
+  return (
+    <ListboxPrimitives.Label
+      ref={forwardedRef}
+      className={styles.grouplabel({ className })}
+      {...props}
+    />
+  )
+})
 
 const ListboxItem = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Item>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Item>
 >(({ className, children, ...props }, forwardedRef) => {
+  const styles = listboxStyles()
   return (
-    <ListboxPrimitives.Item
-      ref={forwardedRef}
-      className={clx(
-        // base
-        'grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded-sm px-3 py-2 outline-hidden transition-colors data-[state=checked]:font-semibold sm:text-sm',
-        // text color
-        'text-gray-900 dark:text-gray-50',
-        // disabled
-        'data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600',
-        // focus
-        'focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900',
-        // hover
-        'hover:bg-gray-100 hover:dark:bg-gray-900',
-        className
-      )}
-      {...props}
-    >
-      <ListboxPrimitives.ItemText className="flex-1 truncate">
+    <ListboxPrimitives.Item ref={forwardedRef} className={styles.item({ className })} {...props}>
+      <ListboxPrimitives.ItemText className={styles.itemText()}>
         {children}
       </ListboxPrimitives.ItemText>
       <ListboxPrimitives.ItemIndicator>
-        <Lucide.Check
-          className="size-5 shrink-0 text-gray-800 dark:text-gray-200"
-          aria-hidden="true"
-        />
+        <Lucide.Check className={styles.itemIndicatorIcon()} aria-hidden="true" />
       </ListboxPrimitives.ItemIndicator>
     </ListboxPrimitives.Item>
   )
@@ -201,19 +132,16 @@ const ListboxItem = React.forwardRef<
 const ListboxSeparator = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitives.Separator>,
   React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Separator>
->(({ className, ...props }, forwardedRef) => (
-  <ListboxPrimitives.Separator
-    ref={forwardedRef}
-    className={clx(
-      // base
-      '-mx-1 my-1 h-px',
-      // background color
-      'bg-gray-300 dark:bg-gray-700',
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, forwardedRef) => {
+  const styles = listboxStyles()
+  return (
+    <ListboxPrimitives.Separator
+      ref={forwardedRef}
+      className={styles.separator({ className })}
+      {...props}
+    />
+  )
+})
 
 Listbox.displayName = 'Listbox'
 ListboxGroup.displayName = 'ListboxGroup'

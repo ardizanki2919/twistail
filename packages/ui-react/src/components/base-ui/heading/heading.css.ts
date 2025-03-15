@@ -25,7 +25,6 @@ export const headingStyles = tv({
       right: 'text-right',
     },
   },
-  compoundVariants: [],
   defaultVariants: {
     level: 'h2',
     align: 'left',

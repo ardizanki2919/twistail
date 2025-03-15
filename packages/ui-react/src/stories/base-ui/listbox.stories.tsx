@@ -25,7 +25,7 @@ import {
 const meta: Meta<typeof Listbox> = {
   component: Listbox,
   title: 'Base Components/Listbox',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'centered',
   },
@@ -162,6 +162,39 @@ export const Default: Story = {
   },
 }
 
+export const Positions: Story = {
+  render: () => {
+    return (
+      <div className="flex gap-2">
+        <Listbox>
+          <ListboxTrigger className="w-64">
+            <ListboxValue placeholder="Position Item Aligned" />
+          </ListboxTrigger>
+          <ListboxContent position="item-aligned">
+            {data1.map((item) => (
+              <ListboxItem key={item.value} value={item.value}>
+                {item.label}
+              </ListboxItem>
+            ))}
+          </ListboxContent>
+        </Listbox>
+        <Listbox>
+          <ListboxTrigger className="w-64">
+            <ListboxValue placeholder="Position Popper (default)" />
+          </ListboxTrigger>
+          <ListboxContent position="popper">
+            {data1.map((item) => (
+              <ListboxItem key={item.value} value={item.value}>
+                {item.label}
+              </ListboxItem>
+            ))}
+          </ListboxContent>
+        </Listbox>
+      </div>
+    )
+  },
+}
+
 export const WithIcons: Story = {
   render: () => {
     return (
@@ -241,7 +274,7 @@ export const DisabledItem: Story = {
   render: () => {
     return (
       <Listbox>
-        <ListboxTrigger>
+        <ListboxTrigger className="w-64">
           <ListboxValue placeholder="Listbox" />
         </ListboxTrigger>
         <ListboxContent>
