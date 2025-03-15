@@ -2,97 +2,52 @@
 
 import { RadioGroup as RadioGroupPrimitives } from 'radix-ui'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
+import { radioCardGroupStyles } from './radio-card-group.css'
 
 const RadioCardGroup = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Root>
 >(({ className, ...props }, forwardedRef) => {
+  const styles = radioCardGroupStyles()
   return (
     <RadioGroupPrimitives.Root
       ref={forwardedRef}
-      className={clx('grid gap-2', className)}
+      className={styles.root({ className })}
       {...props}
     />
   )
 })
 
-RadioCardGroup.displayName = 'RadioCardGroup'
-
 const RadioCardItem = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Item>
->(({ className, children, ...props }, forwardedRef) => {
+>(({ className, ...props }, forwardedRef) => {
+  const styles = radioCardGroupStyles()
   return (
     <RadioGroupPrimitives.Item
       ref={forwardedRef}
-      className={clx(
-        // base
-        'group relative w-full rounded-md border p-4 text-left shadow-xs transition focus:outline-hidden',
-        // background color
-        'bg-white dark:bg-gray-950',
-        // border color
-        'border-gray-300 dark:border-gray-800',
-        'data-[state=checked]:border-blue-500',
-        'data-[state=checked]:dark:border-blue-500',
-        // disabled
-        'data-[disabled]:border-gray-100 data-[disabled]:dark:border-gray-800',
-        'data-[disabled]:bg-gray-50 data-[disabled]:shadow-none data-[disabled]:dark:bg-gray-900',
-        'focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:dark:border-blue-700 focus:dark:ring-blue-700/30' /* focusInput */,
-        className
-      )}
+      className={styles.item({ className })}
       {...props}
-    >
-      {children}
-    </RadioGroupPrimitives.Item>
+    />
   )
 })
-
-RadioCardItem.displayName = 'RadioCardItem'
 
 const RadioCardIndicator = React.forwardRef<
   React.ComponentRef<typeof RadioGroupPrimitives.Indicator>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Indicator>
 >(({ className, ...props }, forwardedRef) => {
+  const styles = radioCardGroupStyles()
   return (
-    <div
-      className={clx(
-        // base
-        'relative flex size-4 shrink-0 appearance-none items-center justify-center rounded-full border shadow-xs outline-hidden',
-        // border color
-        'border-gray-300 dark:border-gray-800',
-        // background color
-        'bg-white dark:bg-gray-950',
-        // checked
-        'group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-blue-500',
-        // disabled
-        'group-data-[disabled]:border-gray-300 group-data-[disabled]:bg-gray-100 group-data-[disabled]:text-gray-400',
-        'group-data-[disabled]:dark:border-gray-700 group-data-[disabled]:dark:bg-gray-800',
-        // focus
-        'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-        className
-      )}
-    >
-      <RadioGroupPrimitives.Indicator
-        ref={forwardedRef}
-        className={clx('flex items-center justify-center')}
-        {...props}
-      >
-        <div
-          className={clx(
-            // base
-            'size size-1.5 shrink-0 rounded-full',
-            // indicator
-            'bg-white',
-            // disabled
-            'group-data-[disabled]:bg-gray-400 group-data-[disabled]:dark:bg-gray-500'
-          )}
-        />
+    <div className={styles.indicatorContainer({ className })}>
+      <RadioGroupPrimitives.Indicator ref={forwardedRef} className={styles.indicator()} {...props}>
+        <div className={styles.indicatorInner()} />
       </RadioGroupPrimitives.Indicator>
     </div>
   )
 })
 
+RadioCardGroup.displayName = 'RadioCardGroup'
+RadioCardItem.displayName = 'RadioCardItem'
 RadioCardIndicator.displayName = 'RadioCardIndicator'
 
 export { RadioCardGroup, RadioCardIndicator, RadioCardItem }
