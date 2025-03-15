@@ -1,0 +1,27 @@
+{
+    "editor.defaultFormatter": "biomejs.biome",
+    "typescript.enablePromptUseWorkspaceTsdk": false,
+    "files.associations": {
+        "*.yml.example": "yaml",
+        "*.css": "css"
+    },
+    "search.exclude": {
+        "**/.husky": true,
+        "**/build": true,
+        "**/dist": true
+    },
+    "tailwindCSS.experimental.classRegex": [
+        // @ref: https://www.tailwind-variants.org/docs/getting-started
+        ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ],
+    "tailwindCSS.files.exclude": ["**/internal/**"],
+    "[css]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+    }
+}

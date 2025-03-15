@@ -1,5 +1,4 @@
 import { type VariantProps, tv } from 'tailwind-variants'
-import { clx } from 'twistail-utils'
 
 const buttonStyles = tv({
   slots: {
@@ -14,36 +13,48 @@ const buttonStyles = tv({
   },
   variants: {
     variant: {
-      primary: clx(
-        'border border-primary/30 bg-primary text-primary-foreground hover:bg-primary/90',
-        'disabled:border-primary/20 disabled:bg-primary/50 disabled:text-primary-foreground/70',
-        'outline-primary'
-      ),
-      secondary: clx(
-        'border border-border bg-secondary text-secondary-foreground hover:bg-background',
-        'disabled:border-border/50 disabled:bg-secondary/60 disabled:text-muted-foreground',
-        'outline-secondary-foreground/10'
-      ),
-      outline: clx(
-        'border border-border bg-background text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
-        'disabled:border-border/50 disabled:bg-background disabled:text-muted-foreground',
-        'outline-input'
-      ),
-      ghost: clx(
-        'border-transparent bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
-        'disabled:text-muted-foreground',
-        'outline-accent'
-      ),
-      destructive: clx(
-        'border border-destructive/30 bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        'disabled:border-destructive/20 disabled:bg-destructive/50 disabled:text-destructive-foreground/70',
-        'outline-destructive'
-      ),
-      link: clx(
-        'cursor-pointer border-transparent bg-transparent text-primary underline-offset-4 shadow-none hover:underline',
-        'disabled:text-muted-foreground',
-        'outline-primary'
-      ),
+      primary: {
+        base: [
+          'border border-primary/30 bg-primary text-primary-foreground hover:bg-primary/90',
+          'disabled:border-primary/20 disabled:bg-primary/50 disabled:text-primary-foreground/70',
+          'outline-primary',
+        ],
+      },
+      secondary: {
+        base: [
+          'border border-border bg-secondary text-secondary-foreground hover:bg-background',
+          'disabled:border-border/50 disabled:bg-secondary/60 disabled:text-muted-foreground',
+          'outline-secondary-foreground/10',
+        ],
+      },
+      outline: {
+        base: [
+          'border border-border bg-background text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
+          'disabled:border-border/50 disabled:bg-background disabled:text-muted-foreground',
+          'outline-input',
+        ],
+      },
+      ghost: {
+        base: [
+          'border-transparent bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
+          'disabled:text-muted-foreground',
+          'outline-accent',
+        ],
+      },
+      destructive: {
+        base: [
+          'border border-destructive/30 bg-destructive text-destructive-foreground hover:bg-destructive/90',
+          'disabled:border-destructive/20 disabled:bg-destructive/50 disabled:text-destructive-foreground/70',
+          'outline-destructive',
+        ],
+      },
+      link: {
+        base: [
+          'cursor-pointer border-transparent bg-transparent text-primary underline-offset-4 shadow-none hover:underline',
+          'disabled:text-muted-foreground',
+          'outline-primary',
+        ],
+      },
     },
     size: {
       xs: 'h-7 px-2.5 text-xs',
