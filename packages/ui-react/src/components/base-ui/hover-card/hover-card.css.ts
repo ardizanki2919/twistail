@@ -1,15 +1,9 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
-const popoverStyles = tv({
+const hoverCardStyles = tv({
   base: [
     // base
-    'max-h-[var(--radix-popper-available-height)] min-w-60 overflow-hidden rounded-md border p-2.5 text-sm shadow-sm',
-    // border color
-    'border-gray-200 dark:border-gray-800',
-    // text color
-    'text-gray-900 dark:text-gray-50',
-    // background color
-    'bg-white dark:bg-gray-950',
+    'z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none',
     // transition
     'will-change-[transform,opacity] data-[state=closed]:animate-hide',
     'data-[state=open]:data-[side=bottom]:animate-slide-down-fade data-[state=open]:data-[side=left]:animate-slide-down-fade',
@@ -17,6 +11,6 @@ const popoverStyles = tv({
   ],
 })
 
-type PopoverStyles = VariantProps<typeof popoverStyles>
+type HoverCardStyles = VariantProps<typeof hoverCardStyles>
 
-export { popoverStyles, type PopoverStyles }
+export { hoverCardStyles, type HoverCardStyles }
