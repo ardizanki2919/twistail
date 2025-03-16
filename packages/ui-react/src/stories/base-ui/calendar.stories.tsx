@@ -46,7 +46,7 @@ const meta: Meta<typeof Calendar> = {
 export default meta
 type Story = StoryObj<typeof Calendar>
 
-export const Single: Story = {
+export const Default: Story = {
   args: {
     mode: 'single',
   },

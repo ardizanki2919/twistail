@@ -8,7 +8,7 @@ export default function Footer() {
     { href: '/docs', label: 'About' },
     { href: '/blog', label: 'Blog' },
     { href: '/docs/ui/contributors', label: 'Contributors' },
-    { href: '/docs/ui/faqs', label: 'FAQs' },
+    { href: '/docs/ui#faqs', label: 'FAQs' },
   ]
 
   const secondaryLinks = [

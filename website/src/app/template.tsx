@@ -17,7 +17,6 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       ['Theming', '/docs/ui/theming'],
       ['Changelog', '/docs/ui/changelog'],
       ['Twistail CLI', '/docs/cli'],
-      ['FAQs', '/docs/ui/faqs'],
       // Components
       ['Accordion', '/docs/ui/components/base/accordion'],
       ['Avatar', '/docs/ui/components/base/avatar'],

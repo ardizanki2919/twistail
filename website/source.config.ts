@@ -1,5 +1,5 @@
 import { remarkHeading, remarkImage, remarkStructure } from 'fumadocs-core/mdx-plugins'
-import { remarkGfm } from 'fumadocs-core/mdx-plugins'
+import { rehypeToc, remarkGfm } from 'fumadocs-core/mdx-plugins'
 import { fileGenerator, remarkDocGen, remarkInstall } from 'fumadocs-docgen'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { defineCollections, frontmatterSchema, getDefaultMDXOptions } from 'fumadocs-mdx/config'
@@ -36,6 +36,6 @@ export default defineConfig({
       [remarkStructure, { types: ['paragraph', 'blockquote', 'tableCell'] }],
       remarkGfm,
     ],
-    rehypePlugins: [rehypeExternalLinks],
+    rehypePlugins: [rehypeExternalLinks, rehypeToc],
   },
 })

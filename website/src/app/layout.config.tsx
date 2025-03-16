@@ -6,6 +6,7 @@
  * Docs Layout: app/docs/layout.tsx
  */
 
+import { GithubInfo } from 'fumadocs-ui/components/github-info'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 import Image from 'next/image'
 
@@ -33,7 +34,6 @@ export const baseOptions: BaseLayoutProps = {
     enabled: true,
     mode: 'light-dark',
   },
-  githubUrl: 'https://github.com/riipandi/twistail',
   links: [
     {
       type: 'main',
@@ -47,6 +47,10 @@ export const baseOptions: BaseLayoutProps = {
       url: 'https://storybook.twistail.com',
       external: true,
       active: 'url',
+    },
+    {
+      type: 'custom',
+      children: <GithubInfo owner="riipandi" repo="twistail" className="lg:-mx-2" />,
     },
   ],
 }

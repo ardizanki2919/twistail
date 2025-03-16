@@ -1,16 +1,28 @@
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion'
+import { Card, Cards } from 'fumadocs-ui/components/card'
 import { Pre } from 'fumadocs-ui/components/codeblock'
 import { File, Files, Folder } from 'fumadocs-ui/components/files'
+import { ImageZoom } from 'fumadocs-ui/components/image-zoom'
 import { Step, Steps } from 'fumadocs-ui/components/steps'
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
-
+import type { MDXComponents } from 'mdx/types'
 import { notFound } from 'next/navigation'
 import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 import { source } from '#/lib/source'
 import Redirect from './redirect'
+
+const customMdxComponents: MDXComponents = {
+  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+    <Link className={clx('font-medium underline underline-offset-4', className)} {...props} />
+  ),
+  Pre: ({ className, ...props }: React.ComponentProps<typeof Pre>) => (
+    <Pre className={clx('font-mono', className)} {...props} />
+  ),
+  img: (props) => <ImageZoom {...props} />,
+}
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
@@ -52,22 +64,18 @@ export default async function Page(props: {
         <MDX
           components={{
             ...defaultMdxComponents,
-            Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-              <Link
-                className={clx('font-medium underline underline-offset-4', className)}
-                {...props}
-              />
-            ),
-            Step,
-            Steps,
-            File,
-            Folder,
-            Files,
-            Tab,
-            Tabs,
-            Pre,
+            ...customMdxComponents,
             Accordion,
             Accordions,
+            Card,
+            Cards,
+            File,
+            Files,
+            Folder,
+            Step,
+            Steps,
+            Tab,
+            Tabs,
           }}
         />
       </DocsBody>
