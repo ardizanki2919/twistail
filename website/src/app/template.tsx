@@ -7,7 +7,9 @@ import { isDevelopment } from 'std-env'
 export default function RootTemplate({ children }: Readonly<React.PropsWithChildren>) {
   const searchOpts: RootProviderProps['search'] = {
     enabled: true,
-    options: { type: 'static' },
+    options: {
+      type: 'static',
+    },
     links: [
       // Getting Started
       ['Documentation', '/docs/ui'],
@@ -18,6 +20,7 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       ['FAQs', '/docs/ui/faqs'],
       // Components
       ['Accordion', '/docs/ui/components/base/accordion'],
+      ['Avatar', '/docs/ui/components/base/avatar'],
       ['Badge', '/docs/ui/components/base/badge'],
       ['Button', '/docs/ui/components/base/button'],
       ['Calendar', '/docs/ui/components/base/calendar'],
@@ -30,14 +33,18 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       ['Divider', '/docs/ui/components/base/divider'],
       ['Drawer', '/docs/ui/components/base/drawer'],
       ['Dropdown Menu', '/docs/ui/components/base/dropdown-menu'],
+      ['Heading', '/docs/ui/components/base/heading'],
+      ['Hover Card', '/docs/ui/components/base/hover-card'],
       ['Input', '/docs/ui/components/base/input'],
       ['Label', '/docs/ui/components/base/label'],
       ['Listbox', '/docs/ui/components/base/listbox'],
+      ['Pagination', '/docs/ui/components/base/pagination'],
       ['Popover', '/docs/ui/components/base/popover'],
       ['Radio Card Group', '/docs/ui/components/base/radio-card-group'],
       ['Radio Group', '/docs/ui/components/base/radio-group'],
       ['Scroll Area', '/docs/ui/components/base/scroll-area'],
       ['Select', '/docs/ui/components/base/select'],
+      ['Skeleton', '/docs/ui/components/base/skeleton'],
       ['Slider', '/docs/ui/components/base/slider'],
       ['Switch', '/docs/ui/components/base/switch'],
       ['Tab Navigation', '/docs/ui/components/base/tab-navigation'],

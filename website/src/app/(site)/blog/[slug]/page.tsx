@@ -25,6 +25,7 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description: page.data.description,
+    lastModified: page.data.lastModified,
   }
 }
 
@@ -41,6 +42,7 @@ export default async function Page(props: {
   const page = blog.getPage([params.slug])
 
   if (!page) notFound()
+
   const MDX = page.data.body
 
   // Get the previous and next post

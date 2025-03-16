@@ -31,7 +31,17 @@ export default async function Page(props: {
   const pageWithoutTitle = ['code-of-conduct']
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} footer={{ enabled: false }}>
+    <DocsPage
+      toc={page.data.toc}
+      full={page.data.full}
+      footer={{ enabled: true }}
+      editOnGithub={{
+        owner: 'riipandi',
+        repo: 'twistail',
+        sha: 'main',
+        path: `website/src/content/docs/${page.file.path}`,
+      }}
+    >
       {pageWithoutTitle.includes(page.url.replace('/docs/ui/', '')) ? null : (
         <>
           <DocsTitle>{page.data.title}</DocsTitle>

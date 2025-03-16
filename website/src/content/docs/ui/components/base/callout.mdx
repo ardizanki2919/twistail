@@ -1,4 +1,44 @@
 ---
 title: Calllout
 description: Used for hints, disclaimers, tips, warnings, or documentation needs.
+full: false
 ---
+
+<Callout type='warn'>
+  This documentation is still in progress. Some components may not be fully documented yet.
+</Callout>
+
+{/* ## Automatic Installation
+
+```package-install
+npx twistail add callout
+``` */}
+
+## Manual Installation
+
+<Tabs items={['callout.tsx', 'callout.css.ts', 'index.ts']}>
+  <Tab value="callout.tsx">
+    ```json doc-gen:file
+    {
+      "file": "../packages/ui-react/src/components/base-ui/callout/callout.tsx",
+      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/callout/callout.tsx\"" }
+    }
+    ```
+  </Tab>
+  <Tab value="callout.css.ts">
+    ```json doc-gen:file
+    {
+      "file": "../packages/ui-react/src/components/base-ui/callout/callout.css.ts",
+      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/callout/callout.css.ts\"" }
+    }
+    ```
+  </Tab>
+  <Tab value="index.ts">
+    ```json doc-gen:file
+    {
+      "file": "../packages/ui-react/src/components/base-ui/callout/index.ts",
+      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/callout/index.ts\"" }
+    }
+    ```
+  </Tab>
+</Tabs>
