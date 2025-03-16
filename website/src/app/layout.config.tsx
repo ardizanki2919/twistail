@@ -24,11 +24,25 @@ const TitleComponent = () => (
 )
 
 export const baseOptions: BaseLayoutProps = {
-  nav: { url: '/', title: <TitleComponent />, transparentMode: 'none' },
+  nav: {
+    url: '/',
+    title: <TitleComponent />,
+    transparentMode: 'none',
+  },
+  themeSwitch: {
+    enabled: true,
+    mode: 'light-dark',
+  },
   githubUrl: 'https://github.com/riipandi/twistail',
   links: [
-    { text: 'Blog', url: '/blog' },
     {
+      type: 'main',
+      text: 'Blog',
+      url: '/blog',
+      active: 'nested-url',
+    },
+    {
+      type: 'main',
       text: 'Storybook',
       url: 'https://storybook.twistail.com',
       external: true,

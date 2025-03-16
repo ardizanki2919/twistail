@@ -13,13 +13,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout
-      tree={source.pageTree}
-      nav={{ ...baseOptions.nav, mode: 'auto' }}
-      themeSwitch={baseOptions.themeSwitch}
-      tabMode="sidebar"
-      {...baseOptions}
-    >
+    <DocsLayout tree={source.pageTree} {...baseOptions}>
       {children}
     </DocsLayout>
   )
