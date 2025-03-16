@@ -1,20 +1,20 @@
-import { Tooltip as TooltipPrimitives } from 'radix-ui'
+import { Tooltip as TooltipPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { tooltipStyles } from './tooltip.css'
 
 interface TooltipProps
   extends Pick<
-    TooltipPrimitives.TooltipProps,
+    TooltipPrimitive.TooltipProps,
     'open' | 'defaultOpen' | 'onOpenChange' | 'delayDuration'
   > {
   delayDuration?: number
 }
 
-interface TooltipTriggerProps extends TooltipPrimitives.TooltipTriggerProps {
+interface TooltipTriggerProps extends TooltipPrimitive.TooltipTriggerProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-interface TooltipContentProps extends Omit<TooltipPrimitives.TooltipContentProps, 'content'> {
+interface TooltipContentProps extends Omit<TooltipPrimitive.TooltipContentProps, 'content'> {
   side?: 'bottom' | 'left' | 'top' | 'right'
   content?: React.ReactNode
   showArrow?: boolean
@@ -26,23 +26,23 @@ const Tooltip: React.FC<TooltipProps & { children: React.ReactNode }> = ({
   ...rootProps
 }) => {
   return (
-    <TooltipPrimitives.Provider delayDuration={delayDuration}>
-      <TooltipPrimitives.Root {...rootProps}>{children}</TooltipPrimitives.Root>
-    </TooltipPrimitives.Provider>
+    <TooltipPrimitive.Provider delayDuration={delayDuration}>
+      <TooltipPrimitive.Root {...rootProps}>{children}</TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
   )
 }
 
 const TooltipTrigger = React.forwardRef<
-  React.ComponentRef<typeof TooltipPrimitives.Trigger>,
+  React.ComponentRef<typeof TooltipPrimitive.Trigger>,
   TooltipTriggerProps
 >(({ onClick, asChild, ...props }: TooltipTriggerProps, forwardedRef) => {
   return (
-    <TooltipPrimitives.Trigger ref={forwardedRef} onClick={onClick} asChild={asChild} {...props} />
+    <TooltipPrimitive.Trigger ref={forwardedRef} onClick={onClick} asChild={asChild} {...props} />
   )
 })
 
 const TooltipContent = React.forwardRef<
-  React.ComponentRef<typeof TooltipPrimitives.Content>,
+  React.ComponentRef<typeof TooltipPrimitive.Content>,
   TooltipContentProps
 >(
   (
@@ -61,8 +61,8 @@ const TooltipContent = React.forwardRef<
     const contentToRender = content || children
 
     return (
-      <TooltipPrimitives.Portal>
-        <TooltipPrimitives.Content
+      <TooltipPrimitive.Portal>
+        <TooltipPrimitive.Content
           ref={forwardedRef}
           sideOffset={sideOffset}
           className={styles.content({ className })}
@@ -72,15 +72,15 @@ const TooltipContent = React.forwardRef<
         >
           {contentToRender}
           {showArrow ? (
-            <TooltipPrimitives.Arrow
+            <TooltipPrimitive.Arrow
               className={styles.arrow()}
               aria-hidden="true"
               width={12}
               height={7}
             />
           ) : null}
-        </TooltipPrimitives.Content>
-      </TooltipPrimitives.Portal>
+        </TooltipPrimitive.Content>
+      </TooltipPrimitive.Portal>
     )
   }
 )

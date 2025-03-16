@@ -1,18 +1,18 @@
-import { Switch as SwitchPrimitives } from 'radix-ui'
+import { Switch as SwitchPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { type SwitchStyles, switchStyles } from './switch.css'
 
 interface SwitchProps
-  extends Omit<React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>, 'asChild'>,
+  extends Omit<React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>, 'asChild'>,
     SwitchStyles {}
 
-const Switch = React.forwardRef<React.ComponentRef<typeof SwitchPrimitives.Root>, SwitchProps>(
+const Switch = React.forwardRef<React.ComponentRef<typeof SwitchPrimitive.Root>, SwitchProps>(
   ({ className, size, ...props }: SwitchProps, forwardedRef) => {
     const styles = switchStyles({ size })
     return (
-      <SwitchPrimitives.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
-        <SwitchPrimitives.Thumb className={styles.thumb()} />
-      </SwitchPrimitives.Root>
+      <SwitchPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props}>
+        <SwitchPrimitive.Thumb className={styles.thumb()} />
+      </SwitchPrimitive.Root>
     )
   }
 )

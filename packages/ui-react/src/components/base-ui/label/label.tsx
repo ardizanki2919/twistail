@@ -1,14 +1,14 @@
-import { Label as LabelPrimitives } from 'radix-ui'
+import { Label as LabelPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { labelStyles } from './label.css'
 
-interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitives.Root> {
+interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
   disabled?: boolean
 }
 
-const Label = React.forwardRef<React.ComponentRef<typeof LabelPrimitives.Root>, LabelProps>(
+const Label = React.forwardRef<React.ComponentRef<typeof LabelPrimitive.Root>, LabelProps>(
   ({ className, disabled, ...props }, forwardedRef) => (
-    <LabelPrimitives.Root
+    <LabelPrimitive.Root
       ref={forwardedRef}
       className={labelStyles({ disabled, className })}
       aria-disabled={disabled}

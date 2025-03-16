@@ -1,14 +1,14 @@
-import { RadioGroup as RadioGroupPrimitives } from 'radix-ui'
+import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { radioCardGroupStyles } from './radio-card-group.css'
 
 const RadioCardGroup = React.forwardRef<
-  React.ComponentRef<typeof RadioGroupPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Root>
+  React.ComponentRef<typeof RadioGroupPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
 >(({ className, ...props }, forwardedRef) => {
   const styles = radioCardGroupStyles()
   return (
-    <RadioGroupPrimitives.Root
+    <RadioGroupPrimitive.Root
       ref={forwardedRef}
       className={styles.root({ className })}
       {...props}
@@ -17,12 +17,12 @@ const RadioCardGroup = React.forwardRef<
 })
 
 const RadioCardItem = React.forwardRef<
-  React.ComponentRef<typeof RadioGroupPrimitives.Item>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Item>
+  React.ComponentRef<typeof RadioGroupPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >(({ className, ...props }, forwardedRef) => {
   const styles = radioCardGroupStyles()
   return (
-    <RadioGroupPrimitives.Item
+    <RadioGroupPrimitive.Item
       ref={forwardedRef}
       className={styles.item({ className })}
       {...props}
@@ -31,15 +31,15 @@ const RadioCardItem = React.forwardRef<
 })
 
 const RadioCardIndicator = React.forwardRef<
-  React.ComponentRef<typeof RadioGroupPrimitives.Indicator>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitives.Indicator>
+  React.ComponentRef<typeof RadioGroupPrimitive.Indicator>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Indicator>
 >(({ className, ...props }, forwardedRef) => {
   const styles = radioCardGroupStyles()
   return (
     <div className={styles.indicatorContainer({ className })}>
-      <RadioGroupPrimitives.Indicator ref={forwardedRef} className={styles.indicator()} {...props}>
+      <RadioGroupPrimitive.Indicator ref={forwardedRef} className={styles.indicator()} {...props}>
         <div className={styles.indicatorInner()} />
-      </RadioGroupPrimitives.Indicator>
+      </RadioGroupPrimitive.Indicator>
     </div>
   )
 })

@@ -1,15 +1,15 @@
 import * as Lucide from 'lucide-react'
-import { Accordion as AccordionPrimitives } from 'radix-ui'
+import { Accordion as AccordionPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { accordionStyles } from './accordion.css'
 
 const Accordion = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Root>
+  React.ComponentRef<typeof AccordionPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
 >(({ className, orientation = 'vertical', ...props }, forwardedRef) => {
   const styles = accordionStyles({ orientation })
   return (
-    <AccordionPrimitives.Root
+    <AccordionPrimitive.Root
       ref={forwardedRef}
       className={styles.root({ className })}
       orientation={orientation}
@@ -19,13 +19,13 @@ const Accordion = React.forwardRef<
 })
 
 const AccordionTrigger = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Trigger>
+  React.ComponentRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitives.Header className={styles.accordionHeader()}>
-      <AccordionPrimitives.Trigger
+    <AccordionPrimitive.Header className={styles.accordionHeader()}>
+      <AccordionPrimitive.Trigger
         className={styles.accordionTriger({ className })}
         ref={forwardedRef}
         {...props}
@@ -36,34 +36,30 @@ const AccordionTrigger = React.forwardRef<
           aria-hidden="true"
           focusable="false"
         />
-      </AccordionPrimitives.Trigger>
-    </AccordionPrimitives.Header>
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
   )
 })
 
 const AccordionContent = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitives.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Content>
+  React.ComponentRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitives.Content
-      className={styles.accordionContent()}
-      ref={forwardedRef}
-      {...props}
-    >
+    <AccordionPrimitive.Content className={styles.accordionContent()} ref={forwardedRef} {...props}>
       <div className={styles.accordionContentInner({ className })}>{children}</div>
-    </AccordionPrimitives.Content>
+    </AccordionPrimitive.Content>
   )
 })
 
 const AccordionItem = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitives.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Item>
+  React.ComponentRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitives.Item
+    <AccordionPrimitive.Item
       className={styles.accordionItem({ className })}
       ref={forwardedRef}
       {...props}

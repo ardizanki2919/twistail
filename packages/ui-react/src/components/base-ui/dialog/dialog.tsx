@@ -1,22 +1,22 @@
-import { Dialog as DialogPrimitives } from 'radix-ui'
+import { Dialog as DialogPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { dialogStyles } from './dialog.css'
 
-const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitives.Root>) => {
-  return <DialogPrimitives.Root {...props} />
+const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root>) => {
+  return <DialogPrimitive.Root {...props} />
 }
 
-const DialogTrigger = DialogPrimitives.Trigger
-const DialogClose = DialogPrimitives.Close
-const DialogPortal = DialogPrimitives.Portal
+const DialogTrigger = DialogPrimitive.Trigger
+const DialogClose = DialogPrimitive.Close
+const DialogPortal = DialogPrimitive.Portal
 
 const DialogOverlay = React.forwardRef<
-  React.ComponentRef<typeof DialogPrimitives.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitives.Overlay>
+  React.ComponentRef<typeof DialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, forwardedRef) => {
   const styles = dialogStyles()
   return (
-    <DialogPrimitives.Overlay
+    <DialogPrimitive.Overlay
       ref={forwardedRef}
       className={styles.overlay({ className })}
       {...props}
@@ -25,14 +25,14 @@ const DialogOverlay = React.forwardRef<
 })
 
 const DialogContent = React.forwardRef<
-  React.ComponentRef<typeof DialogPrimitives.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitives.Content>
+  React.ComponentRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, ...props }, forwardedRef) => {
   const styles = dialogStyles()
   return (
     <DialogPortal>
       <DialogOverlay>
-        <DialogPrimitives.Content
+        <DialogPrimitive.Content
           ref={forwardedRef}
           className={styles.content({ className })}
           {...props}
@@ -48,22 +48,22 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 }
 
 const DialogTitle = React.forwardRef<
-  React.ComponentRef<typeof DialogPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitives.Title>
+  React.ComponentRef<typeof DialogPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...props }, forwardedRef) => {
   const styles = dialogStyles()
   return (
-    <DialogPrimitives.Title ref={forwardedRef} className={styles.title({ className })} {...props} />
+    <DialogPrimitive.Title ref={forwardedRef} className={styles.title({ className })} {...props} />
   )
 })
 
 const DialogDescription = React.forwardRef<
-  React.ComponentRef<typeof DialogPrimitives.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitives.Description>
+  React.ComponentRef<typeof DialogPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, forwardedRef) => {
   const styles = dialogStyles()
   return (
-    <DialogPrimitives.Description
+    <DialogPrimitive.Description
       ref={forwardedRef}
       className={styles.description({ className })}
       {...props}

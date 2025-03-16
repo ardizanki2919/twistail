@@ -1,36 +1,36 @@
-import { Popover as PopoverPrimitives } from 'radix-ui'
+import { Popover as PopoverPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { popoverStyles } from './popover.css'
 
-const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Root>) => {
-  return <PopoverPrimitives.Root {...props} />
+const Popover = (props: React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Root>) => {
+  return <PopoverPrimitive.Root {...props} />
 }
 
 const PopoverTrigger = React.forwardRef<
-  React.ComponentRef<typeof PopoverPrimitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Trigger>
+  React.ComponentRef<typeof PopoverPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Trigger>
 >((props, forwardedRef) => {
-  return <PopoverPrimitives.Trigger ref={forwardedRef} {...props} />
+  return <PopoverPrimitive.Trigger ref={forwardedRef} {...props} />
 })
 
 const PopoverAnchor = React.forwardRef<
-  React.ComponentRef<typeof PopoverPrimitives.Anchor>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Anchor>
+  React.ComponentRef<typeof PopoverPrimitive.Anchor>,
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Anchor>
 >((props, forwardedRef) => {
-  return <PopoverPrimitives.Anchor ref={forwardedRef} {...props} />
+  return <PopoverPrimitive.Anchor ref={forwardedRef} {...props} />
 })
 
 const PopoverClose = React.forwardRef<
-  React.ComponentRef<typeof PopoverPrimitives.Close>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Close>
+  React.ComponentRef<typeof PopoverPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Close>
 >((props, forwardedRef) => {
-  return <PopoverPrimitives.Close ref={forwardedRef} {...props} />
+  return <PopoverPrimitive.Close ref={forwardedRef} {...props} />
 })
 
-type ContentProps = React.ComponentPropsWithoutRef<typeof PopoverPrimitives.Content>
+type ContentProps = React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 
 const PopoverContent = React.forwardRef<
-  React.ComponentRef<typeof PopoverPrimitives.Content>,
+  React.ComponentRef<typeof PopoverPrimitive.Content>,
   ContentProps
 >(
   (
@@ -46,8 +46,8 @@ const PopoverContent = React.forwardRef<
     forwardedRef
   ) => {
     return (
-      <PopoverPrimitives.Portal>
-        <PopoverPrimitives.Content
+      <PopoverPrimitive.Portal>
+        <PopoverPrimitive.Content
           ref={forwardedRef}
           sideOffset={sideOffset}
           side={side}
@@ -67,7 +67,7 @@ const PopoverContent = React.forwardRef<
           }}
           {...props}
         />
-      </PopoverPrimitives.Portal>
+      </PopoverPrimitive.Portal>
     )
   }
 )

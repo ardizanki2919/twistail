@@ -1,73 +1,73 @@
 import * as Lucide from 'lucide-react'
-import { Select as ListboxPrimitives } from 'radix-ui'
+import { Select as ListboxPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { type ListboxStyles, listboxStyles } from './listbox.css'
 
-const Listbox = ListboxPrimitives.Root
-const ListboxGroup = ListboxPrimitives.Group
-const ListboxValue = ListboxPrimitives.Value
+const Listbox = ListboxPrimitive.Root
+const ListboxGroup = ListboxPrimitive.Group
+const ListboxValue = ListboxPrimitive.Value
 
 interface ListboxTriggerProps
-  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Trigger>,
+  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Trigger>,
     ListboxStyles {}
 
 const ListboxTrigger = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.Trigger>,
+  React.ComponentRef<typeof ListboxPrimitive.Trigger>,
   ListboxTriggerProps
 >(({ className, hasError, children, ...props }, forwardedRef) => {
   const styles = listboxStyles({ hasError })
   return (
-    <ListboxPrimitives.Trigger
+    <ListboxPrimitive.Trigger
       ref={forwardedRef}
       className={styles.trigger({ className })}
       {...props}
     >
       <span className={styles.triggerSpan()}>{children}</span>
-      <ListboxPrimitives.Icon asChild>
+      <ListboxPrimitive.Icon asChild>
         <Lucide.ChevronsUpDown className={styles.triggerChevrons()} />
-      </ListboxPrimitives.Icon>
-    </ListboxPrimitives.Trigger>
+      </ListboxPrimitive.Icon>
+    </ListboxPrimitive.Trigger>
   )
 })
 
 const ListboxScrollUpButton = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.ScrollUpButton>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.ScrollUpButton>
+  React.ComponentRef<typeof ListboxPrimitive.ScrollUpButton>,
+  React.ComponentPropsWithoutRef<typeof ListboxPrimitive.ScrollUpButton>
 >(({ className, ...props }, forwardedRef) => {
   const styles = listboxStyles()
   return (
-    <ListboxPrimitives.ScrollUpButton
+    <ListboxPrimitive.ScrollUpButton
       ref={forwardedRef}
       className={styles.scrollUpButton({ className })}
       {...props}
     >
       <Lucide.ChevronUp className={styles.scrollUpButtonIcon()} aria-hidden="true" />
-    </ListboxPrimitives.ScrollUpButton>
+    </ListboxPrimitive.ScrollUpButton>
   )
 })
 
 const ListboxScrollDownButton = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.ScrollDownButton>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.ScrollDownButton>
+  React.ComponentRef<typeof ListboxPrimitive.ScrollDownButton>,
+  React.ComponentPropsWithoutRef<typeof ListboxPrimitive.ScrollDownButton>
 >(({ className, ...props }, forwardedRef) => {
   const styles = listboxStyles()
   return (
-    <ListboxPrimitives.ScrollDownButton
+    <ListboxPrimitive.ScrollDownButton
       ref={forwardedRef}
       className={styles.scrollDownButton({ className })}
       {...props}
     >
       <Lucide.ChevronDown className={styles.scrollDownButtonIcon()} aria-hidden="true" />
-    </ListboxPrimitives.ScrollDownButton>
+    </ListboxPrimitive.ScrollDownButton>
   )
 })
 
 interface ListboxContentProps
-  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Content>,
+  extends React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Content>,
     ListboxStyles {}
 
 const ListboxContent = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.Content>,
+  React.ComponentRef<typeof ListboxPrimitive.Content>,
   ListboxContentProps
 >(
   (
@@ -76,8 +76,8 @@ const ListboxContent = React.forwardRef<
   ) => {
     const styles = listboxStyles({ position })
     return (
-      <ListboxPrimitives.Portal>
-        <ListboxPrimitives.Content
+      <ListboxPrimitive.Portal>
+        <ListboxPrimitive.Content
           ref={forwardedRef}
           className={styles.content({ className })}
           collisionPadding={collisionPadding}
@@ -86,23 +86,23 @@ const ListboxContent = React.forwardRef<
           {...props}
         >
           <ListboxScrollUpButton />
-          <ListboxPrimitives.Viewport className={styles.contentViewport()}>
+          <ListboxPrimitive.Viewport className={styles.contentViewport()}>
             {children}
-          </ListboxPrimitives.Viewport>
+          </ListboxPrimitive.Viewport>
           <ListboxScrollDownButton />
-        </ListboxPrimitives.Content>
-      </ListboxPrimitives.Portal>
+        </ListboxPrimitive.Content>
+      </ListboxPrimitive.Portal>
     )
   }
 )
 
 const ListboxGroupLabel = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.Label>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Label>
+  React.ComponentRef<typeof ListboxPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Label>
 >(({ className, ...props }, forwardedRef) => {
   const styles = listboxStyles()
   return (
-    <ListboxPrimitives.Label
+    <ListboxPrimitive.Label
       ref={forwardedRef}
       className={styles.grouplabel({ className })}
       {...props}
@@ -111,29 +111,29 @@ const ListboxGroupLabel = React.forwardRef<
 })
 
 const ListboxItem = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.Item>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Item>
+  React.ComponentRef<typeof ListboxPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Item>
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = listboxStyles()
   return (
-    <ListboxPrimitives.Item ref={forwardedRef} className={styles.item({ className })} {...props}>
-      <ListboxPrimitives.ItemText className={styles.itemText()}>
+    <ListboxPrimitive.Item ref={forwardedRef} className={styles.item({ className })} {...props}>
+      <ListboxPrimitive.ItemText className={styles.itemText()}>
         {children}
-      </ListboxPrimitives.ItemText>
-      <ListboxPrimitives.ItemIndicator>
+      </ListboxPrimitive.ItemText>
+      <ListboxPrimitive.ItemIndicator>
         <Lucide.Check className={styles.itemIndicatorIcon()} aria-hidden="true" />
-      </ListboxPrimitives.ItemIndicator>
-    </ListboxPrimitives.Item>
+      </ListboxPrimitive.ItemIndicator>
+    </ListboxPrimitive.Item>
   )
 })
 
 const ListboxSeparator = React.forwardRef<
-  React.ComponentRef<typeof ListboxPrimitives.Separator>,
-  React.ComponentPropsWithoutRef<typeof ListboxPrimitives.Separator>
+  React.ComponentRef<typeof ListboxPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Separator>
 >(({ className, ...props }, forwardedRef) => {
   const styles = listboxStyles()
   return (
-    <ListboxPrimitives.Separator
+    <ListboxPrimitive.Separator
       ref={forwardedRef}
       className={styles.separator({ className })}
       {...props}
@@ -145,8 +145,8 @@ Listbox.displayName = 'Listbox'
 ListboxGroup.displayName = 'ListboxGroup'
 ListboxValue.displayName = 'ListboxValue'
 ListboxTrigger.displayName = 'ListboxTrigger'
-ListboxScrollUpButton.displayName = ListboxPrimitives.ScrollUpButton.displayName
-ListboxScrollDownButton.displayName = ListboxPrimitives.ScrollDownButton.displayName
+ListboxScrollUpButton.displayName = ListboxPrimitive.ScrollUpButton.displayName
+ListboxScrollDownButton.displayName = ListboxPrimitive.ScrollDownButton.displayName
 ListboxContent.displayName = 'ListboxContent'
 ListboxGroupLabel.displayName = 'ListboxGroupLabel'
 ListboxItem.displayName = 'ListboxItem'

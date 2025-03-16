@@ -1,34 +1,34 @@
-import { Avatar as AvatarPrimitives } from 'radix-ui'
+import { Avatar as AvatarPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { type AvatarStyles, avatarStyles } from './avatar.css'
 
 const Avatar = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Root>
+  React.ComponentRef<typeof AvatarPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
   return (
-    <AvatarPrimitives.Root ref={forwardedRef} className={styles.root({ className })} {...props} />
+    <AvatarPrimitive.Root ref={forwardedRef} className={styles.root({ className })} {...props} />
   )
 })
 
 const AvatarImage = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitives.Image>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Image>
+  React.ComponentRef<typeof AvatarPrimitive.Image>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
   return (
-    <AvatarPrimitives.Image ref={forwardedRef} className={styles.image({ className })} {...props} />
+    <AvatarPrimitive.Image ref={forwardedRef} className={styles.image({ className })} {...props} />
   )
 })
 
 const AvatarFallback = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitives.Fallback>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitives.Fallback>
+  React.ComponentRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, forwardedRef) => {
   const styles = avatarStyles()
   return (
-    <AvatarPrimitives.Fallback
+    <AvatarPrimitive.Fallback
       ref={forwardedRef}
       className={styles.fallback({ className })}
       {...props}
@@ -63,9 +63,9 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   }
 )
 
-Avatar.displayName = AvatarPrimitives.Root.displayName
-AvatarImage.displayName = AvatarPrimitives.Image.displayName
-AvatarFallback.displayName = AvatarPrimitives.Fallback.displayName
+Avatar.displayName = AvatarPrimitive.Root.displayName
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 AvatarGroup.displayName = 'AvatarGroup'
 
 export { Avatar, AvatarImage, AvatarFallback, AvatarGroup }

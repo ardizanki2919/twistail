@@ -1,20 +1,20 @@
-import { Checkbox as CheckboxPrimitives } from 'radix-ui'
+import { Checkbox as CheckboxPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { checkboxStyles } from './checkbox.css'
 
 const Checkbox = React.forwardRef<
-  React.ComponentRef<typeof CheckboxPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof CheckboxPrimitives.Root>
+  React.ComponentRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 >(({ className, checked, ...props }, forwardedRef) => {
   const styles = checkboxStyles()
   return (
-    <CheckboxPrimitives.Root
+    <CheckboxPrimitive.Root
       ref={forwardedRef}
       className={styles.root({ className })}
       checked={checked}
       {...props}
     >
-      <CheckboxPrimitives.Indicator className={styles.indicator()} asChild>
+      <CheckboxPrimitive.Indicator className={styles.indicator()} asChild>
         {checked === 'indeterminate' ? (
           <svg
             aria-hidden="true"
@@ -52,8 +52,8 @@ const Checkbox = React.forwardRef<
             />
           </svg>
         )}
-      </CheckboxPrimitives.Indicator>
-    </CheckboxPrimitives.Root>
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
   )
 })
 
