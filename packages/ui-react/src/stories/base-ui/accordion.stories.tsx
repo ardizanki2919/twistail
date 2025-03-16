@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
+import { clx } from 'twistail-utils'
 import { AccordionContent, AccordionItem } from '#/components'
 import { Badge, Button } from '#/components'
 import { Accordion, AccordionTrigger } from '#/components'
@@ -420,6 +421,81 @@ export const Controlled: Story = {
           </AccordionItem>
         </Accordion>
       </div>
+    )
+  },
+}
+
+const items = [
+  {
+    id: 'item-1',
+    title: 'SUV',
+    image: `https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3`,
+    description: `Sport Utility Vehicles with high ground clearance and large cabin space for families, cargo, and off-road capabilities.`,
+  },
+  {
+    id: 'item-2',
+    title: 'Sedan',
+    image: `https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3`,
+    description: `Cars with elegant design, high performance, and driving comfort for daily use, commuting, and long-distance travel.`,
+  },
+  {
+    id: 'item-3',
+    title: 'Sport Car',
+    image: `https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3`,
+    description: `Cars with high performance, fast acceleration, and aerodynamic design for driving experience that stimulates adrenaline.`,
+  },
+]
+
+export const Horizontal: Story = {
+  render: () => {
+    const [value, setValue] = React.useState('item-1')
+
+    return (
+      <Accordion
+        type="single"
+        className="flex h-[400px] w-full max-w-[700px] gap-2 sm:flex-row"
+        orientation="horizontal"
+        onValueChange={setValue}
+        value={value}
+      >
+        {items.map((item) => (
+          <AccordionItem
+            key={item.id}
+            value={item.id}
+            className={clx(
+              'relative cursor-pointer overflow-hidden rounded-lg ring-primary/70 transition-all duration-500 ease-in-out',
+              'data-[state=closed]:w-[20%] data-[state=open]:w-[100%] md:data-[state=closed]:w-[10%] [&:has(:focus-visible)]:ring-2'
+            )}
+            onClick={() => setValue(item.id)}
+          >
+            <img src={item.image} alt={item.title} className="h-[400px] w-full object-cover" />
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+              <div className="transition-all duration-300 group-data-[state=closed]:translate-y-2 group-data-[state=open]:translate-y-0">
+                <AccordionTrigger
+                  className={clx(
+                    'focus-override focus-visible:!outline-none text-left font-bold text-white transition-all duration-300',
+                    'data-[state=closed]:text-sm data-[state=open]:text-base data-[state=closed]:opacity-0',
+                    'data-[state=open]:opacity-100 md:data-[state=open]:text-xl [&>svg]:hidden'
+                  )}
+                >
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent
+                  forceMount
+                  className={clx(
+                    'overflow-hidden font-medium text-white/90 text-xs tracking-tight opacity-100 transition-all duration-700 md:text-base',
+                    'data-[state=closed]:hidden data-[state=closed]:max-h-0 data-[state=open]:max-h-[100px]'
+                  )}
+                  asChild
+                >
+                  {item.description}
+                </AccordionContent>
+                <div className="absolute bottom-0 left-0 h-1 w-full transition-all duration-300 group-data-[state=closed]:opacity-0 group-data-[state=open]:opacity-100" />
+              </div>
+            </div>
+          </AccordionItem>
+        ))}
+      </Accordion>
     )
   },
 }

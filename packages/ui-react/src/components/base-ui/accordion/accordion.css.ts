@@ -2,6 +2,7 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const accordionStyles = tv({
   slots: {
+    root: [],
     // AccordionTrigger
     accordionHeader: 'flex',
     accordionTriger: [
@@ -22,9 +23,10 @@ const accordionStyles = tv({
       // disabled
       'group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700',
     ],
-    accordionContent:
+    accordionContent: [
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open',
-    accordionContentContainer: 'overflow-hidden pb-4 text-sm text-accent-foreground',
+    ],
+    accordionContentInner: 'overflow-hidden pb-4 text-sm text-accent-foreground',
     accordionItem: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
   },
 })

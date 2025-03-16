@@ -3,7 +3,20 @@ import { Accordion as AccordionPrimitives } from 'radix-ui'
 import * as React from 'react'
 import { accordionStyles } from './accordion.css'
 
-const Accordion = AccordionPrimitives.Root
+const Accordion = React.forwardRef<
+  React.ComponentRef<typeof AccordionPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitives.Root>
+>(({ className, orientation = 'vertical', ...props }, forwardedRef) => {
+  const styles = accordionStyles({ orientation })
+  return (
+    <AccordionPrimitives.Root
+      ref={forwardedRef}
+      className={styles.root({ className })}
+      orientation={orientation}
+      {...props}
+    />
+  )
+})
 
 const AccordionTrigger = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitives.Trigger>,
@@ -39,7 +52,7 @@ const AccordionContent = React.forwardRef<
       ref={forwardedRef}
       {...props}
     >
-      <div className={styles.accordionContentContainer({ className })}>{children}</div>
+      <div className={styles.accordionContentInner({ className })}>{children}</div>
     </AccordionPrimitives.Content>
   )
 })
