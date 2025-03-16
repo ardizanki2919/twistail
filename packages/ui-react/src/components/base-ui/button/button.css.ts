@@ -1,13 +1,13 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const buttonStyles = tv({
+  base: [
+    'relative inline-flex items-center justify-center whitespace-nowrap rounded-md py-2',
+    'text-center font-medium text-sm shadow-xs transition-all duration-150 ease-in-out',
+    'disabled:pointer-events-none disabled:shadow-none border border-border',
+    'outline-0 outline-offset-2 focus-visible:outline-2',
+  ],
   slots: {
-    base: [
-      'relative inline-flex items-center justify-center whitespace-nowrap',
-      'text-center font-medium text-sm shadow-xs transition-all duration-150 ease-in-out',
-      'disabled:pointer-events-none disabled:shadow-none',
-      'outline-0 outline-offset-2 focus-visible:outline-2',
-    ],
     span: 'pointer-events-none flex shrink-0 items-center justify-center gap-1.5',
     icon: 'size-4 shrink-0 -ml-0.5',
   },
@@ -22,14 +22,14 @@ const buttonStyles = tv({
       },
       secondary: {
         base: [
-          'border border-border bg-secondary text-secondary-foreground hover:bg-background',
+          'bg-secondary text-secondary-foreground hover:bg-background',
           'disabled:border-border/50 disabled:bg-secondary/60 disabled:text-muted-foreground',
           'outline-secondary-foreground/10',
         ],
       },
       outline: {
         base: [
-          'border border-border bg-background text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
+          'bg-background text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
           'disabled:border-border/50 disabled:bg-background disabled:text-muted-foreground',
           'outline-input',
         ],
@@ -55,6 +55,19 @@ const buttonStyles = tv({
           'outline-primary',
         ],
       },
+      success: {
+        base: [
+          'bg-success text-success-foreground hover:bg-success/90 border border-success-foreground/10',
+        ],
+      },
+      warning: {
+        base: [
+          'bg-warning text-warning-foreground hover:bg-warning/90 border border-warning-foreground/10',
+        ],
+      },
+      info: {
+        base: ['bg-info text-info-foreground hover:bg-info/90 border border-info-foreground/10'],
+      },
     },
     size: {
       xs: 'h-7 px-2.5 text-xs',
@@ -69,10 +82,6 @@ const buttonStyles = tv({
     },
   },
   compoundVariants: [
-    {
-      variant: ['primary', 'secondary', 'outline', 'ghost', 'destructive', 'link'],
-      className: 'rounded-md py-2',
-    },
     {
       variant: ['link'],
       className: 'rounded-sm px-2 py-1 h-auto',

@@ -1,60 +1,26 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const calloutStyles = tv({
-  base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm',
+  base: 'flex flex-col overflow-hidden rounded-md p-4 text-sm ring-1',
   slots: {
-    header: 'flex items-start',
-    icon: 'mr-1.5 size-5 shrink-0',
-    title: 'font-semibold',
+    header: 'flex items-center justify-start',
+    icon: 'mr-1.5 size-5 shrink-0 p-0.5',
+    title: 'font-semibold text-sm',
     content: 'overflow-y-auto',
-    contentWithChildren: 'mt-2',
+    children: 'mt-2',
   },
   variants: {
     variant: {
-      default: {
-        base: [
-          // text color
-          'text-blue-900 dark:text-blue-400',
-          // background color
-          'bg-blue-50 dark:bg-blue-950/70',
-        ],
-      },
-      success: {
-        base: [
-          // text color
-          'text-emerald-900 dark:text-emerald-500',
-          // background color
-          'bg-emerald-50 dark:bg-emerald-950/70',
-        ],
-      },
-      error: {
-        base: [
-          // text color
-          'text-red-900 dark:text-red-500',
-          // background color
-          'bg-red-50 dark:bg-red-950/70',
-        ],
-      },
-      warning: {
-        base: [
-          // text color
-          'text-yellow-900 dark:text-yellow-500',
-          // background color
-          'bg-yellow-50 dark:bg-yellow-950/70',
-        ],
-      },
-      neutral: {
-        base: [
-          // text color
-          'text-gray-900 dark:text-gray-400',
-          // background color
-          'bg-gray-100 dark:bg-gray-800/70',
-        ],
-      },
+      primary: 'text-primary-foreground bg-primary ring-ring/40',
+      success: 'text-success-foreground bg-success ring-ring/40',
+      error: 'text-destructive-foreground bg-destructive ring-ring/40',
+      warning: 'text-warning-foreground bg-warning ring-ring/40',
+      info: 'text-info-foreground bg-info ring-ring/40',
+      neutral: 'text-muted-foreground bg-sidebar ring-ring/40',
     },
   },
   defaultVariants: {
-    variant: 'default',
+    variant: 'primary',
   },
 })
 
