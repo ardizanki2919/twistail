@@ -1,20 +1,20 @@
 import * as Lucide from 'lucide-react'
-import { Dialog as DrawerPrimitives } from 'radix-ui'
+import { Dialog as DrawerPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { Button } from 'twistail-react'
 import { type DrawerStyles, drawerStyles } from './drawer.css'
 
-const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>) => {
-  return <DrawerPrimitives.Root {...props} />
+const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root>) => {
+  return <DrawerPrimitive.Root {...props} />
 }
 
 const DrawerTrigger = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Trigger>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Trigger>
+  React.ComponentRef<typeof DrawerPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>
 >(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
   return (
-    <DrawerPrimitives.Trigger
+    <DrawerPrimitive.Trigger
       ref={forwardedRef}
       className={styles.trigger({ className })}
       {...props}
@@ -23,24 +23,24 @@ const DrawerTrigger = React.forwardRef<
 })
 
 const DrawerClose = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Close>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Close>
+  React.ComponentRef<typeof DrawerPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Close>
 >(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
   return (
-    <DrawerPrimitives.Close ref={forwardedRef} className={styles.close({ className })} {...props} />
+    <DrawerPrimitive.Close ref={forwardedRef} className={styles.close({ className })} {...props} />
   )
 })
 
-const DrawerPortal = DrawerPrimitives.Portal
+const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerOverlay = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Overlay>
+  React.ComponentRef<typeof DrawerPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
   return (
-    <DrawerPrimitives.Overlay
+    <DrawerPrimitive.Overlay
       ref={forwardedRef}
       className={styles.overlay({ className })}
       {...props}
@@ -49,18 +49,18 @@ const DrawerOverlay = React.forwardRef<
 })
 
 interface DrawerContentProps
-  extends React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Content>,
+  extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
     DrawerStyles {}
 
 const DrawerContent = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Content>,
+  React.ComponentRef<typeof DrawerPrimitive.Content>,
   DrawerContentProps
 >(({ side = 'right', className, ...props }, forwardedRef) => {
   const styles = drawerStyles({ side })
   return (
     <DrawerPortal>
       <DrawerOverlay>
-        <DrawerPrimitives.Content
+        <DrawerPrimitive.Content
           ref={forwardedRef}
           className={styles.content({ className })}
           {...props}
@@ -76,23 +76,23 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithou
     return (
       <div ref={forwardedRef} className={styles.headerRoot()} {...props}>
         <div className={styles.header({ className })}>{children}</div>
-        <DrawerPrimitives.Close asChild>
+        <DrawerPrimitive.Close asChild>
           <Button variant="ghost" className={styles.headerCloseButton()} size="sm">
             <Lucide.X className={styles.headerCloseIcon()} aria-hidden="true" strokeWidth={2} />
           </Button>
-        </DrawerPrimitives.Close>
+        </DrawerPrimitive.Close>
       </div>
     )
   }
 )
 
 const DrawerTitle = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Title>
+  React.ComponentRef<typeof DrawerPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
 >(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
   return (
-    <DrawerPrimitives.Title ref={forwardedRef} className={styles.title({ className })} {...props} />
+    <DrawerPrimitive.Title ref={forwardedRef} className={styles.title({ className })} {...props} />
   )
 })
 
@@ -104,12 +104,12 @@ const DrawerBody = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutR
 )
 
 const DrawerDescription = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Description>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Description>
+  React.ComponentRef<typeof DrawerPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
 >(({ className, ...props }, forwardedRef) => {
   const styles = drawerStyles()
   return (
-    <DrawerPrimitives.Description
+    <DrawerPrimitive.Description
       ref={forwardedRef}
       className={styles.description({ className })}
       {...props}

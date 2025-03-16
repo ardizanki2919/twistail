@@ -4,7 +4,7 @@ import { type DateFieldState, type DateSegment, useTimeFieldState } from '@react
 import { type Locale, format } from 'date-fns'
 import { enUS } from 'date-fns/locale'
 import * as Lucide from 'lucide-react'
-import { Popover as PopoverPrimitives } from 'radix-ui'
+import { Popover as PopoverPrimitive } from 'radix-ui'
 import * as React from 'react'
 import type { Matcher } from 'react-day-picker'
 import { VariantProps, tv } from 'tailwind-variants'
@@ -163,7 +163,7 @@ interface TriggerProps extends React.ComponentProps<'button'>, VariantProps<type
 const Trigger = React.forwardRef<HTMLButtonElement, TriggerProps>(
   ({ className, children, placeholder, hasError, ...props }: TriggerProps, forwardedRef) => {
     return (
-      <PopoverPrimitives.Trigger asChild>
+      <PopoverPrimitive.Trigger asChild>
         <button
           ref={forwardedRef}
           className={clx(triggerStyles({ hasError }), className)}
@@ -178,7 +178,7 @@ const Trigger = React.forwardRef<HTMLButtonElement, TriggerProps>(
             ) : null}
           </span>
         </button>
-      </PopoverPrimitives.Trigger>
+      </PopoverPrimitive.Trigger>
     )
   }
 )
@@ -189,12 +189,12 @@ Trigger.displayName = 'DatePicker.Trigger'
 // ============================================================================
 
 const CalendarPopover = React.forwardRef<
-  React.ComponentRef<typeof PopoverPrimitives.Content>,
-  React.ComponentProps<typeof PopoverPrimitives.Content>
+  React.ComponentRef<typeof PopoverPrimitive.Content>,
+  React.ComponentProps<typeof PopoverPrimitive.Content>
 >(({ align, className, children, ...props }, forwardedRef) => {
   return (
-    <PopoverPrimitives.Portal>
-      <PopoverPrimitives.Content
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Content
         ref={forwardedRef}
         sideOffset={10}
         side="bottom"
@@ -219,8 +219,8 @@ const CalendarPopover = React.forwardRef<
         {...props}
       >
         {children}
-      </PopoverPrimitives.Content>
-    </PopoverPrimitives.Portal>
+      </PopoverPrimitive.Content>
+    </PopoverPrimitive.Portal>
   )
 })
 
@@ -568,7 +568,7 @@ const SingleDatePicker = ({
   }, [value, defaultValue])
 
   return (
-    <PopoverPrimitives.Root open={open} onOpenChange={onOpenChange}>
+    <PopoverPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <Trigger
         placeholder={placeholder}
         disabled={disabled}
@@ -634,7 +634,7 @@ const SingleDatePicker = ({
           </div>
         </div>
       </CalendarPopover>
-    </PopoverPrimitives.Root>
+    </PopoverPrimitive.Root>
   )
 }
 
@@ -851,7 +851,7 @@ const RangeDatePicker = ({
   }
 
   return (
-    <PopoverPrimitives.Root open={open} onOpenChange={onOpenChange}>
+    <PopoverPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <Trigger
         placeholder={placeholder}
         disabled={disabled}
@@ -962,7 +962,7 @@ const RangeDatePicker = ({
           </div>
         </div>
       </CalendarPopover>
-    </PopoverPrimitives.Root>
+    </PopoverPrimitive.Root>
   )
 }
 

@@ -1,20 +1,20 @@
-import { HoverCard as HoverCardPrimitives } from 'radix-ui'
+import { HoverCard as HoverCardPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { hoverCardStyles } from './hover-card.css'
 
-interface HoverCardProps extends React.ComponentPropsWithoutRef<typeof HoverCardPrimitives.Root> {}
+interface HoverCardProps extends React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Root> {}
 
 const HoverCard = ({ openDelay = 40, closeDelay = 40, ...props }: HoverCardProps) => {
-  return <HoverCardPrimitives.Root openDelay={openDelay} closeDelay={closeDelay} {...props} />
+  return <HoverCardPrimitive.Root openDelay={openDelay} closeDelay={closeDelay} {...props} />
 }
 
-const HoverCardTrigger = HoverCardPrimitives.Trigger
+const HoverCardTrigger = HoverCardPrimitive.Trigger
 
 const HoverCardContent = React.forwardRef<
-  React.ComponentRef<typeof HoverCardPrimitives.Content>,
-  React.ComponentPropsWithoutRef<typeof HoverCardPrimitives.Content>
+  React.ComponentRef<typeof HoverCardPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
 >(({ className, align = 'center', sideOffset = 4, ...props }, forwardedRef) => (
-  <HoverCardPrimitives.Content
+  <HoverCardPrimitive.Content
     ref={forwardedRef}
     className={hoverCardStyles({ className })}
     sideOffset={sideOffset}
@@ -24,7 +24,7 @@ const HoverCardContent = React.forwardRef<
 ))
 
 HoverCard.displayName = 'HoverCard'
-HoverCardContent.displayName = HoverCardPrimitives.Content.displayName
-HoverCardTrigger.displayName = HoverCardPrimitives.Trigger.displayName
+HoverCardContent.displayName = HoverCardPrimitive.Content.displayName
+HoverCardTrigger.displayName = HoverCardPrimitive.Trigger.displayName
 
 export { HoverCard, HoverCardTrigger, HoverCardContent }

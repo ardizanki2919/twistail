@@ -1,4 +1,4 @@
-import { NavigationMenu as NavigationMenuPrimitives } from 'radix-ui'
+import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { tabNavigationStyles } from './tab-navigation.css'
 
@@ -21,32 +21,32 @@ function getSubtree(
 }
 
 const TabNavigation = React.forwardRef<
-  React.ComponentRef<typeof NavigationMenuPrimitives.Root>,
+  React.ComponentRef<typeof NavigationMenuPrimitive.Root>,
   Omit<
-    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitives.Root>,
+    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>,
     'orientation' | 'defaultValue' | 'dir'
   >
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = tabNavigationStyles()
   return (
-    <NavigationMenuPrimitives.Root ref={forwardedRef} {...props} asChild={false}>
-      <NavigationMenuPrimitives.List className={styles.list({ className })}>
+    <NavigationMenuPrimitive.Root ref={forwardedRef} {...props} asChild={false}>
+      <NavigationMenuPrimitive.List className={styles.list({ className })}>
         {children}
-      </NavigationMenuPrimitives.List>
-    </NavigationMenuPrimitives.Root>
+      </NavigationMenuPrimitive.List>
+    </NavigationMenuPrimitive.Root>
   )
 })
 
 const TabNavigationLink = React.forwardRef<
-  React.ComponentRef<typeof NavigationMenuPrimitives.Link>,
-  Omit<React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitives.Link>, 'onSelect'> & {
+  React.ComponentRef<typeof NavigationMenuPrimitive.Link>,
+  Omit<React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>, 'onSelect'> & {
     disabled?: boolean
   }
 >(({ asChild, disabled, className, children, ...props }, forwardedRef) => {
   const styles = tabNavigationStyles({ disabled })
   return (
-    <NavigationMenuPrimitives.Item className={styles.item()} aria-disabled={disabled}>
-      <NavigationMenuPrimitives.Link
+    <NavigationMenuPrimitive.Item className={styles.item()} aria-disabled={disabled}>
+      <NavigationMenuPrimitive.Link
         aria-disabled={disabled}
         className={styles.link()}
         ref={forwardedRef}
@@ -57,8 +57,8 @@ const TabNavigationLink = React.forwardRef<
         {getSubtree({ asChild, children }, (children) => (
           <span className={styles.linkInner({ className })}>{children}</span>
         ))}
-      </NavigationMenuPrimitives.Link>
-    </NavigationMenuPrimitives.Item>
+      </NavigationMenuPrimitive.Link>
+    </NavigationMenuPrimitive.Item>
   )
 })
 
