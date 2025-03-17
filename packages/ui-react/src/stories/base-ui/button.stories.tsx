@@ -70,6 +70,15 @@ export const VariantShowcase: Story = {
       <Button {...args} variant="destructive">
         Destructive
       </Button>
+      <Button {...args} variant="success">
+        Success
+      </Button>
+      <Button {...args} variant="warning">
+        Warning
+      </Button>
+      <Button {...args} variant="info">
+        Info
+      </Button>
       <Button {...args} variant="outline">
         Outline
       </Button>

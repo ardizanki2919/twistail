@@ -1,7 +1,9 @@
 import { remarkHeading, remarkImage, remarkStructure } from 'fumadocs-core/mdx-plugins'
+import { rehypeToc, remarkGfm } from 'fumadocs-core/mdx-plugins'
 import { fileGenerator, remarkDocGen, remarkInstall } from 'fumadocs-docgen'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { defineCollections, frontmatterSchema, getDefaultMDXOptions } from 'fumadocs-mdx/config'
+import rehypeExternalLinks from 'rehype-external-links'
 import { z } from 'zod'
 
 export const blogPosts = defineCollections({
@@ -32,6 +34,8 @@ export default defineConfig({
       [remarkHeading, { generateToc: true }],
       [remarkImage, { useImport: false }],
       [remarkStructure, { types: ['paragraph', 'blockquote', 'tableCell'] }],
+      remarkGfm,
     ],
+    rehypePlugins: [rehypeExternalLinks, rehypeToc],
   },
 })

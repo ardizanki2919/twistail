@@ -4,7 +4,7 @@
 
 /* @variant dark (&:where([data-theme="dark"] *)); */
 /* @source "../../node_modules/twistail-react"; */
-@source '../../node_modules/fumadocs-ui/dist/**/*.js';
+@source "../../node_modules/fumadocs-ui/dist/**/*.js";
 
 @theme inline {
     /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */
@@ -22,7 +22,7 @@
     }
     pre,
     code {
-        @apply font-mono;
+        @apply font-mono leading-6;
     }
 }
 

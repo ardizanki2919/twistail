@@ -16,7 +16,7 @@ const navItems = [
   { href: '/docs/ui/components', label: 'Components' },
   { href: '/docs', label: 'Documentation' },
   { href: '/docs/ui/changelog', label: 'Changelog' },
-  { href: '/docs/ui/faqs', label: 'FAQs', matchPath: '/docs/ui/faqs' },
+  { href: '/docs/ui#faqs', label: 'FAQs', matchPath: '/docs/ui#faqs' },
 ]
 
 export const NavBar = () => {

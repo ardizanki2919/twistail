@@ -6,6 +6,7 @@
  * Docs Layout: app/docs/layout.tsx
  */
 
+import { GithubInfo } from 'fumadocs-ui/components/github-info'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 import Image from 'next/image'
 
@@ -24,15 +25,32 @@ const TitleComponent = () => (
 )
 
 export const baseOptions: BaseLayoutProps = {
-  nav: { url: '/', title: <TitleComponent />, transparentMode: 'none' },
-  githubUrl: 'https://github.com/riipandi/twistail',
+  nav: {
+    url: '/',
+    title: <TitleComponent />,
+    transparentMode: 'none',
+  },
+  themeSwitch: {
+    enabled: true,
+    mode: 'light-dark',
+  },
   links: [
-    { text: 'Blog', url: '/blog' },
     {
+      type: 'main',
+      text: 'Blog',
+      url: '/blog',
+      active: 'nested-url',
+    },
+    {
+      type: 'main',
       text: 'Storybook',
       url: 'https://storybook.twistail.com',
       external: true,
       active: 'url',
+    },
+    {
+      type: 'custom',
+      children: <GithubInfo owner="riipandi" repo="twistail" className="lg:-mx-2" />,
     },
   ],
 }

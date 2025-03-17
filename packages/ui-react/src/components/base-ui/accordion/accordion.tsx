@@ -24,18 +24,14 @@ const AccordionTrigger = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitive.Header className={styles.accordionHeader()}>
+    <AccordionPrimitive.Header className={styles.header()}>
       <AccordionPrimitive.Trigger
-        className={styles.accordionTriger({ className })}
+        className={styles.triger({ className })}
         ref={forwardedRef}
         {...props}
       >
         {children}
-        <Lucide.Plus
-          className={styles.accordionTrigerIcon()}
-          aria-hidden="true"
-          focusable="false"
-        />
+        <Lucide.Plus className={styles.trigerIcon()} aria-hidden="true" focusable="false" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
@@ -47,8 +43,8 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitive.Content className={styles.accordionContent()} ref={forwardedRef} {...props}>
-      <div className={styles.accordionContentInner({ className })}>{children}</div>
+    <AccordionPrimitive.Content className={styles.content()} ref={forwardedRef} {...props}>
+      <div className={styles.contentInner({ className })}>{children}</div>
     </AccordionPrimitive.Content>
   )
 })
@@ -59,11 +55,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => {
   const styles = accordionStyles()
   return (
-    <AccordionPrimitive.Item
-      className={styles.accordionItem({ className })}
-      ref={forwardedRef}
-      {...props}
-    />
+    <AccordionPrimitive.Item className={styles.item({ className })} ref={forwardedRef} {...props} />
   )
 })
 

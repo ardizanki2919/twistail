@@ -44,7 +44,7 @@ export default function Page() {
               <p className="mt-4 text-gray-300">
                 Edit{' '}
                 <code className="rounded-sm bg-gray-700 px-2 py-1 text-sm">
-                  examples/react-vite/src/app.tsx
+                  src/pages/dashboard/page.tsx
                 </code>{' '}
                 and save to test HMR
               </p>

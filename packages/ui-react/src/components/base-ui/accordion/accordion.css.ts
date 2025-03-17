@@ -4,8 +4,8 @@ const accordionStyles = tv({
   slots: {
     root: [],
     // AccordionTrigger
-    accordionHeader: 'flex',
-    accordionTriger: [
+    header: 'flex',
+    triger: [
       // base
       'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-sm leading-none',
       // text color
@@ -15,7 +15,7 @@ const accordionStyles = tv({
       //focus
       'focus-visible:z-10 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-inset',
     ],
-    accordionTrigerIcon: [
+    trigerIcon: [
       // base
       'group-data-[state=open]:-rotate-45 size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
       // text color
@@ -23,11 +23,11 @@ const accordionStyles = tv({
       // disabled
       'group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700',
     ],
-    accordionContent: [
+    content: [
       'transform-gpu data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open',
     ],
-    accordionContentInner: 'overflow-hidden pb-4 text-sm text-accent-foreground',
-    accordionItem: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
+    contentInner: 'overflow-hidden pb-4 text-sm text-accent-foreground',
+    item: 'overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800',
   },
 })
 

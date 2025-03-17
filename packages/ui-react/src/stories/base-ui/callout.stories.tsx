@@ -8,8 +8,7 @@ const meta: Meta<typeof Callout> = {
   tags: ['status:preview'],
   args: {
     title: 'Sales Performance',
-    children:
-      'System Update: Enhanced Salesforce and Dynamics 365 integration now delivers key sales performance metrics directly to your dashboard for improved target achievement.',
+    children: `System Update: Enhanced Salesforce and Dynamics 365 integration now delivers key sales performance metrics directly to your dashboard for improved target achievement.`,
   },
   argTypes: {
     variant: {
@@ -24,44 +23,36 @@ type Story = StoryObj<typeof Callout>
 
 export const Default: Story = {}
 
-export const Success: Story = {
-  args: {
-    variant: 'success',
-  },
+export const Variants: Story = {
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <Callout variant="primary" {...args} />
+      <Callout variant="success" {...args} />
+      <Callout variant="error" {...args} />
+      <Callout variant="warning" {...args} />
+      <Callout variant="info" {...args} />
+      <Callout variant="neutral" {...args} />
+    </div>
+  ),
 }
 
-export const ErrorState: Story = {
+export const WithIcon: Story = {
   args: {
-    variant: 'error',
+    icon: <Lucide.Info className="mr-1.5 size-5 shrink-0 p-0.5" />,
   },
-}
-
-export const Warning: Story = {
-  args: {
-    variant: 'warning',
-  },
-}
-
-export const Neutral: Story = {
-  args: {
-    variant: 'neutral',
-  },
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <Callout variant="primary" {...args} />
+      <Callout variant="success" {...args} />
+      <Callout variant="error" {...args} />
+      <Callout variant="warning" {...args} />
+      <Callout variant="neutral" {...args} />
+    </div>
+  ),
 }
 
 // FIXME: Objects are not valid as a React child
-// export const WithLucideIcon: Story = {
-//   args: {
-//     icon: Lucide.OctagonAlert,
-//     title: 'AWS Credit Alert',
-//     children:
-//       'Warning: Your AWS credits are nearly depleted. Please review your usage and consider adding more credits to avoid service interruptions. Visit your account dashboard for details.',
-//   },
-// }
-
-export const WithIconElement: Story = {
-  args: {
-    icon: <Lucide.Info className="mr-1.5 size-5 shrink-0" />,
-    title: 'Information',
-    children: 'Visit your account dashboard for details.',
-  },
+export const LucideIcon: Story = {
+  args: { icon: Lucide.OctagonAlert },
+  render: (args) => <Callout {...args} />,
 }
