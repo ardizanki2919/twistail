@@ -1,7 +1,7 @@
 import * as Lucide from 'lucide-react'
 import { Dialog as DrawerPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { Button } from 'twistail-react'
+import { Button } from '#/components/base-ui/button'
 import { type DrawerStyles, drawerStyles } from './drawer.css'
 
 const Drawer = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root>) => {
