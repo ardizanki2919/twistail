@@ -18,7 +18,7 @@ import {
 
 const meta: Meta<typeof ContextMenu> = {
   component: ContextMenu,
-  title: 'Base Components/Context Menu',
+  title: 'Base Components/ContextMenu',
   tags: ['status:done'],
   parameters: {
     layout: 'centered',

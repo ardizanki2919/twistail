@@ -27,6 +27,9 @@
             "persistent": true,
             "cache": false
         },
+        "build:storybook": {
+            "dependsOn": ["twistail-utils#build"]
+        },
         "publish:dry": {}
     }
 }
