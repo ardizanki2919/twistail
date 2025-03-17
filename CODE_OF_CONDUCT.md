@@ -13,4 +13,4 @@ This project adopts the [Contributor Covenant Code of Conduct][twistail-coc],
 and we strongly encourage all contributors and participants to review the
 full guidelines.
 
-[twistail-coc]: https://twistail.com/docs/ui/code-of-conduct
+[twistail-coc]: https://twistail.com/docs/code-of-conduct

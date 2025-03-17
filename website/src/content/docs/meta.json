@@ -1,3 +1,25 @@
 {
-    "pages": ["ui", "cli", "llms"]
+    "root": true,
+    "title": "Twistail UI",
+    "description": "The Twistail UI library",
+    "icon": "SwatchBook",
+    "pages": [
+        "---Getting Started---",
+        "index",
+        "installation",
+        "styling",
+        "changelog",
+        "faqs",
+        "llms",
+        "---Components---",
+        "components/base",
+        "components/charts",
+        "components/layouts",
+        "---Utilities---",
+        "cli/index",
+        "---Contributing---",
+        "contributing-guidelines",
+        "code-of-conduct",
+        "contributors"
+    ]
 }

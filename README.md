@@ -10,13 +10,13 @@
 ## Introduction
 
 Twistail is an Open Source React UI component library that leverages [Tailwind CSS][tailwindcss]
-and [Tailwind Variants][tailwind-variants] for a powerful variant API. It enables advanced 
-component composition and responsive variants while managing style conflicts efficiently. 
-Built on [Radix UI Primitives][radix-ui] and implemented with [TypeScript][typescript], 
+and [Tailwind Variants][tailwind-variants] for a powerful variant API. It enables advanced
+component composition and responsive variants while managing style conflicts efficiently.
+Built on [Radix UI Primitives][radix-ui] and implemented with [TypeScript][typescript],
 Twistail provides a suite of UI elements, including charts and data visualization components.
 
-Perfect for developers seeking a **customizable design** system that prioritizes accessibility 
-and performance, Twistail streamlines implementation with a **copy-paste** approach and 
+Perfect for developers seeking a **customizable design** system that prioritizes accessibility
+and performance, Twistail streamlines implementation with a **copy-paste** approach and
 deep customization options.
 
 Each component features separated style files, allowing easy adaptation to your brand's visual
@@ -44,7 +44,7 @@ or [join our discussion][twistail-discussion].
 Contributions are welcome! Please open a pull requests for your changes and tickets in case you would like
 to discuss something or have a question. Please read our Contributor License Agreement [here][twistail-cla].
 
-Read the [Contributing Guidelines](https://twistail.com/docs/ui/contributing-guidelines) for detailed documentation.
+Read the [Contributing Guidelines](https://twistail.com/docs/contributing-guidelines) for detailed documentation.
 
 ## Acknowledgements
 
@@ -64,7 +64,7 @@ We're grateful to these projects for their contributions to the React and Tailwi
 ## License
 
 Licensed under either of [Apache License 2.0][license-apache] or [MIT license][license-mit] at your option.
-To understand the key differences between these two popular open-source licenses, please refer to the 
+To understand the key differences between these two popular open-source licenses, please refer to the
 [Apache License 2.0][tldr-apache] and the [MIT License][tldr-mit] on tldrlegal.com.
 
 Copyrights in this project are retained by their contributors.
@@ -88,9 +88,9 @@ See the [LICENSE-APACHE](./LICENSE-APACHE) and [LICENSE-MIT](./LICENSE-MIT) file
 [tldr-apache]: https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0
 [tldr-mit]: https://www.tldrlegal.com/license/mit-license
 [turborepo]: https://turbo.build/repo/docs
-[twistail-cla]: https://twistail.com/docs/ui/contributors
+[twistail-cla]: https://twistail.com/docs/contributors
 [twistail-discussion]: https://github.com/riipandi/twistail/discussions
-[twistail-docs]: https://twistail.com/docs/ui
+[twistail-docs]: https://twistail.com/docs
 [twistail-issue]: https://github.com/riipandi/twistail/issues/new
 [typescript]: https://www.typescriptlang.org
 [vite]: https://vite.dev

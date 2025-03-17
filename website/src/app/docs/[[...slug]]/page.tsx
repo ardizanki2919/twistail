@@ -12,7 +12,7 @@ import { notFound } from 'next/navigation'
 import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 import { source } from '#/lib/source'
-import Redirect from './redirect'
+// import Redirect from './redirect'
 
 const customMdxComponents: MDXComponents = {
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
@@ -29,10 +29,10 @@ export default async function Page(props: {
 }) {
   const params = await props.params
 
-  // Check if there's no slug or an empty slug (path is /docs)
-  if (!params.slug || params.slug.length === 0) {
-    return <Redirect targetUrl="/docs/ui" />
-  }
+  // // Check if there's no slug or an empty slug (path is /docs)
+  // if (!params.slug || params.slug.length === 0) {
+  //   return <Redirect targetUrl="/docs" />
+  // }
 
   const page = source.getPage(params.slug)
   if (!page) notFound()
@@ -54,7 +54,7 @@ export default async function Page(props: {
         path: `website/src/content/docs/${page.file.path}`,
       }}
     >
-      {pageWithoutTitle.includes(page.url.replace('/docs/ui/', '')) ? null : (
+      {pageWithoutTitle.includes(page.url.replace('/docs/', '')) ? null : (
         <>
           <DocsTitle>{page.data.title}</DocsTitle>
           <DocsDescription>{page.data.description}</DocsDescription>
@@ -97,13 +97,13 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params
 
-  // If path is /docs, provide metadata for the redirect page
-  if (!params.slug || params.slug.length === 0) {
-    return {
-      title: 'Redirecting to Documentation',
-      description: 'Redirecting to the documentation home page',
-    }
-  }
+  // // If path is /docs, provide metadata for the redirect page
+  // if (!params.slug || params.slug.length === 0) {
+  //   return {
+  //     title: 'Redirecting to Documentation',
+  //     description: 'Redirecting to the documentation home page',
+  //   }
+  // }
 
   const page = source.getPage(params.slug)
   if (!page) notFound()

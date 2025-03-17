@@ -13,10 +13,10 @@ import { GitHubIcon } from './icons'
 
 // Navigation items array for easier management
 const navItems = [
-  { href: '/docs/ui/components', label: 'Components' },
+  { href: '/docs/components', label: 'Components' },
   { href: '/docs', label: 'Documentation' },
-  { href: '/docs/ui/changelog', label: 'Changelog' },
-  { href: '/docs/ui#faqs', label: 'FAQs', matchPath: '/docs/ui#faqs' },
+  { href: '/docs/changelog', label: 'Changelog' },
+  { href: '/docs#faqs', label: 'FAQs', matchPath: '/docs#faqs' },
 ]
 
 export const NavBar = () => {
