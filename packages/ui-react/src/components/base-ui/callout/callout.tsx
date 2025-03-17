@@ -14,18 +14,15 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
     // Render icon based on its type
     const renderIcon = () => {
       if (!Icon) return null
-
       // If Icon is a React element (JSX), return it directly
       if (React.isValidElement(Icon)) {
         return Icon
       }
-
       // If Icon is a Lucide icon component (function|object), render it
       if (typeof Icon === 'function' || typeof Icon === 'object') {
         const IconComponent = Icon
         return <IconComponent className={styles.icon()} aria-hidden="true" strokeWidth={2} />
       }
-
       return null
     }
 

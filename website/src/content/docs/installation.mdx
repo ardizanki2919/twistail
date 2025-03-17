@@ -1,0 +1,52 @@
+---
+title: Installation
+description: Learn how to install and configure Twistail UI components.
+full: false
+---
+
+## Dependencies
+
+```package-install
+npm install @internationalized/date @react-aria/datepicker \
+  @react-stately/datepicker date-fns lucide-react next-themes \
+  radix-ui react-day-picker recharts sonner tailwind-variants
+```
+
+```package-install
+npm install -D tailwindcss @tailwindcss/postcss postcss postcss-load-config
+```
+
+## Tailwind CSS
+
+```json doc-gen:file
+{
+  "file": "../packages/ui-react/src/styles/global.css",
+  "codeblock": { "lang": "css", "meta": "title=\"global.css\"" }
+}
+```
+
+## Folder Structure
+
+<Files className='font-mono'>
+  <Folder name="components" defaultOpen>
+    <Folder name="base-ui" defaultOpen>
+      <Folder name="accordion">
+        <File name="accordion.tsx" />
+        <File name="accordion.css.ts" />
+        <File name="index.ts" />
+      </Folder>
+      <Folder name="avatar">
+        <File name="avatar.tsx" />
+        <File name="avatar.css.ts" />
+        <File name="index.ts" />
+      </Folder>
+      <Folder name="...component">
+        <File name="component.tsx" />
+        <File name="component.css.ts" />
+        <File name="index.ts" />
+      </Folder>
+    </Folder>
+  </Folder>
+  <File name="global.css" />
+  <File name="package.json" />
+</Files>

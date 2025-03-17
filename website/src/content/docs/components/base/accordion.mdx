@@ -1,0 +1,85 @@
+---
+title: Accordion
+full: false
+---
+
+A vertically stacked set of interactive headings that each reveal a section of content.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-accordion--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/accordion#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add accordion
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['accordion.tsx', 'accordion.css.ts', 'index.ts']}>
+      <Tab value="accordion.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/accordion/accordion.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/accordion/accordion.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="accordion.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/accordion/accordion.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/accordion/accordion.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/accordion/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/accordion/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '#/components/base-ui/accordion'
+```
+
+### Anatomy
+
+```tsx
+<Accordion>
+  <AccordionItem>
+    <AccordionTrigger />
+    <AccordionContent />
+  </AccordionItem>
+</Accordion>
+```

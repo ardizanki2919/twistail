@@ -1,0 +1,75 @@
+---
+title: Tabs
+full: false
+---
+
+A set of layered sections of content—known as tab panels—that are displayed one at a time.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-tabs--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/tabs#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add tabs
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['tabs.tsx', 'tabs.css.ts', 'index.ts']}>
+      <Tab value="tabs.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tabs/tabs.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="tabs.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/tabs.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+```tsx
+import {} from '#/components/base-ui/tabs'
+```
+
+### Anatomy
+
+```tsx
+// WIP
+```

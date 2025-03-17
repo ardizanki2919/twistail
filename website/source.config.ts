@@ -1,10 +1,11 @@
 import { remarkHeading, remarkImage, remarkStructure } from 'fumadocs-core/mdx-plugins'
-import { rehypeToc, remarkGfm } from 'fumadocs-core/mdx-plugins'
+import { rehypeCodeDefaultOptions, rehypeToc, remarkGfm } from 'fumadocs-core/mdx-plugins'
 import { fileGenerator, remarkDocGen, remarkInstall } from 'fumadocs-docgen'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { defineCollections, frontmatterSchema, getDefaultMDXOptions } from 'fumadocs-mdx/config'
 import rehypeExternalLinks from 'rehype-external-links'
 import { z } from 'zod'
+import { rehypeComponent } from '#/rehype-components'
 
 export const blogPosts = defineCollections({
   type: 'doc',
@@ -36,6 +37,15 @@ export default defineConfig({
       [remarkStructure, { types: ['paragraph', 'blockquote', 'tableCell'] }],
       remarkGfm,
     ],
-    rehypePlugins: [rehypeExternalLinks, rehypeToc],
+    rehypeCodeOptions: {
+      // @see: https://shiki.style/themes#bundled-themes
+      themes: { light: 'light-plus', dark: 'dark-plus' },
+      transformers: [...(rehypeCodeDefaultOptions.transformers ?? [])],
+    },
+    rehypePlugins: [
+      // rehypeComponent,
+      rehypeExternalLinks,
+      rehypeToc,
+    ],
   },
 })

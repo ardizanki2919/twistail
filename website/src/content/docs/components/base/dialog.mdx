@@ -1,0 +1,75 @@
+---
+title: Dialog
+full: false
+---
+
+A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-dialog--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/dialog#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add dialog
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['dialog.tsx', 'dialog.css.ts', 'index.ts']}>
+      <Tab value="dialog.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/dialog/dialog.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/dialog/dialog.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="dialog.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/dialog/dialog.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/dialog/dialog.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/dialog/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/dialog/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+```tsx
+import {} from '#/components/base-ui/dialog'
+```
+
+### Anatomy
+
+```tsx
+// WIP
+```
