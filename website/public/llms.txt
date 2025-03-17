@@ -1,0 +1,63 @@
+# Twistail UI Documentation for LLMs
+
+> Twistail UI is a modular and extensible copy-paste React UI components powered by Radix UI, Tailwind CSS v4, Tailwind Variants, Lucide Icons, and TypeScript.
+
+This site provides documentation in a format optimized for Large Language Models, with each page available as a clean markdown file.
+
+## Complete Documentation
+
+- [Complete documentation](https://twistail.com/llms.txt): The complete Twistail UI documentation including all general content, components, type helpers, and utilities
+
+## Getting Started
+
+- [Introduction Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Introduction
+- [Installation Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Installation
+- [Styling Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Styling
+- [Components Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Components
+- [Changelog Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Changelog
+
+## Components
+
+- [Accordion Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Accordion component
+- [Avatar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Avatar component
+- [Badge Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Badge component
+- [Breadcrumb Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Breadcrumb component
+- [Button Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Button component
+- [Calendar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Calendar component
+- [Calllout Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Calllout component
+- [Card Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Card component
+- [Checkbox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Checkbox component
+- [Context Menu Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Context Menu component
+- [Date Picker Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Date Picker component
+- [Date Range Picker Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Date Range Picker component
+- [Dialog Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Dialog component
+- [Divider Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Divider component
+- [Drawer Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Drawer component
+- [Dropdown Menu Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Dropdown Menu component
+- [Heading Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Heading component
+- [Hover Card Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Hover Card component
+- [Input Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Input component
+- [Label Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Label component
+- [Listbox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Listbox component
+- [Pagination Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Pagination component
+- [Popover Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Popover component
+- [Radio Card Group Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Radio Card Group component
+- [Radio Group Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Radio Group component
+- [Scroll Area Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Scroll Area component
+- [Select Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Select component
+- [Skeleton Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Skeleton component
+- [Slider Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Slider component
+- [Switch Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Switch component
+- [Tab Navigation Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Tab Navigation component
+- [Table Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Table component
+- [Tabs Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Tabs component
+- [Text Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Text component
+- [Textarea Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Textarea component
+- [Toast Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Toast component
+- [Toggle Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Toggle component
+- [Tooltip Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Tooltip component
+
+## Contributing
+
+- [Contributing Guidelines](https://twistail.com/llms-full.txt): Detailed documentation for Contributing Guidelines
+- [Code of Conduct](https://twistail.com/llms-full.txt): Detailed documentation for Code of Conduct
