@@ -5,7 +5,7 @@ import { Select } from '#/components'
 const meta: Meta<typeof Select> = {
   component: Select,
   title: 'Base Components/Select',
-  tags: ['status:preview'],
+  tags: ['status:done'],
 }
 
 export default meta
@@ -33,7 +33,7 @@ export const WithLongValues: Story = {
 }
 export const WithLabel: Story = {
   render: () => (
-    <>
+    <div className="space-x-2">
       <Label htmlFor="age1">Select age</Label>
       <Select className="max-w-72" id="age1">
         <option value="0-18">18 and under</option>
@@ -41,7 +41,7 @@ export const WithLabel: Story = {
         <option value="40-64">40 to 64</option>
         <option value="65-infinity">65 and over</option>
       </Select>
-    </>
+    </div>
   ),
 }
 export const HasError: Story = {

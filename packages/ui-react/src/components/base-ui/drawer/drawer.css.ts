@@ -6,30 +6,22 @@ const drawerStyles = tv({
     close: [],
     portal: [],
     overlay: [
-      'fixed inset-0 z-50 overflow-y-auto bg-black/30',
+      'fixed inset-0 z-50 overflow-y-auto bg-muted/30',
       'data-[state=closed]:animate-hide data-[state=open]:animate-dialog-overlay-show',
     ],
     content: [
-      // base
-      'fixed z-50 mx-auto flex flex-1 flex-col overflow-y-auto border p-4 shadow-md sm:p-6',
-      // border color
-      'border-gray-200 dark:border-gray-900',
-      // background color
-      'bg-white dark:bg-gray-950',
-      // focus ring
-      'outline-0 outline-blue-500 outline-offset-2 focus:outline-hidden focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
+      'fixed z-50 mx-auto flex flex-1 flex-col overflow-y-auto border p-4 shadow-md sm:p-6 bg-card text-card-foreground border-border',
+      'outline-0 outline-primary outline-offset-2 focus:outline-hidden focus-visible:outline-2',
     ],
-    headerRoot: [
-      'flex items-start justify-between gap-x-4 border-gray-200 border-b pb-4 dark:border-gray-900',
-    ],
+    headerRoot: ['flex items-start justify-between gap-x-4 border-b pb-4 border-border'],
     header: 'mt-1 flex flex-col gap-y-1',
-    headerCloseButton: 'aspect-square p-1 hover:bg-gray-100 hover:dark:bg-gray-400/10',
+    headerCloseButton: 'aspect-square p-1 hover:bg-accent hover:text-accent-foreground',
     headerCloseIcon: 'size-5',
-    title: 'font-semibold text-base text-gray-900 dark:text-gray-50',
+    title: 'font-semibold text-base text-foreground',
     body: 'flex-1 py-4',
-    description: 'text-gray-500 dark:text-gray-500',
+    description: 'text-muted-foreground',
     footer: [
-      'flex flex-col-reverse border-gray-200 border-t pt-4 sm:pt-5 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900',
+      'flex flex-col-reverse border-t pt-4 sm:pt-5 sm:flex-row sm:justify-end sm:space-x-2 border-border',
     ],
   },
   variants: {

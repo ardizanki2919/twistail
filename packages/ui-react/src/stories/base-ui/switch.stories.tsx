@@ -5,7 +5,7 @@ import { Button, Card, Divider, Label, Switch } from '#/components'
 const meta: Meta<typeof Switch> = {
   component: Switch,
   title: 'Base Components/Switch',
-  tags: ['status:preview'],
+  tags: ['status:done'],
 }
 
 export default meta

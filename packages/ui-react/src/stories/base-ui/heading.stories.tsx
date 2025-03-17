@@ -4,7 +4,7 @@ import { Heading, headingStyles } from '#/components'
 const meta: Meta<typeof Heading> = {
   component: Heading,
   title: 'Base Components/Heading',
-  tags: ['status:preview'],
+  tags: ['status:done'],
   argTypes: {
     children: {
       control: 'text',
