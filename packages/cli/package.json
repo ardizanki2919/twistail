@@ -38,7 +38,7 @@
     },
     "dependencies": {
         "citty": "^0.1.6",
-        "consola": "^3.4.0",
+        "consola": "^3.4.1",
         "giget": "^2.0.0",
         "make-dir": "^5.0.0",
         "node-jq": "^6.0.1",
@@ -50,7 +50,7 @@
         "@repo/config-typescript": "workspace:*",
         "@types/node": "^22.13.10",
         "@types/react": "^19.0.10",
-        "rollup": "^4.35.0",
+        "rollup": "^4.36.0",
         "typescript": "catalog:",
         "unbuild": "^3.5.0",
         "unplugin-purge-polyfills": "^0.0.7"
