@@ -10,40 +10,55 @@ A set of layered sections of content—known as tab panels—that are displayed 
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/tabs#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add tabs
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['tabs.tsx', 'tabs.css.ts', 'index.ts']}>
-  <Tab value="tabs.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tabs/tabs.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="tabs.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/tabs.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tabs/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['tabs.tsx', 'tabs.css.ts', 'index.ts']}>
+      <Tab value="tabs.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tabs/tabs.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="tabs.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/tabs.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/tabs.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tabs/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tabs/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

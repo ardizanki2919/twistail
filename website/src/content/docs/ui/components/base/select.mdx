@@ -10,40 +10,55 @@ A vanilla select component with custom styling.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/select#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add select
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['select.tsx', 'select.css.ts', 'index.ts']}>
-  <Tab value="select.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/select/select.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/select/select.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="select.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/select/select.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/select/select.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/select/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/select/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['select.tsx', 'select.css.ts', 'index.ts']}>
+      <Tab value="select.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/select/select.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/select/select.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="select.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/select/select.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/select/select.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/select/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/select/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

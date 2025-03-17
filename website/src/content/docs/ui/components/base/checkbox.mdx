@@ -10,40 +10,55 @@ A control that allows the user to toggle between checked and not checked.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add checkbox
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['checkbox.tsx', 'checkbox.css.ts', 'index.ts']}>
-  <Tab value="checkbox.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/checkbox/checkbox.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/checkbox/checkbox.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="checkbox.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/checkbox/checkbox.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/checkbox/checkbox.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/checkbox/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/checkbox/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['checkbox.tsx', 'checkbox.css.ts', 'index.ts']}>
+      <Tab value="checkbox.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/checkbox/checkbox.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/checkbox/checkbox.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="checkbox.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/checkbox/checkbox.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/checkbox/checkbox.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/checkbox/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/checkbox/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

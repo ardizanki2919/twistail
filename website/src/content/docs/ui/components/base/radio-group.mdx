@@ -10,40 +10,55 @@ A set of radio buttons, where only one button can be checked at a time.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add radio-group
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['radio-group.tsx', 'radio-group.css.ts', 'index.ts']}>
-  <Tab value="radio-group.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/radio-group/radio-group.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/radio-group/radio-group.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="radio-group.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/radio-group/radio-group.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/radio-group/radio-group.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/radio-group/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/radio-group/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['radio-group.tsx', 'radio-group.css.ts', 'index.ts']}>
+      <Tab value="radio-group.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/radio-group/radio-group.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/radio-group/radio-group.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="radio-group.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/radio-group/radio-group.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/radio-group/radio-group.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/radio-group/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/radio-group/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

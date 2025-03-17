@@ -10,40 +10,55 @@ Display a label for an input.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/label#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add label
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['label.tsx', 'label.css.ts', 'index.ts']}>
-  <Tab value="label.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/label/label.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/label/label.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="label.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/label/label.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/label/label.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/label/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/label/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['label.tsx', 'label.css.ts', 'index.ts']}>
+      <Tab value="label.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/label/label.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/label/label.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="label.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/label/label.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/label/label.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/label/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/label/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

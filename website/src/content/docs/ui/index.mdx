@@ -1,6 +1,5 @@
 ---
 title: Introduction
-description: Twistail is a modular and extensible UI components library powered by Tailwind CSS v4, Radix UI, Lucide, and TypeScript.
 full: false
 ---
 
@@ -8,19 +7,135 @@ full: false
   This documentation is still in progress. Some components may not be fully documented yet.
 </Callout>
 
+Twistail UI is a thoughtfully crafted component library designed for modern React applications.
+Built on the foundation of Radix UI Primitives, Tailwind CSS v4, Tailwind Variants, and TypeScript,
+it offers a comprehensive suite of accessible, customizable, and type-safe components to
+streamline your development process.
+
+## Core Principles
+
+- **Tailwind Variants** - Leveraging the power of Tailwind Variants for advanced styling control
+- **Accessibility First** - Every component adheres to WCAG guidelines and WAI-ARIA patterns
+- **Developer Experience** - Intuitive APIs with comprehensive TypeScript definitions
+- **Design Flexibility** - Easily adapt components to match your unique design system
+- **Separation of Concerns** - CSS files are separated from component logic for improved maintainability and readability
+
+## Why Twistail UI?
+
+Twistail UI stands out from other component libraries like shadcn/ui by fully embracing
+[**Tailwind Variants**](https://www.tailwind-variants.org/) - a powerful utility that
+combines Tailwind's flexibility with a first-class variant API. This key difference provides:
+
+- **Superior Variant Management** - Create complex component states with a clean, declarative API
+- **Responsive Variants** - Easily define different styles across breakpoints
+- **Slot-based Styling** - Apply styles to specific parts of components with precision
+- **Conflict Resolution** - Automatic handling of conflicting Tailwind classes
+- **Type Safety** - Full TypeScript integration for autocomplete and error prevention
+
 <Cards>
   <Card href="/docs/ui/installation" title="Installation">
-    Learn more about the installation process.
+    Quick setup guide to integrate Twistail UI into your project.
   </Card>
   <Card href="/docs/ui/styling" title="Styling">
-    Learn more how to ccustomize the theme.
+    Learn how to customize and extend component styles with Tailwind Variants.
+  </Card>
+  <Card href="/docs/ui/components" title="Components">
+    Browse our component library with usage examples.
+  </Card>
+  <Card href="/docs/ui/guides" title="Contributing">
+    Learn how to contribute to the Twistail UI project.
   </Card>
 </Cards>
 
+## Design Philosophy
+
+Twistail UI follows a component architecture that maximizes the benefits of Tailwind Variants while
+separating styling from logic. This approach offers:
+
+- **Improved Readability** - Cleaner component files with variant definitions clearly separated
+- **Enhanced Maintainability** - Style variants can be modified without affecting component logic
+- **Better Collaboration** - Designers can work on style variants while developers focus on functionality
+- **Simplified Theming** - Create theme variants with minimal code duplication
+- **Consistent API** - Uniform pattern for handling component variations across the library
+
+This architecture creates a more sustainable and flexible codebase that scales with your project's complexity.
 
 ## FAQs
 
 <Accordions type='multiple'>
-  <Accordion title="Question 1">Answer 1</Accordion>
-  <Accordion title="Question 2">Answer 2</Accordion>
+  <Accordion title="How does Twistail UI differ from shadcn/ui?">
+    The key difference is our integration of Tailwind Variants. While `shadcn/ui`
+    uses [Class Variance Authority](https://cva.style/docs), Twistail UI leverages
+    Tailwind Variants to provide a more powerful, type-safe API for component styling.
+    This allows for more complex variant combinations, better handling of responsive
+    styles, and cleaner component code. Additionally, our separation of styling
+    from component logic creates a more maintainable architecture.
+  </Accordion>
+
+  <Accordion title="What benefits does Tailwind Variants provide?">
+    Tailwind Variants enhances the Tailwind experience by providing a first-class variant API.
+    This means you can define component variants (like size, color, state) in a structured
+    way with TypeScript support. It efficiently handles class merging, prevents style
+    conflicts, and enables slot-based styling for complex components. The result is
+    cleaner code, better developer experience, and more maintainable styling.
+  </Accordion>
+
+  <Accordion title="Why does Twistail separate CSS from component files?">
+    Separating CSS from component logic improves maintainability and readability of
+    the codebase. This approach makes it easier to update styles without touching
+    component logic, simplifies debugging of styling issues, and creates a cleaner
+    development experience. When combined with Tailwind Variants, this separation
+    becomes even more powerful, allowing for sophisticated styling patterns without
+    cluttering component files.
+  </Accordion>
+
+  <Accordion title="Can I use Twistail UI with my existing Tailwind setup?">
+    Yes! Twistail UI is designed to work seamlessly with existing Tailwind CSS projects.
+    Our components use Tailwind Variants which is compatible with standard Tailwind
+    configurations. You can gradually adopt Twistail components alongside your
+    existing UI elements and even leverage Tailwind Variants for your custom components.
+  </Accordion>
+
+  <Accordion title="Is Twistail UI suitable for production applications?">
+    Absolutely. Twistail UI is built with production use cases in mind. Our components
+    are thoroughly tested for accessibility, performance, and cross-browser compatibility.
+    The use of Tailwind Variants also ensures consistent styling behavior across
+    different environments and browsers.
+  </Accordion>
+
+  <Accordion title="What license is Twistail UI released under?">
+    Twistail UI is licensed under a dual license: [Apache License 2.0](https://www.tldrlegal.com/license/apache-license-2-0-apache-2-0)
+    and [MIT license](https://www.tldrlegal.com/license/mit-license). This means you
+    can choose either license based on your project's needs. The dual licensing
+    provides flexibility for both commercial and open-source projects. Copyrights
+    in the project are retained by their contributors. For more details,
+    you can refer to the [LICENSE-APACHE](https://github.com/riipandi/twistail/blob/main/LICENSE-APACHE)
+    and [LICENSE-MIT](https://github.com/riipandi/twistail/blob/main/LICENSE-MIT) files in the repository.
+  </Accordion>
 </Accordions>
+
+## Acknowledgements
+
+Twistail is a thoughtful blend of design philosophies from two exceptional UI libraries:
+
+- **[Tremor](https://tremor.so/)**: Many of Twistail's foundational components draw heavy inspiration from Tremor's well-crafted designs. We've reimagined these components with our own architectural approach while respecting Tremor's excellent work.
+
+- **[shadcn/ui](https://ui.shadcn.com/)**: Twistail incorporates design patterns and component structures from shadcn/ui, adapting them to fit seamlessly with the Twistail ecosystem.
+
+Key differences that set Twistail apart include:
+- Separation of style files for each component, improving organization and customization
+- Use of [Lucide icons](https://lucide.dev/) instead of Remix Icons (used by Tremor)
+- Integration of Tailwind Variants for enhanced styling capabilities
+- A carefully curated blend of design elements from both inspirational libraries
+
+We're grateful to these projects for their contributions to the React and Tailwind ecosystem, and for providing the foundation upon which Twistail builds its unique identity.
+
+## Join the Community
+
+Twistail UI is more than just a component library - it's a growing community of developers building better user interfaces with modern tools like Tailwind Variants. Connect with us:
+
+- Star our [GitHub repository](https://github.com/riipandi/twistail)
+- Follow us for updates and announcements
+- Share your projects built with Twistail UI
+
+We're excited to see what you create!

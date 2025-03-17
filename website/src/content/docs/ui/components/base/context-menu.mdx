@@ -10,40 +10,55 @@ Displays a menu of actions triggered by a right-click or long-press.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/context-menu#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add context-menu
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['context-menu.tsx', 'context-menu.css.ts', 'index.ts']}>
-  <Tab value="context-menu.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/context-menu/context-menu.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/context-menu/context-menu.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="context-menu.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/context-menu/context-menu.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/context-menu/context-menu.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/context-menu/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/context-menu/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['context-menu.tsx', 'context-menu.css.ts', 'index.ts']}>
+      <Tab value="context-menu.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/context-menu/context-menu.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/context-menu/context-menu.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="context-menu.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/context-menu/context-menu.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/context-menu/context-menu.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/context-menu/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/context-menu/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

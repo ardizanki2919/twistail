@@ -10,40 +10,55 @@ Augments native scroll functionality for custom, cross-browser styling.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/scroll-area#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add scroll-area
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['scroll-area.tsx', 'scroll-area.css.ts', 'index.ts']}>
-  <Tab value="scroll-area.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/scroll-area/scroll-area.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/scroll-area/scroll-area.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="scroll-area.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/scroll-area/scroll-area.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/scroll-area/scroll-area.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/scroll-area/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/scroll-area/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['scroll-area.tsx', 'scroll-area.css.ts', 'index.ts']}>
+      <Tab value="scroll-area.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/scroll-area/scroll-area.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/scroll-area/scroll-area.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="scroll-area.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/scroll-area/scroll-area.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/scroll-area/scroll-area.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/scroll-area/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/scroll-area/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

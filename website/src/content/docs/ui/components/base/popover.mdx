@@ -10,40 +10,55 @@ Displays rich content in a portal, triggered by a button.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/popover#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add popover
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['popover.tsx', 'popover.css.ts', 'index.ts']}>
-  <Tab value="popover.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/popover/popover.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/popover/popover.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="popover.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/popover/popover.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/popover/popover.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/popover/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/popover/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['popover.tsx', 'popover.css.ts', 'index.ts']}>
+      <Tab value="popover.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/popover/popover.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/popover/popover.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="popover.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/popover/popover.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/popover/popover.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/popover/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/popover/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

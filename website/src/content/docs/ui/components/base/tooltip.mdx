@@ -10,40 +10,55 @@ A label that provides information on hover or focus.
   Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/tooltip#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add tooltip
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['tooltip.tsx', 'tooltip.css.ts', 'index.ts']}>
-  <Tab value="tooltip.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tooltip/tooltip.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tooltip/tooltip.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="tooltip.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tooltip/tooltip.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tooltip/tooltip.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tooltip/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tooltip/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['tooltip.tsx', 'tooltip.css.ts', 'index.ts']}>
+      <Tab value="tooltip.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tooltip/tooltip.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tooltip/tooltip.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="tooltip.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tooltip/tooltip.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tooltip/tooltip.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tooltip/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tooltip/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

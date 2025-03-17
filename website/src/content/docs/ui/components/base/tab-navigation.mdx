@@ -7,43 +7,58 @@ Navigation menu with links styled as tabs.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-tab-navigation--default).
-  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/tab-navigation#api-reference) for full API details.
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/navigation-menu#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add tab-navigation
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['tab-navigation.tsx', 'tab-navigation.css.ts', 'index.ts']}>
-  <Tab value="tab-navigation.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tab-navigation/tab-navigation.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tab-navigation/tab-navigation.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="tab-navigation.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tab-navigation/tab-navigation.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tab-navigation/tab-navigation.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/tab-navigation/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tab-navigation/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['tab-navigation.tsx', 'tab-navigation.css.ts', 'index.ts']}>
+      <Tab value="tab-navigation.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tab-navigation/tab-navigation.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/tab-navigation/tab-navigation.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="tab-navigation.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tab-navigation/tab-navigation.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tab-navigation/tab-navigation.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/tab-navigation/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/tab-navigation/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

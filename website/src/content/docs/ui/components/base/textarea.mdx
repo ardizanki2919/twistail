@@ -7,43 +7,58 @@ Displays a form textarea or a component that looks like a textarea.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-textarea--default).
-  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/textarea#api-reference) for full API details.
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/form#api-reference) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add textarea
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['textarea.tsx', 'textarea.css.ts', 'index.ts']}>
-  <Tab value="textarea.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/textarea/textarea.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/textarea/textarea.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="textarea.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/textarea/textarea.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/textarea/textarea.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/textarea/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/textarea/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['textarea.tsx', 'textarea.css.ts', 'index.ts']}>
+      <Tab value="textarea.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/textarea/textarea.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/textarea/textarea.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="textarea.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/textarea/textarea.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/textarea/textarea.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/textarea/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/textarea/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

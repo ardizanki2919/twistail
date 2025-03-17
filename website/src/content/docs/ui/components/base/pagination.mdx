@@ -7,43 +7,58 @@ Pagination with page navigation, next and previous links.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-pagination--default).
-  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/pagination#api-reference) for full API details.
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add pagination
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['pagination.tsx', 'pagination.css.ts', 'index.ts']}>
-  <Tab value="pagination.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/pagination/pagination.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/pagination/pagination.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="pagination.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/pagination/pagination.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/pagination/pagination.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/pagination/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/pagination/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['pagination.tsx', 'pagination.css.ts', 'index.ts']}>
+      <Tab value="pagination.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/pagination/pagination.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/pagination/pagination.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="pagination.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/pagination/pagination.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/pagination/pagination.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/pagination/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/pagination/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

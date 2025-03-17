@@ -7,44 +7,58 @@ A set of headings with responsive font size.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-heading--default).
-  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/heading#api-reference) for full API details.
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add heading
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['heading.tsx', 'heading.css.ts', 'index.ts']}>
-  <Tab value="heading.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/heading/heading.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/heading/heading.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="heading.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/heading/heading.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/heading/heading.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/heading/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/heading/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
----
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['heading.tsx', 'heading.css.ts', 'index.ts']}>
+      <Tab value="heading.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/heading/heading.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/heading/heading.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="heading.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/heading/heading.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/heading/heading.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/heading/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/heading/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 

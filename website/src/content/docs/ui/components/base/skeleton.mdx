@@ -7,43 +7,58 @@ Use to show a placeholder while content is loading.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-skeleton--default).
-  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/skeleton#api-reference) for full API details.
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
 </Callout>
 
-{/* ## Automatic Installation
+## Automatic Installation
 
-```package-install
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
 npx twistail add skeleton
 ``` */}
 
 ## Manual Installation
 
-<Tabs items={['skeleton.tsx', 'skeleton.css.ts', 'index.ts']}>
-  <Tab value="skeleton.tsx">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/skeleton/skeleton.tsx",
-      "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/skeleton/skeleton.tsx\"" }
-    }
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
     ```
-  </Tab>
-  <Tab value="skeleton.css.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/skeleton/skeleton.css.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/skeleton/skeleton.css.ts\"" }
-    }
-    ```
-  </Tab>
-  <Tab value="index.ts">
-    ```json doc-gen:file
-    {
-      "file": "../packages/ui-react/src/components/base-ui/skeleton/index.ts",
-      "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/skeleton/index.ts\"" }
-    }
-    ```
-  </Tab>
-</Tabs>
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['skeleton.tsx', 'skeleton.css.ts', 'index.ts']}>
+      <Tab value="skeleton.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/skeleton/skeleton.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/skeleton/skeleton.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="skeleton.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/skeleton/skeleton.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/skeleton/skeleton.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/skeleton/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/skeleton/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
 
 ## Usage
 
