@@ -151,7 +151,7 @@ const triggerStyles = tv({
   ],
   variants: {
     hasError: {
-      true: 'ring-2 border-red-500 dark:border-red-700 ring-red-200 dark:ring-red-700/30' /* hasErrorInput */,
+      true: 'ring-1 border-red-500 dark:border-red-700 ring-red-200 dark:ring-red-700/30' /* hasErrorInput */,
     },
   },
 })

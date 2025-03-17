@@ -25,7 +25,7 @@ import {
 const meta: Meta<typeof Listbox> = {
   component: Listbox,
   title: 'Base Components/Listbox',
-  tags: ['status:preview'],
+  tags: ['status:done'],
   parameters: {
     layout: 'centered',
   },

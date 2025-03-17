@@ -1,6 +1,6 @@
 import { Tooltip as TooltipPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { tooltipStyles } from './tooltip.css'
+import { type TooltipStyles, tooltipStyles } from './tooltip.css'
 
 interface TooltipProps
   extends Pick<
@@ -14,10 +14,11 @@ interface TooltipTriggerProps extends TooltipPrimitive.TooltipTriggerProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-interface TooltipContentProps extends Omit<TooltipPrimitive.TooltipContentProps, 'content'> {
+interface TooltipContentProps
+  extends Omit<TooltipPrimitive.TooltipContentProps, 'content'>,
+    TooltipStyles {
   side?: 'bottom' | 'left' | 'top' | 'right'
   content?: React.ReactNode
-  showArrow?: boolean
 }
 
 const Tooltip: React.FC<TooltipProps & { children: React.ReactNode }> = ({
@@ -57,7 +58,7 @@ const TooltipContent = React.forwardRef<
     }: TooltipContentProps,
     forwardedRef
   ) => {
-    const styles = tooltipStyles()
+    const styles = tooltipStyles({ showArrow })
     const contentToRender = content || children
 
     return (

@@ -6,7 +6,7 @@ import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from '#/components'
 const meta: Meta<typeof RadioCardGroup> = {
   component: RadioCardGroup,
   title: 'Base Components/RadioCardGroup',
-  tags: ['status:preview'],
+  tags: ['status:done'],
 }
 
 export default meta

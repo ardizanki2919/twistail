@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '#/components'
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
   title: 'Base Components/Avatar',
-  tags: ['status:preview'],
+  tags: ['status:done'],
   parameters: {
     layout: 'centered',
   },

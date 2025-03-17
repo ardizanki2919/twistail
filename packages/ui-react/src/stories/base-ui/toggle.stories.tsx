@@ -5,7 +5,7 @@ import { Toggle, ToggleGroup, ToggleGroupItem } from '#/components'
 const meta: Meta<typeof Toggle> = {
   component: Toggle,
   title: 'Base Components/Toggle',
-  tags: ['status:preview'],
+  tags: ['status:done'],
 }
 
 export default meta

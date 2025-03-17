@@ -5,7 +5,7 @@ import { PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } fr
 const meta: Meta<typeof Pagination> = {
   component: Pagination,
   title: 'Base Components/Pagination',
-  tags: ['status:preview'],
+  tags: ['status:done'],
   parameters: {
     layout: 'centered',
   },

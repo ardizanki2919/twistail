@@ -8,7 +8,7 @@ import { DropdownMenuContent, DropdownMenuItem } from '#/components'
 const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
   title: 'Base Components/Breadcrumb',
-  tags: ['status:preview'],
+  tags: ['status:done'],
   parameters: {
     layout: 'centered',
   },

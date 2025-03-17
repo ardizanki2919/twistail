@@ -5,7 +5,7 @@ import { Divider, ScrollArea, ScrollBar } from '#/components'
 const meta: Meta<typeof ScrollArea> = {
   title: 'Base Components/ScrollArea',
   component: ScrollArea,
-  tags: ['status:preview'],
+  tags: ['status:done'],
   parameters: {
     layout: 'centered',
   },
