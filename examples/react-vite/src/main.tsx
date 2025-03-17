@@ -1,5 +1,6 @@
 // Import global CSS stylesheet
 import 'twistail-react/global.css'
+import 'twistail-react/theme.css'
 import './styles.css'
 
 import * as React from 'react'
