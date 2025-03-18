@@ -5,7 +5,7 @@ const DummyComponent = Slot.Root
 
 const meta: Meta<typeof DummyComponent> = {
   component: DummyComponent,
-  title: 'Layout Components/Navbar',
+  title: 'Layout Components/Resizable',
   tags: ['status:planned'],
 }
 
