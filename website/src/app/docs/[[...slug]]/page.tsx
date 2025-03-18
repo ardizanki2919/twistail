@@ -5,6 +5,7 @@ import { File, Files, Folder } from 'fumadocs-ui/components/files'
 import { ImageZoom } from 'fumadocs-ui/components/image-zoom'
 import { Step, Steps } from 'fumadocs-ui/components/steps'
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
+import { TypeTable } from 'fumadocs-ui/components/type-table'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
 import type { MDXComponents } from 'mdx/types'
@@ -76,6 +77,7 @@ export default async function Page(props: {
             Steps,
             Tab,
             Tabs,
+            TypeTable,
           }}
         />
       </DocsBody>

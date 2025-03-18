@@ -51,7 +51,6 @@ export const WithIcon: Story = {
   ),
 }
 
-// FIXME: Objects are not valid as a React child
 export const LucideIcon: Story = {
   args: { icon: Lucide.OctagonAlert },
   render: (args) => <Callout {...args} />,

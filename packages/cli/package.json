@@ -38,7 +38,7 @@
     },
     "dependencies": {
         "citty": "^0.1.6",
-        "consola": "^3.4.1",
+        "consola": "^3.4.2",
         "giget": "^2.0.0",
         "make-dir": "^5.0.0",
         "node-jq": "^6.0.1",

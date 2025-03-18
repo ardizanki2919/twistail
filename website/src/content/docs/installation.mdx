@@ -18,19 +18,31 @@ npm install -D tailwindcss @tailwindcss/postcss postcss postcss-load-config
 
 ## Tailwind CSS
 
-```json doc-gen:file
-{
-  "file": "../packages/ui-react/src/styles/global.css",
-  "codeblock": { "lang": "css", "meta": "title=\"global.css\"" }
-}
-```
+<Tabs items={['global.css', 'theme.css']}>
+  <Tab value="global.css">
+    ```json doc-gen:file
+    {
+      "file": "../packages/ui-react/src/styles/global.css",
+      "codeblock": { "lang": "css", "meta": "title=\"styles/global.css\"" }
+    }
+    ```
+  </Tab>
+  <Tab value="theme.css">
+    ```json doc-gen:file
+    {
+      "file": "../packages/ui-react/src/styles/theme.css",
+      "codeblock": { "lang": "css", "meta": "title=\"styles/theme.css\"" }
+    }
+    ```
+  </Tab>
+</Tabs>
 
 ## Folder Structure
 
 <Files className='font-mono'>
   <Folder name="components" defaultOpen>
     <Folder name="base-ui" defaultOpen>
-      <Folder name="accordion">
+      <Folder name="accordion" defaultOpen>
         <File name="accordion.tsx" />
         <File name="accordion.css.ts" />
         <File name="index.ts" />
@@ -47,6 +59,9 @@ npm install -D tailwindcss @tailwindcss/postcss postcss postcss-load-config
       </Folder>
     </Folder>
   </Folder>
-  <File name="global.css" />
+  <Folder name="styles" defaultOpen>
+    <File name="global.css" />
+    <File name="theme.css" />
+  </Folder>
   <File name="package.json" />
 </Files>

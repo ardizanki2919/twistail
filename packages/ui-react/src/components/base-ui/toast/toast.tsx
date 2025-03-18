@@ -1,4 +1,3 @@
-// TODO: remove `next-themes` dependency
 import * as Lucide from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Toaster as Sonner, toast } from 'sonner'
