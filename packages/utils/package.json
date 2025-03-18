@@ -59,7 +59,7 @@
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
-        "@types/react": "^19.0.10",
+        "@types/react": "^19.0.11",
         "pathe": "^2.0.3",
         "typescript": "catalog:",
         "unbuild": "^3.5.0"
