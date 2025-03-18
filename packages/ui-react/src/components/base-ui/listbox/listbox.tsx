@@ -6,6 +6,7 @@ import { type ListboxStyles, listboxStyles } from './listbox.css'
 const Listbox = ListboxPrimitive.Root
 const ListboxGroup = ListboxPrimitive.Group
 const ListboxValue = ListboxPrimitive.Value
+const ListboxPortal = ListboxPrimitive.Portal
 
 interface ListboxTriggerProps
   extends React.ComponentPropsWithoutRef<typeof ListboxPrimitive.Trigger>,
@@ -76,7 +77,7 @@ const ListboxContent = React.forwardRef<
   ) => {
     const styles = listboxStyles({ position })
     return (
-      <ListboxPrimitive.Portal>
+      <ListboxPortal>
         <ListboxPrimitive.Content
           ref={forwardedRef}
           className={styles.content({ className })}
@@ -91,7 +92,7 @@ const ListboxContent = React.forwardRef<
           </ListboxPrimitive.Viewport>
           <ListboxScrollDownButton />
         </ListboxPrimitive.Content>
-      </ListboxPrimitive.Portal>
+      </ListboxPortal>
     )
   }
 )
@@ -158,6 +159,7 @@ export {
   ListboxGroup,
   ListboxGroupLabel,
   ListboxItem,
+  ListboxPortal,
   ListboxSeparator,
   ListboxTrigger,
   ListboxValue,

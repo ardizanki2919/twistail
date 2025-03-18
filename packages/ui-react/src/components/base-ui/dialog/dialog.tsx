@@ -93,6 +93,7 @@ export {
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogPortal,
   DialogTitle,
   DialogTrigger,
   type DialogProps,

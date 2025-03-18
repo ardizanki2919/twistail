@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'
-import { ButtonProps, buttonStyles } from '../button'
+import { ButtonProps, buttonStyles } from '#/components/base-ui/button'
 import { type PaginationStyles, paginationStyles } from './pagination.css'
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => {

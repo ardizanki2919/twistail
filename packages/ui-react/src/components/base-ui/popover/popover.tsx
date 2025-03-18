@@ -29,6 +29,8 @@ const PopoverClose = React.forwardRef<
 
 type ContentProps = React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 
+const PopoverPortal = PopoverPrimitive.Portal
+
 const PopoverContent = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitive.Content>,
   ContentProps
@@ -46,7 +48,7 @@ const PopoverContent = React.forwardRef<
     forwardedRef
   ) => {
     return (
-      <PopoverPrimitive.Portal>
+      <PopoverPortal>
         <PopoverPrimitive.Content
           ref={forwardedRef}
           sideOffset={sideOffset}
@@ -67,7 +69,7 @@ const PopoverContent = React.forwardRef<
           }}
           {...props}
         />
-      </PopoverPrimitive.Portal>
+      </PopoverPortal>
     )
   }
 )
@@ -77,5 +79,6 @@ PopoverTrigger.displayName = 'PopoverTrigger'
 PopoverAnchor.displayName = 'PopoverAnchor'
 PopoverClose.displayName = 'PopoverClose'
 PopoverContent.displayName = 'PopoverContent'
+PopoverPortal.displayName = 'PopoverPortal'
 
-export { Popover, PopoverAnchor, PopoverClose, PopoverContent, PopoverTrigger }
+export { Popover, PopoverAnchor, PopoverClose, PopoverContent, PopoverTrigger, PopoverPortal }
