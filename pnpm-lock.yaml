@@ -30,7 +30,7 @@ importers:
   examples/react-vite:
     dependencies:
       consola:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       pathe:
         specifier: ^2.0.3
@@ -99,7 +99,7 @@ importers:
         specifier: ^0.1.6
         version: 0.1.6
       consola:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       giget:
         specifier: ^2.0.0
@@ -157,8 +157,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       lucide-react:
-        specifier: ^0.482.0
-        version: 0.482.0(react@19.0.0)
+        specifier: ^0.483.0
+        version: 0.483.0(react@19.0.0)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -324,7 +324,7 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       consola:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       fast-glob:
         specifier: ^3.3.3
@@ -345,8 +345,8 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       lucide-react:
-        specifier: ^0.482.0
-        version: 0.482.0(react@19.0.0)
+        specifier: ^0.483.0
+        version: 0.483.0(react@19.0.0)
       next:
         specifier: 15.2.3
         version: 15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -4428,6 +4428,11 @@ packages:
 
   lucide-react@0.482.0:
     resolution: {integrity: sha512-XM8PzHzSrg8ATmmO+fzf+JyYlVVdQnJjuyLDj2p4V2zEtcKeBNAqAoJIGFv1x2HSBa7kT8gpYUxwdQ0g7nypfw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  lucide-react@0.483.0:
+    resolution: {integrity: sha512-WldsY17Qb/T3VZdMnVQ9C3DDIP7h1ViDTHVdVGnLZcvHNg30zH/MTQ04RTORjexoGmpsXroiQXZ4QyR0kBy0FA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -10332,6 +10337,10 @@ snapshots:
       yallist: 4.0.0
 
   lucide-react@0.482.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+
+  lucide-react@0.483.0(react@19.0.0):
     dependencies:
       react: 19.0.0
 
