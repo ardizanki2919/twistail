@@ -1,5 +1,5 @@
 import { Button } from 'twistail-react/button'
 
-export default function Demo() {
+export default function ButtonDemo() {
   return <Button variant="secondary">Button</Button>
 }

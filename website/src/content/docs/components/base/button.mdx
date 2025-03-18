@@ -3,9 +3,9 @@ title: Button
 full: false
 ---
 
-import Demo from '#/demo/button/demo-1'
+import ButtonDemo from '#/demo/button/preview'
 
-Displays a button or a component that looks like a button.
+The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
 
 <Callout type='info'>
   See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-accordion--default).
@@ -16,11 +16,11 @@ Displays a button or a component that looks like a button.
 
 <Tabs items={['Preview', 'Code']}>
   <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4">
-    <Demo />
+    <ButtonDemo />
   </Tab>
   <Tab value="Code">
     ```json doc-gen:file
-    { "file": "src/demo/button/demo-1.tsx", "codeblock": { "lang": "tsx" } }
+    { "file": "src/demo/button/preview.tsx", "codeblock": { "lang": "tsx" } }
     ```
   </Tab>
 </Tabs>
@@ -80,11 +80,32 @@ npx twistail add button
 ### Imports
 
 ```tsx
-import {} from '#/components/base-ui/button'
+import { type ButtonStyles, Button } from '#/components/base-ui/button'
 ```
 
-### Anatomy
+### Props
 
-```tsx
-// WIP
-```
+<TypeTable
+  type={{
+    variant: {
+      description: 'Variant of the button',
+      type: 'ButtonStyles["variant"]',
+      default: 'primary',
+    },
+    size: {
+      description: 'Size of the button',
+      type: 'ButtonStyles["size"]',
+      default: 'md',
+    },
+    isLoading: {
+      description: 'Whether the button is loading',
+      type: 'boolean',
+      default: 'false',
+    },
+    loadingText: {
+      description: 'Custom text to display when the button is loading',
+      type: 'string',
+      default: null,
+    },
+  }}
+/>

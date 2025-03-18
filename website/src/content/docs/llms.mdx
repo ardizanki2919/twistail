@@ -1,10 +1,62 @@
 ---
 title: LLMs
-description: How to access LLM-friendly versions of Twistail documentation.
 full: false
 ---
 
-This is a documentation section that potentially contains examples, demos, and other
-useful information related to a specific part of Twistail. When helping users with
-this documentation, you can ignore the classnames applied to the demos unless they
-are relevant to the user's issue.
+This page provides an overview of how to use Twistail with AI assistants and tools.
+Twistail is designed to be AI-friendly, making it easy for AI tools and assistants to
+understand and work with the component library. This page guides you through how to
+leverage AI capabilities with Twistail UI.
+
+## AI Reference Files
+
+Twistail provides specialized documentation formats optimized for Large Language Models (LLMs) to better understand the component library structure and implementation details:
+
+- [Overview Reference (`llms.txt`)](https://twistail.com/llms.txt) - A concise summary of all available documentation
+- [Detailed Reference (`llms-full.txt`)](https://twistail.com/llms-full.txt) - Complete documentation in a clean and machine-readable format
+
+### What is `llms.txt`?
+
+The `llms.txt` standard is an emerging convention for presenting documentation in a simplified,
+text-based format that's easy for LLMs to process. By following this standard, Twistail ensures
+compatibility with AI tools and workflows, allowing seamless integration into LLM-powered
+applications, research, or automation systems.
+
+## Using Twistail with AI Assistants
+
+When working with AI coding assistants like SourceGraph Cody, GitHub Copilot, ChatGPT,
+or other LLMs, you can reference these specialized documentation files to help the
+AI better understand Twistail's components and patterns.
+
+### Example Prompts
+
+Here are some effective ways to prompt AI assistants when working with Twistail:
+
+```markdown
+"I'm using Twistail UI. Can you help me implement a form with Input, Select, and Button components?"
+
+"Using Twistail UI, how would I create a responsive layout with Card components?"
+
+"I need to implement a Dialog component from Twistail UI with custom styling. Can you show me how?"
+```
+
+### Component Implementation
+
+When asking an AI to help implement Twistail components, you can direct it to the documentation:
+
+```markdown
+"Please refer to https://twistail.com/llms-full.txt for the Twistail UI documentation and help me implement a Dropdown Menu component."
+```
+
+## Benefits of AI-Friendly Documentation
+
+- **Clean Format**: Documentation is provided in clean markdown without extraneous HTML or styling
+- **Structured Content**: Information is organized in a logical, hierarchical manner
+- **Complete API References**: All component props, variants, and examples are included
+- **Implementation Details**: Code snippets show how to properly implement components
+
+## Feedback
+
+We're continuously improving our AI-friendly documentation. If you have suggestions or encounter issues when using Twistail with AI tools, please [open an issue](https://github.com/riipandi/twistail/issues/new) or contribute to the project.
+
+For more information about contributing to Twistail, see our [Contributing Guidelines](/docs/contributing-guidelines).
