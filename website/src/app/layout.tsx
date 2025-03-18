@@ -1,5 +1,4 @@
 // Import global CSS stylesheet
-import 'twistail-react/global.css'
 import '../styles/global.css'
 
 import type { Metadata } from 'next'

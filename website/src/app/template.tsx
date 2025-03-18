@@ -68,7 +68,12 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       {isDevelopment ? null : (
         <Script strategy="lazyOnload" src={umamiScriptUrl} data-website-id={umamiSiteId} defer />
       )}
-      <RootProvider search={searchOpts}>{children}</RootProvider>
+      <RootProvider
+        search={searchOpts}
+        theme={{ enabled: true, attribute: ['data-theme', 'class'] }}
+      >
+        {children}
+      </RootProvider>
     </>
   )
 }
