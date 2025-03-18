@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Command>
 
 export const Default: Story = {
   render: () => (
-    <Command className="w-[480px] rounded-lg border shadow-md">
+    <Command className="w-[460px] rounded-lg border shadow-md">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList className="min-w-[420px]">
         <CommandEmpty>No results found.</CommandEmpty>
@@ -63,10 +63,9 @@ export const Default: Story = {
 export const WithTrigger: Story = {
   render: () => {
     const [open, setOpen] = React.useState(false)
-
     React.useEffect(() => {
       const down = (e: KeyboardEvent) => {
-        if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        if (e.key === 'j' && (e.metaKey || e.ctrlKey)) {
           e.preventDefault()
           setOpen((open) => !open)
         }
@@ -77,9 +76,9 @@ export const WithTrigger: Story = {
 
     return (
       <>
-        <div className="flex w-32 flex-row items-center justify-center gap-2 text-muted-foreground text-sm">
+        <div className="inline-flex w-32 items-center justify-center gap-2 text-muted-foreground text-sm">
           <span>Press</span>
-          <Kbd>⌘ + K</Kbd>
+          <Kbd>⌘ + J</Kbd>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <CommandInput placeholder="Type a command or search..." />
