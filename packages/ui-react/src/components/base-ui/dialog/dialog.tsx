@@ -2,10 +2,9 @@ import { Dialog as DialogPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { dialogStyles } from './dialog.css'
 
-const Dialog = (props: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root>) => {
-  return <DialogPrimitive.Root {...props} />
-}
+interface DialogProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {}
 
+const Dialog = DialogPrimitive.Root
 const DialogTrigger = DialogPrimitive.Trigger
 const DialogClose = DialogPrimitive.Close
 const DialogPortal = DialogPrimitive.Portal
@@ -96,4 +95,5 @@ export {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  type DialogProps,
 }
