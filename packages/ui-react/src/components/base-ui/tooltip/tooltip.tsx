@@ -42,6 +42,8 @@ const TooltipTrigger = React.forwardRef<
   )
 })
 
+const TooltipPortal = TooltipPrimitive.Portal
+
 const TooltipContent = React.forwardRef<
   React.ComponentRef<typeof TooltipPrimitive.Content>,
   TooltipContentProps
@@ -62,7 +64,7 @@ const TooltipContent = React.forwardRef<
     const contentToRender = content || children
 
     return (
-      <TooltipPrimitive.Portal>
+      <TooltipPortal>
         <TooltipPrimitive.Content
           ref={forwardedRef}
           sideOffset={sideOffset}
@@ -81,7 +83,7 @@ const TooltipContent = React.forwardRef<
             />
           ) : null}
         </TooltipPrimitive.Content>
-      </TooltipPrimitive.Portal>
+      </TooltipPortal>
     )
   }
 )
@@ -89,5 +91,6 @@ const TooltipContent = React.forwardRef<
 Tooltip.displayName = 'Tooltip'
 TooltipTrigger.displayName = 'TooltipTrigger'
 TooltipContent.displayName = 'TooltipContent'
+TooltipPortal.displayName = 'TooltipPortal'
 
-export { Tooltip, TooltipTrigger, TooltipContent }
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipPortal }
