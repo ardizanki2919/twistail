@@ -317,6 +317,36 @@
             transform: translateX(0);
         }
     }
+
+    /* ------------------- Animation for collapsible -------------------  */
+    --animate-collapsible-open: collapsible-open 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-collapsible-close: collapsible-close 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @keyframes collapsible-open {
+        from {
+            opacity: 0;
+            height: 0;
+            transform: translateY(-4px);
+        }
+        to {
+            opacity: 1;
+            height: var(--radix-collapsible-content-height);
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes collapsible-close {
+        from {
+            opacity: 1;
+            height: var(--radix-collapsible-content-height);
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            height: 0;
+            transform: translateY(-4px);
+        }
+    }
 }
 
 @layer base {
