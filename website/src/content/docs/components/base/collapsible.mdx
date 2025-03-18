@@ -1,0 +1,82 @@
+---
+title: Collapsible
+full: false
+---
+
+A searchable interface for quickly executing collapsibles or actions.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-collapsible--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/collapsible#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add collapsible
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['collapsible.tsx', 'collapsible.css.ts', 'index.ts']}>
+      <Tab value="collapsible.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/collapsible/collapsible.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/collapsible/collapsible.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="collapsible.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/collapsible/collapsible.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/collapsible/collapsible.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/collapsible/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/collapsible/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent
+} from '#/components/base-ui/collapsible'
+```
+
+### Anatomy
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger />
+  <CollapsibleContent />
+</Collapsible>
+```
