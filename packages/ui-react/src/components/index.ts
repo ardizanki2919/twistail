@@ -1,6 +1,7 @@
 // Base UI Components
 export * from './base-ui/accordion'
 export * from './base-ui/alert-dialog'
+export * from './base-ui/aspect-ratio'
 export * from './base-ui/avatar'
 export * from './base-ui/badge'
 export * from './base-ui/breadcrumb'
