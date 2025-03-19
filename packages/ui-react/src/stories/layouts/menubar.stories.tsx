@@ -19,6 +19,13 @@ const meta: Meta<typeof Menubar> = {
   component: Menubar,
   title: 'Layout Components/Menubar',
   tags: ['status:wip'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
