@@ -93,4 +93,4 @@ TooltipTrigger.displayName = 'TooltipTrigger'
 TooltipContent.displayName = 'TooltipContent'
 TooltipPortal.displayName = 'TooltipPortal'
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipPortal }
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipPortal, type TooltipProps }

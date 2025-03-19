@@ -24,6 +24,7 @@ const sliderStyles = tv({
       'data-[disabled]:pointer-events-none data-[disabled]:bg-muted data-[disabled]:border-input',
       'outline-0 outline-primary outline-offset-0 focus-visible:outline-2',
     ],
+    tooltip: 'text-xs',
   },
 })
 

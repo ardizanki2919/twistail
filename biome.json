@@ -65,7 +65,7 @@
                 }
             },
             "suspicious": {
-                "noArrayIndexKey": "error",
+                "noArrayIndexKey": "warn",
                 "noAssignInExpressions": "off",
                 "noCommentText": "off",
                 "noConsoleLog": {

@@ -22,7 +22,7 @@ export default meta
 type Story = StoryObj<typeof Slider>
 
 export const Default: Story = {
-  render: () => <Slider defaultValue={[55]} />,
+  render: () => <Slider defaultValue={[55]} alwaysShowTooltip />,
 }
 
 export const Range: Story = {
@@ -40,13 +40,13 @@ export const Inverted: Story = {
 export const Vertical: Story = {
   render: () => (
     <div className="h-44">
-      <Slider defaultValue={[55]} orientation="vertical" />
+      <Slider defaultValue={[55]} orientation="vertical" tooltipSide="right" />
     </div>
   ),
 }
 
 export const StepSize: Story = {
-  render: () => <Slider defaultValue={[55]} step={10} />,
+  render: () => <Slider defaultValue={[55]} step={10} alwaysShowTooltip />,
 }
 
 export const ControlledForm: Story = {
