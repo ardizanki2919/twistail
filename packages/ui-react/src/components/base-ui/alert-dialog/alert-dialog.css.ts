@@ -13,7 +13,7 @@ const alertDialogStyles = tv({
     ],
     title: 'text-lg font-semibold',
     header: 'flex flex-col space-y-2 text-center sm:text-left',
-    footer: 'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-2',
+    footer: 'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-2 gap-2',
     description: 'text-sm/6 text-muted-foreground mb-2',
   },
 })

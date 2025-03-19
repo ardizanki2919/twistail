@@ -1,0 +1,80 @@
+---
+title: Multi Select
+full: false
+---
+
+Displays rich content in a portal, triggered by a button.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-multiselect--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/popover#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add multi-select
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['multi-select.tsx', 'multi-select.css.ts', 'index.ts']}>
+      <Tab value="multi-select.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/multi-select/multi-select.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/base-ui/multi-select/multi-select.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="multi-select.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/multi-select/multi-select.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/multi-select/multi-select.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/base-ui/multi-select/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/base-ui/multi-select/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+```tsx
+import {} from '#/components/base-ui/multi-select'
+```
+
+### Anatomy
+
+```tsx
+// WIP
+```
+
+## Credits
+
+This component is based on [Multi-Select Component](https://github.com/sersavan/shadcn-multi-select-component)
+by `sersavan`, licensed under [MIT License](https://github.com/sersavan/shadcn-multi-select-component/blob/main/LICENSE).
