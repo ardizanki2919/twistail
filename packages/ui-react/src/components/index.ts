@@ -44,3 +44,6 @@ export * from './base-ui/textarea'
 export * from './base-ui/toast'
 export * from './base-ui/toggle'
 export * from './base-ui/tooltip'
+
+// Layout Components
+export * from './base-ui/menubar'
