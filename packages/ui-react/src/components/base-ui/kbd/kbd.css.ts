@@ -2,9 +2,20 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const kbdStyles = tv({
   base: [
-    'flex h-5 min-w-5 items-center justify-center rounded-sm bg-secondary p-1 border border-border',
-    'text-center font-medium text-secondary-foreground text-xs tracking-tight shadow-xs w-auto gap-2 px-1',
+    'antialiased inline-flex cursor-default items-center rounded-md px-1.5',
+    'border-1 border-ring/40 font-sans text-muted-foreground [&>abbr]:no-underline gap-0.5',
   ],
+  variants: {
+    size: {
+      xs: 'text-xs/5',
+      sm: 'text-sm/5',
+      md: 'py-0.5 text-base/5',
+      lg: 'py-0.5 text-lg',
+    },
+  },
+  defaultVariants: {
+    size: 'xs',
+  },
 })
 
 type KbdStyles = VariantProps<typeof kbdStyles>

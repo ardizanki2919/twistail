@@ -78,7 +78,7 @@ export const WithTrigger: Story = {
       <>
         <Button variant="outline" className="gap-2" onClick={() => setOpen((open) => !open)}>
           <span>Open Command</span>
-          <Kbd>⌘ + J</Kbd>
+          <Kbd keys={['command']}>J</Kbd>
         </Button>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <CommandInput placeholder="Type a command or search..." />
