@@ -32,6 +32,8 @@ const multiSelectStyles = tv({
     ],
     commandInput: 'p-1 text-sm',
     commandEmpty: 'py-6 text-center text-sm text-muted-foreground',
+    commandList: 'h-[480px]',
+    commandGroupWrapper: 'h-[262px]',
     commandGroup: 'overflow-hidden p-1 text-foreground',
     commandSeparator: '-mx-1 h-px bg-border',
     checkboxItem: [

@@ -5,6 +5,7 @@ import { Command, CommandEmpty, CommandGroup, CommandSeparator } from '#/compone
 import { CommandInput, CommandItem, CommandList } from '#/components/base-ui/command'
 import { Divider } from '#/components/base-ui/divider'
 import { Popover, PopoverContent, PopoverTrigger } from '#/components/base-ui/popover'
+import { ScrollArea } from '#/components/base-ui/scroll-area'
 import { type MultiSelectStyles, multiSelectStyles } from './multi-select.css'
 
 interface MultiSelectProps
@@ -232,71 +233,73 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
               className={styles.commandInput()}
               value={inputValue}
             />
-            <CommandList>
+            <CommandList className={styles.commandList()}>
               <CommandEmpty className={styles.commandEmpty()}>No results found.</CommandEmpty>
-              <CommandGroup className={styles.commandGroup()}>
-                {showSelectAll && (
-                  <div
-                    className={styles.checkboxItem({
-                      className: highlightedIndex === 0 ? 'bg-accent' : '',
-                    })}
-                    onClick={toggleAll}
-                    onMouseEnter={() => setHighlightedIndex(0)}
-                    aria-selected={highlightedIndex === 0}
-                    tabIndex={highlightedIndex === 0 ? 0 : -1}
-                  >
-                    <span className={styles.checkboxItemIndicator()}>
-                      {selectedValues.length === options.length ? (
-                        <Lucide.Check
-                          className={styles.checkboxItemIndicatorIcon()}
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <span className={styles.checkboxItemEmptyIndicator()} />
-                      )}
-                    </span>
-                    <span>Select All ({totalOptions})</span>
-                  </div>
-                )}
+              <ScrollArea className={styles.commandGroupWrapper()}>
+                <CommandGroup className={styles.commandGroup()}>
+                  {showSelectAll && (
+                    <div
+                      className={styles.checkboxItem({
+                        className: highlightedIndex === 0 ? 'bg-accent' : '',
+                      })}
+                      onClick={toggleAll}
+                      onMouseEnter={() => setHighlightedIndex(0)}
+                      aria-selected={highlightedIndex === 0}
+                      tabIndex={highlightedIndex === 0 ? 0 : -1}
+                    >
+                      <span className={styles.checkboxItemIndicator()}>
+                        {selectedValues.length === options.length ? (
+                          <Lucide.Check
+                            className={styles.checkboxItemIndicatorIcon()}
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <span className={styles.checkboxItemEmptyIndicator()} />
+                        )}
+                      </span>
+                      <span>Select All ({totalOptions})</span>
+                    </div>
+                  )}
 
-                {filteredOptions.length > 0 ? (
-                  filteredOptions.map((option, index) => {
-                    const isSelected = selectedValues.includes(option.value)
-                    const IconComponent = option.icon
-                    // Adjust index for highlighting based on whether "Select All" is shown
-                    const adjustedIndex = showSelectAll ? index + 1 : index
-                    const isHighlighted = highlightedIndex === adjustedIndex
+                  {filteredOptions.length > 0 ? (
+                    filteredOptions.map((option, index) => {
+                      const isSelected = selectedValues.includes(option.value)
+                      const IconComponent = option.icon
+                      // Adjust index for highlighting based on whether "Select All" is shown
+                      const adjustedIndex = showSelectAll ? index + 1 : index
+                      const isHighlighted = highlightedIndex === adjustedIndex
 
-                    return (
-                      <div
-                        key={option.value}
-                        className={styles.checkboxItem({
-                          className: isHighlighted ? 'bg-accent' : '',
-                        })}
-                        onClick={() => toggleOption(option.value)}
-                        onMouseEnter={() => setHighlightedIndex(adjustedIndex)}
-                        aria-selected={isHighlighted}
-                        tabIndex={isHighlighted ? 0 : -1}
-                      >
-                        <span className={styles.checkboxItemIndicator()}>
-                          {isSelected ? (
-                            <Lucide.Check
-                              className={styles.checkboxItemIndicatorIcon()}
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <div className={styles.checkboxItemEmptyIndicator()} />
-                          )}
-                        </span>
-                        {IconComponent && <IconComponent className={styles.icon()} />}
-                        <span className="truncate">{option.label}</span>
-                      </div>
-                    )
-                  })
-                ) : (
-                  <div className={styles.commandEmpty()}>No results found.</div>
-                )}
-              </CommandGroup>
+                      return (
+                        <div
+                          key={option.value}
+                          className={styles.checkboxItem({
+                            className: isHighlighted ? 'bg-accent' : '',
+                          })}
+                          onClick={() => toggleOption(option.value)}
+                          onMouseEnter={() => setHighlightedIndex(adjustedIndex)}
+                          aria-selected={isHighlighted}
+                          tabIndex={isHighlighted ? 0 : -1}
+                        >
+                          <span className={styles.checkboxItemIndicator()}>
+                            {isSelected ? (
+                              <Lucide.Check
+                                className={styles.checkboxItemIndicatorIcon()}
+                                aria-hidden="true"
+                              />
+                            ) : (
+                              <div className={styles.checkboxItemEmptyIndicator()} />
+                            )}
+                          </span>
+                          {IconComponent && <IconComponent className={styles.icon()} />}
+                          <span className="truncate">{option.label}</span>
+                        </div>
+                      )
+                    })
+                  ) : (
+                    <div className={styles.commandEmpty()}>No results found.</div>
+                  )}
+                </CommandGroup>
+              </ScrollArea>
               <CommandSeparator className={styles.commandSeparator()} />
               <CommandGroup>
                 <div className={styles.actionButtonsWrapper()}>
