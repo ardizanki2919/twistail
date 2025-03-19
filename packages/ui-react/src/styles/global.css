@@ -348,6 +348,32 @@
         }
     }
 
+    /* ------------------- Animation for context menu -------------------  */
+    --animate-context-menu-fade-in: context-menu-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-context-menu-fade-out: context-menu-fade-out 0.15s ease-out;
+
+    @keyframes context-menu-fade-in {
+        from {
+            opacity: 0;
+            transform: translate(-4px, -4px);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes context-menu-fade-out {
+        from {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        to {
+            opacity: 0;
+            transform: translate(-4px, -4px);
+        }
+    }
+
     /* ------------------- Animation for input-pin -------------------  */
     --animate-caret-blink: caret-blink 1.2s ease-out infinite;
 

@@ -47,7 +47,7 @@ export const AnchorWithBadgeVariants: Story = {
 
 export const CustomisedBadge: Story = {
   render: () => (
-    <div className="flex items-center justify-between gap-8 rounded-md bg-blue-50 py-2.5 pr-4 pl-2.5 text-sm dark:bg-blue-900/50">
+    <div className="flex w-full min-w-3xl items-center justify-between gap-8 rounded-md bg-blue-50 py-2.5 pr-4 pl-2.5 text-sm dark:bg-blue-900/50">
       <div className="flex items-center gap-2 truncate">
         <Badge className="rounded-full bg-blue-800 text-white ring-0 dark:bg-blue-500 dark:text-white dark:ring-0">
           Export Request

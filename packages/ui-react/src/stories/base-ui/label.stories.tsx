@@ -18,7 +18,7 @@ export const Default: Story = {
 
 export const LabelWithInput: Story = {
   render: () => (
-    <form className="flex flex-col gap-3">
+    <form className="flex w-xs flex-col gap-3">
       <Label htmlFor="password">Password</Label>
       <Input placeholder="Enter password" id="password" name="password" type="password" />
     </form>

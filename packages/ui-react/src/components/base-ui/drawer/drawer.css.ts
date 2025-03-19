@@ -6,7 +6,7 @@ const drawerStyles = tv({
     close: [],
     portal: [],
     overlay: [
-      'fixed inset-0 z-50 overflow-y-auto bg-muted/30',
+      'fixed inset-0 z-50 overflow-y-auto bg-black/40 dark:bg-black/80',
       'data-[state=closed]:animate-hide data-[state=open]:animate-dialog-overlay-show',
     ],
     content: [
@@ -28,25 +28,25 @@ const drawerStyles = tv({
     side: {
       top: {
         content: [
-          'inset-x-0 top-0 border-b w-full min-w-full rounded-b-md',
+          'inset-x-0 top-0 border-b w-full min-w-full rounded-b-lg',
           'data-[state=closed]:animate-drawer-slide-top-out data-[state=open]:animate-drawer-slide-top-in',
         ],
       },
       bottom: {
         content: [
-          'inset-x-0 bottom-0 border-t w-full min-w-full rounded-t-md',
+          'inset-x-0 bottom-0 border-t w-full min-w-full rounded-t-lg',
           'data-[state=closed]:animate-drawer-slide-bottom-out data-[state=open]:animate-drawer-slide-bottom-in',
         ],
       },
       left: {
         content: [
-          'inset-y-0 left-0 border-r size-full sm:max-w-lg sm:rounded-r-md',
+          'inset-y-0 left-0 border-r size-full sm:max-w-lg sm:rounded-r-lg',
           'data-[state=closed]:animate-drawer-slide-left-out data-[state=open]:animate-drawer-slide-left-in',
         ],
       },
       right: {
         content: [
-          'inset-y-0 right-0 border-l size-full sm:max-w-lg sm:rounded-l-md',
+          'inset-y-0 right-0 border-l size-full sm:max-w-lg sm:rounded-l-lg',
           'data-[state=closed]:animate-drawer-slide-right-out data-[state=open]:animate-drawer-slide-right-in',
         ],
       },

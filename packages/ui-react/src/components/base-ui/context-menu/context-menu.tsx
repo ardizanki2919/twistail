@@ -34,7 +34,7 @@ const ContextMenuSubMenuTrigger = React.forwardRef<
 const ContextMenuSubMenuContent = React.forwardRef<
   React.ComponentRef<typeof ContextMenuPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubContent>
->(({ className, collisionPadding = 8, ...props }, forwardedRef) => {
+>(({ className, collisionPadding = 8, alignOffset = 4, ...props }, forwardedRef) => {
   const styles = contextMenuStyles()
   return (
     <ContextMenuPortal>
@@ -42,6 +42,8 @@ const ContextMenuSubMenuContent = React.forwardRef<
         ref={forwardedRef}
         collisionPadding={collisionPadding}
         className={styles.subMenuContent({ className })}
+        alignOffset={alignOffset}
+        avoidCollisions={true}
         {...props}
       />
     </ContextMenuPortal>
@@ -51,7 +53,7 @@ const ContextMenuSubMenuContent = React.forwardRef<
 const ContextMenuContent = React.forwardRef<
   React.ComponentRef<typeof ContextMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content>
->(({ className, collisionPadding = 8, loop = true, ...props }, forwardedRef) => {
+>(({ className, collisionPadding = 8, loop = true, alignOffset = 4, ...props }, forwardedRef) => {
   const styles = contextMenuStyles()
   return (
     <ContextMenuPortal>
@@ -59,6 +61,8 @@ const ContextMenuContent = React.forwardRef<
         ref={forwardedRef}
         className={styles.content({ className })}
         collisionPadding={collisionPadding}
+        alignOffset={alignOffset}
+        avoidCollisions={true}
         loop={loop}
         {...props}
       />

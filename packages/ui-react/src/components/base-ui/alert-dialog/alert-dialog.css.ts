@@ -3,7 +3,7 @@ import { type VariantProps, tv } from 'tailwind-variants'
 const alertDialogStyles = tv({
   slots: {
     overlay: [
-      'fixed inset-0 z-50 overflow-y-auto bg-muted/90',
+      'fixed inset-0 z-50 overflow-y-auto bg-black/40 dark:bg-black/80',
       'data-[state=open]:animate-dialog-overlay-show data-[state=closed]:animate-dialog-overlay-hide',
     ],
     content: [

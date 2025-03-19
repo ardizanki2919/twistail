@@ -157,7 +157,7 @@ export const FeatureHighlight: Story = {
               advanced analytics
             </span>
           </HoverCardTrigger>
-          <HoverCardContent className="w-80">
+          <HoverCardContent className="w-80 text-center">
             <div className="space-y-2">
               <h4 className="font-semibold">Advanced Analytics</h4>
               <p className="text-center text-sm">

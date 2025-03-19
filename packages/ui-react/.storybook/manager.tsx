@@ -8,7 +8,6 @@ import { listenToColorScheme } from './utils'
 
 addons.setConfig({
   isFullscreen: false,
-  showPanel: true,
   showToolbar: true,
   panelPosition: 'bottom',
   initialActive: 'canvas',
@@ -73,9 +72,12 @@ addons.setConfig({
   },
 })
 
-/**
- * Switch color scheme based on the global types or system preferences
- */
+// Hide addon panel by default
+addons.register('hide-addon-panel', (api) => {
+  api.togglePanel(false)
+})
+
+// Switch color scheme based on the global types or system preferences
 addons.register('color-scheme', (api) => {
   const setTheme = (theme: Theme) => {
     // Handle system theme preference

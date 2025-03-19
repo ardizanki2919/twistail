@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Divider } from '#/components'
+import { Button, Divider, Text } from '#/components'
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
   title: 'Base Components/Divider',
   tags: ['autodocs', 'status:done'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
@@ -35,24 +42,24 @@ export const WithChildren: Story = {
 
 export const MoreText: Story = {
   render: () => (
-    <>
+    <div className="max-w-xl flex-1">
       <p className="text-gray-500 text-sm dark:text-gray-500">Tickets Sold</p>
       <p className="font-semibold text-3xl text-gray-900 dark:text-gray-50">1,587</p>
       <Divider>Details</Divider>
-      <p className="mt-2 text-gray-500 text-sm leading-7 dark:text-gray-500">
+      <Text className="text-muted-foreground">
         Ticket sales peaked in March, largely due to the "March Mountain Madness" event on March
         12th, drawing significant tourist interest. Operational efficiencies and local hotel
         partnerships further boosted sales. Additionally, targeted social media promotions ahead of
         the event significantly increased online bookings.
-      </p>
-    </>
+      </Text>
+    </div>
   ),
 }
 
 export const ButtonChild: Story = {
   render: () => (
     <Divider>
-      <Button variant="secondary" className="rounded-full">
+      <Button variant="secondary" className="rounded-full px-4" size="sm">
         Show more
       </Button>
     </Divider>

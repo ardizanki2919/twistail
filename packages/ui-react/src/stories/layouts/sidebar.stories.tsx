@@ -7,6 +7,9 @@ const meta: Meta<typeof DummyComponent> = {
   component: DummyComponent,
   title: 'Layout Components/Sidebar',
   tags: ['status:planned'],
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta

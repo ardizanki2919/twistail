@@ -9,6 +9,13 @@ const meta: Meta<typeof Slider> = {
   component: Slider,
   title: 'Base Components/Slider',
   tags: ['autodocs', 'status:done'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
@@ -32,7 +39,7 @@ export const Inverted: Story = {
 
 export const Vertical: Story = {
   render: () => (
-    <div className="h-20">
+    <div className="h-44">
       <Slider defaultValue={[55]} orientation="vertical" />
     </div>
   ),

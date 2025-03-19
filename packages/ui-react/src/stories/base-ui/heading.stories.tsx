@@ -80,6 +80,7 @@ export const WeightShowcase: Story = {
 
 export const AlignmentShowcase: Story = {
   parameters: {
+    layout: 'padded',
     controls: { exclude: ['align'] },
   },
   render: () => (

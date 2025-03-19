@@ -4,8 +4,7 @@ const tooltipStyles = tv({
   slots: {
     content: [
       'max-w-60 select-none rounded-md px-2.5 py-1.5 text-sm leading-5 shadow-xs',
-      'bg-popover text-popover-foreground border border-border',
-      'will-change-[transform,opacity]',
+      'bg-popover text-popover-foreground border border-border will-change-[transform,opacity]',
       'data-[side=top]:animate-slide-up-fade data-[side=bottom]:animate-slide-down-fade',
       'data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade',
       'data-[state=closed]:animate-hide',

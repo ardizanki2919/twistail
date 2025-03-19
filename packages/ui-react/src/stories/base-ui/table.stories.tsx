@@ -9,6 +9,9 @@ const meta: Meta<typeof Table> = {
   component: Table,
   title: 'Base Components/Table',
   tags: ['autodocs', 'status:done'],
+  parameters: {
+    layout: 'padded',
+  },
 }
 
 export default meta

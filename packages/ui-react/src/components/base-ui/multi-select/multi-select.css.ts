@@ -3,7 +3,7 @@ import { type VariantProps, tv } from 'tailwind-variants'
 const multiSelectStyles = tv({
   slots: {
     trigger: [
-      'flex h-auto min-h-10 w-full items-center justify-between rounded-md border p-0 shadow-xs',
+      'flex h-auto min-h-10 w-full items-center justify-between rounded-md border p-0 shadow-xs group',
       'border-input text-foreground bg-background hover:bg-accent outline-hidden transition sm:text-sm',
       'data-[placeholder]:text-muted-foreground data-[disabled]:bg-muted data-[disabled]:text-muted-foreground data-[disabled]:border-input',
       'focus:border-primary focus:ring-2 focus:ring-primary/20',
@@ -14,9 +14,8 @@ const multiSelectStyles = tv({
     placeholderWrapper: 'flex w-full items-center justify-between pr-3.5',
     placeholderText: 'text-muted-foreground text-sm pl-3.5 pr-2 py-2 w-full items-start text-left',
     badge: [
-      'inline-flex items-center rounded-md border px-2 py-1 text-xs font-semibold transition-colors',
-      'bg-transparent border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground',
-      'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow-xs border-0',
+      'inline-flex items-center rounded-md border-muted-foreground/20 border px-2 py-1 text-xs font-semibold transition-all',
+      'bg-accent text-muted-foreground hover:opacity-80 hover:text-foreground outline-none shadow-xs ring-0 duration-300',
     ],
     badgeRemoveIcon: 'ml-1 size-3.5 text-secondary-foreground/70 hover:text-accent-foreground',
     actionsWrapper: 'flex items-center justify-between',

@@ -10,13 +10,19 @@ import { RadioGroup, RadioGroupItem } from '#/components'
 import { Listbox, ListboxTrigger } from '#/components'
 import { ListboxContent, ListboxItem, ListboxValue } from '#/components'
 import { Select } from '#/components'
-import { Switch } from '#/components'
 import { Textarea } from '#/components'
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Base Components/Card',
   tags: ['autodocs', 'status:done'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta

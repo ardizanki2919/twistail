@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Button } from '#/components'
+import { Button, Text } from '#/components'
 import {
   Dialog,
   DialogClose,
@@ -442,7 +442,7 @@ export const Controlled: Story = {
 
     return (
       <>
-        <div className="flex gap-2">
+        <div className="flex w-sm gap-2">
           <Listbox value={value} onValueChange={setValue}>
             <ListboxTrigger className="mx-auto min-w-44">
               <ListboxValue placeholder="Listbox" aria-label={value} />
@@ -459,7 +459,9 @@ export const Controlled: Story = {
             Reset selection
           </Button>
         </div>
-        <p className="mt-2 px-1 text-gray-500 text-sm">Selected key: {value}</p>
+        <Text size="sm" className="mt-2 px-1">
+          Selected key: {value}
+        </Text>
       </>
     )
   },

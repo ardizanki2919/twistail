@@ -5,9 +5,13 @@ const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   title: 'Base Components/Skeleton',
   tags: ['autodocs', 'status:done'],
-  parameters: {
-    layout: 'padded',
-  },
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta

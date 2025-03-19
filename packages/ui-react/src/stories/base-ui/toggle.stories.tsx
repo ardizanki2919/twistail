@@ -20,16 +20,8 @@ export const Default: Story = {
     </>
   ),
 }
-export const WithParentState: Story = {
-  render: () => (
-    <>
-      <Toggle aria-label="Toggle star">
-        <Lucide.Star className="pointer-events-none size-4 shrink-0 group-data-[state=on]:text-yellow-400" />
-      </Toggle>
-    </>
-  ),
-}
-export const DefaultToggleGroup: Story = {
+
+export const Grouped: Story = {
   render: () => (
     <>
       <ToggleGroup type="multiple">

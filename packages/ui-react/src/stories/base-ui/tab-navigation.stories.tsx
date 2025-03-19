@@ -6,7 +6,13 @@ const meta: Meta<typeof TabNavigation> = {
   component: TabNavigation,
   title: 'Base Components/TabNavigation',
   tags: ['autodocs', 'status:done'],
-  parameters: {},
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta

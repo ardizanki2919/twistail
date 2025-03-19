@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Command, CommandDialog, CommandEmpty, CommandGroup } from '#/components'
+import { Button, Command, CommandDialog, CommandEmpty, CommandGroup } from '#/components'
 import { CommandInput, CommandItem, CommandList } from '#/components'
 import { CommandSeparator, CommandShortcut, Kbd } from '#/components'
 
@@ -76,10 +76,10 @@ export const WithTrigger: Story = {
 
     return (
       <>
-        <div className="inline-flex w-32 items-center justify-center gap-2 text-muted-foreground text-sm">
-          <span>Press</span>
+        <Button variant="outline" className="gap-2" onClick={() => setOpen((open) => !open)}>
+          <span>Open Command</span>
           <Kbd>⌘ + J</Kbd>
-        </div>
+        </Button>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <CommandInput placeholder="Type a command or search..." />
           <CommandList>

@@ -22,7 +22,7 @@ const meta: Meta<ButtonProps> = {
       },
     },
     variant: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       options: [...Object.keys(buttonStyles.variants.variant)],
       table: {
         defaultValue: { summary: 'default' },

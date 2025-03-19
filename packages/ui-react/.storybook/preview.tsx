@@ -12,9 +12,11 @@ const preview: Preview = {
   // Optional parameter to center the component in the Canvas.
   // More info: https://storybook.js.org/docs/configure/story-layout
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'centered',
+    actions: { disable: false, argTypesRegex: '^on[A-Z].*' },
     previewTabs: { 'storybook/docs/panel': { index: -1 } },
     controls: {
+      disable: false,
       expanded: false,
       hideNoControlsWarning: true,
       sort: 'requiredFirst',
@@ -53,7 +55,6 @@ const preview: Preview = {
       },
     },
     backgrounds: { disable: true },
-    layout: 'padded',
     chromatic: {
       modes: {
         dark: { theme: 'dark' },
@@ -72,10 +73,10 @@ const preview: Preview = {
         headingSelector: 'h2, h3',
         ignoreSelector: '#preview',
         title: 'Table of Contents',
-        disable: false,
         unsafeTocbotOptions: {
           orderedList: false,
         },
+        disable: true,
       },
     },
   },

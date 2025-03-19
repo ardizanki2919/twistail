@@ -7,6 +7,13 @@ const meta: Meta<typeof RadioCardGroup> = {
   component: RadioCardGroup,
   title: 'Base Components/RadioCardGroup',
   tags: ['autodocs', 'status:done'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-md flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
@@ -15,7 +22,7 @@ type Story = StoryObj<typeof RadioCardGroup>
 export const Default: Story = {
   render: () => {
     return (
-      <RadioCardGroup>
+      <RadioCardGroup className="w-full">
         <RadioCardItem value="1">
           <div className="flex items-center gap-3">
             <RadioCardIndicator />
@@ -42,7 +49,7 @@ export const Default: Story = {
 export const Grid: Story = {
   render: () => {
     return (
-      <RadioCardGroup className="grid-cols-2">
+      <RadioCardGroup className="w-full grid-cols-2">
         <RadioCardItem value="1">
           <div className="flex items-center gap-3">
             <RadioCardIndicator />
@@ -87,7 +94,7 @@ export const Grid: Story = {
 export const DefaultChecked: Story = {
   render: () => {
     return (
-      <RadioCardGroup defaultValue="1" className="text-sm">
+      <RadioCardGroup defaultValue="1" className="w-full text-sm">
         <RadioCardItem value="1" className="flex items-center gap-3">
           <RadioCardIndicator />
           <span>Software Engineer</span>
@@ -108,7 +115,7 @@ export const DefaultChecked: Story = {
 export const Disabled: Story = {
   render: () => {
     return (
-      <RadioCardGroup defaultValue="1" className="text-sm">
+      <RadioCardGroup defaultValue="1" className="w-full text-sm">
         <RadioCardItem value="1" className="flex items-center gap-3">
           <RadioCardIndicator />
           <span>Software Engineer</span>
@@ -157,21 +164,21 @@ export const Controlled: Story = {
     ]
 
     return (
-      <div className="flex flex-col items-center justify-start">
-        <form>
+      <div className="flex w-full min-w-xl flex-col items-center justify-start">
+        <form className="w-full">
           <fieldset className="space-y-3">
             <RadioCardGroup
               value={selectedOption}
               onValueChange={(value) => setSelectedOption(value)}
-              className="mt-2 grid grid-cols-1 gap-4 text-sm md:grid-cols-2"
+              className="mt-2 grid w-full min-w-sm grid-cols-1 gap-4 text-sm md:grid-cols-2"
             >
               {databases.map((database) => (
                 <RadioCardItem key={database.value} value={database.value}>
-                  <div className="flex items-start gap-3">
-                    <RadioCardIndicator className="mt-1" />
+                  <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="mt-1 text-gray-500 text-xs">1/8 vCPU, 1 GB RAM</p>
                     </div>
+                    <RadioCardIndicator className="mt-1" />
                   </div>
                 </RadioCardItem>
               ))}
@@ -186,7 +193,7 @@ export const Controlled: Story = {
             Reset
           </Button>
         </form>
-        <pre className="mt-6 w-fit rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
+        <pre className="mt-6 w-full rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
           Selected Opt: {selectedOption ? selectedOption : 'Nothing selected!'}
         </pre>
       </div>

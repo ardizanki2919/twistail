@@ -49,7 +49,7 @@ export const WithLegend: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-muted-foreground text-sm">Select booking logic:</legend>
         <RadioGroup>
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_21" />
@@ -128,7 +128,7 @@ export const Disabled: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-muted-foreground text-sm">Select booking logic:</legend>
         <RadioGroup>
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_41" />
@@ -154,7 +154,7 @@ export const DefaultChecked: Story = {
   render: () => (
     <form className="flex justify-center">
       <fieldset className="space-y-3">
-        <legend className="font-medium text-gray-800 text-sm">Select booking logic:</legend>
+        <legend className="font-medium text-muted-foreground text-sm">Select booking logic:</legend>
         <RadioGroup defaultValue="1">
           <div className="flex items-center gap-x-3">
             <RadioGroupItem value="1" id="radio_31" />
@@ -179,8 +179,8 @@ export const Controlled: Story = {
     const [selectedOption, setSelectedOption] = React.useState('')
 
     return (
-      <div className="flex flex-col items-center justify-start">
-        <form>
+      <div className="flex w-sm flex-col items-center justify-start">
+        <form className="w-full justify-start">
           <fieldset className="space-y-3">
             <legend className="font-medium text-gray-900 text-sm dark:text-gray-50">
               Choose your preferred interior option:
@@ -214,7 +214,7 @@ export const Controlled: Story = {
             Reset
           </Button>
         </form>
-        <pre className="mt-6 w-fit rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
+        <pre className="mt-6 w-full rounded-md bg-gray-100 p-2 font-mono text-gray-700 text-sm dark:bg-gray-800 dark:text-gray-200">
           Selected Opt: {selectedOption ? selectedOption : 'Nothing selected!'}
         </pre>
       </div>

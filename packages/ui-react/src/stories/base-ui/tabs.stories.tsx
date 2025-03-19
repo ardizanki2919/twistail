@@ -6,13 +6,19 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   title: 'Base Components/Tabs',
   tags: ['autodocs', 'status:done'],
-  parameters: {},
+  decorators: [
+    (Story) => (
+      <div className="flex w-2xl flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
 type Story = StoryObj<typeof Tabs>
 
-export const VariantLine: Story = {
+export const Default: Story = {
   render: () => (
     <Tabs defaultValue="tab1">
       <TabsList>

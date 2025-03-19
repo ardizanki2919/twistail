@@ -5,6 +5,13 @@ const meta: Meta<typeof Textarea> = {
   component: Textarea,
   title: 'Base Components/Textarea',
   tags: ['autodocs', 'status:done'],
+  decorators: [
+    (Story) => (
+      <div className="flex w-full min-w-sm flex-col items-center justify-center">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta

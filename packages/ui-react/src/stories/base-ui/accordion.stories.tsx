@@ -3,7 +3,7 @@ import { fn } from '@storybook/test'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { clx } from 'twistail-utils'
-import { AccordionContent, AccordionItem } from '#/components'
+import { AccordionContent, AccordionItem, Heading } from '#/components'
 import { Badge, Button } from '#/components'
 import { Accordion, AccordionTrigger } from '#/components'
 
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => (
-    <Accordion type="single" className="mx-auto mt-3 max-w-sm" collapsible>
+    <Accordion type="single" className="mx-auto mt-3 w-md" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>In the app</AccordionTrigger>
         <AccordionContent>
@@ -77,11 +77,9 @@ export const Default: Story = {
 
 export const WithIcons: Story = {
   render: () => (
-    <div className="mx-auto max-w-xl">
-      <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
-        Managing Your Booking Online
-      </h1>
-      <Accordion type="multiple" className="mt-3">
+    <div className="mx-auto w-md">
+      <Heading level="h5">Managing Your Booking Online</Heading>
+      <Accordion type="multiple" className="mt-3 w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <span className="flex items-center gap-2">
@@ -166,7 +164,7 @@ export const WithIcons: Story = {
 
 export const SingleItem: Story = {
   render: () => (
-    <Accordion type="single" collapsible>
+    <Accordion type="single" className="w-md" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>Can you render only one item?</AccordionTrigger>
         <AccordionContent>Yes, absolutely!</AccordionContent>
@@ -177,7 +175,7 @@ export const SingleItem: Story = {
 
 export const TypeMultiple: Story = {
   render: () => (
-    <Accordion type="multiple">
+    <Accordion type="multiple" className="w-lg">
       <AccordionItem value="item-1">
         <AccordionTrigger>Does NASA provide public access to space data?</AccordionTrigger>
         <AccordionContent>
@@ -213,7 +211,7 @@ export const TypeMultiple: Story = {
 
 export const DisabledAccordion: Story = {
   render: () => (
-    <Accordion type="single" collapsible disabled>
+    <Accordion type="single" className="w-xl" collapsible disabled>
       <AccordionItem value="item-1">
         <AccordionTrigger>
           Did FutureTravel Corp. offer eco-friendly travel options?
@@ -239,10 +237,8 @@ export const DisabledAccordion: Story = {
 
 export const DisableWithDefaultValue: Story = {
   render: () => (
-    <div className="mx-auto max-w-lg">
-      <h1 className="font-semibold text-gray-900 text-md dark:text-gray-50">
-        Managing Your Booking Online
-      </h1>
+    <div className="mx-auto w-lg">
+      <Heading level="h5">Managing Your Booking Online</Heading>
       <Accordion type="single" defaultValue="item-1" className="mt-3" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>
@@ -328,7 +324,7 @@ export const DisableWithDefaultValue: Story = {
 
 export const DisabledAccordionItem: Story = {
   render: () => (
-    <Accordion type="single" collapsible>
+    <Accordion type="single" className="w-md" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it suitable for all skill levels?</AccordionTrigger>
         <AccordionContent>
@@ -371,22 +367,28 @@ export const Controlled: Story = {
       <div className="flex flex-col gap-2">
         <Button
           variant="secondary"
-          className="w-fit"
-          onClick={() => setValue((prevValue) => (prevValue === 'item-2' ? '' : 'item-2'))} // Updated to use toggle functionality
+          onClick={() => setValue((prevValue) => (prevValue === 'item-2' ? '' : 'item-2'))}
+          className="-mx-1 w-fit"
         >
           {value === '' ? 'Open' : 'Close'} item number two
         </Button>
-        <Accordion type="single" collapsible value={value} onValueChange={setValue}>
+        <Accordion
+          type="single"
+          className="w-md"
+          collapsible
+          value={value}
+          onValueChange={setValue}
+        >
           <AccordionItem value="item-1">
             <AccordionTrigger>In the app</AccordionTrigger>
             <AccordionContent>
               <ol className="flex flex-col gap-2">
                 <li>
-                  <span className="font-semibold text-gray-800">Step 1:</span>
+                  <span className="font-semibold text-muted-foreground">Step 1:</span>
                   Tap the Inbox icon and then tap Add receipts.
                 </li>
                 <li>
-                  <span className="font-semibold text-gray-800">Step 2:</span>
+                  <span className="font-semibold text-muted-foreground">Step 2:</span>
                   Tap the + symbol to attach a photo or PDF of the receipt for our system to match.
                 </li>
               </ol>
@@ -398,12 +400,12 @@ export const Controlled: Story = {
             <AccordionContent>
               <ol className="flex flex-col gap-2">
                 <li>
-                  <span className="font-semibold text-gray-800">Step 1:</span>
+                  <span className="font-semibold text-muted-foreground">Step 1:</span>
                   <span className="underline">Download</span> the browser extension for Chrome or
                   Safari. (Firefox support is coming soon.)
                 </li>
                 <li>
-                  <span className="font-semibold text-gray-800">Step 2:</span>
+                  <span className="font-semibold text-muted-foreground">Step 2:</span>
                   Click the extension icon at the top of your browser. Under the Receipts tab,
                   upload an image or click Screenshot current tab to automatically attach the
                   receipt to the expense.
@@ -453,7 +455,7 @@ export const Horizontal: Story = {
     return (
       <Accordion
         type="single"
-        className="flex h-[400px] w-full max-w-[700px] gap-2 sm:flex-row"
+        className="flex h-[400px] w-full w-full max-w-[700px] gap-2 sm:flex-row"
         orientation="horizontal"
         onValueChange={setValue}
         value={value}

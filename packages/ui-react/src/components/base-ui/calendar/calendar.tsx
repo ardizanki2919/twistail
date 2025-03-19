@@ -16,7 +16,7 @@ const buttonNavigation = tv({
   base: [
     'flex size-8 shrink-0 select-none items-center justify-center rounded-sm border p-1 outline-hidden transition sm:size-[30px]',
     // text color
-    'text-gray-600 hover:text-gray-800 dark:text-gray-400 hover:dark:text-gray-200',
+    'text-gray-600 hover:text-muted-foreground dark:text-gray-400 hover:dark:text-gray-200',
     // border color
     'border-gray-300 dark:border-gray-800',
     // background color

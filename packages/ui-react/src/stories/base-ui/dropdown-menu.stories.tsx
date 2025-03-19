@@ -24,9 +24,6 @@ const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   title: 'Base Components/DropdownMenu',
   tags: ['autodocs', 'status:done'],
-  parameters: {
-    layout: 'padded',
-  },
 }
 
 export default meta
@@ -44,7 +41,7 @@ export const Default: Story = {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary">Open</Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent align="start">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
 
@@ -283,7 +280,7 @@ export const WithRadioItem: Story = {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary">Open</Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent align="end">
           <DropdownMenuLabel>Sorting</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
