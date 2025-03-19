@@ -42,16 +42,74 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
   ) => {
     const [selectedValues, setSelectedValues] = React.useState<string[]>(defaultValue)
     const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
+    const [inputValue, setInputValue] = React.useState('')
+    const [highlightedIndex, setHighlightedIndex] = React.useState<number>(-1)
     const styles = multiSelectStyles({ hasError })
 
+    // Filter options based on input value
+    const filteredOptions = React.useMemo(() => {
+      if (!inputValue) return options
+
+      const lowerCaseInput = inputValue.toLowerCase()
+      return options.filter((option) => option.label.toLowerCase().includes(lowerCaseInput))
+    }, [options, inputValue])
+
+    // Reset highlighted index when filtered options change
+    React.useEffect(() => {
+      setHighlightedIndex(filteredOptions.length > 0 ? 0 : -1)
+    }, [filteredOptions])
+
+    // Reset highlighted index when popover closes
+    React.useEffect(() => {
+      if (!isPopoverOpen) {
+        setHighlightedIndex(-1)
+      } else if (filteredOptions.length > 0) {
+        setHighlightedIndex(0)
+      }
+    }, [isPopoverOpen, filteredOptions.length])
+
     const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-      if (event.key === 'Enter') {
-        setIsPopoverOpen(true)
-      } else if (event.key === 'Backspace' && !event.currentTarget.value) {
-        const newSelectedValues = [...selectedValues]
-        newSelectedValues.pop()
-        setSelectedValues(newSelectedValues)
-        onValueChange(newSelectedValues)
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault()
+          if (filteredOptions.length > 0) {
+            setHighlightedIndex((prevIndex) =>
+              prevIndex < filteredOptions.length - 1 ? prevIndex + 1 : 0
+            )
+          }
+          break
+
+        case 'ArrowUp':
+          event.preventDefault()
+          if (filteredOptions.length > 0) {
+            setHighlightedIndex((prevIndex) =>
+              prevIndex > 0 ? prevIndex - 1 : filteredOptions.length - 1
+            )
+          }
+          break
+
+        case 'Enter':
+          event.preventDefault()
+          if (highlightedIndex === 0) {
+            toggleAll()
+          }
+          if (highlightedIndex >= 0 && highlightedIndex < filteredOptions.length) {
+            toggleOption(filteredOptions[highlightedIndex - 1].value)
+          }
+          break
+
+        case 'Escape':
+          setIsPopoverOpen(false)
+          break
+
+        case 'Backspace':
+          if (!event.currentTarget.value) {
+            const newSelectedValues = [...selectedValues]
+            newSelectedValues.pop()
+            setSelectedValues(newSelectedValues)
+            onValueChange(newSelectedValues)
+          }
+          break
       }
     }
 
@@ -87,6 +145,17 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
         onValueChange(allValues)
       }
     }
+
+    // Reset input when popover closes
+    React.useEffect(() => {
+      if (!isPopoverOpen) {
+        setInputValue('')
+      }
+    }, [isPopoverOpen])
+
+    // Determine whether the "Select All" button must be displayed
+    const showSelectAll = inputValue === ''
+    const totalOptions = showSelectAll ? filteredOptions.length + 1 : filteredOptions.length
 
     return (
       <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen} modal={modalPopover}>
@@ -155,54 +224,78 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
           className={styles.content()}
           onEscapeKeyDown={() => setIsPopoverOpen(false)}
         >
-          <Command>
+          <Command shouldFilter={false}>
             <CommandInput
               placeholder="Search..."
               onKeyDown={handleInputKeyDown}
+              onValueChange={setInputValue}
               className={styles.commandInput()}
+              value={inputValue}
             />
             <CommandList>
               <CommandEmpty className={styles.commandEmpty()}>No results found.</CommandEmpty>
               <CommandGroup className={styles.commandGroup()}>
-                <div className={styles.checkboxItem()} onClick={toggleAll}>
-                  <span className={styles.checkboxItemIndicator()}>
-                    {selectedValues.length === options.length ? (
-                      <Lucide.Check
-                        className={styles.checkboxItemIndicatorIcon()}
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <span className={styles.checkboxItemEmptyIndicator()} />
-                    )}
-                  </span>
-                  <span>Select All</span>
-                </div>
+                {showSelectAll && (
+                  <div
+                    className={styles.checkboxItem({
+                      className: highlightedIndex === 0 ? 'bg-accent' : '',
+                    })}
+                    onClick={toggleAll}
+                    onMouseEnter={() => setHighlightedIndex(0)}
+                    aria-selected={highlightedIndex === 0}
+                    tabIndex={highlightedIndex === 0 ? 0 : -1}
+                  >
+                    <span className={styles.checkboxItemIndicator()}>
+                      {selectedValues.length === options.length ? (
+                        <Lucide.Check
+                          className={styles.checkboxItemIndicatorIcon()}
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <span className={styles.checkboxItemEmptyIndicator()} />
+                      )}
+                    </span>
+                    <span>Select All ({totalOptions})</span>
+                  </div>
+                )}
 
-                {options.map((option) => {
-                  const isSelected = selectedValues.includes(option.value)
-                  const IconComponent = option.icon
+                {filteredOptions.length > 0 ? (
+                  filteredOptions.map((option, index) => {
+                    const isSelected = selectedValues.includes(option.value)
+                    const IconComponent = option.icon
+                    // Adjust index for highlighting based on whether "Select All" is shown
+                    const adjustedIndex = showSelectAll ? index + 1 : index
+                    const isHighlighted = highlightedIndex === adjustedIndex
 
-                  return (
-                    <div
-                      key={option.value}
-                      className={styles.checkboxItem()}
-                      onClick={() => toggleOption(option.value)}
-                    >
-                      <span className={styles.checkboxItemIndicator()}>
-                        {isSelected ? (
-                          <Lucide.Check
-                            className={styles.checkboxItemIndicatorIcon()}
-                            aria-hidden="true"
-                          />
-                        ) : (
-                          <div className={styles.checkboxItemEmptyIndicator()} />
-                        )}
-                      </span>
-                      {IconComponent && <IconComponent className={styles.icon()} />}
-                      <span className="truncate">{option.label}</span>
-                    </div>
-                  )
-                })}
+                    return (
+                      <div
+                        key={option.value}
+                        className={styles.checkboxItem({
+                          className: isHighlighted ? 'bg-accent' : '',
+                        })}
+                        onClick={() => toggleOption(option.value)}
+                        onMouseEnter={() => setHighlightedIndex(adjustedIndex)}
+                        aria-selected={isHighlighted}
+                        tabIndex={isHighlighted ? 0 : -1}
+                      >
+                        <span className={styles.checkboxItemIndicator()}>
+                          {isSelected ? (
+                            <Lucide.Check
+                              className={styles.checkboxItemIndicatorIcon()}
+                              aria-hidden="true"
+                            />
+                          ) : (
+                            <div className={styles.checkboxItemEmptyIndicator()} />
+                          )}
+                        </span>
+                        {IconComponent && <IconComponent className={styles.icon()} />}
+                        <span className="truncate">{option.label}</span>
+                      </div>
+                    )
+                  })
+                ) : (
+                  <div className={styles.commandEmpty()}>No results found.</div>
+                )}
               </CommandGroup>
               <CommandSeparator className={styles.commandSeparator()} />
               <CommandGroup>
