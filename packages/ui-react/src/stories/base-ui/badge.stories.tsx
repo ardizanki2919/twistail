@@ -5,7 +5,7 @@ import { Badge, badgeStyles } from '#/components'
 const meta: Meta<typeof Badge> = {
   component: Badge,
   title: 'Base Components/Badge',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   args: {
     children: 'Badge',
   },

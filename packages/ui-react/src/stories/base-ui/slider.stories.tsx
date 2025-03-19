@@ -8,7 +8,7 @@ import { Slider } from '#/components'
 const meta: Meta<typeof Slider> = {
   component: Slider,
   title: 'Base Components/Slider',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

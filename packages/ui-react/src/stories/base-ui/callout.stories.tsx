@@ -5,7 +5,7 @@ import { Callout, calloutStyles } from '#/components'
 const meta: Meta<typeof Callout> = {
   component: Callout,
   title: 'Base Components/Callout',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   args: {
     title: 'Sales Performance',
     children: `System Update: Enhanced Salesforce and Dynamics 365 integration now delivers key sales performance metrics directly to your dashboard for improved target achievement.`,

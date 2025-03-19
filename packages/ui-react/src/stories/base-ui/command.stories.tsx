@@ -8,7 +8,7 @@ import { CommandSeparator, CommandShortcut, Kbd } from '#/components'
 const meta: Meta<typeof Command> = {
   component: Command,
   title: 'Base Components/Command',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

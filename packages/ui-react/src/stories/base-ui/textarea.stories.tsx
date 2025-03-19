@@ -4,7 +4,7 @@ import { Card, Textarea } from '#/components'
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
   title: 'Base Components/Textarea',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

@@ -4,7 +4,7 @@ import { Card, Skeleton } from '#/components'
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   title: 'Base Components/Skeleton',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },

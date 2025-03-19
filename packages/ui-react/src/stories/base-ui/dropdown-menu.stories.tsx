@@ -23,7 +23,7 @@ import {
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   title: 'Base Components/DropdownMenu',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },

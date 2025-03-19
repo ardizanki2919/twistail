@@ -4,7 +4,7 @@ import { AspectRatio } from '#/components'
 const meta: Meta<typeof AspectRatio> = {
   component: AspectRatio,
   title: 'Base Components/AspectRatio',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

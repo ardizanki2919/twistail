@@ -5,7 +5,7 @@ import { Button, Card, Divider, Label, Switch } from '#/components'
 const meta: Meta<typeof Switch> = {
   component: Switch,
   title: 'Base Components/Switch',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

@@ -8,7 +8,7 @@ import { AlertDialogDescription } from '#/components'
 const meta: Meta<typeof AlertDialog> = {
   component: AlertDialog,
   title: 'Base Components/AlertDialog',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

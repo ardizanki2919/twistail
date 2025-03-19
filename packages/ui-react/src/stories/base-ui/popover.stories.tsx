@@ -11,7 +11,7 @@ import { PopoverClose, PopoverContent } from '#/components'
 const meta: Meta<typeof Popover> = {
   component: Popover,
   title: 'Base Components/Popover',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

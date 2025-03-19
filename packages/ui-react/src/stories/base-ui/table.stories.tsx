@@ -8,7 +8,7 @@ import { TableHead, TableHeaderCell } from '#/components'
 const meta: Meta<typeof Table> = {
   component: Table,
   title: 'Base Components/Table',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

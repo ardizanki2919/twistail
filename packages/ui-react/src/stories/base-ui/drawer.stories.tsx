@@ -8,7 +8,7 @@ import { DrawerContent, DrawerDescription } from '#/components'
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
   title: 'Base Components/Drawer',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

@@ -4,7 +4,7 @@ import { Checkbox, Input, Label } from '#/components'
 const meta: Meta<typeof Label> = {
   component: Label,
   title: 'Base Components/Label',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

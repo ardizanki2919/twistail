@@ -25,7 +25,7 @@ import {
 const meta: Meta<typeof Listbox> = {
   component: Listbox,
   title: 'Base Components/Listbox',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },
