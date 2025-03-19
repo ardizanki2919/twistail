@@ -5,7 +5,7 @@ import { Button, Tooltip, TooltipContent, TooltipTrigger } from '#/components'
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: 'Base Components/Tooltip',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

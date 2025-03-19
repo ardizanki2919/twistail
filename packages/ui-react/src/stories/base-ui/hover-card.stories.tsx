@@ -6,7 +6,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '#/components'
 const meta: Meta<typeof HoverCard> = {
   component: HoverCard,
   title: 'Base Components/HoverCard',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

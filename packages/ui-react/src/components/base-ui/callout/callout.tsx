@@ -1,10 +1,9 @@
-import { LucideIcon } from 'lucide-react'
 import * as React from 'react'
 import { type CalloutStyles, calloutStyles } from './callout.css'
 
 interface CalloutProps extends React.ComponentPropsWithoutRef<'div'>, CalloutStyles {
   title: string
-  icon?: React.ReactElement | React.ElementType | LucideIcon
+  icon?: React.ReactElement | React.ElementType<{ className?: string; strokeWidth?: number }>
 }
 
 const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(

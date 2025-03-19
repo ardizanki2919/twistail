@@ -5,7 +5,7 @@ import { Button, Toaster, toast } from '#/components'
 const meta: Meta = {
   component: Toaster,
   title: 'Base Components/Toast',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

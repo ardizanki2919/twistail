@@ -4,7 +4,7 @@ import { Text, textStyles } from '#/components'
 const meta: Meta<typeof Text> = {
   component: Text,
   title: 'Base Components/Text',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   argTypes: {
     children: {
       control: 'text',

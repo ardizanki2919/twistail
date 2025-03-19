@@ -10,7 +10,7 @@ import { Accordion, AccordionTrigger } from '#/components'
 const meta: Meta = {
   component: Accordion,
   title: 'Base Components/Accordion',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   argTypes: {
     type: {
       control: 'radio',

@@ -1,28 +1,39 @@
+import { Separator as DividerPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { type DividerStyles, dividerStyles } from './divider.css'
 
-interface DividerProps extends React.ComponentPropsWithoutRef<'div'>, DividerStyles {}
+interface DividerProps
+  extends React.ComponentPropsWithoutRef<typeof DividerPrimitive.Root>,
+    DividerStyles {}
 
-const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
-  ({ className, children, ...props }, forwardedRef) => {
-    const styles = dividerStyles()
-
+const Divider = React.forwardRef<React.ComponentRef<typeof DividerPrimitive.Root>, DividerProps>(
+  (
+    { className, orientation = 'horizontal', decorative = true, children, ...props },
+    forwardedRef
+  ) => {
+    const styles = dividerStyles({ orientation })
     return (
-      <div ref={forwardedRef} className={styles.base({ className })} {...props}>
+      <DividerPrimitive.Root
+        ref={forwardedRef}
+        decorative={decorative}
+        orientation={orientation}
+        className={styles.base({ className })}
+        {...props}
+      >
         {children ? (
           <>
-            <div className={styles.line()} />
+            <DividerPrimitive.Separator className={styles.line()} />
             <div className={styles.content()}>{children}</div>
-            <div className={styles.line()} />
+            <DividerPrimitive.Separator className={styles.line()} />
           </>
         ) : (
-          <div className={styles.line()} />
+          <DividerPrimitive.Separator className={styles.line()} />
         )}
-      </div>
+      </DividerPrimitive.Root>
     )
   }
 )
 
-Divider.displayName = 'Divider'
+Divider.displayName = DividerPrimitive.Root.displayName
 
-export { Divider, type DividerProps }
+export { Divider }

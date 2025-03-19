@@ -5,7 +5,7 @@ import { Button, Divider } from '#/components'
 const meta: Meta<typeof Divider> = {
   component: Divider,
   title: 'Base Components/Divider',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta
@@ -16,6 +16,9 @@ export const Default: Story = {
 }
 
 export const WithChildren: Story = {
+  parameters: {
+    layout: 'centered',
+  },
   render: () => (
     <div className="w-96">
       <Divider />
@@ -53,5 +56,27 @@ export const ButtonChild: Story = {
         Show more
       </Button>
     </Divider>
+  ),
+}
+
+export const WithVertical: Story = {
+  parameters: {
+    layout: 'centered',
+  },
+  render: () => (
+    <div className="w-[320px]">
+      <div className="space-y-1">
+        <h4 className="font-medium text-sm leading-none">Radix Primitives</h4>
+        <p className="text-muted-foreground text-sm">An open-source UI component library.</p>
+      </div>
+      <Divider className="my-4" />
+      <div className="flex h-5 items-center space-x-4 text-sm">
+        <div>Blog</div>
+        <Divider orientation="vertical" className="mr-4" />
+        <div>Docs</div>
+        <Divider orientation="vertical" className="mr-4" />
+        <div>Source</div>
+      </div>
+    </div>
   ),
 }

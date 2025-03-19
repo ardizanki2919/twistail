@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components'
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
   title: 'Base Components/Tabs',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {},
 }
 

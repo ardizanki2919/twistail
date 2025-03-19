@@ -10,7 +10,7 @@ import { Badge, Button, type ButtonProps, buttonStyles } from '#/components'
 const meta: Meta<ButtonProps> = {
   component: Button,
   title: 'Base Components/Button',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

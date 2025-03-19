@@ -16,7 +16,7 @@ import { Textarea } from '#/components'
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Base Components/Card',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
 }
 
 export default meta

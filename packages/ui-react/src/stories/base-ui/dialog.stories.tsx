@@ -8,7 +8,7 @@ import { DialogDescription } from '#/components'
 const meta: Meta<typeof Dialog> = {
   component: Dialog,
   title: 'Base Components/Dialog',
-  tags: ['status:done'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },
