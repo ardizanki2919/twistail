@@ -15,7 +15,7 @@ const multiSelectStyles = tv({
     placeholderText: 'text-muted-foreground text-sm pl-3.5 pr-2 py-2 w-full items-start text-left',
     badge: [
       'inline-flex items-center rounded-md border px-2 py-1 text-xs font-semibold transition-colors',
-      'bg-transparent border-border text-foreground hover:bg-accent hover:text-accent-foreground',
+      'bg-transparent border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground',
       'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow-xs border-0',
     ],
     badgeRemoveIcon: 'ml-1 size-3.5 text-secondary-foreground/70 hover:text-accent-foreground',

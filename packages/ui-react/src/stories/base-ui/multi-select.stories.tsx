@@ -5,7 +5,7 @@ import { MultiSelect } from '#/components'
 const meta: Meta<typeof MultiSelect> = {
   component: MultiSelect,
   title: 'Base Components/MultiSelect',
-  tags: ['status:wip'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },
