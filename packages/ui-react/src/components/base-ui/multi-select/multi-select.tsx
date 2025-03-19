@@ -75,7 +75,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
           event.preventDefault()
           if (filteredOptions.length > 0) {
             setHighlightedIndex((prevIndex) =>
-              prevIndex < filteredOptions.length - 1 ? prevIndex + 1 : 0
+              prevIndex < filteredOptions.length - 1 + (showSelectAll ? 1 : 0) ? prevIndex + 1 : 0
             )
           }
           break
@@ -84,18 +84,21 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
           event.preventDefault()
           if (filteredOptions.length > 0) {
             setHighlightedIndex((prevIndex) =>
-              prevIndex > 0 ? prevIndex - 1 : filteredOptions.length - 1
+              prevIndex > 0 ? prevIndex - 1 : filteredOptions.length - 1 + (showSelectAll ? 1 : 0)
             )
           }
           break
 
         case 'Enter':
           event.preventDefault()
-          if (highlightedIndex === 0) {
-            toggleAll()
-          }
-          if (highlightedIndex >= 0 && highlightedIndex < filteredOptions.length) {
-            toggleOption(filteredOptions[highlightedIndex - 1].value)
+          if (highlightedIndex === 0 && showSelectAll) {
+            toggleAll(/* Handle "Select All" option */)
+          } else if (highlightedIndex >= 0) {
+            // Adjust index to account for "Select All" option
+            const optionIndex = showSelectAll ? highlightedIndex - 1 : highlightedIndex
+            if (optionIndex >= 0 && optionIndex < filteredOptions.length) {
+              toggleOption(filteredOptions[optionIndex].value)
+            }
           }
           break
 
