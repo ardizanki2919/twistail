@@ -79,7 +79,7 @@ const Key = ({ keyName }: { keyName: KbdKey }) => {
 }
 
 const Kbd = React.forwardRef<React.ComponentRef<'kbd'>, KbdProps>(
-  ({ children, className, keys, size = 'xs', ...otherProps }, ref) => {
+  ({ children, className, keys, size = 'xs', ...otherProps }, forwardedRef) => {
     const renderKeys = () => {
       if (!keys) return null
 
@@ -93,7 +93,7 @@ const Kbd = React.forwardRef<React.ComponentRef<'kbd'>, KbdProps>(
     if ((!keys || keys.length === 0) && !children) return null
 
     return (
-      <kbd ref={ref} className={clx(kbdStyles({ size }), className)} {...otherProps}>
+      <kbd ref={forwardedRef} className={clx(kbdStyles({ size }), className)} {...otherProps}>
         {renderKeys()}
         {children ? <span>{children}</span> : null}
       </kbd>

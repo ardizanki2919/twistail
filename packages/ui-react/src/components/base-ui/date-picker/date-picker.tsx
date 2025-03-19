@@ -83,11 +83,11 @@ type TimeInputProps = Omit<
 >
 
 const TimeInput = React.forwardRef<HTMLDivElement, TimeInputProps>(
-  ({ hourCycle, ...props }: TimeInputProps, ref) => {
+  ({ hourCycle, ...props }: TimeInputProps, forwardedRef) => {
     const innerRef = React.useRef<HTMLDivElement>(null)
 
     React.useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(
-      ref,
+      forwardedRef,
       () => innerRef?.current
     )
 
