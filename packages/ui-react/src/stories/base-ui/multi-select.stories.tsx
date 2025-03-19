@@ -10,11 +10,6 @@ const meta: Meta<typeof MultiSelect> = {
     layout: 'padded',
   },
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'inverted'],
-      description: 'Style variant of the multi-select component',
-    },
     maxCount: {
       control: { type: 'number', min: 1, max: 10 },
       description: 'Maximum number of items to display before showing a count',
@@ -89,7 +84,6 @@ export const Default: Story = {
   args: {
     options: programmingLanguages,
     placeholder: 'Select programming languages',
-    variant: 'default',
     maxCount: 3,
     modalPopover: false,
   },
@@ -98,7 +92,26 @@ export const Default: Story = {
       console.info('Selected values:', value)
     }
     return (
-      <div className="w-[350px]">
+      <div className="w-[420px]">
+        <MultiSelect {...args} onValueChange={handleChange} />
+      </div>
+    )
+  },
+}
+
+export const WithValue: Story = {
+  args: {
+    options: programmingLanguages,
+    placeholder: 'Select programming languages',
+    maxCount: 4,
+    modalPopover: false,
+  },
+  render: (args) => {
+    const handleChange = (value: string[]) => {
+      console.info('Selected values:', value)
+    }
+    return (
+      <div className="w-[420px]">
         <MultiSelect
           {...args}
           onValueChange={handleChange}
@@ -109,11 +122,10 @@ export const Default: Story = {
   },
 }
 
-export const InvertedVariant: Story = {
+export const WithIcon: Story = {
   args: {
     options: cloudProviders,
     placeholder: 'Select cloud providers',
-    variant: 'inverted',
     maxCount: 2,
     modalPopover: false,
   },
@@ -122,7 +134,7 @@ export const InvertedVariant: Story = {
       console.info('Selected values:', value)
     }
     return (
-      <div className="w-[350px]">
+      <div className="w-[420px]">
         <MultiSelect {...args} onValueChange={handleChange} defaultValue={['aws', 'gcp']} />
       </div>
     )
@@ -133,7 +145,6 @@ export const ManyOptions: Story = {
   args: {
     options: [...programmingLanguages, ...cloudProviders],
     placeholder: 'Select multiple options',
-    variant: 'default',
     maxCount: 3,
     modalPopover: false,
   },
@@ -142,7 +153,7 @@ export const ManyOptions: Story = {
       console.info('Selected values:', value)
     }
     return (
-      <div className="w-[350px]">
+      <div className="w-[420px]">
         <p className="mb-2 text-muted-foreground text-sm">
           Demonstrates handling of many options with search functionality
         </p>

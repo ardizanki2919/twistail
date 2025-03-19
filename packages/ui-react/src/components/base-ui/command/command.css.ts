@@ -23,7 +23,8 @@ const commandStyles = tv({
     separator: '-mx-1 my-1 h-px bg-border',
     item: [
       'relative flex cursor-pointer select-none items-center gap-1 rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors text-foreground',
-      "data-[disabled=true]:pointer-events-none data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:text-muted-foreground",
+      'data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:hover:bg-accent/80',
+      'data-[selected=true]:text-accent-foreground data-[disabled=true]:text-muted-foreground',
       'hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground',
       '[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-muted-foreground',
     ],

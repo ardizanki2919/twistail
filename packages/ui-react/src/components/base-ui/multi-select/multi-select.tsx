@@ -1,8 +1,6 @@
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { clx } from 'twistail-utils'
 import { Badge } from '#/components/base-ui/badge'
-import { Button } from '#/components/base-ui/button'
 import { Command, CommandEmpty, CommandGroup, CommandSeparator } from '#/components/base-ui/command'
 import { CommandInput, CommandItem, CommandList } from '#/components/base-ui/command'
 import { Divider } from '#/components/base-ui/divider'
@@ -31,7 +29,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
     {
       options,
       onValueChange,
-      variant,
+      hasError,
       defaultValue = [],
       placeholder = 'Select options',
       maxCount = 3,
@@ -44,7 +42,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
   ) => {
     const [selectedValues, setSelectedValues] = React.useState<string[]>(defaultValue)
     const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
-    const styles = multiSelectStyles({ variant })
+    const styles = multiSelectStyles({ hasError })
 
     const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter') {
@@ -93,18 +91,15 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
     return (
       <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen} modal={modalPopover}>
         <PopoverTrigger asChild>
-          <Button
+          <button
             ref={ref}
-            {...props}
             onClick={handleTogglePopover}
-            className={clx(
-              'flex h-auto min-h-10 w-full items-center justify-between rounded-md border bg-inherit p-1 hover:bg-inherit [&_svg]:pointer-events-auto',
-              className
-            )}
+            className={styles.trigger({ className })}
+            {...props}
           >
             {selectedValues.length > 0 ? (
-              <div className="flex w-full items-center justify-between">
-                <div className="flex flex-wrap items-center gap-1">
+              <div className={styles.triggerWrapper()}>
+                <div className={styles.badgeWrapper()}>
                   {selectedValues.slice(0, maxCount).map((value) => {
                     const option = options.find((o) => o.value === value)
                     const IconComponent = option?.icon
@@ -113,7 +108,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                         {IconComponent && <IconComponent className="mr-1 size-4" />}
                         {option?.label}
                         <Lucide.XCircle
-                          className="ml-1 size-4 cursor-pointer"
+                          className={styles.badgeRemoveIcon()}
                           onClick={(event) => {
                             event.stopPropagation()
                             toggleOption(value)
@@ -123,15 +118,10 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                     )
                   })}
                   {selectedValues.length > maxCount && (
-                    <Badge
-                      className={clx(
-                        'border-foreground/1 bg-transparent text-foreground hover:bg-transparent',
-                        multiSelectStyles({ variant })
-                      )}
-                    >
+                    <Badge className={styles.badge()}>
                       {`+ ${selectedValues.length - maxCount} more`}
                       <Lucide.XCircle
-                        className="ml-1 size-4 cursor-pointer"
+                        className={styles.badgeRemoveIcon()}
                         onClick={(event) => {
                           event.stopPropagation()
                           clearExtraOptions()
@@ -140,90 +130,94 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                     </Badge>
                   )}
                 </div>
-                <div className="flex items-center justify-between">
+                <div className={styles.triggerActions()}>
                   <Lucide.XIcon
-                    className="mx-2 h-4 cursor-pointer text-muted-foreground"
+                    className={styles.clearIcon()}
                     onClick={(event) => {
                       event.stopPropagation()
                       handleClear()
                     }}
                   />
-                  <Divider orientation="vertical" className="flex h-full min-h-6" />
-                  <Lucide.ChevronDown className="mx-2 h-4 cursor-pointer text-muted-foreground" />
+                  <Divider orientation="vertical" className={styles.verticalDivider()} />
+                  <Lucide.ChevronDown className={styles.chevronIcon()} />
                 </div>
               </div>
             ) : (
-              <div className="mx-auto flex w-full items-center justify-between">
-                <span className="mx-3 text-muted-foreground text-sm">{placeholder}</span>
-                <Lucide.ChevronDown className="mx-2 h-4 cursor-pointer text-muted-foreground" />
+              <div className={styles.placeholderWrapper()}>
+                <span className={styles.placeholderText()}>{placeholder}</span>
+                <Lucide.ChevronDown className={styles.chevronIcon()} />
               </div>
             )}
-          </Button>
+          </button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-auto p-0"
           align="start"
+          className={styles.content()}
           onEscapeKeyDown={() => setIsPopoverOpen(false)}
         >
           <Command>
-            <CommandInput placeholder="Search..." onKeyDown={handleInputKeyDown} />
+            <CommandInput
+              placeholder="Search..."
+              onKeyDown={handleInputKeyDown}
+              className={styles.commandInput()}
+            />
             <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
-              <CommandGroup>
-                <CommandItem key="all" onSelect={toggleAll} className="cursor-pointer">
-                  <div
-                    className={clx(
-                      'mr-2 flex size-4 items-center justify-center rounded-sm border border-border',
-                      selectedValues.length === options.length
-                        ? 'bg-primary text-primary-foreground'
-                        : 'opacity-50 [&_svg]:invisible'
+              <CommandEmpty className={styles.commandEmpty()}>No results found.</CommandEmpty>
+              <CommandGroup className={styles.commandGroup()}>
+                <div className={styles.checkboxItem()} onClick={toggleAll}>
+                  <span className={styles.checkboxItemIndicator()}>
+                    {selectedValues.length === options.length ? (
+                      <Lucide.Check
+                        className={styles.checkboxItemIndicatorIcon()}
+                        aria-hidden="true"
+                      />
+                    ) : (
+                      <span className={styles.checkboxItemEmptyIndicator()} />
                     )}
-                  >
-                    <Lucide.CheckIcon className="size-4" />
-                  </div>
+                  </span>
                   <span>Select All</span>
-                </CommandItem>
+                </div>
+
                 {options.map((option) => {
                   const isSelected = selectedValues.includes(option.value)
+                  const IconComponent = option.icon
+
                   return (
-                    <CommandItem
+                    <div
                       key={option.value}
-                      onSelect={() => toggleOption(option.value)}
-                      className="cursor-pointer"
+                      className={styles.checkboxItem()}
+                      onClick={() => toggleOption(option.value)}
                     >
-                      <div
-                        className={clx(
-                          'mr-2 flex size-4 items-center justify-center rounded-sm border border-border',
-                          isSelected
-                            ? 'bg-primary text-primary-foreground'
-                            : 'opacity-50 [&_svg]:invisible'
+                      <span className={styles.checkboxItemIndicator()}>
+                        {isSelected ? (
+                          <Lucide.Check
+                            className={styles.checkboxItemIndicatorIcon()}
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <div className={styles.checkboxItemEmptyIndicator()} />
                         )}
-                      >
-                        <Lucide.CheckIcon className="size-4" />
-                      </div>
-                      {option.icon && <option.icon className="mr-1 size-4 text-muted-foreground" />}
-                      <span>{option.label}</span>
-                    </CommandItem>
+                      </span>
+                      {IconComponent && <IconComponent className={styles.icon()} />}
+                      <span className="truncate">{option.label}</span>
+                    </div>
                   )
                 })}
               </CommandGroup>
-              <CommandSeparator />
+              <CommandSeparator className={styles.commandSeparator()} />
               <CommandGroup>
-                <div className="flex items-center justify-between">
+                <div className={styles.actionButtonsWrapper()}>
                   {selectedValues.length > 0 && (
                     <>
-                      <CommandItem
-                        onSelect={handleClear}
-                        className="flex-1 cursor-pointer justify-center"
-                      >
+                      <CommandItem onSelect={handleClear} className={styles.actionItem()}>
                         Clear
                       </CommandItem>
-                      <Divider orientation="vertical" className="flex h-full min-h-6" />
+                      <Divider orientation="vertical" className={styles.verticalDivider()} />
                     </>
                   )}
                   <CommandItem
                     onSelect={() => setIsPopoverOpen(false)}
-                    className="max-w-full flex-1 cursor-pointer justify-center"
+                    className={styles.actionItem()}
                   >
                     Close
                   </CommandItem>
