@@ -39,7 +39,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
       className,
       ...props
     },
-    ref
+    forwardedRef
   ) => {
     const [selectedValues, setSelectedValues] = React.useState<string[]>(defaultValue)
     const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
@@ -162,7 +162,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
       <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen} modal={modalPopover}>
         <PopoverTrigger asChild>
           <button
-            ref={ref}
+            ref={forwardedRef}
             onClick={handleTogglePopover}
             className={styles.trigger({ className })}
             {...props}

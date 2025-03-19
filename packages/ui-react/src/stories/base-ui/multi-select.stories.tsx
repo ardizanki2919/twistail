@@ -7,7 +7,7 @@ const meta: Meta<typeof MultiSelect> = {
   title: 'Base Components/MultiSelect',
   tags: ['autodocs', 'status:done'],
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   argTypes: {
     maxCount: {
@@ -255,7 +255,11 @@ export const ManyOptions: Story = {
         <p className="mb-2 text-muted-foreground text-sm">
           Demonstrates handling of many options with search functionality
         </p>
-        <MultiSelect {...args} onValueChange={handleChange} defaultValue={['javascript', 'aws']} />
+        <MultiSelect
+          {...args}
+          onValueChange={handleChange}
+          defaultValue={['javascript', 'typescript']}
+        />
       </div>
     )
   },

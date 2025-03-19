@@ -11,12 +11,15 @@ const InputPinContext = React.createContext<InputPinContextValue>({
 })
 
 const InputPin = React.forwardRef<React.ComponentRef<typeof OTPInput>, InputPinProps>(
-  ({ className, inputSize = 'md', hasError = false, containerClassName, ...props }, ref) => {
+  (
+    { className, inputSize = 'md', hasError = false, containerClassName, ...props },
+    forwardedRef
+  ) => {
     const styles = inputPinStyles({ inputSize, hasError })
     return (
       <InputPinContext.Provider value={{ inputSize, hasError }}>
         <OTPInput
-          ref={ref}
+          ref={forwardedRef}
           containerClassName={styles.container({ className: containerClassName })}
           className={styles.input({ className })}
           {...props}
@@ -29,21 +32,21 @@ const InputPin = React.forwardRef<React.ComponentRef<typeof OTPInput>, InputPinP
 const InputPinGroup = React.forwardRef<
   React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const styles = inputPinStyles()
-  return <div ref={ref} className={styles.group({ className })} {...props} />
+  return <div ref={forwardedRef} className={styles.group({ className })} {...props} />
 })
 
 const InputPinSlot = React.forwardRef<
   React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'> & { index: number }
->(({ index, className, ...props }, ref) => {
+>(({ index, className, ...props }, forwardedRef) => {
   const inputOTPContext = React.useContext(OTPInputContext)
   const { inputSize, hasError } = React.useContext(InputPinContext)
   const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
   const styles = inputPinStyles({ isActive, inputSize, hasError })
   return (
-    <div ref={ref} className={styles.slot({ className })} {...props}>
+    <div ref={forwardedRef} className={styles.slot({ className })} {...props}>
       {char}
       {hasFakeCaret && (
         <div className={styles.slotCaretContainer()}>
@@ -59,11 +62,11 @@ interface InputPinSeparatorProps extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 const InputPinSeparator = React.forwardRef<React.ComponentRef<'div'>, InputPinSeparatorProps>(
-  ({ className, innerClassName, ...props }, ref) => {
+  ({ className, innerClassName, ...props }, forwardedRef) => {
     const { inputSize } = React.useContext(InputPinContext)
     const styles = inputPinStyles({ inputSize })
     return (
-      <div ref={ref} className={styles.separator({ className })} {...props}>
+      <div ref={forwardedRef} className={styles.separator({ className })} {...props}>
         <div className={styles.separatorInner({ className: innerClassName })} />
       </div>
     )
