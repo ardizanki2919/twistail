@@ -15,15 +15,15 @@ const navigationMenuStyles = tv({
       'ml-1 size-3 shrink-0 transition duration-200 group-data-[state=open]:rotate-180',
     ],
     content: [
-      'z-50 min-w-[8rem] overflow-hidden rounded-md border-none absolute top-0 left-0 w-full md:w-auto',
-      'bg-popover p-1 text-popover-foreground shadow-xs',
+      'z-50 min-w-[8rem] overflow-hidden rounded-md border-none absolute top-0 left-0',
+      'bg-popover p-1 text-popover-foreground shadow-xs origin-top-left w-full md:w-auto',
       'data-[state=closed]:animate-hide',
       'data-[motion=from-start]:animate-navmenu-enter-from-left',
       'data-[motion=from-end]:animate-navmenu-enter-from-right',
       'data-[motion=to-start]:animate-navmenu-exit-to-left',
       'data-[motion=to-end]:animate-navmenu-exit-to-right',
     ],
-    viewportWrapper: 'absolute top-full left-0 flex justify-center',
+    viewportWrapper: 'absolute top-full flex justify-start',
     viewport: [
       'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-top-center',
       'overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-xs',

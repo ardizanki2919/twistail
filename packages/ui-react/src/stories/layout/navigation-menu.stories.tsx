@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { clx } from 'twistail-utils'
 import {
@@ -102,52 +103,348 @@ const Logo = ({ className }: { className?: string }) => (
 
 export const Default: Story = {
   render: () => (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[580px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
-                  <Logo className="h-4 w-fit" />
-                  <div className="mt-4 mb-2 font-medium text-lg">Twistail</div>
-                  <p className="text-muted-foreground text-sm leading-tight">
-                    Modular and extensible copy-paste React UI components powered by Radix UI and
-                    Tailwind CSS.
-                  </p>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="#" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="#" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="#" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem key={component.title} title={component.title} href={component.href}>
-                  {component.description}
+    <div className="mx-auto max-w-5xl rounded-lg border border-border bg-white p-1.5">
+      <NavigationMenu className="mx-auto">
+        <NavigationMenuList className="gap-2">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[580px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                  <NavigationMenuLink className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
+                    <Logo className="h-4 w-fit" />
+                    <div className="mt-4 mb-2 font-medium text-lg">Twistail</div>
+                    <p className="text-muted-foreground text-sm leading-tight">
+                      Modular and extensible copy-paste React UI components powered by Radix UI and
+                      Tailwind CSS.
+                    </p>
+                  </NavigationMenuLink>
+                </li>
+                <ListItem href="#" title="Introduction">
+                  Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuStyles().trigger()}>
-            Documentation
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+                <ListItem href="#" title="Installation">
+                  How to install dependencies and structure your app.
+                </ListItem>
+                <ListItem href="#" title="Typography">
+                  Styles for headings, paragraphs, lists...etc
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {components.map((component) => (
+                  <ListItem key={component.title} title={component.title} href={component.href}>
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink className={navigationMenuStyles().trigger()}>
+              Documentation
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
+  ),
+}
+
+export const MegaMenu: Story = {
+  render: () => (
+    <div className="mx-auto max-w-5xl justify-center rounded-lg border border-border bg-white p-1.5">
+      <NavigationMenu className="mx-auto">
+        <NavigationMenuList className="w-full justify-between">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="gap-1">
+              <Lucide.Layers className="h-4 w-4" />
+              Products
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="w-[850px] rounded-xl bg-white p-6">
+                <div className="grid grid-cols-3 gap-8">
+                  <div>
+                    <h3 className="mb-3 flex items-center gap-2 font-medium text-indigo-700 text-lg">
+                      <Lucide.Code2 className="h-5 w-5" />
+                      Development Tools
+                    </h3>
+                    <ul className="space-y-3">
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-indigo-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-50 transition-colors group-hover:bg-indigo-100">
+                            <Lucide.Blocks className="h-4 w-4 text-indigo-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Component Library</span>
+                            <p className="text-gray-500 text-xs">Pre-built UI components</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-indigo-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-50 transition-colors group-hover:bg-indigo-100">
+                            <Lucide.Palette className="h-4 w-4 text-indigo-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Design System</span>
+                            <p className="text-gray-500 text-xs">Consistent design patterns</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-indigo-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-50 transition-colors group-hover:bg-indigo-100">
+                            <Lucide.Wand2 className="h-4 w-4 text-indigo-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Theme Builder</span>
+                            <p className="text-gray-500 text-xs">Customize your themes</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-3 flex items-center gap-2 font-medium text-emerald-700 text-lg">
+                      <Lucide.BookOpen className="h-5 w-5" />
+                      Resources
+                    </h3>
+                    <ul className="space-y-3">
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-emerald-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-50 transition-colors group-hover:bg-emerald-100">
+                            <Lucide.FileText className="h-4 w-4 text-emerald-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Documentation</span>
+                            <p className="text-gray-500 text-xs">Guides and references</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-emerald-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-50 transition-colors group-hover:bg-emerald-100">
+                            <Lucide.GraduationCap className="h-4 w-4 text-emerald-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Tutorials</span>
+                            <p className="text-gray-500 text-xs">Step-by-step guides</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 text-gray-700 transition-colors hover:text-emerald-600"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-50 transition-colors group-hover:bg-emerald-100">
+                            <Lucide.Youtube className="h-4 w-4 text-emerald-600" />
+                          </span>
+                          <div>
+                            <span className="font-medium text-sm">Video Courses</span>
+                            <p className="text-gray-500 text-xs">Visual learning content</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg bg-gradient-to-br from-indigo-50 to-purple-50 p-5">
+                    <div className="mb-4 flex items-start justify-between">
+                      <h4 className="font-medium text-indigo-900 text-lg">New Release</h4>
+                      <span className="rounded-full bg-indigo-100 px-2 py-1 font-medium text-indigo-800 text-xs">
+                        v2.0
+                      </span>
+                    </div>
+                    <div className="mb-4">
+                      <Lucide.Sparkles className="mb-2 h-12 w-12 text-indigo-500" />
+                      <h5 className="mb-1 font-medium">Twistail Pro</h5>
+                      <p className="mb-3 text-gray-600 text-sm">
+                        Our premium component library with advanced features and priority support.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href="#"
+                        className="inline-flex items-center gap-1 rounded-md bg-indigo-600 px-3 py-1.5 font-medium text-white text-xs transition-colors hover:bg-indigo-700"
+                      >
+                        <Lucide.ExternalLink className="h-3 w-3" />
+                        Explore Pro
+                      </a>
+                      <a
+                        href="#"
+                        className="inline-flex items-center gap-1 font-medium text-indigo-600 text-xs transition-colors hover:text-indigo-800"
+                      >
+                        Learn more
+                        <Lucide.ArrowRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 border-gray-100 border-t pt-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <Lucide.HelpCircle className="h-4 w-4" />
+                      <span>
+                        Need help? Check our{' '}
+                        <a href="#" className="text-indigo-600 hover:underline">
+                          support page
+                        </a>
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <a href="#" className="text-gray-400 transition-colors hover:text-gray-600">
+                        <Lucide.Github className="h-5 w-5" />
+                      </a>
+                      <a href="#" className="text-gray-400 transition-colors hover:text-gray-600">
+                        <Lucide.Twitter className="h-5 w-5" />
+                      </a>
+                      <a href="#" className="text-gray-400 transition-colors hover:text-gray-600">
+                        <Lucide.Linkedin className="h-5 w-5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="gap-1">
+              <Lucide.Building2 className="h-4 w-4" />
+              Solutions
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="w-[600px] rounded-xl bg-white p-6">
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="mb-3 flex items-center gap-2 font-medium text-amber-700 text-lg">
+                      <Lucide.Briefcase className="h-5 w-5" />
+                      For Business
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-amber-50 hover:text-amber-600"
+                        >
+                          <Lucide.BarChart3 className="h-4 w-4 text-amber-600" />
+                          <span className="text-sm">Analytics Platform</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-amber-50 hover:text-amber-600"
+                        >
+                          <Lucide.ShoppingCart className="h-4 w-4 text-amber-600" />
+                          <span className="text-sm">E-commerce Solutions</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-amber-50 hover:text-amber-600"
+                        >
+                          <Lucide.Users className="h-4 w-4 text-amber-600" />
+                          <span className="text-sm">Team Collaboration</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-3 flex items-center gap-2 font-medium text-lg text-rose-700">
+                      <Lucide.Lightbulb className="h-5 w-5" />
+                      By Industry
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-rose-50 hover:text-rose-600"
+                        >
+                          <Lucide.HeartPulse className="h-4 w-4 text-rose-600" />
+                          <span className="text-sm">Healthcare</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-rose-50 hover:text-rose-600"
+                        >
+                          <Lucide.GraduationCap className="h-4 w-4 text-rose-600" />
+                          <span className="text-sm">Education</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="group flex items-center gap-3 rounded-md p-2 text-gray-700 transition-colors hover:bg-rose-50 hover:text-rose-600"
+                        >
+                          <Lucide.Building className="h-4 w-4 text-rose-600" />
+                          <span className="text-sm">Real Estate</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="gap-1">
+              <Lucide.BookOpen className="h-4 w-4" />
+              Resources
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4">
+                <ListItem href="#" title="Documentation" className="hover:bg-blue-50">
+                  <div className="flex items-center gap-2">
+                    <Lucide.FileText className="h-4 w-4 text-blue-500" />
+                    <span>Comprehensive guides and API references</span>
+                  </div>
+                </ListItem>
+                <ListItem href="#" title="Blog" className="hover:bg-green-50">
+                  <div className="flex items-center gap-2">
+                    <Lucide.BookOpen className="h-4 w-4 text-green-500" />
+                    <span>Latest news, tips, and best practices</span>
+                  </div>
+                </ListItem>
+                <ListItem href="#" title="Community" className="hover:bg-purple-50">
+                  <div className="flex items-center gap-2">
+                    <Lucide.Users className="h-4 w-4 text-purple-500" />
+                    <span>Join our growing community of developers</span>
+                  </div>
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink className={clx(navigationMenuStyles().trigger(), 'gap-1')}>
+              <Lucide.LifeBuoy className="h-4 w-4" />
+              Support
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   ),
 }
