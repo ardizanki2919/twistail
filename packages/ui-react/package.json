@@ -145,11 +145,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "keywords": [
-        "react",
-        "ui",
-        "tailwindcss",
-        "radix-ui",
-        "shadcn"
-    ]
+    "keywords": ["react", "ui", "tailwindcss", "radix-ui", "shadcn"]
 }
