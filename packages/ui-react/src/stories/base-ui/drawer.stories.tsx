@@ -33,7 +33,9 @@ export const Default: Story = {
                 more information, please contact us.
               </DrawerDescription>
             </DrawerHeader>
-            <DrawerBody>This is they body of the drawer, content goes here.</DrawerBody>
+            <DrawerBody className="py-4">
+              This is they body of the drawer, content goes here.
+            </DrawerBody>
             <DrawerFooter className="mt-6">
               <DrawerClose asChild>
                 <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="secondary">
@@ -70,7 +72,9 @@ export const Positions: Story = {
                   more information, please contact us.
                 </DrawerDescription>
               </DrawerHeader>
-              <DrawerBody>This is they body of the drawer, content goes here.</DrawerBody>
+              <DrawerBody className="py-4">
+                This is they body of the drawer, content goes here.
+              </DrawerBody>
               <DrawerFooter className="mt-6">
                 <DrawerClose asChild>
                   <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="secondary">
@@ -106,7 +110,9 @@ export const Controlled: Story = {
                 more information, please contact us.
               </DrawerDescription>
             </DrawerHeader>
-            <DrawerBody>This is they body of the drawer, content goes here.</DrawerBody>
+            <DrawerBody className="py-4">
+              This is they body of the drawer, content goes here.
+            </DrawerBody>
             <DrawerFooter className="mt-6">
               <DrawerClose asChild>
                 <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="secondary">

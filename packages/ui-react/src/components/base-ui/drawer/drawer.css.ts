@@ -13,12 +13,17 @@ const drawerStyles = tv({
       'fixed z-50 mx-auto flex flex-1 flex-col overflow-y-auto border p-4 shadow-md sm:p-6 bg-card text-card-foreground border-border',
       'outline-0 outline-primary outline-offset-2 focus:outline-hidden focus-visible:outline-2',
     ],
-    headerRoot: ['flex items-start justify-between gap-x-4 border-b pb-4 border-border'],
-    header: 'mt-1 flex flex-col gap-y-1',
-    headerCloseButton: 'aspect-square p-1 hover:bg-accent hover:text-accent-foreground',
-    headerCloseIcon: 'size-5',
+    header: [
+      'flex flex-col space-y-1 text-center sm:text-left gap-x-4 border-b border-border pb-4 mt-1',
+    ],
+    closeButton: [
+      'aspect-square p-1 hover:bg-accent hover:text-accent-foreground absolute right-4 top-4 rounded-md',
+      'opacity-70 ring-offset-background transition-opacity hover:opacity-100 data-[state=open]:bg-secondary',
+      'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none',
+    ],
+    closeIcon: 'size-5',
     title: 'font-semibold text-base text-foreground',
-    body: 'flex-1 py-4',
+    body: 'flex-1 p-0',
     description: 'text-muted-foreground',
     footer: [
       'flex flex-col-reverse border-t pt-4 sm:pt-5 sm:flex-row sm:justify-end sm:space-x-2 border-border',
