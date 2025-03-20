@@ -1,7 +1,7 @@
 import * as Lucide from 'lucide-react'
 import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { type NavigationMenuStyles, navigationMenuStyles } from './navigation-menu.css'
+import { navigationMenuStyles } from './navigation-menu.css'
 
 const NavigationMenu = React.forwardRef<
   React.ComponentRef<typeof NavigationMenuPrimitive.Root>,
@@ -47,11 +47,11 @@ const NavigationMenuTrigger = React.forwardRef<
       className={styles.trigger({ className })}
       {...props}
     >
-      {children}{' '}
+      {children}
       <Lucide.ChevronDown
         className={styles.triggerIndicator()}
         aria-hidden="true"
-        strokeWidth={2.5}
+        strokeWidth={2.4}
       />
     </NavigationMenuPrimitive.Trigger>
   )

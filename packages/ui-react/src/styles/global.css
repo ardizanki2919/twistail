@@ -374,6 +374,84 @@
         }
     }
 
+    /* ------------------- Animation for navigation menu -------------------  */
+    --animate-navmenu-enter-from-left: navmenu-enter-from-left 0.20s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-navmenu-enter-from-right: navmenu-enter-from-right 0.20s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-navmenu-exit-to-left: navmenu-exit-to-left 0.15s ease-out;
+    --animate-navmenu-exit-to-right: navmenu-exit-to-right 0.15s ease-out;
+    --animate-nav-viewport-open: nav-viewport-open 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-nav-viewport-close: nav-viewport-close 0.1s ease-out;
+
+    @keyframes navmenu-enter-from-left {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes navmenu-enter-from-right {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes navmenu-exit-to-left {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+    }
+
+    @keyframes navmenu-exit-to-right {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+    }
+
+    @keyframes nav-viewport-open {
+        from {
+            opacity: 0;
+            height: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            height: var(--radix-navigation-menu-viewport-height);
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes nav-viewport-close {
+        from {
+            opacity: 1;
+            height: var(--radix-navigation-menu-viewport-height);
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            height: 0;
+            transform: translateY(-8px);
+        }
+    }
+
     /* ------------------- Animation for input-pin -------------------  */
     --animate-caret-blink: caret-blink 1.2s ease-out infinite;
 
