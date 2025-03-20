@@ -360,35 +360,6 @@ export const CompleteExample: Story = {
             <SidebarSeparator />
 
             <SidebarGroup>
-              <SidebarGroupLabel>Resources</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild>
-                      <a href="#docs">
-                        <Lucide.FileText className="size-4" />
-                        <span>Documentation</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-
-                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild>
-                      <a href="#components">
-                        <Lucide.Component className="size-4" />
-                        <span>Components</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-
-                  <SidebarMenuSkeleton />
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-
-            <SidebarSeparator />
-
-            <SidebarGroup>
               <SidebarGroupLabel>Teams</SidebarGroupLabel>
               <SidebarGroupAction>
                 <Lucide.UserPlus /> <span className="sr-only">Add Team</span>
@@ -413,6 +384,35 @@ export const CompleteExample: Story = {
                     <SidebarMenuButton>
                       <Lucide.Users className="size-4" />
                       <span>Marketing</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuSkeleton />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            <SidebarSeparator />
+
+            <SidebarGroup>
+              <SidebarGroupLabel>Resources</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton size="sm" asChild>
+                      <a href="#docs">
+                        <Lucide.FileText className="size-4" />
+                        <span>Documentation</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton size="sm" asChild>
+                      <a href="#components">
+                        <Lucide.Component className="size-4" />
+                        <span>Components</span>
+                      </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 </SidebarMenu>

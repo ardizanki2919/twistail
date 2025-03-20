@@ -2,20 +2,19 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const sidebarMenuButtonStyles = tv({
   base: [
-    'flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm shadow-xs outline-none transition-all duration-150 ease-in-out',
+    'flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none transition-all duration-150 ease-in-out',
     'peer/menu-button hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring',
-    'active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-disabled:pointer-events-none',
+    'active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50',
     'group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8',
     'data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground',
     'data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground',
-    '[&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
+    '[&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 aria-disabled:pointer-events-none',
   ],
   variants: {
     variant: {
       default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
       outline: [
-        'bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent',
-        'hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+        'bg-sidebar hover:bg-sidebar-accent border border-sidebar-border hover:text-sidebar-accent-foreground',
       ],
     },
     size: {
