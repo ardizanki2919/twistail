@@ -1,4 +1,7 @@
-/* @ref: https://storybook.js.org/docs/configure/user-interface/theming/ */
+/**
+ * @ref: https://storybook.js.org/docs/configure/user-interface/theming
+ * @ref: https://storybook.js.org/docs/configure/user-interface/features-and-behavior
+ */
 
 import { addons } from '@storybook/manager-api'
 import * as React from 'react'
@@ -11,11 +14,18 @@ addons.setConfig({
   showToolbar: true,
   panelPosition: 'bottom',
   initialActive: 'canvas',
+  bottomPanelHeight: 340,
+  navSize: 320,
   toolbar: {
-    copy: { hidden: true },
+    title: { hidden: false },
+    zoom: { hidden: false },
+    eject: { hidden: false },
+    copy: { hidden: false },
+    fullscreen: { hidden: false },
   },
   sidebar: {
-    showRoots: false,
+    showRoots: true,
+    collapsedRoots: ['layout-components', 'visualizations'],
     filters: {
       patterns: (item) => {
         return !item.tags?.includes('hidden')

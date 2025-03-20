@@ -6,7 +6,7 @@ import { Button, DateRange, DateRangePicker } from '#/components'
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
   title: 'Base Components/DateRangePicker',
-  tags: ['status:experimental'],
+  tags: ['status:experimental', 'hidden'],
   render: (args) => {
     return (
       <div className="w-60">

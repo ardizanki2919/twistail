@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
+    '@storybook/addon-storysource',
   ],
   managerHead: (head, { configType }) => {
     /* @see: https://github.com/storybookjs/storybook/issues/21627#issuecomment-1645573706 */

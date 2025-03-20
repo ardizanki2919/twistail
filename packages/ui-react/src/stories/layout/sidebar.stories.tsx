@@ -123,6 +123,9 @@ export const Default: Story = {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Lucide.Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

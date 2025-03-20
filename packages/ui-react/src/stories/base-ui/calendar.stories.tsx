@@ -39,7 +39,7 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Base Components/Calendar',
-  tags: ['status:experimental'],
+  tags: ['status:experimental', 'hidden'],
   render: Demo,
 }
 
