@@ -9,8 +9,8 @@ import * as React from 'react'
 import type { Matcher } from 'react-day-picker'
 import { VariantProps, tv } from 'tailwind-variants'
 import { clx } from 'twistail-utils'
-import { Button } from '#/components/base-ui/button'
-import { Calendar as CalendarPrimitive } from '#/components/base-ui/calendar'
+import { Button } from '#/components/button'
+import { Calendar as CalendarPrimitive } from '#/components/calendar'
 
 //#region TimeInput
 // ============================================================================

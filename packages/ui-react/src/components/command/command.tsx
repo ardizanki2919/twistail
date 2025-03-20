@@ -1,7 +1,7 @@
 import { Command as CommandPrimitive } from 'cmdk'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Dialog, DialogContent, type DialogProps } from '#/components/base-ui/dialog'
+import { Dialog, DialogContent, type DialogProps } from '#/components/dialog'
 import { commandStyles } from './command.css'
 
 const Command = React.forwardRef<

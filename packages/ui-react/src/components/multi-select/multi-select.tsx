@@ -1,11 +1,11 @@
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Badge } from '#/components/base-ui/badge'
-import { Command, CommandEmpty, CommandGroup, CommandSeparator } from '#/components/base-ui/command'
-import { CommandInput, CommandItem, CommandList } from '#/components/base-ui/command'
-import { Divider } from '#/components/base-ui/divider'
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/base-ui/popover'
-import { ScrollArea } from '#/components/base-ui/scroll-area'
+import { Badge } from '#/components/badge'
+import { Command, CommandEmpty, CommandGroup, CommandSeparator } from '#/components/command'
+import { CommandInput, CommandItem, CommandList } from '#/components/command'
+import { Divider } from '#/components/divider'
+import { Popover, PopoverContent, PopoverTrigger } from '#/components/popover'
+import { ScrollArea } from '#/components/scroll-area'
 import { type MultiSelectStyles, multiSelectStyles } from './multi-select.css'
 
 interface MultiSelectProps

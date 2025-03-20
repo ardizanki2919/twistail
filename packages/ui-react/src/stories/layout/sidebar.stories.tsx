@@ -73,7 +73,7 @@ function LayoutWrapper({ children }: { children: React.ReactNode }) {
 const meta: Meta<typeof Sidebar> = {
   component: Sidebar,
   title: 'Layout Components/Sidebar',
-  tags: ['status:preview'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'fullscreen',
   },

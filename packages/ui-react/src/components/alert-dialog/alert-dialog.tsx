@@ -1,6 +1,6 @@
 import { AlertDialog as AlertDialogPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { type ButtonProps, buttonStyles } from '#/components/base-ui/button'
+import { type ButtonProps, buttonStyles } from '#/components/button'
 import { alertDialogStyles } from './alert-dialog.css'
 
 const AlertDialog = AlertDialogPrimitive.Root

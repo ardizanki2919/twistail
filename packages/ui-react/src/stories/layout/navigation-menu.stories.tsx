@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuStyles,
-} from '#/components/layout/navigation-menu'
+} from '#/components/navigation-menu'
 
 const meta: Meta<typeof NavigationMenu> = {
   component: NavigationMenu,
