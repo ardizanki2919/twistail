@@ -1,9 +1,9 @@
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Command, CommandEmpty, CommandGroup, CommandItem } from '#/components/base-ui/command'
-import { CommandInput, CommandList, CommandSeparator } from '#/components/base-ui/command'
-import { Popover, PopoverContent, PopoverTrigger } from '#/components/base-ui/popover'
-import { ScrollArea } from '#/components/base-ui/scroll-area'
+import { Command, CommandEmpty, CommandGroup, CommandItem } from '#/components/command'
+import { CommandInput, CommandList, CommandSeparator } from '#/components/command'
+import { Popover, PopoverContent, PopoverTrigger } from '#/components/popover'
+import { ScrollArea } from '#/components/scroll-area'
 import { type ComboboxStyles, comboboxStyles } from './combobox.css'
 
 interface ComboboxProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ComboboxStyles {

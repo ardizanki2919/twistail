@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import { useState } from 'react'
-import { Combobox } from '#/components/base-ui/combobox'
+import { Combobox } from '#/components/combobox'
 
 const frameworks = [
   { value: 'next.js', label: 'Next.js' },

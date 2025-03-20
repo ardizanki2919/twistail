@@ -1,6 +1,6 @@
 import { Slider as SliderPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/base-ui/tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/tooltip'
 import { sliderStyles } from './slider.css'
 
 interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {

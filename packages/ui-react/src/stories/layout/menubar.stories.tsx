@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Button } from '#/components/base-ui/button'
+import { Button } from '#/components/button'
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -16,7 +16,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from '#/components/layout/menubar'
+} from '#/components/menubar'
 
 const meta: Meta<typeof Menubar> = {
   component: Menubar,
