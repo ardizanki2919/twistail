@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button } from 'twistail-react/button'
 import { Card } from 'twistail-react/card'
+import { Text } from 'twistail-react/text'
 import PageShell from '#/layouts/page-shell'
 
 export default function Page() {
@@ -42,17 +43,19 @@ export default function Page() {
                 Count is {count}
               </Button>
 
-              <p className="mt-4 text-gray-300">
+              <Text className="mt-4">
                 Edit{' '}
                 <code className="rounded-sm bg-gray-700 px-2 py-1 text-sm">
                   src/pages/dashboard/page.tsx
                 </code>{' '}
                 and save to test HMR
-              </p>
+              </Text>
             </Card>
 
             <div className="space-y-2 text-gray-400">
-              <p>Click on the Vite and React logos to learn more</p>
+              <Text variant="muted" align="center" weight="medium">
+                Click on the Vite and React logos to learn more
+              </Text>
             </div>
           </div>
         </div>
