@@ -2,9 +2,9 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const sidebarMenuButtonStyles = tv({
   base: [
-    'flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding]',
-    'peer/menu-button hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 aria-disabled:pointer-events-none',
-    'active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50',
+    'flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm shadow-xs outline-none transition-all duration-150 ease-in-out',
+    'peer/menu-button hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring',
+    'active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-disabled:pointer-events-none',
     'group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8',
     'data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground',
     'data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground',
@@ -19,14 +19,14 @@ const sidebarMenuButtonStyles = tv({
       ],
     },
     size: {
-      sm: 'h-7 text-xs',
-      default: 'h-8 text-sm',
-      lg: 'group-data-[collapsible=icon]:!p-0 h-12 text-sm',
+      sm: 'h-8 px-2 text-xs',
+      md: 'h-9 px-3 text-sm',
+      lg: 'h-11 px-3 text-sm group-data-[collapsible=icon]:!p-0',
     },
   },
   defaultVariants: {
     variant: 'default',
-    size: 'default',
+    size: 'md',
   },
 })
 
@@ -51,8 +51,8 @@ const sidebarStyles = tv({
     ],
     rootContentInner: [
       'flex h-full w-full flex-col bg-sidebar',
-      'group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border',
-      'group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow',
+      'group-data-[variant=floating]:rounded-md group-data-[variant=floating]:border',
+      'group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-xs',
     ],
     trigger: 'size-7',
     rail: [
@@ -68,16 +68,18 @@ const sidebarStyles = tv({
     inset: [
       'relative flex w-full flex-1 flex-col bg-background',
       'md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:m-2',
-      'md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow',
+      'md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-md md:peer-data-[variant=inset]:shadow-xs',
     ],
     input: [
-      'h-8 w-full bg-background shadow-none focus-visible:ring-2 focus-visible:ring-sidebar-ring rounded-md',
+      'h-8 w-full bg-background border border-input rounded-md shadow-xs transition-all duration-150 ease-in-out',
+      'focus-visible:ring-2 focus-visible:ring-sidebar-ring focus-visible:border-sidebar-primary',
+      'placeholder-muted-foreground disabled:bg-muted disabled:text-muted-foreground',
     ],
     header: 'flex flex-col gap-2 p-2',
     footer: 'flex flex-col gap-2 p-2',
-    separator: 'mx-2 w-auto bg-sidebar-border',
+    separator: 'mx-3 w-auto bg-sidebar-border',
     content: [
-      'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
+      'flex min-h-0 flex-1 flex-col gap-1 overflow-auto p-0 group-data-[collapsible=icon]:overflow-hidden',
     ],
     group: 'relative flex w-full min-w-0 flex-col p-2',
     groupLabel: [
@@ -87,7 +89,7 @@ const sidebarStyles = tv({
       '[&>svg]:size-4 [&>svg]:shrink-0',
     ],
     groupAction: [
-      'absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none',
+      'absolute top-3.5 right-3 flex aspect-square w-5 debugå items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none',
       'ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2',
       // Increases the hit area of the button on mobile.
       'after:-inset-2 after:absolute after:md:hidden',
@@ -103,18 +105,18 @@ const sidebarStyles = tv({
       'focus-visible:ring-2 peer-hover/menu-button:text-sidebar-accent-foreground',
       // Increases the hit area of the button on mobile.
       'after:-inset-2 after:absolute after:md:hidden',
-      'peer-data-[size=sm]/menu-button:top-1',
-      'peer-data-[size=default]/menu-button:top-1.5',
-      'peer-data-[size=lg]/menu-button:top-2.5',
+      'peer-data-[size=sm]/menu-button:top-1.5',
+      'peer-data-[size=md]/menu-button:top-2',
+      'peer-data-[size=lg]/menu-button:top-3.5',
       'group-data-[collapsible=icon]:hidden',
       '[&>svg]:size-4 [&>svg]:shrink-0',
     ],
     menuBadge: [
-      'pointer-events-none absolute right-1 flex h-5 min-w-5 select-none items-center justify-center rounded-md px-1',
+      'pointer-events-none absolute right-1 flex h-5 min-w-5 select-none items-center justify-center rounded-md px-2',
       'font-medium text-sidebar-foreground text-xs tabular-nums peer-hover/menu-button:text-sidebar-accent-foreground',
       'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground',
-      'peer-data-[size=sm]/menu-button:top-1',
-      'peer-data-[size=default]/menu-button:top-1.5',
+      'peer-data-[size=sm]/menu-button:top-1.5',
+      'peer-data-[size=md]/menu-button:top-2',
       'peer-data-[size=lg]/menu-button:top-2.5',
       'group-data-[collapsible=icon]:hidden',
     ],
@@ -127,7 +129,7 @@ const sidebarStyles = tv({
     ],
     menuSubItem: [],
     menuSubButton: [
-      '-translate-x-px flex h-7 min-w-0 items-center gap-2 overflow-hidden rounded-md px-2 text-sidebar-foreground',
+      '-translate-x-px flex h-8 min-w-0 items-center gap-2 overflow-hidden rounded-md px-3 text-sidebar-foreground',
       'outline-none ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2',
       'active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50',
       'aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate',

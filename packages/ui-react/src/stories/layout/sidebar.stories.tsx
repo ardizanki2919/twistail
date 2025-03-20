@@ -24,7 +24,6 @@ import {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
-  useSidebar,
 } from '#/components'
 import {
   Breadcrumb,
@@ -35,6 +34,7 @@ import {
   BreadcrumbSeparator,
   Button,
   Divider,
+  ScrollArea,
 } from '#/components'
 
 function LayoutWrapper({ children }: { children: React.ReactNode }) {
@@ -73,7 +73,7 @@ function LayoutWrapper({ children }: { children: React.ReactNode }) {
 const meta: Meta<typeof Sidebar> = {
   component: Sidebar,
   title: 'Layout Components/Sidebar',
-  tags: ['status:wip'],
+  tags: ['status:preview'],
   parameters: {
     layout: 'fullscreen',
   },
@@ -177,7 +177,7 @@ export const CollapsibleIcon: Story = {
 export const WithSearch: Story = {
   render: () => (
     <Sidebar>
-      <SidebarHeader>
+      <SidebarHeader className="p-3 px-2">
         <SidebarInput placeholder="Search..." />
       </SidebarHeader>
       <SidebarContent>
@@ -187,7 +187,7 @@ export const WithSearch: Story = {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild size="md">
                     <a href={item.url}>
                       <item.icon className="size-4" />
                       <span>{item.title}</span>
@@ -206,7 +206,7 @@ export const WithSearch: Story = {
 
 export const WithFooter: Story = {
   render: () => (
-    <Sidebar>
+    <Sidebar variant="floating">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -235,4 +235,208 @@ export const WithFooter: Story = {
       <SidebarRail />
     </Sidebar>
   ),
+}
+
+export const WithSubmenu: Story = {
+  render: () => (
+    <Sidebar>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {items.slice(0, 3).map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton>
+                  <Lucide.Settings className="size-4" />
+                  <span>Settings</span>
+                </SidebarMenuButton>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href="#profile">Profile</a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href="#security">Security</a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href="#notifications">Notifications</a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+      <SidebarRail />
+    </Sidebar>
+  ),
+}
+
+export const CompleteExample: Story = {
+  render: () => {
+    return (
+      <Sidebar variant="floating" collapsible="icon" showOnHover>
+        <SidebarHeader>
+          <SidebarMenu>
+            <SidebarMenuItem className="flex items-center justify-between p-1">
+              <Lucide.Layers className="size-7 text-sidebar-foreground" />
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarHeader>
+        <SidebarContent>
+          <ScrollArea>
+            <SidebarGroup>
+              <SidebarGroupLabel>Main Navigation</SidebarGroupLabel>
+              <SidebarGroupAction>
+                <Lucide.Plus /> <span className="sr-only">Add Item</span>
+              </SidebarGroupAction>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild data-active={true}>
+                      <a href="#dashboard">
+                        <Lucide.Home className="size-4" />
+                        <span>Dashboard</span>
+                      </a>
+                    </SidebarMenuButton>
+                    <SidebarMenuBadge>New</SidebarMenuBadge>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <a href="#inbox">
+                        <Lucide.Inbox className="size-4" />
+                        <span>Inbox</span>
+                      </a>
+                    </SidebarMenuButton>
+                    <SidebarMenuBadge>5</SidebarMenuBadge>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      <Lucide.Settings className="size-4" />
+                      <span>Settings</span>
+                    </SidebarMenuButton>
+                    <SidebarMenuAction>
+                      <Lucide.MoreVertical />
+                    </SidebarMenuAction>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton asChild>
+                          <a href="#profile">Profile</a>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton asChild>
+                          <a href="#security">Security</a>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton asChild>
+                          <a href="#notifications">Notifications</a>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            <SidebarSeparator />
+
+            <SidebarGroup>
+              <SidebarGroupLabel>Resources</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <a href="#docs">
+                        <Lucide.FileText className="size-4" />
+                        <span>Documentation</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <a href="#components">
+                        <Lucide.Component className="size-4" />
+                        <span>Components</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuSkeleton />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            <SidebarSeparator />
+
+            <SidebarGroup>
+              <SidebarGroupLabel>Teams</SidebarGroupLabel>
+              <SidebarGroupAction>
+                <Lucide.UserPlus /> <span className="sr-only">Add Team</span>
+              </SidebarGroupAction>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton variant="default">
+                      <Lucide.Users className="size-4" />
+                      <span>Engineering</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton variant="outline">
+                      <Lucide.Users className="size-4" />
+                      <span>Product</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      <Lucide.Users className="size-4" />
+                      <span>Marketing</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </ScrollArea>
+        </SidebarContent>
+
+        <SidebarFooter>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <Lucide.UserCircle className="size-4" />
+                <span>John Doe</span>
+              </SidebarMenuButton>
+              <SidebarMenuAction>
+                <Lucide.MoreVertical />
+              </SidebarMenuAction>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarFooter>
+
+        <SidebarRail />
+      </Sidebar>
+    )
+  },
 }
