@@ -59,12 +59,13 @@ const InputPinSlot = React.forwardRef<
 
 interface InputPinSeparatorProps extends React.ComponentPropsWithoutRef<'div'> {
   innerClassName?: string
+  orientation?: 'horizontal' | 'vertical'
 }
 
 const InputPinSeparator = React.forwardRef<React.ComponentRef<'div'>, InputPinSeparatorProps>(
-  ({ className, innerClassName, ...props }, forwardedRef) => {
+  ({ className, innerClassName, orientation = 'horizontal', ...props }, forwardedRef) => {
     const { inputSize } = React.useContext(InputPinContext)
-    const styles = inputPinStyles({ inputSize })
+    const styles = inputPinStyles({ inputSize, orientation })
     return (
       <div ref={forwardedRef} className={styles.separator({ className })} {...props}>
         <div className={styles.separatorInner({ className: innerClassName })} />

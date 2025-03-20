@@ -1,12 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import {
-  InputPin,
-  InputPinGroup,
-  InputPinSeparator,
-  InputPinSlot,
-  inputPinStyles,
-} from '#/components'
+import { InputPin, InputPinSlot, inputPinStyles } from '#/components'
+import { InputPinGroup, InputPinSeparator } from '#/components'
 
 const meta: Meta<typeof InputPin> = {
   component: InputPin,
@@ -56,26 +51,43 @@ export const Default: Story = {
   ),
 }
 
-export const WithSeparator: Story = {
-  args: {
-    maxLength: 6,
-    inputSize: 'md',
-  },
-  render: (args) => (
-    // @ts-ignore
-    <InputPin {...args}>
-      <InputPinGroup>
-        <InputPinSlot index={0} />
-        <InputPinSlot index={1} />
-        <InputPinSlot index={2} />
-      </InputPinGroup>
-      <InputPinSeparator />
-      <InputPinGroup>
-        <InputPinSlot index={3} />
-        <InputPinSlot index={4} />
-        <InputPinSlot index={5} />
-      </InputPinGroup>
-    </InputPin>
+export const Separator: Story = {
+  render: () => (
+    <div className="flex flex-col space-y-6">
+      <div className="flex items-center gap-4">
+        <span className="w-20 font-medium text-sm">Horizontal:</span>
+        <InputPin maxLength={6} inputSize="md">
+          <InputPinGroup>
+            <InputPinSlot index={0} />
+            <InputPinSlot index={1} />
+            <InputPinSlot index={2} />
+          </InputPinGroup>
+          <InputPinSeparator />
+          <InputPinGroup>
+            <InputPinSlot index={3} />
+            <InputPinSlot index={4} />
+            <InputPinSlot index={5} />
+          </InputPinGroup>
+        </InputPin>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <span className="w-20 font-medium text-sm">Vertical:</span>
+        <InputPin maxLength={6} inputSize="md">
+          <InputPinGroup>
+            <InputPinSlot index={0} />
+            <InputPinSlot index={1} />
+            <InputPinSlot index={2} />
+          </InputPinGroup>
+          <InputPinSeparator orientation="vertical" />
+          <InputPinGroup>
+            <InputPinSlot index={3} />
+            <InputPinSlot index={4} />
+            <InputPinSlot index={5} />
+          </InputPinGroup>
+        </InputPin>
+      </div>
+    </div>
   ),
 }
 
