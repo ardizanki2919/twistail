@@ -37,7 +37,6 @@ export const Variants: Story = {
 export const AnchorWithBadgeVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
       <a href="#" className={clx(badgeStyles({ variant: 'success' }), 'cursor-pointer')}>
         Anchor element
       </a>

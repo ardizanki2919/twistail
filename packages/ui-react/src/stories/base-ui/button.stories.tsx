@@ -189,7 +189,6 @@ export const AsChildAnchor: Story = {
 export const AnchorWithVariant: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
       <a href="#" className={buttonStyles({ variant: 'secondary' }).base()}>
         Anchor element
       </a>

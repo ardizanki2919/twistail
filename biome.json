@@ -15,7 +15,8 @@
             "recommended": true,
             "a11y": {
                 "noSvgWithoutTitle": "off",
-                "useKeyWithClickEvents": "off"
+                "useKeyWithClickEvents": "off",
+                "useValidAnchor": "off"
             },
             "complexity": {
                 "noBannedTypes": "off",

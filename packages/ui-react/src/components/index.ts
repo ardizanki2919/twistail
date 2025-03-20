@@ -47,3 +47,4 @@ export * from './base-ui/tooltip'
 // Layout Components
 export * from './layout/context-menu'
 export * from './layout/menubar'
+export * from './layout/navigation-menu'
