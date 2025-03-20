@@ -55,7 +55,7 @@ interface DrawerContentProps
 const DrawerContent = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitive.Content>,
   DrawerContentProps
->(({ side = 'right', className, ...props }, forwardedRef) => {
+>(({ side = 'right', className, children, ...props }, forwardedRef) => {
   const styles = drawerStyles({ side })
   return (
     <DrawerPortal>
@@ -64,25 +64,23 @@ const DrawerContent = React.forwardRef<
           ref={forwardedRef}
           className={styles.content({ className })}
           {...props}
-        />
+        >
+          {children}
+          <DrawerPrimitive.Close asChild>
+            <Button variant="ghost" className={styles.closeButton()} size="sm">
+              <Lucide.X className={styles.closeIcon()} aria-hidden="true" strokeWidth={2} />
+            </Button>
+          </DrawerPrimitive.Close>
+        </DrawerPrimitive.Content>
       </DrawerOverlay>
     </DrawerPortal>
   )
 })
 
 const DrawerHeader = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<'div'>>(
-  ({ children, className, ...props }, forwardedRef) => {
+  ({ className, ...props }, forwardedRef) => {
     const styles = drawerStyles()
-    return (
-      <div ref={forwardedRef} className={styles.headerRoot()} {...props}>
-        <div className={styles.header({ className })}>{children}</div>
-        <DrawerPrimitive.Close asChild>
-          <Button variant="ghost" className={styles.headerCloseButton()} size="sm">
-            <Lucide.X className={styles.headerCloseIcon()} aria-hidden="true" strokeWidth={2} />
-          </Button>
-        </DrawerPrimitive.Close>
-      </div>
-    )
+    return <div ref={forwardedRef} className={styles.header({ className })} {...props} />
   }
 )
 

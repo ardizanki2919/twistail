@@ -2,7 +2,7 @@ import * as Lucide from 'lucide-react'
 import { Separator as SeparatorPrimitive, Slot } from 'radix-ui'
 import * as React from 'react'
 import { Button } from '#/components/base-ui/button'
-import { Drawer, DrawerHeader, DrawerTitle } from '#/components/base-ui/drawer'
+import { Drawer, DrawerBody, DrawerHeader, DrawerTitle } from '#/components/base-ui/drawer'
 import { DrawerContent, DrawerDescription } from '#/components/base-ui/drawer'
 import { Input } from '#/components/base-ui/input'
 import { Skeleton } from '#/components/base-ui/skeleton'
@@ -206,7 +206,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
               <DrawerTitle>Sidebar</DrawerTitle>
               <DrawerDescription>Displays the mobile sidebar.</DrawerDescription>
             </DrawerHeader>
-            <div className={styles.rootMobileDrawerInner()}>{children}</div>
+            <DrawerBody className={styles.rootMobileDrawerInner()}>{children}</DrawerBody>
           </DrawerContent>
         </Drawer>
       )
