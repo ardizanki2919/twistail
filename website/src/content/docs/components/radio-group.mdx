@@ -1,0 +1,84 @@
+---
+title: Radio Group
+full: false
+---
+
+A set of radio buttons, where only one button can be checked at a time.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-radiogroup--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add radio-group
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['radio-group.tsx', 'radio-group.css.ts', 'index.ts']}>
+      <Tab value="radio-group.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-group/radio-group.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/radio-group/radio-group.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="radio-group.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-group/radio-group.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/radio-group/radio-group.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-group/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/radio-group/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { RadioGroup, RadioGroupItem } from '#/components/radio-group'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { RadioGroup, RadioGroupItem } from 'twistail-react/radio-group'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

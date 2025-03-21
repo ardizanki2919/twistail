@@ -1,0 +1,106 @@
+---
+title: Drawer
+full: false
+---
+
+Display content as an overlay area at the right side of the screen.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-drawer--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/dialog#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add drawer
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['drawer.tsx', 'drawer.css.ts', 'index.ts']}>
+      <Tab value="drawer.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/drawer/drawer.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/drawer/drawer.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="drawer.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/drawer/drawer.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/drawer/drawer.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/drawer/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/drawer/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Drawer,
+      DrawerBody,
+      DrawerClose,
+      DrawerContent,
+      DrawerDescription,
+      DrawerFooter,
+      DrawerHeader,
+      DrawerPortal,
+      DrawerTitle,
+      DrawerTrigger,
+    } from '#/components/drawer'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Drawer,
+      DrawerBody,
+      DrawerClose,
+      DrawerContent,
+      DrawerDescription,
+      DrawerFooter,
+      DrawerHeader,
+      DrawerPortal,
+      DrawerTitle,
+      DrawerTrigger,
+    } from 'twistail-react/drawer'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

@@ -1,0 +1,102 @@
+---
+title: Navigation Menu
+full: false
+---
+
+A menu that allows users to navigate through a set of menu items.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/layout-components-navigationmenu--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/navigation-menu#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add navigation-menu
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['navigation-menu.tsx', 'navigation-menu.css.ts', 'index.ts']}>
+      <Tab value="navigation-menu.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/navigation-menu/navigation-menu.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/navigation-menu/navigation-menu.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="navigation-menu.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/navigation-menu/navigation-menu.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/navigation-menu/navigation-menu.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/navigation-menu/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/navigation-menu/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      NavigationMenu,
+      NavigationMenuList,
+      NavigationMenuItem,
+      NavigationMenuContent,
+      NavigationMenuTrigger,
+      NavigationMenuLink,
+      NavigationMenuIndicator,
+      NavigationMenuViewport,
+    } from '#/components/navigation-menu'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      NavigationMenu,
+      NavigationMenuList,
+      NavigationMenuItem,
+      NavigationMenuContent,
+      NavigationMenuTrigger,
+      NavigationMenuLink,
+      NavigationMenuIndicator,
+      NavigationMenuViewport,
+    } from 'twistail-react/navigation-menu'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

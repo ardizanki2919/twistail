@@ -1,0 +1,84 @@
+---
+title: Calendar
+full: false
+---
+
+A date field component that allows users to enter and edit date.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-calendar--default).
+  Refer to [React DayPicker](https://daypicker.dev/docs/anatomy) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add calendar
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['calendar.tsx', 'calendar.css.ts', 'index.ts']}>
+      <Tab value="calendar.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/calendar/calendar.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/calendar/calendar.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="calendar.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/calendar/calendar.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/calendar/calendar.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/calendar/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/calendar/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/calendar'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/calendar''
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

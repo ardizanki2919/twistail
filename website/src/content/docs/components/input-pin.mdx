@@ -1,0 +1,94 @@
+---
+title: Input PIN
+full: false
+---
+
+A date field component that allows users to enter and edit date.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-inputpin--default).
+  Refer to [Input OTP docs](https://input-otp.rodz.dev/) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add input-pin
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['input-pin.tsx', 'input-pin.css.ts', 'index.ts']}>
+      <Tab value="input-pin.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input-pin/input-pin.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/input-pin/input-pin.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="input-pin.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input-pin/input-pin.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/input-pin/input-pin.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input-pin/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/input-pin/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      InputPin,
+      InputPinGroup,
+      InputPinSlot,
+      InputPinSeparator
+    } from '#/components/input-pin'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      InputPin,
+      InputPinGroup,
+      InputPinSlot,
+      InputPinSeparator
+    } from 'twistail-react/input-pin'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

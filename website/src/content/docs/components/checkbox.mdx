@@ -1,0 +1,84 @@
+---
+title: Checkbox
+full: false
+---
+
+A control that allows the user to toggle between checked and not checked.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-checkbox--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add checkbox
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['checkbox.tsx', 'checkbox.css.ts', 'index.ts']}>
+      <Tab value="checkbox.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/checkbox/checkbox.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/checkbox/checkbox.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="checkbox.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/checkbox/checkbox.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/checkbox/checkbox.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/checkbox/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/checkbox/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Checkbox } from '#/components/checkbox'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Checkbox } from 'twistail-react/checkbox'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

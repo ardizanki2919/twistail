@@ -1,0 +1,84 @@
+---
+title: Calllout
+full: false
+---
+
+Used for hints, disclaimers, tips, warnings, or documentation needs.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-callout--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add callout
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['callout.tsx', 'callout.css.ts', 'index.ts']}>
+      <Tab value="callout.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/callout/callout.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/callout/callout.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="callout.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/callout/callout.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/callout/callout.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/callout/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/callout/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Callout } from '#/components/callout'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Callout } from 'twistail-react/callout''
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

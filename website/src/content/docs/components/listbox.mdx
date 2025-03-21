@@ -1,0 +1,104 @@
+---
+title: Listbox
+full: false
+---
+
+List of user-selectable options, triggered by a button.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-listbox--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/select#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add listbox
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['listbox.tsx', 'listbox.css.ts', 'index.ts']}>
+      <Tab value="listbox.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/listbox/listbox.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/listbox/listbox.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="listbox.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/listbox/listbox.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/listbox/listbox.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/listbox/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/listbox/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Listbox,
+      ListboxContent,
+      ListboxGroup,
+      ListboxGroupLabel,
+      ListboxItem,
+      ListboxPortal,
+      ListboxSeparator,
+      ListboxTrigger,
+      ListboxValue,
+    } from '#/components/listbox'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Listbox,
+      ListboxContent,
+      ListboxGroup,
+      ListboxGroupLabel,
+      ListboxItem,
+      ListboxPortal,
+      ListboxSeparator,
+      ListboxTrigger,
+      ListboxValue,
+    } from 'twistail-react/listbox'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

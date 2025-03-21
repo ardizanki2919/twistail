@@ -1,0 +1,84 @@
+---
+title: Switch
+full: false
+---
+
+A control that allows the user to toggle between checked and not checked.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-switch--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/switch#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add switch
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['switch.tsx', 'switch.css.ts', 'index.ts']}>
+      <Tab value="switch.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/switch/switch.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/switch/switch.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="switch.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/switch/switch.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/switch/switch.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/switch/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/switch/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Switch } from '#/components/switch'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Switch } from 'twistail-react/switch'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

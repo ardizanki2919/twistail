@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge'
  * @param args - An array of CSS class values to be combined.
  * @returns The combined CSS class value.
  */
-export function clx(...args: ClassValue[]) {
+function clx(...args: ClassValue[]) {
   return twMerge(clsx(...args))
 }
 
@@ -19,7 +19,7 @@ export function clx(...args: ClassValue[]) {
  * @param maxInitials - Maximum number of initials to return (default: 2)
  * @returns Uppercase initials from the name
  */
-export function getInitials(name: string, maxInitials = 2): string {
+function getInitials(name: string, maxInitials = 2): string {
   if (!name) return ''
   return name
     .trim()
@@ -30,3 +30,6 @@ export function getInitials(name: string, maxInitials = 2): string {
     .join('')
     .toUpperCase()
 }
+
+export { clx, getInitials }
+export { clx as cn /* Fallback alias for shadcn/ui compatibility */ }

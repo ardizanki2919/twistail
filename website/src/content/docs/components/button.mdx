@@ -1,0 +1,120 @@
+---
+title: Button
+full: false
+---
+
+import ButtonDemo from '#/demo/button/preview'
+
+The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-accordion--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
+</Callout>
+
+---
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4">
+    <ButtonDemo />
+  </Tab>
+  <Tab value="Code">
+    ```json doc-gen:file
+    { "file": "src/demo/button/preview.tsx", "codeblock": { "lang": "tsx" } }
+    ```
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add button
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['button.tsx', 'button.css.ts', 'index.ts']}>
+      <Tab value="button.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/button/button.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/button/button.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="button.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/button/button.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/button/button.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/button/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/button/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Button } from '#/components/button'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Button } from 'twistail-react/button''
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+<TypeTable
+  type={{
+    variant: {
+      description: 'Variant of the button',
+      type: 'ButtonStyles["variant"]',
+      default: 'primary',
+    },
+    size: {
+      description: 'Size of the button',
+      type: 'ButtonStyles["size"]',
+      default: 'md',
+    },
+    isLoading: {
+      description: 'Whether the button is loading',
+      type: 'boolean',
+      default: 'false',
+    },
+    loadingText: {
+      description: 'Custom text to display when the button is loading',
+      type: 'string',
+      default: null,
+    },
+  }}
+/>

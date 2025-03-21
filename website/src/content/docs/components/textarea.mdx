@@ -1,0 +1,84 @@
+---
+title: Textarea
+full: false
+---
+
+Displays a form textarea or a component that looks like a textarea.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-textarea--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/form#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add textarea
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['textarea.tsx', 'textarea.css.ts', 'index.ts']}>
+      <Tab value="textarea.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/textarea/textarea.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/textarea/textarea.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="textarea.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/textarea/textarea.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/textarea/textarea.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/textarea/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/textarea/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Textarea } from '#/components/textarea'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Textarea } from 'twistail-react/textarea'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

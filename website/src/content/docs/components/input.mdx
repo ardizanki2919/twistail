@@ -1,0 +1,84 @@
+---
+title: Input
+full: false
+---
+
+Displays a form input field or a component that looks like an input field.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-input--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/form#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add input
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['input.tsx', 'input.css.ts', 'index.ts']}>
+      <Tab value="input.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input/input.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/input/input.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="input.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input/input.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/input/input.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/input/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/input/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Input } from '#/components/input'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Input } from 'twistail-react/input'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

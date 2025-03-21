@@ -1,0 +1,84 @@
+---
+title: Slider
+full: false
+---
+
+An input where the user selects a value from within a given range.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-slider--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/slider#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add slider
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['slider.tsx', 'slider.css.ts', 'index.ts']}>
+      <Tab value="slider.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/slider/slider.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/slider/slider.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="slider.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/slider/slider.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/slider/slider.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/slider/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/slider/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Slider } from '#/components/slider'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Slider } from 'twistail-react/slider'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

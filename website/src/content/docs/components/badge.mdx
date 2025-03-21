@@ -1,0 +1,84 @@
+---
+title: Badge
+full: false
+---
+
+Displays a badge or a component that looks like a badge.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-badge--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/utilities/slot) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add badge
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['badge.tsx', 'badge.css.ts', 'index.ts']}>
+      <Tab value="badge.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/badge/badge.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/badge/badge.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="badge.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/badge/badge.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/badge/badge.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/badge/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/badge/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Badge } from '#/components/badge'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Badge } from 'twistail-react/badge'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

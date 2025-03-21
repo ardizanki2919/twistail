@@ -1,0 +1,84 @@
+---
+title: Combobox
+full: false
+---
+
+Displays rich content in a portal, triggered by a button.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-combobox--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/popover#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add combobox
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['combobox.tsx', 'combobox.css.ts', 'index.ts']}>
+      <Tab value="combobox.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combobox/combobox.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/combobox/combobox.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="combobox.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combobox/combobox.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/combobox/combobox.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combobox/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/combobox/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Combobox } from '#/components/combobox'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Combobox } from 'twistail-react/combobox'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

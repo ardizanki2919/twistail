@@ -1,0 +1,108 @@
+---
+title: Alert Dialog
+full: false
+---
+
+A modal dialog that interrupts the user with important content and expects a response.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-alertdialog--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/alert-dialog#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add alert-dialog
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['alert-dialog.tsx', 'alert-dialog.css.ts', 'index.ts']}>
+      <Tab value="alert-dialog.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/alert-dialog/alert-dialog.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/alert-dialog/alert-dialog.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="alert-dialog.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/alert-dialog/alert-dialog.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/alert-dialog/alert-dialog.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/alert-dialog/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/alert-dialog/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      AlertDialog,
+      AlertDialogPortal,
+      AlertDialogOverlay,
+      AlertDialogTrigger,
+      AlertDialogContent,
+      AlertDialogHeader,
+      AlertDialogFooter,
+      AlertDialogTitle,
+      AlertDialogDescription,
+      AlertDialogAction,
+      AlertDialogCancel,
+    } from '#/components/alert-dialog'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      AlertDialog,
+      AlertDialogPortal,
+      AlertDialogOverlay,
+      AlertDialogTrigger,
+      AlertDialogContent,
+      AlertDialogHeader,
+      AlertDialogFooter,
+      AlertDialogTitle,
+      AlertDialogDescription,
+      AlertDialogAction,
+      AlertDialogCancel,
+    } from 'twistail-react/alert-dialog'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

@@ -1,0 +1,84 @@
+---
+title: Radio Card Group
+full: false
+---
+
+A set of radio buttons with a card styling.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-radiocardgroup--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add radio-card-group
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['radio-card-group.tsx', 'radio-card-group.css.ts', 'index.ts']}>
+      <Tab value="radio-card-group.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-card-group/radio-card-group.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/radio-card-group/radio-card-group.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="radio-card-group.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-card-group/radio-card-group.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/radio-card-group/radio-card-group.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/radio-card-group/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/radio-card-group/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from '#/components/radio-card-group'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from 'twistail-react/radio-card-group'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```

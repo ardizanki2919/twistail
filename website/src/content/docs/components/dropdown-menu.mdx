@@ -1,0 +1,116 @@
+---
+title: Dropdown Menu
+full: false
+---
+
+Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+
+<Callout type='info'>
+  See more examples in [Storybook](https://storybook.twistail.com/?path=/story/base-components-dropdownmenu--default).
+  Refer to [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/dropdown-menu#api-reference) for full API details.
+</Callout>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add dropdown-menu
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['dropdown-menu.tsx', 'dropdown-menu.css.ts', 'index.ts']}>
+      <Tab value="dropdown-menu.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/dropdown-menu/dropdown-menu.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/dropdown-menu/dropdown-menu.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="dropdown-menu.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/dropdown-menu/dropdown-menu.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/dropdown-menu/dropdown-menu.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/dropdown-menu/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/dropdown-menu/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuSubMenuTrigger,
+      DropdownMenuSubMenu,
+      DropdownMenuSubMenuContent,
+      DropdownMenuGroup,
+      DropdownMenuContent,
+      DropdownMenuItem,
+      DropdownMenuRadioGroup,
+      DropdownMenuRadioItem,
+      DropdownMenuCheckboxItem,
+      DropdownMenuIconWrapper,
+      DropdownMenuLabel,
+      DropdownMenuSeparator,
+      DropdownMenuPortal,
+    } from '#/components/dropdown-menu'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuSubMenuTrigger,
+      DropdownMenuSubMenu,
+      DropdownMenuSubMenuContent,
+      DropdownMenuGroup,
+      DropdownMenuContent,
+      DropdownMenuItem,
+      DropdownMenuRadioGroup,
+      DropdownMenuRadioItem,
+      DropdownMenuCheckboxItem,
+      DropdownMenuIconWrapper,
+      DropdownMenuLabel,
+      DropdownMenuSeparator,
+      DropdownMenuPortal,
+    } from 'twistail-react/dropdown-menu'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```
