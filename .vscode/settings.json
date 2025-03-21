@@ -12,9 +12,33 @@
     },
     "tailwindCSS.experimental.classRegex": [
         // @ref: https://www.tailwind-variants.org/docs/getting-started
-        ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+        // @ref: https://github.com/paolotiu/tailwind-intellisense-regex-list
+        ["(?:cn|cva|tv)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
+        ["classList={{([^;]*)}}", "\\s*?[\"'`]([^\"'`]*).*?:"]
     ],
     "tailwindCSS.files.exclude": ["**/internal/**"],
+    "openctx.enable": true,
+    "openctx.providers": {
+        "https://openctx.org/npm/@openctx/provider-storybook": {
+            "storybookUrl": "https://636de6ec6d246e2740322b9e-alffldrjha.chromatic.com/"
+        },
+        "https://openctx.org/npm/@openctx/provider-devdocs": {
+            "urls": ["https://devdocs.io/react/", "https://devdocs.io/tailwindcss/"]
+        },
+        "https://openctx.org/npm/@openctx/provider-links": {
+            "links": [
+                {
+                    "title": "Twistail $<component> Documentation",
+                    "url": "https://twistail.com/docs/components/$<component|queryEscape>",
+                    "description": "View documentation for the Twistail $<component> component",
+                    "type": "docs",
+                    "preview": false,
+                    "path": "**/*.ts?(x)",
+                    "pattern": "^import\\s+\\{[^}]*\\}\\s+from\\s+['\"]twistail-react/(?<component>[\\w-]+)['\"]"
+                }
+            ]
+        }
+    },
     "[css]": {
         "editor.defaultFormatter": "biomejs.biome"
     },

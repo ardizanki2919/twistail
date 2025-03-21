@@ -17,6 +17,7 @@ const config: StorybookConfig = {
       return `<base href="/">${head}`
     }
   },
+  staticDirs: ['../../../website/public'],
   framework: { name: '@storybook/react-vite', options: { strictMode: true } },
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
