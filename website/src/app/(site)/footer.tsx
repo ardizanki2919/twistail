@@ -49,26 +49,29 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2 py-8 text-center font-medium text-gray-500 text-sm dark:text-gray-400">
           <p>
-            {' '}
-            &copy; {new Date().getFullYear()} - Made by{' '}
+            &copy; {new Date().getFullYear()} - A project by{' '}
             <Link
-              href="https://ripandis.com/?ref=twistail.com"
-              className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-semibold text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
+              href="https://ripandis.com/?utm_source=twistail.com&utm_medium=website&utm_campaign=footer"
+              className={clx(
+                'bg-gradient-to-r bg-clip-text font-semibold text-transparent transition-all duration-300',
+                'from-sky-400 to-blue-600 dark:from-sky-300 dark:to-blue-500',
+                'hover:from-blue-500 hover:to-sky-400'
+              )}
               newTab
             >
               Aris Ripandi
             </Link>
-            {' in '}
+            {', crafted in '}
             <CountryFlag countryCode="ID" aria-label="Indonesia" />
           </p>
           <p>
             This site is powered by{' '}
-            <Tooltip>
+            <Tooltip delayDuration={10}>
               <TooltipTrigger asChild>
                 <Link
                   href="https://www.netlify.com/?utm_source=twistail.com&utm_medium=website&utm_campaign=footer"
                   className={clx(
-                    'bg-gradient-to-r bg-clip-text font-semibold text-transparent',
+                    'bg-gradient-to-r bg-clip-text font-semibold text-transparent transition-all duration-300',
                     'from-teal-400 to-emerald-600 dark:from-teal-300 dark:to-emerald-500',
                     'hover:from-emerald-500 hover:to-teal-400'
                   )}
