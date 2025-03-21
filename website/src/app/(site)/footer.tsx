@@ -1,6 +1,8 @@
 'use client'
 
 import CountryFlag from 'react-country-flag'
+import { Tooltip, TooltipContent, TooltipTrigger } from 'twistail-react/tooltip'
+import { clx } from 'twistail-utils'
 import Link from '#/app/link'
 
 export default function Footer() {
@@ -45,17 +47,39 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-8 text-center font-medium text-gray-500 text-sm dark:text-gray-400">
-          &copy; {new Date().getFullYear()} - Made by{' '}
-          <Link
-            href="https://ripandis.com/?ref=twistail.com"
-            className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-semibold text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
-            newTab
-          >
-            Aris Ripandi
-          </Link>
-          {' in '}
-          <CountryFlag countryCode="ID" aria-label="Indonesia" />
+        <div className="flex flex-col gap-2 py-8 text-center font-medium text-gray-500 text-sm dark:text-gray-400">
+          <p>
+            {' '}
+            &copy; {new Date().getFullYear()} - Made by{' '}
+            <Link
+              href="https://ripandis.com/?ref=twistail.com"
+              className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-semibold text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
+              newTab
+            >
+              Aris Ripandi
+            </Link>
+            {' in '}
+            <CountryFlag countryCode="ID" aria-label="Indonesia" />
+          </p>
+          <p>
+            This site is powered by{' '}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="https://www.netlify.com/?utm_source=twistail.com&utm_medium=website&utm_campaign=footer"
+                  className={clx(
+                    'bg-gradient-to-r bg-clip-text font-semibold text-transparent',
+                    'from-teal-400 to-emerald-600 dark:from-teal-300 dark:to-emerald-500',
+                    'hover:from-emerald-500 hover:to-teal-400'
+                  )}
+                  newTab
+                >
+                  Netlify
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent content="Deploy your website to Netlify" className="text-xs" />
+            </Tooltip>
+          </p>
         </div>
       </footer>
     </div>
