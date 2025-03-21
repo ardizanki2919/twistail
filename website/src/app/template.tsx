@@ -3,6 +3,7 @@
 import { RootProvider, type RootProviderProps } from 'fumadocs-ui/provider'
 import Script from 'next/script'
 import { isDevelopment } from 'std-env'
+import { Toaster } from 'twistail-react/toast'
 
 export default function RootTemplate({ children }: Readonly<React.PropsWithChildren>) {
   const searchOpts: RootProviderProps['search'] = {
@@ -74,6 +75,7 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       >
         {children}
       </RootProvider>
+      <Toaster />
     </>
   )
 }

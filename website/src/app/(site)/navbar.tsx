@@ -13,7 +13,6 @@ import { GitHubIcon } from './icons'
 
 // Navigation items array for easier management
 const navItems = [
-  { href: '/docs/components', label: 'Components' },
   { href: '/docs', label: 'Documentation' },
   { href: '/docs/changelog', label: 'Changelog' },
   { href: '/docs#faqs', label: 'FAQs', matchPath: '/docs#faqs' },
@@ -41,7 +40,7 @@ export const NavBar = () => {
   }, [isMenuOpen])
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 md:px-6">
+    <div className="mx-auto max-w-screen-2xl px-4 md:px-6">
       <header className="flex items-center justify-between py-4 md:py-8">
         <Link
           href="/"
