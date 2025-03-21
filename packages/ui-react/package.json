@@ -117,6 +117,7 @@
     },
     "devDependencies": {
         "@biomejs/biome": "catalog:",
+        "@chromatic-com/storybook": "^3.2.6",
         "@repo/config-typescript": "workspace:*",
         "@storybook/addon-a11y": "^8.6.7",
         "@storybook/addon-essentials": "^8.6.7",
@@ -152,5 +153,11 @@
     "publishConfig": {
         "access": "public"
     },
-    "keywords": ["react", "ui", "tailwindcss", "radix-ui", "shadcn"]
+    "keywords": [
+        "react",
+        "ui",
+        "tailwindcss",
+        "radix-ui",
+        "shadcn"
+    ]
 }

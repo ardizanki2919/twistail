@@ -13,7 +13,7 @@ const preview: Preview = {
   // More info: https://storybook.js.org/docs/configure/story-layout
   parameters: {
     layout: 'centered',
-    actions: { disable: false, argTypesRegex: '^on[A-Z].*' },
+    actions: { disable: false },
     previewTabs: { 'storybook/docs/panel': { index: -1 } },
     controls: {
       disable: false,

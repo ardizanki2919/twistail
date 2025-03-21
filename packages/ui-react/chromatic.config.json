@@ -1,0 +1,10 @@
+{
+    "$schema": "https://www.chromatic.com/config-file.schema.json",
+    "projectId": "Project:636de6ec6d246e2740322b9e",
+    "storybookBaseDir": "packages/ui-react",
+    "buildScriptName": "build:storybook",
+    "autoAcceptChanges": "main",
+    "skip": "dependabot/**",
+    "onlyChanged": true,
+    "zip": true
+}

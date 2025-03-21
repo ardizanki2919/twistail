@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-storysource',
+    '@chromatic-com/storybook',
   ],
   managerHead: (head, { configType }) => {
     /* @see: https://github.com/storybookjs/storybook/issues/21627#issuecomment-1645573706 */
