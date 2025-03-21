@@ -3,8 +3,6 @@ title: Button
 full: false
 ---
 
-import ButtonDemo from '#/demo/button/preview'
-
 The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
 
 <Badges>
@@ -21,14 +19,14 @@ The `<Button>` element is an interactive element activated by a user with a mous
 
 ---
 
+import ButtonDemo from '#/demo/button/preview'
+
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 p-0">
     <ButtonDemo />
   </Tab>
   <Tab value="Code">
-    ```json doc-gen:file
-    { "file": "src/demo/button/preview.tsx", "codeblock": { "lang": "tsx" } }
-    ```
+    <include cwd lang="tsx">./src/demo/button/preview.tsx</include>
   </Tab>
 </Tabs>
 

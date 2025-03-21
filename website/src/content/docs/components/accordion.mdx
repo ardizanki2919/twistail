@@ -20,7 +20,7 @@ A vertically stacked set of interactive headings that each reveal a section of c
 ---
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="p-0">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 p-0">
     <iframe
       src="https://storybook.twistail.com/iframe.html?globals=&args=&id=base-components-accordion--default"
       className="size-full aspect-video"
@@ -28,9 +28,7 @@ A vertically stacked set of interactive headings that each reveal a section of c
     />
   </Tab>
   <Tab value="Code">
-    <include lang="tsx">
-      ../../../demo/accordion/preview.tsx
-    </include>
+    <include cwd lang="tsx">./src/demo/accordion/preview.tsx</include>
   </Tab>
 </Tabs>
 
