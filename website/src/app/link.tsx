@@ -15,7 +15,7 @@ import { default as RouterLink } from 'next/link'
 import type { LinkProps as RouterLinkProps } from 'next/link'
 import * as React from 'react'
 
-interface LinkProps extends Omit<RouterLinkProps, 'to'> {
+export interface LinkProps extends Omit<RouterLinkProps, 'to'> {
   newTab?: boolean
 }
 

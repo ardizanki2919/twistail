@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <div className="pt-4 sm:pt-10 lg:pt-12">
-      <footer className="mx-auto max-w-screen-xl px-4 md:px-6">
+      <footer className="mx-auto max-w-screen-2xl px-4 md:px-6">
         <div className="flex flex-col items-center justify-between gap-4 border-gray-200 border-y py-6 md:flex-row dark:border-gray-800">
           <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
             {navLinks.map((link) => (

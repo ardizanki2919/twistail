@@ -1,41 +1,14 @@
-import { Accordion, Accordions } from 'fumadocs-ui/components/accordion'
-import { Card, Cards } from 'fumadocs-ui/components/card'
-import { Pre } from 'fumadocs-ui/components/codeblock'
-import { File, Files, Folder } from 'fumadocs-ui/components/files'
-import { ImageZoom } from 'fumadocs-ui/components/image-zoom'
-import { Step, Steps } from 'fumadocs-ui/components/steps'
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
-import { TypeTable } from 'fumadocs-ui/components/type-table'
-import defaultMdxComponents from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
-import type { MDXComponents } from 'mdx/types'
 import { notFound } from 'next/navigation'
-import { clx } from 'twistail-utils'
-import Link from '#/app/link'
+import { components } from '#/components'
 import { source } from '#/lib/source'
-// import Redirect from './redirect'
-
-const customMdxComponents: MDXComponents = {
-  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link className={clx('font-medium underline underline-offset-4', className)} {...props} />
-  ),
-  Pre: ({ className, ...props }: React.ComponentProps<typeof Pre>) => (
-    <Pre className={clx('font-mono', className)} {...props} />
-  ),
-  img: (props) => <ImageZoom {...props} />,
-}
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-
-  // // Check if there's no slug or an empty slug (path is /docs)
-  // if (!params.slug || params.slug.length === 0) {
-  //   return <Redirect targetUrl="/docs" />
-  // }
-
   const page = source.getPage(params.slug)
+
   if (!page) notFound()
 
   const MDX = page.data.body
@@ -62,24 +35,7 @@ export default async function Page(props: {
         </>
       )}
       <DocsBody>
-        <MDX
-          components={{
-            ...defaultMdxComponents,
-            ...customMdxComponents,
-            Accordion,
-            Accordions,
-            Card,
-            Cards,
-            File,
-            Files,
-            Folder,
-            Step,
-            Steps,
-            Tab,
-            Tabs,
-            TypeTable,
-          }}
-        />
+        <MDX components={components} />
       </DocsBody>
     </DocsPage>
   )
@@ -98,16 +54,8 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-
-  // // If path is /docs, provide metadata for the redirect page
-  // if (!params.slug || params.slug.length === 0) {
-  //   return {
-  //     title: 'Redirecting to Documentation',
-  //     description: 'Redirecting to the documentation home page',
-  //   }
-  // }
-
   const page = source.getPage(params.slug)
+
   if (!page) notFound()
 
   return {
