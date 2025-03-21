@@ -64,11 +64,40 @@ npx twistail add listbox
 
 ### Imports
 
-```tsx
-import {} from '#/components/listbox'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Listbox,
+      ListboxContent,
+      ListboxGroup,
+      ListboxGroupLabel,
+      ListboxItem,
+      ListboxPortal,
+      ListboxSeparator,
+      ListboxTrigger,
+      ListboxValue,
+    } from '#/components/listbox'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Listbox,
+      ListboxContent,
+      ListboxGroup,
+      ListboxGroupLabel,
+      ListboxItem,
+      ListboxPortal,
+      ListboxSeparator,
+      ListboxTrigger,
+      ListboxValue,
+    } from 'twistail-react/listbox'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

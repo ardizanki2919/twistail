@@ -64,11 +64,36 @@ npx twistail add breadcrumb
 
 ### Imports
 
-```tsx
-import {} from '#/components/breadcrumb'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Breadcrumb,
+      BreadcrumbList,
+      BreadcrumbItem,
+      BreadcrumbLink,
+      BreadcrumbPage,
+      BreadcrumbSeparator,
+      BreadcrumbEllipsis,
+    } from '#/components/breadcrumb'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Breadcrumb,
+      BreadcrumbList,
+      BreadcrumbItem,
+      BreadcrumbLink,
+      BreadcrumbPage,
+      BreadcrumbSeparator,
+      BreadcrumbEllipsis,
+    } from 'twistail-react/breadcrumb''
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

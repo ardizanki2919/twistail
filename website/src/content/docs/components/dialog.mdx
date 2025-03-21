@@ -64,11 +64,40 @@ npx twistail add dialog
 
 ### Imports
 
-```tsx
-import {} from '#/components/dialog'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Dialog,
+      DialogClose,
+      DialogContent,
+      DialogDescription,
+      DialogFooter,
+      DialogHeader,
+      DialogPortal,
+      DialogTitle,
+      DialogTrigger,
+    } from '#/components/dialog'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Dialog,
+      DialogClose,
+      DialogContent,
+      DialogDescription,
+      DialogFooter,
+      DialogHeader,
+      DialogPortal,
+      DialogTitle,
+      DialogTrigger,
+    } from 'twistail-react/dialog'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

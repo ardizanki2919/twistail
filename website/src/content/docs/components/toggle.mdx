@@ -65,11 +65,20 @@ npx twistail add toggle
 
 ### Imports
 
-```tsx
-import {} from '#/components/toggle'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Toggle, ToggleGroup, ToggleGroupItem } from '#/components/toggle'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Toggle, ToggleGroup, ToggleGroupItem } from 'twistail-react/toggle'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

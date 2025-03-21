@@ -64,11 +64,40 @@ npx twistail add command
 
 ### Imports
 
-```tsx
-import {} from '#/components/command'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Command,
+      CommandDialog,
+      CommandInput,
+      CommandList,
+      CommandEmpty,
+      CommandGroup,
+      CommandItem,
+      CommandShortcut,
+      CommandSeparator,
+    } from '#/components/command'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Command,
+      CommandDialog,
+      CommandInput,
+      CommandList,
+      CommandEmpty,
+      CommandGroup,
+      CommandItem,
+      CommandShortcut,
+      CommandSeparator,
+    } from 'twistail-react/command'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

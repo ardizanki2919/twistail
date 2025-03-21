@@ -64,11 +64,30 @@ npx twistail add input-pin
 
 ### Imports
 
-```tsx
-import {} from '#/components/input-pin'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      InputPin,
+      InputPinGroup,
+      InputPinSlot,
+      InputPinSeparator
+    } from '#/components/input-pin'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      InputPin,
+      InputPinGroup,
+      InputPinSlot,
+      InputPinSeparator
+    } from 'twistail-react/input-pin'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

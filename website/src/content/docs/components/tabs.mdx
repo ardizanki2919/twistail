@@ -64,11 +64,20 @@ npx twistail add tabs
 
 ### Imports
 
-```tsx
-import {} from '#/components/tabs'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/tabs'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from 'twistail-react/tabs'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

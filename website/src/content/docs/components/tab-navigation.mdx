@@ -64,11 +64,20 @@ npx twistail add tab-navigation
 
 ### Imports
 
-```tsx
-import {} from '#/components/tab-navigation'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { TabNavigation, TabNavigationLink } from '#/components/tab-navigation'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { TabNavigation, TabNavigationLink } from 'twistail-react/tab-navigation'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

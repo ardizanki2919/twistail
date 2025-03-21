@@ -64,11 +64,20 @@ npx twistail add toast
 
 ### Imports
 
-```tsx
-import {} from '#/components/toast'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Toaster, toast } from '#/components/toast'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Toaster, toast } from 'twistail-react/toast'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

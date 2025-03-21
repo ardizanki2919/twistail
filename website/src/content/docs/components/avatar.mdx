@@ -64,11 +64,20 @@ npx twistail add avatar
 
 ### Imports
 
-```tsx
-import {} from '#/components/avatar'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Avatar, AvatarImage, AvatarFallback, AvatarGroup } from '#/components/avatar'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Avatar, AvatarImage, AvatarFallback, AvatarGroup } from 'twistail-react/avatar'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

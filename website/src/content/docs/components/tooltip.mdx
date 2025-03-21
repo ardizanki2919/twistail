@@ -64,11 +64,30 @@ npx twistail add tooltip
 
 ### Imports
 
-```tsx
-import {} from '#/components/tooltip'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Tooltip,
+      TooltipTrigger,
+      TooltipContent,
+      TooltipPortal
+    } from '#/components/tootlip'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Tooltip,
+      TooltipTrigger,
+      TooltipContent,
+      TooltipPortal
+    } from 'twistail-react/tootlip'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

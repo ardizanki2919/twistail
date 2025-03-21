@@ -64,11 +64,40 @@ npx twistail add table
 
 ### Imports
 
-```tsx
-import {} from '#/components/table'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Table,
+      TableBody,
+      TableCaption,
+      TableCell,
+      TableFoot,
+      TableHead,
+      TableHeaderCell,
+      TableRoot,
+      TableRow,
+    } from '#/components/table'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Table,
+      TableBody,
+      TableCaption,
+      TableCell,
+      TableFoot,
+      TableHead,
+      TableHeaderCell,
+      TableRoot,
+      TableRow,
+    } from 'twistail-react/table'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

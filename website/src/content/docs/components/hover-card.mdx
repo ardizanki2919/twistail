@@ -64,11 +64,30 @@ npx twistail add hover-card
 
 ### Imports
 
-```tsx
-import {} from '#/components/hover-card'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      HoverCard,
+      HoverCardTrigger,
+      HoverCardContent,
+      HoverCardPortal
+    } from '#/components/hover-card'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      HoverCard,
+      HoverCardTrigger,
+      HoverCardContent,
+      HoverCardPortal
+    } from 'twistail-react/hover-card'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

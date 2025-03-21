@@ -64,16 +64,20 @@ npx twistail add aspect-ratio
 
 ### Imports
 
-```tsx
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '#/components/aspect-ratio'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { AspectRatio } from '#/components/aspect-ratio'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { AspectRatio } from 'twistail-react/aspect-ratio'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 <Accordion>

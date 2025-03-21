@@ -64,11 +64,42 @@ npx twistail add drawer
 
 ### Imports
 
-```tsx
-import {} from '#/components/drawer'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Drawer,
+      DrawerBody,
+      DrawerClose,
+      DrawerContent,
+      DrawerDescription,
+      DrawerFooter,
+      DrawerHeader,
+      DrawerPortal,
+      DrawerTitle,
+      DrawerTrigger,
+    } from '#/components/drawer'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Drawer,
+      DrawerBody,
+      DrawerClose,
+      DrawerContent,
+      DrawerDescription,
+      DrawerFooter,
+      DrawerHeader,
+      DrawerPortal,
+      DrawerTitle,
+      DrawerTrigger,
+    } from 'twistail-react/drawer'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

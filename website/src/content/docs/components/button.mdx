@@ -79,11 +79,20 @@ npx twistail add button
 
 ### Imports
 
-```tsx
-import { type ButtonStyles, Button } from '#/components/button'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Button } from '#/components/button'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Button } from 'twistail-react/button''
+    ```
+  </Tab>
+</Tabs>
 
-### Props
+## Props
 
 <TypeTable
   type={{

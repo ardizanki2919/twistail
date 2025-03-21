@@ -64,11 +64,36 @@ npx twistail add pagination
 
 ### Imports
 
-```tsx
-import {} from '#/components/pagination'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Pagination,
+      PaginationContent,
+      PaginationEllipsis,
+      PaginationItem,
+      PaginationLink,
+      PaginationNext,
+      PaginationPrevious,
+    } from '#/components/pagination'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Pagination,
+      PaginationContent,
+      PaginationEllipsis,
+      PaginationItem,
+      PaginationLink,
+      PaginationNext,
+      PaginationPrevious,
+    } from 'twistail-react/pagination'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

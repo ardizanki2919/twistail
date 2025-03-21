@@ -64,11 +64,52 @@ npx twistail add context-menu
 
 ### Imports
 
-```tsx
-import {} from '#/components/context-menu'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      ContextMenu,
+      ContextMenuTrigger,
+      ContextMenuContent,
+      ContextMenuItem,
+      ContextMenuCheckboxItem,
+      ContextMenuRadioItem,
+      ContextMenuLabel,
+      ContextMenuSeparator,
+      ContextMenuIconWrapper,
+      ContextMenuGroup,
+      ContextMenuPortal,
+      ContextMenuSubMenu,
+      ContextMenuSubMenuContent,
+      ContextMenuSubMenuTrigger,
+      ContextMenuRadioGroup,
+    } from '#/components/context-menu'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      ContextMenu,
+      ContextMenuTrigger,
+      ContextMenuContent,
+      ContextMenuItem,
+      ContextMenuCheckboxItem,
+      ContextMenuRadioItem,
+      ContextMenuLabel,
+      ContextMenuSeparator,
+      ContextMenuIconWrapper,
+      ContextMenuGroup,
+      ContextMenuPortal,
+      ContextMenuSubMenu,
+      ContextMenuSubMenuContent,
+      ContextMenuSubMenuTrigger,
+      ContextMenuRadioGroup,
+    } from 'twistail-react/context-menu'''
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

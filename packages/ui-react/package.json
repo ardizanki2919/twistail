@@ -1,6 +1,6 @@
 {
     "name": "twistail-react",
-    "version": "0.0.7",
+    "version": "0.1.0",
     "type": "module",
     "description": "Twistail UI Components",
     "author": "Aris Ripandi <aris@duck.com>",
@@ -58,8 +58,8 @@
         "./dropdown-menu": "./dist/dropdown-menu/index.js",
         "./heading": "./dist/heading/index.js",
         "./hover-card": "./dist/hover-card/index.js",
-        "./input-pin": "./dist/input-pin/index.js",
         "./input": "./dist/input/index.js",
+        "./input-pin": "./dist/input-pin/index.js",
         "./kbd": "./dist/kbd/index.js",
         "./label": "./dist/label/index.js",
         "./listbox": "./dist/listbox/index.js",

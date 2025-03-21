@@ -64,11 +64,44 @@ npx twistail add alert-dialog
 
 ### Imports
 
-```tsx
-import {} from '#/components/alert-dialog'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      AlertDialog,
+      AlertDialogPortal,
+      AlertDialogOverlay,
+      AlertDialogTrigger,
+      AlertDialogContent,
+      AlertDialogHeader,
+      AlertDialogFooter,
+      AlertDialogTitle,
+      AlertDialogDescription,
+      AlertDialogAction,
+      AlertDialogCancel,
+    } from '#/components/alert-dialog'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      AlertDialog,
+      AlertDialogPortal,
+      AlertDialogOverlay,
+      AlertDialogTrigger,
+      AlertDialogContent,
+      AlertDialogHeader,
+      AlertDialogFooter,
+      AlertDialogTitle,
+      AlertDialogDescription,
+      AlertDialogAction,
+      AlertDialogCancel,
+    } from 'twistail-react/alert-dialog'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP

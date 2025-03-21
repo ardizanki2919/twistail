@@ -64,11 +64,34 @@ npx twistail add popover
 
 ### Imports
 
-```tsx
-import {} from '#/components/popover'
-```
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Popover,
+      PopoverAnchor,
+      PopoverClose,
+      PopoverContent,
+      PopoverTrigger,
+      PopoverPortal
+    } from '#/components/popover'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Popover,
+      PopoverAnchor,
+      PopoverClose,
+      PopoverContent,
+      PopoverTrigger,
+      PopoverPortal
+    } from 'twistail-react/popover'
+    ```
+  </Tab>
+</Tabs>
 
-### Anatomy
+### Example
 
 ```tsx
 // WIP
