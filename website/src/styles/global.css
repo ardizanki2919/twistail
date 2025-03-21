@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "fumadocs-ui/css/black.css";
 @import "fumadocs-ui/css/preset.css";
 @import "./theme.css";
 
@@ -20,6 +19,24 @@
     --color-gray-800: oklch(0.274 0.006 286.033);
     --color-gray-900: oklch(0.21 0.006 285.885);
     --color-gray-950: oklch(0.141 0.005 285.823);
+
+    /* Sync fumadocs theme with the global theme */
+    --color-fd-background: var(--background);
+    --color-fd-foreground: var(--foreground);
+    --color-fd-muted: var(--muted);
+    --color-fd-muted-foreground: var(--muted-foreground);
+    --color-fd-popover: var(--popover);
+    --color-fd-popover-foreground: var(--popover-foreground);
+    --color-fd-card: var(--card);
+    --color-fd-card-foreground: var(--card-foreground);
+    --color-fd-border: var(--border);
+    --color-fd-primary: oklch(var--primary);
+    --color-fd-primary-foreground: var(--primary-foreground);
+    --color-fd-secondary: var(--secondary);
+    --color-fd-secondary-foreground: var(--secondary-foreground);
+    --color-fd-accent: var(--accent);
+    --color-fd-accent-foreground: var(--accent-foreground);
+    --color-fd-ring: var(--ring);
 
     /* Colors */
     --color-background: var(--background);
@@ -75,8 +92,8 @@
     --sidebar-width-icon: 3rem;
 
     /* Typography */
-    --font-sans: system-ui, Inter, Roboto, Ubuntu, "Helvetica Neue", Calibri, Arial, sans-serif;
-    --font-mono: ui-monospace, "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
 }
 
 @theme {

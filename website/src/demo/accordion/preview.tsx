@@ -7,7 +7,7 @@ import {
 
 export default function AccordionDemo() {
   return (
-    <Accordion type="single" className="mx-auto mt-3 w-md" collapsible>
+    <Accordion type="single" className="mx-auto w-md" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>In the app</AccordionTrigger>
         <AccordionContent>
