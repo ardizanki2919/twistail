@@ -1,5 +1,6 @@
 {
     "name": "repo",
+    "version": "0.1.1",
     "private": true,
     "scripts": {
         "dev": "turbo dev --filter=!example-*",
@@ -15,6 +16,7 @@
         "lint": "turbo lint",
         "check": "turbo check",
         "twistail": "node packages/cli/bin/twistail.mjs",
+        "sync-version": "bash scripts/sync-version.sh",
         "typecheck": "turbo typecheck"
     },
     "devDependencies": {
