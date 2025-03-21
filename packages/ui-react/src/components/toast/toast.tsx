@@ -48,4 +48,4 @@ const Toaster = ({ className, ...props }: ToasterProps) => {
   )
 }
 
-export { Toaster, toast }
+export { Toaster, toast, type ToasterProps }

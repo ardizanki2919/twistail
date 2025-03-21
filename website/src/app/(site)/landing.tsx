@@ -86,7 +86,13 @@ import Link from '#/app/link'
 
 export default function LandingPage() {
   const installCommand = `npm install twistail-react`
-  const handleCopy = () => navigator.clipboard.writeText(installCommand)
+  const handleCopy = () => {
+    navigator.clipboard.writeText(installCommand).then(() => {
+      toast.success('Copied to clipboard', {
+        position: 'top-center',
+      })
+    })
+  }
 
   return (
     <div className="min-h-screen">
@@ -209,10 +215,10 @@ function HeroContent({
         <Button size="lg" asChild>
           <Link href="/docs/installation">Get Started</Link>
         </Button>
-        <Button variant="outline" size="lg" className="group" onClick={handleCopy}>
+        <Button variant="outline" size="lg" className="group px-5" onClick={handleCopy}>
           <code className="font-mono group-hover:text-blue-500">{installCommand}</code>
           <Lucide.ClipboardCopy
-            className="ml-2 size-5 group-hover:text-blue-500"
+            className="ml-2.5 size-5 group-hover:text-blue-500"
             strokeWidth={1.8}
           />
         </Button>

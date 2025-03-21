@@ -1,11 +1,15 @@
 'use client'
 
 import { RootProvider, type RootProviderProps } from 'fumadocs-ui/provider'
+import { useTheme } from 'next-themes'
 import Script from 'next/script'
 import { isDevelopment } from 'std-env'
 import { Toaster } from 'twistail-react/toast'
+import type { ToasterProps } from 'twistail-react/toast'
 
 export default function RootTemplate({ children }: Readonly<React.PropsWithChildren>) {
+  const { theme } = useTheme()
+
   const searchOpts: RootProviderProps['search'] = {
     enabled: true,
     options: {
@@ -69,13 +73,10 @@ export default function RootTemplate({ children }: Readonly<React.PropsWithChild
       {isDevelopment ? null : (
         <Script strategy="lazyOnload" src={umamiScriptUrl} data-website-id={umamiSiteId} defer />
       )}
-      <RootProvider
-        search={searchOpts}
-        theme={{ enabled: true, attribute: ['data-theme', 'class'] }}
-      >
+      <RootProvider search={searchOpts} theme={{ enabled: false }}>
         {children}
       </RootProvider>
-      <Toaster />
+      <Toaster theme={theme as ToasterProps['theme']} />
     </>
   )
 }

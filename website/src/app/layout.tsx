@@ -2,6 +2,7 @@
 import '../styles/global.css'
 
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import { JetBrains_Mono, Mona_Sans } from 'next/font/google'
 import { env } from 'std-env'
 import { clx } from 'twistail-utils'
@@ -40,7 +41,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={clx(fontSans.variable, fontMono.variable)}>{children}</body>
+      <body className={clx(fontSans.variable, fontMono.variable)}>
+        <ThemeProvider attribute={['data-theme', 'class']}>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }
