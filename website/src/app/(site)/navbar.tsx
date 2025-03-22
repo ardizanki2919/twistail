@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { clx } from 'twistail-utils'
 import Link from '#/app/link'
-// import { urls } from '#/constants'
 
 import { GitHubIcon } from './icons'
 

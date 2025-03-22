@@ -12,7 +12,10 @@ export const revalidate = false
 
 export async function GET() {
   const cwd = resolve(process.cwd(), 'src/content/docs')
-  const files = await fg.glob(['**/*.mdx'], { cwd, onlyFiles: true })
+  const files = await fg.glob(['**/*.mdx', '!llms.mdx', '!contributors.mdx'], {
+    cwd,
+    onlyFiles: true,
+  })
 
   const scan = files.map(async (file) => {
     const fileContent = await fs.readFile(join(cwd, file))

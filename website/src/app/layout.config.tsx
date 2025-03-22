@@ -7,8 +7,11 @@
  */
 
 import { GithubInfo } from 'fumadocs-ui/components/github-info'
+import type { LinkItemType } from 'fumadocs-ui/layouts/links'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+import * as Lucide from 'lucide-react'
 import Image from 'next/image'
+import { isDevelopment, isProduction } from 'std-env'
 
 const TitleComponent = () => (
   <div className="flex w-full flex-1 items-center gap-2 py-1.5">
@@ -24,33 +27,46 @@ const TitleComponent = () => (
   </div>
 )
 
+export const navLinks: LinkItemType[] = [
+  {
+    type: 'main',
+    text: 'Home',
+    url: '/',
+    active: 'nested-url',
+  },
+  {
+    type: 'main',
+    text: 'Blog',
+    url: '/blog',
+    active: 'nested-url',
+  },
+  {
+    type: 'main',
+    text: 'Storybook',
+    url: 'https://storybook.twistail.com',
+    icon: <Lucide.ExternalLink className="size-4" />,
+    external: true,
+    active: 'url',
+    on: 'nav',
+  },
+  {
+    type: 'custom',
+    children: isProduction ? (
+      <GithubInfo owner="riipandi" repo="twistail" className="lg:-mx-2" />
+    ) : null,
+  },
+]
+
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    url: '/',
+    url: '/docs',
     title: <TitleComponent />,
     transparentMode: 'none',
   },
   themeSwitch: {
-    enabled: true,
+    enabled: false,
     mode: 'light-dark',
   },
-  links: [
-    {
-      type: 'main',
-      text: 'Blog',
-      url: '/blog',
-      active: 'nested-url',
-    },
-    {
-      type: 'main',
-      text: 'Storybook',
-      url: 'https://storybook.twistail.com',
-      external: true,
-      active: 'url',
-    },
-    {
-      type: 'custom',
-      children: <GithubInfo owner="riipandi" repo="twistail" className="lg:-mx-2" />,
-    },
-  ],
+  githubUrl: isDevelopment ? 'https://github.com/riipandi/twistail' : undefined,
+  links: navLinks,
 }

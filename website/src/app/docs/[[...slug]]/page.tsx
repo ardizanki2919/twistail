@@ -11,16 +11,18 @@ export default async function Page(props: {
 
   if (!page) notFound()
 
-  const MDX = page.data.body
-
   // Hide title and description for pages that don't need them
   const pageWithoutTitle = ['code-of-conduct']
+
+  const MDX = page.data.body
+  const lastUpdate = page.data.lastModified
 
   return (
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
       footer={{ enabled: true }}
+      lastUpdate={lastUpdate ? new Date(lastUpdate) : undefined}
       editOnGithub={{
         owner: 'riipandi',
         repo: 'twistail',
@@ -40,7 +42,6 @@ export default async function Page(props: {
     </DocsPage>
   )
 }
-
 export async function generateStaticParams() {
   const sourceParams = source.generateParams()
   return [
