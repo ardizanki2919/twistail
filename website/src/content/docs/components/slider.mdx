@@ -3,7 +3,7 @@ title: Slider
 full: false
 ---
 
-An input where the user selects a value from within a given range.
+An input control that allows users to select a value from a specified range by dragging a handle.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-slider--default" external>
@@ -16,6 +16,19 @@ An input where the user selects a value from within a given range.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/slider/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/slider/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

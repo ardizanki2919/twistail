@@ -3,7 +3,7 @@ title: Calllout
 full: false
 ---
 
-Used for hints, disclaimers, tips, warnings, or documentation needs.
+A highlighted message that attracts attention to important information.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-callout--default" external>
@@ -16,6 +16,19 @@ Used for hints, disclaimers, tips, warnings, or documentation needs.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/callout/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/callout/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

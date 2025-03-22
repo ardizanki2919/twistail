@@ -3,7 +3,7 @@ title: Toast
 full: false
 ---
 
-A succinct message that is displayed temporarily.
+A brief, non-intrusive notification that appears temporarily to provide feedback.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-toast--default" external>
@@ -16,6 +16,19 @@ A succinct message that is displayed temporarily.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/toast/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/toast/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

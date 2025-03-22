@@ -3,7 +3,7 @@ title: Popover
 full: false
 ---
 
-Displays rich content in a portal, triggered by a button.
+A floating element that displays contextual information or UI related to a trigger element.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-popover--default" external>
@@ -16,6 +16,19 @@ Displays rich content in a portal, triggered by a button.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/popover/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/popover/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

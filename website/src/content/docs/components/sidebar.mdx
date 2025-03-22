@@ -3,7 +3,7 @@ title: Sidebar
 full: false
 ---
 
-A sidebar is a navigation component that is typically used to display a list of links or other content.
+A navigation component that is typically used to display a list of links or other content.
 It is often used on websites and applications to help users navigate through the site or application.
 
 <Badges>
@@ -17,6 +17,19 @@ It is often used on websites and applications to help users navigate through the
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/sidebar/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/sidebar/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

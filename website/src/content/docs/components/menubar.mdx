@@ -3,7 +3,7 @@ title: Menubar
 full: false
 ---
 
-A menu that allows users to navigate through a set of menu items.
+A horizontal navigation component typically found at the top of applications.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/layout-components-menubar--default" external>
@@ -16,6 +16,19 @@ A menu that allows users to navigate through a set of menu items.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/menubar/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/menubar/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

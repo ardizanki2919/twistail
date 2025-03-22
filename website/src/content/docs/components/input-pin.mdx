@@ -3,7 +3,7 @@ title: Input PIN
 full: false
 ---
 
-A date field component that allows users to enter and edit date.
+A specialized input for entering PIN codes or verification numbers.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-inputpin--default" external>
@@ -16,6 +16,19 @@ A date field component that allows users to enter and edit date.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/input-pin/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/input-pin/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

@@ -31,7 +31,12 @@ const AccordionTrigger = React.forwardRef<
         {...props}
       >
         {children}
-        <Lucide.Plus className={styles.trigerIcon()} aria-hidden="true" focusable="false" />
+        <Lucide.Plus
+          className={styles.trigerIcon()}
+          aria-hidden="true"
+          focusable="false"
+          strokeWidth={2}
+        />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

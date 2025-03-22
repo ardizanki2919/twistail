@@ -3,7 +3,7 @@ title: Listbox
 full: false
 ---
 
-List of user-selectable options, triggered by a button.
+A widget that allows users to select one or more items from a list of options.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-listbox--default" external>
@@ -16,6 +16,19 @@ List of user-selectable options, triggered by a button.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/listbox/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/listbox/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

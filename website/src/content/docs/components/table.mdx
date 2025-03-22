@@ -3,7 +3,7 @@ title: Table
 full: false
 ---
 
-Display data efficiently in a column and row format.
+A component for displaying structured data in rows and columns.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-table--default" external>
@@ -16,6 +16,19 @@ Display data efficiently in a column and row format.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/table/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/table/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

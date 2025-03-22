@@ -10,7 +10,7 @@ const accordionStyles = tv({
       'data-[disabled]:cursor-default data-[disabled]:text-muted-foreground',
     ],
     trigerIcon: [
-      'text-muted-foreground size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
+      'text-muted-foreground size-4 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)]',
       'group-data-[disabled]:text-muted group-data-[state=open]:-rotate-45',
     ],
     content: [
