@@ -3,7 +3,7 @@ title: Collapsible
 full: false
 ---
 
-A searchable interface for quickly executing collapsibles or actions.
+A component that can be expanded or collapsed to show or hide content.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-collapsible--default" external>
@@ -16,6 +16,19 @@ A searchable interface for quickly executing collapsibles or actions.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/collapsible/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/collapsible/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

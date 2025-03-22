@@ -3,7 +3,7 @@ title: Select
 full: false
 ---
 
-A vanilla select component with custom styling.
+A vanilla select component with custom styling for a consistent look and feel.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-select--default" external>
@@ -16,6 +16,19 @@ A vanilla select component with custom styling.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/select/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/select/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

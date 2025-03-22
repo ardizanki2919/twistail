@@ -3,7 +3,7 @@ title: Hover Card
 full: false
 ---
 
-For sighted users to preview content available behind a link.
+A card that appears when hovering over a trigger element to display additional information.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-hovercard--default" external>
@@ -16,6 +16,19 @@ For sighted users to preview content available behind a link.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/hover-card/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/hover-card/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

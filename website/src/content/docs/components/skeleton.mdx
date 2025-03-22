@@ -3,7 +3,7 @@ title: Skeleton
 full: false
 ---
 
-Use to show a placeholder while content is loading.
+A placeholder UI used to indicate that content is loading, improving perceived performance.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-skeleton--default" external>
@@ -16,6 +16,19 @@ Use to show a placeholder while content is loading.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/skeleton/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/skeleton/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

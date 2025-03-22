@@ -3,7 +3,7 @@ title: Button
 full: false
 ---
 
-The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
+An interactive element that triggers an action when clicked or pressed.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-button--default" external>
@@ -19,11 +19,11 @@ The `<Button>` element is an interactive element activated by a user with a mous
 
 ---
 
-import ButtonDemo from '#/demo/button/preview'
+import Demo from '#/demo/button/preview'
 
 <Tabs items={['Preview', 'Code']}>
   <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
-    <ButtonDemo />
+    <Demo />
   </Tab>
   <Tab value="Code">
     <include cwd lang="tsx">./src/demo/button/preview.tsx</include>
@@ -92,7 +92,7 @@ npx twistail add button
   </Tab>
   <Tab value="npm">
     ```tsx
-    import { Button } from 'twistail-react/button''
+    import { Button } from 'twistail-react/button'
     ```
   </Tab>
 </Tabs>

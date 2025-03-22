@@ -66,4 +66,25 @@ eval $FIND_CMD | while read -r file; do
   fi
 done
 
+# Create changelog file for new version with default content
+CHANGELOG_FILE="website/src/content/changelog/${APP_VERSION}.mdx"
+if [ ! -f "$CHANGELOG_FILE" ]; then
+  # Get current date in YYYY/MM/DD format
+  CURRENT_DATE=$(date +"%Y/%m/%d")
+
+  # Create default content for the changelog file
+  cat > "$CHANGELOG_FILE" << EOF
+---
+title: v${APP_VERSION} (${CURRENT_DATE})
+---
+
+- Add your changes here
+
+**Contributors:**
+[@riipandi](https://github.com/riipandi)
+EOF
+
+  echo "✓ Created new changelog file at $CHANGELOG_FILE with default content"
+fi
+
 echo "Version sync completed!"

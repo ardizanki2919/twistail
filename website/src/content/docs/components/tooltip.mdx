@@ -3,7 +3,7 @@ title: Tooltip
 full: false
 ---
 
-A label that provides information on hover or focus.
+A small informational popup that appears when users hover over or focus on an element.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-tooltip--default" external>
@@ -16,6 +16,19 @@ A label that provides information on hover or focus.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/tooltip/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/tooltip/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 
@@ -79,7 +92,7 @@ npx twistail add tooltip
       TooltipTrigger,
       TooltipContent,
       TooltipPortal
-    } from '#/components/tootlip'
+    } from '#/components/tooltip'
     ```
   </Tab>
   <Tab value="npm">
@@ -89,7 +102,7 @@ npx twistail add tooltip
       TooltipTrigger,
       TooltipContent,
       TooltipPortal
-    } from 'twistail-react/tootlip'
+    } from 'twistail-react/tooltip'
     ```
   </Tab>
 </Tabs>

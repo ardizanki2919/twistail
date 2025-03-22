@@ -1,6 +1,6 @@
 {
     "name": "website",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "type": "module",
     "private": true,
     "scripts": {
@@ -20,10 +20,10 @@
         "atropos": "^2.0.2",
         "consola": "^3.4.2",
         "fast-glob": "^3.3.3",
-        "fumadocs-core": "15.1.1",
+        "fumadocs-core": "15.1.2",
         "fumadocs-docgen": "^2.0.0",
         "fumadocs-mdx": "11.5.7",
-        "fumadocs-ui": "15.1.1",
+        "fumadocs-ui": "15.1.2",
         "gray-matter": "^4.0.3",
         "lucide-react": "^0.483.0",
         "next": "15.2.3",
@@ -57,6 +57,6 @@
         "postcss-load-config": "^6.0.1",
         "tailwindcss": "^4.0.15",
         "typescript": "5.8.2",
-        "wrangler": "^4.3.0"
+        "wrangler": "^4.4.0"
     }
 }

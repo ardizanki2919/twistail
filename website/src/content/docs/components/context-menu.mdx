@@ -3,10 +3,10 @@ title: Context Menu
 full: false
 ---
 
-Displays a menu of actions triggered by a right-click or long-press.
+A menu that appears upon user interaction, typically right-clicking, providing contextual actions.
 
 <Badges>
-  <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-context-menu--default" external>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/layout-components-contextmenu--default" external>
     Storybook
   </BadgeLink>
   <BadgeLink href="https://www.radix-ui.com/primitives/docs/components/context-menu#api-reference" external>
@@ -16,6 +16,19 @@ Displays a menu of actions triggered by a right-click or long-press.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/context-menu/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/context-menu/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 
@@ -111,7 +124,7 @@ npx twistail add context-menu
       ContextMenuSubMenuContent,
       ContextMenuSubMenuTrigger,
       ContextMenuRadioGroup,
-    } from 'twistail-react/context-menu'''
+    } from 'twistail-react/context-menu'
     ```
   </Tab>
 </Tabs>

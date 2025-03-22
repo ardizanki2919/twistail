@@ -3,7 +3,7 @@ title: Tab Navigation
 full: false
 ---
 
-Navigation menu with links styled as tabs.
+A navigation component that organizes content into multiple tabs, showing one section at a time.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-tabnavigation--default" external>
@@ -16,6 +16,19 @@ Navigation menu with links styled as tabs.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/tab-navigation/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/tab-navigation/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

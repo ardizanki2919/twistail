@@ -3,7 +3,7 @@ title: Label
 full: false
 ---
 
-Display a label for an input.
+A text descriptor for form elements that improves accessibility and usability.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-label--default" external>
@@ -16,6 +16,19 @@ Display a label for an input.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/label/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/label/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

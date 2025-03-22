@@ -3,7 +3,7 @@ title: Input
 full: false
 ---
 
-Displays a form input field or a component that looks like an input field.
+A form control that allows users to enter text data.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-input--default" external>
@@ -16,6 +16,19 @@ Displays a form input field or a component that looks like an input field.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/input/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/input/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

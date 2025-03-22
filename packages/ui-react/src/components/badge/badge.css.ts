@@ -7,15 +7,16 @@ const badgeStyles = tv({
   ],
   variants: {
     variant: {
-      primary: 'bg-primary/10 text-primary ring-primary/30',
-      neutral: 'bg-muted text-muted-foreground ring-border',
-      success: 'bg-success/10 text-success ring-success/20',
-      error: 'bg-destructive/10 text-destructive ring-destructive/20',
-      warning: 'bg-warning/10 text-warning ring-warning/20',
+      neutral: 'text-foreground bg-sidebar ring-ring/40',
+      primary: 'text-primary-foreground bg-primary ring-ring/40',
+      success: 'text-success-foreground bg-success ring-ring/40',
+      error: 'text-destructive-foreground bg-destructive ring-ring/40',
+      warning: 'text-warning-foreground bg-warning ring-ring/40',
+      info: 'text-info-foreground bg-info ring-ring/40',
     },
   },
   defaultVariants: {
-    variant: 'primary',
+    variant: 'neutral',
   },
 })
 

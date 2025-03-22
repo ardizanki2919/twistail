@@ -3,7 +3,7 @@ title: Divider
 full: false
 ---
 
-A versatile divider component used to create visual separation between content.
+A visual separator used to create a division between content sections.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-divider--default" external>
@@ -16,6 +16,19 @@ A versatile divider component used to create visual separation between content.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/divider/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/divider/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

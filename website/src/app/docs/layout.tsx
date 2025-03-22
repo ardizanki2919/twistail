@@ -27,7 +27,7 @@ const Footer = () => {
           )}
           newTab
         >
-          Aris Ripandi
+          @riipandi
         </Link>
       </p>
     </div>

@@ -17,6 +17,19 @@ A modal dialog that interrupts the user with important content and expects a res
   </BadgeLink>
 </Badges>
 
+---
+
+import Demo from '#/demo/alert-dialog/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/alert-dialog/preview.tsx</include>
+  </Tab>
+</Tabs>
+
 ## Automatic Installation
 
 <Callout type='warn'>
@@ -77,7 +90,6 @@ npx twistail add alert-dialog
     import {
       AlertDialog,
       AlertDialogPortal,
-      AlertDialogOverlay,
       AlertDialogTrigger,
       AlertDialogContent,
       AlertDialogHeader,
@@ -94,7 +106,6 @@ npx twistail add alert-dialog
     import {
       AlertDialog,
       AlertDialogPortal,
-      AlertDialogOverlay,
       AlertDialogTrigger,
       AlertDialogContent,
       AlertDialogHeader,

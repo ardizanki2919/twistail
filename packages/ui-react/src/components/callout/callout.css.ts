@@ -11,12 +11,12 @@ const calloutStyles = tv({
   },
   variants: {
     variant: {
+      neutral: 'text-muted-foreground bg-sidebar ring-ring/40',
       primary: 'text-primary-foreground bg-primary ring-ring/40',
       success: 'text-success-foreground bg-success ring-ring/40',
       error: 'text-destructive-foreground bg-destructive ring-ring/40',
       warning: 'text-warning-foreground bg-warning ring-ring/40',
       info: 'text-info-foreground bg-info ring-ring/40',
-      neutral: 'text-muted-foreground bg-sidebar ring-ring/40',
     },
   },
   defaultVariants: {

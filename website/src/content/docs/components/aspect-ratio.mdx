@@ -3,7 +3,7 @@ title: Aspect Ratio
 full: false
 ---
 
-Display content within a container with a specific aspect ratio.
+Maintains a consistent width-to-height ratio for content as it resizes.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-aspectratio--default" external>
@@ -16,6 +16,19 @@ Display content within a container with a specific aspect ratio.
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/aspect-ratio/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/aspect-ratio/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 

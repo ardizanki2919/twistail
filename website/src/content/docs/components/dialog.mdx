@@ -3,7 +3,7 @@ title: Dialog
 full: false
 ---
 
-A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+A modal window that appears in front of app content to provide critical information or request user input.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-dialog--default" external>
@@ -16,6 +16,19 @@ A window overlaid on either the primary window or another dialog window, renderi
     Source
   </BadgeLink>
 </Badges>
+
+---
+
+import Demo from '#/demo/dialog/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/dialog/preview.tsx</include>
+  </Tab>
+</Tabs>
 
 ## Automatic Installation
 
