@@ -5,7 +5,7 @@ const accordionStyles = tv({
     root: [],
     header: 'flex',
     triger: [
-      'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-semibold text-base leading-none text-foreground',
+      'group flex flex-1 cursor-pointer items-center justify-between py-3 text-left font-medium text-sm leading-none text-foreground',
       'focus-visible:z-10 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
       'data-[disabled]:cursor-default data-[disabled]:text-muted-foreground',
     ],
