@@ -5,7 +5,6 @@ import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
 import { defineCollections, frontmatterSchema, getDefaultMDXOptions } from 'fumadocs-mdx/config'
 import rehypeExternalLinks from 'rehype-external-links'
 import { z } from 'zod'
-import { rehypeComponent } from '#/rehype-components'
 
 export const blogPosts = defineCollections({
   type: 'doc',

@@ -25,7 +25,7 @@ export const Default: Story = {}
 
 export const Variants: Story = {
   render: (args) => (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       <Callout variant="primary" {...args} />
       <Callout variant="success" {...args} />
       <Callout variant="error" {...args} />
@@ -41,7 +41,7 @@ export const WithIcon: Story = {
     icon: <Lucide.Info className="mr-1.5 size-5 shrink-0 p-0.5" />,
   },
   render: (args) => (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       <Callout variant="primary" {...args} />
       <Callout variant="success" {...args} />
       <Callout variant="error" {...args} />

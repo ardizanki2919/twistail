@@ -25,16 +25,17 @@ export const Default: Story = {}
 export const Variants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <Badge variant="neutral">Neutral</Badge>
       <Badge>Default</Badge>
+      <Badge variant="primary">Primary</Badge>
       <Badge variant="success">Success</Badge>
       <Badge variant="error">Error</Badge>
       <Badge variant="warning">Warning</Badge>
+      <Badge variant="info">Info</Badge>
     </div>
   ),
 }
 
-export const AnchorWithBadgeVariants: Story = {
+export const AnchorBadge: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
       <a href="#" className={clx(badgeStyles({ variant: 'success' }), 'cursor-pointer')}>

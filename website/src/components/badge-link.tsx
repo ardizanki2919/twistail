@@ -9,10 +9,7 @@ interface BadgeLinkProps extends React.ComponentPropsWithoutRef<typeof Link>, Ba
 }
 
 const BadgeLink = React.forwardRef<HTMLAnchorElement, BadgeLinkProps>(
-  (
-    { className, variant = 'primary', external = false, children, ...props }: BadgeLinkProps,
-    forwardedRef
-  ) => {
+  ({ className, variant, external = false, children, ...props }: BadgeLinkProps, forwardedRef) => {
     return (
       <Badge variant={variant} asChild>
         <Link
