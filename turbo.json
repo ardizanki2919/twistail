@@ -11,12 +11,9 @@
         "typecheck": {
             "dependsOn": ["twistail-utils#build"]
         },
-        "cleanup": {
-            "cache": false
-        },
-        "start": {
-            "cache": false
-        },
+        "cleanup": {},
+        "start": {},
+        "publish:dry": {},
         "dev": {
             "dependsOn": ["twistail-utils#build"],
             "persistent": true,
@@ -29,7 +26,6 @@
         },
         "build:storybook": {
             "dependsOn": ["twistail-utils#build"]
-        },
-        "publish:dry": {}
+        }
     }
 }
