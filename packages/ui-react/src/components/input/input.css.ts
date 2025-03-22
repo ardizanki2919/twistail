@@ -26,7 +26,7 @@ const inputStyles = tv({
     leftIcon: 'size-[1.125rem] shrink-0',
     passwordContainer: 'absolute right-0 bottom-0 flex h-full items-center justify-center px-3',
     passwordButton: [
-      'size-fit rounded-xs outline-hidden transition-all text-muted-foreground hover:text-accent-foreground',
+      'size-fit rounded-sm outline-hidden transition-all text-muted-foreground hover:text-accent-foreground',
       'outline-none outline-primary outline-offset-2 focus-visible:outline-2 p-1 -mr-1.5',
       'focus:border-primary/60 focus:ring-2 focus:ring-primary/60',
     ],
