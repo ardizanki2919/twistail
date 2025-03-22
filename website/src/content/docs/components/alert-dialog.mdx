@@ -22,7 +22,7 @@ A modal dialog that interrupts the user with important content and expects a res
 import Demo from '#/demo/alert-dialog/preview'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
     <Demo />
   </Tab>
   <Tab value="Code">
@@ -90,7 +90,6 @@ npx twistail add alert-dialog
     import {
       AlertDialog,
       AlertDialogPortal,
-      AlertDialogOverlay,
       AlertDialogTrigger,
       AlertDialogContent,
       AlertDialogHeader,
@@ -107,7 +106,6 @@ npx twistail add alert-dialog
     import {
       AlertDialog,
       AlertDialogPortal,
-      AlertDialogOverlay,
       AlertDialogTrigger,
       AlertDialogContent,
       AlertDialogHeader,

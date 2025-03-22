@@ -1,3 +1,5 @@
-export default function Demo() {
+'use client'
+
+export default function DatePickerDemo() {
   return null
 }

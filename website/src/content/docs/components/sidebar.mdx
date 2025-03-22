@@ -20,16 +20,17 @@ It is often used on websites and applications to help users navigate through the
 
 ---
 
-import Demo from '#/demo/sidebar/preview'
-
-<Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
-    <Demo />
-  </Tab>
-  <Tab value="Code">
-    <include cwd lang="tsx">./src/demo/sidebar/preview.tsx</include>
+<Tabs items={['Preview']}>
+  <Tab value="Preview" className="h-[480px] p-0 not-prose overflow-auto">
+    <iframe
+      src="https://storybook.twistail.com/iframe.html?globals=backgrounds.grid:!false&args=&id=layout-components-sidebar--default"
+      className="size-full"
+      allowFullScreen
+    />
   </Tab>
 </Tabs>
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-sidebar--default) for more examples.
 
 ## Automatic Installation
 

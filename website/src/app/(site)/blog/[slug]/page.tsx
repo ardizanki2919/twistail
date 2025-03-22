@@ -6,7 +6,7 @@ import { Step, Steps } from 'fumadocs-ui/components/steps'
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
 
-import { ArrowLeft, Calendar, User } from 'lucide-react'
+import * as Lucide from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { clx } from 'twistail-utils'
 import Link from '#/app/link'
@@ -64,7 +64,7 @@ export default async function Page(props: {
             href="/blog"
             className="mb-6 inline-flex items-center gap-2 font-medium text-sm text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <Lucide.ArrowLeft className="h-4 w-4" />
             Back to blog
           </Link>
 
@@ -77,13 +77,13 @@ export default async function Page(props: {
             {/* Meta information */}
             <div className="mt-6 flex items-center space-x-4 text-neutral-600 dark:text-neutral-400">
               <div className="flex items-center gap-1.5">
-                <Calendar className="h-4 w-4" />
+                <Lucide.Calendar className="h-4 w-4" />
                 <time dateTime={new Date(page.data.date).toISOString()}>
                   {formatDate(page.data.date)}
                 </time>
               </div>
               <div className="flex items-center gap-1.5">
-                <User className="h-4 w-4" />
+                <Lucide.User className="h-4 w-4" />
                 <span>{page.data.author}</span>
               </div>
             </div>

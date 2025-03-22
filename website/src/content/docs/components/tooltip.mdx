@@ -22,7 +22,7 @@ A small informational popup that appears when users hover over or focus on an el
 import Demo from '#/demo/tooltip/preview'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
     <Demo />
   </Tab>
   <Tab value="Code">
@@ -92,7 +92,7 @@ npx twistail add tooltip
       TooltipTrigger,
       TooltipContent,
       TooltipPortal
-    } from '#/components/tootlip'
+    } from '#/components/tooltip'
     ```
   </Tab>
   <Tab value="npm">
@@ -102,7 +102,7 @@ npx twistail add tooltip
       TooltipTrigger,
       TooltipContent,
       TooltipPortal
-    } from 'twistail-react/tootlip'
+    } from 'twistail-react/tooltip'
     ```
   </Tab>
 </Tabs>

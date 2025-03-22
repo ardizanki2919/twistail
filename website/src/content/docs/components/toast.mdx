@@ -22,7 +22,7 @@ A brief, non-intrusive notification that appears temporarily to provide feedback
 import Demo from '#/demo/toast/preview'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-start justify-start gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
     <Demo />
   </Tab>
   <Tab value="Code">
@@ -77,6 +77,10 @@ npx twistail add toast
         ```
       </Tab>
     </Tabs>
+  </Step>
+  <Step>
+    ### Add the Toaster component
+    <include cwd lang="tsx">./src/demo/toast/layout-demo.tsx</include>
   </Step>
 </Steps>
 

@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
+import * as Lucide from 'lucide-react'
 import { Slot } from 'radix-ui'
 import * as React from 'react'
 import { ButtonProps, buttonStyles } from '#/components/button'
@@ -60,7 +60,7 @@ const PaginationPrevious = ({
       aria-label="Go to previous page"
       {...props}
     >
-      <ChevronLeft className={styles.previousIcon()} />
+      <Lucide.ChevronLeft className={styles.previousIcon()} />
       <span>Previous</span>
     </PaginationLink>
   )
@@ -71,7 +71,7 @@ const PaginationNext = ({ className, ...props }: React.ComponentProps<typeof Pag
   return (
     <PaginationLink className={styles.next({ className })} aria-label="Go to next page" {...props}>
       <span>Next</span>
-      <ChevronRight className={styles.nextIcon()} />
+      <Lucide.ChevronRight className={styles.nextIcon()} />
     </PaginationLink>
   )
 }
@@ -80,7 +80,7 @@ const PaginationEllipsis = ({ className, ...props }: React.ComponentProps<'span'
   const styles = paginationStyles()
   return (
     <span aria-hidden className={styles.ellipsis({ className })} {...props}>
-      <MoreHorizontal className={styles.ellipsisIcon()} />
+      <Lucide.MoreHorizontal className={styles.ellipsisIcon()} />
       <span className="sr-only">More pages</span>
     </span>
   )
