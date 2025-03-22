@@ -4,6 +4,8 @@
 [![License Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE-APACHE)
 [![Turborepo](https://img.shields.io/badge/Built%20With-Turborepo-blueviolet)][turborepo]
 [![Contribution](https://img.shields.io/badge/Contributions-welcome-gray.svg)][contribution]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9d81a7f1-1d13-4ec6-ba6a-5681b92ca062/deploy-status)](https://app.netlify.com/sites/twistail/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6592ea51-c233-4334-a75a-077aad19dc74/deploy-status)](https://app.netlify.com/sites/twistail-storybook/deploys)
 
 ![Twistail Banner](./website/public/images/twistail-banner-lowres.png)
 
