@@ -4,7 +4,7 @@ import { Form, formStyles } from '#/components/form'
 const meta: Meta<typeof Form> = {
   component: Form,
   title: 'Base Components/Form',
-  tags: ['status:preview'],
+  tags: ['autodocs', 'status:preview'],
   argTypes: {
     size: {
       control: 'select',
