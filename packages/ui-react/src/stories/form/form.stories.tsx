@@ -23,7 +23,13 @@ export { Default } from './default'
 export { GridLayout } from './grid-layout'
 export { CompleteExample } from './complete-example'
 export { ServerValidation } from './server-validation'
-export { SmallSize, LargeSize } from './size-variants'
+export {
+  ExtraSmallSize,
+  SmallSize,
+  MediumSize,
+  LargeSize,
+  ExtraLargeSize,
+} from './size-variants'
 export { CustomStyling } from './custom-styles'
 export { WithVariousInputs } from './various-input'
 export { WithErrorState, WithValidityState } from './with-states'

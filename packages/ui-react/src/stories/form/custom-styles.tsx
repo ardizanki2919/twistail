@@ -59,9 +59,7 @@ export const CustomStyling: Story = {
         <FormMessage match="valueMissing">Please enter your message</FormMessage>
       </FormField>
 
-      <FormSubmit className="w-full bg-primary/90 font-medium hover:bg-primary">
-        Send Message
-      </FormSubmit>
+      <FormSubmit className="w-full">Send Message</FormSubmit>
     </Form>
   ),
 }
