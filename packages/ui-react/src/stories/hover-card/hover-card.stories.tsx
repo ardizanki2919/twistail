@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage, Button } from '#/components'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '#/components'
+import { Avatar, AvatarFallback, AvatarImage } from '#/components/avatar'
+import { Button } from '#/components/button'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '#/components/hover-card'
 
 const meta: Meta<typeof HoverCard> = {
   component: HoverCard,
-  title: 'Base Components/HoverCard',
+  title: 'Base Components/Hover Card',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',

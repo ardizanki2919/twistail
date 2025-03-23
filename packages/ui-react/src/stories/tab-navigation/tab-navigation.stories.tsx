@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { TabNavigation, TabNavigationLink } from '#/components'
+import { TabNavigation, TabNavigationLink } from '#/components/tab-navigation'
 
 const meta: Meta<typeof TabNavigation> = {
   component: TabNavigation,
-  title: 'Base Components/TabNavigation',
+  title: 'Base Components/Tab Navigation',
   tags: ['autodocs', 'status:done'],
   decorators: [
     (Story) => (

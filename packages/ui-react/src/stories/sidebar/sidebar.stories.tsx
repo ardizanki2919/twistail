@@ -1,6 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '#/components/breadcrumb'
+import { Button } from '#/components/button'
+import { Divider } from '#/components/divider'
+import { ScrollArea } from '#/components/scroll-area'
+import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -24,18 +35,7 @@ import {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
-} from '#/components'
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-  Button,
-  Divider,
-  ScrollArea,
-} from '#/components'
+} from '#/components/sidebar'
 
 function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (

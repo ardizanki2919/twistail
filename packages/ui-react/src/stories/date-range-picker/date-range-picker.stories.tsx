@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { id } from 'date-fns/locale'
 import * as React from 'react'
-import { Button, DateRange, DateRangePicker } from '#/components'
+import { Button } from '#/components/button'
+import { DateRange, DateRangePicker } from '#/components/date-picker'
 
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,

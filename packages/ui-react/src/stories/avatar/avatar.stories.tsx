@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 import { clx, getInitials } from 'twistail-utils'
-import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '#/components'
-import { Tooltip, TooltipContent, TooltipTrigger } from '#/components'
+import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from '#/components/avatar'
+import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/tooltip'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,

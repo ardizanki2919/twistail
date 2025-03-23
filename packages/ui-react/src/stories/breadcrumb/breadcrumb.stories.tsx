@@ -1,9 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbPage, BreadcrumbSeparator } from '#/components'
-import { BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '#/components'
-import { DropdownMenu, DropdownMenuTrigger } from '#/components'
-import { DropdownMenuContent, DropdownMenuItem } from '#/components'
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '#/components/breadcrumb'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '#/components/dropdown-menu'
 
 const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,

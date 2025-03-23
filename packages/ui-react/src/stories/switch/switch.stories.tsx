@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Card, Divider, Label, Switch } from '#/components'
+import { Button } from '#/components/button'
+import { Card } from '#/components/card'
+import { Divider } from '#/components/divider'
+import { Label } from '#/components/label'
+import { Switch } from '#/components/switch'
 
 const meta: Meta<typeof Switch> = {
   component: Switch,

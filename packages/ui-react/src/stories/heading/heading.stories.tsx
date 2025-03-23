@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Heading, headingStyles } from '#/components'
+import { Heading, headingStyles } from '#/components/heading'
 
 const meta: Meta<typeof Heading> = {
   component: Heading,

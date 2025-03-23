@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { clx } from 'twistail-utils'
-import { Badge, badgeStyles } from '#/components'
+import { Badge, badgeStyles } from '#/components/badge'
 
 const meta: Meta<typeof Badge> = {
   component: Badge,

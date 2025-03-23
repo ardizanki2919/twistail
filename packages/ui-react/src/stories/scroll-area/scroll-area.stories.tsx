@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { clx } from 'twistail-utils'
-import { Divider, ScrollArea, ScrollBar } from '#/components'
+import { Divider } from '#/components/divider'
+import { ScrollArea, ScrollBar } from '#/components/scroll-area'
 
 const meta: Meta<typeof ScrollArea> = {
-  title: 'Base Components/ScrollArea',
+  title: 'Base Components/Scroll Area',
   component: ScrollArea,
   tags: ['autodocs', 'status:done'],
   parameters: {

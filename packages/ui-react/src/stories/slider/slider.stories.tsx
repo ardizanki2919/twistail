@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from '#/components'
-import { Card } from '#/components'
-import { Divider } from '#/components'
-import { Slider } from '#/components'
+import { Button } from '#/components/button'
+import { Card } from '#/components/card'
+import { Divider } from '#/components/divider'
+import { Slider } from '#/components/slider'
 
 const meta: Meta<typeof Slider> = {
   component: Slider,

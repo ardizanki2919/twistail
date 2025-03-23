@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Callout, calloutStyles } from '#/components'
+import { Callout, calloutStyles } from '#/components/callout'
 
 const meta: Meta<typeof Callout> = {
   component: Callout,

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card, Textarea } from '#/components'
+import { Card } from '#/components/card'
+import { Textarea } from '#/components/textarea'
 
 const meta: Meta<typeof Textarea> = {
   component: Textarea,

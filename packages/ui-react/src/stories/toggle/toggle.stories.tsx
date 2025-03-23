@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Toggle, ToggleGroup, ToggleGroupItem } from '#/components'
+import { Toggle, ToggleGroup, ToggleGroupItem } from '#/components/toggle'
 
 const meta: Meta<typeof Toggle> = {
   component: Toggle,

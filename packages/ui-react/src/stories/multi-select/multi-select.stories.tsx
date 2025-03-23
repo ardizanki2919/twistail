@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { MultiSelect } from '#/components'
+import { MultiSelect } from '#/components/multi-select'
 
 const meta: Meta<typeof MultiSelect> = {
   component: MultiSelect,
-  title: 'Base Components/MultiSelect',
+  title: 'Base Components/Multi Select',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',

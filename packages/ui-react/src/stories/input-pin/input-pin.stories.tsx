@@ -1,11 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
-import { InputPin, InputPinSlot, inputPinStyles } from '#/components'
-import { InputPinGroup, InputPinSeparator } from '#/components'
+import * as React from 'react'
+import {
+  InputPin,
+  InputPinGroup,
+  InputPinSeparator,
+  InputPinSlot,
+  inputPinStyles,
+} from '#/components/input-pin'
 
 const meta: Meta<typeof InputPin> = {
   component: InputPin,
-  title: 'Base Components/InputPin',
+  title: 'Base Components/Input PIN',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
@@ -198,7 +203,7 @@ export const Disabled: Story = {
 
 export const VerificationCode: Story = {
   render: () => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     const handleComplete = (val: string) => {
       console.info('Completed:', val)
     }

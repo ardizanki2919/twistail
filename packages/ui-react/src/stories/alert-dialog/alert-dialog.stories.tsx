@@ -1,13 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { AlertDialogAction, AlertDialogPortal, Button } from '#/components'
-import { AlertDialog, AlertDialogCancel } from '#/components'
-import { AlertDialogContent, AlertDialogTrigger } from '#/components'
-import { AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '#/components'
-import { AlertDialogDescription } from '#/components'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '#/components/alert-dialog'
+import { Button } from '#/components/button'
 
 const meta: Meta<typeof AlertDialog> = {
   component: AlertDialog,
-  title: 'Base Components/AlertDialog',
+  title: 'Base Components/Alert Dialog',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',

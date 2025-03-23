@@ -3,9 +3,14 @@ import { fn } from '@storybook/test'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { clx } from 'twistail-utils'
-import { DropdownMenu, DropdownMenuTrigger } from '#/components'
-import { DropdownMenuContent, DropdownMenuItem } from '#/components'
-import { Badge, Button, type ButtonProps, buttonStyles } from '#/components'
+import { Badge } from '#/components/badge'
+import { Button, type ButtonProps, buttonStyles } from '#/components/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '#/components/dropdown-menu'
 
 const meta: Meta<ButtonProps> = {
   component: Button,

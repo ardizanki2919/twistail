@@ -14,7 +14,7 @@ import {
 
 const meta: Meta<typeof NavigationMenu> = {
   component: NavigationMenu,
-  title: 'Layout Components/NavigationMenu',
+  title: 'Layout Components/Navigation Menu',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',

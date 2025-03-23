@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/tabs'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,

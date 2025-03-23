@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { useState } from 'react'
+import * as React from 'react'
 import { Combobox } from '#/components/combobox'
 
 const frameworks = [
@@ -74,7 +74,7 @@ export const Default: Story = {
     options: frameworks,
   },
   render: (args) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox
@@ -98,7 +98,7 @@ export const WithError: Story = {
     hasError: true,
   },
   render: (args) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox
@@ -122,7 +122,7 @@ export const WithIcons: Story = {
     placeholder: 'Select framework',
   },
   render: (args) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox
@@ -146,7 +146,7 @@ export const WithDefaultValue: Story = {
     defaultValue: 'react',
   },
   render: (args) => {
-    const [value, setValue] = useState(args.defaultValue || '')
+    const [value, setValue] = React.useState(args.defaultValue || '')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox
@@ -170,7 +170,7 @@ export const Modal: Story = {
     modalPopover: true,
   },
   render: (args) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox
@@ -205,7 +205,7 @@ export const LongList: Story = {
     ],
   },
   render: (args) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = React.useState('')
     return (
       <div className="flex w-[180px] flex-col gap-4">
         <Combobox

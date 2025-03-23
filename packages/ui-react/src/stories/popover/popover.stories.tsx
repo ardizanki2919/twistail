@@ -1,12 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Divider, Label } from '#/components'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from '#/components'
-import { DialogFooter, DialogHeader, DialogTitle } from '#/components'
-import { DialogDescription } from '#/components'
-import { Popover, PopoverTrigger } from '#/components'
-import { Input } from '#/components'
-import { PopoverClose, PopoverContent } from '#/components'
+import { Button } from '#/components/button'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '#/components/dialog'
+import { Divider } from '#/components/divider'
+import { Input } from '#/components/input'
+import { Label } from '#/components/label'
+import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/components/popover'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,

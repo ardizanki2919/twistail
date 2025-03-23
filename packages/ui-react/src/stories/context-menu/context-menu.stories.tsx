@@ -14,11 +14,11 @@ import {
   ContextMenuSubMenuContent,
   ContextMenuSubMenuTrigger,
   ContextMenuTrigger,
-} from '#/components'
+} from '#/components/context-menu'
 
 const meta: Meta<typeof ContextMenu> = {
   component: ContextMenu,
-  title: 'Layout Components/ContextMenu',
+  title: 'Layout Components/Context Menu',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',

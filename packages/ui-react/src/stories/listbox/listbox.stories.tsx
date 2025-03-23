@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Button, Text } from '#/components'
+import { Button } from '#/components/button'
 import {
   Dialog,
   DialogClose,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '#/components'
+} from '#/components/dialog'
 import {
   Listbox,
   ListboxContent,
@@ -21,6 +21,7 @@ import {
   ListboxTrigger,
   ListboxValue,
 } from '#/components/listbox'
+import { Text } from '#/components/text'
 
 const meta: Meta<typeof Listbox> = {
   component: Listbox,

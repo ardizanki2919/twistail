@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Toaster, toast } from '#/components'
+import { Button } from '#/components/button'
+import { Toaster, toast } from '#/components/toast'
 
 const meta: Meta = {
   component: Toaster,

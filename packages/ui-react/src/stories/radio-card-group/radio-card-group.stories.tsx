@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from '#/components'
-import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from '#/components'
+import { Button } from '#/components/button'
+import { RadioCardGroup, RadioCardIndicator, RadioCardItem } from '#/components/radio-card-group'
 
 const meta: Meta<typeof RadioCardGroup> = {
   component: RadioCardGroup,
-  title: 'Base Components/RadioCardGroup',
+  title: 'Base Components/Radio Card Group',
   tags: ['autodocs', 'status:done'],
   decorators: [
     (Story) => (

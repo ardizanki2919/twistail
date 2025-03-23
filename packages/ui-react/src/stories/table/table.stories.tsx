@@ -1,9 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Badge, badgeStyles } from '#/components'
-import { Table, TableCaption, TableRoot, TableRow } from '#/components'
-import { TableBody, TableCell, TableFoot } from '#/components'
-import { TableHead, TableHeaderCell } from '#/components'
+import { Badge, badgeStyles } from '#/components/badge'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFoot,
+  TableHead,
+  TableHeaderCell,
+  TableRoot,
+  TableRow,
+} from '#/components/table'
 
 const meta: Meta<typeof Table> = {
   component: Table,

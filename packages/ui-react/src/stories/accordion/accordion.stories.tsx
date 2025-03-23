@@ -3,9 +3,15 @@ import { fn } from '@storybook/test'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { clx } from 'twistail-utils'
-import { AccordionContent, AccordionItem, Heading } from '#/components'
-import { Badge, Button } from '#/components'
-import { Accordion, AccordionTrigger } from '#/components'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '#/components/accordion'
+import { Badge } from '#/components/badge'
+import { Button } from '#/components/button'
+import { Heading } from '#/components/heading'
 
 const meta: Meta = {
   component: Accordion,
@@ -455,7 +461,7 @@ export const Horizontal: Story = {
     return (
       <Accordion
         type="single"
-        className="flex h-[400px] w-full w-full max-w-[700px] gap-2 sm:flex-row"
+        className="flex h-[400px] w-full max-w-[700px] gap-2 sm:flex-row"
         orientation="horizontal"
         onValueChange={setValue}
         value={value}

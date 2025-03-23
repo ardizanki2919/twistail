@@ -1,9 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button } from '#/components'
-import { Drawer, DrawerBody, DrawerClose, DrawerTrigger } from '#/components'
-import { DrawerFooter, DrawerHeader, DrawerTitle } from '#/components'
-import { DrawerContent, DrawerDescription } from '#/components'
+import { Button } from '#/components/button'
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '#/components/drawer'
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,

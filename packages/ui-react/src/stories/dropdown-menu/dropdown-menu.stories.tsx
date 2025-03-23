@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-
-import { Button } from '#/components'
+import { Button } from '#/components/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -18,11 +17,11 @@ import {
   DropdownMenuSubMenuContent,
   DropdownMenuSubMenuTrigger,
   DropdownMenuTrigger,
-} from '#/components'
+} from '#/components/dropdown-menu'
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
-  title: 'Base Components/DropdownMenu',
+  title: 'Base Components/Dropdown Menu',
   tags: ['autodocs', 'status:done'],
 }
 

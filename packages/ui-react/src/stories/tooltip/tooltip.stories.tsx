@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Text, Tooltip, TooltipContent, TooltipTrigger } from '#/components'
+import { Button } from '#/components/button'
+import { Text } from '#/components/text'
+import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/tooltip'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

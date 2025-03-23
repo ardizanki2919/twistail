@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
-import { Button, Divider, Text } from '#/components'
+import { Button } from '#/components/button'
+import { Divider } from '#/components/divider'
+import { Text } from '#/components/text'
 
 const meta: Meta<typeof Divider> = {
   component: Divider,

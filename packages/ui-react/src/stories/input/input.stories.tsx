@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, Input, Label, Text } from '#/components'
+import { Button } from '#/components/button'
+import { Input } from '#/components/input'
+import { Label } from '#/components/label'
+import { Text } from '#/components/text'
 
 const meta: Meta<typeof Input> = {
   component: Input,

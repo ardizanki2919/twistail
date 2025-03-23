@@ -1,9 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Button, ScrollArea, ScrollBar } from '#/components'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from '#/components'
-import { DialogFooter, DialogHeader, DialogTitle } from '#/components'
-import { DialogDescription } from '#/components'
+import { Button } from '#/components/button'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '#/components/dialog'
+import { ScrollArea, ScrollBar } from '#/components/scroll-area'
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,

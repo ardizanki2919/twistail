@@ -1,16 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Divider, TooltipContent, TooltipTrigger } from '#/components'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components'
-import { Tooltip } from '#/components'
-import { Card } from '#/components'
-import { Input } from '#/components'
-import { Label } from '#/components'
-import { Checkbox } from '#/components'
-import { RadioGroup, RadioGroupItem } from '#/components'
-import { Listbox, ListboxTrigger } from '#/components'
-import { ListboxContent, ListboxItem, ListboxValue } from '#/components'
-import { Select } from '#/components'
-import { Textarea } from '#/components'
+import { Button } from '#/components/button'
+import { Card } from '#/components/card'
+import { Checkbox } from '#/components/checkbox'
+import { Divider } from '#/components/divider'
+import { Input } from '#/components/input'
+import { Label } from '#/components/label'
+import {
+  Listbox,
+  ListboxContent,
+  ListboxItem,
+  ListboxTrigger,
+  ListboxValue,
+} from '#/components/listbox'
+import { RadioGroup, RadioGroupItem } from '#/components/radio-group'
+import { Select } from '#/components/select'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/tabs'
+import { Textarea } from '#/components/textarea'
+import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/tooltip'
 
 const meta: Meta<typeof Card> = {
   component: Card,

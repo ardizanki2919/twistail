@@ -1,9 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
-import { Button, Command, CommandDialog, CommandEmpty, CommandGroup } from '#/components'
-import { CommandInput, CommandItem, CommandList } from '#/components'
-import { CommandSeparator, CommandShortcut, Kbd } from '#/components'
+import { Button } from '#/components/button'
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from '#/components/command'
+import { Kbd } from '#/components/kbd'
 
 const meta: Meta<typeof Command> = {
   component: Command,
