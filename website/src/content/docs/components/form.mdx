@@ -19,6 +19,109 @@ Build forms with the Radix UI Form component, supports built-in validation and c
 
 ---
 
+import Demo from '#/demo/form/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/form/preview.tsx</include>
+  </Tab>
+</Tabs>
+
 <Callout type='warn' title='Attention'>
-  This documentation is still in progress. Please check back later.
+  At the moment, the Form component is still in preview mode. It is not recommended to use it in production.
+  Use with caution. We will continue to improve the component and add more features in the future.
 </Callout>
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-form--docs) for more examples.
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add form
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['form.tsx', 'form.css.ts', 'index.ts']}>
+      <Tab value="form.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/form/form.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/form/form.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="form.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/form/form.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/form/form.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/form/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/form/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      Form,
+      FormField,
+      FormLabel,
+      FormControl,
+      FormMessage,
+      FormValidityState,
+      FormSubmit
+    } from '#/components/form'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      Form,
+      FormField,
+      FormLabel,
+      FormControl,
+      FormMessage,
+      FormValidityState,
+      FormSubmit
+    } from 'twistail-react/form'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+```tsx
+// WIP
+```
