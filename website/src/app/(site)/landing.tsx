@@ -213,7 +213,7 @@ function HeroContent({
 
       <div className="mb-8 flex flex-col gap-4 sm:flex-row">
         <Button size="lg" asChild>
-          <Link href="/docs/installation">Get Started</Link>
+          <Link href="/docs">Get Started</Link>
         </Button>
         <Button variant="outline" size="lg" className="group px-5" onClick={handleCopy}>
           <code className="font-mono group-hover:text-blue-500">{installCommand}</code>

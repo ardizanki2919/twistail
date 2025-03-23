@@ -1,6 +1,6 @@
 {
     "name": "twistail",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "type": "module",
     "license": "MIT",
     "description": "A CLI for managing UI components in your project.",
@@ -50,7 +50,7 @@
         "@repo/config-typescript": "workspace:*",
         "@types/node": "^22.13.11",
         "@types/react": "^19.0.12",
-        "rollup": "^4.36.0",
+        "rollup": "^4.37.0",
         "typescript": "catalog:",
         "unbuild": "^3.5.0",
         "unplugin-purge-polyfills": "^0.0.7"

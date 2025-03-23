@@ -22,6 +22,8 @@ addons.setConfig({
     eject: { hidden: false },
     copy: { hidden: false },
     fullscreen: { hidden: false },
+    'storybook/background': { hidden: false },
+    'storybook/viewport': { hidden: false },
   },
   sidebar: {
     showRoots: true,
