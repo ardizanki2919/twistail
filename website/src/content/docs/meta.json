@@ -31,6 +31,7 @@
         "components/divider",
         "components/drawer",
         "components/dropdown-menu",
+        "components/form",
         "components/heading",
         "components/hover-card",
         "components/input",

@@ -20,7 +20,7 @@ import {
   ListboxItem,
   ListboxTrigger,
   ListboxValue,
-} from '#/components'
+} from '#/components/listbox'
 
 const meta: Meta<typeof Listbox> = {
   component: Listbox,

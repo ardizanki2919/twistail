@@ -1,5 +1,6 @@
 import { Form as FormPrimitive } from 'radix-ui'
 import * as React from 'react'
+import { ButtonStyles, buttonStyles } from '../button'
 import { type FormStyles, formStyles } from './form.css'
 
 const Form = React.forwardRef<
@@ -30,16 +31,20 @@ const FormLabel = React.forwardRef<
   )
 })
 
+/**
+ * TODO: At the moment, it is not possible to compose Form with Radix's other form primitives such as Checkbox, Select, etc.
+ * @see: https://www.radix-ui.com/primitives/docs/components/form#composing-with-your-own-components
+ */
 const FormControl = React.forwardRef<
   React.ComponentRef<typeof FormPrimitive.Control>,
   React.ComponentPropsWithoutRef<typeof FormPrimitive.Control> & FormStyles
->(({ className, size, ...props }, forwardedRef) => {
+>(({ className, size, asChild, ...props }, forwardedRef) => {
   const styles = formStyles({ size })
-
   return (
     <FormPrimitive.Control
       ref={forwardedRef}
       className={styles.control({ className })}
+      asChild={asChild}
       {...props}
     />
   )
@@ -67,11 +72,12 @@ const FormValidityState = (
 
 const FormSubmit = React.forwardRef<
   React.ComponentRef<typeof FormPrimitive.Submit>,
-  React.ComponentPropsWithoutRef<typeof FormPrimitive.Submit> & FormStyles
->(({ className, size, ...props }, forwardedRef) => {
-  const styles = formStyles({ size })
+  React.ComponentPropsWithoutRef<typeof FormPrimitive.Submit> &
+    Pick<ButtonStyles, 'variant' | 'size'>
+>(({ className, size, variant, ...props }, forwardedRef) => {
+  const styles = buttonStyles({ variant, size })
   return (
-    <FormPrimitive.Submit ref={forwardedRef} className={styles.submit({ className })} {...props} />
+    <FormPrimitive.Submit ref={forwardedRef} className={styles.base({ className })} {...props} />
   )
 })
 

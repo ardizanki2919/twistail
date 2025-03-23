@@ -37,6 +37,7 @@ This site provides documentation in a format optimized for Large Language Models
 - [Button Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Button component
 - [Checkbox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Checkbox component
 - [Combobox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Combobox component
+- [Form Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Form component
 - [Input Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Input component
 - [Input PIN Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Input PIN component
 - [Label Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Label component
