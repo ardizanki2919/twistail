@@ -11,7 +11,6 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
   return (
     <div className="flex flex-col items-center gap-y-4">
       <Calendar
-        data-testid="react-day-picker-calendar"
         mode={mode}
         selected={mode === 'single' ? date : dateRange}
         onSelect={mode === 'single' ? setDate : setDateRange}
@@ -39,7 +38,7 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Base Components/Calendar',
-  tags: ['status:experimental', 'hidden'],
+  tags: ['autodocs', 'status:wip'],
   render: Demo,
 }
 
@@ -52,16 +51,8 @@ export const Default: Story = {
   },
 }
 
-export const DropdownMonths: Story = {
-  args: {
-    captionLayout: 'dropdown-months',
-  },
-}
-
-export const DropdownYears: Story = {
-  args: {
-    captionLayout: 'dropdown-years',
-  },
+export const WithDropdown: Story = {
+  args: { captionLayout: 'dropdown' },
 }
 
 export const SingleWithYearNavigation: Story = {

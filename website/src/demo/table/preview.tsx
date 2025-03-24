@@ -97,22 +97,22 @@ const data: Array<{
 
 export default function TableDemo() {
   return (
-    <TableRoot data-testid="table-root">
-      <Table data-testid="table">
-        <TableCaption data-testid="table-caption">A list of your recent invoices.</TableCaption>
-        <TableHead data-testid="table-head">
-          <TableRow data-testid="table-row">
-            <TableHeaderCell data-testid="table-header-cell">Name</TableHeaderCell>
+    <TableRoot>
+      <Table>
+        <TableCaption>A list of your recent invoices.</TableCaption>
+        <TableHead>
+          <TableRow>
+            <TableHeaderCell>Name</TableHeaderCell>
             <TableHeaderCell className="text-right">Sales ($)</TableHeaderCell>
             <TableHeaderCell>Region</TableHeaderCell>
             <TableHeaderCell>Status</TableHeaderCell>
             <TableHeaderCell className="text-right">Working Hours (h)</TableHeaderCell>
           </TableRow>
         </TableHead>
-        <TableBody data-testid="table-body">
+        <TableBody>
           {data.map((item) => (
             <TableRow key={item.id}>
-              <TableCell data-testid="table-cell">{item.name}</TableCell>
+              <TableCell>{item.name}</TableCell>
               <TableCell className="text-right">{item.sales}</TableCell>
               <TableCell>{item.region}</TableCell>
               <TableCell>{item.status}</TableCell>
@@ -120,7 +120,7 @@ export default function TableDemo() {
             </TableRow>
           ))}
         </TableBody>
-        <TableFoot data-testid="table-foot">
+        <TableFoot>
           <TableRow>
             <TableHeaderCell colSpan={2} scope="row" className="text-right">
               4642

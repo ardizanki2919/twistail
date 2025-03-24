@@ -1,6 +1,6 @@
 import { Form as FormPrimitive } from 'radix-ui'
 import * as React from 'react'
-import { ButtonStyles, buttonStyles } from '../button'
+import { ButtonStyles, buttonStyles } from '#/components/button'
 import { type FormStyles, formStyles } from './form.css'
 
 const Form = React.forwardRef<
