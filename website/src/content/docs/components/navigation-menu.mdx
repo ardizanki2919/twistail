@@ -118,3 +118,36 @@ npx twistail add navigation-menu
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-navigation-menu--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger />
+      <NavigationMenuContent>
+        <NavigationMenuLink />
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+
+    <NavigationMenuItem>
+      <NavigationMenuLink />
+    </NavigationMenuItem>
+
+    <NavigationMenuItem>
+      <NavigationMenuTrigger />
+      <NavigationMenuContent>
+        <NavigationMenuSub>
+          <NavigationMenuList />
+          <NavigationMenuViewport />
+        </NavigationMenuSub>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+
+    <NavigationMenuIndicator />
+  </NavigationMenuList>
+
+  <NavigationMenuViewport />
+</NavigationMenu>
+```

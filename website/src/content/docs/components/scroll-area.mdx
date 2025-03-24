@@ -100,3 +100,18 @@ npx twistail add scroll-area
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-scroll-area--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<ScrollArea>
+  <ScrollAreaViewport />
+  <ScrollAreaScrollbar orientation="horizontal">
+    <ScrollAreaThumb />
+  </ScrollAreaScrollbar>
+  <ScrollAreaScrollbar orientation="vertical">
+    <ScrollAreaThumb />
+  </ScrollAreaScrollbar>
+  <ScrollAreaCorner />
+</ScrollArea>
+```

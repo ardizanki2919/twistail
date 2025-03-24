@@ -100,3 +100,38 @@ npx twistail add select
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-select--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+    <SelectIcon />
+  </SelectTrigger>
+
+  <SelectPortal>
+    <SelectContent>
+      <SelectScrollUpButton />
+      <SelectViewport>
+        <SelectItem>
+          <SelectItemText />
+          <SelectItemIndicator />
+        </SelectItem>
+
+        <SelectGroup>
+          <SelectLabel />
+          <SelectItem>
+            <SelectItemText />
+            <SelectItemIndicator />
+          </SelectItem>
+        </SelectGroup>
+
+        <SelectSeparator />
+      </SelectViewport>
+      <SelectScrollDownButton />
+      <SelectArrow />
+    </SelectContent>
+  </SelectPortal>
+</Select>
+```

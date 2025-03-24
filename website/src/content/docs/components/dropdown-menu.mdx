@@ -132,3 +132,42 @@ npx twistail add dropdown-menu
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-dropdown-menu--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger />
+
+  <DropdownMenuPortal>
+    <DropdownMenuContent>
+      <DropdownMenuLabel />
+      <DropdownMenuItem />
+
+      <DropdownMenuGroup>
+        <DropdownMenuItem />
+      </DropdownMenuGroup>
+
+      <DropdownMenuCheckboxItem>
+        <DropdownMenuItemIndicator />
+      </DropdownMenuCheckboxItem>
+
+      <DropdownMenuRadioGroup>
+        <DropdownMenuRadioItem>
+          <DropdownMenuItemIndicator />
+        </DropdownMenuRadioItem>
+      </DropdownMenuRadioGroup>
+
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger />
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent />
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+
+      <DropdownMenuSeparator />
+      <DropdownMenuArrow />
+    </DropdownMenuContent>
+  </DropdownMenuPortal>
+</DropdownMenu>
+```

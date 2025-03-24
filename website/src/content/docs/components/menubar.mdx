@@ -130,3 +130,43 @@ npx twistail add menubar
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-menubar--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger />
+    <MenubarPortal>
+      <MenubarContent>
+        <MenubarLabel />
+        <MenubarItem />
+
+        <MenubarGroup>
+          <MenubarItem />
+        </MenubarGroup>
+
+        <MenubarCheckboxItem>
+          <MenubarItemIndicator />
+        </MenubarCheckboxItem>
+
+        <MenubarRadioGroup>
+          <MenubarRadioItem>
+            <MenubarItemIndicator />
+          </MenubarRadioItem>
+        </MenubarRadioGroup>
+
+        <MenubarSub>
+          <MenubarSubTrigger />
+          <MenubarPortal>
+            <MenubarSubContent />
+          </MenubarPortal>
+        </MenubarSub>
+
+        <MenubarSeparator />
+        <MenubarArrow />
+      </MenubarContent>
+    </MenubarPortal>
+  </MenubarMenu>
+</Menubar>
+```
