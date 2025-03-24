@@ -121,6 +121,24 @@ npx twistail add alert-dialog
 
 ### Example
 
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-alert-dialog--docs) for more examples.
+
+## Anatomy
+
 ```tsx
-// WIP
+<AlertDialog>
+  <AlertDialogTrigger />
+  <AlertDialogPortal>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle />
+        <AlertDialogDescription />
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel />
+        <AlertDialogAction />
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialogPortal>
+</AlertDialog>
 ```

@@ -131,6 +131,42 @@ npx twistail add context-menu
 
 ### Example
 
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-context-menu--docs) for more examples.
+
+## Anatomy
+
 ```tsx
-// WIP
+<ContextMenu>
+  <ContextMenuTrigger />
+
+  <ContextMenuPortal>
+    <ContextMenuContent>
+      <ContextMenuLabel />
+      <ContextMenuItem />
+
+      <ContextMenuGroup>
+        <ContextMenuItem />
+      </ContextMenuGroup>
+
+      <ContextMenuCheckboxItem>
+        <ContextMenuItemIndicator />
+      </ContextMenuCheckboxItem>
+
+      <ContextMenuRadioGroup>
+        <ContextMenuRadioItem>
+          <ContextMenuItemIndicator />
+        </ContextMenuRadioItem>
+      </ContextMenuRadioGroup>
+
+      <ContextMenuSub>
+        <ContextMenuSubTrigger />
+        <ContextMenuPortal>
+          <ContextMenuSubContent />
+        </ContextMenuPortal>
+      </ContextMenuSub>
+
+      <ContextMenuSeparator />
+    </ContextMenuContent>
+  </ContextMenuPortal>
+</ContextMenu>
 ```
