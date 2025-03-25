@@ -27,6 +27,7 @@
         "components/command",
         "!components/date-picker",
         "!components/date-range-picker",
+        "components/description-list",
         "components/dialog",
         "components/divider",
         "components/drawer",
