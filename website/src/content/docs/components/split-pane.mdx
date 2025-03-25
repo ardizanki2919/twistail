@@ -1,0 +1,102 @@
+---
+title: Split Pane
+full: false
+---
+
+Used for selecting a date.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://allotment.mulberryhousesoftware.com/docs/allotment" external>
+    Allotment
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/split-pane" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/split-pane/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/split-pane/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add split-pane
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['split-pane.tsx', 'split-pane.css.ts', 'index.ts']}>
+      <Tab value="split-pane.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/split-pane.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/split-pane/split-pane.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="split-pane.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/split-pane.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/split-pane/split-pane.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/split-pane/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/split-pane'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/split-pane'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs) for more examples.

@@ -1,6 +1,6 @@
 {
     "name": "twistail-react",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "type": "module",
     "description": "Twistail UI Components",
     "author": "Aris Ripandi <aris@duck.com>",
@@ -76,6 +76,7 @@
         "./sidebar": "./dist/sidebar/index.js",
         "./skeleton": "./dist/skeleton/index.js",
         "./slider": "./dist/slider/index.js",
+        "./split-pane": "./dist/split-pane/index.js",
         "./switch": "./dist/switch/index.js",
         "./tab-navigation": "./dist/tab-navigation/index.js",
         "./table": "./dist/table/index.js",
@@ -104,6 +105,7 @@
         "@internationalized/date": "^3.7.0",
         "@react-aria/datepicker": "^3.14.1",
         "@react-stately/datepicker": "^3.13.0",
+        "allotment": "^1.20.3",
         "cmdk": "^1.1.1",
         "date-fns": "4.1.0",
         "input-otp": "^1.4.2",
@@ -114,7 +116,8 @@
         "recharts": "^2.15.1",
         "sonner": "^2.0.1",
         "tailwind-variants": "^1.0.0",
-        "twistail-utils": "workspace:*"
+        "twistail-utils": "workspace:*",
+        "usehooks-ts": "^3.1.1"
     },
     "devDependencies": {
         "@biomejs/biome": "catalog:",
