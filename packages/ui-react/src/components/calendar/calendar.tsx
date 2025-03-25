@@ -212,6 +212,16 @@ function Nav({
     setDisplayYears,
   ])
 
+  const ariaLabelPrevious =
+    navView === 'years'
+      ? `Go to the previous ${displayYears.to - displayYears.from + 1} years`
+      : labelPrevious(previousMonth)
+
+  const ariaLabelNext =
+    navView === 'years'
+      ? `Go to the next ${displayYears.to - displayYears.from + 1} years`
+      : labelNext(nextMonth)
+
   return (
     <nav className={styles.uiNav({ className })}>
       <button
@@ -219,26 +229,17 @@ function Nav({
         className={styles.uiPreviousMonthButton()}
         tabIndex={isPreviousDisabled ? undefined : -1}
         disabled={isPreviousDisabled}
-        aria-label={
-          navView === 'years'
-            ? `Go to the previous ${displayYears.to - displayYears.from + 1} years`
-            : labelPrevious(previousMonth)
-        }
+        aria-label={ariaLabelPrevious}
         onClick={handlePreviousClick}
       >
         <Chevron orientation="left" className={styles.uiChevron()} />
       </button>
-
       <button
         type="button"
         className={styles.uiNextMonthButton()}
         tabIndex={isNextDisabled ? undefined : -1}
         disabled={isNextDisabled}
-        aria-label={
-          navView === 'years'
-            ? `Go to the next ${displayYears.to - displayYears.from + 1} years`
-            : labelNext(nextMonth)
-        }
+        aria-label={ariaLabelNext}
         onClick={handleNextClick}
       >
         <Chevron orientation="right" className={styles.uiChevron()} />
@@ -353,7 +354,7 @@ function YearGrid({
             key={year}
             type="button"
             className={styles.yearGridButton({
-              class: isCurrent && 'bg-accent font-medium text-accent-foreground',
+              className: isCurrent && 'bg-accent font-medium text-accent-foreground',
             })}
             onClick={handleClick}
             disabled={navView === 'years' ? isDisabled : undefined}

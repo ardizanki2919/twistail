@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { clx } from 'twistail-utils'
 import { type KbdStyles, kbdStyles } from './kbd.css'
 
 type KbdKey =
@@ -93,7 +92,7 @@ const Kbd = React.forwardRef<React.ComponentRef<'kbd'>, KbdProps>(
     if ((!keys || keys.length === 0) && !children) return null
 
     return (
-      <kbd ref={forwardedRef} className={clx(kbdStyles({ size }), className)} {...otherProps}>
+      <kbd ref={forwardedRef} className={kbdStyles({ size, className })} {...otherProps}>
         {renderKeys()}
         {children ? <span>{children}</span> : null}
       </kbd>

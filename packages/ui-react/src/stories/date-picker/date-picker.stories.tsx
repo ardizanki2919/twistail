@@ -9,7 +9,7 @@ import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/compone
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   title: 'Base Components/DatePicker',
-  tags: ['autodocs', 'status:experimental'],
+  tags: ['hidden', 'status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">

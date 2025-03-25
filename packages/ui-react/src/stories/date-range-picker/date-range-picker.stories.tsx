@@ -7,7 +7,7 @@ import { DateRange, DateRangePicker } from '#/components/date-picker'
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
   title: 'Base Components/DateRangePicker',
-  tags: ['autodocs', 'status:experimental'],
+  tags: ['hidden', 'status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">

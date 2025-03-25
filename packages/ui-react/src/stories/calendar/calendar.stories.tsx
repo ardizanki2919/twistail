@@ -14,8 +14,7 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
         mode={mode}
         selected={mode === 'single' ? date : dateRange}
         onSelect={mode === 'single' ? setDate : setDateRange}
-        className="rounded-lg border"
-        // classNames={{ day_button: 'debug' }}
+        className="rounded-lg border border-border shadow-xs"
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         {...(args as any)}
       />
@@ -39,9 +38,9 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Base Components/Calendar',
-  tags: ['autodocs', 'status:preview'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   render: Demo,
 }
@@ -55,7 +54,7 @@ export const Default: Story = {
   },
 }
 
-export const SingleDisableNavigation: Story = {
+export const DisableNavigation: Story = {
   args: {
     mode: 'single',
     disableNavigation: true,
