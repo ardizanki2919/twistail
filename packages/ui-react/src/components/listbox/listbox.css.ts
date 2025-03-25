@@ -10,7 +10,7 @@ const listboxStyles = tv({
       'data-[placeholder]:text-muted-foreground data-[disabled]:bg-muted data-[disabled]:text-muted-foreground data-[disabled]:border-input',
       'focus:border-primary focus:ring-2 focus:ring-primary/20',
     ],
-    triggerSpan: 'truncate',
+    triggerInner: 'truncate',
     triggerChevrons: [
       'size-4 shrink-0 text-muted-foreground group-data-[disabled]/trigger:text-muted',
     ],
@@ -48,10 +48,17 @@ const listboxStyles = tv({
         trigger: ['border-destructive ring-1 ring-destructive/20'],
       },
     },
+    hideChevrons: {
+      true: {
+        trigger: 'px-2 py-1 border-none hover:bg-transparent shadow-none',
+        triggerChevrons: 'hidden',
+      },
+    },
   },
   defaultVariants: {
     position: 'popper',
     hasError: false,
+    hideChevrons: false,
   },
 })
 

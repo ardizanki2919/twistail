@@ -13,7 +13,7 @@
     "tailwindCSS.experimental.classRegex": [
         // @ref: https://www.tailwind-variants.org/docs/getting-started
         // @ref: https://github.com/paolotiu/tailwind-intellisense-regex-list
-        ["(?:cn|cva|tv)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
+        ["(?:cn|cva|clx|tv)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
         ["classList={{([^;]*)}}", "\\s*?[\"'`]([^\"'`]*).*?:"]
     ],
     "tailwindCSS.files.exclude": ["**/internal/**"],

@@ -7,7 +7,7 @@ import { DateRange, DateRangePicker } from '#/components/date-picker'
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
   title: 'Base Components/DateRangePicker',
-  tags: ['status:experimental', 'hidden'],
+  tags: ['autodocs', 'status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">
@@ -74,12 +74,6 @@ const rangePresets = [
 
 export const Range: Story = {
   args: {},
-}
-
-export const WithYearNavigation: Story = {
-  args: {
-    enableYearNavigation: true,
-  },
 }
 
 export const ShowTimePicker: Story = {

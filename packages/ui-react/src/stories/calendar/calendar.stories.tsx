@@ -14,17 +14,18 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
         mode={mode}
         selected={mode === 'single' ? date : dateRange}
         onSelect={mode === 'single' ? setDate : setDateRange}
+        className="rounded-lg border"
+        // classNames={{ day_button: 'debug' }}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         {...(args as any)}
       />
-
       {mode === 'single' && (
-        <p className="rounded-sm bg-gray-100 p-2 text-gray-500 dark:bg-gray-800 dark:text-gray-300">
+        <p className="rounded-sm bg-gray-100 p-2 text-gray-500 text-sm dark:bg-gray-800 dark:text-gray-300">
           Selected Date: {date ? date.toDateString() : 'None'}
         </p>
       )}
       {mode === 'range' && (
-        <p className="rounded-sm bg-gray-100 p-2 text-gray-500 dark:bg-gray-800 dark:text-gray-300">
+        <p className="rounded-sm bg-gray-100 p-2 text-gray-500 text-sm dark:bg-gray-800 dark:text-gray-300">
           Selected Range:{' '}
           {dateRange
             ? `${dateRange.from?.toDateString()} – ${dateRange.to?.toDateString() ?? ''}`
@@ -38,7 +39,10 @@ const Demo = ({ mode, ...args }: Parameters<typeof Calendar>[0]) => {
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Base Components/Calendar',
-  tags: ['autodocs', 'status:wip'],
+  tags: ['autodocs', 'status:preview'],
+  parameters: {
+    layout: 'padded',
+  },
   render: Demo,
 }
 
@@ -51,21 +55,9 @@ export const Default: Story = {
   },
 }
 
-export const WithDropdown: Story = {
-  args: { captionLayout: 'dropdown' },
-}
-
-export const SingleWithYearNavigation: Story = {
-  args: {
-    mode: 'single',
-    enableYearNavigation: true,
-  },
-}
-
 export const SingleDisableNavigation: Story = {
   args: {
     mode: 'single',
-    enableYearNavigation: true,
     disableNavigation: true,
   },
 }
@@ -74,14 +66,6 @@ export const SingleTwoMonth: Story = {
   args: {
     mode: 'single',
     numberOfMonths: 2,
-  },
-}
-
-export const SingleTwoMonthWithYearNavigation: Story = {
-  args: {
-    mode: 'single',
-    numberOfMonths: 2,
-    enableYearNavigation: true,
   },
 }
 
@@ -102,7 +86,7 @@ export const RangeTwoMonth: Story = {
 
 // Misc ---------------------------------------------------
 
-export const Locale: Story = {
+export const CustomLocale: Story = {
   args: {
     mode: 'single',
     locale: id,
@@ -137,13 +121,5 @@ export const DisabledNextWeek: Story = {
 
       return [{ from: disableStart, to: disableEnd }]
     })(),
-  },
-}
-
-export const WithYearNavigationLimited: Story = {
-  args: {
-    mode: 'single',
-    enableYearNavigation: true,
-    toDate: new Date(),
   },
 }

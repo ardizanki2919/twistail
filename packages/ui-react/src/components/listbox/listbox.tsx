@@ -15,15 +15,15 @@ interface ListboxTriggerProps
 const ListboxTrigger = React.forwardRef<
   React.ComponentRef<typeof ListboxPrimitive.Trigger>,
   ListboxTriggerProps
->(({ className, hasError, children, ...props }, forwardedRef) => {
-  const styles = listboxStyles({ hasError })
+>(({ className, hasError, hideChevrons, children, ...props }, forwardedRef) => {
+  const styles = listboxStyles({ hasError, hideChevrons })
   return (
     <ListboxPrimitive.Trigger
       ref={forwardedRef}
       className={styles.trigger({ className })}
       {...props}
     >
-      <span className={styles.triggerSpan()}>{children}</span>
+      <span className={styles.triggerInner()}>{children}</span>
       <ListboxPrimitive.Icon asChild>
         <Lucide.ChevronsUpDown className={styles.triggerChevrons()} />
       </ListboxPrimitive.Icon>
