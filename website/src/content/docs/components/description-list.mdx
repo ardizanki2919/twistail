@@ -1,0 +1,127 @@
+---
+title: Description List
+full: false
+---
+
+A component for displaying name-value pairs in a structured format.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-description-list--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
+    Radix UI Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/description-list" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/description-list/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/description-list/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add description-list
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['description-list.tsx', 'description-list.css.ts', 'index.ts']}>
+      <Tab value="description-list.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/description-list/description-list.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/description-list/description-list.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="description-list.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/description-list/description-list.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/description-list/description-list.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/description-list/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/description-list/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {
+      DescriptionList,
+      DescriptionTerm,
+      DescriptionDetails,
+    } from '#/components/description-list'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {
+      DescriptionList,
+      DescriptionTerm,
+      DescriptionDetails,
+    } from 'twistail-react/description-list'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-description-list--docs) for more examples.
+
+## Props
+
+<TypeTable
+  type={{
+    variant: {
+      description: 'Variant of the component',
+      type: 'DescriptionListStyles["variant"]',
+      default: 'default',
+    },
+    size: {
+      description: 'Size of the component',
+      type: 'DescriptionListStyles["size"]',
+      default: 'md',
+    },
+  }}
+/>

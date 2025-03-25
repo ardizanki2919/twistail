@@ -1,6 +1,6 @@
 {
     "name": "twistail-react",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "type": "module",
     "description": "Twistail UI Components",
     "author": "Aris Ripandi <aris@duck.com>",
@@ -52,6 +52,7 @@
         "./command": "./dist/command/index.js",
         "./context-menu": "./dist/context-menu/index.js",
         "./date-picker": "./dist/date-picker/index.js",
+        "./description-list": "./dist/description-list/index.js",
         "./dialog": "./dist/dialog/index.js",
         "./divider": "./dist/divider/index.js",
         "./drawer": "./dist/drawer/index.js",
