@@ -62,6 +62,7 @@
         "components/menubar",
         "components/navigation-menu",
         "components/sidebar",
+        "components/split-pane",
         "---Utilities---",
         "cli/index",
         "llms",

@@ -3,7 +3,7 @@ title: Split Pane
 full: false
 ---
 
-Used for selecting a date.
+A resizable panel that divides content into two adjustable sections.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs" external>
@@ -30,6 +30,20 @@ import Demo from '#/demo/split-pane/preview'
   </Tab>
 </Tabs>
 
+This component is built on top of [Allotment](https://allotment.mulberryhousesoftware.com/?utm_source=twistail.com&utm_medium=website&utm_campaign=docs),
+a lightweight (_250 KB unpacked size_) and flexible solution for resizable panels. While shadcn/ui uses
+[react-resizable-panel](https://github.com/bvaughn/react-resizable-panels) (_1.01 MB unpacked size_),
+we opted for Allotment which provides similar core functionality:
+
+- Proportional layout support
+- Snap-to-zero capability
+- Panel visibility control
+- Minimum and maximum size constraints
+- Nested layout support
+
+We chose Allotment after encountering the "_Max Depth Exceeded_" error with react-resizable-panels
+during drag operations in complex layouts (see [issue #456](https://github.com/bvaughn/react-resizable-panels/issues/456)).
+
 ## Automatic Installation
 
 <Callout type='warn'>
@@ -46,7 +60,7 @@ npx twistail add split-pane
   <Step>
     ### Install dependencies
     ```package-install
-    npm install radix-ui
+    npm install radix-ui lucide-react allotment
     ```
   </Step>
   <Step>
@@ -87,12 +101,12 @@ npx twistail add split-pane
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import {} from '#/components/split-pane'
+    import { Split, SplitPane, SplitPanel } from '#/components/split-pane'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import {} from 'twistail-react/split-pane'
+    import { Split, SplitPane, SplitPanel } from 'twistail-react/split-pane'
     ```
   </Tab>
 </Tabs>
@@ -100,3 +114,13 @@ npx twistail add split-pane
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<Split>
+  <SplitPane>
+    <SplitPanel />
+  </SplitPane>
+</Split>
+```

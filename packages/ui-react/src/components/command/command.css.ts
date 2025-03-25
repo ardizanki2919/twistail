@@ -2,7 +2,7 @@ import { type VariantProps, tv } from 'tailwind-variants'
 
 const commandStyles = tv({
   slots: {
-    root: 'flex h-full w-full flex-col overflow-hidden rounded-lg bg-popover text-popover-foreground',
+    root: 'flex size-full flex-col overflow-hidden rounded-lg bg-popover text-popover-foreground',
     dialogContent: 'overflow-hidden p-0 shadow-lg rounded-lg border border-border',
     dialogCommand: [
       '[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground',

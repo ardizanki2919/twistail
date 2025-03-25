@@ -2,8 +2,6 @@
 @import "./motion.css";
 @import "./theme.css";
 
-/* @import "./splitpane.css"; */
-
 @variant dark (&:where([data-theme="dark"] *));
 
 @theme inline {
@@ -63,10 +61,6 @@
     --sidebar-width: var(--sidebar-width);
     --sidebar-width-mobile: var(--sidebar-width-mobile);
     --sidebar-width-icon: var(--sidebar-width-icon);
-
-    /* Split pane */
-    --separator-border: var(--border);
-    --focus-border: var(--accent);
 
     /* Override gray colors (zinc) */
     --color-gray-50: oklch(0.985 0 0);

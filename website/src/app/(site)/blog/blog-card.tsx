@@ -17,7 +17,7 @@ export function BlogCard({ post }: BlogCardProps) {
         {post.data.coverImage && (
           <Image
             src={post.data.coverImage}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
             alt={post.data.title}
             unoptimized
           />

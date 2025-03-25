@@ -145,7 +145,7 @@ export const NavBar = () => {
         aria-hidden={!isMenuOpen}
       >
         <div
-          className="absolute right-0 flex h-full w-full max-w-sm transform flex-col bg-white shadow-lg transition-transform duration-500 ease-in-out dark:bg-neutral-900"
+          className="absolute right-0 flex size-full max-w-sm transform flex-col bg-white shadow-lg transition-transform duration-500 ease-in-out dark:bg-neutral-900"
           style={{
             transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
             transitionDelay: isMenuOpen ? '150ms' : '0ms',
