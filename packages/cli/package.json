@@ -1,6 +1,6 @@
 {
     "name": "twistail",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "type": "module",
     "license": "MIT",
     "description": "A CLI for managing UI components in your project.",
@@ -48,7 +48,7 @@
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
-        "@types/node": "^22.13.11",
+        "@types/node": "^22.13.13",
         "@types/react": "^19.0.12",
         "rollup": "^4.37.0",
         "typescript": "catalog:",

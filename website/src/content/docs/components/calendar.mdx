@@ -3,7 +3,7 @@ title: Calendar
 full: false
 ---
 
-A date field component that allows users to enter and edit date.
+A foundational date display component that serves as the basis for building date pickers, allowing users to navigate and select dates or date ranges.
 
 <Badges>
   <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-calendar--docs" external>
@@ -42,11 +42,18 @@ npx twistail add calendar
 
 ## Manual Installation
 
+Twistail Calendar component is built on [React DayPicker v9](https://daypicker.dev/upgrading), offering
+enhanced functionality and improved performance compared to the [shadcn/ui Calendar](https://ui.shadcn.com/docs/components/calendar)
+and [Tremor Calendar](https://tremor.so/docs/inputs/calendar) component which uses the older React DayPicker v8.
+
+This newer implementation maintains full compatibility with our design system while leveraging the
+latest features from the DayPicker library.
+
 <Steps>
   <Step>
     ### Install dependencies
     ```package-install
-    npm install radix-ui
+    npm install radix-ui tailwind-variants lucide-react date-fns react-day-picker
     ```
   </Step>
   <Step>
@@ -87,12 +94,12 @@ npx twistail add calendar
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import {} from '#/components/calendar'
+    import { Calendar } from '#/components/calendar'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import {} from 'twistail-react/calendar'
+    import { Calendar } from 'twistail-react/calendar'
     ```
   </Tab>
 </Tabs>

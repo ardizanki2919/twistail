@@ -38,7 +38,7 @@ export const LabelWithCheckbox: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <Label disabled data-testid="label-disabled" htmlFor="search">
+    <Label disabled htmlFor="search">
       Search
     </Label>
   ),

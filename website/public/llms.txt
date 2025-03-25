@@ -35,6 +35,7 @@ This site provides documentation in a format optimized for Large Language Models
 
 ### Form Components
 - [Button Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Button component
+- [Calendar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Calendar component
 - [Checkbox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Checkbox component
 - [Combobox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Combobox component
 - [Form Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Form component

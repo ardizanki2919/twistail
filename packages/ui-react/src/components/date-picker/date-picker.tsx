@@ -415,7 +415,6 @@ interface PickerProps extends CalendarProps {
   required?: boolean
   showTimePicker?: boolean
   placeholder?: string
-  enableYearNavigation?: boolean
   disableNavigation?: boolean
   hasError?: boolean
   id?: string
@@ -452,7 +451,6 @@ const SingleDatePicker = ({
   placeholder = 'Select date',
   hasError,
   translations,
-  enableYearNavigation = false,
   locale = enUS,
   align = 'center',
   ...props
@@ -606,9 +604,8 @@ const SingleDatePicker = ({
                 onSelect={onDateChange}
                 disabled={disabledDays}
                 locale={locale}
-                enableYearNavigation={enableYearNavigation}
                 disableNavigation={disableNavigation}
-                initialFocus
+                autoFocus={true}
                 {...props}
               />
               {showTimePicker && (
@@ -656,7 +653,6 @@ const RangeDatePicker = ({
   disabled,
   disableNavigation,
   disabledDays,
-  enableYearNavigation = false,
   locale = enUS,
   showTimePicker,
   placeholder = 'Select date range',
@@ -894,7 +890,6 @@ const RangeDatePicker = ({
                 numberOfMonths={2}
                 disabled={disabledDays}
                 disableNavigation={disableNavigation}
-                enableYearNavigation={enableYearNavigation}
                 locale={locale}
                 initialFocus
                 classNames={{

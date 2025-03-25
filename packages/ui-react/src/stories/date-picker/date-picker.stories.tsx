@@ -9,7 +9,7 @@ import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/compone
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   title: 'Base Components/DatePicker',
-  tags: ['status:experimental', 'hidden'],
+  tags: ['hidden', 'status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">
@@ -51,12 +51,6 @@ const presets = [
 
 export const Single: Story = {
   args: { toDate: new Date() },
-}
-
-export const WithYearNavigation: Story = {
-  args: {
-    enableYearNavigation: true,
-  },
 }
 
 export const SingleWithPresets: Story = {

@@ -1,150 +1,370 @@
+import { differenceInCalendarDays as diffDays } from 'date-fns'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
+import type { ChevronProps, DayPickerProps } from 'react-day-picker'
 import { DayFlag, DayPicker, SelectionState, UI } from 'react-day-picker'
-import type { ChevronProps, DropdownProps } from 'react-day-picker'
-// import type { DayProps, MonthCaptionProps } from 'react-day-picker'
-import { tv } from 'tailwind-variants'
-import { clx } from 'twistail-utils'
-import { Listbox, ListboxContent, ListboxItem, ListboxTrigger, ListboxValue } from '../listbox'
-import { ScrollArea } from '../scroll-area'
+import { labelNext, labelPrevious, useDayPicker } from 'react-day-picker'
+import { calendarStyles } from './calendar.css'
 
-type CalendarProps = React.ComponentProps<typeof DayPicker> & {
-  enableYearNavigation?: boolean
+//#region Calendar
+// ============================================================================
+
+type CalendarProps = DayPickerProps & {
+  disableYearSelector?: boolean /* @default true */
+  yearRange?: number /* @default 12 */
 }
 
-const buttonNavigation = tv({
-  base: [
-    'flex size-8 shrink-0 select-none items-center justify-center rounded-sm border p-1 outline-hidden transition sm:size-[30px]',
-    // text color
-    'text-gray-600 hover:text-muted-foreground dark:text-gray-400 hover:dark:text-gray-200',
-    // border color
-    'border-gray-300 dark:border-gray-800',
-    // background color
-    'hover:bg-gray-50 active:bg-gray-100',
-    'active:dark:bg-gray-800 hover:dark:bg-gray-900',
-    // disabled
-    'disabled:pointer-events-none',
-    'disabled:border-gray-200 disabled:dark:border-gray-800',
-    'disabled:text-gray-400 disabled:dark:text-gray-600',
-    'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */,
-  ],
-})
+function Calendar({
+  className,
+  classNames,
+  showOutsideDays = true,
+  disableYearSelector = false,
+  yearRange = 12,
+  numberOfMonths,
+  ...props
+}: CalendarProps) {
+  const styles = calendarStyles()
+  const { onPrevClick, startMonth, endMonth } = props
+  const [navView, setNavView] = React.useState<NavView>('days')
+  const columnsDisplayed = navView === 'years' ? 1 : numberOfMonths
 
-function Calendar({ className, classNames, showOutsideDays = true, ...props }: CalendarProps) {
+  const currentYear = new Date().getFullYear()
+  const [displayYears, setDisplayYears] = React.useState<{ from: number; to: number }>({
+    from: currentYear - Math.floor(yearRange / 2 - 1),
+    to: currentYear + Math.ceil(yearRange / 2),
+  })
+
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={clx('p-3', className)}
+      className={styles.base({ className })}
+      style={{ width: `${249 * (columnsDisplayed ?? 1)}px` }}
       classNames={{
-        [UI.Months]: 'relative flex space-y-0',
-        [UI.Month]: 'space-y-4 ml-0 p-0',
-        [UI.MonthCaption]: 'flex justify-center items-center h-7',
-        [UI.CaptionLabel]: 'text-sm font-medium',
-        [UI.PreviousMonthButton]: buttonNavigation({
-          class: 'absolute top-0 left-1 size-7 bg-transparent p-0 opacity-50 hover:opacity-100',
-        }),
-        [UI.NextMonthButton]: buttonNavigation({
-          class: 'absolute top-0 right-1 size-7 bg-transparent p-0 opacity-50 hover:opacity-100',
-        }),
-        [UI.MonthGrid]: 'w-full border-collapse space-y-1',
-        [UI.Weekdays]: 'flex',
-        [UI.Weekday]: clx(
-          'w-9 pb-2 text-center font-medium text-gray-400 text-sm sm:text-xs dark:text-gray-600'
-        ),
-        [UI.Week]: 'flex w-full mt-1.5',
-        [UI.Day]: clx(
-          'relative size-9 rounded-md p-0 text-center text-gray-900 text-sm dark:text-gray-50',
-          'focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md'
-        ),
-        [UI.DayButton]: clx(
-          'size-9 rounded-sm text-sm focus:z-10',
-          'text-gray-900 dark:text-gray-50',
-          'hover:bg-gray-200 hover:dark:bg-gray-700',
-          'outline-0 outline-blue-500 outline-offset-2 focus-visible:outline-2 dark:outline-blue-500' /* focusRing */
-        ),
-        [UI.Dropdowns]: 'flex items-center gap-1',
-        [SelectionState.range_start]: 'rounded-r-none !rounded-l',
-        [SelectionState.range_end]: 'rounded-l-none !rounded-r',
-        [SelectionState.selected]: clx(
-          'rounded',
-          'aria-selected:bg-blue-500 aria-selected:text-white',
-          'dark:aria-selected:bg-blue-500 dark:aria-selected:text-white'
-        ),
-        [SelectionState.range_middle]: clx(
-          '!rounded-none',
-          'aria-selected:!bg-gray-100 aria-selected:!text-gray-900',
-          'dark:aria-selected:!bg-gray-900 dark:aria-selected:!text-gray-50'
-        ),
-        [DayFlag.today]: 'bg-accent text-accent-foreground font-semibold',
-        [DayFlag.outside]:
-          'day-outside text-gray-400 dark:text-gray-600 opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30',
-        [DayFlag.disabled]:
-          '!text-gray-300 dark:!text-gray-700 line-through disabled:hover:bg-transparent',
-        [DayFlag.hidden]: 'invisible',
+        [UI.CaptionLabel]: styles.uiCaptionLabel(),
+        [UI.Day]: styles.uiDay(),
+        [UI.Chevron]: styles.uiChevron(),
+        [UI.DayButton]: styles.uiDayButton(),
+        [UI.Month]: styles.uiMonth(),
+        [UI.MonthCaption]: styles.uiMonthCaption(),
+        [UI.MonthGrid]: styles.uiMonthGrid(),
+        [UI.Months]: styles.uiMonths(),
+        [UI.Nav]: styles.uiNav(),
+        [UI.NextMonthButton]: styles.uiNextMonthButton(),
+        [UI.PreviousMonthButton]: styles.uiPreviousMonthButton(),
+        [UI.Week]: styles.uiWeek(),
+        [UI.Weekday]: styles.uiWeekday(),
+        [UI.Weekdays]: styles.uiWeekdays(),
+        [SelectionState.range_start]: styles.selectionStateRangeStart(),
+        [SelectionState.range_middle]: styles.selectionStateRangeMiddle(),
+        [SelectionState.range_end]: styles.selectionStateRangeEnd(),
+        [SelectionState.selected]: styles.selectionStateSelected(),
+        [DayFlag.today]: styles.dayFlagToday(),
+        [DayFlag.outside]: styles.dayFlagOutside(),
+        [DayFlag.disabled]: styles.dayFlagDisabled(),
+        [DayFlag.hidden]: styles.dayFlagHidden(),
         ...classNames,
       }}
       components={{
-        Chevron,
-        Dropdown,
-        // MonthCaption,
-        // Day
+        Chevron: (props) => <Chevron {...props} />,
+        CaptionLabel: (props) => (
+          <CaptionLabel
+            navView={navView}
+            disableYearSelector={disableYearSelector}
+            setNavView={setNavView}
+            displayYears={displayYears}
+            {...props}
+          />
+        ),
+        Nav: ({ className }) => (
+          <Nav
+            navView={navView}
+            className={className}
+            displayYears={displayYears}
+            setDisplayYears={setDisplayYears}
+            startMonth={startMonth}
+            endMonth={endMonth}
+            onPrevClick={onPrevClick}
+          />
+        ),
+        MonthGrid: ({ className, children, ...props }) => (
+          <MonthGrid
+            className={className}
+            displayYears={displayYears}
+            startMonth={startMonth}
+            endMonth={endMonth}
+            navView={navView}
+            setNavView={setNavView}
+            {...props}
+          >
+            {children}
+          </MonthGrid>
+        ),
       }}
+      numberOfMonths={columnsDisplayed}
       {...props}
     />
   )
 }
 
-// TODO: add implmentation from Tremor
-// const MonthCaption = (_props: MonthCaptionProps) => {
-//   return <div className="flex h-7 items-center justify-center" />
-// }
+//#region Custom Components
+// ============================================================================
 
-// TODO: add implmentation from Tremor
-// const Day = (_props: DayProps) => {
-//   return <div className="flex h-7 items-center justify-center" />
-// }
+type NavView = 'days' | 'years'
 
-const Dropdown = ({ value, onChange, ...props }: DropdownProps) => {
-  const selected = props.options?.find((child) => child.value === value)
-
-  const handleChange = (value: string) => {
-    const changeEvent = {
-      target: { value },
-    } as React.ChangeEvent<HTMLSelectElement>
-    onChange?.(changeEvent)
+const Chevron = ({ orientation, className }: ChevronProps): React.JSX.Element => {
+  switch (orientation) {
+    case 'left':
+      return <Lucide.ChevronLeftIcon className={className} aria-hidden="true" />
+    case 'right':
+      return <Lucide.ChevronRightIcon className={className} aria-hidden="true" />
+    case 'up':
+      return <Lucide.ChevronUpIcon className={className} aria-hidden="true" />
+    case 'down':
+      return <Lucide.ChevronDownIcon className={className} aria-hidden="true" />
+    default:
+      return <Lucide.CircleDot className={className} aria-hidden="true" />
   }
+}
+
+function Nav({
+  className,
+  navView,
+  startMonth,
+  endMonth,
+  displayYears,
+  setDisplayYears,
+  onPrevClick,
+  onNextClick,
+}: {
+  className?: string
+  navView: NavView
+  startMonth?: Date
+  endMonth?: Date
+  displayYears: { from: number; to: number }
+  setDisplayYears: React.Dispatch<React.SetStateAction<{ from: number; to: number }>>
+  onPrevClick?: (date: Date) => void
+  onNextClick?: (date: Date) => void
+}) {
+  const styles = calendarStyles()
+  const { nextMonth, previousMonth, goToMonth } = useDayPicker()
+
+  const isPreviousDisabled = (() => {
+    if (navView === 'years') {
+      return (
+        (startMonth && diffDays(new Date(displayYears.from - 1, 0, 1), startMonth) < 0) ||
+        (endMonth && diffDays(new Date(displayYears.from - 1, 0, 1), endMonth) > 0)
+      )
+    }
+    return !previousMonth
+  })()
+
+  const isNextDisabled = (() => {
+    if (navView === 'years') {
+      return (
+        (startMonth && diffDays(new Date(displayYears.to + 1, 0, 1), startMonth) < 0) ||
+        (endMonth && diffDays(new Date(displayYears.to + 1, 0, 1), endMonth) > 0)
+      )
+    }
+    return !nextMonth
+  })()
+
+  const handlePreviousClick = React.useCallback(() => {
+    if (!previousMonth) return
+    if (navView === 'years') {
+      setDisplayYears((prev) => ({
+        from: prev.from - (prev.to - prev.from + 1),
+        to: prev.to - (prev.to - prev.from + 1),
+      }))
+      onPrevClick?.(new Date(displayYears.from - (displayYears.to - displayYears.from), 0, 1))
+      return
+    }
+    goToMonth(previousMonth)
+    onPrevClick?.(previousMonth)
+  }, [
+    previousMonth,
+    goToMonth,
+    displayYears.from,
+    displayYears.to,
+    navView,
+    onPrevClick,
+    setDisplayYears,
+  ])
+
+  const handleNextClick = React.useCallback(() => {
+    if (!nextMonth) return
+    if (navView === 'years') {
+      setDisplayYears((prev) => ({
+        from: prev.from + (prev.to - prev.from + 1),
+        to: prev.to + (prev.to - prev.from + 1),
+      }))
+      onNextClick?.(new Date(displayYears.from + (displayYears.to - displayYears.from), 0, 1))
+      return
+    }
+    goToMonth(nextMonth)
+    onNextClick?.(nextMonth)
+  }, [
+    nextMonth,
+    goToMonth,
+    displayYears.from,
+    displayYears.to,
+    navView,
+    onNextClick,
+    setDisplayYears,
+  ])
+
+  const ariaLabelPrevious =
+    navView === 'years'
+      ? `Go to the previous ${displayYears.to - displayYears.from + 1} years`
+      : labelPrevious(previousMonth)
+
+  const ariaLabelNext =
+    navView === 'years'
+      ? `Go to the next ${displayYears.to - displayYears.from + 1} years`
+      : labelNext(nextMonth)
 
   return (
-    <Listbox value={value?.toString()} onValueChange={handleChange}>
-      <ListboxTrigger className="pr-1.5 focus:ring-0">
-        <ListboxValue>{selected?.label}</ListboxValue>
-      </ListboxTrigger>
-      <ListboxContent position="popper">
-        <ScrollArea className="h-80">
-          {props.options?.map((option, id: number) => (
-            <ListboxItem key={`${option.value}-${id}`} value={option.value?.toString() ?? ''}>
-              {option.label}
-            </ListboxItem>
-          ))}
-        </ScrollArea>
-      </ListboxContent>
-    </Listbox>
+    <nav className={styles.uiNav({ className })}>
+      <button
+        type="button"
+        className={styles.uiPreviousMonthButton()}
+        tabIndex={isPreviousDisabled ? undefined : -1}
+        disabled={isPreviousDisabled}
+        aria-label={ariaLabelPrevious}
+        onClick={handlePreviousClick}
+      >
+        <Chevron orientation="left" className={styles.uiChevron()} />
+      </button>
+      <button
+        type="button"
+        className={styles.uiNextMonthButton()}
+        tabIndex={isNextDisabled ? undefined : -1}
+        disabled={isNextDisabled}
+        aria-label={ariaLabelNext}
+        onClick={handleNextClick}
+      >
+        <Chevron orientation="right" className={styles.uiChevron()} />
+      </button>
+    </nav>
   )
 }
 
-const Chevron = ({ orientation = 'left' }: ChevronProps): React.JSX.Element => {
-  switch (orientation) {
-    case 'left':
-      return <Lucide.ChevronLeftIcon className="size-4" aria-hidden="true" />
-    case 'right':
-      return <Lucide.ChevronRightIcon className="size-4" aria-hidden="true" />
-    case 'up':
-      return <Lucide.ChevronUpIcon className="size-4" aria-hidden="true" />
-    case 'down':
-      return <Lucide.ChevronDownIcon className="size-4" aria-hidden="true" />
-    default:
-      return <Lucide.CircleDot className="size-4" aria-hidden="true" />
+function CaptionLabel({
+  children,
+  className,
+  disableYearSelector,
+  displayYears,
+  setNavView,
+  navView,
+  ...props
+}: {
+  disableYearSelector?: boolean
+  navView: NavView
+  setNavView: React.Dispatch<React.SetStateAction<NavView>>
+  displayYears: { from: number; to: number }
+} & React.HTMLAttributes<HTMLSpanElement>) {
+  const styles = calendarStyles()
+  return !disableYearSelector ? (
+    <button
+      type="button"
+      className={styles.uiCaptionButton({ className })}
+      onClick={() => setNavView((prev) => (prev === 'days' ? 'years' : 'days'))}
+    >
+      {navView === 'days' ? children : `${displayYears.from} - ${displayYears.to}`}
+    </button>
+  ) : (
+    <span className={styles.uiCaptionLabel({ className })} {...props}>
+      {children}
+    </span>
+  )
+}
+
+function MonthGrid({
+  className,
+  children,
+  displayYears,
+  startMonth,
+  endMonth,
+  navView,
+  setNavView,
+  ...props
+}: {
+  className?: string
+  children: React.ReactNode
+  displayYears: { from: number; to: number }
+  startMonth?: Date
+  endMonth?: Date
+  navView: NavView
+  setNavView: React.Dispatch<React.SetStateAction<NavView>>
+} & React.TableHTMLAttributes<HTMLTableElement>) {
+  if (navView === 'years') {
+    return (
+      <YearGrid
+        displayYears={displayYears}
+        startMonth={startMonth}
+        endMonth={endMonth}
+        setNavView={setNavView}
+        navView={navView}
+        className={className}
+        {...props}
+      />
+    )
   }
+  return (
+    <table className={className} {...props}>
+      {children}
+    </table>
+  )
+}
+
+function YearGrid({
+  className,
+  displayYears,
+  startMonth,
+  endMonth,
+  setNavView,
+  navView,
+  ...props
+}: {
+  className?: string
+  displayYears: { from: number; to: number }
+  startMonth?: Date
+  endMonth?: Date
+  setNavView: React.Dispatch<React.SetStateAction<NavView>>
+  navView: NavView
+} & React.HTMLAttributes<HTMLDivElement>) {
+  const { goToMonth, selected } = useDayPicker()
+  const styles = calendarStyles()
+
+  return (
+    <div className={styles.yearGrid({ className })} {...props}>
+      {Array.from({ length: displayYears.to - displayYears.from + 1 }, (_, i) => {
+        const year = displayYears.from + i
+        const isBefore = startMonth ? diffDays(new Date(year, 11, 31), startMonth) < 0 : false
+        const isAfter = endMonth ? diffDays(new Date(year, 0, 0), endMonth) > 0 : false
+        const isCurrent = year === new Date().getFullYear()
+        const isDisabled = isBefore || isAfter
+
+        const handleClick = () => {
+          setNavView('days')
+          goToMonth(new Date(year, (selected as Date | undefined)?.getMonth() ?? 0))
+        }
+
+        return (
+          <button
+            key={year}
+            type="button"
+            className={styles.yearGridButton({
+              className: isCurrent && 'bg-accent font-medium text-accent-foreground',
+            })}
+            onClick={handleClick}
+            disabled={navView === 'years' ? isDisabled : undefined}
+          >
+            {year}
+          </button>
+        )
+      })}
+    </div>
+  )
 }
 
 Calendar.displayName = 'Calendar'
