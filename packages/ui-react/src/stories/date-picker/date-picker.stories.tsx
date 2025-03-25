@@ -8,7 +8,7 @@ import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/compone
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
-  title: 'Base Components/DatePicker',
+  title: 'Base Components/Date Picker',
   tags: ['hidden', 'status:experimental'],
   render: (args) => {
     return (

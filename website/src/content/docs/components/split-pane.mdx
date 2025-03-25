@@ -1,0 +1,126 @@
+---
+title: Split Pane
+full: false
+---
+
+A resizable panel that divides content into two adjustable sections.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://allotment.mulberryhousesoftware.com/docs/allotment" external>
+    Allotment
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/split-pane" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/split-pane/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/split-pane/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+This component is built on top of [Allotment](https://allotment.mulberryhousesoftware.com/?utm_source=twistail.com&utm_medium=website&utm_campaign=docs),
+a lightweight (_250 KB unpacked size_) and flexible solution for resizable panels. While shadcn/ui uses
+[react-resizable-panel](https://github.com/bvaughn/react-resizable-panels) (_1.01 MB unpacked size_),
+we opted for Allotment which provides similar core functionality:
+
+- Proportional layout support
+- Snap-to-zero capability
+- Panel visibility control
+- Minimum and maximum size constraints
+- Nested layout support
+
+We chose Allotment after encountering the "_Max Depth Exceeded_" error with react-resizable-panels
+during drag operations in complex layouts (see [issue #456](https://github.com/bvaughn/react-resizable-panels/issues/456)).
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add split-pane
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui lucide-react allotment
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['split-pane.tsx', 'split-pane.css.ts', 'index.ts']}>
+      <Tab value="split-pane.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/split-pane.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/split-pane/split-pane.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="split-pane.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/split-pane.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/split-pane/split-pane.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/split-pane/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/split-pane/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Split, SplitPane, SplitPanel } from '#/components/split-pane'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Split, SplitPane, SplitPanel } from 'twistail-react/split-pane'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/layout-components-split-pane--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<Split>
+  <SplitPane>
+    <SplitPanel />
+  </SplitPane>
+</Split>
+```

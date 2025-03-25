@@ -25,6 +25,7 @@ This site provides documentation in a format optimized for Large Language Models
 - [Divider Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Divider component
 - [Scroll Area Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Scroll Area component
 - [Sidebar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Sidebar component
+- [Split Pane Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Split Pane component
 - [Table Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Table component
 
 ### Typography Components

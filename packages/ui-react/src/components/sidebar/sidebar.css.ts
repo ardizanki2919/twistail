@@ -38,7 +38,7 @@ const sidebarStyles = tv({
     rootMobileDrawer: [
       'w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden',
     ],
-    rootMobileDrawerInner: 'flex h-full w-full flex-col',
+    rootMobileDrawerInner: 'flex size-full flex-col',
     rootWrapper: 'group peer hidden text-sidebar-foreground md:block',
     rootGapDesktop: [
       'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
@@ -49,7 +49,7 @@ const sidebarStyles = tv({
       'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',
     ],
     rootContentInner: [
-      'flex h-full w-full flex-col bg-sidebar',
+      'flex size-full flex-col bg-sidebar',
       'group-data-[variant=floating]:rounded-md group-data-[variant=floating]:border',
       'group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-xs',
     ],

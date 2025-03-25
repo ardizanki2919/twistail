@@ -125,7 +125,7 @@ export default function LandingPage() {
 function BackgroundPattern() {
   return (
     <svg
-      className="-z-10 absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800/50"
+      className="-z-10 absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800/50"
       aria-hidden="true"
     >
       <defs>
@@ -251,7 +251,7 @@ function HeroShowcase() {
         <Atropos
           activeOffset={40}
           shadowScale={1.05}
-          className="h-full w-full rounded-lg bg-gray-900/5 p-2 ring-1 ring-gray-900/10 ring-inset"
+          className="size-full rounded-lg bg-gray-900/5 p-2 ring-1 ring-gray-900/10 ring-inset"
         >
           <Image
             src="/images/screenshots/hero-image.png"
@@ -690,7 +690,7 @@ function ComponentsTabs() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/"
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500/50 to-blue-900/50 p-6 no-underline outline-none focus:shadow-md"
+                            className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500/50 to-blue-900/50 p-6 no-underline outline-none focus:shadow-md"
                           >
                             <div className="mt-4 mb-2 font-medium text-lg text-white">
                               Twistail UI

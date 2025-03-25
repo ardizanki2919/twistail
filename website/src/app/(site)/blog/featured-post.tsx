@@ -18,7 +18,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
           {post.data.coverImage && (
             <Image
               src={post.data.coverImage}
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
               alt={post.data.title}
               unoptimized
             />
