@@ -29,11 +29,12 @@ This site provides documentation in a format optimized for Large Language Models
 - [Table Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Table component
 
 ### Typography Components
-- [Heading Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Heading component
-- [Text Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Text component
+- [Blockquote Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Blockquote component
 - [Callout Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Callout component
-- [Kbd Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Kbd component
 - [Description List Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Description List component
+- [Heading Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Heading component
+- [Kbd Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Kbd component
+- [Text Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Text component
 
 ### Form Components
 - [Button Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Button component
@@ -46,8 +47,8 @@ This site provides documentation in a format optimized for Large Language Models
 - [Label Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Label component
 - [Listbox Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Listbox component
 - [Multi Select Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Multi-Select component
-- [Radio Group Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Radio Group component
 - [Radio Card Group Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Radio Card Group component
+- [Radio Group Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Radio Group component
 - [Select Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Select component
 - [Slider Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Slider component
 - [Switch Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Switch component
