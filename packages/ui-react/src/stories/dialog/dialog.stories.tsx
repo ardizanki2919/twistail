@@ -6,19 +6,32 @@ import {
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogDivider,
   DialogFooter,
   DialogHeader,
+  type DialogProps,
   DialogTitle,
   DialogTrigger,
 } from '#/components/dialog'
 import { ScrollArea, ScrollBar } from '#/components/scroll-area'
 
-const meta: Meta<typeof Dialog> = {
+const meta: Meta<DialogProps> = {
   component: Dialog,
   title: 'Base Components/Dialog',
   tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
+  },
+  argTypes: {
+    spacing: {
+      control: 'select',
+      options: ['default', 'compact'],
+      description: 'Controls the spacing of the dialog content',
+      table: {
+        type: { summary: 'default | compact' },
+        defaultValue: { summary: 'default' },
+      },
+    },
   },
 }
 
@@ -31,7 +44,7 @@ export const Default: Story = {
       <DialogTrigger asChild>
         <Button variant="outline">Open Dialog</Button>
       </DialogTrigger>
-      <DialogContent className="p-4 sm:max-w-sm">
+      <DialogContent className="sm:max-w-sm">
         <DialogHeader>
           <DialogTitle>Privacy Policy</DialogTitle>
           <DialogDescription asChild>
@@ -42,33 +55,28 @@ export const Default: Story = {
                   blandit vestibulum, orci elit suscipit urna, at lobortis arcu enim vel purus.
                   Maecenas luctus sem dui, lobortis dignissim enim consequat in. Nullam a volutpat
                   purus. Aenean pellentesque eros nec rutrum suscipit. Fusce ac lectus volutpat,
-                  feugiat nulla et, suscipit dui. Pellentesque habitant morbi tristique senectus et
-                  netus et malesuada fames ac turpis egestas. Ut maximus, risus et convallis
-                  placerat, risus urna feugiat neque, in vestibulum leo arcu vitae justo. Duis magna
-                  mi, maximus at neque sed, tempor congue ligula. In iaculis metus nec euismod
-                  egestas. Donec id porttitor nulla. Donec feugiat iaculis lacus, ut elementum dui
-                  faucibus sed. Sed ut ipsum non tellus dignissim accumsan. Vivamus luctus malesuada
-                  lacus sed dictum.
+                  feugiat nulla et, suscipit dui.
                 </p>
                 <p className="pb-2">
                   Sed consectetur nibh mollis, ornare magna et, dictum tellus. Nam viverra dui a
                   enim iaculis, sed blandit orci consectetur. Maecenas et nisi eleifend velit
                   pretium eleifend sit amet eget nisl. Vestibulum eget ipsum semper purus pulvinar
-                  iaculis. Sed ut odio eu felis porttitor ultrices eu sed odio. Nullam lorem sapien,
-                  pellentesque convallis libero vel, tempus accumsan nisi. Morbi efficitur ex vitae
-                  felis luctus cursus. Suspendisse nibh neque, gravida sed elementum ullamcorper,
-                  gravida in nisi. Donec et luctus metus. Fusce sed est dictum, imperdiet nisi eu,
-                  suscipit odio. In id enim at tortor malesuada vulputate eu eu sem. Mauris blandit
-                  faucibus euismod.
+                  iaculis.
+                </p>
+                <p className="pb-2">
+                  Maecenas et nisi eleifend velit pretium eleifend sit amet eget nisl. Vestibulum
+                  eget ipsum semper purus pulvinar iaculis. Nullam a volutpat purus. Aenean
+                  pellentesque eros nec rutrum suscipit. Fusce ac lectus volutpat, feugiat nulla et,
+                  suscipit dui.
                 </p>
               </div>
               <ScrollBar orientation="vertical" />
             </ScrollArea>
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="mt-4">
+        <DialogFooter>
           <DialogClose asChild>
-            <Button className="mt-2 w-full sm:mt-0" variant="secondary">
+            <Button className="w-full" variant="secondary">
               Accept
             </Button>
           </DialogClose>
@@ -86,21 +94,90 @@ export const AlertDialog: Story = {
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>Account Deleted Successfully</DialogTitle>
-          <DialogDescription className="mt-1 text-sm/6">
+          <DialogTitle>Are you sure?</DialogTitle>
+          <DialogDescription>
             Warning: This action cannot be undone. This will permanently delete your account and
             remove your data from our servers.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="mt-6">
+        <DialogFooter>
           <DialogClose asChild>
-            <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="outline">
+            <Button className="w-full sm:w-fit" variant="outline">
               Cancel
             </Button>
           </DialogClose>
           <DialogClose asChild>
             <Button variant="destructive" className="w-full sm:w-fit">
-              Continue
+              Delete Account
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+}
+
+export const WithDivider: Story = {
+  render: () => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Terms & Conditions</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Terms of Service</DialogTitle>
+          <DialogDescription>
+            Please read our terms and conditions carefully before proceeding.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogDivider />
+        <div className="max-h-[200px] overflow-y-auto text-sm">
+          <p className="mb-4">
+            By accessing or using our services, you agree to be bound by these Terms of Service. If
+            you do not agree to these terms, please do not use our services.
+          </p>
+          <p>
+            We reserve the right to modify these terms at any time. Your continued use of our
+            services following any changes constitutes your acceptance of the new Terms of Service.
+          </p>
+        </div>
+        <DialogDivider />
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button className="w-full sm:w-fit" variant="outline">
+              Decline
+            </Button>
+          </DialogClose>
+          <DialogClose asChild>
+            <Button className="w-full sm:w-fit">Accept</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+}
+
+export const CompactDialog: Story = {
+  render: () => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Compact Dialog</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-xs" spacing="compact">
+        <DialogHeader>
+          <DialogTitle>Notification Settings</DialogTitle>
+        </DialogHeader>
+        <div className="mt-2 space-y-2 text-sm">
+          <p>
+            Compact dialogs use less space and are ideal for simple interactions or when screen real
+            estate is limited.
+          </p>
+        </div>
+        <DialogDivider />
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button className="w-full" size="sm">
+              Save Changes
             </Button>
           </DialogClose>
         </DialogFooter>
@@ -115,23 +192,28 @@ export const Controlled: Story = {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
+          <Button variant="outline">Controlled Dialog</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <DialogTitle>Account Created Successfully</DialogTitle>
-            <DialogDescription className="mt-1 text-sm/6">
-              Your account has been created successfully. You can now login to your account. For
-              more information, please contact us.
-            </DialogDescription>
+            <DialogDescription>Your account has been created successfully.</DialogDescription>
           </DialogHeader>
-          <DialogFooter className="mt-6">
+          <DialogDivider />
+          <div className="text-muted-foreground text-sm">
+            <p>
+              This is a controlled dialog example where the open state is managed externally. This
+              gives you more control over when the dialog opens and closes.
+            </p>
+          </div>
+          <DialogDivider />
+          <DialogFooter>
             <DialogClose asChild>
-              <Button className="mt-2 w-full sm:mt-0 sm:w-fit" variant="outline">
+              <Button className="w-full sm:w-fit" variant="outline">
                 Go back
               </Button>
             </DialogClose>
-            <Button className="w-full sm:w-fit" onClick={() => setOpen(!open)}>
+            <Button className="w-full sm:w-fit" onClick={() => setOpen(false)}>
               Ok, got it!
             </Button>
           </DialogFooter>

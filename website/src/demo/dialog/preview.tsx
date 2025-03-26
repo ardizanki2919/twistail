@@ -6,6 +6,7 @@ import {
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogDivider,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -16,22 +17,35 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Open Dialog</Button>
+        <Button variant="outline">Terms & Conditions</Button>
       </DialogTrigger>
-      <DialogContent className="w-md p-4">
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Account Created Successfully</DialogTitle>
-          <DialogDescription className="mt-1 text-sm/6">
-            Your account has been created successfully. You can now login to your account. For more
-            information, please contact us.
+          <DialogTitle>Terms of Service</DialogTitle>
+          <DialogDescription>
+            Please read our terms and conditions carefully before proceeding.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="mt-6">
+        <DialogDivider />
+        <div className="max-h-[200px] overflow-y-auto text-sm">
+          <p className="mb-4">
+            By accessing or using our services, you agree to be bound by these Terms of Service. If
+            you do not agree to these terms, please do not use our services.
+          </p>
+          <p>
+            We reserve the right to modify these terms at any time. Your continued use of our
+            services following any changes constitutes your acceptance of the new Terms of Service.
+          </p>
+        </div>
+        <DialogDivider />
+        <DialogFooter>
           <DialogClose asChild>
-            <Button variant="ghost">Go back</Button>
+            <Button className="w-full sm:w-fit" variant="outline">
+              Decline
+            </Button>
           </DialogClose>
           <DialogClose asChild>
-            <Button>Ok, got it!</Button>
+            <Button className="w-full sm:w-fit">Accept</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

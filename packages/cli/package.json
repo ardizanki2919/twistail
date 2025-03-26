@@ -1,6 +1,6 @@
 {
     "name": "twistail",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "type": "module",
     "license": "MIT",
     "description": "A CLI for managing UI components in your project.",
