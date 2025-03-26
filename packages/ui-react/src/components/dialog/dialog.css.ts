@@ -13,7 +13,7 @@ const dialogStyles = tv({
     ],
     header: 'flex flex-col space-y-1.5',
     title: 'font-semibold leading-none tracking-tight text-foreground text-lg',
-    description: 'text-sm text-muted-foreground',
+    description: 'text-sm text-muted-foreground mt-1',
     footer: 'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-6 gap-2 sm:gap-0',
     divider: 'mx-0 my-6 border-border border-t',
   },

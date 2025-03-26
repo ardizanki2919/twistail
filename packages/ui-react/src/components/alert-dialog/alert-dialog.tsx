@@ -1,7 +1,11 @@
 import { AlertDialog as AlertDialogPrimitive } from 'radix-ui'
 import * as React from 'react'
 import { type ButtonProps, buttonStyles } from '#/components/button'
-import { alertDialogStyles } from './alert-dialog.css'
+import { type AlertDialogStyles, alertDialogStyles } from './alert-dialog.css'
+
+interface AlertDialogProps
+  extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Root>,
+    AlertDialogStyles {}
 
 const AlertDialog = AlertDialogPrimitive.Root
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger
@@ -23,9 +27,9 @@ const AlertDialogOverlay = React.forwardRef<
 
 const AlertDialogContent = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
->(({ className, ...props }, fowardedRef) => {
-  const styles = alertDialogStyles()
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> & AlertDialogStyles
+>(({ className, spacing, ...props }, fowardedRef) => {
+  const styles = alertDialogStyles({ spacing })
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
@@ -76,15 +80,20 @@ const AlertDialogDescription = React.forwardRef<
   )
 })
 
+const AlertDialogDivider = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+  const styles = alertDialogStyles()
+  return <div className={styles.divider({ className })} {...props} />
+}
+
 interface AlertDialogActionProps
   extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>,
-    Pick<ButtonProps, 'variant'> {}
+    Pick<ButtonProps, 'variant' | 'size'> {}
 
 const AlertDialogAction = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Action>,
   AlertDialogActionProps
->(({ className, variant = 'primary', ...props }, fowardedRef) => {
-  const styles = buttonStyles({ variant })
+>(({ className, variant = 'primary', size, ...props }, fowardedRef) => {
+  const styles = buttonStyles({ variant, size })
   return (
     <AlertDialogPrimitive.Action
       ref={fowardedRef}
@@ -94,11 +103,15 @@ const AlertDialogAction = React.forwardRef<
   )
 })
 
+interface AlertDialogCancelProps
+  extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>,
+    Pick<ButtonProps, 'variant' | 'size'> {}
+
 const AlertDialogCancel = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Cancel>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
->(({ className, ...props }, fowardedRef) => {
-  const styles = buttonStyles({ variant: 'outline' })
+  AlertDialogCancelProps
+>(({ className, size, ...props }, fowardedRef) => {
+  const styles = buttonStyles({ variant: 'outline', size })
   return (
     <AlertDialogPrimitive.Cancel
       ref={fowardedRef}
@@ -116,6 +129,7 @@ AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
+AlertDialogDivider.displayName = 'AlertDialogDivider'
 
 export {
   AlertDialog,
@@ -128,4 +142,6 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogDivider,
+  type AlertDialogProps,
 }
