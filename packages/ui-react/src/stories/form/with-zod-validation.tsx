@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { Button } from '#/components/button'
-import { Card } from '#/components/card'
+import { Card, CardContent } from '#/components/card'
 import { Input } from '#/components/input'
 import { Label } from '#/components/label'
 import { Select } from '#/components/select'
@@ -160,8 +160,8 @@ export const CompleteZodExample: Story = {
     }
 
     return (
-      <Card className="w-[600px]">
-        <div className="p-6">
+      <Card>
+        <CardContent>
           <div className="mb-6">
             <h2 className="font-semibold text-xl">Register Account</h2>
             <p className="text-muted-foreground text-sm">
@@ -323,7 +323,7 @@ export const CompleteZodExample: Story = {
               </Button>
             </div>
           </form>
-        </div>
+        </CardContent>
       </Card>
     )
   },

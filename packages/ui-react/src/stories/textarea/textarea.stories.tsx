@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from '#/components/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardDivider,
+  CardHeader,
+  CardTitle,
+} from '#/components/card'
 import { Textarea } from '#/components/textarea'
 
 const meta: Meta<typeof Textarea> = {
@@ -41,11 +48,16 @@ export const HasError: Story = {
 export const WithCard: Story = {
   render: () => (
     <Card className="sm:w-96">
-      <h3 className="font-medium text-gray-900 dark:text-gray-50">Submit details</h3>
-      <p className="mt-4 text-gray-500 text-sm">Insert some text</p>
-      <Textarea id="textarea" name="textarea" className="mt-2" />
-      <p className="mt-4 text-gray-500 text-sm">This is disabled</p>
-      <Textarea id="textarea" name="textarea" className="mt-2" disabled />
+      <CardHeader spacing="compact">
+        <CardTitle>Submit details</CardTitle>
+        <CardDescription>Insert some text</CardDescription>
+      </CardHeader>
+      <CardDivider spacing="compact" />
+      <CardContent spacing="compact">
+        <Textarea id="textarea" name="textarea" className="mt-2" />
+        <p className="mt-4 text-gray-500 text-sm">This is disabled</p>
+        <Textarea id="textarea" name="textarea" className="mt-2" disabled />
+      </CardContent>
     </Card>
   ),
 }

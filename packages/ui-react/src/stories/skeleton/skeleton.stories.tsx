@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from '#/components/card'
+import { Card, CardContent, CardHeader } from '#/components/card'
 import { Skeleton } from '#/components/skeleton'
 
 const meta: Meta<typeof Skeleton> = {
@@ -33,13 +33,13 @@ export const Default: Story = {
 export const InsideCard: Story = {
   render: () => (
     <Card className="max-w-lg p-0">
-      <div className="space-y-2 p-4">
+      <CardHeader className="space-y-2 p-4">
         <Skeleton className="h-4 w-4/5" />
         <Skeleton className="h-4 w-2/3" />
-      </div>
-      <div className="border-t p-4 dark:border-gray-900">
+      </CardHeader>
+      <CardContent className="border-t p-4 dark:border-gray-900">
         <Skeleton className="h-72 w-full rounded" />
-      </div>
+      </CardContent>
     </Card>
   ),
 }

@@ -87,12 +87,28 @@ npx twistail add card
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import { Card } from '#/components/card'
+    import {
+      Card,
+      CardHeader,
+      CardTitle,
+      CardDescription,
+      CardContent,
+      CardFooter,
+      CardDivider
+    } from '#/components/card'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import { Card } from 'twistail-react/card'
+    import {
+      Card,
+      CardHeader,
+      CardTitle,
+      CardDescription,
+      CardContent,
+      CardFooter,
+      CardDivider
+    } from 'twistail-react/card'
     ```
   </Tab>
 </Tabs>
@@ -100,3 +116,18 @@ npx twistail add card
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-card--docs) for more examples.
+
+## Anatomy
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle />
+    <CardDescription />
+  </CardHeader>
+  <CardDivider />
+  <CardContent />
+  <CardDivider />
+  <CardFooter />
+</Card>
+```

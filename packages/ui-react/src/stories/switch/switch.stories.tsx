@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 import { Button } from '#/components/button'
-import { Card } from '#/components/card'
+import { Card, CardContent } from '#/components/card'
 import { Divider } from '#/components/divider'
 import { Label } from '#/components/label'
 import { Switch } from '#/components/switch'
@@ -55,29 +55,31 @@ export const ControlledForm: Story = {
     return (
       <div className="space-y-4">
         <Card className="w-96">
-          <form
-            onSubmit={(event) => {
-              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-              event.preventDefault()
-              alert('Submitted')
-            }}
-            onReset={() => setChecked(false)}
-          >
-            <div className="flex items-center gap-3">
-              <Label htmlFor="a">Click the Label</Label>
-              <Switch id="a" checked={checked} onCheckedChange={setChecked} {...args} />
-            </div>
-            <Divider />
-            <div className="flex gap-4">
-              <Button type="submit" className="mt-2 w-fit">
-                Submit
-              </Button>
+          <CardContent>
+            <form
+              onSubmit={(event) => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                event.preventDefault()
+                alert('Submitted')
+              }}
+              onReset={() => setChecked(false)}
+            >
+              <div className="flex items-center gap-3">
+                <Label htmlFor="a">Click the Label</Label>
+                <Switch id="a" checked={checked} onCheckedChange={setChecked} {...args} />
+              </div>
+              <Divider />
+              <div className="flex gap-4">
+                <Button type="submit" className="mt-2 w-fit">
+                  Submit
+                </Button>
 
-              <Button type="reset" variant="secondary" className="mt-2 w-fit">
-                Reset Input
-              </Button>
-            </div>
-          </form>
+                <Button type="reset" variant="secondary" className="mt-2 w-fit">
+                  Reset Input
+                </Button>
+              </div>
+            </form>
+          </CardContent>
         </Card>
 
         <p className="text-gray-500 text-sm">

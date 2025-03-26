@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '#/components/button'
-import { Card } from '#/components/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardDivider,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '#/components/card'
 import { Checkbox } from '#/components/checkbox'
-import { Divider } from '#/components/divider'
+import { Heading } from '#/components/heading'
 import { Input } from '#/components/input'
 import { Label } from '#/components/label'
 import {
@@ -13,8 +21,8 @@ import {
   ListboxValue,
 } from '#/components/listbox'
 import { RadioGroup, RadioGroupItem } from '#/components/radio-group'
-import { Select } from '#/components/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/tabs'
+import { Text } from '#/components/text'
 import { Textarea } from '#/components/textarea'
 import { Tooltip, TooltipContent, TooltipTrigger } from '#/components/tooltip'
 
@@ -24,8 +32,10 @@ const meta: Meta<typeof Card> = {
   tags: ['autodocs', 'status:done'],
   decorators: [
     (Story) => (
-      <div className="flex w-full min-w-xl justify-center">
-        <Story />
+      <div className="flex w-full justify-center p-4">
+        <div className="w-full max-w-lg">
+          <Story />
+        </div>
       </div>
     ),
   ],
@@ -35,59 +45,80 @@ export default meta
 type Story = StoryObj<typeof Card>
 
 export const Default: Story = {
-  render: () => <Card />,
-}
-
-const data1 = [
-  {
-    value: 'dress-shirt-striped',
-    label: 'Striped Dress Shirt',
-  },
-  {
-    value: 'relaxed-button-down',
-    label: 'Relaxed Fit Button Down',
-  },
-  {
-    value: 'slim-button-down',
-    label: 'Slim Fit Button Down',
-  },
-  {
-    value: 'dress-shirt-solid',
-    label: 'Solid Dress Shirt',
-    disabled: true,
-  },
-  {
-    value: 'dress-shirt-check',
-    label: 'Check Dress Shirt',
-  },
-]
-
-export const WithText: Story = {
   render: () => (
-    <Card className="max-w-lg">
-      <h3 className="font-semibold text-gray-900 dark:text-gray-50">
-        Perseverance Rover's Latest Mars Discovery
-      </h3>
-      <p className="mt-2 text-gray-900 text-sm leading-7 dark:text-gray-50">
-        NASA's Perseverance Rover has made an exciting discovery on Mars, finding evidence of
-        ancient microbial life in rock samples. This marks a significant step forward in our
-        understanding of the Red Planet's history and the search for extraterrestrial life.
-      </p>
+    <Card>
+      <CardContent>
+        <p>This is a basic card with just content.</p>
+      </CardContent>
     </Card>
   ),
 }
 
-export const WithFullDivider: Story = {
+export const CompactCard: Story = {
   render: () => (
-    <Card className="max-w-lg p-0">
-      <h3 className="p-4 font-semibold text-gray-900 dark:text-gray-50">
-        Perseverance Rover's Latest Mars Discovery
-      </h3>
-      <p className="border-t p-4 text-gray-900 text-sm leading-7 dark:border-gray-900 dark:text-gray-50">
-        NASA's Perseverance Rover has made an exciting discovery on Mars, finding evidence of
-        ancient microbial life in rock samples. This marks a significant step forward in our
-        understanding of the Red Planet's history and the search for extraterrestrial life.
-      </p>
+    <Card>
+      <CardHeader spacing="compact">
+        <CardTitle>Compact Card</CardTitle>
+        <CardDescription>This card uses compact spacing for all sections</CardDescription>
+      </CardHeader>
+      <CardDivider spacing="compact" />
+      <CardContent spacing="compact">
+        <Text size="sm" className="leading-relaxed">
+          The compact spacing variant reduces padding in all card sections, making it more suitable
+          for dense UIs or when space is limited.
+        </Text>
+      </CardContent>
+      <CardDivider spacing="compact" />
+      <CardFooter spacing="compact">
+        <Button variant="outline" size="sm" className="w-full">
+          Close
+        </Button>
+        <Button size="sm" className="w-full">
+          I Agree
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+}
+
+export const WithText: Story = {
+  render: () => (
+    <Card>
+      <CardHeader>
+        <CardTitle>Perseverance Rover's Latest Mars Discovery</CardTitle>
+      </CardHeader>
+      <CardContent className="pt-0">
+        <p className="text-sm leading-relaxed">
+          NASA's Perseverance Rover has made an exciting discovery on Mars, finding evidence of
+          ancient microbial life in rock samples. This marks a significant step forward in our
+          understanding of the Red Planet's history and the search for extraterrestrial life.
+        </p>
+      </CardContent>
+    </Card>
+  ),
+}
+
+export const WithDivider: Story = {
+  render: () => (
+    <Card>
+      <CardHeader>
+        <CardTitle asChild>
+          <Heading level="h4">Card with Divider</Heading>
+        </CardTitle>
+        <CardDescription>This card uses CardDivider component between sections</CardDescription>
+      </CardHeader>
+      <CardDivider />
+      <CardContent>
+        <Text className="leading-relaxed">
+          Using the CardDivider component provides a clear visual separation between different
+          sections of the card. This can be useful when you want to organize content into distinct
+          sections.
+        </Text>
+      </CardContent>
+      <CardDivider />
+      <CardFooter>
+        <Button>Learn More</Button>
+      </CardFooter>
     </Card>
   ),
 }
@@ -95,117 +126,150 @@ export const WithFullDivider: Story = {
 export const AsChildList: Story = {
   render: () => (
     <ol className="flex list-none flex-col gap-4">
-      <Card asChild>
-        <li className="text-gray-900 dark:text-gray-50">
-          This card will be turned into a {`<li>`} element{' '}
+      <Card asChild spacing="compact">
+        <li>
+          <CardContent>
+            This card will be turned into a {`<li>`} element. The asChild prop allows the Card
+            component to be rendered as a different element while maintaining its styling.
+          </CardContent>
         </li>
       </Card>
       <Card asChild>
-        <li className="text-gray-900 dark:text-gray-50">
-          This card will also be turned into a {`<li>`} element{' '}
+        <li>
+          <CardContent>
+            This card will also be turned into a {`<li>`} element. This is useful for creating lists
+            of cards that semantically should be list items.
+          </CardContent>
         </li>
       </Card>
     </ol>
   ),
 }
 
-export const WithInputs: Story = {
+const formItems = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' },
+  { value: 'option4', label: 'Option 4 (Disabled)', disabled: true },
+  { value: 'option5', label: 'Option 5' },
+]
+
+export const WithForm: Story = {
   render: () => (
-    <Card className="mx-auto max-w-lg">
-      <form>
-        <div className="flex gap-3">
-          <Tabs defaultValue="tab1" className="w-full">
-            <TabsList variant="line" className="grid w-full grid-cols-3">
-              <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-              <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-              <TabsTrigger value="tab3" disabled>
-                Tab 3
-              </TabsTrigger>
-            </TabsList>
-            <div className="mt-4">
-              <TabsContent value="tab1">
-                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 1 content</p>
-              </TabsContent>
-              <TabsContent value="tab2">
-                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 2 content</p>
-              </TabsContent>
-              <TabsContent value="tab3">
-                <p className="text-gray-500 text-sm sm:text-gray-500">Tab 3 content</p>
-              </TabsContent>
-            </div>
-          </Tabs>
+    <Card>
+      <CardHeader className="border-border border-b pb-4">
+        <CardTitle>Form Example</CardTitle>
+        <CardDescription>Fill out this form to submit your request.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4 pt-6">
+        <Tabs defaultValue="tab1" className="w-full">
+          <TabsList variant="line" className="grid w-full grid-cols-3">
+            <TabsTrigger value="tab1">Personal</TabsTrigger>
+            <TabsTrigger value="tab2">Account</TabsTrigger>
+            <TabsTrigger value="tab3" disabled>
+              Advanced
+            </TabsTrigger>
+          </TabsList>
+          <div className="mt-4">
+            <TabsContent value="tab1">
+              <p className="text-muted-foreground text-sm">Enter your personal information.</p>
+            </TabsContent>
+            <TabsContent value="tab2">
+              <p className="text-muted-foreground text-sm">Configure your account settings.</p>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <p className="text-muted-foreground text-sm">
+                Advanced settings are currently disabled.
+              </p>
+            </TabsContent>
+          </div>
+        </Tabs>
+
+        <div className="space-y-2">
+          <Label htmlFor="name">Full Name</Label>
+          <Input id="name" name="name" type="text" placeholder="John Doe" />
         </div>
-        <div className="mt-4 flex flex-col gap-3">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" type="text" placeholder="Emma" />
+
+        <div className="space-y-2">
+          <Label htmlFor="email">Email Address</Label>
+          <Input id="email" name="email" type="email" placeholder="john@example.com" />
         </div>
-        <div className="mt-4 flex gap-3">
-          <Checkbox id="r1" />
-          <Label htmlFor="r1">
-            I'd like to be notified by SMS when my order is ready for collection.
+
+        <div className="flex items-center gap-2">
+          <Checkbox id="notifications" />
+          <Label htmlFor="notifications">
+            I'd like to receive notifications about product updates and news.
           </Label>
         </div>
-        <div className="mt-4 flex gap-3">
-          <Textarea id="textarea" name="textarea" className="mt-2" />
+
+        <div className="space-y-2">
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            id="message"
+            name="message"
+            placeholder="Enter your message here..."
+            className="min-h-[100px]"
+          />
         </div>
-        <div className="mt-4 flex gap-3">
-          <div className="flex justify-center">
-            <RadioGroup>
-              <div className="flex items-center gap-x-3">
-                <RadioGroupItem checked value="1" id="radio_1" />
-                <Label htmlFor="radio_1">First come first serve (FCFS)</Label>
-              </div>
-              <div className="flex items-center gap-x-3">
-                <RadioGroupItem value="2" id="radio_2" />
-                <Label htmlFor="radio_2">By appointment</Label>
-              </div>
-              <div className="flex items-center gap-x-3">
-                <RadioGroupItem value="3" id="radio_3" />
-                <Label htmlFor="radio_3">By time window</Label>
-              </div>
-            </RadioGroup>
-          </div>
+
+        <div className="space-y-2">
+          <Label>Preferred Contact Method</Label>
+          <RadioGroup>
+            <div className="flex items-center gap-x-3">
+              <RadioGroupItem checked value="email" id="contact_email" />
+              <Label htmlFor="contact_email">Email</Label>
+            </div>
+            <div className="flex items-center gap-x-3">
+              <RadioGroupItem value="phone" id="contact_phone" />
+              <Label htmlFor="contact_phone">Phone</Label>
+            </div>
+            <div className="flex items-center gap-x-3">
+              <RadioGroupItem value="sms" id="contact_sms" />
+              <Label htmlFor="contact_sms">SMS</Label>
+            </div>
+          </RadioGroup>
         </div>
-        <div className="mt-4 flex gap-3">
-          <Select>
-            <option value="0-18">18 and under</option>
-            <option value="19-39">19 to 39</option>
-            <option value="40-64">40 to 64</option>
-            <option value="65-infinity">65 and over</option>
-          </Select>
-        </div>
-        <div className="mt-4 flex gap-3">
+
+        <div className="space-y-2">
+          <Label htmlFor="interests">Interests</Label>
           <Listbox>
             <ListboxTrigger>
-              <ListboxValue placeholder="Listbox" />
+              <ListboxValue placeholder="Select your interests" />
             </ListboxTrigger>
             <ListboxContent>
-              {data1.map((item) => (
-                <ListboxItem key={item.value} value={item.value}>
+              {formItems.map((item) => (
+                <ListboxItem key={item.value} value={item.value} disabled={item.disabled}>
                   {item.label}
                 </ListboxItem>
               ))}
             </ListboxContent>
           </Listbox>
         </div>
-        <div className="mt-4 flex gap-3">
-          <Input type="file" />
-        </div>
 
-        <Divider />
-        <div className="flex w-full gap-2 *:w-full dark:border-gray-800">
-          <Button variant="outline">Clear</Button>
-          <Button variant="destructive">Remove</Button>
-          <Tooltip delayDuration={10}>
-            <TooltipTrigger asChild>
-              <Button className="w-full" type="submit">
-                Apply
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent content="Once you submitted this request, there is no way back." />
-          </Tooltip>
+        <div className="space-y-2">
+          <Label htmlFor="file">Upload Document</Label>
+          <Input id="file" type="file" />
         </div>
-      </form>
+      </CardContent>
+
+      <CardDivider />
+
+      <CardFooter>
+        <Button className="w-full" variant="outline">
+          Cancel
+        </Button>
+        <Button className="w-full" variant="destructive">
+          Reset
+        </Button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button className="w-full" type="submit">
+              Submit
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Submit your information to continue</TooltipContent>
+        </Tooltip>
+      </CardFooter>
     </Card>
   ),
 }
