@@ -1,13 +1,5 @@
 import * as React from 'react'
 import { Tooltip } from '#/components/tooltip'
-import {
-  SIDEBAR_COOKIE_MAX_AGE,
-  SIDEBAR_COOKIE_NAME,
-  SIDEBAR_KEYBOARD_SHORTCUT,
-  SIDEBAR_WIDTH,
-  SIDEBAR_WIDTH_ICON,
-  useIsMobile,
-} from './sidebar-utils'
 import { sidebarStyles } from './sidebar.css'
 
 type SidebarContextProps = {
@@ -30,10 +22,30 @@ export function useSidebar() {
   return context
 }
 
+// Detect if the current viewport is mobile based on breakpoint
+export function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+
+  React.useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`)
+    const onChange = () => {
+      setIsMobile(window.innerWidth < breakpoint)
+    }
+    mql.addEventListener('change', onChange)
+    setIsMobile(window.innerWidth < breakpoint)
+    return () => mql.removeEventListener('change', onChange)
+  }, [breakpoint])
+
+  return !!isMobile
+}
+
 type SidebarProviderProps = React.ComponentProps<'div'> & {
   defaultOpen?: boolean
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  shortcutKey?: string
+  cookieName?: string
+  cookieMaxAge?: number
 }
 
 export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderProps>(
@@ -42,6 +54,9 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
       defaultOpen = true,
       open: openProp,
       onOpenChange: setOpenProp,
+      shortcutKey = 'e',
+      cookieName = 'sidebar_state',
+      cookieMaxAge = 60 * 60 * 24 * 7 /* 7 days */,
       className,
       style,
       children,
@@ -66,9 +81,9 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
           _setOpen(openState)
         }
         // This sets the cookie to keep the sidebar state.
-        document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
+        document.cookie = `${cookieName}=${openState}; path=/; max-age=${cookieMaxAge};`
       },
-      [setOpenProp, open]
+      [setOpenProp, open, cookieName, cookieMaxAge]
     )
 
     // Helper to toggle the sidebar.
@@ -79,7 +94,7 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
     // Adds a keyboard shortcut to toggle the sidebar.
     React.useEffect(() => {
       const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === SIDEBAR_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
+        if (event.key === shortcutKey && (event.metaKey || event.ctrlKey)) {
           event.preventDefault()
           toggleSidebar()
         }
@@ -87,7 +102,7 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
 
       window.addEventListener('keydown', handleKeyDown)
       return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [toggleSidebar])
+    }, [toggleSidebar, shortcutKey])
 
     // We add a state so that we can do data-state="expanded" or "collapsed".
     // This makes it easier to style the sidebar with Tailwind classes.
@@ -109,18 +124,7 @@ export const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderP
     return (
       <SidebarContext.Provider value={contextValue}>
         <Tooltip delayDuration={0}>
-          <div
-            style={
-              {
-                '--sidebar-width': SIDEBAR_WIDTH,
-                '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
-                ...style,
-              } as React.CSSProperties
-            }
-            className={styles.providerTooltip({ className })}
-            ref={forwardedRef}
-            {...props}
-          >
+          <div className={styles.providerTooltip({ className })} ref={forwardedRef} {...props}>
             {children}
           </div>
         </Tooltip>

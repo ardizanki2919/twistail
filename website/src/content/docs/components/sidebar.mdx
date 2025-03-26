@@ -53,7 +53,15 @@ npx twistail add sidebar
   </Step>
   <Step>
     ### Copy the code
-    <Tabs items={['context', 'layout', 'main', 'menu', 'utils', 'sidebar.css.ts', 'index.ts']}>
+    <Tabs items={['main', 'context', 'layout','menu', 'sidebar.css.ts', 'index.ts']}>
+      <Tab value="main">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/sidebar/sidebar-main.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/sidebar/sidebar-main.tsx\"" }
+        }
+        ```
+      </Tab>
       <Tab value="context">
         ```json doc-gen:file
         {
@@ -70,27 +78,11 @@ npx twistail add sidebar
         }
         ```
       </Tab>
-      <Tab value="main">
-        ```json doc-gen:file
-        {
-          "file": "../packages/ui-react/src/components/sidebar/sidebar-main.tsx",
-          "codeblock": { "lang": "tsx", "meta": "title=\"components/sidebar/sidebar-main.tsx\"" }
-        }
-        ```
-      </Tab>
       <Tab value="menu">
         ```json doc-gen:file
         {
           "file": "../packages/ui-react/src/components/sidebar/sidebar-menu.tsx",
           "codeblock": { "lang": "tsx", "meta": "title=\"components/sidebar/sidebar-menu.tsx\"" }
-        }
-        ```
-      </Tab>
-      <Tab value="utils">
-        ```json doc-gen:file
-        {
-          "file": "../packages/ui-react/src/components/sidebar/sidebar-utils.tsx",
-          "codeblock": { "lang": "tsx", "meta": "title=\"components/sidebar/sidebar-utils.tsx\"" }
         }
         ```
       </Tab>

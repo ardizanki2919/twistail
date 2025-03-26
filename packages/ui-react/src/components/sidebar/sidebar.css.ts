@@ -36,7 +36,7 @@ const sidebarStyles = tv({
     ],
     rootExpanded: 'flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-foreground',
     rootMobileDrawer: [
-      'w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden',
+      'w-(--sidebar-width-mobile) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden',
     ],
     rootMobileDrawerInner: 'flex size-full flex-col',
     rootWrapper: 'group peer hidden text-sidebar-foreground md:block',

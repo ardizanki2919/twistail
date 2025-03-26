@@ -11,7 +11,6 @@ import {
 } from '#/components/drawer'
 import { Input } from '#/components/input'
 import { useSidebar } from './sidebar-context'
-import { SIDEBAR_WIDTH_MOBILE } from './sidebar-utils'
 import { sidebarStyles } from './sidebar.css'
 import type { SidebarStyles } from './sidebar.css'
 
@@ -49,7 +48,6 @@ export const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
             data-mobile="true"
             data-sidebar="sidebar"
             className={styles.rootMobileDrawer()}
-            style={{ '--sidebar-width': SIDEBAR_WIDTH_MOBILE } as React.CSSProperties}
             side={side}
           >
             <DrawerHeader className="sr-only">
