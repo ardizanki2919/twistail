@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 import { Button } from '#/components/button'
-import { Card } from '#/components/card'
+import { Card, CardContent } from '#/components/card'
 import { Divider } from '#/components/divider'
 import { Slider } from '#/components/slider'
 
@@ -60,25 +60,27 @@ export const ControlledForm: Story = {
 
     return (
       <Card className="w-96">
-        <form onSubmit={handleSubmit} onReset={() => setValue([55, 75])}>
-          <Slider id="a" value={value} onValueChange={setValue} {...args} />
+        <CardContent>
+          <form onSubmit={handleSubmit} onReset={() => setValue([55, 75])}>
+            <Slider id="a" value={value} onValueChange={setValue} {...args} />
+            <Divider />
+            <div className="flex gap-4">
+              <Button type="submit" className="w-full" size="sm">
+                Submit
+              </Button>
+              <Button type="reset" variant="secondary" className="w-full" size="sm">
+                Reset Input
+              </Button>
+            </div>
+          </form>
           <Divider />
-          <div className="flex gap-4">
-            <Button type="submit" className="w-full">
-              Submit
-            </Button>
-            <Button type="reset" variant="secondary" className="w-full">
-              Reset Input
-            </Button>
-          </div>
-        </form>
-        <Divider />
-        <p className="mt-2 text-gray-500 text-sm">
-          Slider value:
-          <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
-            {value[0]}, {value[1]}
-          </span>
-        </p>
+          <p className="mt-2 text-gray-500 text-sm">
+            Slider value:
+            <span className="ml-1 font-semibold text-gray-900 dark:text-gray-50">
+              {value[0]}, {value[1]}
+            </span>
+          </p>
+        </CardContent>
       </Card>
     )
   },
