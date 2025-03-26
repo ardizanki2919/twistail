@@ -16,6 +16,7 @@
         "components/aspect-ratio",
         "components/avatar",
         "components/badge",
+        "components/blockquote",
         "components/breadcrumb",
         "components/button",
         "components/calendar",
