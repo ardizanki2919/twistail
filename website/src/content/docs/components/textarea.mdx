@@ -87,12 +87,12 @@ npx twistail add textarea
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import { Textarea } from '#/components/textarea'
+    import { Textarea, useTextArea } from '#/components/textarea'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import { Textarea } from 'twistail-react/textarea'
+    import { Textarea, useTextArea } from 'twistail-react/textarea'
     ```
   </Tab>
 </Tabs>
@@ -100,3 +100,8 @@ npx twistail add textarea
 ### Example
 
 Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-textarea--docs) for more examples.
+
+## Credits
+
+This component is based on [autosize-textarea](https://shadcnui-expansions.typeart.cc/docs/autosize-textarea)
+by [shadcn-ui expansions](https://shadcnui-expansions.typeart.cc), licensed under [MIT License](https://github.com/hsuanyi-chou/shadcn-ui-expansions/blob/main/LICENSE.md).

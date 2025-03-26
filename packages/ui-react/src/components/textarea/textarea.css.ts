@@ -13,9 +13,14 @@ const textareaStyles = tv({
     hasError: {
       true: 'border-destructive ring-1 ring-destructive/20',
     },
+    autoResize: {
+      true: 'overflow-y-auto resize-none',
+      false: 'resize-vertical',
+    },
   },
   defaultVariants: {
     hasError: false,
+    autoResize: false,
   },
 })
 
