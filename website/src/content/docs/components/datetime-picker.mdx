@@ -6,7 +6,7 @@ full: false
 A component that allows users to select both date and time values through an intuitive interface, supporting various formats and time zones.
 
 <Badges>
-  <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-datetime-picker--docs" external>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-datetime-picker" external>
     Storybook
   </BadgeLink>
   <BadgeLink href="https://daypicker.dev/docs/anatomy" external>
@@ -24,7 +24,7 @@ A component that allows users to select both date and time values through an int
 import DemoSingle from '#/demo/datetime-picker/preview-single'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
     <DemoSingle />
   </Tab>
   <Tab value="Code">
@@ -37,11 +37,24 @@ import DemoSingle from '#/demo/datetime-picker/preview-single'
 import DemoRange from '#/demo/datetime-picker/preview-range'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
     <DemoRange />
   </Tab>
   <Tab value="Code">
     <include cwd lang="tsx">./src/demo/datetime-picker/preview-range.tsx</include>
+  </Tab>
+</Tabs>
+
+## Time Picker
+
+import DemoTimePicker from '#/demo/datetime-picker/preview-time'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
+    <DemoTimePicker />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-time.tsx</include>
   </Tab>
 </Tabs>
 
@@ -61,11 +74,11 @@ npx twistail add datetime-picker
   <Step>
     ### Install dependencies
     ```package-install
-    npm install radix-ui
+    npm install radix-ui lucide-react date-fns react-day-picker
     ```
   </Step>
   <Step>
-    ### Copy the code
+    ### Date Picker Component
     <Tabs items={['single-datepicker.tsx', 'range-datepicker.tsx', 'datetime-picker.css.ts', 'index.ts']}>
       <Tab value="single-datepicker.tsx">
         ```json doc-gen:file
@@ -101,6 +114,27 @@ npx twistail add datetime-picker
       </Tab>
     </Tabs>
   </Step>
+  <Step>
+    ### Time Picker Component
+    <Tabs items={['time-picker.tsx', 'time-utils.ts']}>
+      <Tab value="time-picker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/time-picker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/time-picker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="time-utils.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/time-utils.ts",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/time-utils.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
 </Steps>
 
 ## Usage
@@ -110,19 +144,19 @@ npx twistail add datetime-picker
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import { RangeDatePicker, SingleDatePicker } from '#/components/datetime-picker'
+    import { RangeDatePicker, SingleDatePicker, TimePicker } from '#/components/datetime-picker'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import { RangeDatePicker, SingleDatePicker } from 'twistail-react/datetime-picker'
+    import { RangeDatePicker, SingleDatePicker, TimePicker } from 'twistail-react/datetime-picker'
     ```
   </Tab>
 </Tabs>
 
 ### Example
 
-Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-datetime-picker--docs) for more examples.
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-datetime-picker) for more examples.
 
 ## Credits
 

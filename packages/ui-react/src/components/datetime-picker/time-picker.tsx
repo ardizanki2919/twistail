@@ -55,66 +55,70 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
 
     return (
       <div className={styles.container({ className })}>
-        <label htmlFor="datetime-picker-hour-input" className={styles.label()}>
-          <Lucide.Clock className={styles.labelIcon()} />
-        </label>
-        <TimePickerInput
-          picker={hourCycle === 24 ? 'hours' : '12hours'}
-          date={date}
-          id="datetime-picker-hour-input"
-          onDateChange={onChange}
-          ref={hourRef}
-          period={period}
-          onRightFocus={() => minuteRef?.current?.focus()}
-          className={styles.input()}
-        />
-        {(granularity === 'minute' || granularity === 'second') && (
-          <>
-            <span className={styles.separator()}>:</span>
-            <TimePickerInput
-              picker="minutes"
-              date={date}
-              onDateChange={onChange}
-              ref={minuteRef}
-              onLeftFocus={() => hourRef?.current?.focus()}
-              onRightFocus={() => secondRef?.current?.focus()}
-              className={styles.input()}
-            />
-          </>
-        )}
-        {granularity === 'second' && (
-          <>
-            <span className={styles.separator()}>:</span>
-            <TimePickerInput
-              picker="seconds"
-              date={date}
-              onDateChange={onChange}
-              ref={secondRef}
-              onLeftFocus={() => minuteRef?.current?.focus()}
-              onRightFocus={() => periodRef?.current?.focus()}
-              className={styles.input()}
-            />
-          </>
-        )}
+        <div className={styles.timeInputGroup()}>
+          <label htmlFor="datetime-picker-hour-input" className={styles.label()}>
+            <Lucide.Clock className={styles.labelIcon()} />
+          </label>
+
+          <TimePickerInput
+            picker={hourCycle === 24 ? 'hours' : '12hours'}
+            date={date}
+            id="datetime-picker-hour-input"
+            onDateChange={onChange}
+            ref={hourRef}
+            period={period}
+            onRightFocus={() => minuteRef?.current?.focus()}
+            className={styles.input()}
+          />
+
+          {(granularity === 'minute' || granularity === 'second') && (
+            <>
+              <span className={styles.separator()}>:</span>
+              <TimePickerInput
+                picker="minutes"
+                date={date}
+                onDateChange={onChange}
+                ref={minuteRef}
+                onLeftFocus={() => hourRef?.current?.focus()}
+                onRightFocus={() => secondRef?.current?.focus()}
+                className={styles.input()}
+              />
+            </>
+          )}
+
+          {granularity === 'second' && (
+            <>
+              <span className={styles.separator()}>:</span>
+              <TimePickerInput
+                picker="seconds"
+                date={date}
+                onDateChange={onChange}
+                ref={secondRef}
+                onLeftFocus={() => minuteRef?.current?.focus()}
+                onRightFocus={() => periodRef?.current?.focus()}
+                className={styles.input()}
+              />
+            </>
+          )}
+        </div>
+
         {hourCycle === 12 && (
-          <div className={styles.periodContainer()}>
-            <TimePeriodSelect
-              period={period}
-              setPeriod={setPeriod}
-              date={date}
-              onDateChange={(date) => {
-                onChange?.(date)
-                if (date && date?.getHours() >= 12) {
-                  setPeriod('PM')
-                } else {
-                  setPeriod('AM')
-                }
-              }}
-              ref={periodRef}
-              onLeftFocus={() => secondRef?.current?.focus()}
-              className={styles.periodTrigger()}
-            />
-          </div>
+          <TimePeriodSelect
+            period={period}
+            setPeriod={setPeriod}
+            date={date}
+            onDateChange={(date) => {
+              onChange?.(date)
+              if (date && date?.getHours() >= 12) {
+                setPeriod('PM')
+              } else {
+                setPeriod('AM')
+              }
+            }}
+            ref={periodRef}
+            onLeftFocus={() => secondRef?.current?.focus()}
+            className={styles.periodTrigger()}
+          />
         )}
       </div>
     )
@@ -136,6 +140,7 @@ const TimePeriodSelect = React.forwardRef<HTMLButtonElement, TimePeriodSelectPro
     { period, setPeriod, date, onDateChange, onLeftFocus, onRightFocus, className },
     forwardedRef
   ) => {
+    const styles = timePickerStyles()
     const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'ArrowRight') onRightFocus?.()
       if (e.key === 'ArrowLeft') onLeftFocus?.()
@@ -143,10 +148,6 @@ const TimePeriodSelect = React.forwardRef<HTMLButtonElement, TimePeriodSelectPro
 
     const handleValueChange = (value: Period) => {
       setPeriod?.(value)
-      /**
-       * Trigger an update whenever the user switches between AM and PM;
-       * otherwise user must manually change the hour each time
-       */
       if (date) {
         const tempDate = new Date(date)
         const hours = display12HourValue(date.getHours())
@@ -157,17 +158,23 @@ const TimePeriodSelect = React.forwardRef<HTMLButtonElement, TimePeriodSelectPro
     }
 
     return (
-      <div className="flex h-10 items-center">
-        <Listbox defaultValue={period} onValueChange={(value: Period) => handleValueChange(value)}>
-          <ListboxTrigger ref={forwardedRef} className={className} onKeyDown={handleKeyDown}>
-            <ListboxValue />
-          </ListboxTrigger>
-          <ListboxContent>
-            <ListboxItem value="AM">AM</ListboxItem>
-            <ListboxItem value="PM">PM</ListboxItem>
-          </ListboxContent>
-        </Listbox>
-      </div>
+      <Listbox defaultValue={period} onValueChange={(value: Period) => handleValueChange(value)}>
+        <ListboxTrigger
+          ref={forwardedRef}
+          className={styles.periodTrigger({ className })}
+          onKeyDown={handleKeyDown}
+        >
+          <ListboxValue />
+        </ListboxTrigger>
+        <ListboxContent>
+          <ListboxItem value="AM" className={styles.periodItem()}>
+            AM
+          </ListboxItem>
+          <ListboxItem value="PM" className={styles.periodItem()}>
+            PM
+          </ListboxItem>
+        </ListboxContent>
+      </Listbox>
     )
   }
 )
@@ -259,6 +266,11 @@ const TimePickerInput = React.forwardRef<HTMLInputElement, TimePickerInputProps>
       }
     }
 
+    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      e.preventDefault()
+      onChange?.(e)
+    }
+
     return (
       <Input
         ref={forwardedRef}
@@ -266,16 +278,14 @@ const TimePickerInput = React.forwardRef<HTMLInputElement, TimePickerInputProps>
         name={name || picker}
         className={className}
         value={value || calculatedValue}
-        onChange={(e) => {
-          e.preventDefault()
-          onChange?.(e)
-        }}
+        onChange={handleOnChange}
         type={type}
         inputMode="decimal"
         onKeyDown={(e) => {
           onKeyDown?.(e)
           handleKeyDown(e)
         }}
+        aria-label={`${picker} input`}
         {...props}
       />
     )

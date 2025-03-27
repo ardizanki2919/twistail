@@ -5,11 +5,18 @@ import { SingleDatePicker } from '#/components/datetime-picker'
 
 const meta: Meta<typeof SingleDatePicker> = {
   component: SingleDatePicker,
-  title: 'Base Components/Datetime Picker',
+  title: 'Base Components/Datetime Picker/Date Picker',
   tags: ['autodocs', 'status:experimental'],
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
+  decorators: [
+    (Story) => (
+      <div className="mx-auto w-fit">
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     inlinePresets: {
       control: 'boolean',

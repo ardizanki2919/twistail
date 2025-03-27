@@ -205,12 +205,13 @@ function SingleDatePicker({
           )}
 
           {showTimePicker && (
-            <div className="border-border border-t p-3">
+            <div className="rounded-b-md border-border border-t p-0">
               <TimePicker
                 date={date || new Date()}
+                className="flex items-center justify-center rounded-b-md"
                 onChange={handleTimeChange}
-                hourCycle={hourCycle}
                 granularity={granularity}
+                hourCycle={hourCycle}
               />
             </div>
           )}

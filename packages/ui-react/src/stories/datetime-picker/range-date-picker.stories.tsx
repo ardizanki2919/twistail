@@ -5,11 +5,18 @@ import { RangeDatePicker } from '#/components/datetime-picker'
 
 const meta: Meta<typeof RangeDatePicker> = {
   component: RangeDatePicker,
-  title: 'Base Components/Datetime Picker',
+  title: 'Base Components/Datetime Picker/Range Picker',
   tags: ['autodocs', 'status:experimental'],
   parameters: {
     layout: 'centered',
   },
+  decorators: [
+    (Story) => (
+      <div className="mx-auto w-fit">
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     inlinePresets: {
       control: 'boolean',

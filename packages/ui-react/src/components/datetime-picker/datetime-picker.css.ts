@@ -66,14 +66,22 @@ const rangeDatePickerStyles = tv({
 
 const timePickerStyles = tv({
   slots: {
-    container: 'flex items-center justify-center gap-2',
-    label: 'cursor-pointer',
-    labelIcon: 'mr-2 h-4 w-4',
-    input:
-      'w-[48px] text-center font-mono text-base tabular-nums caret-transparent focus:bg-accent focus:text-accent-foreground [&::-webkit-inner-spin-button]:appearance-none',
-    periodContainer: 'grid gap-1 text-center',
-    periodTrigger: 'w-[65px] focus:bg-accent focus:text-accent-foreground',
-    separator: '',
+    container: 'flex items-center justify-center gap-2 p-2 rounded-md',
+    timeInputGroup: 'flex items-center bg-muted/30 rounded-md px-2 py-1',
+    label: 'cursor-pointer text-muted-foreground flex items-center mx-1.5',
+    labelIcon: 'size-4',
+    input: [
+      'w-[40px] h-8 text-center font-mono text-base tabular-nums caret-transparent shadow-none',
+      'bg-transparent border-0 focus:ring-0 focus:outline-none hover:bg-accent/30 rounded',
+      'focus:bg-accent focus:border focus:border-border focus:text-accent-foreground',
+      '[&::-webkit-inner-spin-button]:appearance-none',
+    ],
+    periodTrigger: [
+      'h-[40px] min-w-[66px] focus:bg-accent focus:text-accent-foreground rounded-md',
+      '[&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:-mr-1',
+    ],
+    periodItem: '[&_svg]:size-4 [&_svg]:shrink-0 py-1.5',
+    separator: 'text-muted-foreground mx-0.5 select-none',
   },
   variants: {
     hourCycle: {
