@@ -1,0 +1,108 @@
+---
+title: Donut Chart
+full: false
+---
+
+A circular chart with a hole in the center that shows the proportional composition of a dataset.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-donut-chart--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/donut-chart" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/donut-chart/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/donut-chart/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add donut-chart
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['donut-chart.tsx', 'donut-chart.css.ts', 'index.ts']}>
+      <Tab value="donut-chart.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/donut-chart/donut-chart.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/donut-chart/donut-chart.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="donut-chart.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/donut-chart/donut-chart.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/donut-chart/donut-chart.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/donut-chart/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/donut-chart/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/donut-chart'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/donut-chart'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-donut-chart--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

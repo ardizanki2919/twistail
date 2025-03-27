@@ -1,0 +1,108 @@
+---
+title: Progress Circle
+full: false
+---
+
+A circular progress indicator that visualizes completion percentage in a compact format.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
+    Radix UI Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/progress-circle" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/progress-circle/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/progress-circle/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add progress-circle
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['progress-circle.tsx', 'progress-circle.css.ts', 'index.ts']}>
+      <Tab value="progress-circle.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-circle/progress-circle.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/progress-circle/progress-circle.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="progress-circle.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-circle/progress-circle.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/progress-circle/progress-circle.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-circle/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/progress-circle/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/progress-circle'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/progress-circle'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

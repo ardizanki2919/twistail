@@ -1,0 +1,108 @@
+---
+title: Progress Bar
+full: false
+---
+
+A visual indicator showing the completion progress of an operation or task.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
+    Radix UI Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/progress-bar" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/progress-bar/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/progress-bar/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add progress-bar
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['progress-bar.tsx', 'progress-bar.css.ts', 'index.ts']}>
+      <Tab value="progress-bar.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-bar/progress-bar.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/progress-bar/progress-bar.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="progress-bar.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-bar/progress-bar.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/progress-bar/progress-bar.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/progress-bar/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/progress-bar/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/progress-bar'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/progress-bar'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

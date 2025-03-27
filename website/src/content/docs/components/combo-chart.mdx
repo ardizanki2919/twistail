@@ -1,0 +1,108 @@
+---
+title: Combo Chart
+full: false
+---
+
+A hybrid chart that combines multiple chart types (like bar and line) to compare different data series with different scales.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-combo-chart--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/combo-chart" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/combo-chart/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/combo-chart/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add combo-chart
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['combo-chart.tsx', 'combo-chart.css.ts', 'index.ts']}>
+      <Tab value="combo-chart.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combo-chart/combo-chart.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/combo-chart/combo-chart.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="combo-chart.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combo-chart/combo-chart.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/combo-chart/combo-chart.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/combo-chart/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/combo-chart/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/combo-chart'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/combo-chart'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-combo-chart--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

@@ -1,0 +1,108 @@
+---
+title: Area Chart
+full: false
+---
+
+A chart that displays quantitative data using a filled area below a line, useful for showing volume or cumulative values over time.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-area-chart--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/area-chart" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/area-chart/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/area-chart/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add area-chart
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['area-chart.tsx', 'area-chart.css.ts', 'index.ts']}>
+      <Tab value="area-chart.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/area-chart/area-chart.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/area-chart/area-chart.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="area-chart.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/area-chart/area-chart.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/area-chart/area-chart.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/area-chart/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/area-chart/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/area-chart'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/area-chart'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-area-chart--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

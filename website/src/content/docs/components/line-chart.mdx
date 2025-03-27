@@ -1,0 +1,108 @@
+---
+title: Line Chart
+full: false
+---
+
+A chart that displays information as a series of data points connected by straight line segments.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-line-chart--default" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/line-chart" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/line-chart/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/line-chart/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add line-chart
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['line-chart.tsx', 'line-chart.css.ts', 'index.ts']}>
+      <Tab value="line-chart.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/line-chart/line-chart.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/line-chart/line-chart.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="line-chart.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/line-chart/line-chart.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/line-chart/line-chart.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/line-chart/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/line-chart/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/line-chart'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/line-chart'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-line-chart--default) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

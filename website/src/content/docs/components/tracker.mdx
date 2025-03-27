@@ -1,0 +1,144 @@
+---
+title: Tracker
+full: false
+---
+
+A component that visualizes progress through a series of steps or stages in a process.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-tracker--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
+    Radix UI Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/tracker" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/tracker/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/tracker/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add tracker
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['tracker.tsx', 'tracker.css.ts', 'index.ts']}>
+      <Tab value="tracker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/tracker/tracker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/tracker/tracker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="tracker.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/tracker/tracker.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/tracker/tracker.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/tracker/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/tracker/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { Tracker } from '#/components/tracker'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { Tracker } from 'twistail-react/tracker'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-tracker--docs) for more examples.
+
+## Props
+
+<TypeTable
+  type={{
+    data: {
+      description: 'Array of tracker block data to be displayed',
+      type: 'TrackerBlockProps[]',
+      default: '[]',
+    },
+    size: {
+      description: 'Size of the tracker component',
+      type: '"sm" | "md" | "lg"',
+      default: 'md',
+    },
+    hoverEffect: {
+      description: 'Enable hover effect on tracker blocks',
+      type: 'boolean',
+      default: false,
+    },
+    showArrow: {
+      description: 'Show arrow on tooltips',
+      type: 'boolean',
+      default: 'true',
+    },
+    defaultBackgroundColor: {
+      description: 'Default background color for blocks without specified color',
+      type: 'string',
+      default: '"bg-muted"',
+    },
+    emptyColor: {
+      description: 'Color to use when data is empty',
+      type: 'string',
+      default: '"bg-muted/30"',
+    },
+    className: {
+      description: 'Additional CSS class for the tracker container',
+      type: 'string',
+      default: undefined,
+    },
+  }}
+/>

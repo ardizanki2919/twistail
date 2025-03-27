@@ -26,9 +26,11 @@ This site provides documentation in a format optimized for Large Language Models
 - [Scroll Area Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Scroll Area component
 - [Sidebar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Sidebar component
 - [Split Pane Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Split Pane component
+- [Stacked Layout Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Stacked Layout component
 - [Table Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Table component
 
-### Typography Components
+### Display & Typography
+- [Avatar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Avatar component
 - [Blockquote Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Blockquote component
 - [Callout Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Callout component
 - [Description List Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Description List component
@@ -81,8 +83,18 @@ This site provides documentation in a format optimized for Large Language Models
 - [Skeleton Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Skeleton component
 - [Toast Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Toast component
 
-### Display Components
-- [Avatar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Avatar component
+### Data Visualization Components
+- [Area Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Area Chart component
+- [Bar Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Bar Chart component
+- [Bar List Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Bar List component
+- [Category Bar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Category Bar component
+- [Combo Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Combo Chart component
+- [Donut Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Donut Chart component
+- [Line Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Line Chart component
+- [Progress Bar Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Progress Bar component
+- [Progress Circle Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Progress Circle component
+- [Spark Chart Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Spark Chart component
+- [Tracker Documentation](https://twistail.com/llms-full.txt): Detailed documentation for Tracker component
 
 ## Utilities
 
