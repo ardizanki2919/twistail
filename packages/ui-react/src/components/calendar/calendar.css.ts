@@ -3,8 +3,8 @@ import { buttonStyles } from '#/components/button'
 
 const calendarStyles = tv({
   slots: {
-    base: 'px-4 py-5',
-    root: 'bg-card px-4 py-5 w-[calc(269px*var(--calendar-columns))] max-w-full',
+    base: 'px-4 py-5 rounded-md',
+    root: 'bg-card px-4 py-5 w-[calc(269px*var(--calendar-columns))] max-w-full rounded-md',
     uiChevron: 'size-4',
     uiCaptionLabel: 'truncate font-medium text-sm h-7 w-full items-center justify-center flex',
     uiCaptionButton: buttonStyles({ variant: 'ghost' }).base({

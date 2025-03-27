@@ -19,14 +19,29 @@ A component that allows users to select both date and time values through an int
 
 ---
 
-import Demo from '#/demo/datetime-picker/preview'
+## Single Datetime Picker
+
+import DemoSingle from '#/demo/datetime-picker/preview-single'
 
 <Tabs items={['Preview', 'Code']}>
   <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
-    <Demo />
+    <DemoSingle />
   </Tab>
   <Tab value="Code">
-    <include cwd lang="tsx">./src/demo/datetime-picker/preview.tsx</include>
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-single.tsx</include>
+  </Tab>
+</Tabs>
+
+## Range Datetime Picker
+
+import DemoRange from '#/demo/datetime-picker/preview-range'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <DemoRange />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-range.tsx</include>
   </Tab>
 </Tabs>
 
@@ -51,12 +66,20 @@ npx twistail add datetime-picker
   </Step>
   <Step>
     ### Copy the code
-    <Tabs items={['datetime-picker.tsx', 'datetime-picker.css.ts', 'index.ts']}>
-      <Tab value="datetime-picker.tsx">
+    <Tabs items={['single-datepicker.tsx', 'range-datepicker.tsx', 'datetime-picker.css.ts', 'index.ts']}>
+      <Tab value="single-datepicker.tsx">
         ```json doc-gen:file
         {
-          "file": "../packages/ui-react/src/components/datetime-picker/datetime-picker.tsx",
-          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/datetime-picker.tsx\"" }
+          "file": "../packages/ui-react/src/components/datetime-picker/single-datepicker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/single-datepicker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="range-datepicker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/range-datepicker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/range-datepicker.tsx\"" }
         }
         ```
       </Tab>

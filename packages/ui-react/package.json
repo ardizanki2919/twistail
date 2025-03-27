@@ -106,9 +106,6 @@
         "react-dom": "^18.0 || ^19.0"
     },
     "dependencies": {
-        "@internationalized/date": "^3.7.0",
-        "@react-aria/datepicker": "^3.14.1",
-        "@react-stately/datepicker": "^3.13.0",
         "allotment": "^1.20.3",
         "cmdk": "^1.1.1",
         "date-fns": "4.1.0",
