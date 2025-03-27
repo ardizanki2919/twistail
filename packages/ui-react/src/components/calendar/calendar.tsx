@@ -7,7 +7,7 @@ import { labelNext, labelPrevious, useDayPicker } from 'react-day-picker'
 import { calendarStyles } from './calendar.css'
 
 //#region Calendar
-// ============================================================================
+//===========================================================================
 
 type CalendarProps = DayPickerProps & {
   disableYearSelector?: boolean /* @default true */
@@ -21,12 +21,13 @@ function Calendar({
   disableYearSelector = false,
   yearRange = 12,
   numberOfMonths,
+  showWeekNumber,
   ...props
 }: CalendarProps) {
-  const styles = calendarStyles()
   const { onPrevClick, startMonth, endMonth } = props
   const [navView, setNavView] = React.useState<NavView>('days')
-  const columnsDisplayed = navView === 'years' ? 1 : numberOfMonths
+  const columnsDisplay = navView === 'years' ? 1 : numberOfMonths
+  const styles = calendarStyles({ showWeekNumber })
 
   const currentYear = new Date().getFullYear()
   const [displayYears, setDisplayYears] = React.useState<{ from: number; to: number }>({
@@ -38,8 +39,9 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={styles.base({ className })}
-      style={{ width: `${249 * (columnsDisplayed ?? 1)}px` }}
+      style={{ '--calendar-columns': columnsDisplay } as React.CSSProperties}
       classNames={{
+        [UI.Root]: styles.root(),
         [UI.CaptionLabel]: styles.uiCaptionLabel(),
         [UI.Day]: styles.uiDay(),
         [UI.Chevron]: styles.uiChevron(),
@@ -100,14 +102,14 @@ function Calendar({
           </MonthGrid>
         ),
       }}
-      numberOfMonths={columnsDisplayed}
+      numberOfMonths={columnsDisplay}
       {...props}
     />
   )
 }
 
 //#region Custom Components
-// ============================================================================
+//============================================================================
 
 type NavView = 'days' | 'years'
 

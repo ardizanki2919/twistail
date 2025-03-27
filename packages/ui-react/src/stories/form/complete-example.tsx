@@ -40,8 +40,7 @@ export const CompleteExample: Story = {
                   <FormField name="firstName">
                     <FormLabel>First Name</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="First name" className="p-0" required />
+                      <Input placeholder="First name" required />
                     </FormControl>
                     <FormMessage match="valueMissing">Required field</FormMessage>
                   </FormField>
@@ -49,8 +48,7 @@ export const CompleteExample: Story = {
                   <FormField name="lastName">
                     <FormLabel>Last Name</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="Last name" className="p-0" required />
+                      <Input placeholder="Last name" required />
                     </FormControl>
                     <FormMessage match="valueMissing">Required field</FormMessage>
                   </FormField>
@@ -59,13 +57,7 @@ export const CompleteExample: Story = {
                 <FormField name="email">
                   <FormLabel>Email Address</FormLabel>
                   <FormControl asChild>
-                    {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                    <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      className="p-0"
-                      required
-                    />
+                    <Input type="email" placeholder="your.email@example.com" required />
                   </FormControl>
                   <FormMessage match="valueMissing">Email is required</FormMessage>
                   <FormMessage match="typeMismatch">Please provide a valid email</FormMessage>
@@ -74,8 +66,7 @@ export const CompleteExample: Story = {
                 <FormField name="phone">
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl asChild>
-                    {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                    <Input type="tel" placeholder="+1 (555) 000-0000" className="p-0" />
+                    <Input type="tel" placeholder="+1 (555) 000-0000" />
                   </FormControl>
                 </FormField>
               </div>
@@ -86,8 +77,7 @@ export const CompleteExample: Story = {
                 <FormField name="address">
                   <FormLabel>Street Address</FormLabel>
                   <FormControl asChild>
-                    {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                    <Input placeholder="123 Main St" className="p-0" required />
+                    <Input placeholder="123 Main St" required />
                   </FormControl>
                   <FormMessage match="valueMissing">Address is required</FormMessage>
                 </FormField>
@@ -96,8 +86,7 @@ export const CompleteExample: Story = {
                   <FormField name="city">
                     <FormLabel>City</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="City" className="p-0" required />
+                      <Input placeholder="City" required />
                     </FormControl>
                     <FormMessage match="valueMissing">City is required</FormMessage>
                   </FormField>
@@ -105,8 +94,7 @@ export const CompleteExample: Story = {
                   <FormField name="postalCode">
                     <FormLabel>Postal Code</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="Postal code" className="p-0" required />
+                      <Input placeholder="Postal code" required />
                     </FormControl>
                     <FormMessage match="valueMissing">Postal code is required</FormMessage>
                   </FormField>
@@ -136,8 +124,7 @@ export const CompleteExample: Story = {
                 <FormField name="cardName">
                   <FormLabel>Name on Card</FormLabel>
                   <FormControl asChild>
-                    {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                    <Input placeholder="Full name as displayed on card" className="p-0" required />
+                    <Input placeholder="Full name as displayed on card" required />
                   </FormControl>
                   <FormMessage match="valueMissing">Card name is required</FormMessage>
                 </FormField>
@@ -145,8 +132,7 @@ export const CompleteExample: Story = {
                 <FormField name="cardNumber">
                   <FormLabel>Card Number</FormLabel>
                   <FormControl asChild>
-                    {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                    <Input placeholder="XXXX XXXX XXXX XXXX" className="p-0" required />
+                    <Input placeholder="XXXX XXXX XXXX XXXX" required />
                   </FormControl>
                   <FormMessage match="valueMissing">Card number is required</FormMessage>
                 </FormField>
@@ -155,8 +141,7 @@ export const CompleteExample: Story = {
                   <FormField name="expiryDate">
                     <FormLabel>Expiry Date</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="MM/YY" className="p-0" required />
+                      <Input placeholder="MM/YY" required />
                     </FormControl>
                     <FormMessage match="valueMissing">Expiry date is required</FormMessage>
                   </FormField>
@@ -164,8 +149,7 @@ export const CompleteExample: Story = {
                   <FormField name="cvc">
                     <FormLabel>CVC</FormLabel>
                     <FormControl asChild>
-                      {/* TODO: `p-0` is workaround to fix composition issue with `FormControl` */}
-                      <Input placeholder="CVC" className="p-0" required />
+                      <Input placeholder="CVC" required />
                     </FormControl>
                     <FormMessage match="valueMissing">CVC is required</FormMessage>
                   </FormField>

@@ -7,7 +7,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "start": "pnpm dlx local-web-server -p 4100 -d dist --spa index.html",
-        "cleanup": "pnpm dlx rimraf dist node_modules",
+        "cleanup": "pnpm dlx rimraf dist node_modules .turbo",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
@@ -26,7 +26,7 @@
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
         "@tailwindcss/vite": "^4.0.17",
-        "@types/node": "^22.13.13",
+        "@types/node": "^22.13.14",
         "@types/react-dom": "^19.0.4",
         "@types/react": "^19.0.12",
         "@vitejs/plugin-react": "^4.3.4",

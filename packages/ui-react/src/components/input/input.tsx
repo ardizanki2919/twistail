@@ -3,12 +3,12 @@ import * as React from 'react'
 import { type InputStyles, inputStyles } from './input.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, InputStyles {
-  inputClassName?: string
+  containerClassName?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, inputClassName, hasError, enableStepper = true, type, ...props }: InputProps,
+    { className, containerClassName, hasError, enableStepper = true, type, ...props }: InputProps,
     forwardedRef
   ) => {
     const [typeState, setTypeState] = React.useState(type)
@@ -17,11 +17,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const styles = inputStyles({ isSearch, isPassword, hasError, enableStepper })
 
     return (
-      <div className={styles.container({ className })}>
+      <div className={styles.container({ className: containerClassName })}>
         <input
           ref={forwardedRef}
           type={isPassword ? typeState : type}
-          className={styles.input({ className: inputClassName })}
+          className={styles.input({ className })}
           {...props}
         />
         {isSearch && (

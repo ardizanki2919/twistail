@@ -21,7 +21,8 @@ const listboxStyles = tv({
     content: [
       'relative z-50 overflow-hidden rounded-md border shadow-black/[2.5%] shadow-lg bg-popover text-popover-foreground border-border',
       'min-w-[calc(var(--radix-select-trigger-width)-2px)] max-w-[95vw] max-h-(--radix-select-content-available-height) will-change-[transform,opacity]',
-      'data-[state=closed]:animate-hide data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
+      'data-[state=closed]:animate-hide data-[side=bottom]:animate-slide-down-fade data-[side=left]:animate-slide-down-fade',
+      'data-[side=right]:animate-slide-right-fade data-[side=top]:animate-slide-up-fade',
     ],
     contentViewport: 'p-1',
     grouplabel: 'px-3 py-2 font-medium text-xs tracking-wide text-muted-foreground',

@@ -3,35 +3,46 @@ import { buttonStyles } from '#/components/button'
 
 const calendarStyles = tv({
   slots: {
-    base: 'p-3 bg-card text-card-foreground',
+    base: 'px-4 py-5 rounded-md',
+    root: 'bg-card px-4 py-5 w-[calc(269px*var(--calendar-columns))] max-w-full rounded-md',
     uiChevron: 'size-4',
     uiCaptionLabel: 'truncate font-medium text-sm h-7 w-full items-center justify-center flex',
     uiCaptionButton: buttonStyles({ variant: 'ghost' }).base({
       class: 'truncate font-medium text-sm h-7 w-full rounded-md',
     }),
-    uiDay: 'flex size-8 flex-1 items-center justify-center p-0 text-sm',
+    uiDay: [
+      'size-9 flex flex-1 justify-center items-center text-center',
+      'relative focus-within:relative focus-within:z-20 text-sm p-0',
+      '[&:has([aria-selected].day-range-end)]:rounded-r-md',
+      '[&:has([aria-selected].day-outside)]:bg-accent/50',
+      '[&:has([aria-selected])]:bg-accent',
+      'first:[&:has([aria-selected])]:rounded-l-md',
+      'last:[&:has([aria-selected])]:rounded-r-md',
+    ],
     uiDayButton: buttonStyles({ variant: 'ghost' }).base({
-      class: 'size-8 rounded-md p-0 font-normal transition-none aria-selected:opacity-100',
+      class: 'size-9 rounded-md p-0 font-normal transition-none aria-selected:opacity-100',
     }),
-    uiMonth: 'w-full',
-    uiMonthCaption: 'relative mx-10 flex h-7 items-center justify-center',
-    uiMonthGrid: 'mx-auto mt-4',
-    uiMonths: 'relative flex',
-    uiNav: 'flex items-start',
+    uiMonth: 'w-full flex flex-col items-center space-y-0 justify-start',
+    uiMonthCaption: 'relative mx-10 flex h-7 items-center justify-center w-full max-w-40',
+    uiMonthGrid: 'mx-auto mt-4 w-auto border-collapse',
+    uiMonths: 'relative flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0',
+    uiNav: 'flex items-start mx-auto border-transparent bg-transparent',
     uiNextMonthButton: buttonStyles({ variant: 'outline' }).base({
       class: [
-        'absolute size-7 rounded-md p-0 opacity-80 hover:opacity-100 right-0',
+        'absolute size-7 rounded-md p-0 opacity-80 hover:opacity-100 right-1',
         'disabled:border-none disabled:text-muted-foreground/80',
+        'disabled:pointer-events-none',
       ],
     }),
     uiPreviousMonthButton: buttonStyles({ variant: 'outline' }).base({
       class: [
-        'absolute size-7 rounded-md p-0 opacity-80 hover:opacity-100 left-0',
+        'absolute size-7 rounded-md p-0 opacity-80 hover:opacity-100 left-1',
         'disabled:border-none disabled:text-muted-foreground/80',
+        'disabled:pointer-events-none',
       ],
     }),
-    uiWeek: 'mt-2 flex w-max items-start',
-    uiWeekday: 'w-8 font-normal text-muted-foreground text-xs',
+    uiWeek: 'mt-2 flex w-max items-start space-x-0',
+    uiWeekday: 'w-9 font-normal text-muted-foreground text-xs',
     uiWeekdays: 'flex flex-row',
     selectionStateRangeStart: [
       'bg-accent day-range-start rounded-s-md [&>button]:bg-primary [&>button]:text-primary-foreground',
@@ -64,9 +75,15 @@ const calendarStyles = tv({
         base: 'ring-1 ring-destructive border-destructive',
       },
     },
+    showWeekNumber: {
+      true: {
+        uiWeekdays: 'justify-end',
+      },
+    },
   },
   defaultVariants: {
     hasError: false,
+    showWeekNumber: false,
   },
 })
 

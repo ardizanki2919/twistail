@@ -1,6 +1,6 @@
 {
     "name": "website",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "type": "module",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
         "deploy": "wrangler deploy",
         "postinstall": "fumadocs-mdx",
         "start": "pnpm dlx serve out -l 3000 -n -C",
-        "cleanup": "pnpm dlx del-cli .{next,source,wrangler} out",
+        "cleanup": "pnpm dlx del-cli .{next,source,turbo,wrangler} out",
         "check": "biome check . --write",
         "format": "biome format . --write",
         "lint": "next lint --fix",
@@ -48,7 +48,7 @@
         "@eslint/eslintrc": "^3.3.1",
         "@tailwindcss/postcss": "^4.0.17",
         "@types/mdx": "^2.0.13",
-        "@types/node": "22.13.13",
+        "@types/node": "22.13.14",
         "@types/react": "^19.0.12",
         "@types/react-dom": "^19.0.4",
         "eslint": "^9.23.0",
@@ -57,6 +57,6 @@
         "postcss-load-config": "^6.0.1",
         "tailwindcss": "^4.0.17",
         "typescript": "5.8.2",
-        "wrangler": "^4.4.1"
+        "wrangler": "^4.5.0"
     }
 }

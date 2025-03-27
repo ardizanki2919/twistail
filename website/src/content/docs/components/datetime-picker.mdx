@@ -1,0 +1,164 @@
+---
+title: Datetime Picker
+full: false
+---
+
+A component that allows users to select both date and time values through an intuitive interface, supporting various formats and time zones.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/base-components-datetime-picker" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://daypicker.dev/docs/anatomy" external>
+    React Daypicker
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/datetime-picker" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+## Single Datetime Picker
+
+import DemoSingle from '#/demo/datetime-picker/preview-single'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
+    <DemoSingle />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-single.tsx</include>
+  </Tab>
+</Tabs>
+
+## Range Datetime Picker
+
+import DemoRange from '#/demo/datetime-picker/preview-range'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
+    <DemoRange />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-range.tsx</include>
+  </Tab>
+</Tabs>
+
+## Time Picker
+
+import DemoTimePicker from '#/demo/datetime-picker/preview-time'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
+    <DemoTimePicker />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/datetime-picker/preview-time.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add datetime-picker
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui lucide-react date-fns react-day-picker
+    ```
+  </Step>
+  <Step>
+    ### Date Picker Component
+    <Tabs items={['single-datepicker.tsx', 'range-datepicker.tsx', 'datetime-picker.css.ts', 'index.ts']}>
+      <Tab value="single-datepicker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/single-datepicker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/single-datepicker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="range-datepicker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/range-datepicker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/range-datepicker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="datetime-picker.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/datetime-picker.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/datetime-picker/datetime-picker.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/datetime-picker/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Time Picker Component
+    <Tabs items={['time-picker.tsx', 'time-utils.ts']}>
+      <Tab value="time-picker.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/time-picker.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/time-picker.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="time-utils.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/datetime-picker/time-utils.ts",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/datetime-picker/time-utils.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import { RangeDatePicker, SingleDatePicker, TimePicker } from '#/components/datetime-picker'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import { RangeDatePicker, SingleDatePicker, TimePicker } from 'twistail-react/datetime-picker'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-components-datetime-picker) for more examples.
+
+## Credits
+
+- [datetime-picker](https://shadcnui-expansions.typeart.cc/docs/datetime-picker) by [shadcn-ui expansions](https://shadcnui-expansions.typeart.cc), licensed under [MIT License](https://github.com/hsuanyi-chou/shadcn-ui-expansions/blob/main/LICENSE.md).
+- [shadcn-datetime-picker](https://github.com/huybuidac/shadcn-datetime-picker) by [Bui Dac Huy](https://github.com/huybuidac).

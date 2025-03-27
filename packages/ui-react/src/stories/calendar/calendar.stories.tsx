@@ -61,7 +61,7 @@ export const DisableNavigation: Story = {
   },
 }
 
-export const SingleTwoMonth: Story = {
+export const MultipleMonth: Story = {
   args: {
     mode: 'single',
     numberOfMonths: 2,
@@ -76,7 +76,7 @@ export const Range: Story = {
   },
 }
 
-export const RangeTwoMonth: Story = {
+export const RangeMultiMonth: Story = {
   args: {
     mode: 'range',
     numberOfMonths: 2,
