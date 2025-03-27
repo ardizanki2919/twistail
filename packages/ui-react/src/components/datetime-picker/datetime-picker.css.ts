@@ -64,8 +64,38 @@ const rangeDatePickerStyles = tv({
   },
 })
 
+const timePickerStyles = tv({
+  slots: {
+    container: 'flex items-center justify-center gap-2',
+    label: 'cursor-pointer',
+    labelIcon: 'mr-2 h-4 w-4',
+    input:
+      'w-[48px] text-center font-mono text-base tabular-nums caret-transparent focus:bg-accent focus:text-accent-foreground [&::-webkit-inner-spin-button]:appearance-none',
+    periodContainer: 'grid gap-1 text-center',
+    periodTrigger: 'w-[65px] focus:bg-accent focus:text-accent-foreground',
+    separator: '',
+  },
+  variants: {
+    hourCycle: {
+      12: {},
+      24: {},
+    },
+    granularity: {
+      day: {},
+      hour: {},
+      minute: {},
+      second: {},
+    },
+  },
+  defaultVariants: {
+    hourCycle: 24,
+    granularity: 'second',
+  },
+})
+
 type SingleDatePickerStyles = VariantProps<typeof singleDatePickerStyles>
 type RangeDatePickerStyles = VariantProps<typeof rangeDatePickerStyles>
+type TimePickerStyles = VariantProps<typeof timePickerStyles>
 
-export { singleDatePickerStyles, rangeDatePickerStyles }
-export type { SingleDatePickerStyles, RangeDatePickerStyles }
+export { singleDatePickerStyles, rangeDatePickerStyles, timePickerStyles }
+export type { SingleDatePickerStyles, RangeDatePickerStyles, TimePickerStyles }

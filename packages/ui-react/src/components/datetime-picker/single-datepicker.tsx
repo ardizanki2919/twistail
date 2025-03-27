@@ -14,17 +14,27 @@ import {
 } from '#/components/listbox'
 import { Popover, PopoverContent, PopoverTrigger } from '#/components/popover'
 import { singleDatePickerStyles } from './datetime-picker.css'
+import { TimePicker } from './time-picker'
+import { type Granularity } from './time-utils'
 
 interface DatePreset {
   label: string
   date: Date
 }
 
-interface SingleDatePickerProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SingleDatePickerProps {
   inlinePresets?: boolean
   internalPresets?: boolean
   presets?: DatePreset[]
   locale?: Locale
+  showTimePicker?: boolean
+  displayFormat?: string
+  granularity?: Granularity
+  hourCycle?: 12 | 24
+  value?: Date
+  onChange?: (date: Date | undefined) => void
+  placeholder?: string
+  className?: string
 }
 
 const defaultPresets: DatePreset[] = [
@@ -60,20 +70,79 @@ function SingleDatePicker({
   internalPresets,
   presets = defaultPresets,
   locale = enUS,
+  showTimePicker = false,
+  displayFormat,
+  granularity = 'second',
+  hourCycle = 24,
+  value,
+  onChange,
   className,
+  placeholder = 'Pick a date',
 }: SingleDatePickerProps) {
-  const [date, setDate] = React.useState<Date | undefined>()
+  const [date, setDate] = React.useState<Date | undefined>(value)
+  const [month, setMonth] = React.useState<Date>(value || new Date())
+
+  React.useEffect(() => {
+    setDate(value)
+  }, [value])
 
   const handlePresetSelect = (preset: DatePreset) => {
-    setDate(preset.date)
+    const newDate = new Date(preset.date)
+    if (date) {
+      // Maintain time from the previous date
+      newDate.setHours(
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+        date.getMilliseconds()
+      )
+    }
+    setDate(newDate)
+    onChange?.(newDate)
   }
 
   const handleInlinePresetsValueChange = (value: string) => {
-    setDate(undefined)
     const selectedPreset = presets.find((preset) => preset.label === value)
     if (selectedPreset) {
       handlePresetSelect(selectedPreset)
     }
+  }
+
+  const handleDateSelect = (newDate: Date | undefined) => {
+    if (!newDate) return
+
+    if (date) {
+      // Maintain time from the previous date
+      newDate.setHours(
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+        date.getMilliseconds()
+      )
+    }
+
+    setDate(newDate)
+    setMonth(newDate)
+    onChange?.(newDate)
+  }
+
+  const handleTimeChange = (newDate: Date | undefined) => {
+    if (!newDate) return
+
+    setDate(newDate)
+    onChange?.(newDate)
+  }
+
+  const getDisplayFormat = () => {
+    if (displayFormat) return displayFormat
+
+    if (!showTimePicker) return 'PPP'
+
+    if (hourCycle === 24) {
+      return `PPP HH:mm${granularity === 'second' ? ':ss' : ''}`
+    }
+
+    return `PPP hh:mm${granularity === 'second' ? ':ss' : ''} b`
   }
 
   const styles = singleDatePickerStyles({ inlinePresets, internalPresets })
@@ -88,7 +157,7 @@ function SingleDatePicker({
             data-empty={!date}
           >
             <Lucide.Calendar className={styles.triggerIcon()} />
-            {date ? format(date, 'PPP') : <span>Pick a date</span>}
+            {date ? format(date, getDisplayFormat(), { locale }) : <span>{placeholder}</span>}
           </Button>
         </PopoverTrigger>
         <PopoverContent className={styles.popoverContent()} align="center">
@@ -113,9 +182,11 @@ function SingleDatePicker({
                 <Calendar
                   mode="single"
                   locale={locale}
+                  month={month}
                   defaultMonth={date}
                   selected={date}
-                  onSelect={setDate}
+                  onSelect={handleDateSelect}
+                  onMonthChange={setMonth}
                   autoFocus
                 />
               </div>
@@ -124,11 +195,24 @@ function SingleDatePicker({
             <Calendar
               mode="single"
               locale={locale}
+              month={month}
               defaultMonth={date}
               selected={date}
-              onSelect={setDate}
+              onSelect={handleDateSelect}
+              onMonthChange={setMonth}
               autoFocus
             />
+          )}
+
+          {showTimePicker && (
+            <div className="border-border border-t p-3">
+              <TimePicker
+                date={date || new Date()}
+                onChange={handleTimeChange}
+                hourCycle={hourCycle}
+                granularity={granularity}
+              />
+            </div>
           )}
         </PopoverContent>
       </Popover>

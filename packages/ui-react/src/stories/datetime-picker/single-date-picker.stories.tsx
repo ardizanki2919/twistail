@@ -34,11 +34,45 @@ const meta: Meta<typeof SingleDatePicker> = {
         type: { summary: 'DatePreset[]' },
       },
     },
+    showTimePicker: {
+      control: 'boolean',
+      description: 'Show time picker component',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    granularity: {
+      control: 'select',
+      options: ['day', 'hour', 'minute', 'second'],
+      description: 'Smallest time unit to display',
+      table: {
+        type: { summary: 'Granularity' },
+        defaultValue: { summary: 'second' },
+      },
+    },
+    hourCycle: {
+      control: 'radio',
+      options: [12, 24],
+      description: 'Use 12-hour or 24-hour format',
+      table: {
+        type: { summary: '12 | 24' },
+        defaultValue: { summary: '24' },
+      },
+    },
     className: {
       control: 'text',
       description: 'Additional CSS class names',
       table: {
         type: { summary: 'string' },
+      },
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text when no date is selected',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Pick a date' },
       },
     },
   },
@@ -102,4 +136,34 @@ export const SingleWithInlineCustomPresets: Story = {
 export const SingleWithLocale: Story = {
   name: 'Single with Locale',
   render: () => <SingleDatePicker locale={id} inlinePresets internalPresets />,
+}
+
+export const SingleWithTimePicker: Story = {
+  name: 'Single with Time Picker',
+  render: () => <SingleDatePicker showTimePicker />,
+}
+
+export const SingleWithTimePickerHour12: Story = {
+  name: 'Single with 12-hour Time Picker',
+  render: () => <SingleDatePicker showTimePicker hourCycle={12} />,
+}
+
+export const SingleWithTimePickerMinuteGranularity: Story = {
+  name: 'Single with Minute Granularity',
+  render: () => <SingleDatePicker showTimePicker granularity="minute" />,
+}
+
+export const SingleWithTimePickerHourGranularity: Story = {
+  name: 'Single with Hour Granularity',
+  render: () => <SingleDatePicker showTimePicker granularity="hour" />,
+}
+
+export const SingleWithTimePickerAndPresets: Story = {
+  name: 'Single with Time Picker and Presets',
+  render: () => <SingleDatePicker showTimePicker internalPresets />,
+}
+
+export const SingleWithCustomPlaceholder: Story = {
+  name: 'Single with Custom Placeholder',
+  render: () => <SingleDatePicker placeholder="Select date and time" showTimePicker />,
 }
