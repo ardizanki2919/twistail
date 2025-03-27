@@ -6,7 +6,7 @@ full: false
 A component that visualizes progress through a series of steps or stages in a process.
 
 <Badges>
-  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-components-tracker--docs" external>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-tracker--docs" external>
     Storybook
   </BadgeLink>
   <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
@@ -87,22 +87,58 @@ npx twistail add tracker
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import {} from '#/components/tracker'
+    import { Tracker } from '#/components/tracker'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import {} from 'twistail-react/tracker'
+    import { Tracker } from 'twistail-react/tracker'
     ```
   </Tab>
 </Tabs>
 
 ### Example
 
-Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-components-tracker--docs) for more examples.
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-tracker--docs) for more examples.
 
-## Anatomy
+## Props
 
-```tsx
-// WIP
-```
+<TypeTable
+  type={{
+    data: {
+      description: 'Array of tracker block data to be displayed',
+      type: 'TrackerBlockProps[]',
+      default: '[]',
+    },
+    size: {
+      description: 'Size of the tracker component',
+      type: '"sm" | "md" | "lg"',
+      default: 'md',
+    },
+    hoverEffect: {
+      description: 'Enable hover effect on tracker blocks',
+      type: 'boolean',
+      default: false,
+    },
+    showArrow: {
+      description: 'Show arrow on tooltips',
+      type: 'boolean',
+      default: 'true',
+    },
+    defaultBackgroundColor: {
+      description: 'Default background color for blocks without specified color',
+      type: 'string',
+      default: '"bg-muted"',
+    },
+    emptyColor: {
+      description: 'Color to use when data is empty',
+      type: 'string',
+      default: '"bg-muted/30"',
+    },
+    className: {
+      description: 'Additional CSS class for the tracker container',
+      type: 'string',
+      default: undefined,
+    },
+  }}
+/>
