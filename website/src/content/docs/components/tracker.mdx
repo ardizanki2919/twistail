@@ -22,7 +22,7 @@ A component that visualizes progress through a series of steps or stages in a pr
 import Demo from '#/demo/tracker/preview'
 
 <Tabs items={['Preview', 'Code']}>
-  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-10 not-prose">
     <Demo />
   </Tab>
   <Tab value="Code">
@@ -112,7 +112,7 @@ Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations
     },
     size: {
       description: 'Size of the tracker component',
-      type: '"sm" | "md" | "lg"',
+      type: 'sm | md | lg',
       default: 'md',
     },
     hoverEffect: {
@@ -128,12 +128,12 @@ Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations
     defaultBackgroundColor: {
       description: 'Default background color for blocks without specified color',
       type: 'string',
-      default: '"bg-muted"',
+      default: 'bg-muted',
     },
     emptyColor: {
       description: 'Color to use when data is empty',
       type: 'string',
-      default: '"bg-muted/30"',
+      default: 'bg-muted/30',
     },
     className: {
       description: 'Additional CSS class for the tracker container',

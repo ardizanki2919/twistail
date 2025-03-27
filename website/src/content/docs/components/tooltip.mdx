@@ -119,3 +119,84 @@ Browse the [Storybook](https://storybook.twistail.com/?path=/docs/base-component
   <TooltipContent />
 </Tooltip>
 ```
+
+## Props
+
+<TypeTable
+  type={{
+    delayDuration: {
+      description: 'Delay duration before the tooltip appears',
+      type: 'number',
+      default: '150',
+    },
+    defaultOpen: {
+      description: 'Whether the tooltip is open by default',
+      type: 'boolean',
+      default: 'false',
+    },
+    open: {
+      description: 'Controlled open state of the tooltip',
+      type: 'boolean',
+      default: undefined,
+    },
+    onOpenChange: {
+      description: 'Callback called when the open state changes',
+      type: '(open: boolean) => void',
+      default: undefined,
+    },
+  }}
+/>
+
+### TooltipContent Props
+
+<TypeTable
+  type={{
+    content: {
+      description: 'Content displayed inside the tooltip',
+      type: 'React.ReactNode',
+      default: undefined,
+    },
+    side: {
+      description: 'Position of the tooltip relative to the trigger',
+      type: 'top | right | bottom | left',
+      default: 'top',
+    },
+    sideOffset: {
+      description: 'Distance from the trigger',
+      type: 'number',
+      default: '10',
+    },
+    align: {
+      description: 'Alignment of the tooltip relative to the trigger',
+      type: 'start | center | end',
+      default: 'center',
+    },
+    hideArrow: {
+      description: 'Hide the tooltip arrow',
+      type: 'boolean',
+      default: 'false',
+    },
+    className: {
+      description: 'Additional CSS class for the tooltip content',
+      type: 'string',
+      default: undefined,
+    },
+  }}
+/>
+
+### TooltipTrigger Props
+
+<TypeTable
+  type={{
+    asChild: {
+      description: 'Use the child element as the trigger',
+      type: 'boolean',
+      default: 'false',
+    },
+    onClick: {
+      description: 'Handler for click events on the trigger',
+      type: 'React.MouseEventHandler<HTMLButtonElement>',
+      default: undefined,
+    },
+  }}
+/>

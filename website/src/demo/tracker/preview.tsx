@@ -106,5 +106,9 @@ const data = [
 ]
 
 export default function TrackerDemo() {
-  return <Tracker data={data} showArrow size="md" />
+  return (
+    <div className="w-full max-w-lg rounded-md">
+      <Tracker data={data} className="mx-auto" />
+    </div>
+  )
 }

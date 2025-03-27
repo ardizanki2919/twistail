@@ -95,7 +95,7 @@ export const WithoutArrow: Story = {
       <TooltipTrigger>
         <p className="text-muted-foreground">Show tooltip</p>
       </TooltipTrigger>
-      <TooltipContent content="Which KPIs are the most visited in your project" showArrow={false} />
+      <TooltipContent content="Which KPIs are the most visited in your project" hideArrow />
     </Tooltip>
   ),
 }

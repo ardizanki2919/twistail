@@ -53,14 +53,14 @@ const TooltipContent = React.forwardRef<
       className,
       content,
       children,
-      showArrow = true,
+      hideArrow,
       side,
       sideOffset = 10,
       ...props
     }: TooltipContentProps,
     forwardedRef
   ) => {
-    const styles = tooltipStyles({ showArrow })
+    const styles = tooltipStyles({ hideArrow })
     const contentToRender = content || children
 
     return (
@@ -74,7 +74,7 @@ const TooltipContent = React.forwardRef<
           {...props}
         >
           {contentToRender}
-          {showArrow ? (
+          {!hideArrow ? (
             <TooltipPrimitive.Arrow
               className={styles.arrow()}
               aria-hidden="true"
