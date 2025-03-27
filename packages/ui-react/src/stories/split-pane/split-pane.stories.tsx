@@ -7,7 +7,7 @@ import { Split, type SplitHandle, SplitPane, SplitPanel } from '#/components/spl
 const meta: Meta<typeof Split> = {
   component: Split,
   title: 'Layout Components/Split Pane',
-  tags: ['autodocs', 'status:preview'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },
