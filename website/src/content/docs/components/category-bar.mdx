@@ -1,0 +1,108 @@
+---
+title: Category Bar
+full: false
+---
+
+A component for displaying categorized data with visual indicators of distribution or proportion.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-components-category-bar--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/category-bar" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/category-bar/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/category-bar/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add category-bar
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['category-bar.tsx', 'category-bar.css.ts', 'index.ts']}>
+      <Tab value="category-bar.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/category-bar/category-bar.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/category-bar/category-bar.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="category-bar.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/category-bar/category-bar.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/category-bar/category-bar.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/category-bar/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/category-bar/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/category-bar'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/category-bar'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-components-category-bar--docs) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```

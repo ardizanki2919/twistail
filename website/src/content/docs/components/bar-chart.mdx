@@ -1,0 +1,108 @@
+---
+title: Bar Chart
+full: false
+---
+
+A chart that presents categorical data with rectangular bars proportional to the values they represent.
+
+<Badges>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-components-bar-chart--docs" external>
+    Storybook
+  </BadgeLink>
+  <BadgeLink href="https://recharts.org/en-US/api" external>
+    Recharts Docs
+  </BadgeLink>
+  <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/bar-chart" external>
+    Source
+  </BadgeLink>
+</Badges>
+
+---
+
+import Demo from '#/demo/bar-chart/preview'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab value="Preview" className="rounded-b-xl flex min-h-44 flex-wrap items-center justify-center gap-4 py-20 not-prose">
+    <Demo />
+  </Tab>
+  <Tab value="Code">
+    <include cwd lang="tsx">./src/demo/bar-chart/preview.tsx</include>
+  </Tab>
+</Tabs>
+
+## Automatic Installation
+
+<Callout type='warn'>
+  This method is still working on progress, please use manual installation for now.
+</Callout>
+
+{/* ```package-install
+npx twistail add bar-chart
+``` */}
+
+## Manual Installation
+
+<Steps>
+  <Step>
+    ### Install dependencies
+    ```package-install
+    npm install radix-ui
+    ```
+  </Step>
+  <Step>
+    ### Copy the code
+    <Tabs items={['bar-chart.tsx', 'bar-chart.css.ts', 'index.ts']}>
+      <Tab value="bar-chart.tsx">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/bar-chart/bar-chart.tsx",
+          "codeblock": { "lang": "tsx", "meta": "title=\"components/bar-chart/bar-chart.tsx\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="bar-chart.css.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/bar-chart/bar-chart.css.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/bar-chart/bar-chart.css.ts\"" }
+        }
+        ```
+      </Tab>
+      <Tab value="index.ts">
+        ```json doc-gen:file
+        {
+          "file": "../packages/ui-react/src/components/bar-chart/index.ts",
+          "codeblock": { "lang": "ts", "meta": "title=\"components/bar-chart/index.ts\"" }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Usage
+
+### Imports
+
+<Tabs items={['internal (copy-paste)', 'npm']}>
+  <Tab value="internal (copy-paste)">
+    ```tsx
+    import {} from '#/components/bar-chart'
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```tsx
+    import {} from 'twistail-react/bar-chart'
+    ```
+  </Tab>
+</Tabs>
+
+### Example
+
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-components-bar-chart--docs) for more examples.
+
+## Anatomy
+
+```tsx
+// WIP
+```
