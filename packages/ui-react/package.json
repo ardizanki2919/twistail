@@ -1,6 +1,6 @@
 {
     "name": "twistail-react",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "type": "module",
     "description": "Twistail UI Components",
     "author": "Aris Ripandi <aris@duck.com>",

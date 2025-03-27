@@ -20,9 +20,9 @@ const meta: Meta<typeof Tracker> = {
       control: 'boolean',
       description: 'Remove rounded corners from tracker blocks',
     },
-    showArrow: {
+    hideArrow: {
       control: 'boolean',
-      description: 'Show arrow on tooltip',
+      description: 'Hide arrow on tooltip',
     },
     defaultColor: {
       control: 'text',
@@ -102,9 +102,8 @@ const statusData = [
 export const Default: Story = {
   args: {
     data: basicData,
-    size: 'md',
-    showArrow: true,
     hoverEffect: false,
+    size: 'md',
   },
 }
 
@@ -132,7 +131,7 @@ export const WithHoverEffect: Story = {
 export const WithoutArrow: Story = {
   args: {
     data: basicData,
-    showArrow: false,
+    hideArrow: true,
   },
 }
 
@@ -172,8 +171,9 @@ export const FewItems: Story = {
 
 export const ManyItems: Story = {
   args: {
+    size: 'md',
     hoverEffect: true,
-    data: Array(50)
+    data: Array(40)
       .fill(null)
       .map((_, i) => ({
         key: `many-item-${i + 1}`,

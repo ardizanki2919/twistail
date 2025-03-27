@@ -18,12 +18,13 @@ const Block = ({
   defaultColor,
   hoverEffect,
   flatten,
+  hideArrow,
   onClick,
   ariaLabel,
   disabled = false,
 }: TrackerBlockProps) => {
   const [open, setOpen] = React.useState(false)
-  const styles = trackerStyles({ hoverEffect, flatten })
+  const styles = trackerStyles({ hoverEffect, flatten, hideArrow })
 
   if (!tooltip) {
     return (
@@ -73,12 +74,14 @@ const Block = ({
           avoidCollisions
         >
           {tooltip}
-          <HoverCardPrimitive.Arrow
-            className={styles.arrow()}
-            aria-hidden="true"
-            width={12}
-            height={7}
-          />
+          {!hideArrow && (
+            <HoverCardPrimitive.Arrow
+              className={styles.arrow()}
+              aria-hidden="true"
+              width={12}
+              height={7}
+            />
+          )}
         </HoverCardPrimitive.Content>
       </HoverCardPrimitive.Portal>
     </HoverCardPrimitive.Root>
@@ -100,13 +103,13 @@ const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
       hoverEffect,
       flatten,
       size,
-      showArrow = true,
+      hideArrow = false,
       emptyColor = 'bg-muted/30',
       ...props
     },
     forwardedRef
   ) => {
-    const styles = trackerStyles({ hoverEffect, size, showArrow, flatten })
+    const styles = trackerStyles({ hoverEffect, size, hideArrow, flatten })
 
     // Handle empty data case
     if (data.length === 0) {
@@ -127,6 +130,7 @@ const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
             defaultColor={defaultColor}
             hoverEffect={hoverEffect}
             flatten={flatten}
+            hideArrow={hideArrow}
             {...blockProps}
           />
         ))}
