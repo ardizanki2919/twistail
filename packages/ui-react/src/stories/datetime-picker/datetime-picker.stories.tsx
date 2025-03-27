@@ -2,14 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { id } from 'date-fns/locale'
 import * as React from 'react'
 import { Button } from '#/components/button'
-import { DatePicker } from '#/components/date-picker'
+import { DatePicker } from '#/components/datetime-picker'
 import { Divider } from '#/components/divider'
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '#/components/popover'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
-  title: 'Base Components/Date Picker',
-  tags: ['hidden', 'status:experimental'],
+  title: 'Base Components/Datetime Picker',
+  tags: ['autodocs', 'status:experimental'],
+  parameters: {
+    layout: 'centered',
+  },
   render: (args) => {
     return (
       <div className="w-60">
@@ -49,7 +52,7 @@ const presets = [
   },
 ]
 
-export const Single: Story = {
+export const Default: Story = {
   args: { toDate: new Date() },
 }
 
@@ -65,44 +68,44 @@ export const ShowTimePicker: Story = {
 
 export const Localized: Story = {
   args: {
-    placeholder: 'Choisissez une date',
     locale: id,
-    translations: { cancel: 'Annuler', apply: 'Applicer' },
+    placeholder: 'Pilih tanggal',
+    translations: { cancel: 'Batal', apply: 'Terapkan' },
     presets: [
       {
-        label: "Aujourd'hui",
+        label: 'Hari ini',
         date: new Date(),
       },
       {
-        label: 'Demain',
+        label: 'Besok',
         date: new Date(new Date().setDate(new Date().getDate() + 1)),
       },
       {
-        label: 'Dans une semaine',
+        label: 'Seminggu lagi',
         date: new Date(new Date().setDate(new Date().getDate() + 7)),
       },
       {
-        label: 'Dans un mois',
+        label: 'Sebulan lagi',
         date: new Date(new Date().setMonth(new Date().getMonth() + 1)),
       },
       {
-        label: 'Dans un an',
+        label: 'Setahun lagi',
         date: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
       },
       {
-        label: 'Hier',
+        label: 'Kemarin',
         date: new Date(new Date().setDate(new Date().getDate() - 1)),
       },
       {
-        label: 'La semaine dernière',
+        label: 'Minggu lalu',
         date: new Date(new Date().setDate(new Date().getDate() - 7)),
       },
       {
-        label: 'Le mois dernier',
+        label: 'Bulan lalu',
         date: new Date(new Date().setMonth(new Date().getMonth() - 1)),
       },
       {
-        label: "L'année dernière",
+        label: 'Tahun lalu',
         date: new Date(new Date().setFullYear(new Date().getFullYear() - 1)),
       },
     ],

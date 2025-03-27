@@ -2,23 +2,23 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { id } from 'date-fns/locale'
 import * as React from 'react'
 import { Button } from '#/components/button'
-import { DateRange, DateRangePicker } from '#/components/date-picker'
+import { DateRange, RangeDatePicker } from '#/components/datetime-picker'
 
-const meta: Meta<typeof DateRangePicker> = {
-  component: DateRangePicker,
+const meta: Meta<typeof RangeDatePicker> = {
+  component: RangeDatePicker,
   title: 'Base Components/Date Range Picker',
-  tags: ['hidden', 'status:experimental'],
+  tags: ['autodocs', 'status:experimental'],
   render: (args) => {
     return (
       <div className="w-60">
-        <DateRangePicker {...args} />
+        <RangeDatePicker {...args} />
       </div>
     )
   },
 }
 
 export default meta
-type Story = StoryObj<typeof DateRangePicker>
+type Story = StoryObj<typeof RangeDatePicker>
 
 const rangePresets = [
   {
@@ -169,7 +169,7 @@ const ControlledRangeDemo = () => {
         {value ? `${value.from?.toDateString()} – ${value.to?.toDateString()}` : 'Select a date'}
       </p>
       <div className="flex w-80 gap-2">
-        <DateRangePicker
+        <RangeDatePicker
           value={value}
           onChange={(value) => {
             setValue(value)
@@ -211,7 +211,7 @@ const ControlledTimeRangeDemo = () => {
         {value ? `${value.from?.toString()} – ${value.to?.toString()}` : 'Select a date'}
       </p>
       <div className="flex w-80 gap-2">
-        <DateRangePicker
+        <RangeDatePicker
           showTimePicker
           value={value}
           onChange={(value) => {

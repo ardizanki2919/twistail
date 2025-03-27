@@ -1,6 +1,6 @@
 {
     "name": "twistail-utils",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "type": "module",
     "license": "MIT",
     "description": "A set of utility functions used by Twistail",
@@ -42,7 +42,7 @@
         "prepack": "pnpm run build",
         "prepublishOnly": "pnpm run build",
         "publish:dry": "pnpm publish --dry-run --no-git-checks",
-        "cleanup": "pnpm dlx rimraf dist node_modules",
+        "cleanup": "pnpm dlx rimraf dist node_modules .turbo",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"

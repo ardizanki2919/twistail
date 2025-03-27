@@ -7,7 +7,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "start": "pnpm dlx local-web-server -p 4100 -d dist --spa index.html",
-        "cleanup": "pnpm dlx rimraf dist node_modules",
+        "cleanup": "pnpm dlx rimraf dist node_modules .turbo",
         "lint": "biome lint . --write",
         "check": "biome check . --write",
         "typecheck": "tsc --noEmit"
