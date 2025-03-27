@@ -48,7 +48,7 @@
     "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
-        "@types/node": "^22.13.13",
+        "@types/node": "^22.13.14",
         "@types/react": "^19.0.12",
         "rollup": "^4.37.0",
         "typescript": "catalog:",

@@ -33,7 +33,7 @@ interface TimePickerRef {
 }
 
 const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
-  ({ date, onChange, hourCycle = 24, granularity = 'second', className }, ref) => {
+  ({ date, onChange, hourCycle = 24, granularity = 'second', className }, forwardedRef) => {
     const minuteRef = React.useRef<HTMLInputElement>(null)
     const hourRef = React.useRef<HTMLInputElement>(null)
     const secondRef = React.useRef<HTMLInputElement>(null)
@@ -41,7 +41,7 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
     const [period, setPeriod] = React.useState<Period>(date && date.getHours() >= 12 ? 'PM' : 'AM')
 
     React.useImperativeHandle(
-      ref,
+      forwardedRef,
       () => ({
         minuteRef: minuteRef.current,
         hourRef: hourRef.current,
@@ -132,7 +132,10 @@ interface TimePeriodSelectProps {
 }
 
 const TimePeriodSelect = React.forwardRef<HTMLButtonElement, TimePeriodSelectProps>(
-  ({ period, setPeriod, date, onDateChange, onLeftFocus, onRightFocus, className }, ref) => {
+  (
+    { period, setPeriod, date, onDateChange, onLeftFocus, onRightFocus, className },
+    forwardedRef
+  ) => {
     const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'ArrowRight') onRightFocus?.()
       if (e.key === 'ArrowLeft') onLeftFocus?.()
@@ -156,7 +159,7 @@ const TimePeriodSelect = React.forwardRef<HTMLButtonElement, TimePeriodSelectPro
     return (
       <div className="flex h-10 items-center">
         <Listbox defaultValue={period} onValueChange={(value: Period) => handleValueChange(value)}>
-          <ListboxTrigger ref={ref} className={className} onKeyDown={handleKeyDown}>
+          <ListboxTrigger ref={forwardedRef} className={className} onKeyDown={handleKeyDown}>
             <ListboxValue />
           </ListboxTrigger>
           <ListboxContent>
@@ -196,7 +199,7 @@ const TimePickerInput = React.forwardRef<HTMLInputElement, TimePickerInputProps>
       onRightFocus,
       ...props
     },
-    ref
+    forwardedRef
   ) => {
     const [flag, setFlag] = React.useState<boolean>(false)
     const [prevIntKey, setPrevIntKey] = React.useState<string>('0')
@@ -258,7 +261,7 @@ const TimePickerInput = React.forwardRef<HTMLInputElement, TimePickerInputProps>
 
     return (
       <Input
-        ref={ref}
+        ref={forwardedRef}
         id={id || picker}
         name={name || picker}
         className={className}

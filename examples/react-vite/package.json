@@ -26,7 +26,7 @@
         "@biomejs/biome": "catalog:",
         "@repo/config-typescript": "workspace:*",
         "@tailwindcss/vite": "^4.0.17",
-        "@types/node": "^22.13.13",
+        "@types/node": "^22.13.14",
         "@types/react-dom": "^19.0.4",
         "@types/react": "^19.0.12",
         "@vitejs/plugin-react": "^4.3.4",
