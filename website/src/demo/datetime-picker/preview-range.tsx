@@ -1,5 +1,7 @@
 'use client'
 
+import { RangeDatePicker } from 'twistail-react/datetime-picker'
+
 export default function RangeDatePickerDemo() {
-  return null
+  return <RangeDatePicker inlinePresets internalPresets />
 }

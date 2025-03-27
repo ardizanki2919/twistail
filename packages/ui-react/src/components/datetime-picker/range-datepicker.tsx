@@ -1,4 +1,5 @@
 import { format, startOfMonth, startOfYear, subDays } from 'date-fns'
+import { type Locale, enUS } from 'date-fns/locale'
 import * as Lucide from 'lucide-react'
 import * as React from 'react'
 import { DateRange } from 'react-day-picker'
@@ -13,7 +14,7 @@ import {
   ListboxValue,
 } from '#/components/listbox'
 import { Popover, PopoverContent, PopoverTrigger } from '#/components/popover'
-import { rangeDatePickerStyles } from './datetime-picker.css'
+import { type RangeDatePickerStyles, rangeDatePickerStyles } from './datetime-picker.css'
 
 interface DateRangePreset {
   label: string
@@ -23,11 +24,10 @@ interface DateRangePreset {
   }
 }
 
-interface RangeDatePickerProps extends React.HTMLAttributes<HTMLDivElement> {
-  inlinePresets?: boolean
-  internalPresets?: boolean
+interface RangeDatePickerProps extends React.HTMLAttributes<HTMLDivElement>, RangeDatePickerStyles {
   numberOfMonths?: 2 | 3 | 4 | 5 | 6
   presets?: DateRangePreset[]
+  locale?: Locale
 }
 
 const defaultPresets: DateRangePreset[] = [
@@ -82,11 +82,12 @@ const defaultPresets: DateRangePreset[] = [
   },
 ]
 
-export function RangeDatePicker({
+function RangeDatePicker({
   inlinePresets,
   internalPresets,
   numberOfMonths = 2,
   presets = defaultPresets,
+  locale = enUS,
   className,
 }: RangeDatePickerProps) {
   const [date, setDate] = React.useState<DateRange | undefined>()
@@ -106,7 +107,7 @@ export function RangeDatePicker({
     }
   }
 
-  const styles = rangeDatePickerStyles()
+  const styles = rangeDatePickerStyles({ inlinePresets, internalPresets })
 
   return (
     <div className={styles.root({ className })}>
@@ -114,13 +115,10 @@ export function RangeDatePicker({
         <PopoverTrigger asChild>
           <Button
             variant={'outline'}
-            className={clx(
-              'w-[260px] justify-start text-left font-normal',
-              !date && 'text-muted-foreground',
-              inlinePresets && 'rounded-r-none'
-            )}
+            className={clx(styles.trigger(), inlinePresets && styles.triggerWithInlinePresets())}
+            data-empty={!date}
           >
-            <Lucide.Calendar className="mr-2 h-4 w-4" />
+            <Lucide.Calendar className={styles.triggerIcon()} />
             {date?.from ? (
               date.to ? (
                 <>
@@ -134,17 +132,17 @@ export function RangeDatePicker({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="end">
+        <PopoverContent className={styles.popoverContent()} align="end">
           {internalPresets ? (
             <>
-              <div className="flex">
-                <div className="justify-evenly px-3 py-4">
-                  <div className="flex w-32 flex-col gap-1">
+              <div className={styles.calendarWrapper()}>
+                <div className={styles.presetsContainer()}>
+                  <div className={styles.presetsColumn()}>
                     {presets.map((preset) => (
                       <Button
                         key={preset.label}
                         onClick={() => handlePresetSelect(preset)}
-                        className="w-full justify-start text-left"
+                        className={styles.presetButton()}
                         variant="ghost"
                         size="sm"
                       >
@@ -155,6 +153,7 @@ export function RangeDatePicker({
                 </div>
                 <Calendar
                   mode="range"
+                  locale={locale}
                   defaultMonth={date?.from}
                   selected={date}
                   onSelect={setDate}
@@ -166,6 +165,7 @@ export function RangeDatePicker({
           ) : (
             <Calendar
               mode="range"
+              locale={locale}
               defaultMonth={date?.from}
               numberOfMonths={numberOfMonths}
               onSelect={setDate}
@@ -177,7 +177,7 @@ export function RangeDatePicker({
       </Popover>
       {inlinePresets && (
         <Listbox onValueChange={handleInlinePresetsValueChange}>
-          <ListboxTrigger className="w-[140px] rounded-l-none border-l-0">
+          <ListboxTrigger className={styles.inlineListboxTrigger()}>
             <ListboxValue placeholder="Select Range" />
           </ListboxTrigger>
           <ListboxContent position="popper">
@@ -192,3 +192,5 @@ export function RangeDatePicker({
     </div>
   )
 }
+
+export { RangeDatePicker, type RangeDatePickerProps }

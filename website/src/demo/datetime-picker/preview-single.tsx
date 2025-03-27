@@ -1,5 +1,7 @@
 'use client'
 
+import { SingleDatePicker } from 'twistail-react/datetime-picker'
+
 export default function SingleDatePickerDemo() {
-  return null
+  return <SingleDatePicker inlinePresets internalPresets />
 }
