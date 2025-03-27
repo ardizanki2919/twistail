@@ -114,7 +114,7 @@ function RangeDatePicker({
       <Popover>
         <PopoverTrigger asChild>
           <Button
-            variant={'outline'}
+            variant="outline"
             className={clx(styles.trigger(), inlinePresets && styles.triggerWithInlinePresets())}
             data-empty={!date}
           >
@@ -132,7 +132,7 @@ function RangeDatePicker({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className={styles.popoverContent()} align="end">
+        <PopoverContent className={styles.popoverContent()} align="start">
           {internalPresets ? (
             <>
               <div className={styles.calendarWrapper()}>

@@ -3,5 +3,5 @@
 import { SingleDatePicker } from 'twistail-react/datetime-picker'
 
 export default function SingleDatePickerDemo() {
-  return <SingleDatePicker inlinePresets internalPresets />
+  return <SingleDatePicker internalPresets />
 }

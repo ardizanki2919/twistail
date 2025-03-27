@@ -83,7 +83,7 @@ function SingleDatePicker({
       <Popover>
         <PopoverTrigger asChild>
           <Button
-            variant={'outline'}
+            variant="outline"
             className={clx(styles.trigger(), inlinePresets && styles.triggerWithInlinePresets())}
             data-empty={!date}
           >
@@ -91,7 +91,7 @@ function SingleDatePicker({
             {date ? format(date, 'PPP') : <span>Pick a date</span>}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className={styles.popoverContent()} align="end">
+        <PopoverContent className={styles.popoverContent()} align="center">
           {internalPresets ? (
             <>
               <div className={styles.calendarWrapper()}>
