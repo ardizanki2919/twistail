@@ -5,7 +5,7 @@ import { TimePicker } from '#/components/datetime-picker'
 const meta: Meta<typeof TimePicker> = {
   component: TimePicker,
   title: 'Base Components/Datetime Picker/Time Picker',
-  tags: ['autodocs', 'status:experimental'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'centered',
   },

@@ -6,7 +6,7 @@ import { SingleDatePicker } from '#/components/datetime-picker'
 const meta: Meta<typeof SingleDatePicker> = {
   component: SingleDatePicker,
   title: 'Base Components/Datetime Picker/Date Picker',
-  tags: ['autodocs', 'status:experimental'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },

@@ -6,7 +6,7 @@ import { RangeDatePicker } from '#/components/datetime-picker'
 const meta: Meta<typeof RangeDatePicker> = {
   component: RangeDatePicker,
   title: 'Base Components/Datetime Picker/Range Picker',
-  tags: ['autodocs', 'status:experimental'],
+  tags: ['autodocs', 'status:done'],
   parameters: {
     layout: 'padded',
   },
