@@ -15,6 +15,8 @@ import {
 } from '#/components/listbox'
 import { Popover, PopoverContent, PopoverTrigger } from '#/components/popover'
 import { type RangeDatePickerStyles, rangeDatePickerStyles } from './datetime-picker.css'
+import { TimePicker } from './time-picker'
+import { type Granularity } from './time-utils'
 
 interface DateRangePreset {
   label: string
@@ -24,10 +26,19 @@ interface DateRangePreset {
   }
 }
 
-interface RangeDatePickerProps extends React.HTMLAttributes<HTMLDivElement>, RangeDatePickerStyles {
+interface RangeDatePickerProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,
+    RangeDatePickerStyles {
   numberOfMonths?: 2 | 3 | 4 | 5 | 6
   presets?: DateRangePreset[]
   locale?: Locale
+  withTimePicker?: boolean
+  granularity?: Granularity
+  hourCycle?: 12 | 24
+  displayFormat?: string
+  value?: DateRange
+  onChange?: (range: DateRange | undefined) => void
+  placeholder?: string
 }
 
 const defaultPresets: DateRangePreset[] = [
@@ -88,15 +99,48 @@ function RangeDatePicker({
   numberOfMonths = 2,
   presets = defaultPresets,
   locale = enUS,
+  withTimePicker = false,
+  granularity = 'second',
+  hourCycle = 24,
+  displayFormat,
+  value,
+  onChange,
+  placeholder = 'Pick a date range',
   className,
 }: RangeDatePickerProps) {
-  const [date, setDate] = React.useState<DateRange | undefined>()
+  const [date, setDate] = React.useState<DateRange | undefined>(value)
+
+  React.useEffect(() => {
+    setDate(value)
+  }, [value])
 
   const handlePresetSelect = (preset: DateRangePreset) => {
-    setDate({
-      from: preset.range.from,
-      to: preset.range.to,
-    })
+    const newRange = {
+      from: new Date(preset.range.from),
+      to: preset.range.to ? new Date(preset.range.to) : undefined,
+    }
+
+    // Preserve time if we already have dates
+    if (date?.from && newRange.from) {
+      newRange.from.setHours(
+        date.from.getHours(),
+        date.from.getMinutes(),
+        date.from.getSeconds(),
+        date.from.getMilliseconds()
+      )
+    }
+
+    if (date?.to && newRange.to) {
+      newRange.to.setHours(
+        date.to.getHours(),
+        date.to.getMinutes(),
+        date.to.getSeconds(),
+        date.to.getMilliseconds()
+      )
+    }
+
+    setDate(newRange)
+    onChange?.(newRange)
   }
 
   const handleInlinePresetsValueChange = (value: string) => {
@@ -105,6 +149,70 @@ function RangeDatePicker({
     if (selectedPreset) {
       handlePresetSelect(selectedPreset)
     }
+  }
+
+  const handleRangeSelect = (newRange: DateRange | undefined) => {
+    if (!newRange) {
+      setDate(undefined)
+      onChange?.(undefined)
+      return
+    }
+
+    // Preserve time if we already have dates
+    const updatedRange = { ...newRange }
+
+    if (date?.from && updatedRange.from) {
+      updatedRange.from.setHours(
+        date.from.getHours(),
+        date.from.getMinutes(),
+        date.from.getSeconds(),
+        date.from.getMilliseconds()
+      )
+    }
+
+    if (date?.to && updatedRange.to) {
+      updatedRange.to.setHours(
+        date.to.getHours(),
+        date.to.getMinutes(),
+        date.to.getSeconds(),
+        date.to.getMilliseconds()
+      )
+    }
+
+    setDate(updatedRange)
+    onChange?.(updatedRange)
+  }
+
+  const handleFromTimeChange = (newDate: Date | undefined) => {
+    if (!newDate || !date) return
+
+    const updatedRange = { ...date }
+    updatedRange.from = newDate
+
+    setDate(updatedRange)
+    onChange?.(updatedRange)
+  }
+
+  const handleToTimeChange = (newDate: Date | undefined) => {
+    if (!newDate || !date || !date.to) return
+
+    const updatedRange = { ...date }
+    updatedRange.to = newDate
+
+    setDate(updatedRange)
+    onChange?.(updatedRange)
+  }
+
+  const getDisplayFormat = () => {
+    if (displayFormat) return displayFormat
+
+    if (!withTimePicker) return 'PPP'
+
+    if (hourCycle === 24) {
+      return `PPP HH:mm${granularity === 'second' ? ':ss' : ''}`
+    }
+
+    return `PPP hh:mm${granularity === 'second' ? ':ss' : ''} b`
   }
 
   const styles = rangeDatePickerStyles({ inlinePresets, internalPresets })
@@ -122,17 +230,18 @@ function RangeDatePicker({
             {date?.from ? (
               date.to ? (
                 <>
-                  {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
+                  {format(date.from, getDisplayFormat(), { locale })} -{' '}
+                  {format(date.to, getDisplayFormat(), { locale })}
                 </>
               ) : (
-                format(date.from, 'LLL dd, y')
+                format(date.from, getDisplayFormat(), { locale })
               )
             ) : (
-              <span>Pick a date range</span>
+              <span>{placeholder}</span>
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className={styles.popoverContent()} align="start">
+        <PopoverContent className={styles.popoverContent()} align="center">
           {internalPresets ? (
             <>
               <div className={styles.calendarWrapper()}>
@@ -156,7 +265,7 @@ function RangeDatePicker({
                   locale={locale}
                   defaultMonth={date?.from}
                   selected={date}
-                  onSelect={setDate}
+                  onSelect={handleRangeSelect}
                   numberOfMonths={numberOfMonths}
                   autoFocus
                 />
@@ -168,10 +277,38 @@ function RangeDatePicker({
               locale={locale}
               defaultMonth={date?.from}
               numberOfMonths={numberOfMonths}
-              onSelect={setDate}
+              onSelect={handleRangeSelect}
               selected={date}
               autoFocus
             />
+          )}
+
+          {withTimePicker && (
+            <div className="border-border border-t pt-3 pb-1">
+              <div className="flex flex-row items-start justify-around gap-8 space-y-2 px-2">
+                <div>
+                  <div className="px-2 font-medium text-sm">Start Time</div>
+                  <TimePicker
+                    date={date?.from || new Date()}
+                    onChange={handleFromTimeChange}
+                    hourCycle={hourCycle}
+                    granularity={granularity}
+                  />
+                </div>
+
+                {date?.to && (
+                  <div>
+                    <div className="px-2 font-medium text-sm">End Time</div>
+                    <TimePicker
+                      date={date.to}
+                      onChange={handleToTimeChange}
+                      hourCycle={hourCycle}
+                      granularity={granularity}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
           )}
         </PopoverContent>
       </Popover>

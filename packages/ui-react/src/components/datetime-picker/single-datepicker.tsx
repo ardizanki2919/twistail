@@ -27,7 +27,7 @@ interface SingleDatePickerProps {
   internalPresets?: boolean
   presets?: DatePreset[]
   locale?: Locale
-  showTimePicker?: boolean
+  withTimePicker?: boolean
   displayFormat?: string
   granularity?: Granularity
   hourCycle?: 12 | 24
@@ -70,7 +70,7 @@ function SingleDatePicker({
   internalPresets,
   presets = defaultPresets,
   locale = enUS,
-  showTimePicker = false,
+  withTimePicker = false,
   displayFormat,
   granularity = 'second',
   hourCycle = 24,
@@ -136,7 +136,7 @@ function SingleDatePicker({
   const getDisplayFormat = () => {
     if (displayFormat) return displayFormat
 
-    if (!showTimePicker) return 'PPP'
+    if (!withTimePicker) return 'PPP'
 
     if (hourCycle === 24) {
       return `PPP HH:mm${granularity === 'second' ? ':ss' : ''}`
@@ -204,7 +204,7 @@ function SingleDatePicker({
             />
           )}
 
-          {showTimePicker && (
+          {withTimePicker && (
             <div className="rounded-b-md border-border border-t p-0">
               <TimePicker
                 date={date || new Date()}

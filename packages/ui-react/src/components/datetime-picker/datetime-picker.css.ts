@@ -36,7 +36,7 @@ const rangeDatePickerStyles = tv({
   slots: {
     root: 'inline-flex',
     trigger: [
-      'w-[260px] justify-start text-left font-normal',
+      'w-fit min-w-[260px] justify-start text-left font-normal',
       'data-[empty=true]:text-muted-foreground',
     ],
     triggerWithInlinePresets: 'rounded-r-none',
@@ -77,7 +77,7 @@ const timePickerStyles = tv({
       '[&::-webkit-inner-spin-button]:appearance-none',
     ],
     periodTrigger: [
-      'h-[40px] min-w-[66px] focus:bg-accent focus:text-accent-foreground rounded-md',
+      'h-[40px] w-[70px] focus:bg-accent focus:text-accent-foreground rounded-md',
       '[&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:-mr-1',
     ],
     periodItem: '[&_svg]:size-4 [&_svg]:shrink-0 py-1.5',

@@ -41,7 +41,7 @@ const meta: Meta<typeof SingleDatePicker> = {
         type: { summary: 'DatePreset[]' },
       },
     },
-    showTimePicker: {
+    withTimePicker: {
       control: 'boolean',
       description: 'Show time picker component',
       table: {
@@ -147,30 +147,30 @@ export const SingleWithLocale: Story = {
 
 export const SingleWithTimePicker: Story = {
   name: 'Single with Time Picker',
-  render: () => <SingleDatePicker showTimePicker />,
+  render: () => <SingleDatePicker withTimePicker />,
 }
 
 export const SingleWithTimePickerHour12: Story = {
   name: 'Single with 12-hour Time Picker',
-  render: () => <SingleDatePicker showTimePicker hourCycle={12} />,
+  render: () => <SingleDatePicker withTimePicker hourCycle={12} />,
 }
 
 export const SingleWithTimePickerMinuteGranularity: Story = {
   name: 'Single with Minute Granularity',
-  render: () => <SingleDatePicker showTimePicker granularity="minute" />,
+  render: () => <SingleDatePicker withTimePicker granularity="minute" />,
 }
 
 export const SingleWithTimePickerHourGranularity: Story = {
   name: 'Single with Hour Granularity',
-  render: () => <SingleDatePicker showTimePicker granularity="hour" />,
+  render: () => <SingleDatePicker withTimePicker granularity="hour" />,
 }
 
 export const SingleWithTimePickerAndPresets: Story = {
   name: 'Single with Time Picker and Presets',
-  render: () => <SingleDatePicker showTimePicker internalPresets />,
+  render: () => <SingleDatePicker withTimePicker internalPresets />,
 }
 
 export const SingleWithCustomPlaceholder: Story = {
   name: 'Single with Custom Placeholder',
-  render: () => <SingleDatePicker placeholder="Select date and time" showTimePicker />,
+  render: () => <SingleDatePicker placeholder="Select date and time" withTimePicker />,
 }
