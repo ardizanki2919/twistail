@@ -98,7 +98,6 @@ export default function LandingPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
-        <BackgroundPattern />
         <div className="mx-auto max-w-screen-2xl px-4 md:px-6">
           <div className="flex flex-col items-center gap-12 lg:flex-row">
             <HeroContent installCommand={installCommand} handleCopy={handleCopy} />
@@ -108,7 +107,7 @@ export default function LandingPage() {
       </section>
 
       {/* Components Showcase Section */}
-      <section className="bg-background py-20">
+      <section className="bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-6">
           <SectionHeading
             title="Explore Components"
@@ -118,35 +117,6 @@ export default function LandingPage() {
         </div>
       </section>
     </div>
-  )
-}
-
-// Background Pattern Component
-function BackgroundPattern() {
-  return (
-    <svg
-      className="-z-10 absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-gray-800/50"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-          width={200}
-          height={200}
-          x="50%"
-          y={-1}
-          patternUnits="userSpaceOnUse"
-        >
-          <path d="M.5 200V.5H200" fill="none" />
-        </pattern>
-      </defs>
-      <rect
-        width="100%"
-        height="100%"
-        strokeWidth={0}
-        fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
-      />
-    </svg>
   )
 }
 
@@ -161,12 +131,12 @@ function HeroContent({
         <Badge variant="primary">Currently in beta</Badge>
         <Link
           href="https://npmjs.com/package/twistail-react"
-          className="inline-flex items-center space-x-2 font-medium text-gray-600 text-sm leading-6"
+          className="inline-flex items-center space-x-2 font-medium text-muted-foreground text-sm leading-6"
           newTab
         >
-          <span className="dark:text-gray-300">NPM v0.1.x</span>
+          <span className="dark:text-gray-300">NPM v0.x.x</span>
           <Lucide.ExternalLink
-            className="size-4 text-gray-400 dark:text-gray-300"
+            className="size-4 text-muted-foreground"
             aria-hidden="true"
             strokeWidth={2}
           />
@@ -177,18 +147,18 @@ function HeroContent({
         <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
           Twistail
         </span>{' '}
-        <span className="relative text-black dark:text-white">
+        <span className="relative text-foreground">
           UI library
-          <span className="-bottom-2 absolute left-0 h-1 w-full bg-blue-500" />
+          <span className="-bottom-2 absolute left-0 h-1 w-full bg-primary" />
         </span>
       </Heading>
 
-      <Text className="mb-6 text-gray-600 text-lg/8 dark:text-gray-300">
+      <Text className="mb-6 text-lg/8 text-muted-foreground">
         Speed up building your website and dashboard by using modular and extensible UI components
         built on top of{' '}
         <Link
           href="https://www.radix-ui.com/primitives?ref=twistail"
-          className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-medium text-transparent hover:invert"
+          className="bg-gradient-to-r from-primary to-info bg-clip-text font-medium text-transparent hover:invert"
           newTab
         >
           Radix UI
@@ -196,7 +166,7 @@ function HeroContent({
         and{' '}
         <Link
           href="https://tailwindcss.com/?ref=twistail"
-          className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-medium text-transparent hover:invert"
+          className="bg-gradient-to-r from-primary to-info bg-clip-text font-medium text-transparent hover:invert"
           newTab
         >
           Tailwind CSS
@@ -204,9 +174,9 @@ function HeroContent({
         .
       </Text>
 
-      <div className="mb-8 flex items-center rounded-lg border border-blue-100 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-900/20">
-        <Lucide.Package className="mr-3 size-5 text-blue-500" />
-        <Text className="text-blue-700 dark:text-blue-300">
+      <div className="mb-8 flex items-center rounded-lg border border-info/20 bg-info/10 p-4">
+        <Lucide.Package className="mr-3 size-5 text-info" />
+        <Text className="text-foreground">
           Available as a copy-paste package on NPM for your React projects.
         </Text>
       </div>
@@ -246,12 +216,13 @@ function HeroContent({
 function HeroShowcase() {
   return (
     <div className="relative lg:w-1/2">
-      <div className="relative overflow-hidden rounded-lg border border-gray-200 shadow-2xl dark:border-gray-800">
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-blue-500/10 dark:from-blue-500/20 dark:to-blue-500/20" />
+      <div className="relative overflow-hidden rounded-lg border border-border shadow-2xl">
+        {/* Gradient overlay yang diperbaiki */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-info/20 via-transparent to-primary/20" />
         <Atropos
           activeOffset={40}
           shadowScale={1.05}
-          className="size-full rounded-lg bg-gray-900/5 p-2 ring-1 ring-gray-900/10 ring-inset"
+          className="size-full rounded-lg bg-muted/50 p-2 ring-1 ring-border"
         >
           <Image
             src="/images/screenshots/hero-image.png"
@@ -262,8 +233,9 @@ function HeroShowcase() {
             priority
           />
         </Atropos>
-        <div className="-bottom-6 -right-6 absolute size-40 rounded-full bg-blue-500/20 blur-3xl" />
-        <div className="-top-6 -left-6 absolute size-40 rounded-full bg-blue-500/20 blur-3xl" />
+        {/* Gradient blobs yang diperbaiki */}
+        <div className="-bottom-6 -right-6 absolute size-40 rounded-full bg-info/30 blur-3xl" />
+        <div className="-top-6 -left-6 absolute size-40 rounded-full bg-primary/30 blur-3xl" />
       </div>
     </div>
   )
@@ -389,7 +361,7 @@ function ComponentsTabs() {
           <ComponentCard title="Textarea">
             <div className="grid w-full gap-1.5">
               <Label htmlFor="message">Message</Label>
-              <Textarea id="message" placeholder="Type your message here." />
+              <Textarea id="message" placeholder="Type your message here." autoResize />
             </div>
           </ComponentCard>
         </div>
@@ -903,9 +875,9 @@ function ComponentsTabs() {
 // Component Card
 function ComponentCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      <Text className="mb-4 font-medium">{title}</Text>
-      <div className="rounded-md bg-gray-50 p-4 dark:bg-gray-900">{children}</div>
+    <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
+      <Text className="mb-4 font-medium text-card-foreground">{title}</Text>
+      <div className="rounded-md bg-sidebar p-4">{children}</div>
     </div>
   )
 }
