@@ -1,6 +1,7 @@
 'use client'
 
-import { RootProvider, type RootProviderProps } from 'fumadocs-ui/provider'
+import { RootProvider } from 'fumadocs-ui/provider'
+import type { RootProviderProps } from 'fumadocs-ui/provider/base'
 import { useTheme } from 'next-themes'
 import dynamic from 'next/dynamic'
 import Script from 'next/script'

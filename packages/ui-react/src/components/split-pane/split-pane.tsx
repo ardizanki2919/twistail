@@ -8,7 +8,7 @@ interface SplitProps
   extends React.ComponentPropsWithoutRef<typeof Allotment>,
     Omit<SplitPaneStyles, keyof React.ComponentPropsWithoutRef<typeof Allotment>> {}
 
-const Split = React.forwardRef<React.ElementRef<typeof Allotment>, SplitProps>(
+const Split = React.forwardRef<React.ComponentRef<typeof Allotment>, SplitProps>(
   ({ className, ...props }, forwardedRef) => {
     const styles = splitPaneStyles()
     return <Allotment ref={forwardedRef} className={styles.base({ className })} {...props} />
@@ -19,7 +19,7 @@ interface SplitPaneProps
   extends React.ComponentPropsWithoutRef<typeof Allotment.Pane>,
     Omit<SplitPaneStyles, keyof React.ComponentPropsWithoutRef<typeof Allotment.Pane>> {}
 
-const SplitPane = React.forwardRef<React.ElementRef<typeof Allotment.Pane>, SplitPaneProps>(
+const SplitPane = React.forwardRef<React.ComponentRef<typeof Allotment.Pane>, SplitPaneProps>(
   ({ className, children, ...props }, forwardedRef) => {
     const styles = splitPaneStyles()
     return (

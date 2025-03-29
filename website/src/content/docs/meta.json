@@ -73,7 +73,7 @@
         "!components/combo-chart",
         "!components/donut-chart",
         "!components/line-chart",
-        "!components/progress-bar",
+        "components/progress-bar",
         "!components/progress-circle",
         "!components/spark-chart",
         "components/tracker",
