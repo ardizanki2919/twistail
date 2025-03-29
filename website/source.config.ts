@@ -2,7 +2,7 @@ import { remarkHeading, remarkImage, remarkStructure } from 'fumadocs-core/mdx-p
 import { rehypeCodeDefaultOptions, rehypeToc, remarkGfm } from 'fumadocs-core/mdx-plugins'
 import { fileGenerator, remarkDocGen, remarkInstall } from 'fumadocs-docgen'
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config'
-import { defineCollections, frontmatterSchema, getDefaultMDXOptions } from 'fumadocs-mdx/config'
+import { defineCollections, frontmatterSchema } from 'fumadocs-mdx/config'
 import rehypeExternalLinks from 'rehype-external-links'
 import { z } from 'zod'
 
@@ -15,9 +15,6 @@ export const blogPosts = defineCollections({
     published: z.boolean().default(false),
     coverImage: z.string().optional(),
     coverImageAlt: z.string().optional(),
-  }),
-  mdxOptions: getDefaultMDXOptions({
-    // extended mdx options
   }),
 })
 

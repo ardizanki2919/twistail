@@ -6,10 +6,10 @@ full: false
 A visual indicator showing the completion progress of an operation or task.
 
 <Badges>
-  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--default" external>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--docs" external>
     Storybook
   </BadgeLink>
-  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
+  <BadgeLink href="https://www.radix-ui.com/primitives/docs/components/progress" external>
     Radix UI Docs
   </BadgeLink>
   <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/progress-bar" external>
@@ -87,22 +87,63 @@ npx twistail add progress-bar
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import {} from '#/components/progress-bar'
+    import { ProgressBar } from '#/components/progress-bar'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import {} from 'twistail-react/progress-bar'
+    import { ProgressBar } from 'twistail-react/progress-bar'
     ```
   </Tab>
 </Tabs>
 
 ### Example
 
-Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--default) for more examples.
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-bar--docs) for more examples.
 
-## Anatomy
+## Props
 
-```tsx
-// WIP
-```
+<TypeTable
+  type={{
+    value: {
+      description: 'Current progress value',
+      type: 'number',
+      default: '0',
+    },
+    max: {
+      description: 'Maximum progress value',
+      type: 'number',
+      default: '100',
+    },
+    variant: {
+      description: 'Visual style variant of the progress bar',
+      type: 'default | neutral | success | warning | error',
+      default: 'default',
+    },
+    size: {
+      description: 'Size of the progress bar',
+      type: 'sm | md | lg',
+      default: 'md',
+    },
+    animated: {
+      description: 'Whether to animate progress changes',
+      type: 'boolean',
+      default: 'true',
+    },
+    label: {
+      description: 'Optional label to display next to the progress bar',
+      type: 'string',
+      default: undefined,
+    },
+    labelId: {
+      description: 'ID for the label element (for accessibility)',
+      type: 'string',
+      default: undefined,
+    },
+    className: {
+      description: 'Additional CSS class for the progress bar container',
+      type: 'string',
+      default: undefined,
+    },
+  }}
+/>

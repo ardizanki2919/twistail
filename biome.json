@@ -94,7 +94,8 @@
                 "noDuplicateAtImportRules": "error",
                 "noEmptyBlock": "warn"
             }
-        }
+        },
+        "ignore": ["**/demo/**", "**/*.stories.tsx"]
     },
     "formatter": {
         "enabled": true,
