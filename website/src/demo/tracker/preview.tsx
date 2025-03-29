@@ -1,6 +1,6 @@
 'use client'
 
-import { Tracker } from 'twistail-react'
+import { Tracker } from 'twistail-react/tracker'
 
 const data = [
   {

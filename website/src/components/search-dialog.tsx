@@ -110,7 +110,7 @@ const LINKS: LinkGroup[] = [
       // ['Donut Chart', '/docs/components/donut-chart'],
       // ['Line Chart', '/docs/components/line-chart'],
       ['Progress Bar', '/docs/components/progress-bar'],
-      // ['Progress Circle', '/docs/components/progress-circle'],
+      ['Progress Circle', '/docs/components/progress-circle'],
       // ['Spark Chart', '/docs/components/spark-chart'],
       ['Tracker', '/docs/components/tracker'],
     ],

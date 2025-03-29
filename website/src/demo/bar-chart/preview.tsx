@@ -1,6 +1,6 @@
 'use client'
 
-// import {} from 'twistail-react'
+// import { BarChart } from 'twistail-react/bar-chart'
 
 export default function Demo() {
   return null

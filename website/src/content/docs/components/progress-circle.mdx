@@ -6,11 +6,8 @@ full: false
 A circular progress indicator that visualizes completion percentage in a compact format.
 
 <Badges>
-  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--default" external>
+  <BadgeLink href="https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--docs" external>
     Storybook
-  </BadgeLink>
-  <BadgeLink href="https://www.radix-ui.com/primitives/docs/utilities/slot" external>
-    Radix UI Docs
   </BadgeLink>
   <BadgeLink href="https://github.com/riipandi/twistail/tree/main/packages/ui-react/src/components/progress-circle" external>
     Source
@@ -87,22 +84,68 @@ npx twistail add progress-circle
 <Tabs items={['internal (copy-paste)', 'npm']}>
   <Tab value="internal (copy-paste)">
     ```tsx
-    import {} from '#/components/progress-circle'
+    import { ProgressCircle } from '#/components/progress-circle'
     ```
   </Tab>
   <Tab value="npm">
     ```tsx
-    import {} from 'twistail-react/progress-circle'
+    import { ProgressCircle } from 'twistail-react/progress-circle'
     ```
   </Tab>
 </Tabs>
 
 ### Example
 
-Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--default) for more examples.
+Browse the [Storybook](https://storybook.twistail.com/?path=/docs/visualizations-progress-circle--docs) for more examples.
 
-## Anatomy
+## Props
 
-```tsx
-// WIP
-```
+<TypeTable
+  type={{
+    value: {
+      description: 'Current progress value',
+      type: 'number',
+      default: '0',
+    },
+    max: {
+      description: 'Maximum progress value',
+      type: 'number',
+      default: '100',
+    },
+    variant: {
+      description: 'Visual style variant of the progress circle',
+      type: 'default | neutral | success | warning | error',
+      default: 'default',
+    },
+    radius: {
+      description: 'Radius of the circle in pixels',
+      type: 'number',
+      default: '32',
+    },
+    strokeWidth: {
+      description: 'Width of the progress stroke in pixels',
+      type: 'number',
+      default: '6',
+    },
+    animated: {
+      description: 'Whether to animate progress changes',
+      type: 'boolean',
+      default: 'true',
+    },
+    children: {
+      description: 'Content to display in the center of the circle',
+      type: 'React.ReactNode',
+      default: undefined,
+    },
+    className: {
+      description: 'Additional CSS class for the progress circle container',
+      type: 'string',
+      default: undefined,
+    },
+  }}
+/>
+
+## Credits
+
+This component is based on [Progress Circle](https://tremor.so/docs/visualizations/progress-circle)
+by [Tremor](https://tremor.so), licensed under [Apache License 2.0](https://github.com/tremorlabs/tremor/blob/main/LICENSE).
