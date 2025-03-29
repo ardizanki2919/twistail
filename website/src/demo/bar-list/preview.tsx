@@ -2,7 +2,7 @@
 
 import { BarList } from 'twistail-react/bar-list'
 
-export default function Demo() {
+export default function BarListDemo() {
   const basicData = [
     { title: '/home', value: 843, maxValue: 1000 },
     { title: '/imprint', value: 46, maxValue: 1000 },

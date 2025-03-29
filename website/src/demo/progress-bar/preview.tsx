@@ -1,9 +1,9 @@
 'use client'
 
 import * as React from 'react'
-import { ProgressBar } from 'twistail-react'
+import { ProgressBar } from 'twistail-react/progress-bar'
 
-export default function Demo() {
+export default function ProgressBarDemo() {
   const [progress, setProgress] = React.useState(0)
 
   React.useEffect(() => {
