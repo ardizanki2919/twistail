@@ -104,7 +104,7 @@ const LINKS: LinkGroup[] = [
     items: [
       // ['Area Chart', '/docs/components/area-chart'],
       // ['Bar Chart', '/docs/components/bar-chart'],
-      // ['Bar List', '/docs/components/bar-list'],
+      ['Bar List', '/docs/components/bar-list'],
       // ['Category Bar', '/docs/components/category-bar'],
       // ['Combo Chart', '/docs/components/combo-chart'],
       // ['Donut Chart', '/docs/components/donut-chart'],
